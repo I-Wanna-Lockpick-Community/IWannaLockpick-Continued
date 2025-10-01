@@ -1,6 +1,3 @@
-# I Wanna Lockpick
-I Wanna Lockpick's source code.<br>
-You can find the game at https://lawatson.itch.io/i-wanna-lockpick<br>
-I did not make the game; project files were provided by LAWatson.<br>
-Apparently an outdated version, but it seems fine.<br>
-Use GameMaker Studio 1.4.x
+# I Wanna Lockpick Continued
+A mod of I Wanna Lockpick
+Planning document: https://docs.google.com/document/d/12GX7o5_Y9auGQBGzQS-hVnbj5lR0m1SUEE9IK__Apx0/edit?usp=sharing
