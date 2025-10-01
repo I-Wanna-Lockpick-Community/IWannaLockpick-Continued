@@ -28,8 +28,8 @@
             <string>///Credits!!!
 
 strCredits = "- CREDITS -##Made with Game Maker Studio 1.4#(Unfortunately)##Inspired by 'I Wanna KeyPick 100'#Made by Necoroneko";
-strCredits += "##- Sprite/Image Credits -##I Wanna KeyPick 100#Cave Story#Hanano Puzzle#Game Maker 8.1 Sample Assets#Google Images##The rest were made with Paint.NET and Aseprite.#They are great tools, use them!"
-strCredits += "##- Sound Credits -##Baba is You#Deltarune#Kirby's Return to Dreamland#TAM Music Factory#On-Jin##The rest were made with BFXR and AS3SFXR.#Again, great tools!";
+strCredits += "##- Sprite/Image Credits -##I Wanna KeyPick 100#Undertale#Cave Story#Hanano Puzzle#Game Maker 8.1 Sample Assets#Google Images##The rest were made with Paint.NET and Aseprite.#They are great tools, use them!"
+strCredits += "##- Sound Credits -##Baba is You#Touhou Project#Deltarune#Kirby's Return to Dreamland#TAM Music Factory#On-Jin##The rest were made with BFXR and AS3SFXR.#Again, great tools!";
 strCredits += "##- Music Credits -##Featuring original compositions by#Hazelstorm##As well as music from the following:##LCDDem#Klonoa 2: Lunatea's Veil#OcularNebula#Lifeformed (Dustforce)#Reed Richards#Positively Dark#ZUN (Dolls in Pseudo Paradise)#Lemanold#ZWEI 2#Disasterpeace (FEZ)#The Victors' Space Odyssey#Phyrnna (EBF3)#Kuhu#2gou#Pokemon Mystery Dungeon Blue Rescue Team DX#Onefin + Miyolophone#Senses-Circuit#Zwei!! The Arges Adventure#Kirby's Return to Dreamland#Virt#Haru#Cafe de Touhou#Yotsuba Kagerou#Qrostar (Hanano Puzzle 2)#Speder2##Please give them all your support!#The CREDITS file has more information."
 strCredits += "##- Featuring Puzzles By -##LAWatson#Cthaere#JustImagineIt#MathCookie#lovemathboy#Additionally, some designs borrowed from#I Wanna KeyPick 100";
 strCredits += "##- Testing and Feedback -##An ant#Bulb Bowling#Cthaere#Danvlith#Kiyoshi#MediocreOmen#Samario#Sanctuspaladin#Wolog#Blastedman#DoubleTurnTeam#Faustus#L4Vo5#Nearigami#Strelook#A heart#pancelor#RndGuy#Aucious#YaBoiMarcAntony#Verve#Chrisay#UrsusJr#Hazelstorm#Chatran#Kurath#Eltrick#mregor_787#Kenneth_LI#";
