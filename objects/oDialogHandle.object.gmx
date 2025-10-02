@@ -272,6 +272,14 @@ switch endAction{
         with oEndHandle{state = 1;}
         audio_sound_gain(global.currentMusic,0,2000);
     break;
+	case 9://Skip to hub
+		with oIntroHandle {
+			audio_sound_gain(global.currentMusic,0,1000);
+			state = 4;
+			drawBlack = 1;
+			scrPlaySoundExt(sndSelectMade,.75,1,false);
+			with oDialogHandle{diaState = 0;}
+		}
     default:
         diaState = 0;
         global.inCutscene = 0;
