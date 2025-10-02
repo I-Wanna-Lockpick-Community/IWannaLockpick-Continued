@@ -1,9 +1,8 @@
 ///scrKinaMasterOpen();
 if objPlayer.masterMode == 1 && global.key[key_MASTER] > 0{//Positive Master Spending
     objPlayer.masterMode = 0;
-    if !global.star[key_MASTER]{
-        addComplexKeys(key_MASTER,0,-1,0,0);
-    }
+	objPlayer.masterCycle = 0;
+    addComplexKeys(key_MASTER,0,-1,0,0);
     copies -= 1;
     if copies == 0 && icopies == 0{//DESTROY OBJECT (THIS IS THE BIG ONE)
         active=0;
@@ -19,9 +18,8 @@ if objPlayer.masterMode == 1 && global.key[key_MASTER] > 0{//Positive Master Spe
     }
 }else if objPlayer.masterMode == -1 && global.key[key_MASTER] < 0{
     objPlayer.masterMode = 0;
-    if !global.star[key_MASTER]{
-        addComplexKeys(key_MASTER,0,1,0,0);
-    }
+	objPlayer.masterCycle = 0;
+    addComplexKeys(key_MASTER,0,1,0,0);
     copies += 1;
     if copies == 0 && icopies == 0{
         scrPlaySoundExt(sndMasterUnlock,1,1,false);
@@ -37,9 +35,8 @@ if objPlayer.masterMode == 1 && global.key[key_MASTER] > 0{//Positive Master Spe
     }
 }else if objPlayer.masterMode == 2 && global.ikey[key_MASTER] > 0{//Positive IMaster Spending
     objPlayer.masterMode = 0;
-    if !global.star[key_MASTER]{
-        addComplexKeys(key_MASTER,0,0,-1,0);
-    }
+	objPlayer.masterCycle = 0;
+	addComplexKeys(key_MASTER,0,0,-1,0);
     icopies -= 1;
     if copies == 0 && icopies == 0{
         scrPlaySoundExt(sndMasterUnlock,1,1,false);
@@ -55,9 +52,8 @@ if objPlayer.masterMode == 1 && global.key[key_MASTER] > 0{//Positive Master Spe
     }
 }else if objPlayer.masterMode == -2 && global.ikey[key_MASTER] < 0{
     objPlayer.masterMode = 0;
-    if !global.star[key_MASTER]{
-        addComplexKeys(key_MASTER,0,0,1,0);
-    }
+	objPlayer.masterCycle = 0;
+    addComplexKeys(key_MASTER,0,0,1,0);
     icopies += 1;
     if copies == 0 && icopies == 0{
         scrPlaySoundExt(sndMasterUnlock,1,1,false);

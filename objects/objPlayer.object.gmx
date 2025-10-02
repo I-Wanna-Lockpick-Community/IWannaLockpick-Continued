@@ -71,7 +71,8 @@ if (global.autosave) //save the game if currently set to autosave
           <argument>
             <kind>1</kind>
             <string>///KeyPick variables
-masterMode = 0;//0 = None, 1 = Master Mode, -1 = AntiMaster Mode
+masterMode = 0;//0 = None, 1 = Master Mode, -1 = AntiMaster Mode, 2 = iMaster, -2 = -iMaster
+masterCycle = 0; // 0 = None, 1 = Master, 2 = Silver
 masterDrawAngle = 0;
 masterDrawScale = 0.8;
 
@@ -640,7 +641,7 @@ if instance_exists(oNewCamera){
     if oNewCamera.freeCam{exit;}
 }
 if scrButtonCheckPressed(global.masButton) &amp;&amp; global.pmState == 0{
-    scrPlayerEquipMaster();
+    scrPlayerCycleMaster();
 }else if scrButtonCheckPressed(global.skipButton) &amp;&amp; !frozen &amp;&amp; global.pmState == 0{
     scrComplexSwitch();
 }else if scrButtonCheckPressed(global.camButton) &amp;&amp; global.pmState == 0{
@@ -1044,7 +1045,11 @@ if masterMode &gt;= 1{
     masterDrawScale = 0.8 + 0.2 * sin(degtorad(masterDrawAngle));
     draw_sprite_ext(sprPlayerShine,0,x,y,masterDrawScale,masterDrawScale,0,make_color_rgb(180,180,50),1);
     draw_set_blend_mode(bm_normal);
-    draw_sprite_ext(sprKMaster,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+    if masterCycle == 1 {
+		draw_sprite_ext(sprKMaster,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+	} else if masterCycle == 2 {
+		draw_sprite_ext(sprKSilver,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+	}
 }
 if masterMode &lt;= -1{
     draw_set_blend_mode(bm_add);
@@ -1052,7 +1057,11 @@ if masterMode &lt;= -1{
     masterDrawScale = 0.8 + 0.2 * sin(degtorad(masterDrawAngle));
     draw_sprite_ext(sprPlayerShine,0,x,y,masterDrawScale,masterDrawScale,0,make_color_rgb(50,50,180),1);
     draw_set_blend_mode(bm_normal);
-    draw_sprite_ext(sprKMasterAnti,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+	if masterCycle == 1 {
+		draw_sprite_ext(sprKMasterAnti,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+	} else if masterCycle == 2 {
+		draw_sprite_ext(sprKSilverAnti,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+	}
 }
 //Imaginary View Text
 if global.complexMode{

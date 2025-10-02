@@ -345,55 +345,52 @@ if global.complexMode == 0{//Real view
     }
 }
 var canGoldOpen = !(tempColor == key_MASTER || tempColor == key_PURE || tempSpend == key_MASTER || tempSpend == key_PURE || ((colorCopy == key_MASTER || colorCopy == key_PURE) &amp;&amp; browned == 0));
+var canSilverOpen = !(tempColor == key_SILVER || tempColor == key_PURE || tempSpend == key_SILVER || tempSpend == key_PURE || ((colorCopy == key_SILVER || colorCopy == key_PURE) &amp;&amp; browned == 0));
 var canDynamiteOpen = !(tempColor == key_DYNAMITE || tempColor == key_PURE || tempSpend == key_DYNAMITE || tempSpend == key_PURE || ((colorCopy == key_DYNAMITE || colorCopy == key_PURE) &amp;&amp; browned == 0));
-if distToP &lt;= 1{
-	if (canDynamiteOpen) {
-		scrNormalDynamiteOpen();
+if distToP &lt;= 1 {
+	if (canDynamiteOpen &amp;&amp; scrNormalDynamiteOpen()) {
         undoBUFFER();
         scrPlayerDownStop();
-	}else if (canGoldOpen) &amp;&amp; objPlayer.masterMode != 0{//SPEND MASTER KEYS
-        scrNormalMasterOpen();
+	} else if (canGoldOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 1) &amp;&amp; scrNormalMasterOpen() {//SPEND MASTER KEYS
         undoBUFFER();
         scrPlayerDownStop();
-    }else if objPlayer.masterMode == 0 || !canGoldOpen{//SPEND NORMAL KEYS
-        if type == 0{//Normal
-            if canOpen(tempColor,iPow){
-                if !isStar(tempSpend,colorCopy){
-                    addComplexKeys(tempSpend,colorCopy,-count,-icount,iPow);
-                }
-                //global.key[tempSpend] -= count;
-                scrOpenOrCopy();
-                scrBroadcastCopy(tempSpend,colorCopy);
-            }
-        }
-        if type == 1{//Zero
-            if canOpen(tempColor,iPow){
-                scrOpenOrCopy();
-                scrBroadcastCopy(tempSpend,colorCopy);
-            }
-        }
-        if type == 2{//Blast
-            if canOpen(tempColor,iPow){
-                if !isStar(tempSpend,colorCopy){
-                    if iPow == 0 || iPow == 2{//This is such a dumb bug I had to fix... Luckily combo doors don't have the same problem
-                        addComplexKeys(tempSpend,colorCopy,-getCountGlitch(tempColor,colorCopy)*abs(sign(count)),-getICountGlitch(tempColor,colorCopy)*abs(sign(icount)),0); 
-                    }else{
-                        addComplexKeys(tempSpend,colorCopy,-getCountGlitch(tempColor,colorCopy)*abs(sign(icount)),-getICountGlitch(tempColor,colorCopy)*abs(sign(count)),0);
-                    }
-                }
-                scrOpenOrCopy();
-                scrBroadcastCopy(tempSpend,colorCopy);
-            }
-        }
-        if type == 3{//Equal
-            if canOpen(tempColor,iPow){
-                if !isStar(tempSpend,colorCopy){
-                    addComplexKeys(tempSpend,colorCopy,-getCountGlitch(tempColor,colorCopy),-getICountGlitch(tempColor,colorCopy),0);
-                }
-                scrOpenOrCopy();
-                scrBroadcastCopy(tempSpend,colorCopy);
-            }
-        }
+    } else {//SPEND NORMAL KEYS
+		var rCost = 0;
+		var iCost = 0;
+		var tempIPow = iPow;
+		if (canSilverOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 2) {
+			switch objPlayer.masterMode {
+				case 1:
+				tempIPow = 0;
+				break;
+				case 2:
+				tempIPow = 1;
+				break;
+				case -1:
+				tempIPow = 2;
+				break;
+				case -2:
+				tempIPow = 3;
+				break;
+			}
+		}
+		spendTotal = 0;
+		spendITotal = 0;
+		scrAddSpendAmt(tempColor,count,icount,type,tempIPow)
+        if (canSilverOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 2) {
+			addComplexKeys(tempSpend,colorCopy,-spendTotal,-spendITotal,0);
+			addComplexKeys(key_SILVER,0,-1,0,tempIPow);
+			scrPlaySoundExt(sndMasterUnlock,1,1,false);
+			event_user(2);
+			objPlayer.masterMode = 0;
+			objPlayer.masterCycle = 0;
+			undoBUFFER();
+			scrBroadcastCopy(tempSpend,colorCopy); // should it?
+		} else if canOpen(tempColor, tempIPow) {
+			addComplexKeys(tempSpend,colorCopy,-spendTotal,-spendITotal,0);
+			scrOpenOrCopy();
+			scrBroadcastCopy(tempSpend,colorCopy);
+		}
     }
 }
 

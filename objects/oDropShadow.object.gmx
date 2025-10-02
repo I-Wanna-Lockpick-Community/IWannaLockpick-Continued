@@ -64,7 +64,7 @@ with oKeySimple{
     }
 }
 with oKeyBulk{
-    if color != key_MASTER{
+    if color != key_MASTER{ // @addcolor if weird shape
         draw_sprite_ext(sprAllKeysWhite,type,x+3,y+3,image_xscale,image_yscale,image_angle,c_black,0.35*image_alpha);
     }else{
         draw_sprite_ext(sprAllKeysWhite,type+8,x+3,y+3,image_xscale,image_yscale,image_angle,c_black,0.35*image_alpha);

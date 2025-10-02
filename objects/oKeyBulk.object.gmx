@@ -158,9 +158,7 @@ if !inf{
 }
 
 if type == 0{//Normal
-    if !isStar(color,colorCopy){
-        addComplexKeys(color,colorCopy,count,icount,0);
-    }
+    addComplexKeys(color,colorCopy,count,icount,0);
 }
 if type == 1{//Absolute
     if color != key_COPY{
@@ -262,8 +260,13 @@ if type == 7{//Negative
 }*/
 
 if !((sign(count)==-1 || sign(icount)==-1) &amp;&amp; sign(count)&lt;=0 &amp;&amp; sign(icount)&lt;=0){
-    if color != key_MASTER{
-        if type == 5 || type == 6 || type == 7{
+	// @addcolor if weird sound
+    if color == key_MASTER{
+        scrPlaySoundExt(sndMaster,1,1,false);
+    } else if color == key_SILVER{
+        scrPlaySoundExt(sndMaster,1,1,false);
+    } else {
+		if type == 5 || type == 6 || type == 7{
             scrPlaySoundExt(sndSignflip,1,1,false);
         }else if type == 4{
             scrPlaySoundExt(sndUnstar,1,1,false);
@@ -272,14 +275,14 @@ if !((sign(count)==-1 || sign(icount)==-1) &amp;&amp; sign(count)&lt;=0 &amp;&am
         }else{
             scrPlaySoundExt(sndKey,1,1,false);
         }
-    }else{
-        scrPlaySoundExt(sndMaster,1,1,false);
     }
 }else{
-    if color != key_MASTER{
+    if color == key_MASTER {
+		scrPlaySoundExt(sndMaster,1,.82,false);
+    } else if color == key_SILVER{
+        scrPlaySoundExt(sndMaster,1,.82,false);
+    } else {
         scrPlaySoundExt(sndNegative,1,1,false);
-    }else{
-        var s = scrPlaySoundExt(sndMaster,1,.82,false);
     }
 }
 useMasterCheck();
@@ -308,11 +311,7 @@ with other{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if type == 0 || type == 5 || type == 6 || type == 7{sprite_index = sprKey;}
-if type == 1{sprite_index = sprKeyAbs;}
-if type == 2{sprite_index = sprKeyOrd;}
-if type == 3{sprite_index = sprKeyStar;}
-if type == 4{sprite_index = sprKeyStar2;}
+            <string>
 if color == key_MASTER{
     if type == 0 || type == 5 || type == 6 || type == 7{sprite_index = sprKMaster;}
     if type == 1{sprite_index = sprKMasterAbs;}
@@ -320,21 +319,32 @@ if color == key_MASTER{
     if type == 3{sprite_index = sprKMasterStar;}
     if type == 4{sprite_index = sprKMasterStar2;}
     image_speed = .1;
-}
-if color == key_PURE{
+} else if color == key_PURE{
     if type == 0 || type == 5 || type == 6 || type == 7{sprite_index = sprKPure;}
     if type == 1{sprite_index = sprKPureAbs;}
     if type == 2{sprite_index = sprKPureOrd;}
     if type == 3{sprite_index = sprKPureStar;}
     if type == 4{sprite_index = sprKPureStar2;}
     image_speed = .1;
-}
-if color == key_STONE{
+} else if color == key_STONE{
     if type == 0 || type == 5 || type == 6 || type == 7{sprite_index = sprKStone;}
     if type == 1{sprite_index = sprKStoneAbs;}
     if type == 2{sprite_index = sprKStoneOrd;}
     if type == 3{sprite_index = sprKStoneStar;}
     if type == 4{sprite_index = sprKStoneStar2;}
+} else if color == key_SILVER{
+    if type == 0 || type == 5 || type == 6 || type == 7{sprite_index = sprKSilver;}
+    if type == 1{sprite_index = sprKSilver;}
+    if type == 2{sprite_index = sprKSilver;}
+    if type == 3{sprite_index = sprKSilver;}
+    if type == 4{sprite_index = sprKSilver;}
+	// @addcolor if anim or shader
+} else {
+	if type == 0 || type == 5 || type == 6 || type == 7{sprite_index = sprKey;}
+	if type == 1{sprite_index = sprKeyAbs;}
+	if type == 2{sprite_index = sprKeyOrd;}
+	if type == 3{sprite_index = sprKeyStar;}
+	if type == 4{sprite_index = sprKeyStar2;}
 }
 scrColorKey();
 
@@ -368,7 +378,7 @@ if instance_exists(oLightsW5) || instance_exists(oLightsW4) || instance_exists(o
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if color != key_MASTER &amp;&amp; color != key_PURE &amp;&amp; color != key_STONE{
+            <string>if color != key_MASTER &amp;&amp; color != key_PURE &amp;&amp; color != key_STONE &amp;&amp; color != key_SILVER{ // @addcolor if anim or shader
     if color != key_COPY{
         draw_sprite_ext(sprite_index,0,x,y,1,1,0,c_white,1);
         draw_sprite_ext(sprite_index,1,x,y,1,1,0,blend,1);

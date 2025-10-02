@@ -89,14 +89,16 @@ if global.complexMode == 0{//Real view
 
 //Now, the first big calculation is the Gold Eligibility.
 var goldEligible = 0;//0 = Don't use gold, 1 = Use gold, -1 = Use negative gold.
-if objPlayer.masterMode == 1 && global.key[key_MASTER] > 0{
-    goldEligible = 1;
-}else if objPlayer.masterMode == -1 && global.key[key_MASTER] < 0{
-    goldEligible = -1;
-}else if objPlayer.masterMode == 2 && global.ikey[key_MASTER] > 0{
-    goldEligible = 2;
-}else if objPlayer.masterMode == -2 && global.ikey[key_MASTER] < 0{
-    goldEligible = -2;
+if objPlayer.masterCycle == 1 {
+	if objPlayer.masterMode == 1 && global.key[key_MASTER] > 0{
+		goldEligible = 1;
+	}else if objPlayer.masterMode == -1 && global.key[key_MASTER] < 0{
+		goldEligible = -1;
+	}else if objPlayer.masterMode == 2 && global.ikey[key_MASTER] > 0{
+		goldEligible = 2;
+	}else if objPlayer.masterMode == -2 && global.ikey[key_MASTER] < 0{
+		goldEligible = -2;
+	}
 }
 if !browned && goldEligible != 0{
     if colorSpend == key_MASTER || colorSpend == key_PURE || ((colorCopy == key_MASTER || colorCopy == key_PURE) && browned == 0){
@@ -122,55 +124,91 @@ if !browned && dynamiteEligible {
         }
     }
 }
+var silverEligible = false;
+if objPlayer.masterCycle == 2 && objPlayer.masterMode != 0 {
+	silverEligible = true;
+}
+if !browned && silverEligible {
+    if colorSpend == key_SILVER || colorSpend == key_PURE || ((colorCopy == key_SILVER || colorCopy == key_PURE) && browned == 0){
+        silverEligible = false;
+    }
+    for(var i = 0; i < lockCount; i += 1){
+        if lock[i,0] == key_SILVER || lock[i,0] == key_PURE {
+            silverEligible = false;
+        }
+    }
+}
+
 
 //Now, check nearness to player, and house all the main code in different cases depending on gold eligibility.
 if distance_to_object(objPlayer) <= 1{
-	if dynamiteEligible {
-		scrNormalDynamiteOpen(); // i hope this works
+	if dynamiteEligible && scrNormalDynamiteOpen() {
+		// i hope this works
 		undoBUFFER();
 	} else {
 		switch goldEligible{
 			case 0://MAIN CODE
-				var metRequirement = 1;//Whether the requirement for every lock has been met
+				var metRequirement = true;//Whether the requirement for every lock has been met
 				if browned{//Brown version
 					for(var i = 0; i < lockCount; i += 1){
 						if !scrCanOpenFeed(key_BROWN,lock[i,1],lock[i,2],lock[i,3],iPow){
-							metRequirement = 0;
+							metRequirement = false;
 						}
 					}
 				}else{//Normal
 					for(var i = 0; i < lockCount; i += 1){
 						if !scrCanOpenFeed(lock[i,0],lock[i,1],lock[i,2],lock[i,3],iPow){
-							metRequirement = 0;
+							metRequirement = false;
 						}
 					}
 				}
-				
-				if metRequirement{//NEXT PHASE OF CODE
-					spendTotal = 0;//Integer part of cost
-					spendITotal = 0;
-					if browned{//Door is brown, different spend amount can result from Blast Locks
-						for(var i = 0; i < lockCount; i += 1){
-							scrAddSpendAmt(key_BROWN,lock[i,1],lock[i,2],lock[i,3],iPow);
-						}
-					}else{//Normal lock spend summation
-						for(var i = 0; i < lockCount; i += 1){
-							scrAddSpendAmt(lock[i,0],lock[i,1],lock[i,2],lock[i,3],iPow);
-						}
+				spendTotal = 0;//Integer part of cost
+				spendITotal = 0;
+				var tempIPow = iPow;
+				if (silverEligible) {
+					switch objPlayer.masterMode {
+						case 1:
+						tempIPow = 0;
+						break;
+						case 2:
+						tempIPow = 1;
+						break;
+						case -1:
+						tempIPow = 2;
+						break;
+						case -2:
+						tempIPow = 3;
+						break;
 					}
-					if !isStar(tempSpend,colorCopy){
-						addComplexKeys(tempSpend,colorCopy,spendTotal,spendITotal,0);
+				}
+				if browned{//Door is brown, different spend amount can result from Blast Locks
+					for(var i = 0; i < lockCount; i += 1){
+						scrAddSpendAmt(key_BROWN,lock[i,1],lock[i,2],lock[i,3],tempIPow);
 					}
-					//Opening a door normally always means getting it closer to 0 and "opening" normally
-					scrBroadcastCopy(tempSpend,colorCopy);
+				}else{//Normal lock spend summation
+					for(var i = 0; i < lockCount; i += 1){
+						scrAddSpendAmt(lock[i,0],lock[i,1],lock[i,2],lock[i,3],tempIPow);
+					}
+				}
+				if (silverEligible) {
+					addComplexKeys(tempSpend,colorCopy,-spendTotal,-spendITotal,0);
+					addComplexKeys(key_SILVER,0,-1,0,tempIPow);
+					scrPlaySoundExt(sndMasterUnlock,1,1,false);
+					event_user(2);
+					objPlayer.masterMode = 0;
+					objPlayer.masterCycle = 0;
+					undoBUFFER();
+					scrBroadcastCopy(tempSpend,colorCopy); // should it?
+				} else if metRequirement {
+					addComplexKeys(tempSpend,colorCopy,-spendTotal,-spendITotal,0);
 					scrOpenCombo();
+					scrBroadcastCopy(tempSpend,colorCopy);
 				}
 			break;
 			case 1://Lose a copy
 				objPlayer.masterMode = 0;
-				if !global.star[key_MASTER]{
-					addComplexKeys(key_MASTER,0,-1,0,0);
-				}
+				objPlayer.masterCycle = 0;
+				addComplexKeys(key_MASTER,0,-1,0,0);
 				copies -= 1;
 				if copies == 0 && icopies == 0{
 					scrPlaySoundExt(sndMasterUnlock,1,1,false);
@@ -194,9 +232,8 @@ if distance_to_object(objPlayer) <= 1{
 			break;
 			case -1://Gain a copy
 				objPlayer.masterMode = 0;
-				if !global.star[key_MASTER]{
-					addComplexKeys(key_MASTER,0,1,0,0);
-				}
+				objPlayer.masterCycle = 0;
+				addComplexKeys(key_MASTER,0,1,0,0);
 				copies += 1;
 				if copies == 0 && icopies == 0{
 					scrPlaySoundExt(sndMasterUnlock,1,1,false);
@@ -220,9 +257,8 @@ if distance_to_object(objPlayer) <= 1{
 			break;
 			case 2://Lose an icopy
 				objPlayer.masterMode = 0;
-				if !global.star[key_MASTER]{
-					addComplexKeys(key_MASTER,0,0,-1,0);
-				}
+				objPlayer.masterCycle = 0;
+				addComplexKeys(key_MASTER,0,0,-1,0);
 				icopies -= 1;
 				if copies == 0 && icopies == 0{
 					scrPlaySoundExt(sndMasterUnlock,1,1,false);
@@ -246,9 +282,8 @@ if distance_to_object(objPlayer) <= 1{
 			break;
 			case -2://Gain an icopy
 				objPlayer.masterMode = 0;
-				if !global.star[key_MASTER]{
-					addComplexKeys(key_MASTER,0,0,1,0);
-				}
+				objPlayer.masterCycle = 0;
+				addComplexKeys(key_MASTER,0,0,1,0);
 				icopies += 1;
 				if copies == 0 && icopies == 0{
 					scrPlaySoundExt(sndMasterUnlock,1,1,false);

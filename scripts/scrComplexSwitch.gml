@@ -15,6 +15,7 @@ with objPlayer{
             masterMode = -2;
         }else{
             masterMode = 0;
+			masterCycle = 0;
             scrPlaySoundExt(sndMasterUnequip,1,1,false);
         }
     }

@@ -166,6 +166,7 @@ if instance_exists(objPlayer){
     objPlayer.hspeed = 0;
     objPlayer.vspeed = 0;
     objPlayer.masterMode = 0;
+    objPlayer.masterCycle = 0;
     objPlayer.downDir = 0;
     objPlayer.downTime = 0;
 }else{

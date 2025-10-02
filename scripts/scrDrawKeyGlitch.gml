@@ -1,4 +1,5 @@
 if colorCopy == key_MASTER{
+	// @addcolor if anim
     //Change these in I Wanna Lockpick because the types are shifted
     if type == 0 || type == 5 || type == 6 || type == 7{//Normal
         draw_sprite(sprKMasterGlitch,0,x,y);

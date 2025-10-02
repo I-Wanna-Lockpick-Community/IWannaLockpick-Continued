@@ -29,7 +29,7 @@ global.simpleLock = ini_read_real("Visual","simpleLock",false);
 global.pauseStyle = ini_read_real("Visual","pauseStyle",0);
 
 //Colors @addcolor
-for(var i = 0; i < 15; i += 1){
+for(var i = 0; i < 16; i += 1){
     global.darkTone[i] = ini_read_real("Colors","darkTone"+string(i),-1);
     global.mainTone[i] = ini_read_real("Colors","mainTone"+string(i),-1);
     global.highTone[i] = ini_read_real("Colors","highTone"+string(i),-1);

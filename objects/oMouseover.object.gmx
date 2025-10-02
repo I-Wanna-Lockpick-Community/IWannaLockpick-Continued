@@ -67,6 +67,7 @@ colName[11] = "Pure";
 colName[12] = "Glitch";
 colName[13] = "Stone";
 colName[14] = "Dynamite";
+colName[15] = "Silver";
 //Define key type names
 keyName[0] = "";
 keyName[1] = "Exact ";
@@ -849,16 +850,12 @@ if pdaMode == 1{
     /*KEY ORGANIZATION:
     Left Column: White, Orange, Purple, Pink, Cyan, Black, Stone
     Right Column: Master, Pure, Brown, Red, Green, Blue, Glitch*/
+	// @addcolor
     for(var i = 0; i &lt; 14; i += 1){
         drawX = pdaX+20+184*(i&gt;6); drawY = pdaY+20+48*(i mod 7);
         draw_set_alpha(1);
         draw_set_color(c_white);
-        if pdaID[i] != key_MASTER &amp;&amp; pdaID[i] != key_PURE &amp;&amp; pdaID[i] != key_COPY &amp;&amp; pdaID[i] != key_STONE{//Not master key or TBD key
-            color = pdaID[i];
-            scrColorKey();
-            draw_sprite(sprKey,0,drawX,drawY);
-            draw_sprite_ext(sprKey,1,drawX,drawY,1,1,0,blend,1);
-        }else if pdaID[i] == key_MASTER{
+        if pdaID[i] == key_MASTER{
             draw_sprite(sprKMaster,floor(goldIndex),drawX,drawY);
         }else if pdaID[i] == key_PURE{
             draw_sprite(sprKPure,floor(goldIndex),drawX,drawY);
@@ -871,6 +868,14 @@ if pdaMode == 1{
             shader_reset();
         }else if pdaID[i] == key_STONE{
             draw_sprite(sprKStone,0,drawX,drawY);
+        }else if pdaID[i] == key_SILVER{
+            draw_sprite(sprKSilver,floor(goldIndex),drawX,drawY);
+			// @addcolor if anim or shader
+        } else {
+            color = pdaID[i];
+            scrColorKey();
+            draw_sprite(sprKey,0,drawX,drawY);
+            draw_sprite_ext(sprKey,1,drawX,drawY,1,1,0,blend,1);
         }
         //Star
         if global.star[pdaID[i]] == 1{

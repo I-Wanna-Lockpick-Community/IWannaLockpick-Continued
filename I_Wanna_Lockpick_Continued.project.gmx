@@ -381,6 +381,7 @@
         <sprite>sprites\sprKeyStar</sprite>
         <sprite>sprites\sprKeyStar2</sprite>
         <sprite>sprites\sprKMaster</sprite>
+        <sprite>sprites\sprKSilver</sprite>
         <sprite>sprites\sprKMasterAbs</sprite>
         <sprite>sprites\sprKMasterOrd</sprite>
         <sprite>sprites\sprKMasterStar</sprite>
@@ -396,6 +397,7 @@
         <sprite>sprites\sprKPureStar2</sprite>
         <sprite>sprites\sprKPureGlitch</sprite>
         <sprite>sprites\sprKMasterAnti</sprite>
+        <sprite>sprites\sprKSilverAnti</sprite>
         <sprite>sprites\sprW2Mural</sprite>
         <sprite>sprites\sprKWhite</sprite>
         <sprite>sprites\sprKOrange</sprite>
@@ -641,7 +643,7 @@
       <script>scripts\scrKillPlayer.gml</script>
       <script>scripts\scrFlipGrav.gml</script>
       <script>scripts\scrPlayerDownStop.gml</script>
-      <script>scripts\scrPlayerEquipMaster.gml</script>
+      <script>scripts\scrPlayerCycleMaster.gml</script>
     </scripts>
     <scripts name="world">
       <script>scripts\scrInitializeGlobals.gml</script>
@@ -719,6 +721,8 @@
       <script>scripts\drawScreenRect.gml</script>
       <script>scripts\setRoomTransitionColor.gml</script>
       <script>scripts\scrStringAddBreaks.gml</script>
+      <script>scripts\rotateR.gml</script>
+      <script>scripts\rotateI.gml</script>
     </scripts>
     <scripts name="color assignment">
       <script>scripts\scrColorKey.gml</script>
@@ -1223,6 +1227,7 @@
     </objects>
     <objects name="Key">
       <object>objects\oKeyMaster</object>
+      <object>objects\keySilver</object>
       <object>objects\oKeyWhite</object>
       <object>objects\oKeyDynamite</object>
       <object>objects\oKeyOrange</object>
@@ -1672,7 +1677,7 @@
     <constant name="ts_SIGN">1</constant>
     <constant name="ts_SYS">0</constant>
     <constant name="key_GROUP">16</constant>
-    <constant name="key_LOCKET">15</constant>
+    <constant name="key_SILVER">15</constant>
     <constant name="key_DYNAMITE">14</constant>
     <constant name="key_STONE">13</constant>
     <constant name="key_COPY">12</constant>

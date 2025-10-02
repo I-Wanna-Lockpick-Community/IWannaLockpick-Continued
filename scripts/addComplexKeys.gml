@@ -5,10 +5,10 @@
 
 var _addCol = argument0;
 var _ccheck = argument1;
-if _addCol == key_COPY{
+if _addCol == key_COPY {
     _addCol = _ccheck;
 }
-switch argument4{
+switch argument4 {
     case 0://i^0 = Multiply by 1
         var open_needR = argument2;
         var open_needI = argument3;
@@ -26,5 +26,7 @@ switch argument4{
         var open_needI = -argument2;
     break;
 }
-global.key[_addCol] += open_needR;
-global.ikey[_addCol] += open_needI;
+if !global.star[_addCol] {
+	global.key[_addCol] += open_needR;
+	global.ikey[_addCol] += open_needI;
+}
