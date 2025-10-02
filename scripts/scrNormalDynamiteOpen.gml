@@ -1,81 +1,55 @@
 ///scrNormalDynamiteOpen();
 
-var didOpen = false;
+// to determine which animation and sound(s) to play
 var openedForwards = false;
 var openedBackwards = false;
-if global.key[key_DYNAMITE] > 0{ // Positive Dynamite Spending
-    var openCount;
-	if copies > 0 {
-		openCount = min(copies, global.key[key_DYNAMITE]);
-		openedForwards = true;
-	} else {
-		openCount = global.key[key_DYNAMITE];
-		openedBackwards = true;
-	}
-	if !global.star[key_DYNAMITE] {
-        addComplexKeys(key_DYNAMITE,0,-openCount,0,0);
-    }
-    copies -= openCount;
-	didOpen = true;
-} else if global.key[key_DYNAMITE] < 0 { // Negative Dynamite Spending
-	var openCount;
-	if copies < 0 {
-		openCount = min(-copies, -global.key[key_DYNAMITE]);
-		openedForwards = true;
-	} else {
-		openCount = -global.key[key_DYNAMITE];
-		openedBackwards = true;
-	}
-    if !global.star[key_DYNAMITE]{
-        addComplexKeys(key_DYNAMITE,0,openCount,0,0);
-    }
-    copies += openCount;
-	didOpen = true;
-}
 
-if global.ikey[key_DYNAMITE] > 0{ // Positive iDynamite Spending
-    var openCount;
-	if icopies > 0 {
-		openCount = min(icopies, global.ikey[key_DYNAMITE]);
+if global.key[key_DYNAMITE] != 0 || global.ikey[key_DYNAMITE] != 0 {
+	if (sign(global.key[key_DYNAMITE]) == sign(copies) || copies == 0) && abs(global.key[key_DYNAMITE]) >= abs(copies)
+	&& (sign(global.ikey[key_DYNAMITE]) == sign(icopies) || icopies == 0) && abs(global.ikey[key_DYNAMITE]) >= abs(icopies) {
+		// if the door can open, open it
+		var openCount = sign(global.key[key_DYNAMITE]) * min(abs(copies), abs(global.key[key_DYNAMITE]));
+		copies -= openCount;
+		addComplexKeys(key_DYNAMITE,0,-openCount,0,0);
+		var iopenCount = sign(global.ikey[key_DYNAMITE]) * min(abs(icopies), abs(global.ikey[key_DYNAMITE]));
+		icopies -= iopenCount;
+		addComplexKeys(key_DYNAMITE,0,0,-iopenCount,0);
 		openedForwards = true;
 	} else {
-		openCount = global.ikey[key_DYNAMITE];
-		openedBackwards = true;
+		// otherwise, spend all keys
+		if sign(global.key[key_DYNAMITE]) == sign(copies) && copies != 0 {
+			openedForwards = true;
+			if abs(global.key[key_DYNAMITE]) > abs(copies) {
+				openedBackwards = true;
+			}
+		} else {
+			openedBackwards = true;
+		}
+		if sign(global.ikey[key_DYNAMITE]) == sign(icopies) && icopies != 0 {
+			openedForwards = true;
+			if abs(global.ikey[key_DYNAMITE]) > abs(icopies) {
+				openedBackwards = true;
+			}
+		} else {
+			openedBackwards = true;
+		}
+		copies -= global.key[key_DYNAMITE];
+		global.key[key_DYNAMITE] = 0;
+		icopies -= global.ikey[key_DYNAMITE];
+		global.ikey[key_DYNAMITE] = 0;
 	}
-	if !global.star[key_DYNAMITE] {
-        addComplexKeys(key_DYNAMITE,0,0,-openCount,0);
-    }
-    icopies -= openCount;
-	didOpen = true;
-} else if global.ikey[key_DYNAMITE] < 0 { // Negative iDynamite Spending
-	var openCount;
-	if icopies < 0 {
-		openCount = min(-icopies, -global.ikey[key_DYNAMITE]);
-		openedForwards = true;
-		
-	} else {
-		openCount = -global.ikey[key_DYNAMITE];
-		openedBackwards = true;
-	}
-    if !global.star[key_DYNAMITE] {
-        addComplexKeys(key_DYNAMITE,0,0,openCount,0);
-    }
-    icopies += openCount;
-	didOpen = true;
-}
 
-if didOpen {
 	if copies == 0 && icopies == 0 {//DESTROY OBJECT
-        visible=0;solid=0;active=0;
-        scrPlaySoundExt(sndDeltaruneExplosion,1,1,false);
-        //scrBroadcastCopy(tempSpend,colorCopy);
-        if global.salvageActive{
-            event_user(5);
-            scrSaveSalvage(global.salvageID,id);
-        } else {
-            event_user(0);
-        }
-    } else {
+		visible=0;solid=0;active=0;
+		scrPlaySoundExt(sndDeltaruneExplosion,1,1,false);
+		//scrBroadcastCopy(tempSpend,colorCopy);
+		if global.salvageActive{
+			event_user(5);
+			scrSaveSalvage(global.salvageID,id);
+		} else {
+			event_user(0);
+		}
+	} else {
 		if openedForwards {
 			scrPlaySoundExt(sndDeltaruneExplosion,1,1,false);
 			//scrBroadcastCopy(tempSpend,colorCopy);
@@ -83,7 +57,7 @@ if didOpen {
 		}
 		if openedBackwards {
 			scrPlaySoundExt(sndAntiExplode,1,1,false);
-        	if !openedForwards {
+			if !openedForwards {
 				event_user(1);
 			}
 		}
