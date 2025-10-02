@@ -39,7 +39,7 @@ global.musicLevel = 100;
 global.volumeLevel = 50;
 
 //Colors
-for(var i = 0; i < 14; i += 1){
+for(var i = 0; i < 15; i += 1){
     global.darkTone[i] = c_white;
     global.mainTone[i] = c_white;
     global.highTone[i] = c_white;

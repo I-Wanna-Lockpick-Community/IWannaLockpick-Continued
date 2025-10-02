@@ -345,8 +345,13 @@ if global.complexMode == 0{//Real view
     }
 }
 var canGoldOpen = !(tempColor == key_MASTER || tempColor == key_PURE || tempSpend == key_MASTER || tempSpend == key_PURE || ((colorCopy == key_MASTER || colorCopy == key_PURE) &amp;&amp; browned == 0));
+var canDynamiteOpen = !(tempColor == key_DYNAMITE || tempColor == key_PURE || tempSpend == key_DYNAMITE || tempSpend == key_PURE || ((colorCopy == key_DYNAMITE || colorCopy == key_PURE) &amp;&amp; browned == 0));
 if distToP &lt;= 1{
-    if (canGoldOpen) &amp;&amp; objPlayer.masterMode != 0{//SPEND MASTER KEYS
+	if (canDynamiteOpen) {
+		scrNormalDynamiteOpen();
+        undoBUFFER();
+        scrPlayerDownStop();
+	}else if (canGoldOpen) &amp;&amp; objPlayer.masterMode != 0{//SPEND MASTER KEYS
         scrNormalMasterOpen();
         undoBUFFER();
         scrPlayerDownStop();

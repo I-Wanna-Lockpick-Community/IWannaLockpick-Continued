@@ -21,8 +21,8 @@ ini_write_real("Visual","lowFX",global.lowFX);
 ini_write_real("Visual","simpleLock",global.simpleLock);
 ini_write_real("Visual","pauseStyle",global.pauseStyle);
 
-//Colorblind
-for(var i = 0; i < 14; i += 1){
+//Colorblind @addcolor
+for(var i = 0; i < 15; i += 1){
     ini_write_real("Colors","darkTone"+string(i),global.darkTone[i]);
     ini_write_real("Colors","mainTone"+string(i),global.mainTone[i]);
     ini_write_real("Colors","highTone"+string(i),global.highTone[i]);

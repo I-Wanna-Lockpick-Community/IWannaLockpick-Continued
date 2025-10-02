@@ -51,7 +51,7 @@ lockCol[0] = 0;
 lockType[0] = 0;
 lockCost[0] = 0;
 lockICost[0] = 0;
-//Define color names
+//Define color names @addcolor
 colName[0] = "Master";
 colName[1] = "White";
 colName[2] = "Orange";
@@ -66,6 +66,7 @@ colName[10] = "Brown";
 colName[11] = "Pure";
 colName[12] = "Glitch";
 colName[13] = "Stone";
+colName[14] = "Dynamite";
 //Define key type names
 keyName[0] = "";
 keyName[1] = "Exact ";

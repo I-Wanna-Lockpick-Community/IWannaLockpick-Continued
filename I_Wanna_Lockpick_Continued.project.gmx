@@ -11,6 +11,7 @@
       <sound>sound\sndJump</sound>
       <sound>sound\sndDJump</sound>
       <sound>sound\sndWallJump</sound>
+      <sound>sound\sndDeltaruneExplosion</sound>
       <sound>sound\sndShoot</sound>
       <sound>sound\sndDeath</sound>
       <sound>sound\sndItem</sound>
@@ -19,6 +20,7 @@
       <sound>sound\sndCherry</sound>
       <sound>sound\sndGlass</sound>
       <sound>sound\sndSpikeTrap</sound>
+      <sound>sound\sndAntiExplode</sound>
       <sound>sound\sndText</sound>
       <sound>sound\sndTitleStart</sound>
       <sound>sound\sndTitleCancel</sound>
@@ -406,6 +408,7 @@
         <sprite>sprites\sprKBlack</sprite>
         <sprite>sprites\sprKBrown</sprite>
         <sprite>sprites\sprKCopy</sprite>
+        <sprite>sprites\sprKDynamite</sprite>
         <sprite>sprites\sprKGray</sprite>
         <sprite>sprites\sprKInf</sprite>
         <sprite>sprites\sprKSwap</sprite>
@@ -889,6 +892,7 @@
       <script>scripts\getMarkOutColor.gml</script>
     </scripts>
     <script>scripts\scrSpeedUpAnims.gml</script>
+    <script>scripts\scrNormalDynamiteOpen.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shdRainbowStripe.shader</shader>
@@ -1220,6 +1224,7 @@
     <objects name="Key">
       <object>objects\oKeyMaster</object>
       <object>objects\oKeyWhite</object>
+      <object>objects\oKeyDynamite</object>
       <object>objects\oKeyOrange</object>
       <object>objects\oKeyPurple</object>
       <object>objects\oKeyPink</object>
@@ -1668,7 +1673,7 @@
     <constant name="ts_SYS">0</constant>
     <constant name="key_GROUP">16</constant>
     <constant name="key_LOCKET">15</constant>
-    <constant name="key_VOID">14</constant>
+    <constant name="key_DYNAMITE">14</constant>
     <constant name="key_STONE">13</constant>
     <constant name="key_COPY">12</constant>
     <constant name="key_PURE">11</constant>

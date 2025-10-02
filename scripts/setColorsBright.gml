@@ -58,6 +58,11 @@ global.darkTone[12] = make_color_rgb(220,110,0);
 global.highTone[13] = make_color_rgb(150,160,165);
 global.mainTone[13] = make_color_rgb(100,115,120);
 global.darkTone[13] = make_color_rgb(60,75,80);
+//Dynamite
+global.highTone[14] = make_color_rgb(209,136,102);
+global.mainTone[14] = make_color_rgb(211,71,40);
+global.darkTone[14] = make_color_rgb(122,49,23);
+// @addcolor
 
 //Options menu
 with oOptionHandle{

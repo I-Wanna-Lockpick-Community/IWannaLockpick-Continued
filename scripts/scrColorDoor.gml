@@ -1,7 +1,7 @@
 if browned{
-    c1 = global.highTone[10];
-    c2 = global.mainTone[10];
-    c3 = global.darkTone[10];
+    c1 = global.highTone[key_BROWN];
+    c2 = global.mainTone[key_BROWN];
+    c3 = global.darkTone[key_BROWN];
 }else{
     c1 = global.highTone[color];
     c2 = global.mainTone[color];
