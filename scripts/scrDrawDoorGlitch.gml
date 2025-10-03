@@ -10,6 +10,9 @@ if argument0{//Draw the spend (back) sprite
     }else if glitchMimic == color_STONE{
         _gSprite = sprDoorGlitchStone;
         c4 = c_white;c5 = c_white;c6 = c_white;
+    }else if glitchMimic == color_DYNAMITE{
+        _gSprite = sprDoorGlitchDyna;
+        c4 = c_white;c5 = c_white;c6 = c_white;
     }else{//Flat color door
         _gSprite = sprDoorGlitch;
         scrColorDoorArg(glitchMimic);
@@ -41,6 +44,9 @@ if argument0{//Draw the spend (back) sprite
         c1 = c_white;c2 = c_white;c3 = c_white;
     }else if glitchMimic == color_STONE{
         _gSprite = sprDoorGlitchStone;
+        c1 = c_white;c2 = c_white;c3 = c_white;
+    }else if glitchMimic == color_DYNAMITE{
+        _gSprite = sprDoorGlitchDyna;
         c1 = c_white;c2 = c_white;c3 = c_white;
         // @addcolor if door image/animation
     }else{//Flat color door

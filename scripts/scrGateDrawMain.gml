@@ -3,6 +3,7 @@
 
 //PRELIM
 goldIndex = (goldIndex + goldSpd) mod 4;
+dynaIndex = (dynaIndex + goldSpd) mod 12;
 
 //FILL
 for(var ix = 0; ix < w; ix += 1){

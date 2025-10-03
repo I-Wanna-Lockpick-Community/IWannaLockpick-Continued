@@ -31,6 +31,17 @@ if glitchMimic == color_MASTER{
     }else{//Unstar
         draw_sprite(sprKStoneGlitch,3,x,y);
     }
+}else if glitchMimic == color_DYNAMITE{
+    //Change these in I Wanna Lockpick because the types are shifted
+    if type == 0 || type == 5 || type == 6 || type == 7{//Normal
+        draw_sprite(sprKDynaGlitch,0,x,y);
+    }else if type == 1{//Exact
+        draw_sprite(sprKDynaGlitch,1,x,y);
+    }else if type == 3{//Star
+        draw_sprite(sprKDynaGlitch,2,x,y);
+    }else{//Unstar
+        draw_sprite(sprKDynaGlitch,3,x,y);
+    }
     // @addcolor if key image/animation
 }else{//Normal keys
     var _cstored = color;

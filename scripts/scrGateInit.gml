@@ -9,6 +9,7 @@ w = 1;
 h = 1;
 
 goldIndex = 0;
+dynaIndex = 0;
 goldSpd = .1;
 
 image_speed = 0;
