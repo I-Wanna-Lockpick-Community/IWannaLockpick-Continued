@@ -29,11 +29,6 @@ if (saveMap2 != -1)  //check if the save map loaded correctly
         global.areaReached[i] = ds_map_find_value(saveMap2,"areaReached["+string(i)+"]");
     }
     
-    for (var i = 0; i < 20; i++)
-    {
-        global.seenKeyColor[i] = ds_map_find_value(saveMap2,"seenKeyColor["+string(i)+"]");
-    }
-    
     for (var i = 0; i < 100; i++)
     {
         global.roomClear[i+250] = ds_map_find_value(saveMap2,"saveRoomClear["+string(i)+"]");
@@ -69,12 +64,7 @@ if (saveMap2 != -1)  //check if the save map loaded correctly
     {
         global.convoRead[i] = ds_map_find_value(saveMap2,"convoRead["+string(i)+"]");
     }
-    
-    for (var i = 0; i < 30; i++)
-    {
-        global.randomVar[i] = ds_map_find_value(saveMap2,"randomVar["+string(i)+"]");
-    }
-    
+
     for (var i = 0; i < 350; i++)
     {
         var _vrs = ds_map_find_value(saveMap2,"roomSeen["+string(i)+"]");

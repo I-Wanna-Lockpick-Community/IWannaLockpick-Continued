@@ -11,10 +11,6 @@ for(var i = 0; i < 50; i+=1){
     ds_map_add(saveMap2,"areaReached["+string(i)+"]",global.areaReached[i]);
 }
 
-for(var i = 0; i < 20; i+=1){
-    ds_map_add(saveMap2,"seenKeyColor["+string(i)+"]",global.seenKeyColor[i]);
-}
-
 for(var i = 0; i < 100; i+=1){
     ds_map_add(saveMap2,"saveRoomClear["+string(i)+"]",global.roomClear[i+250]);
 }
@@ -42,10 +38,6 @@ for(var i = 0; i < 100; i+=1){
 
 for(var i = 0; i < 100; i+=1){
     ds_map_add(saveMap2,"convoRead["+string(i)+"]",global.convoRead[i]);
-}
-
-for(var i = 0; i < 30; i+=1){
-    ds_map_add(saveMap2,"randomVar["+string(i)+"]",global.randomVar[i]);
 }
 
 for(var i = 0; i < 350; i+=1){

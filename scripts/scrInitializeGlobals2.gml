@@ -11,10 +11,6 @@ for(var i = 0; i < 50; i += 1){//Useful for the warp rod
 }
 global.curArea = 0;//Current area (for warp rod purposes)
 
-for(var i = 0; i < 20; i += 1){//I used to have more key colors planned but I had to downscope
-    global.seenKeyColor[i] = 0;
-}
-
 for(var i = 250; i < 350; i+=1){//Juuuust in case
     global.roomClear[i] = 0;
 }
@@ -45,10 +41,6 @@ global.kinaHeart = 0;//Whether you've solved the Kinapuzzle
 for(var i = 0; i < 100; i+=1){//Tracking conversations
     global.convoUnlocked[i] = 0;
     global.convoRead[i] = 0;
-}
-
-for(var i = 0; i < 30; i+=1){//Other variables
-    global.randomVar[i] = 0;
 }
 
 //Pencilmark

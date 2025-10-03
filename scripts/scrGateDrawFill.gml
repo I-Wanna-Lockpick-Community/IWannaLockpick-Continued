@@ -31,7 +31,9 @@ for(var i = 0; i < lockCount; i += 1){
             draw_sprite_ext(lock[i,6],6,x+lock[i,4],y+lock[i,5],1,1,0,c_white,1);
         }else if colorCopy != key_COPY{
             draw_sprite_ext(lock[i,6],3,x+lock[i,4],y+lock[i,5],1,1,0,scrGetLockColor(lock[i,0]),1);
+			// @addcolor if door image/animation
         }
+		// @addcolor if door image/animation
     }else{
         draw_sprite_ext(lock[i,6],2,x+lock[i,4],y+lock[i,5],1,1,0,scrGetLockColor(lock[i,0]),1);
     }

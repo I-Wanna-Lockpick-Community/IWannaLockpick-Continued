@@ -27,7 +27,7 @@ global.roomTransitionColor = make_color_rgb(32,32,96);
 
 //KeyPick Variables
 global.complexMode = 0;
-for(var i = 0; i < 16; i+=1){
+for(var i = 0; i < 14; i+=1){ // @addcolor
     global.key[i] = 0;
     global.ikey[i] = 0;//For the ordinal keys/doors mechanic
     global.star[i] = 0;//For the star mechanic

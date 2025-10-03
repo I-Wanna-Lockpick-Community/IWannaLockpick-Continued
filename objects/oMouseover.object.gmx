@@ -68,6 +68,7 @@ colName[12] = "Glitch";
 colName[13] = "Stone";
 colName[14] = "Dynamite";
 colName[15] = "Silver";
+// @addcolor
 //Define key type names
 keyName[0] = "";
 keyName[1] = "Exact ";
@@ -120,6 +121,7 @@ pdaID[10] = key_RED;
 pdaID[11] = key_GREEN;
 pdaID[12] = key_BLUE;
 pdaID[13] = key_COPY;
+// @addcolor (TODO::FIX PDA)
 //Jokes
 numJokes = 15;
 curJoke = irandom(numJokes);
@@ -850,8 +852,7 @@ if pdaMode == 1{
     /*KEY ORGANIZATION:
     Left Column: White, Orange, Purple, Pink, Cyan, Black, Stone
     Right Column: Master, Pure, Brown, Red, Green, Blue, Glitch*/
-	// @addcolor
-    for(var i = 0; i &lt; 14; i += 1){
+    for(var i = 0; i &lt; 14; i += 1){ // @addcolor (TODO::FIX PDA)
         drawX = pdaX+20+184*(i&gt;6); drawY = pdaY+20+48*(i mod 7);
         draw_set_alpha(1);
         draw_set_color(c_white);
@@ -870,7 +871,7 @@ if pdaMode == 1{
             draw_sprite(sprKStone,0,drawX,drawY);
         }else if pdaID[i] == key_SILVER{
             draw_sprite(sprKSilver,floor(goldIndex),drawX,drawY);
-			// @addcolor if anim or shader
+			// @addcolor if key image/animation
         } else {
             color = pdaID[i];
             scrColorKey();

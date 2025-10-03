@@ -42,6 +42,7 @@ if argument0{//Draw the spend (back) sprite
     }else if colorCopy == key_STONE{
         _gSprite = sprDoorGlitchStone;
         c1 = c_white;c2 = c_white;c3 = c_white;
+		// @addcolor if door image/animation
     }else{//Flat color door
         _gSprite = sprDoorGlitch;
         scrColorDoorArg(colorCopy);

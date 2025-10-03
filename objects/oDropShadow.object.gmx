@@ -57,17 +57,19 @@ with objBlock{
     }
 }
 with oKeySimple{
-    if color != 0{
-        draw_sprite_ext(sprite_index,2,x+3,y+3,image_xscale,image_yscale,image_angle,c_black,0.35*image_alpha);
+    if color == key_MASTER{
+		draw_sprite_ext(sprite_index,floor(image_index),x+3,y+3,image_xscale,image_yscale,image_angle,c_black,0.35*image_alpha);
+        // @addcolor if nonstandard key shape
     }else{
-        draw_sprite_ext(sprite_index,floor(image_index),x+3,y+3,image_xscale,image_yscale,image_angle,c_black,0.35*image_alpha);
+		draw_sprite_ext(sprite_index,2,x+3,y+3,image_xscale,image_yscale,image_angle,c_black,0.35*image_alpha);
     }
 }
 with oKeyBulk{
-    if color != key_MASTER{ // @addcolor if weird shape
-        draw_sprite_ext(sprAllKeysWhite,type,x+3,y+3,image_xscale,image_yscale,image_angle,c_black,0.35*image_alpha);
+    if color == key_MASTER{
+		draw_sprite_ext(sprAllKeysWhite,type+8,x+3,y+3,image_xscale,image_yscale,image_angle,c_black,0.35*image_alpha);
+		// @addcolor if nonstandard key shape
     }else{
-        draw_sprite_ext(sprAllKeysWhite,type+8,x+3,y+3,image_xscale,image_yscale,image_angle,c_black,0.35*image_alpha);
+        draw_sprite_ext(sprAllKeysWhite,type,x+3,y+3,image_xscale,image_yscale,image_angle,c_black,0.35*image_alpha);
     }
 }
 with objPlayerKiller{

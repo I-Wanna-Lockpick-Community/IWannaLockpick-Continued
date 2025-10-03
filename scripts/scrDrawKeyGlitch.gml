@@ -32,6 +32,7 @@ if colorCopy == key_MASTER{
     }else{//Unstar
         draw_sprite(sprKStoneGlitch,3,x,y);
     }
+	// @addcolor if key image/animation
 }else{//Normal keys
     var _cstored = color;
     color = colorCopy;

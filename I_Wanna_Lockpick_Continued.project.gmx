@@ -658,7 +658,6 @@
         <script>scripts\scrSavePart2.gml</script>
         <script>scripts\scrLoadGame.gml</script>
         <script>scripts\scrLoadPart2.gml</script>
-        <script>scripts\scrInitP2FileUnused.gml</script>
         <script>scripts\scrGlobalsFromPart1.gml</script>
         <script>scripts\scrResetAllControls.gml</script>
       </scripts>
