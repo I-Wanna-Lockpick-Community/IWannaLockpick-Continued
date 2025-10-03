@@ -1069,10 +1069,10 @@ if masterMode &gt;= 1{
     draw_sprite_ext(sprPlayerShine,0,x,y,masterDrawScale,masterDrawScale,0,make_color_rgb(180,180,50),1);
     draw_set_blend_mode(bm_normal);
     if masterCycle == 1 {
-draw_sprite_ext(sprKMaster,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
-} else if masterCycle == 2 {
-draw_sprite_ext(sprKSilver,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
-}
+        draw_sprite_ext(sprKMaster,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+    } else if masterCycle == 2 {
+        draw_sprite_ext(sprKSilver,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+    }
 }
 if masterMode &lt;= -1{
     draw_set_blend_mode(bm_add);
@@ -1080,11 +1080,11 @@ if masterMode &lt;= -1{
     masterDrawScale = 0.8 + 0.2 * sin(degtorad(masterDrawAngle));
     draw_sprite_ext(sprPlayerShine,0,x,y,masterDrawScale,masterDrawScale,0,make_color_rgb(50,50,180),1);
     draw_set_blend_mode(bm_normal);
-if masterCycle == 1 {
-draw_sprite_ext(sprKMasterAnti,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
-} else if masterCycle == 2 {
-draw_sprite_ext(sprKSilverAnti,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
-}
+    if masterCycle == 1 {
+        draw_sprite_ext(sprKMasterAnti,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+    } else if masterCycle == 2 {
+        draw_sprite_ext(sprKSilverAnti,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+    }
 }
 //Imaginary View Text
 if global.complexMode{

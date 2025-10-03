@@ -198,8 +198,8 @@ if size &gt;= 1{
                 draw_sprite(sprKStone,0,x-4,drawY-4);
             } else if show[i] == key_SILVER {
                 draw_sprite(sprKSilver,floor(goldIndex),x-4,drawY-4);
-            // @addcolor if anim or shader
-} else {
+                // @addcolor if anim or shader
+            } else {
                 color = show[i];
                 scrColorKey();
                 draw_sprite(sprKey,0,x-4,drawY-4);
