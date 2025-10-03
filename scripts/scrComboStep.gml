@@ -115,7 +115,7 @@ if global.key[key_DYNAMITE] != 0 || global.ikey[key_DYNAMITE] != 0 {
 	dynamiteEligible = true;
 }
 if !browned && dynamiteEligible {
-    if colorSpend == key_DYNAMITE || colorSpend == key_PURE || ((colorCopy == key_DYNAMITE || colorCopy == key_PURE) && browned == 0){
+    if colorSpend == key_DYNAMITE || colorSpend == key_PURE || ((colorGlitch == key_DYNAMITE || colorGlitch == key_PURE) && browned == 0){
         dynamiteEligible = false;
     }
     for(var i = 0; i < lockCount; i += 1){
@@ -129,7 +129,7 @@ if objPlayer.masterCycle == 2 && objPlayer.masterMode != 0 {
 	silverEligible = true;
 }
 if !browned && silverEligible {
-    if colorSpend == key_SILVER || colorSpend == key_PURE || ((colorCopy == key_SILVER || colorCopy == key_PURE) && browned == 0){
+    if colorSpend == key_SILVER || colorSpend == key_PURE || ((colorGlitch == key_SILVER || colorGlitch == key_PURE) && browned == 0){
         silverEligible = false;
     }
     for(var i = 0; i < lockCount; i += 1){
@@ -191,18 +191,18 @@ if distance_to_object(objPlayer) <= 1{
 					}
 				}
 				if (silverEligible) {
-					addComplexKeys(tempSpend,colorCopy,-spendTotal,-spendITotal,0);
+					addComplexKeys(tempSpend,colorGlitch,-spendTotal,-spendITotal,0);
 					addComplexKeys(key_SILVER,0,-1,0,tempIPow);
 					scrPlaySoundExt(sndMasterUnlock,1,1,false);
 					event_user(2);
 					objPlayer.masterMode = 0;
 					objPlayer.masterCycle = 0;
 					undoBUFFER();
-					scrBroadcastCopy(tempSpend,colorCopy); // should it?
+					scrBroadcastCopy(tempSpend,colorGlitch); // should it?
 				} else if metRequirement {
-					addComplexKeys(tempSpend,colorCopy,-spendTotal,-spendITotal,0);
+					addComplexKeys(tempSpend,colorGlitch,-spendTotal,-spendITotal,0);
 					scrOpenCombo();
-					scrBroadcastCopy(tempSpend,colorCopy);
+					scrBroadcastCopy(tempSpend,colorGlitch);
 				}
 			break;
 			case 1://Lose a copy
@@ -212,7 +212,7 @@ if distance_to_object(objPlayer) <= 1{
 				copies -= 1;
 				if copies == 0 && icopies == 0{
 					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					//scrBroadcastCopy(tempSpend,colorCopy);
+					//scrBroadcastCopy(tempSpend,colorGlitch);
 					if global.salvageActive{
 						event_user(5);
 						scrSaveSalvage(global.salvageID,id);
@@ -222,7 +222,7 @@ if distance_to_object(objPlayer) <= 1{
 					solid = 0; visible = 0; active = 0;
 				}else if copies >= 0{
 					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					//scrBroadcastCopy(tempSpend,colorCopy);
+					//scrBroadcastCopy(tempSpend,colorGlitch);
 					event_user(2);
 				}else{
 					scrPlaySoundExt(sndMasterRelock,1,1,false);
@@ -237,7 +237,7 @@ if distance_to_object(objPlayer) <= 1{
 				copies += 1;
 				if copies == 0 && icopies == 0{
 					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					//scrBroadcastCopy(tempSpend,colorCopy);
+					//scrBroadcastCopy(tempSpend,colorGlitch);
 					if global.salvageActive{
 						event_user(5);
 						scrSaveSalvage(global.salvageID,id);
@@ -247,7 +247,7 @@ if distance_to_object(objPlayer) <= 1{
 					solid = 0; visible = 0; active = 0;
 				}else if copies <= 0{
 					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					//scrBroadcastCopy(tempSpend,colorCopy);
+					//scrBroadcastCopy(tempSpend,colorGlitch);
 					event_user(2);
 				}else{
 					scrPlaySoundExt(sndMasterRelock,1,1,false);
@@ -262,7 +262,7 @@ if distance_to_object(objPlayer) <= 1{
 				icopies -= 1;
 				if copies == 0 && icopies == 0{
 					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					//scrBroadcastCopy(tempSpend,colorCopy);
+					//scrBroadcastCopy(tempSpend,colorGlitch);
 					if global.salvageActive{
 						event_user(5);
 						scrSaveSalvage(global.salvageID,id);
@@ -272,7 +272,7 @@ if distance_to_object(objPlayer) <= 1{
 					visible=0;solid=0;active=0;
 				}else if icopies >= 0{//Still has + icopies or 0 and real copies
 					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					//scrBroadcastCopy(tempSpend,colorCopy);
+					//scrBroadcastCopy(tempSpend,colorGlitch);
 					event_user(2);
 				}else{//(Now) has negative icopies
 					scrPlaySoundExt(sndMasterRelock,1,1,false);
@@ -287,7 +287,7 @@ if distance_to_object(objPlayer) <= 1{
 				icopies += 1;
 				if copies == 0 && icopies == 0{
 					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					//scrBroadcastCopy(tempSpend,colorCopy);
+					//scrBroadcastCopy(tempSpend,colorGlitch);
 					if global.salvageActive{
 						event_user(5);
 						scrSaveSalvage(global.salvageID,id);
@@ -297,7 +297,7 @@ if distance_to_object(objPlayer) <= 1{
 					visible=0;solid=0;active=0;
 				}else if icopies <= 0{//Still has - icopies or 0 and real copies
 					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					//scrBroadcastCopy(tempSpend,colorCopy);
+					//scrBroadcastCopy(tempSpend,colorGlitch);
 					event_user(2);
 				}else{//(Now) has positive icopies
 					scrPlaySoundExt(sndMasterRelock,1,1,false);

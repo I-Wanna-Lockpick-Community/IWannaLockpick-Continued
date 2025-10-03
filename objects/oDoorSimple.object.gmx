@@ -344,9 +344,9 @@ if global.complexMode == 0{//Real view
         if copies &lt; 0{iPow = 2;}
     }
 }
-var canGoldOpen = !(tempColor == key_MASTER || tempColor == key_PURE || tempSpend == key_MASTER || tempSpend == key_PURE || ((colorCopy == key_MASTER || colorCopy == key_PURE) &amp;&amp; browned == 0));
-var canSilverOpen = !(tempColor == key_SILVER || tempColor == key_PURE || tempSpend == key_SILVER || tempSpend == key_PURE || ((colorCopy == key_SILVER || colorCopy == key_PURE) &amp;&amp; browned == 0));
-var canDynamiteOpen = !(tempColor == key_DYNAMITE || tempColor == key_PURE || tempSpend == key_DYNAMITE || tempSpend == key_PURE || ((colorCopy == key_DYNAMITE || colorCopy == key_PURE) &amp;&amp; browned == 0));
+var canGoldOpen = !(tempColor == key_MASTER || tempColor == key_PURE || tempSpend == key_MASTER || tempSpend == key_PURE || ((colorGlitch == key_MASTER || colorGlitch == key_PURE) &amp;&amp; browned == 0));
+var canSilverOpen = !(tempColor == key_SILVER || tempColor == key_PURE || tempSpend == key_SILVER || tempSpend == key_PURE || ((colorGlitch == key_SILVER || colorGlitch == key_PURE) &amp;&amp; browned == 0));
+var canDynamiteOpen = !(tempColor == key_DYNAMITE || tempColor == key_PURE || tempSpend == key_DYNAMITE || tempSpend == key_PURE || ((colorGlitch == key_DYNAMITE || colorGlitch == key_PURE) &amp;&amp; browned == 0));
 if distToP &lt;= 1 {
 	if (canDynamiteOpen &amp;&amp; scrNormalDynamiteOpen()) {
         undoBUFFER();
@@ -378,18 +378,18 @@ if distToP &lt;= 1 {
 		spendITotal = 0;
 		scrAddSpendAmt(tempColor,count,icount,type,tempIPow)
         if (canSilverOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 2) {
-			addComplexKeys(tempSpend,colorCopy,-spendTotal,-spendITotal,0);
+			addComplexKeys(tempSpend,colorGlitch,-spendTotal,-spendITotal,0);
 			addComplexKeys(key_SILVER,0,-1,0,tempIPow);
 			scrPlaySoundExt(sndMasterUnlock,1,1,false);
 			event_user(2);
 			objPlayer.masterMode = 0;
 			objPlayer.masterCycle = 0;
 			undoBUFFER();
-			scrBroadcastCopy(tempSpend,colorCopy); // should it?
+			scrBroadcastCopy(tempSpend,colorGlitch); // should it?
 		} else if canOpen(tempColor, tempIPow) {
-			addComplexKeys(tempSpend,colorCopy,-spendTotal,-spendITotal,0);
+			addComplexKeys(tempSpend,colorGlitch,-spendTotal,-spendITotal,0);
 			scrOpenOrCopy();
-			scrBroadcastCopy(tempSpend,colorCopy);
+			scrBroadcastCopy(tempSpend,colorGlitch);
 		}
     }
 }

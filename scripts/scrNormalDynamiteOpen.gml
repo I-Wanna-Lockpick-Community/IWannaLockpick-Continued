@@ -44,7 +44,7 @@ if (sign(global.key[key_DYNAMITE]) == sign(copies) || copies == 0) && abs(global
 if copies == 0 && icopies == 0 {//DESTROY OBJECT
 	visible=0;solid=0;active=0;
 	scrPlaySoundExt(sndDeltaruneExplosion,1,1,false);
-	//scrBroadcastCopy(tempSpend,colorCopy);
+	//scrBroadcastCopy(tempSpend,colorGlitch);
 	if global.salvageActive{
 		event_user(5);
 		scrSaveSalvage(global.salvageID,id);
@@ -54,7 +54,7 @@ if copies == 0 && icopies == 0 {//DESTROY OBJECT
 } else {
 	if openedForwards {
 		scrPlaySoundExt(sndDeltaruneExplosion,1,1,false);
-		//scrBroadcastCopy(tempSpend,colorCopy);
+		//scrBroadcastCopy(tempSpend,colorGlitch);
 		event_user(2);
 	}
 	if openedBackwards {
