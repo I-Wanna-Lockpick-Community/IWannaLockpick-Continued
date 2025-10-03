@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>color = key_FOREST;
+            <string>color = color_FOREST;
 event_inherited();
 </string>
           </argument>

@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>color = key_DYNAMITE;
+            <string>color = color_DYNAMITE;
 event_inherited();
 </string>
           </argument>

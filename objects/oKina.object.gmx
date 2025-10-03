@@ -138,8 +138,8 @@ showArrow = 0;
 color = color_MASTER;
 colorSpend = color_MASTER;
 iPow = 0;
-tempColor = color;
-tempSpend = colorSpend;
+effectiveColor = color;
+effectiveColorSpend = colorSpend;
 
 //Copy animation variables
 copyState = 0;//0 = Nothing happening, 1 = Adding copy, 2 = Removing copy
@@ -496,11 +496,11 @@ switch copyState{
 if instance_exists(objPlayer) &amp;&amp; active &amp;&amp; copyState == 0{
     distToP = distance_to_object(objPlayer);
     if browned{
-        tempColor = color_BROWN;
-        tempSpend = color_BROWN;
+        effectiveColor = color_BROWN;
+        effectiveColorSpend = color_BROWN;
     }else{
-        tempColor = color;
-        tempSpend = colorSpend;
+        effectiveColor = color;
+        effectiveColorSpend = colorSpend;
     }
     if objPlayer.brownMode != 0{
         if distToP &lt;= 23{
@@ -526,7 +526,7 @@ if instance_exists(objPlayer) &amp;&amp; active &amp;&amp; copyState == 0{
         }
     }
     
-    var canGoldOpen = !(tempColor == color_MASTER || tempColor == color_PURE || tempSpend == color_MASTER || tempSpend == color_PURE);
+    var canGoldOpen = !(effectiveColor == color_MASTER || effectiveColor == color_PURE || effectiveColorSpend == color_MASTER || effectiveColorSpend == color_PURE);
     if distToP &lt;= 1{
         if (canGoldOpen) &amp;&amp; objPlayer.masterMode != 0 {//SPEND MASTER KEYS
             scrKinaMasterOpen();

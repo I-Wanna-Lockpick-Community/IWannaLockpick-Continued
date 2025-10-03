@@ -139,7 +139,7 @@ background_alpha[2] = .8;*/</code>
     <instance objName="oLevel" x="528" y="512" name="inst_FE8F79BE" locked="0" code="isWorld = 1;&#xA;ID = 0;&#xA;rm = rHub01;&#xA;label = &quot;World 1&quot;;&#xA;name = &quot;Doorhaven&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDropShadow" x="576" y="384" name="inst_D937A744" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLSBeams" x="576" y="416" name="inst_4411F5CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyHandle" x="1088" y="320" name="inst_ED80F948" locked="0" code="//stone = 1;&#xA;show[0] = key_STONE;&#xA;long = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyHandle" x="1088" y="320" name="inst_ED80F948" locked="0" code="//stone = 1;&#xA;show[0] = color_STONE;&#xA;long = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="992" y="384" name="inst_08905E64" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLevel" x="1168" y="512" name="inst_1559E2AB" locked="0" code="isWorld = 1;&#xA;ID = 1;&#xA;rm = rHub02;&#xA;label = &quot;World 2&quot;;&#xA;name = &quot;Rainy Vista&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLevel" x="448" y="224" name="inst_A579A57F" locked="0" code="isWorld = 1;&#xA;ID = 2;&#xA;rm = rHub03;&#xA;label = &quot;World 3&quot;;&#xA;name = &quot;The Infrastructure&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -221,7 +221,7 @@ background_alpha[2] = .8;*/</code>
     <instance objName="objBlock" x="288" y="608" name="inst_EEBFF1DD" locked="0" code="" scaleX="2" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="352" y="608" name="inst_FDBCBB22" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="352" y="800" name="inst_40B0F61E" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="976" y="704" name="inst_EA2DC684" locked="0" code="h=2;colorSpend=key_BROWN;copies=0;icopies=1;&#xA;scrComboAdd(key_BROWN,1,0,0,0,0,sprLockAny);&#xA;scrComboAdd(key_BROWN,-1,0,0,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="976" y="704" name="inst_EA2DC684" locked="0" code="h=2;colorSpend=color_BROWN;copies=0;icopies=1;&#xA;scrComboAdd(color_BROWN,1,0,0,0,0,sprLockAny);&#xA;scrComboAdd(color_BROWN,-1,0,0,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="1088" y="800" name="inst_00800578" locked="0" code="count=0;icount=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="864" y="800" name="inst_1D30A6FE" locked="0" code="count=0;icount=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="640" y="800" name="inst_7E299190" locked="0" code="count=0;icount=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -231,8 +231,8 @@ background_alpha[2] = .8;*/</code>
     <instance objName="oSalvageOut" x="1104" y="800" name="inst_D365D388" locked="0" code="ID = 28;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oCameraTrg" x="1232" y="480" name="inst_56994BF1" locked="0" code="xmin = 320;&#xA;xmax = 480;&#xA;ymin = 0;&#xA;ymax = 0;" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oCameraTrg" x="1296" y="512" name="inst_0BA54353" locked="0" code="xmin = 192;&#xA;xmax = 608;&#xA;ymin = 352;&#xA;ymax = 352;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="752" y="704" name="inst_8CAA0200" locked="0" code="h=2;colorSpend=key_BROWN;copies=0;icopies=1;&#xA;scrComboAdd(key_BROWN,1,0,0,0,0,sprLockAny);&#xA;scrComboAdd(key_BROWN,-1,0,0,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="528" y="704" name="inst_0762564E" locked="0" code="h=2;colorSpend=key_BROWN;copies=0;icopies=1;&#xA;scrComboAdd(key_BROWN,1,0,0,0,0,sprLockAny);&#xA;scrComboAdd(key_BROWN,-1,0,0,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="752" y="704" name="inst_8CAA0200" locked="0" code="h=2;colorSpend=color_BROWN;copies=0;icopies=1;&#xA;scrComboAdd(color_BROWN,1,0,0,0,0,sprLockAny);&#xA;scrComboAdd(color_BROWN,-1,0,0,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="528" y="704" name="inst_0762564E" locked="0" code="h=2;colorSpend=color_BROWN;copies=0;icopies=1;&#xA;scrComboAdd(color_BROWN,1,0,0,0,0,sprLockAny);&#xA;scrComboAdd(color_BROWN,-1,0,0,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1280" y="512" name="inst_61846FCC" locked="0" code="if global.omegaPerk[0] || global.allUnlock{instance_destroy();}" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1312" y="544" name="inst_62908B35" locked="0" code="if global.omegaPerk[0] || global.allUnlock{instance_destroy();}" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oCameraTrg" x="480" y="192" name="inst_B19BE5DD" locked="0" code="xmin = 320;&#xA;xmax = 480;&#xA;ymin = 0;&#xA;ymax = 0;" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>

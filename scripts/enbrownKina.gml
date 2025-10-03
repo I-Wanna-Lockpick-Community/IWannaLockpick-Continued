@@ -24,9 +24,9 @@ if objPlayer.brownMode == 1 && browned == 0 && !(color == color_BROWN && colorSp
 }
 
 if browned{
-    tempColor = color_BROWN;
-    tempSpend = color_BROWN;
+    effectiveColor = color_BROWN;
+    effectiveColorSpend = color_BROWN;
 }else{
-    tempColor = color;
-    tempSpend = colorSpend;
+    effectiveColor = color;
+    effectiveColorSpend = colorSpend;
 }

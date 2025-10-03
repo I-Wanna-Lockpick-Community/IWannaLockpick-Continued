@@ -1,6 +1,6 @@
 //TODO: Add Stone glitch lock sprites and draw code
 //Main body fill
-var tempColor = colorSpend;
+var effectiveColor = colorSpend;
 if browned{
     colorSpend = color_BROWN;
     scrComboCFunc();
@@ -66,7 +66,7 @@ if colorSpend == color_MASTER{
         shader_reset();
     }
 }
-//For Copy Doors, draw an extra part
+//For glitch Doors, draw an extra part
 if colorSpend == color_GLITCH && glitchMimic != color_GLITCH{
     var _gSprite;
     if glitchMimic == color_MASTER{
@@ -123,13 +123,13 @@ if colorSpend == color_GLITCH && glitchMimic != color_GLITCH{
     draw_sprite_part_ext(_gSprite,2,0,48,16,16,x,y+32*h-16,1,1,c[2],1);
     draw_sprite_part_ext(_gSprite,2,48,48,16,16,x+32*w-16,y+32*h-16,1,1,c[2],1);
     //Reset colors...
-    colorSpend = tempColor;
+    colorSpend = effectiveColor;
     scrComboCFunc();
 }
 //SPEND FILL DRAWING ALL DONE!
 //Reset colors if browned
 if browned{
-    colorSpend = tempColor;
+    colorSpend = effectiveColor;
     scrComboCFunc();
 }
 //Individual Lock Fills

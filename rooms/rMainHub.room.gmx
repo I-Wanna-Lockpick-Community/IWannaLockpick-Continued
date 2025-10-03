@@ -54,7 +54,7 @@ global.msg = "";</code>
   <instances>
     <instance objName="objPlayerStart" x="224" y="448" name="inst_6DC82D36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDropShadow" x="96" y="160" name="inst_1269EA68" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyHandle" x="96" y="96" name="inst_BC6B6836" locked="0" code="show[0] = key_DYNAMITE;&#xA;show[1] = key_SILVER;&#xA;show[2] = key_MASTER;&#xA;show[3] = key_WHITE;&#xA;show[4] = key_ORANGE;&#xA;show[5] = key_CYAN;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyHandle" x="96" y="96" name="inst_BC6B6836" locked="0" code="show[0] = color_DYNAMITE;&#xA;show[1] = color_SILVER;&#xA;show[2] = color_MASTER;&#xA;show[3] = color_WHITE;&#xA;show[4] = color_ORANGE;&#xA;show[5] = color_CYAN;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="192" y="480" name="inst_E8B3572D" locked="0" code="" scaleX="17" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyDynamite" x="384" y="416" name="inst_CB1B15BF" locked="0" code="count=10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="480" y="448" name="inst_B96751FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -71,17 +71,17 @@ global.msg = "";</code>
     <instance objName="oKeyDynamite" x="320" y="384" name="inst_5CCB1B2B" locked="0" code="count=0;icount=10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyDynamite" x="352" y="384" name="inst_3BFAFB80" locked="0" code="count=0;icount=-10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyDynamite" x="384" y="384" name="inst_E94197A4" locked="0" code="count=0;icount=-10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="512" y="288" name="inst_F6E626E9" locked="0" code="w=2;colorSpend = key_ORANGE;&#xA;scrComboAdd(key_ORANGE,0,1,0,0,0,sprLockAny);&#xA;scrComboAdd(key_ORANGE,0,-1,0,32,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="512" y="288" name="inst_F6E626E9" locked="0" code="w=2;colorSpend = color_ORANGE;&#xA;scrComboAdd(color_ORANGE,0,1,0,0,0,sprLockAny);&#xA;scrComboAdd(color_ORANGE,0,-1,0,32,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="192" y="416" name="inst_9C862D93" locked="0" code="count = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="keySilver" x="224" y="384" name="inst_2B1150F9" locked="0" code="count=-5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="keySilver" x="224" y="416" name="inst_84B42524" locked="0" code="count=5;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="576" y="288" name="inst_8873D98F" locked="0" code="w=2;colorSpend = key_ORANGE;&#xA;scrComboAdd(key_ORANGE,2,0,0,0,0,sprLock2V);&#xA;scrComboAdd(key_ORANGE,-1,0,0,32,0,sprLock1A);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="576" y="288" name="inst_8873D98F" locked="0" code="w=2;colorSpend = color_ORANGE;&#xA;scrComboAdd(color_ORANGE,2,0,0,0,0,sprLock2V);&#xA;scrComboAdd(color_ORANGE,-1,0,0,32,0,sprLock1A);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="512" y="320" name="inst_7E8D4CAC" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="192" y="320" name="inst_3B568559" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaroon" x="256" y="256" name="inst_31C2E7B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyForest" x="288" y="256" name="inst_AFA2D861" locked="0" code="count = 5&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyNavy" x="320" y="256" name="inst_8D2945ED" locked="0" code="count = 3&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyHandle" x="356" y="10" name="inst_8C483397" locked="0" code="show[0] = key_MAROON;&#xA;show[1] = key_FOREST;&#xA;show[2] = key_NAVY;&#xA;show[3] = key_RED;&#xA;show[4] = key_GREEN;&#xA;show[5] = key_BLUE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyHandle" x="356" y="10" name="inst_8C483397" locked="0" code="show[0] = color_MAROON;&#xA;show[1] = color_FOREST;&#xA;show[2] = color_NAVY;&#xA;show[3] = color_RED;&#xA;show[4] = color_GREEN;&#xA;show[5] = color_BLUE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyRed" x="576" y="160" name="inst_449F5AC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyRed" x="608" y="160" name="inst_645C28D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGreen" x="544" y="160" name="inst_FC4A0663" locked="0" code="count = 5&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

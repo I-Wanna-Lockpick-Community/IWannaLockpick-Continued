@@ -1,6 +1,6 @@
 //TODO: Add Stone glitch lock sprites and draw code
 //Main body fill
-var tempColor = colorSpend;
+var effectiveColor = colorSpend;
 if colorSpend == color_MASTER{
     draw_sprite_ext(sprDGoldGrad,floor(goldIndex),salDX,salDY,salW/2,salH/2,0,c_white,1);
 }else if colorSpend == color_PURE{
@@ -40,7 +40,7 @@ if colorSpend == color_MASTER{
         shader_reset();
     }
 }
-//For Copy Doors, draw an extra part
+//For glitch Doors, draw an extra part
 if colorSpend == color_GLITCH && glitchMimic != color_GLITCH{
     var _gSprite;
     if glitchMimic == color_MASTER{
@@ -97,7 +97,7 @@ if colorSpend == color_GLITCH && glitchMimic != color_GLITCH{
     draw_sprite_part_ext(_gSprite,2,0,48,16,16,salDX,salDY+32*salH-16,1,1,c6,1);
     draw_sprite_part_ext(_gSprite,2,48,48,16,16,salDX+32*salW-16,salDY+32*salH-16,1,1,c6,1);
     //Reset colors...
-    colorSpend = tempColor;
+    colorSpend = effectiveColor;
     scrComboCFunc();
 }
 //SPEND FILL DRAWING ALL DONE!

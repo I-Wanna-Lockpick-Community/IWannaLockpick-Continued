@@ -275,7 +275,7 @@ if browned{
     effectiveColor = color;
     effectiveColorSpend = colorSpend;
 }
-canChangeBrowned = browned || (color != color_PURE &amp;&amp; colorSpend != color_PURE &amp;&amp; colorGlitch != color_PURE);
+canChangeBrowned = browned || (color != color_PURE &amp;&amp; colorSpend != color_PURE &amp;&amp; glitchMimic != color_PURE);
 if aura[0] != 0 || aura[1] != 0 || aura[2] != 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || objPlayer.aura[2] == -1{
     if distToP &lt;= 23{
         removeAuras();
@@ -324,9 +324,9 @@ if global.complexMode == 0{//Real view
         if copies &lt; 0{iPow = 2;}
     }
 }
-var canGoldOpen = !(tempColor == color_MASTER || tempColor == color_PURE || tempSpend == color_MASTER || tempSpend == color_PURE || ((colorGlitch == color_MASTER || colorGlitch == color_PURE) &amp;&amp; browned == 0));
-var canSilverOpen = !(tempColor == color_SILVER || tempColor == color_PURE || tempSpend == color_SILVER || tempSpend == color_PURE || ((colorGlitch == color_SILVER || colorGlitch == color_PURE) &amp;&amp; browned == 0));
-var canDynamiteOpen = !(tempColor == color_DYNAMITE || tempColor == color_PURE || tempSpend == color_DYNAMITE || tempSpend == color_PURE || ((colorGlitch == color_DYNAMITE || colorGlitch == color_PURE) &amp;&amp; browned == 0));
+var canGoldOpen = !(effectiveColor == color_MASTER || effectiveColor == color_PURE || effectiveColorSpend == color_MASTER || effectiveColorSpend == color_PURE || ((glitchMimic == color_MASTER || glitchMimic == color_PURE) &amp;&amp; browned == 0));
+var canSilverOpen = !(effectiveColor == color_SILVER || effectiveColor == color_PURE || effectiveColorSpend == color_SILVER || effectiveColorSpend == color_PURE || ((glitchMimic == color_SILVER || glitchMimic == color_PURE) &amp;&amp; browned == 0));
+var canDynamiteOpen = !(effectiveColor == color_DYNAMITE || effectiveColor == color_PURE || effectiveColorSpend == color_DYNAMITE || effectiveColorSpend == color_PURE || ((glitchMimic == color_DYNAMITE || glitchMimic == color_PURE) &amp;&amp; browned == 0));
 if distToP &lt;= 1 {
     if (canDynamiteOpen &amp;&amp; scrNormalDynamiteOpen()) {
         undoBUFFER();
@@ -348,20 +348,20 @@ if distToP &lt;= 1 {
         }
         spendTotal = 0;
         spendITotal = 0;
-        scrAddSpendAmt(tempColor,count,icount,type,tempIPow)
+        scrAddSpendAmt(effectiveColor,count,icount,type,tempIPow)
         if (canSilverOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 2) {
-            addComplexKeys(tempSpend,colorGlitch,-spendTotal,-spendITotal,0);
+            addComplexKeys(effectiveColorSpend,glitchMimic,-spendTotal,-spendITotal,0);
             addComplexKeys(color_SILVER,0,-1,0,tempIPow);
             scrPlaySoundExt(sndMasterUnlock,1,1,false);
             event_user(2);
             objPlayer.masterMode = 0;
             objPlayer.masterCycle = 0;
             undoBUFFER();
-            scrBroadcastCopy(tempSpend,colorGlitch); // should it?
-        } else if canOpen(tempColor, tempIPow) {
-            addComplexKeys(tempSpend,colorGlitch,-spendTotal,-spendITotal,0);
+            scrBroadcastCopy(effectiveColorSpend,glitchMimic); // should it?
+        } else if canOpen(effectiveColor, tempIPow) {
+            addComplexKeys(effectiveColorSpend,glitchMimic,-spendTotal,-spendITotal,0);
             scrOpenOrCopy();
-            scrBroadcastCopy(tempSpend,colorGlitch);
+            scrBroadcastCopy(effectiveColorSpend,glitchMimic);
         }
     }
 }
