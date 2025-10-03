@@ -53,7 +53,7 @@ global.msg = "So, how was your return trip to Doorhaven? I hope it was a nice bl
   </views>
   <instances>
     <instance objName="objPlayerStart" x="368" y="448" name="inst_3211EC11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyHandle" x="64" y="32" name="inst_452E516F" locked="0" code="show[0] = key_MASTER;&#xA;show[1] = key_BROWN;&#xA;show[2] = key_WHITE;&#xA;show[3] = key_GREEN;&#xA;show[4] = key_PURPLE;&#xA;show[5] = key_BLACK;&#xA;show[6] = key_COPY;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyHandle" x="64" y="32" name="inst_452E516F" locked="0" code="show[0] = key_MASTER;&#xA;show[1] = key_BROWN;&#xA;show[2] = key_WHITE;&#xA;show[3] = key_GREEN;&#xA;show[4] = key_PURPLE;&#xA;show[5] = key_BLACK;&#xA;show[6] = key_GLITCH;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDropShadow" x="272" y="512" name="inst_D491A64C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oNewCamera" x="224" y="512" name="inst_4AE4B540" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBGW12" x="256" y="512" name="inst_50C0CA7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -65,10 +65,10 @@ global.msg = "So, how was your return trip to Doorhaven? I hope it was a nice bl
     <instance objName="oKeyBrown" x="288" y="448" name="inst_7E9F7814" locked="0" code="inf = 1; count = 0; type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBrown" x="256" y="416" name="inst_81B1BBFD" locked="0" code="inf = 1; count = 1; type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBrown" x="224" y="416" name="inst_141D1ADE" locked="0" code="inf = 1; count = -1; type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="96" y="384" name="inst_DD2989CE" locked="0" code="colorSpend=key_COPY;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="96" y="384" name="inst_DD2989CE" locked="0" code="colorSpend=key_GLITCH;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="64" y="320" name="inst_12BA323E" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="96" y="416" name="inst_D1B11203" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="96" y="448" name="inst_AB8ADCBC" locked="0" code="colorSpend=key_COPY;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="96" y="448" name="inst_AB8ADCBC" locked="0" code="colorSpend=key_GLITCH;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="416" y="384" name="inst_D9D0C487" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="480" y="480" name="inst_344949D2" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="704" y="320" name="inst_06AEFF58" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
@@ -87,8 +87,8 @@ global.msg = "So, how was your return trip to Doorhaven? I hope it was a nice bl
     <instance objName="oKeyGreen" x="576" y="144" name="inst_FB9A220C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPurple" x="544" y="144" name="inst_882E8ED6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlack" x="512" y="144" name="inst_843839F7" locked="0" code="count = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="480" y="144" name="inst_CC1080A1" locked="0" code="count = -8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="448" y="128" name="inst_955141FF" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="480" y="144" name="inst_CC1080A1" locked="0" code="count = -8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="448" y="128" name="inst_955141FF" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="448" y="192" name="inst_30DB918E" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="704" y="96" name="inst_E2FC1618" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="352" y="96" name="inst_FF3EC0FA" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
@@ -97,7 +97,7 @@ global.msg = "So, how was your return trip to Doorhaven? I hope it was a nice bl
     <instance objName="oDoorWhite" x="512" y="320" name="inst_DF63BA5C" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="608" y="320" name="inst_5773DAFC" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="416" y="448" name="inst_14A2C0D6" locked="0" code="scrComboAdd(key_BROWN,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="416" y="64" name="inst_F7C6BFA1" locked="0" code="count = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="416" y="64" name="inst_F7C6BFA1" locked="0" code="count = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="448" y="64" name="inst_978A2242" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="480" y="64" name="inst_79ED0923" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPurple" x="512" y="64" name="inst_C4C80261" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -119,8 +119,8 @@ global.msg = "So, how was your return trip to Doorhaven? I hope it was a nice bl
     <instance objName="oGoal" x="656" y="48" name="inst_670BE011" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="192" y="352" name="inst_271604BC" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="256" y="320" name="inst_F64033A8" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="96" y="320" name="inst_65B2365B" locked="0" code="colorSpend=key_COPY;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="224" y="320" name="inst_2320BF34" locked="0" code="colorSpend=key_COPY;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="96" y="320" name="inst_65B2365B" locked="0" code="colorSpend=key_GLITCH;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="224" y="320" name="inst_2320BF34" locked="0" code="colorSpend=key_GLITCH;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="480" y="0" name="inst_6E291F82" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="416" y="96" name="inst_88367B85" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="704" y="32" name="inst_B9EA70AE" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
@@ -132,18 +132,18 @@ global.msg = "So, how was your return trip to Doorhaven? I hope it was a nice bl
     <instance objName="objBlock" x="192" y="128" name="inst_8497371D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="288" y="128" name="inst_D1F34131" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="288" y="32" name="inst_CA7EBBA4" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorSimple" x="192" y="64" name="inst_E8AD800E" locked="0" code="type = 3; color = key_COPY; colorSpend = key_WHITE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorSimple" x="192" y="64" name="inst_E8AD800E" locked="0" code="type = 3; color = key_GLITCH; colorSpend = key_WHITE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="192" y="32" name="inst_A983C2FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="352" y="224" name="inst_5358A43C" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="224" y="32" name="inst_CA333C58" locked="0" code="count = -5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="256" y="32" name="inst_03826DF7" locked="0" code="count = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="224" y="32" name="inst_CA333C58" locked="0" code="count = -5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="256" y="32" name="inst_03826DF7" locked="0" code="count = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="224" y="192" name="inst_01187108" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="320" y="224" name="inst_F7D952D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="224" y="224" name="inst_4AC00351" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="224" y="128" name="inst_B18E893A" locked="0" code="count = -7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="256" y="128" name="inst_446D6B4F" locked="0" code="count = -3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="256" y="224" name="inst_9955B6C6" locked="0" code="count = -6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="288" y="224" name="inst_3BFE5923" locked="0" code="count = -4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="224" y="128" name="inst_B18E893A" locked="0" code="count = -7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="256" y="128" name="inst_446D6B4F" locked="0" code="count = -3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="256" y="224" name="inst_9955B6C6" locked="0" code="count = -6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="288" y="224" name="inst_3BFE5923" locked="0" code="count = -4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles3" x="384" y="320" w="32" h="32" xo="96" yo="96" id="10103240" name="inst_E4377F43" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

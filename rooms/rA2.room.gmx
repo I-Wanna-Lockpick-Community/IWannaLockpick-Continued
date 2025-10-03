@@ -91,7 +91,7 @@ global.msg = "When it comes to aura-based keys (Red, Green, Blue, Brown), nothin
     <instance objName="oDoorRed" x="640" y="224" name="inst_42612C8E" locked="0" code="w=2;h=2;count=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyCyan" x="704" y="256" name="inst_08303F26" locked="0" code="count=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlue" x="272" y="48" name="inst_8C5B6900" locked="0" code="count = 8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="656" y="48" name="inst_E6648E81" locked="0" code="count = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="656" y="48" name="inst_E6648E81" locked="0" code="count = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles2" x="0" y="0" w="32" h="32" xo="32" yo="96" id="10073206" name="inst_F4399E8B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

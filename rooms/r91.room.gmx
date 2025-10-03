@@ -102,8 +102,8 @@ global.msg = "As you'd expect, Glitch Doors exist as well. Just like with the ke
     <instance objName="oDoorCyan" x="448" y="416" name="inst_263394D6" locked="0" code="w=2;h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPurple" x="384" y="448" name="inst_FFEEE5DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPurple" x="352" y="448" name="inst_B392EE60" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="416" y="448" name="inst_54A46381" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="480" y="288" name="inst_CA8BC879" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="416" y="448" name="inst_54A46381" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="480" y="288" name="inst_CA8BC879" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCyan" x="640" y="160" name="inst_CF73EE2B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCyan" x="640" y="64" name="inst_8B6B2F2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyOrange" x="576" y="288" name="inst_23A5E2BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -111,7 +111,7 @@ global.msg = "As you'd expect, Glitch Doors exist as well. Just like with the ke
     <instance objName="oKeyOrange" x="448" y="288" name="inst_3B670C9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyOrange" x="416" y="352" name="inst_5D157CCC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPurple" x="512" y="288" name="inst_9316FD19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="480" y="352" name="inst_68F4CCE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="480" y="352" name="inst_68F4CCE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oW10Glass" x="96" y="0" name="inst_4AB60211" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oW10Glass" x="96" y="128" name="inst_618BECAD" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oW10Glass" x="288" y="32" name="inst_1C8B3A2E" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>

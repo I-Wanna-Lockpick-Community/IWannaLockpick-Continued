@@ -114,7 +114,7 @@ global.msg = "So, we only needed 3 Omega Keys to enter this area, right? Do you 
     <instance objName="oDoorWhite" x="672" y="128" name="inst_A8FED426" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="400" y="320" name="inst_FF029230" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="416" y="128" name="inst_47FDE34A" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="720" y="48" name="inst_7165FC63" locked="0" code="count=0;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="720" y="48" name="inst_7165FC63" locked="0" code="count=0;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="432" y="224" name="inst_68195CA6" locked="0" code="w=2;h=2;count=6;color=key_WHITE;colorSpend=key_PURPLE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="480" y="128" name="inst_D19711BB" locked="0" code="w=2;h=2;count=20;color=key_PINK;colorSpend=key_PURPLE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="672" y="224" name="inst_887E1F74" locked="0" code="w=2;h=2;count=-8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

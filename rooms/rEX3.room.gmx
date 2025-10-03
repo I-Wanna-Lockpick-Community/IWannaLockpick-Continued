@@ -67,10 +67,10 @@ global.msg = "Uh oh! Looks like Glitch Doors are getting reintroduced to the mix
     <instance objName="oGoal" x="688" y="432" name="inst_77E4030A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="192" y="320" name="inst_AB761FAB" locked="0" code="w=2;h=2;count=15;color=key_PURE;colorSpend=key_CYAN;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="272" y="432" name="inst_A2E329BE" locked="0" code="count=15;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="640" y="320" name="inst_3FF35213" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="640" y="320" name="inst_3FF35213" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyOrange" x="560" y="432" name="inst_2948EC5F" locked="0" code="count=-40;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="576" y="128" name="inst_77D4B73F" locked="0" code="w=2;h=2;count=-20;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="576" y="320" name="inst_D04D072E" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="576" y="320" name="inst_D04D072E" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCyan" x="512" y="416" name="inst_5557D28D" locked="0" code="h=2;count=-3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="480" y="384" name="inst_888ACD2F" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="384" name="inst_BD4694D3" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
@@ -93,7 +93,7 @@ global.msg = "Uh oh! Looks like Glitch Doors are getting reintroduced to the mix
     <instance objName="objBlock" x="96" y="320" name="inst_63A5A2C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="224" name="inst_44900101" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="96" y="224" name="inst_7821727D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="640" y="128" name="inst_2B51AE09" locked="0" code="w=2;h=2;count=-8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="640" y="128" name="inst_2B51AE09" locked="0" code="w=2;h=2;count=-8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="544" y="320" name="inst_93C06598" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="704" y="128" name="inst_1A9EDFCD" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="736" y="160" name="inst_A58EE2F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -103,8 +103,8 @@ global.msg = "Uh oh! Looks like Glitch Doors are getting reintroduced to the mix
     <instance objName="objBlock" x="736" y="352" name="inst_B70DE117" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="608" y="224" name="inst_1C015D15" locked="0" code="w=2;h=2;count=-20;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="192" y="224" name="inst_A5D48D91" locked="0" code="h=2;colorSpend=key_CYAN;&#xA;scrComboAdd(key_CYAN,-1,0,0,0,0,sprLock1A);&#xA;scrComboAdd(key_PURE,1,0,0,0,32,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="544" y="352" name="inst_F10C695B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="672" y="256" name="inst_F6F1906A" locked="0" code="type=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="544" y="352" name="inst_F10C695B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="672" y="256" name="inst_F6F1906A" locked="0" code="type=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bTileEX" x="160" y="480" w="32" h="32" xo="64" yo="32" id="10109753" name="inst_34D90F43" depth="-11" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

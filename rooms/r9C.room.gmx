@@ -95,8 +95,8 @@ global.msg = "Two giant doors, a Star Master Key, three Signflips, and a giant c
     <instance objName="oKeyBrown" x="128" y="320" name="inst_3D281473" locked="0" code="count=20;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBrown" x="160" y="320" name="inst_FD4F2AD0" locked="0" code="count=20;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBrown" x="192" y="320" name="inst_DB809710" locked="0" code="count=20;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="176" y="144" name="inst_A6038978" locked="0" code="type=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="112" y="144" name="inst_C966FB13" locked="0" code="type=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="176" y="144" name="inst_A6038978" locked="0" code="type=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="112" y="144" name="inst_C966FB13" locked="0" code="type=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlue" x="144" y="144" name="inst_6C6DC8D0" locked="0" code="type=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="560" y="432" name="inst_348F5FF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="480" y="416" name="inst_9594FF4E" locked="0" code="w=2;h=2;colorSpend=2;&#xA;scrComboAdd(8,0,0,1,0,0,sprLockAny);&#xA;scrComboAdd(6,0,0,1,0,32,sprLockAny);&#xA;scrComboAdd(11,0,0,1,32,16,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -5,8 +5,8 @@ if colorSpend == key_MASTER{
     draw_sprite_ext(sprDPureGrad,floor(goldIndex),salDX,salDY,salW*.5,salH*.5,0,c_white,1);
 }else if colorSpend == key_STONE{
     draw_sprite_ext(sprDStoneTexture,0,salDX,salDY,salW*.5,salH*.5,0,c_white,1);
-}else if colorSpend == key_COPY{
-    scrColorDoorArg(key_COPY);
+}else if colorSpend == key_GLITCH{
+    scrColorDoorArg(key_GLITCH);
     shader_set(shdRainbowStripe2);
     
     //Edges

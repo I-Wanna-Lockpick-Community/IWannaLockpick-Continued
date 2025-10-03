@@ -53,7 +53,7 @@ global.msg = "Gates are quite a tricky thing to think about. Not only do you hav
   </views>
   <instances>
     <instance objName="objPlayerStart" x="208" y="448" name="inst_3211EC11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyHandle" x="96" y="64" name="inst_452E516F" locked="0" code="show[0] = key_WHITE;&#xA;show[1] = key_ORANGE;&#xA;show[2] = key_PURPLE;&#xA;show[3] = key_BLACK;&#xA;show[4] = key_CYAN;&#xA;show[5] = key_COPY;&#xA;long = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyHandle" x="96" y="64" name="inst_452E516F" locked="0" code="show[0] = key_WHITE;&#xA;show[1] = key_ORANGE;&#xA;show[2] = key_PURPLE;&#xA;show[3] = key_BLACK;&#xA;show[4] = key_CYAN;&#xA;show[5] = key_GLITCH;&#xA;long = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDropShadow" x="80" y="416" name="inst_D491A64C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oNewCamera" x="0" y="16" name="inst_4AE4B540" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBGW12" x="96" y="416" name="inst_50C0CA7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -78,7 +78,7 @@ global.msg = "Gates are quite a tricky thing to think about. Not only do you hav
     <instance objName="oKeyCyan" x="688" y="240" name="inst_C75AC63C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyCyan" x="688" y="144" name="inst_45A7677A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyCyan" x="688" y="432" name="inst_0114ADC8" locked="0" code="count = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="64" y="352" name="inst_A3EACD32" locked="0" code="type = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="64" y="352" name="inst_A3EACD32" locked="0" code="type = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="640" y="144" name="inst_73FB5410" locked="0" code="count = -29;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="96" y="320" name="inst_C2A41AF1" locked="0" code="colorSpend = key_WHITE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="160" y="320" name="inst_994D23BB" locked="0" code="colorSpend = key_PURPLE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -96,19 +96,19 @@ global.msg = "Gates are quite a tricky thing to think about. Not only do you hav
     <instance objName="objBlock" x="64" y="128" name="inst_06D9FB7C" locked="0" code="" scaleX="6" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="256" y="128" name="inst_7BA3E8FC" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="256" y="448" name="inst_06FD9639" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="384" y="288" name="inst_6E01E6A7" locked="0" code="count = -8;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="416" y="160" name="inst_3A7897ED" locked="0" code="count = 0; icount = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="384" y="288" name="inst_6E01E6A7" locked="0" code="count = -8;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="416" y="160" name="inst_3A7897ED" locked="0" code="count = 0; icount = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCyan" x="128" y="416" name="inst_C025FE22" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="384" y="416" name="inst_29D889EC" locked="0" code="count=-4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="448" y="416" name="inst_830693A0" locked="0" code="count = 10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="352" y="288" name="inst_A6161906" locked="0" code="count = -4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="352" y="288" name="inst_A6161906" locked="0" code="count = -4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="352" y="160" name="inst_F861638B" locked="0" code="count = -8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="416" y="288" name="inst_EBCFF01A" locked="0" code="count = 8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPurple" x="352" y="416" name="inst_F4CE3A3D" locked="0" code="type = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyOrange" x="448" y="288" name="inst_C394FD8E" locked="0" code="count = 50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="640" y="320" name="inst_756C4A87" locked="0" code="h=2;colorSpend=key_PURPLE;&#xA;scrComboAdd(key_PURPLE,1,0,2,0,16,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="640" y="416" name="inst_04DD97FA" locked="0" code="h=2;colorSpend=key_BLACK;&#xA;scrComboAdd(key_PURPLE,-1,0,2,0,16,sprLockAny);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="416" y="416" name="inst_C6268663" locked="0" code="type = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="416" y="416" name="inst_C6268663" locked="0" code="type = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyOrange" x="384" y="160" name="inst_CE0FF7E5" locked="0" code="count = 8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlack" x="448" y="160" name="inst_5061BFE9" locked="0" code="count = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>

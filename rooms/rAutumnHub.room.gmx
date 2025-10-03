@@ -109,7 +109,7 @@ if global.omegaPerk[0] || global.allUnlock{
     <instance objName="oLevel" x="288" y="-64" name="inst_C518BD8D" locked="0" code="//Omega-Unlocker&#xA;omega = 1;&#xA;ID = 155;&#xA;rm = rBO1;&#xA;label = &quot;Strange Page&quot;&#xA;name = &quot;Algorithm&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="544" y="448" name="inst_B0389C67" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="512" y="320" name="inst_58F0B1E1" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="736" y="224" name="inst_82319D1F" locked="0" code="type = 3;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="736" y="224" name="inst_82319D1F" locked="0" code="type = 3;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="864" y="352" name="inst_2893A1B6" locked="0" code="" scaleX="1" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="832" y="416" name="inst_45F429C2" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="800" y="480" name="inst_D35EE2B6" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
@@ -201,7 +201,7 @@ if global.omegaPerk[0] || global.allUnlock{
     <instance objName="oBGAutumn" x="416" y="384" name="inst_E0F98D36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLevel" x="176" y="480" name="inst_57FF1DC1" locked="0" code="ID = 141;&#xA;rm = rB6;&#xA;label = &quot;Page 7&quot;&#xA;name = &quot;Get a High Score..?&quot;;&#xA;require[0] = 141;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPink" x="1168" y="688" name="inst_D76DF337" locked="0" code="count=-4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="1392" y="160" name="inst_EDBE2E9E" locked="0" code="w=2;h=2;count=-8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="1392" y="160" name="inst_EDBE2E9E" locked="0" code="w=2;h=2;count=-8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlack" x="1360" y="192" name="inst_AFADD8CF" locked="0" code="count=-1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlack" x="1360" y="160" name="inst_07C1665E" locked="0" code="count=-1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlack" x="1360" y="128" name="inst_4CD65A2D" locked="0" code="count=-1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

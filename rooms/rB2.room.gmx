@@ -97,7 +97,7 @@ global.msg = "Perhaps this one is called 'Tunnel Vision' because of the four tun
     <instance objName="oDoorRed" x="600" y="224" name="inst_F5521560" locked="0" code="h=2;type=1;aura[1]=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorRed" x="328" y="416" name="inst_58B316BC" locked="0" code="h=2;count=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorRed" x="408" y="320" name="inst_FDE0B267" locked="0" code="h=2;type=1;aura[0]=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="504" y="160" name="inst_F7F02C74" locked="0" code="type=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="504" y="160" name="inst_F7F02C74" locked="0" code="type=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="592" y="320" name="inst_60F8C81A" locked="0" code="h=2;type=1;aura[0]=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="504" y="224" name="inst_F85F31BF" locked="0" code="h=2;count=-2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="496" y="320" name="inst_06B9BFEA" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

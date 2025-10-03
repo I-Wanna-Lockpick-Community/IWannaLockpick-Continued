@@ -16,7 +16,7 @@ lock[0,0] = 0;//Left = index, right = attribute
 
 invertBorder = 0;
 colorSpend = 0;
-colorCopy = 12;//For copy doors
+colorGlitch = 12;//For copy doors
 iPow = 0;
 
 copies = 1;

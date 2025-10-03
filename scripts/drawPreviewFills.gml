@@ -8,7 +8,7 @@ if colorSpend == key_MASTER{
 }else if colorSpend == key_STONE{
     draw_sprite_ext(sprDStoneTexture,0,salDX,salDY,salW*.5,salH*.5,0,c_white,1);
 }else{
-    if colorSpend == key_COPY{
+    if colorSpend == key_GLITCH{
         shader_set(shdRainbowStripe2);
     }
     //Corner Fills
@@ -36,25 +36,25 @@ if colorSpend == key_MASTER{
     draw_sprite_part_ext(sprDoorBig,2,48,48,16,16,salDX+32*salW-16,salDY+32*salH-16,1,1,c5,1);
     draw_sprite_part_ext(sprDoorBig,3,0,48,16,16,salDX,salDY+32*salH-16,1,1,c6,1);
     draw_sprite_part_ext(sprDoorBig,3,48,48,16,16,salDX+32*salW-16,salDY+32*salH-16,1,1,c6,1);
-    if colorSpend == key_COPY{
+    if colorSpend == key_GLITCH{
         shader_reset();
     }
 }
 //For Copy Doors, draw an extra part
-if colorSpend == key_COPY && colorCopy != key_COPY{
+if colorSpend == key_GLITCH && colorGlitch != key_GLITCH{
     var _gSprite;
-    if colorCopy == key_MASTER{
+    if colorGlitch == key_MASTER{
         _gSprite = sprDoorGlitchGold;
         c4 = c_white;c5 = c_white;c6 = c_white;
-    }else if colorCopy == key_PURE{
+    }else if colorGlitch == key_PURE{
         _gSprite = sprDoorGlitchPure;
         c4 = c_white;c5 = c_white;c6 = c_white;
-    }else if colorCopy == key_STONE{
+    }else if colorGlitch == key_STONE{
         _gSprite = sprDoorGlitchStone;
         c4 = c_white;c5 = c_white;c6 = c_white;
     }else{//Flat color door
         _gSprite = sprDoorGlitch;
-        colorSpend = colorCopy;
+        colorSpend = colorGlitch;
         scrColorDoor2();
     }
     //Now the fun stuff.
@@ -125,17 +125,17 @@ for(var i = 0; i < salvageLockCount; i += 1){
         var tempX = salDX+lock[i,4]-sprite_get_xoffset(lock[i,6]);
         var tempY = salDY+lock[i,5]-sprite_get_yoffset(lock[i,6]);
         draw_sprite_ext(sprDStoneTexture,0,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
-    }else if lock[i,0] == key_COPY{
+    }else if lock[i,0] == key_GLITCH{
         shader_set(shdRainbowStripe2);
         draw_sprite_ext(lock[i,6],2,salDX+lock[i,4],salDY+lock[i,5],1,1,0,make_color_rgb(180,150,0),1);
         shader_reset();
-        if colorCopy == key_MASTER{
+        if colorGlitch == key_MASTER{
             draw_sprite_ext(lock[i,6],4,salDX+lock[i,4],salDY+lock[i,5],1,1,0,c_white,1);
-        }else if colorCopy == key_PURE{
+        }else if colorGlitch == key_PURE{
             draw_sprite_ext(lock[i,6],5,salDX+lock[i,4],salDY+lock[i,5],1,1,0,c_white,1);
-        }else if colorCopy == key_STONE{
+        }else if colorGlitch == key_STONE{
             draw_sprite_ext(lock[i,6],6,salDX+lock[i,4],salDY+lock[i,5],1,1,0,c_white,1);
-        }else if colorCopy != key_COPY{
+        }else if colorGlitch != key_GLITCH{
             draw_sprite_ext(lock[i,6],3,salDX+lock[i,4],salDY+lock[i,5],1,1,0,scrGetLockColor(lock[i,0]),1);
         }
     }else{

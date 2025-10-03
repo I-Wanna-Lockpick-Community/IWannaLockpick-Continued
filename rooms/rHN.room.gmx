@@ -76,11 +76,11 @@ global.msg = "";</code>
     <instance objName="objBlock" x="288" y="192" name="inst_910BE5DF" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="160" y="320" name="inst_EFD079DE" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="192" y="352" name="inst_0CD9DE3C" locked="0" code="colorSpend=key_RED;copies=99;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="288" y="160" name="inst_B802B647" locked="0" code="scrComboAdd(key_COPY,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="352" y="96" name="inst_1017065F" locked="0" code="h=2;colorSpend=key_PINK;copies=99;&#xA;scrComboAdd(key_COPY,0,0,1,0,0,sprLockAny);&#xA;scrComboAdd(key_CYAN,-1,0,2,0,32,sprLockAny);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="384" y="96" name="inst_A45817AD" locked="0" code="h=2;colorSpend=key_GREEN;copies=99;&#xA;scrComboAdd(key_COPY,0,0,1,0,0,sprLockAny);&#xA;scrComboAdd(key_CYAN,-1,0,2,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="288" y="160" name="inst_B802B647" locked="0" code="scrComboAdd(key_GLITCH,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="352" y="96" name="inst_1017065F" locked="0" code="h=2;colorSpend=key_PINK;copies=99;&#xA;scrComboAdd(key_GLITCH,0,0,1,0,0,sprLockAny);&#xA;scrComboAdd(key_CYAN,-1,0,2,0,32,sprLockAny);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="384" y="96" name="inst_A45817AD" locked="0" code="h=2;colorSpend=key_GREEN;copies=99;&#xA;scrComboAdd(key_GLITCH,0,0,1,0,0,sprLockAny);&#xA;scrComboAdd(key_CYAN,-1,0,2,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="288" y="64" name="inst_B0822651" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="448" y="160" name="inst_348A1D10" locked="0" code="scrComboAdd(key_COPY,1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="448" y="160" name="inst_348A1D10" locked="0" code="scrComboAdd(key_GLITCH,1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="352" y="64" name="inst_9D6B3384" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="416" y="64" name="inst_8E9FDCE9" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="480" y="64" name="inst_9C6DD916" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
@@ -89,8 +89,8 @@ global.msg = "";</code>
     <instance objName="objBlock" x="528" y="128" name="inst_8FFA1E47" locked="0" code="" scaleX="0.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="608" y="32" name="inst_9DD07B71" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="224" y="0" name="inst_62212882" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="544" y="160" name="inst_13AC8B5F" locked="0" code="scrComboAdd(key_COPY,-1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorSimple" x="496" y="128" name="inst_45F40532" locked="0" code=";color=key_COPY;colorSpend=key_CYAN;count=1;copies=99;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="544" y="160" name="inst_13AC8B5F" locked="0" code="scrComboAdd(key_GLITCH,-1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorSimple" x="496" y="128" name="inst_45F40532" locked="0" code=";color=key_GLITCH;colorSpend=key_CYAN;count=1;copies=99;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="288" y="352" name="inst_BAD64336" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="320" y="288" name="inst_0D70D3F6" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="256" y="272" name="inst_34488E4C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

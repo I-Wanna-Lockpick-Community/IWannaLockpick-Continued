@@ -1,4 +1,4 @@
-///addOrdinalKeys(color,colorCopy,addOmega,addNum);
+///addOrdinalKeys(color,colorGlitch,addOmega,addNum);
 /*For the time being, there are no higher-level ordinals than multiples of Omega.
 As a brief reminder, if you have >= omega keys, then subtracting a Number does nothing.
 And, if you subtract a higher ordinal from a smaller one, the output will equal negative
@@ -6,7 +6,7 @@ the result of subtracting the smaller from the larger one.*/
 
 var _addCol = argument0;
 var _ccheck = argument1;
-if _addCol == key_COPY{
+if _addCol == key_GLITCH{
     _addCol = _ccheck;
 }
 var _omega0 = global.omega[_addCol];

@@ -1,7 +1,7 @@
 ///scrCanOpenFeed(key_color,lock_count,lock_icount,lock_type,power_of_i);
 var open_check = argument0;
-if open_check == key_COPY{
-    open_check = colorCopy;
+if open_check == key_GLITCH{
+    open_check = colorGlitch;
 }
 switch argument4{
     case 0://i^0 = Multiply by 1

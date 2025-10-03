@@ -86,7 +86,7 @@ global.msg = "Another Bridge, this late into the game?! Well, I'm sure at this p
     <instance objName="objBlock" x="64" y="0" name="inst_4BC5F4F1" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="96" y="96" name="inst_ED14F61C" locked="0" code="inf = 1; count = 1; type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlack" x="96" y="64" name="inst_0F746D7E" locked="0" code="inf = 1; count = -1; type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="160" y="224" name="inst_C6C54493" locked="0" code="inf = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="160" y="224" name="inst_C6C54493" locked="0" code="inf = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="96" y="128" name="inst_9A0B2352" locked="0" code="type = 5;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="128" y="160" name="inst_77B1B123" locked="0" code="h=3;&#xA;scrComboAdd(key_BROWN,0,0,1,0,0,sprLockAny);&#xA;scrComboAdd(key_PURE,-1,0,0,0,32,sprLock1A);&#xA;scrComboAdd(key_MASTER,0,0,1,0,64,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="672" y="352" name="inst_121E2EFD" locked="0" code="count = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

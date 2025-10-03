@@ -53,7 +53,7 @@ global.msg = "Say, I remember a puzzle with a similar name way back in World 3! 
   </views>
   <instances>
     <instance objName="objPlayerStart" x="672" y="64" name="inst_3211EC11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyHandle" x="40" y="80" name="inst_452E516F" locked="0" code="show[0] = key_MASTER;&#xA;show[1] = key_BROWN;&#xA;show[2] = key_WHITE;&#xA;show[3] = key_PINK;&#xA;show[4] = key_CYAN;&#xA;show[5] = key_COPY;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyHandle" x="40" y="80" name="inst_452E516F" locked="0" code="show[0] = key_MASTER;&#xA;show[1] = key_BROWN;&#xA;show[2] = key_WHITE;&#xA;show[3] = key_PINK;&#xA;show[4] = key_CYAN;&#xA;show[5] = key_GLITCH;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDropShadow" x="640" y="384" name="inst_D491A64C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBGW10" x="704" y="384" name="inst_32C56F22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="0" y="480" name="inst_F615282F" locked="0" code="" scaleX="25" scaleY="1" colour="4294967295" rotation="0"/>
@@ -112,7 +112,7 @@ global.msg = "Say, I remember a puzzle with a similar name way back in World 3! 
     <instance objName="oKeyCyan" x="432" y="144" name="inst_0AF6F79F" locked="0" code="type=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="608" y="224" name="inst_776DF054" locked="0" code="count=-1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="480" y="416" name="inst_84214FEE" locked="0" code="type=1;count=0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorSimple" x="416" y="416" name="inst_C0AC58B2" locked="0" code="w=2;h=2;count=5;&#xA;color = key_WHITE; colorSpend = key_COPY;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorSimple" x="416" y="416" name="inst_C0AC58B2" locked="0" code="w=2;h=2;count=5;&#xA;color = key_WHITE; colorSpend = key_GLITCH;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="320" y="416" name="inst_C31024B9" locked="0" code="w=3;h=2;colorSpend = 12;&#xA;scrComboAdd(11,0,0,1,0,16,sprLockAny);&#xA;scrComboAdd(12,-5,0,0,45,16,sprLock5A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="272" y="432" name="inst_DD8FD84A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>

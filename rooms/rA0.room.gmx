@@ -90,8 +90,8 @@ global.convoUnlocked[1] = 1;</code>
     <instance objName="oKeyWhite" x="624" y="240" name="inst_8D455263" locked="0" code="count = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="640" y="416" name="inst_5E79A086" locked="0" code="w=2; h=2; count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="592" y="432" name="inst_78D261EC" locked="0" code="type=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="560" y="240" name="inst_2D256427" locked="0" code="type=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="560" y="144" name="inst_CB44C534" locked="0" code="type=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="560" y="240" name="inst_2D256427" locked="0" code="type=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="560" y="144" name="inst_CB44C534" locked="0" code="type=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCyan" x="240" y="416" name="inst_82FBDF9F" locked="0" code="w=2;h=2;count=8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCyan" x="240" y="320" name="inst_7A5EAC1F" locked="0" code="w=2;h=2;count=0;icount=8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCyan" x="224" y="224" name="inst_A9A6CD38" locked="0" code="w=2;h=2;count=0;icount=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

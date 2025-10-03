@@ -50,8 +50,8 @@ if (instance_number(object_index) &gt; 1)
           <argument>
             <kind>1</kind>
             <string>///shaders
-global.copyUniAmt = 0;
-global.copyUniTime = shader_get_uniform(shdRainbowStripe2,"time");
+global.glitchUniAmt = 0;
+global.glitchUniTime = shader_get_uniform(shdRainbowStripe2,"time");
 global.doorHue = 0;
 global.doorCol1 = make_color_hsv(global.doorHue,125,255);
 global.doorCol2 = make_color_hsv(global.doorHue,180,230);
@@ -544,9 +544,9 @@ if global.muteMusic{
           <argument>
             <kind>1</kind>
             <string>///global draw vars
-global.copyUniAmt = (global.copyUniAmt + 1/2500) mod 72;
+global.glitchUniAmt = (global.glitchUniAmt + 1/2500) mod 72;
 shader_set(shdRainbowStripe2);
-shader_set_uniform_f(global.copyUniTime,global.copyUniAmt);
+shader_set_uniform_f(global.glitchUniTime,global.glitchUniAmt);
 shader_reset();
 global.doorHue = (global.doorHue + .75) mod 255;
 global.doorCol1 = make_color_hsv(global.doorHue,125,255);

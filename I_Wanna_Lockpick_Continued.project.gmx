@@ -409,7 +409,7 @@
         <sprite>sprites\sprKRed</sprite>
         <sprite>sprites\sprKBlack</sprite>
         <sprite>sprites\sprKBrown</sprite>
-        <sprite>sprites\sprKCopy</sprite>
+        <sprite>sprites\sprKRainbow</sprite>
         <sprite>sprites\sprKDynamite</sprite>
         <sprite>sprites\sprKGray</sprite>
         <sprite>sprites\sprKInf</sprite>
@@ -1239,7 +1239,7 @@
       <object>objects\oKeyBrown</object>
       <object>objects\oKeyPure</object>
       <object>objects\oKeyBlack</object>
-      <object>objects\oKeyCopy</object>
+      <object>objects\oKeyGlitch</object>
       <object>objects\oKeyStone</object>
     </objects>
     <objects name="Door">
@@ -1256,7 +1256,7 @@
       <object>objects\oDoorPure</object>
       <object>objects\oDoorBlack</object>
       <object>objects\oDoorStone</object>
-      <object>objects\oDoorCopy</object>
+      <object>objects\oDoorGlitch</object>
     </objects>
     <objects name="options">
       <object>objects\oOptionHandle</object>
@@ -1675,11 +1675,11 @@
     <constant name="ts_LILY">2</constant>
     <constant name="ts_SIGN">1</constant>
     <constant name="ts_SYS">0</constant>
-    <constant name="key_GROUP">16</constant>
+    <constant name="key_TYPES">16</constant>
     <constant name="key_SILVER">15</constant>
     <constant name="key_DYNAMITE">14</constant>
     <constant name="key_STONE">13</constant>
-    <constant name="key_COPY">12</constant>
+    <constant name="key_GLITCH">12</constant>
     <constant name="key_PURE">11</constant>
     <constant name="key_BROWN">10</constant>
     <constant name="key_BLACK">9</constant>

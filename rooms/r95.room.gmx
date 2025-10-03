@@ -91,7 +91,7 @@ global.msg = "Glitch Keys and Doors will even mimic the Master and Pure color if
     <instance objName="oKeyBrown" x="656" y="144" name="inst_BBD28F55" locked="0" code="count=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="256" y="224" name="inst_9DCFE095" locked="0" code="count=50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="656" y="48" name="inst_570891B7" locked="0" code="count=-50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="560" y="432" name="inst_1B4A53D5" locked="0" code="count=50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="560" y="432" name="inst_1B4A53D5" locked="0" code="count=50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyOrange" x="560" y="144" name="inst_96427472" locked="0" code="count=-7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyOrange" x="528" y="240" name="inst_9335D2C8" locked="0" code="count=-4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyOrange" x="624" y="48" name="inst_1C73E8D4" locked="0" code="type=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -113,7 +113,7 @@ global.msg = "Glitch Keys and Doors will even mimic the Master and Pure color if
     <instance objName="oDoorPurple" x="608" y="352" name="inst_E01D9D67" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="160" y="448" name="inst_BAE23D79" locked="0" code="w=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBrown" x="224" y="448" name="inst_487B2E8A" locked="0" code="w=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="192" y="384" name="inst_3421A197" locked="0" code="w=2;h=2;count=50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="192" y="384" name="inst_3421A197" locked="0" code="w=2;h=2;count=50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="208" y="336" name="inst_9E8FF378" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="736" y="0" name="inst_81543518" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="736" y="320" name="inst_2795BE01" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>

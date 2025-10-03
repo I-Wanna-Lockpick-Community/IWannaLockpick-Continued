@@ -1,18 +1,18 @@
 ///scrDrawDoorGlitch(isSpend);
 var _gSprite;
 if argument0{//Draw the spend (back) sprite
-    if colorCopy == key_MASTER{
+    if colorGlitch == key_MASTER{
         _gSprite = sprDoorGlitchGold;
         c4 = c_white;c5 = c_white;c6 = c_white;
-    }else if colorCopy == key_PURE{
+    }else if colorGlitch == key_PURE{
         _gSprite = sprDoorGlitchPure;
         c4 = c_white;c5 = c_white;c6 = c_white;
-    }else if colorCopy == key_STONE{
+    }else if colorGlitch == key_STONE{
         _gSprite = sprDoorGlitchStone;
         c4 = c_white;c5 = c_white;c6 = c_white;
     }else{//Flat color door
         _gSprite = sprDoorGlitch;
-        scrColorDoorArg(colorCopy);
+        scrColorDoorArg(colorGlitch);
     }
     //Edges
     for(var i = 0; i<(2*(w-1)); i+=1){
@@ -33,19 +33,19 @@ if argument0{//Draw the spend (back) sprite
     draw_sprite_part_ext(_gSprite,2,0,48,16,16,x,y+32*h-16,1,1,c6,1);
     draw_sprite_part_ext(_gSprite,2,48,48,16,16,x+32*w-16,y+32*h-16,1,1,c6,1);
 }else{//Draw the require (front) sprite
-    if colorCopy == key_MASTER{
+    if colorGlitch == key_MASTER{
         _gSprite = sprDoorGlitchGold;
         c1 = c_white;c2 = c_white;c3 = c_white;
-    }else if colorCopy == key_PURE{
+    }else if colorGlitch == key_PURE{
         _gSprite = sprDoorGlitchPure;
         c1 = c_white;c2 = c_white;c3 = c_white;
-    }else if colorCopy == key_STONE{
+    }else if colorGlitch == key_STONE{
         _gSprite = sprDoorGlitchStone;
         c1 = c_white;c2 = c_white;c3 = c_white;
 		// @addcolor if door image/animation
     }else{//Flat color door
         _gSprite = sprDoorGlitch;
-        scrColorDoorArg(colorCopy);
+        scrColorDoorArg(colorGlitch);
     }
     //Edges
     for(var i = 0; i<(2*(w-1)); i+=1){

@@ -53,7 +53,7 @@ global.msg = "If you want, you can even use a Rotor Key to turn Imaginary Keys b
   </views>
   <instances>
     <instance objName="objPlayerStart" x="304" y="448" name="inst_3211EC11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyHandle" x="32" y="192" name="inst_452E516F" locked="0" code="show[0] = key_GREEN;&#xA;show[1] = key_BROWN;&#xA;show[2] = key_COPY;&#xA;long = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyHandle" x="32" y="192" name="inst_452E516F" locked="0" code="show[0] = key_GREEN;&#xA;show[1] = key_BROWN;&#xA;show[2] = key_GLITCH;&#xA;long = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDropShadow" x="288" y="320" name="inst_D491A64C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBGW11" x="272" y="320" name="inst_73FC7978" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="0" y="480" name="inst_C3260A61" locked="0" code="" scaleX="25" scaleY="4" colour="4294967295" rotation="0"/>
@@ -78,7 +78,7 @@ global.msg = "If you want, you can even use a Rotor Key to turn Imaginary Keys b
     <instance objName="objBlock" x="256" y="32" name="inst_59A4453C" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="704" y="32" name="inst_925A4E53" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="112" y="432" name="inst_D05704EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="160" y="416" name="inst_877080C9" locked="0" code="w=2;h=2;count=-100;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="160" y="416" name="inst_877080C9" locked="0" code="w=2;h=2;count=-100;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="576" y="416" name="inst_91682544" locked="0" code="w=2;h=2;count=0;icount=10;aura[1]=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="640" y="416" name="inst_BEE2C54A" locked="0" code="w=2;h=2;count=10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="672" y="224" name="inst_E601707D" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -89,13 +89,13 @@ global.msg = "If you want, you can even use a Rotor Key to turn Imaginary Keys b
     <instance objName="oKeyGreen" x="720" y="240" name="inst_25BA69C9" locked="0" code="type=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGreen" x="448" y="336" name="inst_F7B56757" locked="0" code="count=10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGreen" x="544" y="336" name="inst_951567EA" locked="0" code="count = -10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="496" y="240" name="inst_EC4A2591" locked="0" code="type=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="368" y="432" name="inst_75D3ACE3" locked="0" code="count = 0; icount = 50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="432" y="432" name="inst_D21C929A" locked="0" code="type = 6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="272" y="336" name="inst_17F3E7C1" locked="0" code="count=-50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="720" y="336" name="inst_029F623D" locked="0" code="type = 1; count = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="496" y="240" name="inst_EC4A2591" locked="0" code="type=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="368" y="432" name="inst_75D3ACE3" locked="0" code="count = 0; icount = 50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="432" y="432" name="inst_D21C929A" locked="0" code="type = 6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="272" y="336" name="inst_17F3E7C1" locked="0" code="count=-50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="720" y="336" name="inst_029F623D" locked="0" code="type = 1; count = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="320" y="320" name="inst_7DBEFC4F" locked="0" code="h=2;count=0;icount=2;aura[1]=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorSimple" x="672" y="320" name="inst_999F8A67" locked="0" code="h=2;type=1;color=key_GREEN;colorSpend=key_COPY;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorSimple" x="672" y="320" name="inst_999F8A67" locked="0" code="h=2;type=1;color=key_GREEN;colorSpend=key_GLITCH;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles2" x="224" y="0" w="32" h="32" xo="32" yo="96" id="10073563" name="inst_83068145" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

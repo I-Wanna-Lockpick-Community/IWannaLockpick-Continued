@@ -1,5 +1,4 @@
-if colorCopy == key_MASTER{
-	// @addcolor if anim
+if colorGlitch == key_MASTER{
     //Change these in I Wanna Lockpick because the types are shifted
     if type == 0 || type == 5 || type == 6 || type == 7{//Normal
         draw_sprite(sprKMasterGlitch,0,x,y);
@@ -10,7 +9,7 @@ if colorCopy == key_MASTER{
     }else{//Unstar
         draw_sprite(sprKMasterGlitch,3,x,y);
     }
-}else if colorCopy == key_PURE{
+}else if colorGlitch == key_PURE{
     //Change these in I Wanna Lockpick because the types are shifted
     if type == 0 || type == 5 || type == 6 || type == 7{//Normal
         draw_sprite(sprKPureGlitch,0,x,y);
@@ -21,7 +20,7 @@ if colorCopy == key_MASTER{
     }else{//Unstar
         draw_sprite(sprKPureGlitch,3,x,y);
     }
-}else if colorCopy == key_STONE{
+}else if colorGlitch == key_STONE{
     //Change these in I Wanna Lockpick because the types are shifted
     if type == 0 || type == 5 || type == 6 || type == 7{//Normal
         draw_sprite(sprKStoneGlitch,0,x,y);
@@ -35,7 +34,7 @@ if colorCopy == key_MASTER{
 	// @addcolor if key image/animation
 }else{//Normal keys
     var _cstored = color;
-    color = colorCopy;
+    color = colorGlitch;
     scrColorKey();
     draw_sprite_ext(sprite_index,4,x,y,1,1,0,blend,1);
     color = _cstored;

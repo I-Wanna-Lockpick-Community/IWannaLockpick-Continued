@@ -231,7 +231,7 @@ switch color{
     case key_STONE:
         draw_sprite_ext(sprite_index,0,x,y+3*waveS+upAmt,drawScale*scale,scale,0,c_white,image_alpha);
     break;
-    case key_COPY:
+    case key_GLITCH:
         draw_sprite_ext(sprite_index,0,x,y+3*waveS+upAmt,drawScale*scale,scale,0,c_white,image_alpha);
         shader_set(shdRainbowStripe2);
         draw_sprite_ext(sprite_index,1,x,y+3*waveS+upAmt,drawScale*scale,scale,0,blend,image_alpha);

@@ -82,9 +82,9 @@ global.msg = "";</code>
     <instance objName="objBlock" x="256" y="384" name="inst_2D4FB159" locked="0" code="" scaleX="16" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="544" y="416" name="inst_F262AA7D" locked="0" code="" scaleX="7" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="288" y="288" name="inst_4998BE84" locked="0" code="h=3;&#xA;scrComboAdd(key_RED,1,0,2,0,0,sprLockAny);&#xA;scrComboAdd(key_BLUE,1,0,2,0,32,sprLockAny);&#xA;scrComboAdd(key_CYAN,0,0,1,0,64,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="448" y="320" name="inst_3A6511A0" locked="0" code="h=2;&#xA;scrComboAdd(key_COPY,0,0,1,0,16,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="448" y="320" name="inst_3A6511A0" locked="0" code="h=2;&#xA;scrComboAdd(key_GLITCH,0,0,1,0,16,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="608" y="320" name="inst_7F4693EE" locked="0" code="h=2;&#xA;scrComboAdd(key_CYAN,-1,0,2,0,16,sprLockAny);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="464" y="192" name="inst_28C2AD05" locked="0" code="h=2;&#xA;scrComboAdd(key_COPY,-1,0,2,0,16,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="464" y="192" name="inst_28C2AD05" locked="0" code="h=2;&#xA;scrComboAdd(key_GLITCH,-1,0,2,0,16,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyCyan" x="352" y="352" name="inst_1C9D9E69" locked="0" code="inf = 1; type = 1; count = 1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="224" y="384" name="inst_D986C04F" locked="0" code="colorSpend = key_WHITE;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="352" y="320" name="inst_F5D7B52C" locked="0" code="w=2; colorSpend = key_ORANGE;copies=99;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -94,7 +94,7 @@ global.msg = "";</code>
     <instance objName="objBlock" x="448" y="288" name="inst_0761194B" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="576" y="288" name="inst_2A63A687" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="480" y="320" name="inst_0DBCF68A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="512" y="288" name="inst_BC96AB3E" locked="0" code="w=2;h=2;colorSpend=key_CYAN;copies=99;&#xA;scrComboAdd(key_CYAN,1,0,2,0,0,sprLockAny);&#xA;scrComboAdd(key_COPY,0,0,1,32,0,sprLockAny);&#xA;scrComboAdd(key_RED,1,0,2,0,32,sprLockAny);&#xA;scrComboAdd(key_BLUE,1,0,2,32,32,sprLockAny);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="512" y="288" name="inst_BC96AB3E" locked="0" code="w=2;h=2;colorSpend=key_CYAN;copies=99;&#xA;scrComboAdd(key_CYAN,1,0,2,0,0,sprLockAny);&#xA;scrComboAdd(key_GLITCH,0,0,1,32,0,sprLockAny);&#xA;scrComboAdd(key_RED,1,0,2,0,32,sprLockAny);&#xA;scrComboAdd(key_BLUE,1,0,2,32,32,sprLockAny);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="288" y="256" name="inst_455DAF7F" locked="0" code="" scaleX="14" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="608" y="288" name="inst_93686E5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="640" y="288" name="inst_1DCD53C1" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
@@ -114,7 +114,7 @@ global.msg = "";</code>
     <instance objName="objBlock" x="416" y="128" name="inst_9F87FD83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="352" y="96" name="inst_1203EA50" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="736" y="352" name="inst_02D8FB3B" locked="0" code="colorSpend = key_ORANGE;copies=99;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="736" y="256" name="inst_B4A13D15" locked="0" code="h=2;&#xA;scrComboAdd(key_COPY,0,0,1,0,16,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="736" y="256" name="inst_B4A13D15" locked="0" code="h=2;&#xA;scrComboAdd(key_GLITCH,0,0,1,0,16,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyRed" x="672" y="320" name="inst_4FE15448" locked="0" code="inf = 1; type = 1; count = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlue" x="672" y="288" name="inst_98C9D9CF" locked="0" code="inf = 1; type = 1; count = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyHandle" x="240" y="64" name="inst_3D025B1E" locked="0" code="show[0] = key_MASTER;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -12,7 +12,7 @@ switch argument0{
     case oKeyPure:
     case oKeyMaster:
     case oKeyBlack:
-    case oKeyCopy:
+    case oKeyGlitch:
         return 0;
     break;
     case oDoorSimple:
@@ -28,7 +28,7 @@ switch argument0{
     case oDoorPure:
     case oDoorGold:
     case oDoorBlack:
-    case oDoorCopy:
+    case oDoorGlitch:
     case oDoorStone:
         return 1;
     break;

@@ -53,7 +53,7 @@ global.msg = "Hey, look! There's some unmodified Glitch Keys just sitting out in
   </views>
   <instances>
     <instance objName="objPlayerStart" x="480" y="448" name="inst_3211EC11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyHandle" x="56" y="112" name="inst_452E516F" locked="0" code="show[0] = key_MASTER;&#xA;show[1] = key_BROWN;&#xA;show[2] = key_WHITE;&#xA;show[3] = key_ORANGE;&#xA;show[4] = key_PURPLE;&#xA;show[5] = key_COPY;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyHandle" x="56" y="112" name="inst_452E516F" locked="0" code="show[0] = key_MASTER;&#xA;show[1] = key_BROWN;&#xA;show[2] = key_WHITE;&#xA;show[3] = key_ORANGE;&#xA;show[4] = key_PURPLE;&#xA;show[5] = key_GLITCH;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDropShadow" x="480" y="416" name="inst_D491A64C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBGW10" x="448" y="416" name="inst_32C56F22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="768" y="0" name="inst_FD50F2DA" locked="0" code="" scaleX="1" scaleY="16" colour="4294967295" rotation="0"/>
@@ -76,18 +76,18 @@ global.msg = "Hey, look! There's some unmodified Glitch Keys just sitting out in
     <instance objName="oDoorWhite" x="640" y="320" name="inst_51D66F85" locked="0" code="w=2;h=2;count=8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="240" y="416" name="inst_AD8F43F3" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPurple" x="576" y="320" name="inst_4BBB8813" locked="0" code="w=2;h=2;count=4;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="160" y="32" name="inst_DE9056D5" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="704" y="32" name="inst_69CAB961" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="240" y="320" name="inst_56FA3545" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="160" y="32" name="inst_DE9056D5" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="704" y="32" name="inst_69CAB961" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="240" y="320" name="inst_56FA3545" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPink" x="304" y="416" name="inst_974E158D" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCyan" x="304" y="320" name="inst_2D013AF0" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="608" y="128" name="inst_1C7F2767" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="640" y="32" name="inst_3B61B50E" locked="0" code="w=2;h=2;count=12;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="224" y="32" name="inst_B306EEC0" locked="0" code="w=2;h=2;count=16;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="224" y="32" name="inst_B306EEC0" locked="0" code="w=2;h=2;count=16;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPurple" x="288" y="32" name="inst_D9FC3450" locked="0" code="w=2;h=2;count=8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="672" y="416" name="inst_4098B04C" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="640" y="416" name="inst_0142F3FB" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="608" y="416" name="inst_C0E79008" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="672" y="416" name="inst_4098B04C" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="640" y="416" name="inst_0142F3FB" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="608" y="416" name="inst_C0E79008" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="288" y="224" name="inst_CDE963A5" locked="0" code="w=2;h=2;colorSpend=12;&#xA;scrComboAdd(2,2,0,0,0,0,sprLock2V);&#xA;scrComboAdd(1,2,0,0,32,0,sprLock2V);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="576" y="224" name="inst_244EA4C7" locked="0" code="w=2;h=2;colorSpend=12;&#xA;scrComboAdd(2,2,0,0,0,0,sprLock2V);&#xA;scrComboAdd(3,2,0,0,32,0,sprLock2V);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="240" y="240" name="inst_A38D94DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -95,11 +95,11 @@ global.msg = "Hey, look! There's some unmodified Glitch Keys just sitting out in
     <instance objName="oKeyPurple" x="368" y="48" name="inst_B4B594DA" locked="0" code="count=26;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="592" y="48" name="inst_3349225A" locked="0" code="count=18;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyOrange" x="560" y="144" name="inst_F770D45D" locked="0" code="count=10;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="560" y="432" name="inst_7EFC24AC" locked="0" code="count=17;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="560" y="432" name="inst_7EFC24AC" locked="0" code="count=17;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="512" name="inst_D3F5209A" locked="0" code="" scaleX="24" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBrown" x="688" y="144" name="inst_88DB58ED" locked="0" code="count=10;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="112" y="432" name="inst_D053F1BC" locked="0" code="type=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="704" y="352" name="inst_0D54A4EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="112" y="432" name="inst_D053F1BC" locked="0" code="type=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="704" y="352" name="inst_0D54A4EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="720" y="432" name="inst_C799163A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="64" y="416" name="inst_A9A39C8B" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oW10Glass" x="32" y="0" name="inst_9F0EF9FF" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>

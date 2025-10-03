@@ -2,9 +2,9 @@
 /* Things to save:
 1. Player x/y
 2. Key Counts, Ordinals, and Stars for every key color (Excluding stone keys)
-3. Keys: Collected, Copy Color
-4. Doors: Opened, 3 Auras, Browned, Copies, Copy Color
-5. Combo Doors: Opened, 3 Auras, Browned, Copies, Copy Color*/
+3. Keys: Collected, Glitch Color
+4. Doors: Opened, 3 Auras, Browned, Copies, Glitch Color
+5. Combo Doors: Opened, 3 Auras, Browned, Copies, Glitch Color*/
 
 undoPos += 1;
 recentPush = 1;//Indicates a push was done recently
@@ -67,17 +67,17 @@ for(var i = 0; i < instSize; i += 1){
         }
         ds_stack_push(undoStack,_bin);
     }else if _inst.object_index == oGate{
-        ds_stack_push(undoStack,_inst.colorCopy);
+        ds_stack_push(undoStack,_inst.colorGlitch);
     }else if _inst.object_index == oDoorCombo{
         _bin += _digit*_inst.active; _digit *= 2;
         _bin += _digit*_inst.aura[0]; _digit *= 2;
         _bin += _digit*_inst.aura[1]; _digit *= 2;
         _bin += _digit*_inst.aura[2]; _digit *= 2;
         _bin += _digit*_inst.browned; _digit *= 2;
-        _bin += _digit*numBinDigit(_inst.colorCopy,3); _digit *= 2;
-        _bin += _digit*numBinDigit(_inst.colorCopy,2); _digit *= 2;
-        _bin += _digit*numBinDigit(_inst.colorCopy,1); _digit *= 2;
-        _bin += _digit*numBinDigit(_inst.colorCopy,0); _digit *= 2;
+        _bin += _digit*numBinDigit(_inst.colorGlitch,3); _digit *= 2;
+        _bin += _digit*numBinDigit(_inst.colorGlitch,2); _digit *= 2;
+        _bin += _digit*numBinDigit(_inst.colorGlitch,1); _digit *= 2;
+        _bin += _digit*numBinDigit(_inst.colorGlitch,0); _digit *= 2;
         if _inst.copies >= 0{_bin += _digit;} _digit *= 2;
         for(var ii = 0; ii < 26; ii += 1){
             _bin += _digit*numBinDigit(_inst.copies,ii); _digit *= 2;
@@ -90,23 +90,23 @@ for(var i = 0; i < instSize; i += 1){
         //Saves 9 bits of bool and 64 bits of copies. Can be 9 bools, 27 copies, 27 icopies. Won't be reached ingame.
     }else if object_get_parent(_inst.object_index) == oKeyBulk{
         _bin += _digit*_inst.active; _digit *= 2;
-        _bin += _digit*numBinDigit(_inst.colorCopy,3); _digit *= 2;
-        _bin += _digit*numBinDigit(_inst.colorCopy,2); _digit *= 2;
-        _bin += _digit*numBinDigit(_inst.colorCopy,1); _digit *= 2;
-        _bin += _digit*numBinDigit(_inst.colorCopy,0);
-        //ds_stack_push(undoStack,_inst.active,_inst.colorCopy);
+        _bin += _digit*numBinDigit(_inst.colorGlitch,3); _digit *= 2;
+        _bin += _digit*numBinDigit(_inst.colorGlitch,2); _digit *= 2;
+        _bin += _digit*numBinDigit(_inst.colorGlitch,1); _digit *= 2;
+        _bin += _digit*numBinDigit(_inst.colorGlitch,0);
+        //ds_stack_push(undoStack,_inst.active,_inst.colorGlitch);
         ds_stack_push(undoStack,_bin);
-        //Saves a 5-byte number storing both the active bool and colorCopy.
+        //Saves a 5-byte number storing both the active bool and colorGlitch.
     }else if object_get_parent(_inst.object_index) == oDoorSimple || _inst.object_index == oDoorSimple{
         _bin += _digit*_inst.active; _digit *= 2;
         _bin += _digit*_inst.aura[0]; _digit *= 2;
         _bin += _digit*_inst.aura[1]; _digit *= 2;
         _bin += _digit*_inst.aura[2]; _digit *= 2;
         _bin += _digit*_inst.browned; _digit *= 2;
-        _bin += _digit*numBinDigit(_inst.colorCopy,3); _digit *= 2;
-        _bin += _digit*numBinDigit(_inst.colorCopy,2); _digit *= 2;
-        _bin += _digit*numBinDigit(_inst.colorCopy,1); _digit *= 2;
-        _bin += _digit*numBinDigit(_inst.colorCopy,0); _digit *= 2;
+        _bin += _digit*numBinDigit(_inst.colorGlitch,3); _digit *= 2;
+        _bin += _digit*numBinDigit(_inst.colorGlitch,2); _digit *= 2;
+        _bin += _digit*numBinDigit(_inst.colorGlitch,1); _digit *= 2;
+        _bin += _digit*numBinDigit(_inst.colorGlitch,0); _digit *= 2;
         if _inst.copies >= 0{_bin += _digit;} _digit *= 2;
         for(var ii = 0; ii < 26; ii += 1){
             _bin += _digit*numBinDigit(_inst.copies,ii); _digit *= 2;
@@ -115,7 +115,7 @@ for(var i = 0; i < instSize; i += 1){
         for(var ii = 0; ii < 26; ii += 1){
             _bin += _digit*numBinDigit(_inst.icopies,ii); _digit *= 2;
         }
-        //ds_stack_push(undoStack,_inst.active,_inst.aura[0],_inst.aura[1],_inst.aura[2],_inst.browned,_inst.copies,_inst.colorCopy);
+        //ds_stack_push(undoStack,_inst.active,_inst.aura[0],_inst.aura[1],_inst.aura[2],_inst.browned,_inst.copies,_inst.colorGlitch);
         ds_stack_push(undoStack,_bin);
         //Saves 9 bits of bool and 64 bits of copies. Can be 9 bools, 27 copies, 27 icopies. Won't be reached ingame.
     }else if _inst.object_index == oSalvageIn{

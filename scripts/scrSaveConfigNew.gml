@@ -22,7 +22,7 @@ ini_write_real("Visual","simpleLock",global.simpleLock);
 ini_write_real("Visual","pauseStyle",global.pauseStyle);
 
 //Colorblind
-for(var i = 0; i < 16; i += 1){ // @addcolor
+for(var i = 0; i < key_TYPES; i += 1){
     ini_write_real("Colors","darkTone"+string(i),global.darkTone[i]);
     ini_write_real("Colors","mainTone"+string(i),global.mainTone[i]);
     ini_write_real("Colors","highTone"+string(i),global.highTone[i]);

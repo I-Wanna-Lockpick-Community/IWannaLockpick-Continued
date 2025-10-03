@@ -1,6 +1,6 @@
 //Before the rest of this code is run, first:
 if colorSpend == key_PURE {exit;}
-if colorCopy == key_PURE {exit;}
+if colorGlitch == key_PURE {exit;}
 for(var i = 0; i < lockCount; i += 1){
     if lock[i,0] == key_PURE{
         exit;

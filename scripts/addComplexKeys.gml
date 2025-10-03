@@ -1,11 +1,11 @@
-///addComplexKeys(color,colorCopy,addR,addI,power_of_i);
+///addComplexKeys(color,colorGlitch,addR,addI,power_of_i);
 //Used to be a script called addOrdinalKeys which was far more complex.
 //The Ordinal Keys mechanic was scrapped for being confusing, though.
 //I think complex keys are a better choice, which is why I replaced all the code.
 
 var _addCol = argument0;
 var _ccheck = argument1;
-if _addCol == key_COPY {
+if _addCol == key_GLITCH{
     _addCol = _ccheck;
 }
 switch argument4 {

@@ -38,7 +38,7 @@ getSpend = 0;
 getCost = 0;
 getICost = 0;
 getType = 0;
-getCopy = 0;
+getGlitch = 0;
 getAura[0] = 0;//Red
 getAura[1] = 0;//Green
 getAura[2] = 0;//Blue
@@ -120,7 +120,7 @@ pdaID[9] = key_BROWN;
 pdaID[10] = key_RED;
 pdaID[11] = key_GREEN;
 pdaID[12] = key_BLUE;
-pdaID[13] = key_COPY;
+pdaID[13] = key_GLITCH;
 // @addcolor (TODO::FIX PDA)
 //Jokes
 numJokes = 15;
@@ -290,7 +290,7 @@ if mouse_in_window(){
             other.getCost = count;
             other.getICost = icount;
             other.getType = type;
-            other.getCopy = colorCopy;
+            other.getGlitch = colorGlitch;
             other.getAura[0] = aura[0];
             other.getAura[1] = aura[1];
             other.getAura[2] = aura[2];
@@ -304,7 +304,7 @@ if mouse_in_window(){
             other.mouseType = 2;
             other.getSpend = colorSpend;
             other.lockCount = lockCount;
-            other.getCopy = colorCopy;
+            other.getGlitch = colorGlitch;
             other.getAura[0] = aura[0];
             other.getAura[1] = aura[1];
             other.getAura[2] = aura[2];
@@ -326,7 +326,7 @@ if mouse_in_window(){
             other.getCost = count;
             other.getICost = icount;
             other.getType = type;
-            other.getCopy = colorCopy;
+            other.getGlitch = colorGlitch;
         } 
     }
     with oSalvageIn{
@@ -349,7 +349,7 @@ if mouse_in_window(){
             other.mouseID = id;
             other.mouseType = 5;
             other.lockCount = lockCount;
-            other.getCopy = colorCopy;
+            other.getGlitch = colorGlitch;
             for(i=0;i&lt;lockCount;i+=1){
                 other.lockCol[i] = lock[i,0];
                 other.lockCost[i] = lock[i,1];
@@ -852,7 +852,7 @@ if pdaMode == 1{
     /*KEY ORGANIZATION:
     Left Column: White, Orange, Purple, Pink, Cyan, Black, Stone
     Right Column: Master, Pure, Brown, Red, Green, Blue, Glitch*/
-    for(var i = 0; i &lt; 14; i += 1){ // @addcolor (TODO::FIX PDA)
+    for(var i = 0; i &lt; key_TYPES; i += 1){ // (TODO::FIX PDA)
         drawX = pdaX+20+184*(i&gt;6); drawY = pdaY+20+48*(i mod 7);
         draw_set_alpha(1);
         draw_set_color(c_white);
@@ -860,7 +860,7 @@ if pdaMode == 1{
             draw_sprite(sprKMaster,floor(goldIndex),drawX,drawY);
         }else if pdaID[i] == key_PURE{
             draw_sprite(sprKPure,floor(goldIndex),drawX,drawY);
-        }else if pdaID[i] == key_COPY{
+        }else if pdaID[i] == key_GLITCH{
             color = pdaID[i];
             scrColorKey();
             shader_set(shdRainbowStripe2);
@@ -1034,8 +1034,8 @@ if mouseType == 0{//Keys
             str += string(getCost)+string(getICost)+"i";
         }
     }
-    if getCol == key_COPY{
-        str += "#Mimic: "+colName[getCopy];
+    if getCol == key_GLITCH{
+        str += "#Mimic: "+colName[getGlitch];
     }
 }else if mouseType == 1{//Simple doors
     str = doorName[getType]+colName[getSpend]+" Door#Cost: ";
@@ -1063,8 +1063,8 @@ if mouseType == 0{//Keys
     if getCol != getSpend{
         str += " "+colName[getCol];
     }
-    if getCol == key_COPY || getSpend == key_COPY{
-        str += "#Mimic: "+colName[getCopy];
+    if getCol == key_GLITCH || getSpend == key_GLITCH{
+        str += "#Mimic: "+colName[getGlitch];
     }
     if getAura[0] || getAura[1] || getAura[2] || getAura[3]{
         str += "#- Effects -";
@@ -1077,7 +1077,7 @@ if mouseType == 0{//Keys
         str += "##SID: "+string(getSal);
     }
 }else if mouseType == 2{//Combo doors
-    var isCopy = (getSpend == key_COPY);
+    var isCopy = (getSpend == key_GLITCH);
     if lockCount == 0{
         str = "Lockless "+colName[getSpend]+" Door#";
     }else{
@@ -1106,13 +1106,13 @@ if mouseType == 0{//Keys
                 str += "[ALL]";
             }
             str += "#";
-            if lockCol[i] == key_COPY{
+            if lockCol[i] == key_GLITCH{
                 isCopy = 1;
             }
         }
     }
     if isCopy{
-        str += "Mimic: "+colName[getCopy];
+        str += "Mimic: "+colName[getGlitch];
     }
     if getAura[0] || getAura[1] || getAura[2] || getAura[3]{
         str += "#- Effects -";
@@ -1159,13 +1159,13 @@ if mouseType == 0{//Keys
                 str += "[ALL]";
             }
             str += "#";
-            if lockCol[i] == key_COPY{
+            if lockCol[i] == key_GLITCH{
                 isCopy = 1;
             }
         }
     }
     if isCopy{
-        str += "Mimic: "+colName[getCopy];
+        str += "Mimic: "+colName[getGlitch];
     }
 }else if mouseType == 6{//Kina
     str = "Kina, God of Keys and Doors#";

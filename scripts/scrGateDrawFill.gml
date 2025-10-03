@@ -19,17 +19,17 @@ for(var i = 0; i < lockCount; i += 1){
         var tempX = x+lock[i,4]-sprite_get_xoffset(lock[i,6]);
         var tempY = y+lock[i,5]-sprite_get_yoffset(lock[i,6]);
         draw_sprite_ext(sprDStoneTexture,0,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
-    }else if lock[i,0] == key_COPY{
+    }else if lock[i,0] == key_GLITCH{
         shader_set(shdRainbowStripe2);
         draw_sprite_ext(lock[i,6],2,x+lock[i,4],y+lock[i,5],1,1,0,make_color_rgb(180,150,0),1);
         shader_reset();
-        if colorCopy == key_MASTER{
+        if colorGlitch == key_MASTER{
             draw_sprite_ext(lock[i,6],4,x+lock[i,4],y+lock[i,5],1,1,0,c_white,1);
-        }else if colorCopy == key_PURE{
+        }else if colorGlitch == key_PURE{
             draw_sprite_ext(lock[i,6],5,x+lock[i,4],y+lock[i,5],1,1,0,c_white,1);
-        }else if colorCopy == key_STONE{
+        }else if colorGlitch == key_STONE{
             draw_sprite_ext(lock[i,6],6,x+lock[i,4],y+lock[i,5],1,1,0,c_white,1);
-        }else if colorCopy != key_COPY{
+        }else if colorGlitch != key_GLITCH{
             draw_sprite_ext(lock[i,6],3,x+lock[i,4],y+lock[i,5],1,1,0,scrGetLockColor(lock[i,0]),1);
 			// @addcolor if door image/animation
         }

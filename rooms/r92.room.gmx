@@ -98,16 +98,16 @@ global.msg = "To be more specific, it's the Spend Color of the doors you open wh
     <instance objName="oDoorOrange" x="640" y="448" name="inst_D8E35A21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="448" y="96" name="inst_868EED50" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="192" y="64" name="inst_96783881" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="64" y="224" name="inst_4EE6C6C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCopy" x="128" y="96" name="inst_4B0415A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="64" y="224" name="inst_4EE6C6C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGlitch" x="128" y="96" name="inst_4B0415A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPurple" x="96" y="352" name="inst_470C3610" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPurple" x="672" y="320" name="inst_768C1C3F" locked="0" code="w=2;h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="368" y="288" name="inst_B753A2D3" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="240" y="192" name="inst_27335358" locked="0" code="h=2;color = key_PURPLE;colorSpend = key_WHITE;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="672" y="416" name="inst_98EE39D1" locked="0" code="w=2;h=2;color = key_ORANGE;colorSpend = key_CYAN;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorSimple" x="480" y="64" name="inst_2DAF8AF1" locked="0" code="w=2;h=2;count=16;color=key_COPY;colorSpend=key_PURPLE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorSimple" x="480" y="64" name="inst_2DAF8AF1" locked="0" code="w=2;h=2;count=16;color=key_GLITCH;colorSpend=key_PURPLE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="480" y="192" name="inst_05B0D21A" locked="0" code="w=2;h=2;colorSpend=9;&#xA;scrComboAdd(1,0,0,1,0,0,sprLockAny);&#xA;scrComboAdd(2,0,0,1,32,0,sprLockAny);&#xA;scrComboAdd(3,0,0,1,0,32,sprLockAny);&#xA;scrComboAdd(8,0,0,1,32,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="352" y="416" name="inst_2368BFEC" locked="0" code="w=3;h=2;colorSpend=key_COPY;&#xA;scrComboAdd(12,1,0,0,0,0,sprLock1A);&#xA;scrComboAdd(12,1,0,0,32,0,sprLock1A);&#xA;scrComboAdd(12,1,0,0,64,0,sprLock1A);&#xA;scrComboAdd(12,1,0,0,0,32,sprLock1A);&#xA;scrComboAdd(12,1,0,0,32,32,sprLock1A);&#xA;scrComboAdd(12,1,0,0,64,32,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="352" y="416" name="inst_2368BFEC" locked="0" code="w=3;h=2;colorSpend=key_GLITCH;&#xA;scrComboAdd(12,1,0,0,0,0,sprLock1A);&#xA;scrComboAdd(12,1,0,0,32,0,sprLock1A);&#xA;scrComboAdd(12,1,0,0,64,0,sprLock1A);&#xA;scrComboAdd(12,1,0,0,0,32,sprLock1A);&#xA;scrComboAdd(12,1,0,0,32,32,sprLock1A);&#xA;scrComboAdd(12,1,0,0,64,32,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPurple" x="144" y="336" name="inst_1998F2C5" locked="0" code="count=16;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyCyan" x="280" y="208" name="inst_606FFE90" locked="0" code="count=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="384" y="208" name="inst_7418C3FF" locked="0" code="count=7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

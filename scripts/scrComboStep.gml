@@ -101,7 +101,7 @@ if objPlayer.masterCycle == 1 {
 	}
 }
 if !browned && goldEligible != 0{
-    if colorSpend == key_MASTER || colorSpend == key_PURE || ((colorCopy == key_MASTER || colorCopy == key_PURE) && browned == 0){
+    if colorSpend == key_MASTER || colorSpend == key_PURE || ((colorGlitch == key_MASTER || colorGlitch == key_PURE) && browned == 0){
         goldEligible = 0;
     }
     for(var i = 0; i < lockCount; i += 1){

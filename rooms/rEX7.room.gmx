@@ -61,7 +61,7 @@ global.msg = "...Wait, the Glitch Omega Key, too? Already..? I'm starting to rea
     <instance objName="objBlock" x="768" y="-64" name="inst_24D5A743" locked="0" code="" scaleX="1" scaleY="21" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="0" name="inst_31A00AAE" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="480" name="inst_673A6FA0" locked="0" code="" scaleX="23" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="oOmegaKey" x="144" y="368" name="inst_1ED9BD36" locked="0" code="color = key_COPY;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oOmegaKey" x="144" y="368" name="inst_1ED9BD36" locked="0" code="color = key_GLITCH;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPure" x="96" y="448" name="inst_20B4BE24" locked="0" code="count = 0; icount = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPure" x="192" y="448" name="inst_CAED59D7" locked="0" code="count = 0; icount = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="144" y="416" name="inst_3565A4C8" locked="0" code="count = 0; icount = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

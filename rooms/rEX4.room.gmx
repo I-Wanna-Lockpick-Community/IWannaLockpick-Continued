@@ -70,7 +70,7 @@ global.msg = "Looks like this is the last puzzle available to us before we move 
     <instance objName="objBlock" x="32" y="96" name="inst_3BAE4E17" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="528" y="240" name="inst_452F573C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGold" x="448" y="128" name="inst_E5E1043E" locked="0" code="w=2;h=2;count=12;aura[1]=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyCopy" x="528" y="144" name="inst_1954EA14" locked="0" code="type=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGlitch" x="528" y="144" name="inst_1954EA14" locked="0" code="type=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="720" y="432" name="inst_CFB4A1D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="352" name="inst_7795FDB8" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="160" y="384" name="inst_81B42E3F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
