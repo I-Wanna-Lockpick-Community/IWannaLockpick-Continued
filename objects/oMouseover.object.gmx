@@ -68,6 +68,9 @@ colName[12] = "Glitch";
 colName[13] = "Stone";
 colName[14] = "Dynamite";
 colName[15] = "Silver";
+colName[16] = "Maroon";
+colName[17] = "Forest";
+colName[18] = "Navy";
 // @addcolor
 //Define key type names
 keyName[0] = "";

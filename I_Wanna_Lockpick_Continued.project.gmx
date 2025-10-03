@@ -421,6 +421,9 @@
         <sprite>sprites\sprKStoneStar</sprite>
         <sprite>sprites\sprKStoneStar2</sprite>
         <sprite>sprites\sprKStoneGlitch</sprite>
+        <sprite>sprites\sprKMaroon</sprite>
+        <sprite>sprites\sprKForest</sprite>
+        <sprite>sprites\sprKNavy</sprite>
       </sprites>
       <sprites name="other">
         <sprite>sprites\sprDirt</sprite>
@@ -1241,6 +1244,9 @@
       <object>objects\oKeyBlack</object>
       <object>objects\oKeyGlitch</object>
       <object>objects\oKeyStone</object>
+      <object>objects\oKeyMaroon</object>
+      <object>objects\oKeyForest</object>
+      <object>objects\oKeyNavy</object>
     </objects>
     <objects name="Door">
       <object>objects\oDoorWhite</object>
@@ -1653,7 +1659,7 @@
       <room>rooms\rMainHubX</room>
     </rooms>
   </rooms>
-  <constants number="38">
+  <constants number="41">
     <constant name="vp_NONE">11</constant>
     <constant name="vp_NARRA">10</constant>
     <constant name="vp_LUCAS">9</constant>
@@ -1675,7 +1681,10 @@
     <constant name="ts_LILY">2</constant>
     <constant name="ts_SIGN">1</constant>
     <constant name="ts_SYS">0</constant>
-    <constant name="key_TYPES">16</constant>
+    <constant name="key_TYPES">19</constant>
+    <constant name="key_NAVY">18</constant>
+    <constant name="key_FOREST">17</constant>
+    <constant name="key_MAROON">16</constant>
     <constant name="key_SILVER">15</constant>
     <constant name="key_DYNAMITE">14</constant>
     <constant name="key_STONE">13</constant>

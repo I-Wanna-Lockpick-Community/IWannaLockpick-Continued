@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>global.complexMode = 0;
-for(var i=0;i&lt;16;i+=1){
+for(var i=0;i&lt;key_TYPES;i+=1){
     global.key[i] = 0;
     global.ikey[i] = 0;
     global.star[i] = 0;
@@ -198,8 +198,8 @@ if size &gt;= 1{
                 draw_sprite(sprKStone,0,x-4,drawY-4);
             } else if show[i] == key_SILVER {
                 draw_sprite(sprKSilver,floor(goldIndex),x-4,drawY-4);
-            	// @addcolor if anim or shader
-			} else {
+            // @addcolor if anim or shader
+} else {
                 color = show[i];
                 scrColorKey();
                 draw_sprite(sprKey,0,x-4,drawY-4);

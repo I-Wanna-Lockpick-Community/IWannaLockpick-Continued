@@ -296,7 +296,7 @@ if browned{
     tempSpend = colorSpend;
 }
 canChangeBrowned = browned || (color != key_PURE &amp;&amp; colorSpend != key_PURE &amp;&amp; colorGlitch != key_PURE);
-if aura[0] == 1 || aura[1] == 1 || aura[2] == 1{
+if aura[0] != 0 || aura[1] != 0 || aura[2] != 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || objPlayer.aura[2] == -1{
     if distToP &lt;= 23{
         removeAuras();
         if objPlayer.brownMode != 0{
@@ -348,49 +348,49 @@ var canGoldOpen = !(tempColor == key_MASTER || tempColor == key_PURE || tempSpen
 var canSilverOpen = !(tempColor == key_SILVER || tempColor == key_PURE || tempSpend == key_SILVER || tempSpend == key_PURE || ((colorGlitch == key_SILVER || colorGlitch == key_PURE) &amp;&amp; browned == 0));
 var canDynamiteOpen = !(tempColor == key_DYNAMITE || tempColor == key_PURE || tempSpend == key_DYNAMITE || tempSpend == key_PURE || ((colorGlitch == key_DYNAMITE || colorGlitch == key_PURE) &amp;&amp; browned == 0));
 if distToP &lt;= 1 {
-	if (canDynamiteOpen &amp;&amp; scrNormalDynamiteOpen()) {
+if (canDynamiteOpen &amp;&amp; scrNormalDynamiteOpen()) {
         undoBUFFER();
         scrPlayerDownStop();
-	} else if (canGoldOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 1) &amp;&amp; scrNormalMasterOpen() {//SPEND MASTER KEYS
+} else if (canGoldOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 1) &amp;&amp; scrNormalMasterOpen() {//SPEND MASTER KEYS
         undoBUFFER();
         scrPlayerDownStop();
     } else {//SPEND NORMAL KEYS
-		var rCost = 0;
-		var iCost = 0;
-		var tempIPow = iPow;
-		if (canSilverOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 2) {
-			switch objPlayer.masterMode {
-				case 1:
-				tempIPow = 0;
-				break;
-				case 2:
-				tempIPow = 1;
-				break;
-				case -1:
-				tempIPow = 2;
-				break;
-				case -2:
-				tempIPow = 3;
-				break;
-			}
-		}
-		spendTotal = 0;
-		spendITotal = 0;
-		scrAddSpendAmt(tempColor,count,icount,type,tempIPow)
+var rCost = 0;
+var iCost = 0;
+var tempIPow = iPow;
+if (canSilverOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 2) {
+switch objPlayer.masterMode {
+case 1:
+tempIPow = 0;
+break;
+case 2:
+tempIPow = 1;
+break;
+case -1:
+tempIPow = 2;
+break;
+case -2:
+tempIPow = 3;
+break;
+}
+}
+spendTotal = 0;
+spendITotal = 0;
+scrAddSpendAmt(tempColor,count,icount,type,tempIPow)
         if (canSilverOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 2) {
-			addComplexKeys(tempSpend,colorGlitch,-spendTotal,-spendITotal,0);
-			addComplexKeys(key_SILVER,0,-1,0,tempIPow);
-			scrPlaySoundExt(sndMasterUnlock,1,1,false);
-			event_user(2);
-			objPlayer.masterMode = 0;
-			objPlayer.masterCycle = 0;
-			undoBUFFER();
-			scrBroadcastCopy(tempSpend,colorGlitch); // should it?
-		} else if canOpen(tempColor, tempIPow) {
-			addComplexKeys(tempSpend,colorGlitch,-spendTotal,-spendITotal,0);
-			scrOpenOrCopy();
-			scrBroadcastCopy(tempSpend,colorGlitch);
-		}
+addComplexKeys(tempSpend,colorGlitch,-spendTotal,-spendITotal,0);
+addComplexKeys(key_SILVER,0,-1,0,tempIPow);
+scrPlaySoundExt(sndMasterUnlock,1,1,false);
+event_user(2);
+objPlayer.masterMode = 0;
+objPlayer.masterCycle = 0;
+undoBUFFER();
+scrBroadcastCopy(tempSpend,colorGlitch); // should it?
+} else if canOpen(tempColor, tempIPow) {
+addComplexKeys(tempSpend,colorGlitch,-spendTotal,-spendITotal,0);
+scrOpenOrCopy();
+scrBroadcastCopy(tempSpend,colorGlitch);
+}
     }
 }
 

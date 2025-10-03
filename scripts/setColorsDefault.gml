@@ -61,6 +61,18 @@ global.darkTone[key_STONE] = make_color_rgb(60,75,80);
 global.highTone[key_DYNAMITE] = make_color_rgb(209,136,102);
 global.mainTone[key_DYNAMITE] = make_color_rgb(211,71,40);
 global.darkTone[key_DYNAMITE] = make_color_rgb(122,49,23);
+//Maroon
+global.highTone[key_MAROON] = make_color_rgb(107,32,32);
+global.mainTone[key_MAROON] = make_color_rgb(70,20,21);
+global.darkTone[key_MAROON] = make_color_rgb(46,12,12);
+//Forest
+global.highTone[key_FOREST] = make_color_rgb(29,92,44);
+global.mainTone[key_FOREST] = make_color_rgb(22,59,33);
+global.darkTone[key_FOREST] = make_color_rgb(10,43,20);
+//Navy
+global.highTone[key_NAVY] = make_color_rgb(32,50,107);
+global.mainTone[key_NAVY] = make_color_rgb(24,37,82);
+global.darkTone[key_NAVY] = make_color_rgb(16,24,51);
 // @addcolor if no animation
 
 //Options menu

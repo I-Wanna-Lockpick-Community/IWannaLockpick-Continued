@@ -234,18 +234,25 @@ if (global.playerAnimationFix)
           <argument>
             <kind>1</kind>
             <string>///Key-related variables
-if global.key[key_RED] &gt;= 1{
+//RGB auras
+if global.key[key_RED] - global.key[key_MAROON] &gt;= 1 &amp;&amp; global.key[key_RED] &gt; 0{
     aura[0] = 1;
+}else if global.key[key_RED] - global.key[key_MAROON] &lt;= -1 &amp;&amp; global.key[key_MAROON] &gt; 0{
+    aura[0] = -1; 
 }else{
     aura[0] = 0;
 }
-if global.key[key_GREEN] &gt;= 5{
+if global.key[key_GREEN] - global.key[key_FOREST] &gt;= 5 &amp;&amp; global.key[key_GREEN] &gt; 0{
     aura[1] = 1;
+}else if global.key[key_GREEN] - global.key[key_FOREST] &lt;= -5 &amp;&amp; global.key[key_FOREST] &gt; 0{
+    aura[1] = -1; 
 }else{
     aura[1] = 0;
 }
-if global.key[key_BLUE] &gt;= 3{
+if global.key[key_BLUE] - global.key[key_NAVY] &gt;= 3 &amp;&amp; global.key[key_BLUE] &gt; 0{
     aura[2] = 1;
+}else if global.key[key_BLUE] - global.key[key_NAVY] &lt;= -3 &amp;&amp; global.key[key_NAVY] &gt; 0{
+    aura[2] = -1;
 }else{
     aura[2] = 0;
 }
@@ -958,18 +965,25 @@ for(var iPart = 0; iPart &lt; 30; iPart += 1){
           <argument>
             <kind>1</kind>
             <string>///Re-check key vars
-if global.key[key_RED] &gt;= 1{
+//RGB auras
+if global.key[key_RED] - global.key[key_MAROON] &gt;= 1 &amp;&amp; global.key[key_RED] &gt; 0{
     aura[0] = 1;
+}else if global.key[key_RED] - global.key[key_MAROON] &lt;= -1 &amp;&amp; global.key[key_MAROON] &gt; 0{
+    aura[0] = -1; 
 }else{
     aura[0] = 0;
 }
-if global.key[key_GREEN] &gt;= 5{
+if global.key[key_GREEN] - global.key[key_FOREST] &gt;= 5 &amp;&amp; global.key[key_GREEN] &gt; 0{
     aura[1] = 1;
+}else if global.key[key_GREEN] - global.key[key_FOREST] &lt;= -5 &amp;&amp; global.key[key_FOREST] &gt; 0{
+    aura[1] = -1; 
 }else{
     aura[1] = 0;
 }
-if global.key[key_BLUE] &gt;= 3{
+if global.key[key_BLUE] - global.key[key_NAVY] &gt;= 3 &amp;&amp; global.key[key_BLUE] &gt; 0{
     aura[2] = 1;
+}else if global.key[key_BLUE] - global.key[key_NAVY] &lt;= -3 &amp;&amp; global.key[key_NAVY] &gt; 0{
+    aura[2] = -1;
 }else{
     aura[2] = 0;
 }
@@ -1038,6 +1052,15 @@ if aura[1]{
 if aura[2]{
     draw_sprite_ext(sprAura,2,x,y,1,1,0,c_white,0.5);
 }
+if aura[0] == -1{
+    draw_sprite_ext(sprAura,0,x,y,1,1,0,c_gray,0.5);
+}
+if aura[1] == -1{
+    draw_sprite_ext(sprAura,1,x,y,1,1,0,c_gray,0.5);
+}
+if aura[2] == -1{
+    draw_sprite_ext(sprAura,2,x,y,1,1,0,c_gray,0.5);
+}
 
 if masterMode &gt;= 1{
     draw_set_blend_mode(bm_add);
@@ -1046,10 +1069,10 @@ if masterMode &gt;= 1{
     draw_sprite_ext(sprPlayerShine,0,x,y,masterDrawScale,masterDrawScale,0,make_color_rgb(180,180,50),1);
     draw_set_blend_mode(bm_normal);
     if masterCycle == 1 {
-		draw_sprite_ext(sprKMaster,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
-	} else if masterCycle == 2 {
-		draw_sprite_ext(sprKSilver,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
-	}
+draw_sprite_ext(sprKMaster,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+} else if masterCycle == 2 {
+draw_sprite_ext(sprKSilver,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+}
 }
 if masterMode &lt;= -1{
     draw_set_blend_mode(bm_add);
@@ -1057,11 +1080,11 @@ if masterMode &lt;= -1{
     masterDrawScale = 0.8 + 0.2 * sin(degtorad(masterDrawAngle));
     draw_sprite_ext(sprPlayerShine,0,x,y,masterDrawScale,masterDrawScale,0,make_color_rgb(50,50,180),1);
     draw_set_blend_mode(bm_normal);
-	if masterCycle == 1 {
-		draw_sprite_ext(sprKMasterAnti,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
-	} else if masterCycle == 2 {
-		draw_sprite_ext(sprKSilverAnti,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
-	}
+if masterCycle == 1 {
+draw_sprite_ext(sprKMasterAnti,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+} else if masterCycle == 2 {
+draw_sprite_ext(sprKSilverAnti,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+}
 }
 //Imaginary View Text
 if global.complexMode{

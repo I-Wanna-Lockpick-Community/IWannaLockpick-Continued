@@ -264,9 +264,9 @@ if !((sign(count)==-1 || sign(icount)==-1) &amp;&amp; sign(count)&lt;=0 &amp;&am
         scrPlaySoundExt(sndMaster,1,1,false);
     } else if color == key_SILVER{
         scrPlaySoundExt(sndMaster,1,1,false);
-		// @addcolor if pickup sound
+// @addcolor if nonstandard pickup sound
     } else {
-		if type == 5 || type == 6 || type == 7{
+if type == 5 || type == 6 || type == 7{
             scrPlaySoundExt(sndSignflip,1,1,false);
         }else if type == 4{
             scrPlaySoundExt(sndUnstar,1,1,false);
@@ -278,10 +278,10 @@ if !((sign(count)==-1 || sign(icount)==-1) &amp;&amp; sign(count)&lt;=0 &amp;&am
     }
 }else{
     if color == key_MASTER {
-		scrPlaySoundExt(sndMaster,1,.82,false);
+scrPlaySoundExt(sndMaster,1,.82,false);
     } else if color == key_SILVER{
         scrPlaySoundExt(sndMaster,1,.82,false);
-		// @addcolor if negative pickup sound
+// @addcolor if nonstandard negative pickup sound
     } else {
         scrPlaySoundExt(sndNegative,1,1,false);
     }

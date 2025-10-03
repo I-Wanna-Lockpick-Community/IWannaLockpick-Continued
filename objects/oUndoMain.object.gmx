@@ -98,9 +98,10 @@ if saveBuffered{
         with objPlayer{//Don't save if near a door or off the ground (important for n-masters)
             if !place_free(x,y+1) &amp;&amp; place_free(x,y){
                 other.stableFooting = 1;
-                if global.key[key_RED] &gt;= 1{aura[0] = 1;}else{aura[0] = 0;}
-                if global.key[key_GREEN] &gt;= 5{aura[1] = 1;}else{aura[1] = 0;}
-                if global.key[key_BLUE] &gt;= 3{aura[2] = 1;}else{aura[2] = 0;}
+                //RGB auras
+                if global.key[key_RED] - global.key[key_MAROON] &gt;= 1 &amp;&amp; global.key[key_RED] &gt; 0{aura[0] = 1;}else if global.key[key_RED] - global.key[key_MAROON] &lt;= -1 &amp;&amp; global.key[key_MAROON] &gt; 0{aura[0] = -1;}else{aura[0] = 0;}
+                if global.key[key_GREEN] - global.key[key_FOREST] &gt;= 5 &amp;&amp; global.key[key_GREEN] &gt; 0{aura[1] = 1;}else if global.key[key_GREEN] - global.key[key_FOREST] &lt;= -5 &amp;&amp; global.key[key_FOREST] &gt; 0{aura[1] = -1;}else{aura[1] = 0;}
+                if global.key[key_BLUE] - global.key[key_NAVY] &gt;= 3 &amp;&amp; global.key[key_BLUE] &gt; 0{aura[2] = 1;}else if global.key[key_BLUE] - global.key[key_NAVY] &lt;= -3 &amp;&amp; global.key[key_NAVY] &gt; 0{aura[2] = -1;}else{aura[2] = 0;}
                 if global.key[key_BROWN] &gt;= 1{
                     brownMode = 1;
                 }else if global.key[key_BROWN] &lt;= -1{

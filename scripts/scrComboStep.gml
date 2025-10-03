@@ -40,7 +40,7 @@ if !active{brownNearPlayer=0;visible=0;exit;}
 brownNearPlayer=0;
 
 var openEligible = false;//Whether or not the door is in a position to be opened
-if aura[0] == 1 || aura[1] == 1 || aura[2] == 1{
+if aura[0] == 1 || aura[1] == 1 || aura[2] == 1 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || objPlayer.aura[2] == -1{
     if distance_to_object(objPlayer) <= 23{
         removeAurasCombo();
         if aura[0] == 0 && aura[1] == 0 && aura[2] == 0{
@@ -90,15 +90,15 @@ if global.complexMode == 0{//Real view
 //Now, the first big calculation is the Gold Eligibility.
 var goldEligible = 0;//0 = Don't use gold, 1 = Use gold, -1 = Use negative gold.
 if objPlayer.masterCycle == 1 {
-	if objPlayer.masterMode == 1 && global.key[key_MASTER] > 0{
-		goldEligible = 1;
-	}else if objPlayer.masterMode == -1 && global.key[key_MASTER] < 0{
-		goldEligible = -1;
-	}else if objPlayer.masterMode == 2 && global.ikey[key_MASTER] > 0{
-		goldEligible = 2;
-	}else if objPlayer.masterMode == -2 && global.ikey[key_MASTER] < 0{
-		goldEligible = -2;
-	}
+if objPlayer.masterMode == 1 && global.key[key_MASTER] > 0{
+goldEligible = 1;
+}else if objPlayer.masterMode == -1 && global.key[key_MASTER] < 0{
+goldEligible = -1;
+}else if objPlayer.masterMode == 2 && global.ikey[key_MASTER] > 0{
+goldEligible = 2;
+}else if objPlayer.masterMode == -2 && global.ikey[key_MASTER] < 0{
+goldEligible = -2;
+}
 }
 if !browned && goldEligible != 0{
     if colorSpend == key_MASTER || colorSpend == key_PURE || ((colorGlitch == key_MASTER || colorGlitch == key_PURE) && browned == 0){
@@ -112,7 +112,7 @@ if !browned && goldEligible != 0{
 }
 var dynamiteEligible = false;
 if global.key[key_DYNAMITE] != 0 || global.ikey[key_DYNAMITE] != 0 {
-	dynamiteEligible = true;
+dynamiteEligible = true;
 }
 if !browned && dynamiteEligible {
     if colorSpend == key_DYNAMITE || colorSpend == key_PURE || ((colorGlitch == key_DYNAMITE || colorGlitch == key_PURE) && browned == 0){
@@ -126,7 +126,7 @@ if !browned && dynamiteEligible {
 }
 var silverEligible = false;
 if objPlayer.masterCycle == 2 && objPlayer.masterMode != 0 {
-	silverEligible = true;
+silverEligible = true;
 }
 if !browned && silverEligible {
     if colorSpend == key_SILVER || colorSpend == key_PURE || ((colorGlitch == key_SILVER || colorGlitch == key_PURE) && browned == 0){
@@ -142,171 +142,171 @@ if !browned && silverEligible {
 
 //Now, check nearness to player, and house all the main code in different cases depending on gold eligibility.
 if distance_to_object(objPlayer) <= 1{
-	if dynamiteEligible && scrNormalDynamiteOpen() {
-		// i hope this works
-		undoBUFFER();
-	} else {
-		switch goldEligible{
-			case 0://MAIN CODE
-				var metRequirement = true;//Whether the requirement for every lock has been met
-				if browned{//Brown version
-					for(var i = 0; i < lockCount; i += 1){
-						if !scrCanOpenFeed(key_BROWN,lock[i,1],lock[i,2],lock[i,3],iPow){
-							metRequirement = false;
-						}
-					}
-				}else{//Normal
-					for(var i = 0; i < lockCount; i += 1){
-						if !scrCanOpenFeed(lock[i,0],lock[i,1],lock[i,2],lock[i,3],iPow){
-							metRequirement = false;
-						}
-					}
-				}
-				spendTotal = 0;//Integer part of cost
-				spendITotal = 0;
-				var tempIPow = iPow;
-				if (silverEligible) {
-					switch objPlayer.masterMode {
-						case 1:
-						tempIPow = 0;
-						break;
-						case 2:
-						tempIPow = 1;
-						break;
-						case -1:
-						tempIPow = 2;
-						break;
-						case -2:
-						tempIPow = 3;
-						break;
-					}
-				}
-				if browned{//Door is brown, different spend amount can result from Blast Locks
-					for(var i = 0; i < lockCount; i += 1){
-						scrAddSpendAmt(key_BROWN,lock[i,1],lock[i,2],lock[i,3],tempIPow);
-					}
-				}else{//Normal lock spend summation
-					for(var i = 0; i < lockCount; i += 1){
-						scrAddSpendAmt(lock[i,0],lock[i,1],lock[i,2],lock[i,3],tempIPow);
-					}
-				}
-				if (silverEligible) {
-					addComplexKeys(tempSpend,colorGlitch,-spendTotal,-spendITotal,0);
-					addComplexKeys(key_SILVER,0,-1,0,tempIPow);
-					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					event_user(2);
-					objPlayer.masterMode = 0;
-					objPlayer.masterCycle = 0;
-					undoBUFFER();
-					scrBroadcastCopy(tempSpend,colorGlitch); // should it?
-				} else if metRequirement {
-					addComplexKeys(tempSpend,colorGlitch,-spendTotal,-spendITotal,0);
-					scrOpenCombo();
-					scrBroadcastCopy(tempSpend,colorGlitch);
-				}
-			break;
-			case 1://Lose a copy
-				objPlayer.masterMode = 0;
-				objPlayer.masterCycle = 0;
-				addComplexKeys(key_MASTER,0,-1,0,0);
-				copies -= 1;
-				if copies == 0 && icopies == 0{
-					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					//scrBroadcastCopy(tempSpend,colorGlitch);
-					if global.salvageActive{
-						event_user(5);
-						scrSaveSalvage(global.salvageID,id);
-					}else{
-						event_user(0);
-					}
-					solid = 0; visible = 0; active = 0;
-				}else if copies >= 0{
-					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					//scrBroadcastCopy(tempSpend,colorGlitch);
-					event_user(2);
-				}else{
-					scrPlaySoundExt(sndMasterRelock,1,1,false);
-					event_user(1);
-				}
-				undoBUFFER();
-			break;
-			case -1://Gain a copy
-				objPlayer.masterMode = 0;
-				objPlayer.masterCycle = 0;
-				addComplexKeys(key_MASTER,0,1,0,0);
-				copies += 1;
-				if copies == 0 && icopies == 0{
-					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					//scrBroadcastCopy(tempSpend,colorGlitch);
-					if global.salvageActive{
-						event_user(5);
-						scrSaveSalvage(global.salvageID,id);
-					}else{
-						event_user(0);
-					}
-					solid = 0; visible = 0; active = 0;
-				}else if copies <= 0{
-					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					//scrBroadcastCopy(tempSpend,colorGlitch);
-					event_user(2);
-				}else{
-					scrPlaySoundExt(sndMasterRelock,1,1,false);
-					event_user(1);
-				}
-				undoBUFFER();
-			break;
-			case 2://Lose an icopy
-				objPlayer.masterMode = 0;
-				objPlayer.masterCycle = 0;
-				addComplexKeys(key_MASTER,0,0,-1,0);
-				icopies -= 1;
-				if copies == 0 && icopies == 0{
-					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					//scrBroadcastCopy(tempSpend,colorGlitch);
-					if global.salvageActive{
-						event_user(5);
-						scrSaveSalvage(global.salvageID,id);
-					}else{
-						event_user(0);
-					}
-					visible=0;solid=0;active=0;
-				}else if icopies >= 0{//Still has + icopies or 0 and real copies
-					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					//scrBroadcastCopy(tempSpend,colorGlitch);
-					event_user(2);
-				}else{//(Now) has negative icopies
-					scrPlaySoundExt(sndMasterRelock,1,1,false);
-					event_user(1);
-				}
-				undoBUFFER();
-			break;
-			case -2://Gain an icopy
-				objPlayer.masterMode = 0;
-				objPlayer.masterCycle = 0;
-				addComplexKeys(key_MASTER,0,0,1,0);
-				icopies += 1;
-				if copies == 0 && icopies == 0{
-					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					//scrBroadcastCopy(tempSpend,colorGlitch);
-					if global.salvageActive{
-						event_user(5);
-						scrSaveSalvage(global.salvageID,id);
-					}else{
-						event_user(0);
-					}
-					visible=0;solid=0;active=0;
-				}else if icopies <= 0{//Still has - icopies or 0 and real copies
-					scrPlaySoundExt(sndMasterUnlock,1,1,false);
-					//scrBroadcastCopy(tempSpend,colorGlitch);
-					event_user(2);
-				}else{//(Now) has positive icopies
-					scrPlaySoundExt(sndMasterRelock,1,1,false);
-					event_user(1);
-				}
-				undoBUFFER();
-			break;
-		}
-	}
+if dynamiteEligible && scrNormalDynamiteOpen() {
+// i hope this works
+undoBUFFER();
+} else {
+switch goldEligible{
+case 0://MAIN CODE
+var metRequirement = true;//Whether the requirement for every lock has been met
+if browned{//Brown version
+for(var i = 0; i < lockCount; i += 1){
+if !scrCanOpenFeed(key_BROWN,lock[i,1],lock[i,2],lock[i,3],iPow){
+metRequirement = false;
+}
+}
+}else{//Normal
+for(var i = 0; i < lockCount; i += 1){
+if !scrCanOpenFeed(lock[i,0],lock[i,1],lock[i,2],lock[i,3],iPow){
+metRequirement = false;
+}
+}
+}
+spendTotal = 0;//Integer part of cost
+spendITotal = 0;
+var tempIPow = iPow;
+if (silverEligible) {
+switch objPlayer.masterMode {
+case 1:
+tempIPow = 0;
+break;
+case 2:
+tempIPow = 1;
+break;
+case -1:
+tempIPow = 2;
+break;
+case -2:
+tempIPow = 3;
+break;
+}
+}
+if browned{//Door is brown, different spend amount can result from Blast Locks
+for(var i = 0; i < lockCount; i += 1){
+scrAddSpendAmt(key_BROWN,lock[i,1],lock[i,2],lock[i,3],tempIPow);
+}
+}else{//Normal lock spend summation
+for(var i = 0; i < lockCount; i += 1){
+scrAddSpendAmt(lock[i,0],lock[i,1],lock[i,2],lock[i,3],tempIPow);
+}
+}
+if (silverEligible) {
+addComplexKeys(tempSpend,colorGlitch,-spendTotal,-spendITotal,0);
+addComplexKeys(key_SILVER,0,-1,0,tempIPow);
+scrPlaySoundExt(sndMasterUnlock,1,1,false);
+event_user(2);
+objPlayer.masterMode = 0;
+objPlayer.masterCycle = 0;
+undoBUFFER();
+scrBroadcastCopy(tempSpend,colorGlitch); // should it?
+} else if metRequirement {
+addComplexKeys(tempSpend,colorGlitch,-spendTotal,-spendITotal,0);
+scrOpenCombo();
+scrBroadcastCopy(tempSpend,colorGlitch);
+}
+break;
+case 1://Lose a copy
+objPlayer.masterMode = 0;
+objPlayer.masterCycle = 0;
+addComplexKeys(key_MASTER,0,-1,0,0);
+copies -= 1;
+if copies == 0 && icopies == 0{
+scrPlaySoundExt(sndMasterUnlock,1,1,false);
+//scrBroadcastCopy(tempSpend,colorGlitch);
+if global.salvageActive{
+event_user(5);
+scrSaveSalvage(global.salvageID,id);
+}else{
+event_user(0);
+}
+solid = 0; visible = 0; active = 0;
+}else if copies >= 0{
+scrPlaySoundExt(sndMasterUnlock,1,1,false);
+//scrBroadcastCopy(tempSpend,colorGlitch);
+event_user(2);
+}else{
+scrPlaySoundExt(sndMasterRelock,1,1,false);
+event_user(1);
+}
+undoBUFFER();
+break;
+case -1://Gain a copy
+objPlayer.masterMode = 0;
+objPlayer.masterCycle = 0;
+addComplexKeys(key_MASTER,0,1,0,0);
+copies += 1;
+if copies == 0 && icopies == 0{
+scrPlaySoundExt(sndMasterUnlock,1,1,false);
+//scrBroadcastCopy(tempSpend,colorGlitch);
+if global.salvageActive{
+event_user(5);
+scrSaveSalvage(global.salvageID,id);
+}else{
+event_user(0);
+}
+solid = 0; visible = 0; active = 0;
+}else if copies <= 0{
+scrPlaySoundExt(sndMasterUnlock,1,1,false);
+//scrBroadcastCopy(tempSpend,colorGlitch);
+event_user(2);
+}else{
+scrPlaySoundExt(sndMasterRelock,1,1,false);
+event_user(1);
+}
+undoBUFFER();
+break;
+case 2://Lose an icopy
+objPlayer.masterMode = 0;
+objPlayer.masterCycle = 0;
+addComplexKeys(key_MASTER,0,0,-1,0);
+icopies -= 1;
+if copies == 0 && icopies == 0{
+scrPlaySoundExt(sndMasterUnlock,1,1,false);
+//scrBroadcastCopy(tempSpend,colorGlitch);
+if global.salvageActive{
+event_user(5);
+scrSaveSalvage(global.salvageID,id);
+}else{
+event_user(0);
+}
+visible=0;solid=0;active=0;
+}else if icopies >= 0{//Still has + icopies or 0 and real copies
+scrPlaySoundExt(sndMasterUnlock,1,1,false);
+//scrBroadcastCopy(tempSpend,colorGlitch);
+event_user(2);
+}else{//(Now) has negative icopies
+scrPlaySoundExt(sndMasterRelock,1,1,false);
+event_user(1);
+}
+undoBUFFER();
+break;
+case -2://Gain an icopy
+objPlayer.masterMode = 0;
+objPlayer.masterCycle = 0;
+addComplexKeys(key_MASTER,0,0,1,0);
+icopies += 1;
+if copies == 0 && icopies == 0{
+scrPlaySoundExt(sndMasterUnlock,1,1,false);
+//scrBroadcastCopy(tempSpend,colorGlitch);
+if global.salvageActive{
+event_user(5);
+scrSaveSalvage(global.salvageID,id);
+}else{
+event_user(0);
+}
+visible=0;solid=0;active=0;
+}else if icopies <= 0{//Still has - icopies or 0 and real copies
+scrPlaySoundExt(sndMasterUnlock,1,1,false);
+//scrBroadcastCopy(tempSpend,colorGlitch);
+event_user(2);
+}else{//(Now) has positive icopies
+scrPlaySoundExt(sndMasterRelock,1,1,false);
+event_user(1);
+}
+undoBUFFER();
+break;
+}
+}
 }
 
 useMasterCheck();
