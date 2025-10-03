@@ -71,7 +71,8 @@ if (global.autosave) //save the game if currently set to autosave
           <argument>
             <kind>1</kind>
             <string>///KeyPick variables
-masterMode = 0;//0 = None, 1 = Master Mode, -1 = AntiMaster Mode
+masterMode = 0;//0 = None, 1 = Master Mode, -1 = AntiMaster Mode, 2 = iMaster, -2 = -iMaster
+masterCycle = 0; // 0 = None, 1 = Master, 2 = Silver
 masterDrawAngle = 0;
 masterDrawScale = 0.8;
 
@@ -233,18 +234,25 @@ if (global.playerAnimationFix)
           <argument>
             <kind>1</kind>
             <string>///Key-related variables
-if global.key[color_RED] &gt;= 1{
+//RGB auras
+if global.key[color_RED] - global.key[color_MAROON] &gt;= 1 &amp;&amp; global.key[color_RED] &gt; 0{
     aura[0] = 1;
+}else if global.key[color_RED] - global.key[color_MAROON] &lt;= -1 &amp;&amp; global.key[color_MAROON] &gt; 0{
+    aura[0] = -1; 
 }else{
     aura[0] = 0;
 }
-if global.key[color_GREEN] &gt;= 5{
+if global.key[color_GREEN] - global.key[color_FOREST] &gt;= 5 &amp;&amp; global.key[color_GREEN] &gt; 0{
     aura[1] = 1;
+}else if global.key[color_GREEN] - global.key[color_FOREST] &lt;= -5 &amp;&amp; global.key[color_FOREST] &gt; 0{
+    aura[1] = -1; 
 }else{
     aura[1] = 0;
 }
-if global.key[color_BLUE] &gt;= 3{
+if global.key[color_BLUE] - global.key[color_NAVY] &gt;= 3 &amp;&amp; global.key[color_BLUE] &gt; 0{
     aura[2] = 1;
+}else if global.key[color_BLUE] - global.key[color_NAVY] &lt;= -3 &amp;&amp; global.key[color_NAVY] &gt; 0{
+    aura[2] = -1;
 }else{
     aura[2] = 0;
 }
@@ -640,7 +648,7 @@ if instance_exists(oNewCamera){
     if oNewCamera.freeCam{exit;}
 }
 if scrButtonCheckPressed(global.masButton) &amp;&amp; global.pmState == 0{
-    scrPlayerEquipMaster();
+    scrPlayerCycleMaster();
 }else if scrButtonCheckPressed(global.skipButton) &amp;&amp; !frozen &amp;&amp; global.pmState == 0{
     scrComplexSwitch();
 }else if scrButtonCheckPressed(global.camButton) &amp;&amp; global.pmState == 0{
@@ -957,18 +965,25 @@ for(var iPart = 0; iPart &lt; 30; iPart += 1){
           <argument>
             <kind>1</kind>
             <string>///Re-check key vars
-if global.key[color_RED] &gt;= 1{
+//RGB auras
+if global.key[color_RED] - global.key[color_MAROON] &gt;= 1 &amp;&amp; global.key[color_RED] &gt; 0{
     aura[0] = 1;
+}else if global.key[color_RED] - global.key[color_MAROON] &lt;= -1 &amp;&amp; global.key[color_MAROON] &gt; 0{
+    aura[0] = -1; 
 }else{
     aura[0] = 0;
 }
-if global.key[color_GREEN] &gt;= 5{
+if global.key[color_GREEN] - global.key[color_FOREST] &gt;= 5 &amp;&amp; global.key[color_GREEN] &gt; 0{
     aura[1] = 1;
+}else if global.key[color_GREEN] - global.key[color_FOREST] &lt;= -5 &amp;&amp; global.key[color_FOREST] &gt; 0{
+    aura[1] = -1; 
 }else{
     aura[1] = 0;
 }
-if global.key[color_BLUE] &gt;= 3{
+if global.key[color_BLUE] - global.key[color_NAVY] &gt;= 3 &amp;&amp; global.key[color_BLUE] &gt; 0{
     aura[2] = 1;
+}else if global.key[color_BLUE] - global.key[color_NAVY] &lt;= -3 &amp;&amp; global.key[color_NAVY] &gt; 0{
+    aura[2] = -1;
 }else{
     aura[2] = 0;
 }
@@ -1037,6 +1052,15 @@ if aura[1]{
 if aura[2]{
     draw_sprite_ext(sprAura,2,x,y,1,1,0,c_white,0.5);
 }
+if aura[0] == -1{
+    draw_sprite_ext(sprAura,0,x,y,1,1,0,c_gray,0.5);
+}
+if aura[1] == -1{
+    draw_sprite_ext(sprAura,1,x,y,1,1,0,c_gray,0.5);
+}
+if aura[2] == -1{
+    draw_sprite_ext(sprAura,2,x,y,1,1,0,c_gray,0.5);
+}
 
 if masterMode &gt;= 1{
     draw_set_blend_mode(bm_add);
@@ -1044,7 +1068,11 @@ if masterMode &gt;= 1{
     masterDrawScale = 0.8 + 0.2 * sin(degtorad(masterDrawAngle));
     draw_sprite_ext(sprPlayerShine,0,x,y,masterDrawScale,masterDrawScale,0,make_color_rgb(180,180,50),1);
     draw_set_blend_mode(bm_normal);
-    draw_sprite_ext(sprKMaster,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+    if masterCycle == 1 {
+        draw_sprite_ext(sprKMaster,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+    } else if masterCycle == 2 {
+        draw_sprite_ext(sprKSilver,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+    }
 }
 if masterMode &lt;= -1{
     draw_set_blend_mode(bm_add);
@@ -1052,7 +1080,11 @@ if masterMode &lt;= -1{
     masterDrawScale = 0.8 + 0.2 * sin(degtorad(masterDrawAngle));
     draw_sprite_ext(sprPlayerShine,0,x,y,masterDrawScale,masterDrawScale,0,make_color_rgb(50,50,180),1);
     draw_set_blend_mode(bm_normal);
-    draw_sprite_ext(sprKMasterAnti,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+    if masterCycle == 1 {
+        draw_sprite_ext(sprKMasterAnti,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+    } else if masterCycle == 2 {
+        draw_sprite_ext(sprKSilverAnti,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
+    }
 }
 //Imaginary View Text
 if global.complexMode{

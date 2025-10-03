@@ -1,45 +1,39 @@
 ///scrAddSpendAmt(color,count,icount,type,power_of_i);
-var open_check = argument0;
-if open_check == color_GLITCH{
-    open_check = glitchMimic;
+
+var rCost = 0;
+var iCost = 0;
+var tempColor = argument0;
+var iPow = argument4;
+var count = argument1;
+var icount = argument2;
+switch argument3 {
+	case 0: // Normal
+		rCost = rotateR(count, icount, iPow);
+		iCost = rotateI(count, icount, iPow);
+		break;
+	// Empty is always 0
+	case 2: // Blast
+		if iPow == 0 || iPow == 2 {
+			if sign(getCountGlitch(tempColor,colorGlitch)) != sign(count) {
+				rCost = getCountGlitch(tempColor,colorGlitch)*abs(sign(count));
+			}
+			if sign(getICountGlitch(tempColor,colorGlitch)) != sign(icount) {
+				iCost = getICountGlitch(tempColor,colorGlitch)*abs(sign(icount));
+			}
+		} else {
+			if sign(getCountGlitch(tempColor,colorGlitch)) == sign(icount) {
+				rCost = getCountGlitch(tempColor,colorGlitch)*abs(sign(icount));
+			}
+			if sign(getICountGlitch(tempColor,colorGlitch)) == sign(count) {
+				iCost = getICountGlitch(tempColor,colorGlitch)*abs(sign(count));
+			}
+		}
+		break;
+	case 3: // All
+		rCost = getCountGlitch(tempColor,colorGlitch);
+		iCost = getICountGlitch(tempColor,colorGlitch);
+	default:
+	break;
 }
-switch argument4{
-    case 0://i^0 = Multiply by 1
-        var open_needR = argument1;
-        var open_needI = argument2;
-    break;
-    case 1://i^1 = Multiply by i
-        var open_needR = -argument2;
-        var open_needI = argument1;
-    break;
-    case 2://i^2 = Multiply by -1
-        var open_needR = -argument1;
-        var open_needI = -argument2;
-    break;
-    case 3://i^3 = Multiply by -i
-        var open_needR = argument2;
-        var open_needI = -argument1;
-    break;
-}
-switch argument3{
-    case 0://normal (can accept complex numbers)
-        spendTotal -= open_needR;
-        spendITotal -= open_needI;
-    break;
-    case 1://blank
-        //Nothing really
-    break;
-    case 2://blast (can accept real or imaginary, but not both)
-        if open_needR != 0{
-            spendTotal -= global.key[open_check];
-        }
-        if open_needI != 0{
-            spendITotal -= global.ikey[open_check];
-        }
-    break;
-    case 3://equals
-        spendTotal -= global.key[open_check];
-        spendITotal -= global.ikey[open_check];
-    break;
-}
-return false;
+spendTotal += rCost;
+spendITotal += iCost;

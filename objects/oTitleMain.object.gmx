@@ -77,6 +77,8 @@ titleXO = 0;//4 offsets for the 2 different parts of the title
 titleYO = 0;
 titleXO2 = 0;
 titleYO2 = 0;
+titleXO3 = 0;
+titleYO3 = 0;
 
 //Cut-in Variables
 cutinQueue = ds_priority_create();
@@ -901,8 +903,10 @@ if keyState &gt;= 4{//Key has landed
     titleAY = (titleAY + 1.65) mod 360;
     titleXO = 6 * sin(degtorad(titleAX));
     titleXO2 = 6 * sin(degtorad(titleAX+10));
+	titleXO3 = 6 * sin(degtorad(titleAX+20));
     titleYO = 13 * sin(degtorad(titleAY));
     titleYO2 = 13 * sin(degtorad(titleAY+10));
+    titleYO3 = 13 * sin(degtorad(titleAY+20));
 }
 
 //Press Shift
@@ -1116,8 +1120,11 @@ if cutinDraw{
 
 draw_sprite_ext(sprTitleLogo,0,titleX+titleXO+4,titleY+titleYO-40+4,1,1,0,c_black,.35);
 draw_sprite_ext(sprTitleLogo,1,titleX+titleXO2+4,titleY+titleYO2+40+4,1,1,0,c_black,.35);
+draw_sprite_ext(sprTitleLogo,2,titleX+titleXO3+4,titleY+titleYO3+80+4,1,1,0,c_black,.35);
 draw_sprite_ext(sprTitleLogo,0,titleX+titleXO,titleY+titleYO-40,1,1,0,c_white,1);
 draw_sprite_ext(sprTitleLogo,1,titleX+titleXO2,titleY+titleYO2+40,1,1,0,c_white,1);
+draw_sprite_ext(sprTitleLogo,2,titleX+titleXO3,titleY+titleYO3+80,1,1,0,c_white,1);
+
 
 /*var _shiftIndex = 0;
 if global.jumpButton[0] == vk_space{
@@ -1139,7 +1146,7 @@ draw_set_font(fPresents);
 draw_set_color(c_white);
 draw_set_halign(fa_center);
 draw_set_alpha(watsA);
-draw_text(400,watsY,"- L. A. Watson Presents -");
+draw_text(400,watsY,"- L. A. Watson and the IWL Community Presents -");
 
 draw_set_alpha(1);
 </string>

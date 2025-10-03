@@ -1515,14 +1515,15 @@ switch diaID{
         diaLine(12,ts_SYS,vp_SYS,0,"Now, it's time to set your options. I advise you look through all of them carefully, and remember that you will be able to change them ingame at any time within the pause menu.");
     break;
     case 91://Intro 1
-        numLines = 7; endAction = 5;
-        diaLine(0,ts_NARRA,vp_NARRA,3,"Hello! Today I'd like to tell you a story about someone's journey to someplace special.");
+        numLines = 1; endAction = 9; // usually end action 5
+        diaLine(0,ts_NARRA,vp_NARRA,3,"Placeholder introduction");
+		/*diaLine(0,ts_NARRA,vp_NARRA,3,"Hello! Today I'd like to tell you a story about someone's journey to someplace special.");
         diaLine(1,ts_NARRA,vp_NARRA,3,"That someone is this pleasant girl named Lily, who is currently waving at you. Say hi!");
         diaLine(2,ts_NARRA,vp_NARRA,3,"Recently, she's been wanting to get out of the house for a bit and do something fun.");
         diaLine(3,ts_NARRA,vp_NARRA,3,"And, on this day, that something has made itself known!");
         diaLine(4,ts_NARRA,vp_NARRA,3,"Today she received an invitation from the Ambassador Society, which organizes events to unite normal people with the many gods which inhabit the world!");
         diaLine(5,ts_NARRA,vp_NARRA,3,"A local god by the name of Kina apparently just opened up an 'Enrichment Program' of sorts, and Lily, who had recently signed up for the Ambassador Society's waitlist (and who lived nearby), was chosen to try it out!");
-        diaLine(6,ts_NARRA,vp_NARRA,3,"So, she waves goodbye to her wonderful housemate, Marilyn, and sets off to see what this is all about!");
+        diaLine(6,ts_NARRA,vp_NARRA,3,"So, she waves goodbye to her wonderful housemate, Marilyn, and sets off to see what this is all about!");*/
     break;
     case 92://Intro: Enter Lily
         numLines = 1; endAction = 0;

@@ -57,7 +57,23 @@ global.darkTone[color_GLITCH] = make_color_rgb(220,110,0);
 global.highTone[color_STONE] = make_color_rgb(150,160,165);
 global.mainTone[color_STONE] = make_color_rgb(100,115,120);
 global.darkTone[color_STONE] = make_color_rgb(60,75,80);
-// addcolor
+//Dynamite
+global.highTone[color_DYNAMITE] = make_color_rgb(209,136,102);
+global.mainTone[color_DYNAMITE] = make_color_rgb(211,71,40);
+global.darkTone[color_DYNAMITE] = make_color_rgb(122,49,23);
+//Maroon
+global.highTone[color_MAROON] = make_color_rgb(107,32,32);
+global.mainTone[color_MAROON] = make_color_rgb(70,20,21);
+global.darkTone[color_MAROON] = make_color_rgb(46,12,12);
+//Forest
+global.highTone[color_FOREST] = make_color_rgb(29,92,44);
+global.mainTone[color_FOREST] = make_color_rgb(22,59,33);
+global.darkTone[color_FOREST] = make_color_rgb(10,43,20);
+//Navy
+global.highTone[color_NAVY] = make_color_rgb(32,50,107);
+global.mainTone[color_NAVY] = make_color_rgb(24,37,82);
+global.darkTone[color_NAVY] = make_color_rgb(16,24,51);
+// @addcolor if no animation
 
 //Options menu
 with oOptionHandle{

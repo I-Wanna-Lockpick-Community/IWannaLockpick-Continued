@@ -528,7 +528,7 @@ if instance_exists(objPlayer) &amp;&amp; active &amp;&amp; copyState == 0{
     
     var canGoldOpen = !(tempColor == color_MASTER || tempColor == color_PURE || tempSpend == color_MASTER || tempSpend == color_PURE);
     if distToP &lt;= 1{
-        if (canGoldOpen) &amp;&amp; objPlayer.masterMode != 0{//SPEND MASTER KEYS
+        if (canGoldOpen) &amp;&amp; objPlayer.masterMode != 0 {//SPEND MASTER KEYS
             scrKinaMasterOpen();
             undoBUFFER();
             scrPlayerDownStop();

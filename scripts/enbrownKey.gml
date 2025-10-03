@@ -1,3 +1,5 @@
+// seems to be leftover code from when brown could affect keys
+
 var auraPlayNoise = 0;
 if objPlayer.brownMode == 1 && browned == 0 && color != color_BROWN{
     browned = 1;

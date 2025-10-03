@@ -51,7 +51,7 @@ lockCol[0] = 0;
 lockType[0] = 0;
 lockCost[0] = 0;
 lockICost[0] = 0;
-//Define color names
+//Define color names @addcolor
 colName[0] = "Master";
 colName[1] = "White";
 colName[2] = "Orange";
@@ -66,6 +66,11 @@ colName[10] = "Brown";
 colName[11] = "Pure";
 colName[12] = "Glitch";
 colName[13] = "Stone";
+colName[14] = "Dynamite";
+colName[15] = "Silver";
+colName[16] = "Maroon";
+colName[17] = "Forest";
+colName[18] = "Navy";
 // @addcolor
 //Define key type names
 keyName[0] = "";
@@ -867,7 +872,9 @@ if pdaMode == 1{
             shader_reset();
         }else if pdaID[i] == color_STONE{
             draw_sprite(sprKStone,0,drawX,drawY);
-            // @addcolor if key image/animation
+        }else if pdaID[i] == color_SILVER{
+            draw_sprite(sprKSilver,floor(goldIndex),drawX,drawY);
+			// @addcolor if key image/animation
         } else {
             color = pdaID[i];
             scrColorKey();

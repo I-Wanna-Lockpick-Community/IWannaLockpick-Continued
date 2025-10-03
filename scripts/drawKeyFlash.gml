@@ -9,12 +9,16 @@ if whiteFlash > 0{//White flashing key
         case 7://i-
             if color == color_MASTER{
                 draw_sprite_ext(sprKMaster,0,x,y,1,1,0,c_white,whiteFlash);
+            } else if color == color_SILVER{
+                draw_sprite_ext(sprKSilver,0,x,y,1,1,0,c_white,whiteFlash);
             }else{
                 draw_sprite_ext(sprKey,5,x,y,1,1,0,c_white,whiteFlash);
             }
         break;
         case 1://exact
-            if color == color_MASTER{
+            if color == color_MASTER {
+                draw_sprite_ext(sprKMasterAbs,0,x,y,1,1,0,c_white,whiteFlash);
+            } else if color == color_SILVER{
                 draw_sprite_ext(sprKMasterAbs,0,x,y,1,1,0,c_white,whiteFlash);
             }else{
                 draw_sprite_ext(sprKeyAbs,6,x,y,1,1,0,c_white,whiteFlash);

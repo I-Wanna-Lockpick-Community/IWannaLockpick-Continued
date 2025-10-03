@@ -11,6 +11,7 @@
       <sound>sound\sndJump</sound>
       <sound>sound\sndDJump</sound>
       <sound>sound\sndWallJump</sound>
+      <sound>sound\sndDeltaruneExplosion</sound>
       <sound>sound\sndShoot</sound>
       <sound>sound\sndDeath</sound>
       <sound>sound\sndItem</sound>
@@ -19,6 +20,7 @@
       <sound>sound\sndCherry</sound>
       <sound>sound\sndGlass</sound>
       <sound>sound\sndSpikeTrap</sound>
+      <sound>sound\sndAntiExplode</sound>
       <sound>sound\sndText</sound>
       <sound>sound\sndTitleStart</sound>
       <sound>sound\sndTitleCancel</sound>
@@ -379,6 +381,7 @@
         <sprite>sprites\sprKeyStar</sprite>
         <sprite>sprites\sprKeyStar2</sprite>
         <sprite>sprites\sprKMaster</sprite>
+        <sprite>sprites\sprKSilver</sprite>
         <sprite>sprites\sprKMasterAbs</sprite>
         <sprite>sprites\sprKMasterOrd</sprite>
         <sprite>sprites\sprKMasterStar</sprite>
@@ -394,6 +397,7 @@
         <sprite>sprites\sprKPureStar2</sprite>
         <sprite>sprites\sprKPureGlitch</sprite>
         <sprite>sprites\sprKMasterAnti</sprite>
+        <sprite>sprites\sprKSilverAnti</sprite>
         <sprite>sprites\sprW2Mural</sprite>
         <sprite>sprites\sprKWhite</sprite>
         <sprite>sprites\sprKOrange</sprite>
@@ -406,6 +410,7 @@
         <sprite>sprites\sprKBlack</sprite>
         <sprite>sprites\sprKBrown</sprite>
         <sprite>sprites\sprKRainbow</sprite>
+        <sprite>sprites\sprKDynamite</sprite>
         <sprite>sprites\sprKGray</sprite>
         <sprite>sprites\sprKInf</sprite>
         <sprite>sprites\sprKSwap</sprite>
@@ -416,6 +421,9 @@
         <sprite>sprites\sprKStoneStar</sprite>
         <sprite>sprites\sprKStoneStar2</sprite>
         <sprite>sprites\sprKStoneGlitch</sprite>
+        <sprite>sprites\sprKMaroon</sprite>
+        <sprite>sprites\sprKForest</sprite>
+        <sprite>sprites\sprKNavy</sprite>
       </sprites>
       <sprites name="other">
         <sprite>sprites\sprDirt</sprite>
@@ -638,7 +646,7 @@
       <script>scripts\scrKillPlayer.gml</script>
       <script>scripts\scrFlipGrav.gml</script>
       <script>scripts\scrPlayerDownStop.gml</script>
-      <script>scripts\scrPlayerEquipMaster.gml</script>
+      <script>scripts\scrPlayerCycleMaster.gml</script>
     </scripts>
     <scripts name="world">
       <script>scripts\scrInitializeGlobals.gml</script>
@@ -715,6 +723,8 @@
       <script>scripts\drawScreenRect.gml</script>
       <script>scripts\setRoomTransitionColor.gml</script>
       <script>scripts\scrStringAddBreaks.gml</script>
+      <script>scripts\rotateR.gml</script>
+      <script>scripts\rotateI.gml</script>
     </scripts>
     <scripts name="color assignment">
       <script>scripts\scrColorKey.gml</script>
@@ -889,6 +899,7 @@
       <script>scripts\getMarkOutColor.gml</script>
     </scripts>
     <script>scripts\scrSpeedUpAnims.gml</script>
+    <script>scripts\scrNormalDynamiteOpen.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shdRainbowStripe.shader</shader>
@@ -1218,7 +1229,9 @@
     </objects>
     <objects name="Key">
       <object>objects\oKeyMaster</object>
+      <object>objects\keySilver</object>
       <object>objects\oKeyWhite</object>
+      <object>objects\oKeyDynamite</object>
       <object>objects\oKeyOrange</object>
       <object>objects\oKeyPurple</object>
       <object>objects\oKeyPink</object>
@@ -1231,6 +1244,9 @@
       <object>objects\oKeyBlack</object>
       <object>objects\oKeyGlitch</object>
       <object>objects\oKeyStone</object>
+      <object>objects\oKeyMaroon</object>
+      <object>objects\oKeyForest</object>
+      <object>objects\oKeyNavy</object>
     </objects>
     <objects name="Door">
       <object>objects\oDoorWhite</object>
@@ -1275,370 +1291,373 @@
     <room>rooms\rTemplateNothing</room>
     <room>rooms\rTemplate</room>
     <room>rooms\rMainHub</room>
-    <room>rooms\rBackHubOld</room>
-    <room>rooms\rBackHub</room>
-    <room>rooms\rWayOut</room>
-    <room>rooms\rUltraPuzzle</room>
-    <room>rooms\rHubGB</room>
-    <room>rooms\rMonolith</room>
-    <rooms name="world1">
-      <room>rooms\rHub01</room>
-      <room>rooms\rW1Template</room>
-      <room>rooms\r01</room>
-      <room>rooms\r02</room>
-      <room>rooms\r03</room>
-      <room>rooms\r04</room>
-      <room>rooms\r05</room>
-      <room>rooms\r06</room>
-      <room>rooms\r06alt</room>
-      <room>rooms\r07</room>
-      <room>rooms\r08</room>
-      <room>rooms\r09</room>
-      <room>rooms\r10</room>
-      <room>rooms\r1A</room>
-      <room>rooms\r1B</room>
-      <room>rooms\r0A</room>
-      <room>rooms\r0B</room>
-      <room>rooms\r0C</room>
-      <room>rooms\r0D</room>
-      <room>rooms\r0E</room>
-      <room>rooms\r0F</room>
+    <rooms name="basegame">
+      <room>rooms\rCredits</room>
+      <room>rooms\rEnd2</room>
+      <room>rooms\rIntro2</room>
+      <room>rooms\rTempClear</room>
+      <room>rooms\rIntro</room>
+      <room>rooms\rConnection</room>
+      <room>rooms\rMuseum</room>
+      <room>rooms\rKinaDiary</room>
+      <room>rooms\rGuestRoom</room>
+      <room>rooms\rNullHub</room>
+      <rooms name="worldomega">
+        <room>rooms\rHubOmega</room>
+        <room>rooms\rWOTemplate</room>
+        <room>rooms\rH0</room>
+        <room>rooms\rH0H</room>
+        <room>rooms\rH1</room>
+        <room>rooms\rH2</room>
+        <room>rooms\rH3</room>
+        <room>rooms\rHM</room>
+        <room>rooms\rHN</room>
+        <room>rooms\rHO</room>
+        <room>rooms\rHP</room>
+        <room>rooms\rHQ</room>
+        <room>rooms\rHR</room>
+        <room>rooms\rHS</room>
+        <room>rooms\rHT</room>
+        <room>rooms\rHU</room>
+        <room>rooms\rHV</room>
+        <room>rooms\rHW</room>
+        <room>rooms\rHX</room>
+        <room>rooms\rHY</room>
+        <room>rooms\rHZ</room>
+      </rooms>
+      <rooms name="omegapuzzles">
+        <room>rooms\rOmegaTemplate</room>
+        <room>rooms\rOmega0</room>
+        <room>rooms\rOmega1</room>
+        <room>rooms\rOmega2</room>
+        <room>rooms\rOmega7</room>
+        <room>rooms\rOmegaD</room>
+      </rooms>
+      <rooms name="ex">
+        <room>rooms\rEXHub</room>
+        <room>rooms\rTemplateEX</room>
+        <room>rooms\rEX0</room>
+        <room>rooms\rEX1</room>
+        <room>rooms\rEX2</room>
+        <room>rooms\rEX3</room>
+        <room>rooms\rEX4</room>
+        <room>rooms\rEX5</room>
+        <room>rooms\rEX6</room>
+        <room>rooms\rEX7</room>
+        <room>rooms\rEXZ</room>
+      </rooms>
+      <rooms name="world12">
+        <room>rooms\rHub12</room>
+        <room>rooms\rW12Template</room>
+        <room>rooms\rG0</room>
+        <room>rooms\rG1</room>
+        <room>rooms\rG2</room>
+        <room>rooms\rG3</room>
+        <room>rooms\rG4</room>
+        <room>rooms\rG5</room>
+        <room>rooms\rG6</room>
+        <room>rooms\rG7</room>
+        <room>rooms\rG8</room>
+        <room>rooms\rG9</room>
+        <room>rooms\rGA</room>
+        <room>rooms\rGB</room>
+        <room>rooms\rGC</room>
+        <room>rooms\rGD</room>
+        <room>rooms\rGE</room>
+      </rooms>
+      <rooms name="world0">
+        <room>rooms\rHub00</room>
+        <room>rooms\rW0Template</room>
+        <room>rooms\rF0</room>
+        <room>rooms\rF1</room>
+        <room>rooms\rF2</room>
+        <room>rooms\rF3</room>
+        <room>rooms\rF4</room>
+        <room>rooms\rF5</room>
+        <room>rooms\rF6</room>
+        <room>rooms\rSecretLab</room>
+      </rooms>
+      <rooms name="tgb4">
+        <room>rooms\rSpringHub</room>
+        <room>rooms\rSpringTemplate</room>
+        <room>rooms\rE0</room>
+        <room>rooms\rE1</room>
+        <room>rooms\rE2</room>
+        <room>rooms\rE3</room>
+        <room>rooms\rE4</room>
+      </rooms>
+      <rooms name="tgb3">
+        <room>rooms\rSummerTemplate</room>
+        <room>rooms\rSummerHub</room>
+        <room>rooms\rD0</room>
+        <room>rooms\rD1</room>
+        <room>rooms\rD2</room>
+        <room>rooms\rD3</room>
+        <room>rooms\rD4</room>
+        <room>rooms\rD5</room>
+        <room>rooms\rD6</room>
+      </rooms>
+      <rooms name="tgb2">
+        <room>rooms\rWinterHub</room>
+        <room>rooms\rCTemplate</room>
+        <room>rooms\rC0</room>
+        <room>rooms\rC1</room>
+        <room>rooms\rC2</room>
+        <room>rooms\rC3</room>
+        <room>rooms\rC4X</room>
+        <room>rooms\rC4</room>
+        <room>rooms\rC5</room>
+        <room>rooms\rC6</room>
+      </rooms>
+      <rooms name="greatbeyond">
+        <room>rooms\rGBTut</room>
+        <room>rooms\rGBTutNew</room>
+        <room>rooms\rAutumnHub</room>
+        <room>rooms\rAutumnTemplate</room>
+        <room>rooms\rB0</room>
+        <room>rooms\rB1</room>
+        <room>rooms\rB2</room>
+        <room>rooms\rB3</room>
+        <room>rooms\rB4</room>
+        <room>rooms\rB5</room>
+        <room>rooms\rB6</room>
+        <room>rooms\rB7</room>
+        <room>rooms\rBO1</room>
+        <room>rooms\rBO2</room>
+      </rooms>
+      <rooms name="world11">
+        <room>rooms\rHub11</room>
+        <room>rooms\rW11Template</room>
+        <room>rooms\rA0</room>
+        <room>rooms\rA0X</room>
+        <room>rooms\rA1</room>
+        <room>rooms\rA1X</room>
+        <room>rooms\rA2</room>
+        <room>rooms\rA2X</room>
+        <room>rooms\rA3</room>
+        <room>rooms\rA4</room>
+        <room>rooms\rA4X</room>
+        <room>rooms\rA5</room>
+        <room>rooms\rA5X</room>
+        <room>rooms\rA6</room>
+        <room>rooms\rA6X</room>
+        <room>rooms\rA7</room>
+        <room>rooms\rA7X</room>
+        <room>rooms\rA8</room>
+        <room>rooms\rA9</room>
+        <room>rooms\rA9X</room>
+        <room>rooms\rAA</room>
+        <room>rooms\rAB</room>
+        <room>rooms\rABX</room>
+        <room>rooms\rAC</room>
+      </rooms>
+      <rooms name="world10">
+        <room>rooms\rHub10</room>
+        <room>rooms\rW10Template</room>
+        <room>rooms\r90</room>
+        <room>rooms\r91</room>
+        <room>rooms\r92</room>
+        <room>rooms\r93</room>
+        <room>rooms\r94</room>
+        <room>rooms\r94X</room>
+        <room>rooms\r95</room>
+        <room>rooms\r96</room>
+        <room>rooms\r97</room>
+        <room>rooms\r98</room>
+        <room>rooms\r99</room>
+        <room>rooms\r9A</room>
+        <room>rooms\r9B</room>
+        <room>rooms\r9C</room>
+      </rooms>
+      <rooms name="world9">
+        <room>rooms\rHub09</room>
+        <room>rooms\rW9Template</room>
+        <room>rooms\r80</room>
+        <room>rooms\r81</room>
+        <room>rooms\r82</room>
+        <room>rooms\r83</room>
+        <room>rooms\r84</room>
+        <room>rooms\r85</room>
+        <room>rooms\r8A</room>
+        <room>rooms\r8B</room>
+        <room>rooms\r8C</room>
+        <room>rooms\r8D</room>
+        <room>rooms\r8E</room>
+        <room>rooms\r8EX</room>
+        <room>rooms\r8F</room>
+      </rooms>
+      <rooms name="world8">
+        <room>rooms\rHub08</room>
+        <room>rooms\rW8Template</room>
+        <room>rooms\r70</room>
+        <room>rooms\r71</room>
+        <room>rooms\r72</room>
+        <room>rooms\r73</room>
+        <room>rooms\r74</room>
+        <room>rooms\r75</room>
+        <room>rooms\r76</room>
+        <room>rooms\r7A</room>
+        <room>rooms\r7B</room>
+      </rooms>
+      <rooms name="world7">
+        <room>rooms\rHub07</room>
+        <room>rooms\rW7Template</room>
+        <room>rooms\r60</room>
+        <room>rooms\r61</room>
+        <room>rooms\r62</room>
+        <room>rooms\r62X</room>
+        <room>rooms\r63</room>
+        <room>rooms\r64</room>
+        <room>rooms\r65</room>
+        <room>rooms\r66</room>
+        <room>rooms\r67</room>
+        <room>rooms\r68</room>
+        <room>rooms\r69</room>
+        <room>rooms\r6A</room>
+        <room>rooms\r6B</room>
+        <room>rooms\r6C</room>
+        <room>rooms\r6D</room>
+        <room>rooms\r6E</room>
+      </rooms>
+      <rooms name="world6">
+        <room>rooms\rHub06</room>
+        <room>rooms\rW6Template</room>
+        <room>rooms\r51</room>
+        <room>rooms\r52</room>
+        <room>rooms\r53</room>
+        <room>rooms\r54</room>
+        <room>rooms\r55</room>
+        <room>rooms\r56</room>
+        <room>rooms\r57</room>
+        <room>rooms\r58</room>
+        <room>rooms\r58X</room>
+        <room>rooms\r59</room>
+        <room>rooms\r5D</room>
+        <room>rooms\r5B</room>
+        <room>rooms\r5C</room>
+        <room>rooms\r5AX</room>
+        <room>rooms\r5AXX</room>
+        <room>rooms\r5A</room>
+      </rooms>
+      <rooms name="world5">
+        <room>rooms\rHub05</room>
+        <room>rooms\rHub05Old</room>
+        <room>rooms\r41</room>
+        <room>rooms\r42</room>
+        <room>rooms\r43</room>
+        <room>rooms\r44</room>
+        <room>rooms\r45</room>
+        <room>rooms\r46</room>
+        <room>rooms\r47</room>
+        <room>rooms\r4A</room>
+        <room>rooms\r4B</room>
+        <room>rooms\room112</room>
+      </rooms>
+      <rooms name="world4">
+        <room>rooms\rHub04</room>
+        <room>rooms\r31</room>
+        <room>rooms\r32</room>
+        <room>rooms\r33</room>
+        <room>rooms\r34</room>
+        <room>rooms\r35</room>
+        <room>rooms\r36</room>
+        <room>rooms\r37</room>
+        <room>rooms\r38</room>
+        <room>rooms\r3A</room>
+        <room>rooms\r3B</room>
+        <room>rooms\r3C</room>
+        <room>rooms\r41X</room>
+        <room>rooms\r44X</room>
+        <room>rooms\r47a</room>
+        <room>rooms\room87</room>
+        <room>rooms\r4EX</room>
+        <room>rooms\r4BX</room>
+        <room>rooms\room77X</room>
+        <room>rooms\r50X</room>
+        <room>rooms\r4CX</room>
+        <room>rooms\r4FX</room>
+        <room>rooms\room98</room>
+        <room>rooms\r3D</room>
+      </rooms>
+      <rooms name="world3">
+        <room>rooms\rHub03</room>
+        <room>rooms\r21</room>
+        <room>rooms\r22</room>
+        <room>rooms\r23a</room>
+        <room>rooms\r23</room>
+        <room>rooms\r24</room>
+        <room>rooms\r25</room>
+        <room>rooms\r26</room>
+        <room>rooms\r27</room>
+        <room>rooms\r28</room>
+        <room>rooms\r29</room>
+        <room>rooms\r29a</room>
+        <room>rooms\r2E</room>
+        <room>rooms\r2A</room>
+        <room>rooms\r2B</room>
+        <room>rooms\r2C</room>
+        <room>rooms\r2D</room>
+        <room>rooms\room108</room>
+        <room>rooms\r30</room>
+      </rooms>
+      <rooms name="world2">
+        <room>rooms\rHub02</room>
+        <room>rooms\rW2Template</room>
+        <room>rooms\r11</room>
+        <room>rooms\r12</room>
+        <room>rooms\r12a</room>
+        <room>rooms\r13</room>
+        <room>rooms\r14</room>
+        <room>rooms\r14X</room>
+        <room>rooms\r15</room>
+        <room>rooms\r16</room>
+        <room>rooms\r17</room>
+        <room>rooms\r18</room>
+        <room>rooms\r19</room>
+        <room>rooms\r20</room>
+        <room>rooms\r1C</room>
+        <room>rooms\r1D</room>
+        <room>rooms\r1H</room>
+        <room>rooms\r1E</room>
+        <room>rooms\r1G</room>
+        <room>rooms\r1GX</room>
+        <room>rooms\r1F</room>
+        <room>rooms\r1I</room>
+        <room>rooms\r1J</room>
+        <room>rooms\r1K</room>
+        <room>rooms\r1L</room>
+      </rooms>
+      <rooms name="world1">
+        <room>rooms\rHub01</room>
+        <room>rooms\rW1Template</room>
+        <room>rooms\r01</room>
+        <room>rooms\r02</room>
+        <room>rooms\r03</room>
+        <room>rooms\r04</room>
+        <room>rooms\r05</room>
+        <room>rooms\r06</room>
+        <room>rooms\r06alt</room>
+        <room>rooms\r07</room>
+        <room>rooms\r08</room>
+        <room>rooms\r09</room>
+        <room>rooms\r10</room>
+        <room>rooms\r1A</room>
+        <room>rooms\r1B</room>
+        <room>rooms\r0A</room>
+        <room>rooms\r0B</room>
+        <room>rooms\r0C</room>
+        <room>rooms\r0D</room>
+        <room>rooms\r0E</room>
+        <room>rooms\r0F</room>
+      </rooms>
+      <room>rooms\rMonolith</room>
+      <room>rooms\rHubGB</room>
+      <room>rooms\rUltraPuzzle</room>
+      <room>rooms\rWayOut</room>
+      <room>rooms\rBackHub</room>
+      <room>rooms\rBackHubOld</room>
+      <room>rooms\rMainHubX</room>
     </rooms>
-    <rooms name="world2">
-      <room>rooms\rHub02</room>
-      <room>rooms\rW2Template</room>
-      <room>rooms\r11</room>
-      <room>rooms\r12</room>
-      <room>rooms\r12a</room>
-      <room>rooms\r13</room>
-      <room>rooms\r14</room>
-      <room>rooms\r14X</room>
-      <room>rooms\r15</room>
-      <room>rooms\r16</room>
-      <room>rooms\r17</room>
-      <room>rooms\r18</room>
-      <room>rooms\r19</room>
-      <room>rooms\r20</room>
-      <room>rooms\r1C</room>
-      <room>rooms\r1D</room>
-      <room>rooms\r1H</room>
-      <room>rooms\r1E</room>
-      <room>rooms\r1G</room>
-      <room>rooms\r1GX</room>
-      <room>rooms\r1F</room>
-      <room>rooms\r1I</room>
-      <room>rooms\r1J</room>
-      <room>rooms\r1K</room>
-      <room>rooms\r1L</room>
-    </rooms>
-    <rooms name="world3">
-      <room>rooms\rHub03</room>
-      <room>rooms\r21</room>
-      <room>rooms\r22</room>
-      <room>rooms\r23a</room>
-      <room>rooms\r23</room>
-      <room>rooms\r24</room>
-      <room>rooms\r25</room>
-      <room>rooms\r26</room>
-      <room>rooms\r27</room>
-      <room>rooms\r28</room>
-      <room>rooms\r29</room>
-      <room>rooms\r29a</room>
-      <room>rooms\r2E</room>
-      <room>rooms\r2A</room>
-      <room>rooms\r2B</room>
-      <room>rooms\r2C</room>
-      <room>rooms\r2D</room>
-      <room>rooms\room108</room>
-      <room>rooms\r30</room>
-    </rooms>
-    <rooms name="world4">
-      <room>rooms\rHub04</room>
-      <room>rooms\r31</room>
-      <room>rooms\r32</room>
-      <room>rooms\r33</room>
-      <room>rooms\r34</room>
-      <room>rooms\r35</room>
-      <room>rooms\r36</room>
-      <room>rooms\r37</room>
-      <room>rooms\r38</room>
-      <room>rooms\r3A</room>
-      <room>rooms\r3B</room>
-      <room>rooms\r3C</room>
-      <room>rooms\r41X</room>
-      <room>rooms\r44X</room>
-      <room>rooms\r47a</room>
-      <room>rooms\room87</room>
-      <room>rooms\r4EX</room>
-      <room>rooms\r4BX</room>
-      <room>rooms\room77X</room>
-      <room>rooms\r50X</room>
-      <room>rooms\r4CX</room>
-      <room>rooms\r4FX</room>
-      <room>rooms\room98</room>
-      <room>rooms\r3D</room>
-    </rooms>
-    <rooms name="world5">
-      <room>rooms\rHub05</room>
-      <room>rooms\rHub05Old</room>
-      <room>rooms\r41</room>
-      <room>rooms\r42</room>
-      <room>rooms\r43</room>
-      <room>rooms\r44</room>
-      <room>rooms\r45</room>
-      <room>rooms\r46</room>
-      <room>rooms\r47</room>
-      <room>rooms\r4A</room>
-      <room>rooms\r4B</room>
-      <room>rooms\room112</room>
-    </rooms>
-    <rooms name="world6">
-      <room>rooms\rHub06</room>
-      <room>rooms\rW6Template</room>
-      <room>rooms\r51</room>
-      <room>rooms\r52</room>
-      <room>rooms\r53</room>
-      <room>rooms\r54</room>
-      <room>rooms\r55</room>
-      <room>rooms\r56</room>
-      <room>rooms\r57</room>
-      <room>rooms\r58</room>
-      <room>rooms\r58X</room>
-      <room>rooms\r59</room>
-      <room>rooms\r5D</room>
-      <room>rooms\r5B</room>
-      <room>rooms\r5C</room>
-      <room>rooms\r5AX</room>
-      <room>rooms\r5AXX</room>
-      <room>rooms\r5A</room>
-    </rooms>
-    <rooms name="world7">
-      <room>rooms\rHub07</room>
-      <room>rooms\rW7Template</room>
-      <room>rooms\r60</room>
-      <room>rooms\r61</room>
-      <room>rooms\r62</room>
-      <room>rooms\r62X</room>
-      <room>rooms\r63</room>
-      <room>rooms\r64</room>
-      <room>rooms\r65</room>
-      <room>rooms\r66</room>
-      <room>rooms\r67</room>
-      <room>rooms\r68</room>
-      <room>rooms\r69</room>
-      <room>rooms\r6A</room>
-      <room>rooms\r6B</room>
-      <room>rooms\r6C</room>
-      <room>rooms\r6D</room>
-      <room>rooms\r6E</room>
-    </rooms>
-    <rooms name="world8">
-      <room>rooms\rHub08</room>
-      <room>rooms\rW8Template</room>
-      <room>rooms\r70</room>
-      <room>rooms\r71</room>
-      <room>rooms\r72</room>
-      <room>rooms\r73</room>
-      <room>rooms\r74</room>
-      <room>rooms\r75</room>
-      <room>rooms\r76</room>
-      <room>rooms\r7A</room>
-      <room>rooms\r7B</room>
-    </rooms>
-    <rooms name="world9">
-      <room>rooms\rHub09</room>
-      <room>rooms\rW9Template</room>
-      <room>rooms\r80</room>
-      <room>rooms\r81</room>
-      <room>rooms\r82</room>
-      <room>rooms\r83</room>
-      <room>rooms\r84</room>
-      <room>rooms\r85</room>
-      <room>rooms\r8A</room>
-      <room>rooms\r8B</room>
-      <room>rooms\r8C</room>
-      <room>rooms\r8D</room>
-      <room>rooms\r8E</room>
-      <room>rooms\r8EX</room>
-      <room>rooms\r8F</room>
-    </rooms>
-    <rooms name="world10">
-      <room>rooms\rHub10</room>
-      <room>rooms\rW10Template</room>
-      <room>rooms\r90</room>
-      <room>rooms\r91</room>
-      <room>rooms\r92</room>
-      <room>rooms\r93</room>
-      <room>rooms\r94</room>
-      <room>rooms\r94X</room>
-      <room>rooms\r95</room>
-      <room>rooms\r96</room>
-      <room>rooms\r97</room>
-      <room>rooms\r98</room>
-      <room>rooms\r99</room>
-      <room>rooms\r9A</room>
-      <room>rooms\r9B</room>
-      <room>rooms\r9C</room>
-    </rooms>
-    <rooms name="world11">
-      <room>rooms\rHub11</room>
-      <room>rooms\rW11Template</room>
-      <room>rooms\rA0</room>
-      <room>rooms\rA0X</room>
-      <room>rooms\rA1</room>
-      <room>rooms\rA1X</room>
-      <room>rooms\rA2</room>
-      <room>rooms\rA2X</room>
-      <room>rooms\rA3</room>
-      <room>rooms\rA4</room>
-      <room>rooms\rA4X</room>
-      <room>rooms\rA5</room>
-      <room>rooms\rA5X</room>
-      <room>rooms\rA6</room>
-      <room>rooms\rA6X</room>
-      <room>rooms\rA7</room>
-      <room>rooms\rA7X</room>
-      <room>rooms\rA8</room>
-      <room>rooms\rA9</room>
-      <room>rooms\rA9X</room>
-      <room>rooms\rAA</room>
-      <room>rooms\rAB</room>
-      <room>rooms\rABX</room>
-      <room>rooms\rAC</room>
-    </rooms>
-    <rooms name="greatbeyond">
-      <room>rooms\rGBTut</room>
-      <room>rooms\rGBTutNew</room>
-      <room>rooms\rAutumnHub</room>
-      <room>rooms\rAutumnTemplate</room>
-      <room>rooms\rB0</room>
-      <room>rooms\rB1</room>
-      <room>rooms\rB2</room>
-      <room>rooms\rB3</room>
-      <room>rooms\rB4</room>
-      <room>rooms\rB5</room>
-      <room>rooms\rB6</room>
-      <room>rooms\rB7</room>
-      <room>rooms\rBO1</room>
-      <room>rooms\rBO2</room>
-    </rooms>
-    <rooms name="tgb2">
-      <room>rooms\rWinterHub</room>
-      <room>rooms\rCTemplate</room>
-      <room>rooms\rC0</room>
-      <room>rooms\rC1</room>
-      <room>rooms\rC2</room>
-      <room>rooms\rC3</room>
-      <room>rooms\rC4X</room>
-      <room>rooms\rC4</room>
-      <room>rooms\rC5</room>
-      <room>rooms\rC6</room>
-    </rooms>
-    <rooms name="tgb3">
-      <room>rooms\rSummerTemplate</room>
-      <room>rooms\rSummerHub</room>
-      <room>rooms\rD0</room>
-      <room>rooms\rD1</room>
-      <room>rooms\rD2</room>
-      <room>rooms\rD3</room>
-      <room>rooms\rD4</room>
-      <room>rooms\rD5</room>
-      <room>rooms\rD6</room>
-    </rooms>
-    <rooms name="tgb4">
-      <room>rooms\rSpringHub</room>
-      <room>rooms\rSpringTemplate</room>
-      <room>rooms\rE0</room>
-      <room>rooms\rE1</room>
-      <room>rooms\rE2</room>
-      <room>rooms\rE3</room>
-      <room>rooms\rE4</room>
-    </rooms>
-    <rooms name="world0">
-      <room>rooms\rHub00</room>
-      <room>rooms\rW0Template</room>
-      <room>rooms\rF0</room>
-      <room>rooms\rF1</room>
-      <room>rooms\rF2</room>
-      <room>rooms\rF3</room>
-      <room>rooms\rF4</room>
-      <room>rooms\rF5</room>
-      <room>rooms\rF6</room>
-      <room>rooms\rSecretLab</room>
-    </rooms>
-    <rooms name="world12">
-      <room>rooms\rHub12</room>
-      <room>rooms\rW12Template</room>
-      <room>rooms\rG0</room>
-      <room>rooms\rG1</room>
-      <room>rooms\rG2</room>
-      <room>rooms\rG3</room>
-      <room>rooms\rG4</room>
-      <room>rooms\rG5</room>
-      <room>rooms\rG6</room>
-      <room>rooms\rG7</room>
-      <room>rooms\rG8</room>
-      <room>rooms\rG9</room>
-      <room>rooms\rGA</room>
-      <room>rooms\rGB</room>
-      <room>rooms\rGC</room>
-      <room>rooms\rGD</room>
-      <room>rooms\rGE</room>
-    </rooms>
-    <rooms name="omegapuzzles">
-      <room>rooms\rOmegaTemplate</room>
-      <room>rooms\rOmega0</room>
-      <room>rooms\rOmega1</room>
-      <room>rooms\rOmega2</room>
-      <room>rooms\rOmega7</room>
-      <room>rooms\rOmegaD</room>
-    </rooms>
-    <rooms name="ex">
-      <room>rooms\rEXHub</room>
-      <room>rooms\rTemplateEX</room>
-      <room>rooms\rEX0</room>
-      <room>rooms\rEX1</room>
-      <room>rooms\rEX2</room>
-      <room>rooms\rEX3</room>
-      <room>rooms\rEX4</room>
-      <room>rooms\rEX5</room>
-      <room>rooms\rEX6</room>
-      <room>rooms\rEX7</room>
-      <room>rooms\rEXZ</room>
-    </rooms>
-    <rooms name="worldomega">
-      <room>rooms\rHubOmega</room>
-      <room>rooms\rWOTemplate</room>
-      <room>rooms\rH0</room>
-      <room>rooms\rH0H</room>
-      <room>rooms\rH1</room>
-      <room>rooms\rH2</room>
-      <room>rooms\rH3</room>
-      <room>rooms\rHM</room>
-      <room>rooms\rHN</room>
-      <room>rooms\rHO</room>
-      <room>rooms\rHP</room>
-      <room>rooms\rHQ</room>
-      <room>rooms\rHR</room>
-      <room>rooms\rHS</room>
-      <room>rooms\rHT</room>
-      <room>rooms\rHU</room>
-      <room>rooms\rHV</room>
-      <room>rooms\rHW</room>
-      <room>rooms\rHX</room>
-      <room>rooms\rHY</room>
-      <room>rooms\rHZ</room>
-    </rooms>
-    <room>rooms\rNullHub</room>
-    <room>rooms\rGuestRoom</room>
-    <room>rooms\rKinaDiary</room>
-    <room>rooms\rMuseum</room>
-    <room>rooms\rConnection</room>
-    <room>rooms\rIntro</room>
-    <room>rooms\rIntro2</room>
-    <room>rooms\rTempClear</room>
-    <room>rooms\rEnd2</room>
-    <room>rooms\rCredits</room>
   </rooms>
   <constants number="43">
     <constant name="vp_NONE">11</constant>
@@ -1662,7 +1681,12 @@
     <constant name="ts_LILY">2</constant>
     <constant name="ts_SIGN">1</constant>
     <constant name="ts_SYS">0</constant>
-    <constant name="COLORS">14</constant>
+    <constant name="COLORS">19</constant>
+    <constant name="color_NAVY">18</constant>
+    <constant name="color_FOREST">17</constant>
+    <constant name="color_MAROON">16</constant>
+    <constant name="color_SILVER">15</constant>
+    <constant name="color_DYNAMITE">14</constant>
     <constant name="color_STONE">13</constant>
     <constant name="color_GLITCH">12</constant>
     <constant name="color_PURE">11</constant>
