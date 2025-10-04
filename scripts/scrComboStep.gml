@@ -5,7 +5,7 @@ happens, the door is eligible for opening. If the player is within range of the 
 the Requirement Heuristic runs, including a master key check. Also note that the Heuristic
 won't run if the door is in a certain part of the Adding/Removing Copy Animation.
 
-Requirement Heuristic: First, if the door is not browned and either colorSpend or a
+Requirement Heuristic: First, if the door is not cursed and either colorSpend or a
 list function on all the locks returns at least one color_MASTER (0), then the door is NOT
 gold-openable. The gold-openable code takes precedence over the normal open code.
 If the door has a gold key applied to it within that code, then the normal code won't run
@@ -44,7 +44,7 @@ if aura[0] == 1 || aura[1] == 1 || aura[2] == 1 || objPlayer.aura[0] == -1 || ob
     if distance_to_object(objPlayer) <= 23{
         removeAurasCombo();
         if aura[0] == 0 && aura[1] == 0 && aura[2] == 0{
-            if objPlayer.brownMode != 0{
+            if objPlayer.curseMode != 0{
                 enbrownCombo();
             }
         }
@@ -54,7 +54,7 @@ if aura[0] == 1 || aura[1] == 1 || aura[2] == 1 || objPlayer.aura[0] == -1 || ob
     exit;
 }else{
     openEligible = true;
-    if objPlayer.brownMode != 0{
+    if objPlayer.curseMode != 0{
         if distance_to_object(objPlayer) <= 23{
             enbrownCombo();
         }else{
@@ -64,8 +64,8 @@ if aura[0] == 1 || aura[1] == 1 || aura[2] == 1 || objPlayer.aura[0] == -1 || ob
 }
 
 var effectiveColorSpend;
-if browned{
-    effectiveColorSpend = color_BROWN;
+if cursed != -1{
+    effectiveColorSpend = cursed;
 }else{
     effectiveColorSpend = colorSpend;
 }
@@ -100,8 +100,8 @@ if objPlayer.masterCycle == 1 {
         goldEligible = -2;
     }
 }
-if !browned && goldEligible != 0{
-    if colorSpend == color_MASTER || colorSpend == color_PURE || ((glitchMimic == color_MASTER || glitchMimic == color_PURE) && browned == 0){
+if cursed == -1 && goldEligible != 0{
+    if colorSpend == color_MASTER || colorSpend == color_PURE || ((glitchMimic == color_MASTER || glitchMimic == color_PURE) && cursed == -1){
         goldEligible = 0;
     }
     for(var i = 0; i < lockCount; i += 1){
@@ -114,8 +114,8 @@ var dynamiteEligible = false;
 if global.key[color_DYNAMITE] != 0 || global.ikey[color_DYNAMITE] != 0 {
     dynamiteEligible = true;
 }
-if !browned && dynamiteEligible {
-    if colorSpend == color_DYNAMITE || colorSpend == color_PURE || ((glitchMimic == color_DYNAMITE || glitchMimic == color_PURE) && browned == 0){
+if cursed == -1 && dynamiteEligible {
+    if colorSpend == color_DYNAMITE || colorSpend == color_PURE || ((glitchMimic == color_DYNAMITE || glitchMimic == color_PURE) && cursed == -1){
         dynamiteEligible = false;
     }
     for(var i = 0; i < lockCount; i += 1){
@@ -128,8 +128,8 @@ var silverEligible = false;
 if objPlayer.masterCycle == 2 && objPlayer.masterMode != 0 {
     silverEligible = true;
 }
-if !browned && silverEligible {
-    if colorSpend == color_SILVER || colorSpend == color_PURE || ((glitchMimic == color_SILVER || glitchMimic == color_PURE) && browned == 0){
+if cursed == -1 && silverEligible {
+    if colorSpend == color_SILVER || colorSpend == color_PURE || ((glitchMimic == color_SILVER || glitchMimic == color_PURE) && cursed == -1){
         silverEligible = false;
     }
     for(var i = 0; i < lockCount; i += 1){
@@ -149,9 +149,9 @@ if distance_to_object(objPlayer) <= 1{
         switch goldEligible{
             case 0://MAIN CODE
             var metRequirement = true;//Whether the requirement for every lock has been met
-            if browned{//Brown version
+            if cursed != -1{//Brown version
                 for(var i = 0; i < lockCount; i += 1){
-                    if !scrCanOpenFeed(color_BROWN,lock[i,1],lock[i,2],lock[i,3],iPow){
+                    if !scrCanOpenFeed(cursed,lock[i,1],lock[i,2],lock[i,3],iPow){
                         metRequirement = false;
                     }
                 }
@@ -173,9 +173,9 @@ if distance_to_object(objPlayer) <= 1{
                     case -2: tempIPow = 3; break;
                 }
             }
-            if browned{//Door is brown, different spend amount can result from Blast Locks
+            if cursed != -1{//Door is brown, different spend amount can result from Blast Locks
                 for(var i = 0; i < lockCount; i += 1){
-                    scrAddSpendAmt(color_BROWN,lock[i,1],lock[i,2],lock[i,3],tempIPow);
+                    scrAddSpendAmt(cursed,lock[i,1],lock[i,2],lock[i,3],tempIPow);
                 }
             }else{//Normal lock spend summation
                 for(var i = 0; i < lockCount; i += 1){

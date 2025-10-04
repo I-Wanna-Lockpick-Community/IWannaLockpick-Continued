@@ -34,7 +34,7 @@ copies = 1;//Number of copies for the negative master key system
 aura[0] = 0;//Red aura
 aura[1] = 0;//Green aura
 aura[2] = 0;//Blue aura
-browned = 0;
+cursed = -1;
 w = 1;
 h = 1;
 //Copy animation variables

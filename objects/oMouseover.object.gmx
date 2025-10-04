@@ -42,7 +42,7 @@ getGlitch = 0;
 getAura[0] = 0;//Red
 getAura[1] = 0;//Green
 getAura[2] = 0;//Blue
-getAura[3] = 0;//Browned
+getAura[3] = 0;//cursed
 getSal = -1;//Salvage ID
 getStuck = 0;//If a salvage point is stuck, say so
 //Initialize lock arrays
@@ -81,6 +81,8 @@ keyName[4] = "Unstar ";
 keyName[5] = "Signflip ";
 keyName[6] = "Rotor (i) ";
 keyName[7] = "Rotor (-i) ";
+keyName[8] = "Curse ";
+keyName[9] = "Uncurse ";
 //Define door type names
 doorName[0] = "";
 doorName[1] = "Blank ";
@@ -307,7 +309,7 @@ if mouse_in_window(){
             other.getAura[0] = aura[0];
             other.getAura[1] = aura[1];
             other.getAura[2] = aura[2];
-            other.getAura[3] = browned;
+            other.getAura[3] = cursed;
             other.getSal = salvageID;
         } 
     }
@@ -321,7 +323,7 @@ if mouse_in_window(){
             other.getAura[0] = aura[0];
             other.getAura[1] = aura[1];
             other.getAura[2] = aura[2];
-            other.getAura[3] = browned;
+            other.getAura[3] = cursed;
             other.getSal = salvageID;
             for(i=0;i&lt;lockCount;i+=1){
                 other.lockCol[i] = lock[i,0];
@@ -376,7 +378,7 @@ if mouse_in_window(){
             if point_distance(x,y,mouse_x,mouse_y) &lt; 16{
                 other.mouseID = id;
                 other.mouseType = 6;
-                other.getAura[3] = browned;
+                other.getAura[3] = cursed;
             }
         }
     }

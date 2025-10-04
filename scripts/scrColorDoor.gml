@@ -1,14 +1,14 @@
-if browned{
-    c1 = global.highTone[color_BROWN];
-    c2 = global.mainTone[color_BROWN];
-    c3 = global.darkTone[color_BROWN];
+if cursed != -1 {
+    c1 = global.highTone[cursed];
+    c2 = global.mainTone[cursed];
+    c3 = global.darkTone[cursed];
 }else{
     c1 = global.highTone[color];
     c2 = global.mainTone[color];
     c3 = global.darkTone[color];
 }
 
-/*if browned{
+/*if cursed{
     c1 = make_color_rgb(170,96,21);
     c2 = make_color_rgb(112,64,16);
     c3 = make_color_rgb(56,32,7);

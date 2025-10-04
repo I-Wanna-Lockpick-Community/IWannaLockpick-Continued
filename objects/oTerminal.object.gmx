@@ -47,7 +47,7 @@ type = 5;//0 = Normal, 1 = Blast, 2 = Swap, 3 = Zero, 4 = INFINITY
 copies = 1;//Number of copies for the negative master key system
 icopies = 0;
 iPow = 0;
-browned = 0;
+cursed = 0;
 lock[0,0] = 0;
 
 omegaA = 0;

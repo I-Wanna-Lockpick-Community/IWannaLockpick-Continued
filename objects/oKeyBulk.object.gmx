@@ -32,7 +32,7 @@ glitchMimic = color_GLITCH;//For glitch keys
 count = 1;
 icount = 0;
 iPow = 0;
-type = 0;//0 = Simple, 1 = Absolute, 2 = Ordinal (UNUSED), 3 = Star, 4 = Unstar, 5 = Swap
+type = key_NORMAL;//0 = Simple, 1 = Absolute, 2 = Ordinal (UNUSED), 3 = Star, 4 = Unstar, 5 = Swap
 inf = 0;//Infinite copies!
 touched = 0;//whether the thing's been touched (inf copy)
 //Scrapped 3 = Absolute+INFINITY, aka what came before the ordinal system
@@ -196,6 +196,11 @@ switch type {
             global.key[effectiveColor] = tmp2;
             global.ikey[effectiveColor] = -tmp;
         }
+    case key_CURSE:
+        global.curse[effectiveColor] = 1;
+    break;
+    case key_UNCURSE:
+        global.curse[effectiveColor] = 0;
     break;
 }
 
@@ -369,6 +374,8 @@ switch type {
     case key_SIGNFLIP: draw_sprite(sprKSwap,0,x,y); break;
     case key_POSROTOR: draw_sprite(sprKSwap,1,x,y); break;
     case key_NEGROTOR: draw_sprite(sprKSwap,2,x,y); break;
+    case key_CURSE: draw_sprite(sprKSwap,1,x,y); break;
+    case key_UNCURSE: draw_sprite(sprKSwap,2,x,y); break;
     default:
         if !(count == 1 &amp;&amp; icount == 0) {
             if icount == 0 {//Real numbers

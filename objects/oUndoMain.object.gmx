@@ -105,7 +105,7 @@ if saveBuffered{
                     if dist &lt;= 1{
                         other.shouldSave = 0;
                     }
-                    if dist &lt;= 23 &amp;&amp; (brownMode != 0 || aura[0] == 1 || aura[1] == 1 || aura[2] == 1){
+                    if dist &lt;= 23 &amp;&amp; (curseMode != 0 || aura[0] == 1 || aura[1] == 1 || aura[2] == 1){
                         other.shouldSave = 0;
                     }
                 }
@@ -114,7 +114,7 @@ if saveBuffered{
                     if dist &lt;= 1{
                         other.shouldSave = 0;
                     }
-                    if dist &lt;= 23 &amp;&amp; (brownMode != 0 || aura[0] == 1 || aura[1] == 1 || aura[2] == 1){
+                    if dist &lt;= 23 &amp;&amp; (curseMode != 0 || aura[0] == 1 || aura[1] == 1 || aura[2] == 1){
                         other.shouldSave = 0;
                     }
                 }
@@ -133,7 +133,7 @@ if saveBuffered{
                     if dist &lt;= 1{
                         other.shouldSave = 0;
                     }
-                    if dist &lt;= 23 &amp;&amp; brownMode != 0{
+                    if dist &lt;= 23 &amp;&amp; curseMode != 0{
                         other.shouldSave = 0;
                     }
                 }

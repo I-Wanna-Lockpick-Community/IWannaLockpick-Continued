@@ -34,7 +34,7 @@ headXsc = -1;
 arrowInd = 0;
 
 active = 1;
-browned = 0;
+cursed = -1;
 copies = 1;
 icopies = 0;
 opened = 0;
@@ -215,7 +215,7 @@ for(var i = 0; i &lt; numConvoVis; i += 1){
           <argument>
             <kind>1</kind>
             <string>///Brown particles
-if browned &amp;&amp; active{
+if cursed != -1 &amp;&amp; active{
     alarm[0] = 120;
     repeat(4){
         with(instance_create(x+random_range(-6,6),y+random_range(-6,6),oBrownParticle)){
@@ -265,7 +265,7 @@ showArrow = 0;
 switch state{
     case 0://Inert
         if inRange{
-            if (objPlayer.masterMode != 0 || global.key[color_BROWN] != 0 || browned){//Key stuff
+            if (objPlayer.masterMode != 0 || cursed != -1){//Key stuff
                 
             }else{//Talking
                 showArrow = 1;
@@ -495,14 +495,14 @@ switch copyState{
             <string>///Main key code
 if instance_exists(objPlayer) &amp;&amp; active &amp;&amp; copyState == 0{
     distToP = distance_to_object(objPlayer);
-    if browned{
-        effectiveColor = color_BROWN;
-        effectiveColorSpend = color_BROWN;
+    if cursed != -1{
+        effectiveColor = cursed;
+        effectiveColorSpend = cursed;
     }else{
         effectiveColor = color;
         effectiveColorSpend = colorSpend;
     }
-    if objPlayer.brownMode != 0{
+    if objPlayer.curseMode != 0{
         if distToP &lt;= 23{
             enbrownKina();
         }else{
@@ -676,7 +676,7 @@ if global.kinaHeart == 0 &amp;&amp; !instance_exists(oHeartItem){
             <kind>1</kind>
             <string>///Brown particle burst
 var _bp;
-if browned{
+if cursed != -1{
     alarm[0] = 120;
     repeat(4){
         with(instance_create(x+random_range(-6,6),y+random_range(-6,6),oBrownParticle)){
@@ -912,7 +912,7 @@ draw_sprite_ext(sprKinaHead,0,x,y-23,headXsc,1,0,c_white,1);
 draw_sprite_ext(sprKinaDress,1,x,y,1,1,0,c_white,1);
 //Lock
 if active{
-    if !browned{
+    if !cursed != -1{
         if (global.complexMode == 0 &amp;&amp; copies == 0) || (global.complexMode == 1 &amp;&amp; icopies == 0){
             draw_sprite_ext(sprKinaLockIm,floor(image_index),x,y+4,1,1,0,c_white,1);
             scrKinaDrawIm();
@@ -934,7 +934,7 @@ if showArrow &amp;&amp; state == 0{
     draw_sprite(sprUpArrowDoor,arrowInd,x,y-8);
 }
 //Unread Notif
-if doJingle &amp;&amp; active &amp;&amp; !browned{
+if doJingle &amp;&amp; active &amp;&amp; cursed == -1{
     draw_sprite(sprConvoNotif,0,x+16,y-48);
     if unrCircL &lt; .99{
         draw_set_alpha(1-unrCircL);

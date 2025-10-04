@@ -1,5 +1,5 @@
 if type == 0 || type == 1 || type == 3 || type == 4 || type == 5{
-    if color == color_MASTER && colorSpend == color_MASTER && type != 5 && browned == 0{
+    if color == color_MASTER && colorSpend == color_MASTER && type != 5 && cursed == -1{
         scrPlaySoundExt(sndMasterUnlock,1,1,false);
     }else{
         scrPlaySoundExt(sndOpen,1,1,false);

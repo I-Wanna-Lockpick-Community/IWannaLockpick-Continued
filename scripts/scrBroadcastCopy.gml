@@ -6,14 +6,14 @@ if argument0 != color_GLITCH{
         }
     }
     with oDoorSimple{
-        if !browned{
+        if cursed == -1{
             if color == color_GLITCH || colorSpend == color_GLITCH{
                 glitchMimic = argument0;
             }
         }
     }
     with oDoorCombo{
-        if !browned{
+        if cursed == -1{
             if colorSpend == color_GLITCH{
                 glitchMimic = argument0;
             }
@@ -34,14 +34,14 @@ if argument0 != color_GLITCH{
         }
     }
     with oDoorSimple{
-        if !browned{
+        if cursed == -1{
             if color == color_GLITCH || colorSpend == color_GLITCH{
                 glitchMimic = argument1;
             }
         }
     }
     with oDoorCombo{
-        if !browned{
+        if cursed == -1{
             if colorSpend == color_GLITCH{
                 glitchMimic = argument1;
             }

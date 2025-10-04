@@ -30,8 +30,10 @@ for(var i=0;i&lt;COLORS;i+=1){
     global.key[i] = 0;
     global.ikey[i] = 0;
     global.star[i] = 0;
+    global.curse[i] = 0;
     show[i] = -1;//The list of key *types* to be shown
 }
+global.curse[color_BROWN] = 1;
 long = 0;//0 = Short box, 1 = Long box, 2 = VERY long box
 stone = 0;//The level select key display
 goldIndex = 0;//Gold/Pure image index
@@ -167,6 +169,19 @@ if size &gt;= 1{
     for(var i = 0; i &lt; 16; i += 1){
         drawY = y + 40*i;
         if show[i] != -1{
+            if global.curse[show[i]] == 1 {
+                if show[i] == color_BROWN {
+                    draw_set_blend_mode(bm_subtract);
+                    draw_sprite_ext(sprBrownAura,0,x-4+16,drawY-4+16,.4,.4,-starAngle,c_white,0);
+                } else if getCurseBlendMode(show[i]) {
+                    draw_set_blend_mode(bm_add);
+                    draw_sprite_ext(sprWhiteAura,0,x-4+16,drawY-4+16,.4,.4,-starAngle,getCurseColor(show[i]),1);
+                } else {
+                    draw_set_blend_mode(bm_subtract);
+                    draw_sprite_ext(sprWhiteAura,0,x-4+16,drawY-4+16,.4,.4,-starAngle,getCurseColor(show[i]),0);
+                }
+                draw_set_blend_mode(bm_normal);
+            }
             if global.star[show[i]] == 1 {
                 draw_sprite_ext(sprStarGlow,0,x-4+16,drawY-4+16,.4,.4,starAngle,starCol,1);
             }

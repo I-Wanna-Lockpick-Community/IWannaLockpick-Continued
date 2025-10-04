@@ -33,6 +33,7 @@ speed = .1;
 direction = random(360);
 image_xscale = 0;
 image_yscale = 0;
+color = color_BROWN;
 </string>
           </argument>
         </arguments>
@@ -85,12 +86,22 @@ if scaleA == 90{instance_destroy();}
           <argument>
             <kind>1</kind>
             <string>//var newScale = scale + scale*sin(degtorad(scaleA));
-if mode == 0{
-    draw_set_blend_mode(bm_subtract);
-    draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,image_angle,merge_color(c_black,c_white,image_alpha),0);
-}else{
-    draw_set_blend_mode(bm_add);
-    draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,image_angle,c_white,image_alpha);
+if color == color_BROWN {
+    if mode == 0{
+        draw_set_blend_mode(bm_subtract);
+        draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,image_angle,merge_color(c_black,c_white,image_alpha),0);
+    }else{
+        draw_set_blend_mode(bm_add);
+        draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,image_angle,c_white,image_alpha);
+    }
+} else {
+    if mode == getCurseBlendMode(color) {
+        draw_set_blend_mode(bm_subtract);
+        draw_sprite_ext(sprWhiteAura,0,x,y,image_xscale,image_yscale,image_angle,merge_color(c_black,getCurseColor(color),image_alpha),0);
+    } else {
+        draw_set_blend_mode(bm_add);
+        draw_sprite_ext(sprWhiteAura,0,x,y,image_xscale,image_yscale,image_angle,getCurseColor(color),image_alpha);
+    }
 }
 draw_set_blend_mode(bm_normal);
 </string>

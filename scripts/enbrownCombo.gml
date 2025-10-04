@@ -6,29 +6,29 @@ for(var i = 0; i < lockCount; i += 1){
         exit;
     }
 }
-var brownRedundant = 1;
-if colorSpend == color_BROWN{
+var curseRedundant = 1;
+if colorSpend == objPlayer.curseColor{
     for(var i = 0; i < lockCount; i += 1){
-        if lock[i,0] != color_BROWN{
-            brownRedundant = 0;
+        if lock[i,0] != objPlayer.curseColor{
+            curseRedundant = 0;
         }
-    }
+    }   
 }else{
-    brownRedundant = 0;
+    curseRedundant = 0;
 }
 var auraPlayNoise = 0;
-if objPlayer.brownMode == 1 && browned == 0 && !brownRedundant{//Add redundancy heuristic if everything is already brown
-    browned = 1;
+if objPlayer.curseMode == 1 && cursed != objPlayer.curseColor && !curseRedundant{//Add redundancy heuristic if everything is already brown
+    cursed = objPlayer.curseColor;
     var colorOld = colorSpend;
-    colorSpend = color_BROWN;
+    colorSpend = objPlayer.curseColor;
     scrComboCFunc();
     colorSpend = colorOld;
     scrPlaySoundExt(sndCopy1,1,1,false);
     event_user(3);
     brownNearPlayer = 1;
     undoBUFFER();
-}else if objPlayer.brownMode == -1 && browned == 1{
-    browned = 0;
+}else if objPlayer.curseMode == -1 && cursed != -1{
+    cursed = -1;
     scrComboCFunc();
     scrPlaySoundExt(sndCopy2,1,1,false);
     event_user(3);

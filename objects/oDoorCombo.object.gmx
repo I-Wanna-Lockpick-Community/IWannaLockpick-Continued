@@ -77,12 +77,12 @@ if myLight != -1{
           <argument>
             <kind>1</kind>
             <string>///Brown particles
-if browned{
+if cursed{
     alarm[0] = 120;
     for(var ix = 0; ix&lt;(2*w); ix+=1){
         for(var iy = 0; iy&lt;(2*h); iy+=1){
             with(instance_create(x+random_range(4,12)+16*ix,y+random_range(4,12)+16*iy,oBrownParticle)){
-                
+                color = other.cursed;
             }
         }
     }
@@ -339,12 +339,13 @@ if instance_exists(oLightsW5) || instance_exists(oLightsW4) || instance_exists(o
             <kind>1</kind>
             <string>///Brown particle burst
 var _bp;
-if browned{
+if cursed{
     alarm[0] = 120;
     for(var ix = 0; ix&lt;(2*w); ix+=1){
         for(var iy = 0; iy&lt;(2*h); iy+=1){
             with(instance_create(x+random_range(4,12)+16*ix,y+random_range(4,12)+16*iy,oBrownParticle)){
                 scale = random_range(.2,.5);
+                color = other.cursed;
             }
         }
     }
