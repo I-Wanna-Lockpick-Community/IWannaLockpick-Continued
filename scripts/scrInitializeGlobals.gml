@@ -40,7 +40,7 @@ for(var i = 0; i < 15; i+=1){
     global.areaComplete[i] = 0;
 }
 for(var i = 0; i < 3; i+=1){
-    global.object[i] = 0;
+    global.object[i] = 1;
 }
 
 global.stoneKeys = 0;//Just a tally of how many areas you cleared
