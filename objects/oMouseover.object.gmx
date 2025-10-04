@@ -110,21 +110,31 @@ doorName[3] = "All ";
 pdaMode = 0;
 oldMode = 0;//Just for sound stuff
 //Array to organize rows/columns of keys
-pdaID[0] = color_WHITE;
-pdaID[1] = color_ORANGE;
-pdaID[2] = color_PURPLE;
-pdaID[3] = color_PINK;
-pdaID[4] = color_CYAN;
-pdaID[5] = color_BLACK;
-pdaID[6] = color_STONE;
-pdaID[7] = color_MASTER;
-pdaID[8] = color_PURE;
-pdaID[9] = color_BROWN;
-pdaID[10] = color_RED;
-pdaID[11] = color_GREEN;
-pdaID[12] = color_BLUE;
-pdaID[13] = color_GLITCH;
-// @addcolor (TODO::FIX PDA)
+pdaPage = 0; // Current page
+// Each page displays 14 keys, possibly except the last one.
+pdaPages = 2; pdaOnLastPage = 5;
+// Page 1
+pdaID[0, 0] = color_WHITE;
+pdaID[0, 1] = color_ORANGE;
+pdaID[0, 2] = color_PURPLE;
+pdaID[0, 3] = color_PINK;
+pdaID[0, 4] = color_CYAN;
+pdaID[0, 5] = color_BLACK;
+pdaID[0, 6] = color_STONE;
+pdaID[0, 7] = color_MASTER;
+pdaID[0, 8] = color_PURE;
+pdaID[0, 9] = color_BROWN;
+pdaID[0, 10] = color_RED;
+pdaID[0, 11] = color_GREEN;
+pdaID[0, 12] = color_BLUE;
+pdaID[0, 13] = color_GLITCH;
+// Page 2
+pdaID[1, 0] = color_SILVER;
+pdaID[1, 1] = color_DYNAMITE;
+pdaID[1, 2] = color_MAROON;
+pdaID[1, 3] = color_FOREST;
+pdaID[1, 4] = color_NAVY;
+// @addcolor
 //Jokes
 numJokes = 15;
 curJoke = irandom(numJokes);
@@ -619,6 +629,10 @@ if scrButtonCheck(global.specialButton){
         if oldMode == 0{//Play sound effect
             scrPlaySoundExt(sndDrop,.7,1.5,0);
         }
+        if pdaPages &gt; 1 &amp;&amp; scrButtonCheckPressed(global.masButton){
+            scrPlaySoundExt(sndDrop,.7,1.5,0);
+            pdaPage = (pdaPage + 1) % pdaPages
+        }
     }
 }
 oldMode = pdaMode;
@@ -855,22 +869,29 @@ if pdaMode == 1{
     /*KEY ORGANIZATION:
     Left Column: White, Orange, Purple, Pink, Cyan, Black, Stone
     Right Column: Master, Pure, Brown, Red, Green, Blue, Glitch*/
-    for(var i = 0; i &lt; COLORS; i += 1){ // (TODO::FIX PDA)
+    
+    if pdaPage == pdaPages-1 {
+        var keysOnThisPage = pdaOnLastPage;
+    } else {
+        var keysOnThisPage = 14;
+    }
+
+    for(var i = 0; i &lt; keysOnThisPage; i += 1){
         drawX = pdaX+20+184*(i&gt;6); drawY = pdaY+20+48*(i mod 7);
         draw_set_alpha(1);
         draw_set_color(c_white);
-        if pdaID[i] == color_MASTER{
+        if pdaID[pdaPage, i] == color_MASTER{
             draw_sprite(sprKMaster,floor(goldIndex)%4,drawX,drawY);
-        }else if pdaID[i] == color_PURE{
+        }else if pdaID[pdaPage, i] == color_PURE{
             draw_sprite(sprKPure,floor(goldIndex)%4,drawX,drawY);
-        }else if pdaID[i] == color_GLITCH{
-            color = pdaID[i];
+        }else if pdaID[pdaPage, i] == color_GLITCH{
+            color = pdaID[pdaPage, i];
             scrColorKey();
             shader_set(shdRainbowStripe2);
             draw_sprite(sprKey,3,drawX,drawY);
             draw_sprite_ext(sprKey,1,drawX,drawY,1,1,0,blend,1);
             shader_reset();
-        }else if pdaID[i] == color_STONE{
+        }else if pdaID[pdaPage, i] == color_STONE{
             draw_sprite(sprKStone,0,drawX,drawY);
         }else if pdaID[i] == color_SILVER{
             draw_sprite(sprKSilver,floor(goldIndex)%4,drawX,drawY);
@@ -878,13 +899,13 @@ if pdaMode == 1{
             draw_sprite(sprKDynamite,floor(goldIndex),drawX,drawY);
 			// @addcolor if key image/animation
         } else {
-            color = pdaID[i];
+            color = pdaID[pdaPage, i];
             scrColorKey();
             draw_sprite(sprKey,0,drawX,drawY);
             draw_sprite_ext(sprKey,1,drawX,drawY,1,1,0,blend,1);
         }
         //Star
-        if global.star[pdaID[i]] == 1{
+        if global.star[pdaID[pdaPage, i]] == 1{
             draw_sprite_ext(sprWorldEntry,16,drawX,drawY+16,1,1,0,c_white,1);
         }
         //Count text
@@ -892,19 +913,19 @@ if pdaMode == 1{
         draw_set_font(fPDA);
         draw_set_valign(fa_bottom);
         draw_set_halign(fa_left);
-        if global.key[pdaID[i]] == 0{
-            if global.ikey[pdaID[i]] == 0{
+        if global.key[pdaID[pdaPage, i]] == 0{
+            if global.ikey[pdaID[pdaPage, i]] == 0{
                 var countString = "0";
             }else{
-                var countString = string(global.ikey[pdaID[i]])+"i";
+                var countString = string(global.ikey[pdaID[pdaPage, i]])+"i";
             }
         }else{
-            if global.ikey[pdaID[i]] == 0{
-                var countString = string(global.key[pdaID[i]]);
-            }else if global.ikey[pdaID[i]] &gt; 0{
-                var countString = string(global.key[pdaID[i]])+"+"+string(global.ikey[pdaID[i]])+"i";
+            if global.ikey[pdaID[pdaPage, i]] == 0{
+                var countString = string(global.key[pdaID[pdaPage, i]]);
+            }else if global.ikey[pdaID[pdaPage, i]] &gt; 0{
+                var countString = string(global.key[pdaID[pdaPage, i]])+"+"+string(global.ikey[pdaID[pdaPage, i]])+"i";
             }else{
-                var countString = string(global.key[pdaID[i]])+string(global.ikey[pdaID[i]])+"i";//- in string
+                var countString = string(global.key[pdaID[pdaPage, i]])+string(global.ikey[pdaID[pdaPage, i]])+"i";//- in string
             }
         }
         draw_text(drawX+36,drawY+30,"x"+countString);
@@ -922,6 +943,21 @@ if pdaMode == 1{
     draw_set_font(fPDA2);
     draw_set_color(make_color_rgb(80,255,255));
     draw_text_ext(pdaX+20,pdaY+366,"Door Facts: "+joke[curJoke],20,352);
+
+    if pdaPages &gt; 1 {
+        // Pages
+        for (var i = 0; i &lt; pdaPages; i+= 1) {
+            if i == pdaPage {
+                draw_set_color(make_color_rgb(0,255,0)); 
+            } else {
+                draw_set_color(make_color_rgb(0,114,0));
+            }
+            draw_circle(pdaX+205+i*12-pdaPages*6, pdaY+470, 3, 0);
+        }
+        draw_set_color(make_color_rgb(0,255,0));
+        draw_set_font(fTalkSmall);
+        draw_text(pdaX+204+pdaPages*6, pdaY+464, "[" + getBindStr(global.masButton,2) + "]")
+    }
     draw_set_color(c_white);
 }
 }
