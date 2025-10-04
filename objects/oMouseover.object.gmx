@@ -604,41 +604,41 @@ pmGuiY = clamp(pmGuiY,0,max(608-pmGuiH,0));
             <kind>1</kind>
             <string>///PDA stuff
 if !warpMode &amp;&amp; global.pmState == 0{
-if global.inCutscene{
-    if pdaMode == 1{
-        pdaMode = 0;
-        scrPlaySoundExt(sndDrop,.7,1,0);
-    }
-    exit;
-}
-if !instance_exists(objPlayer){
-    if pdaMode == 1{
-        pdaMode = 0;
-        scrPlaySoundExt(sndDrop,.7,1,0);
-    }
-    exit;
-}
-if global.object[1] || global.allUnlock{
-if pdaMode == 1 &amp;&amp; scrButtonCheckReleased(global.specialButton){//Play sound effect
-    scrPlaySoundExt(sndDrop,.7,1,0);
-}
-pdaMode = 0;
-if scrButtonCheck(global.specialButton){
-    if !global.inCutscene &amp;&amp; !instance_exists(oLevelWin) &amp;&amp; !instance_exists(oLevelWinOmega) &amp;&amp; !instance_exists(oLevelWinInvalid) &amp;&amp; !instance_exists(oLevelWinS) &amp;&amp; !instance_exists(oLevelTransition) &amp;&amp; !instance_exists(oWorldTransition){
-        pdaMode = 1;
-        if oldMode == 0{//Play sound effect
-            scrPlaySoundExt(sndDrop,.7,1.5,0);
+    if global.inCutscene{
+        if pdaMode == 1{
+            pdaMode = 0;
+            scrPlaySoundExt(sndDrop,.7,1,0);
         }
-        if pdaPages &gt; 1 &amp;&amp; scrButtonCheckPressed(global.masButton){
-            scrPlaySoundExt(sndDrop,.7,1.5,0);
-            pdaPage = (pdaPage + 1) % pdaPages
-        }
+        exit;
     }
-}
-oldMode = pdaMode;
-//Bleh
-goldIndex = (goldIndex + .1) mod 12;
-}
+    if !instance_exists(objPlayer){
+        if pdaMode == 1{
+            pdaMode = 0;
+            scrPlaySoundExt(sndDrop,.7,1,0);
+        }
+        exit;
+    }
+    if global.object[1] || global.allUnlock{
+        if pdaMode == 1 &amp;&amp; scrButtonCheckReleased(global.specialButton){//Play sound effect
+            scrPlaySoundExt(sndDrop,.7,1,0);
+        }
+        pdaMode = 0;
+        if scrButtonCheck(global.specialButton){
+            if !global.inCutscene &amp;&amp; !instance_exists(oLevelWin) &amp;&amp; !instance_exists(oLevelWinOmega) &amp;&amp; !instance_exists(oLevelWinInvalid) &amp;&amp; !instance_exists(oLevelWinS) &amp;&amp; !instance_exists(oLevelTransition) &amp;&amp; !instance_exists(oWorldTransition){
+                pdaMode = 1;
+                if oldMode == 0{//Play sound effect
+                    scrPlaySoundExt(sndDrop,.7,1.5,0);
+                }
+                if pdaPages &gt; 1 &amp;&amp; scrButtonCheckPressed(global.masButton){
+                    scrPlaySoundExt(sndDrop,.7,1.5,0);
+                    pdaPage = (pdaPage + 1) % pdaPages
+                }
+            }
+        }
+        oldMode = pdaMode;
+        //Bleh
+        goldIndex = (goldIndex + .1) mod 12;
+    }
 }
 </string>
           </argument>
@@ -893,9 +893,9 @@ if pdaMode == 1{
             shader_reset();
         }else if pdaID[pdaPage, i] == color_STONE{
             draw_sprite(sprKStone,0,drawX,drawY);
-        }else if pdaID[i] == color_SILVER{
+        }else if pdaID[pdaPage, i] == color_SILVER{
             draw_sprite(sprKSilver,floor(goldIndex)%4,drawX,drawY);
-        } else if pdaID[i] == color_DYNAMITE{
+        } else if pdaID[pdaPage, i] == color_DYNAMITE{
             draw_sprite(sprKDynamite,floor(goldIndex),drawX,drawY);
 			// @addcolor if key image/animation
         } else {
