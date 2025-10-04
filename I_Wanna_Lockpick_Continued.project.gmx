@@ -374,6 +374,9 @@
         <sprite>sprites\sprDDirt</sprite>
         <sprite>sprites\sprDDyna</sprite>
         <sprite>sprites\sprDDynaTexture</sprite>
+        <sprite>sprites\sprDMaroon</sprite>
+        <sprite>sprites\sprDForest</sprite>
+        <sprite>sprites\sprDNavy</sprite>
       </sprites>
       <sprites name="key">
         <sprite>sprites\sprColorblindHelp</sprite>
@@ -1275,6 +1278,9 @@
       <object>objects\oDoorStone</object>
       <object>objects\oDoorGlitch</object>
       <object>objects\oDoorDyna</object>
+      <object>objects\oDoorMaroon</object>
+      <object>objects\oDoorForest</object>
+      <object>objects\oDoorNavy</object>
     </objects>
     <objects name="options">
       <object>objects\oOptionHandle</object>
