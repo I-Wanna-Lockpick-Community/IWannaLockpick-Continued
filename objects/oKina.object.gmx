@@ -495,7 +495,7 @@ switch copyState{
             <string>///Main key code
 if instance_exists(objPlayer) &amp;&amp; active &amp;&amp; copyState == 0{
     distToP = distance_to_object(objPlayer);
-    if cursed != -1{
+    if cursed != -1 &amp;&amp; cursed != color_PURE {
         effectiveColor = cursed;
         effectiveColorSpend = cursed;
     }else{

@@ -12,10 +12,10 @@ if (sign(global.key[color_DYNAMITE]) == sign(copies) || copies == 0) && abs(glob
 // if the door can open, open it
 var openCount = sign(global.key[color_DYNAMITE]) * min(abs(copies), abs(global.key[color_DYNAMITE]));
 copies -= openCount;
-addComplexKeys(color_DYNAMITE,0,-openCount,0,0);
+addComplexKeys(color_DYNAMITE,-openCount,0,0);
 var iopenCount = sign(global.ikey[color_DYNAMITE]) * min(abs(icopies), abs(global.ikey[color_DYNAMITE]));
 icopies -= iopenCount;
-addComplexKeys(color_DYNAMITE,0,0,-iopenCount,0);
+addComplexKeys(color_DYNAMITE,0,-iopenCount,0);
 openedForwards = true;
 } else {
 // otherwise, spend all keys

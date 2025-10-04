@@ -64,10 +64,13 @@ if aura[0] == 1 || aura[1] == 1 || aura[2] == 1 || objPlayer.aura[0] == -1 || ob
 }
 
 var effectiveColorSpend;
-if cursed != -1{
+if cursed != -1 && cursed != color_PURE {
     effectiveColorSpend = cursed;
-}else{
+} else {
     effectiveColorSpend = colorSpend;
+}
+if effectiveColorSpend == color_GLITCH {
+    effectiveColorSpend = glitchMimic;
 }
 
 //iPow stuff
@@ -100,12 +103,12 @@ if objPlayer.masterCycle == 1 {
         goldEligible = -2;
     }
 }
-if cursed == -1 && goldEligible != 0{
-    if colorSpend == color_MASTER || colorSpend == color_PURE || ((glitchMimic == color_MASTER || glitchMimic == color_PURE) && cursed == -1){
+if goldEligible != 0{
+    if effectiveColorSpend == color_MASTER || effectiveColorSpend == color_PURE {
         goldEligible = 0;
     }
     for(var i = 0; i < lockCount; i += 1){
-        if lock[i,0] == color_MASTER || lock[i,0] == color_PURE{
+        if lock[i,0] == color_MASTER || lock[i,0] == color_PURE {
             goldEligible = 0;
         }
     }
@@ -114,8 +117,8 @@ var dynamiteEligible = false;
 if global.key[color_DYNAMITE] != 0 || global.ikey[color_DYNAMITE] != 0 {
     dynamiteEligible = true;
 }
-if cursed == -1 && dynamiteEligible {
-    if colorSpend == color_DYNAMITE || colorSpend == color_PURE || ((glitchMimic == color_DYNAMITE || glitchMimic == color_PURE) && cursed == -1){
+if (cursed == -1 || cursed == color_PURE) && dynamiteEligible {
+    if effectiveColorSpend == color_DYNAMITE || effectiveColorSpend == color_PURE {
         dynamiteEligible = false;
     }
     for(var i = 0; i < lockCount; i += 1){
@@ -128,8 +131,8 @@ var silverEligible = false;
 if objPlayer.masterCycle == 2 && objPlayer.masterMode != 0 {
     silverEligible = true;
 }
-if cursed == -1 && silverEligible {
-    if colorSpend == color_SILVER || colorSpend == color_PURE || ((glitchMimic == color_SILVER || glitchMimic == color_PURE) && cursed == -1){
+if (cursed == -1 || cursed == color_PURE) && silverEligible {
+    if effectiveColorSpend == color_SILVER || effectiveColorSpend == color_PURE {
         silverEligible = false;
     }
     for(var i = 0; i < lockCount; i += 1){
@@ -149,7 +152,7 @@ if distance_to_object(objPlayer) <= 1{
         switch goldEligible{
             case 0://MAIN CODE
             var metRequirement = true;//Whether the requirement for every lock has been met
-            if cursed != -1{//Brown version
+            if cursed != -1 && cursed != color_PURE{//Brown version
                 for(var i = 0; i < lockCount; i += 1){
                     if !scrCanOpenFeed(cursed,lock[i,1],lock[i,2],lock[i,3],iPow){
                         metRequirement = false;
@@ -173,7 +176,7 @@ if distance_to_object(objPlayer) <= 1{
                     case -2: tempIPow = 3; break;
                 }
             }
-            if cursed != -1{//Door is brown, different spend amount can result from Blast Locks
+            if cursed != -1 && cursed != color_PURE{//Door is brown, different spend amount can result from Blast Locks
                 for(var i = 0; i < lockCount; i += 1){
                     scrAddSpendAmt(cursed,lock[i,1],lock[i,2],lock[i,3],tempIPow);
                 }
@@ -183,8 +186,8 @@ if distance_to_object(objPlayer) <= 1{
                 }
             }
             if (silverEligible) {
-                addComplexKeys(effectiveColorSpend,glitchMimic,-spendTotal,-spendITotal,0);
-                addComplexKeys(color_SILVER,0,-1,0,tempIPow);
+                addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
+                addComplexKeys(color_SILVER,-1,0,tempIPow);
                 scrPlaySoundExt(sndMasterUnlock,1,1,false);
                 event_user(2);
                 objPlayer.masterMode = 0;
@@ -192,7 +195,7 @@ if distance_to_object(objPlayer) <= 1{
                 undoBUFFER();
                 scrBroadcastCopy(effectiveColorSpend,glitchMimic); // should it?
             } else if metRequirement {
-                addComplexKeys(effectiveColorSpend,glitchMimic,-spendTotal,-spendITotal,0);
+                addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
                 scrOpenCombo();
                 scrBroadcastCopy(effectiveColorSpend,glitchMimic);
             }
@@ -200,7 +203,7 @@ if distance_to_object(objPlayer) <= 1{
             case 1://Lose a copy
                 objPlayer.masterMode = 0;
                 objPlayer.masterCycle = 0;
-                addComplexKeys(color_MASTER,0,-1,0,0);
+                addComplexKeys(color_MASTER,-1,0,0);
                 copies -= 1;
                 if copies == 0 && icopies == 0{
                     scrPlaySoundExt(sndMasterUnlock,1,1,false);
@@ -225,7 +228,7 @@ if distance_to_object(objPlayer) <= 1{
             case -1://Gain a copy
                 objPlayer.masterMode = 0;
                 objPlayer.masterCycle = 0;
-                addComplexKeys(color_MASTER,0,1,0,0);
+                addComplexKeys(color_MASTER,1,0,0);
                 copies += 1;
                 if copies == 0 && icopies == 0{
                     scrPlaySoundExt(sndMasterUnlock,1,1,false);
@@ -250,7 +253,7 @@ if distance_to_object(objPlayer) <= 1{
             case 2://Lose an icopy
                 objPlayer.masterMode = 0;
                 objPlayer.masterCycle = 0;
-                addComplexKeys(color_MASTER,0,0,-1,0);
+                addComplexKeys(color_MASTER,0,-1,0);
                 icopies -= 1;
                 if copies == 0 && icopies == 0{
                     scrPlaySoundExt(sndMasterUnlock,1,1,false);
@@ -275,7 +278,7 @@ if distance_to_object(objPlayer) <= 1{
             case -2://Gain an icopy
                 objPlayer.masterMode = 0;
                 objPlayer.masterCycle = 0;
-                addComplexKeys(color_MASTER,0,0,1,0);
+                addComplexKeys(color_MASTER,0,1,0);
                 icopies += 1;
                 if copies == 0 && icopies == 0{
                     scrPlaySoundExt(sndMasterUnlock,1,1,false);

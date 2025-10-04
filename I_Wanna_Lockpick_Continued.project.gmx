@@ -737,13 +737,13 @@
       <script>scripts\scrStringAddBreaks.gml</script>
       <script>scripts\rotateR.gml</script>
       <script>scripts\rotateI.gml</script>
+      <script>scripts\scrInvertColor.gml</script>
     </scripts>
     <scripts name="color assignment">
       <script>scripts\scrColorKey.gml</script>
       <script>scripts\scrColorDoor.gml</script>
       <script>scripts\scrColorDoor2.gml</script>
       <script>scripts\scrColorDoorArg.gml</script>
-      <script>scripts\getCurseBlendMode.gml</script>
       <script>scripts\getCurseColor.gml</script>
     </scripts>
     <scripts name="salvage">

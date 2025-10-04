@@ -173,12 +173,8 @@ if size &gt;= 1{
                 if show[i] == color_BROWN {
                     draw_set_blend_mode(bm_subtract);
                     draw_sprite_ext(sprBrownAura,0,x-4+16,drawY-4+16,.4,.4,-starAngle,c_white,0);
-                } else if getCurseBlendMode(show[i]) {
-                    draw_set_blend_mode(bm_add);
-                    draw_sprite_ext(sprWhiteAura,0,x-4+16,drawY-4+16,.4,.4,-starAngle,getCurseColor(show[i]),1);
                 } else {
-                    draw_set_blend_mode(bm_subtract);
-                    draw_sprite_ext(sprWhiteAura,0,x-4+16,drawY-4+16,.4,.4,-starAngle,getCurseColor(show[i]),0);
+                    draw_sprite_ext(sprWhiteAura,0,x-4+16,drawY-4+16,.5,.5,-starAngle,getCurseColor(show[i]),1);
                 }
                 draw_set_blend_mode(bm_normal);
             }

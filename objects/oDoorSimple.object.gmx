@@ -270,7 +270,7 @@ distToP = distance_to_object(objPlayer);
 if copyState != 0 {exit;}
 if !active {brownNearPlayer=0;visible=0;exit;}
 brownNearPlayer=0;
-if cursed != -1 {
+if cursed != -1 &amp;&amp; cursed != color_PURE {
     effectiveColor = cursed;
     effectiveColorSpend = cursed;
 }else{
@@ -303,12 +303,18 @@ if objPlayer.curseMode != 0{
 if distToP &gt; 23{
     brownNearPlayer = 0;
 }
-if cursed != -1{
+if cursed != -1 &amp;&amp; cursed != color_PURE {
     effectiveColor = cursed;
     effectiveColorSpend = cursed;
-}else{
+}else {
     effectiveColor = color;
     effectiveColorSpend = colorSpend;
+}
+if effectiveColor == color_GLITCH {
+    effectiveColor = glitchMimic;
+}
+if effectiveColorSpend == color_GLITCH {
+    effectiveColorSpend = glitchMimic;
 }
 //iPow stuff
 if global.complexMode == 0{//Real view
@@ -326,9 +332,9 @@ if global.complexMode == 0{//Real view
         if copies &lt; 0{iPow = 2;}
     }
 }
-var canGoldOpen = !(effectiveColor == color_MASTER || effectiveColor == color_PURE || effectiveColorSpend == color_MASTER || effectiveColorSpend == color_PURE || ((glitchMimic == color_MASTER || glitchMimic == color_PURE) &amp;&amp; cursed == 0));
-var canSilverOpen = !(effectiveColor == color_SILVER || effectiveColor == color_PURE || effectiveColorSpend == color_SILVER || effectiveColorSpend == color_PURE || ((glitchMimic == color_SILVER || glitchMimic == color_PURE) &amp;&amp; cursed == 0));
-var canDynamiteOpen = !(effectiveColor == color_DYNAMITE || effectiveColor == color_PURE || effectiveColorSpend == color_DYNAMITE || effectiveColorSpend == color_PURE || ((glitchMimic == color_DYNAMITE || glitchMimic == color_PURE) &amp;&amp; cursed == 0));
+var canGoldOpen = !(effectiveColor == color_MASTER || effectiveColor == color_PURE || effectiveColorSpend == color_MASTER || effectiveColorSpend == color_PURE);
+var canSilverOpen = !(effectiveColor == color_SILVER || effectiveColor == color_PURE || effectiveColorSpend == color_SILVER || effectiveColorSpend == color_PURE);
+var canDynamiteOpen = !(effectiveColor == color_DYNAMITE || effectiveColor == color_PURE || effectiveColorSpend == color_DYNAMITE || effectiveColorSpend == color_PURE);
 if distToP &lt;= 1 {
     if (canDynamiteOpen &amp;&amp; scrNormalDynamiteOpen()) {
         undoBUFFER();
@@ -352,8 +358,8 @@ if distToP &lt;= 1 {
         spendITotal = 0;
         scrAddSpendAmt(effectiveColor,count,icount,type,tempIPow)
         if (canSilverOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 2) {
-            addComplexKeys(effectiveColorSpend,glitchMimic,-spendTotal,-spendITotal,0);
-            addComplexKeys(color_SILVER,0,-1,0,tempIPow);
+            addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
+            addComplexKeys(color_SILVER,-1,0,tempIPow);
             scrPlaySoundExt(sndMasterUnlock,1,1,false);
             event_user(2);
             objPlayer.masterMode = 0;
@@ -361,7 +367,7 @@ if distToP &lt;= 1 {
             undoBUFFER();
             scrBroadcastCopy(effectiveColorSpend,glitchMimic); // should it?
         } else if canOpen(effectiveColor, tempIPow) {
-            addComplexKeys(effectiveColorSpend,glitchMimic,-spendTotal,-spendITotal,0);
+            addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
             scrOpenOrCopy();
             scrBroadcastCopy(effectiveColorSpend,glitchMimic);
         }

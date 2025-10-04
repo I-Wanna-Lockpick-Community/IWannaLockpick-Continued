@@ -1111,7 +1111,7 @@ if mouseType == 0{//Keys
     }
     if getAura[0] || getAura[1] || getAura[2] || getAura[3]{
         str += "#- Effects -";
-        if getAura[3]{str += "#Cursed!"};
+        if getAura[3] != -1 {str += "#Cursed " + colName[getAura[3]] + "!"};
         if getAura[0]{str += "#Frozen! (1xRed)"};
         if getAura[1]{str += "#Eroded! (5xGreen)"};
         if getAura[2]{str += "#Painted! (3xBlue)"};

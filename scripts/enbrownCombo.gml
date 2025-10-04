@@ -17,17 +17,22 @@ if colorSpend == objPlayer.curseColor{
     curseRedundant = 0;
 }
 var auraPlayNoise = 0;
-if objPlayer.curseMode == 1 && cursed != objPlayer.curseColor && !curseRedundant{//Add redundancy heuristic if everything is already brown
+if objPlayer.curseMode == 1 && cursed != objPlayer.curseColor && !curseRedundant && cursed != color_PURE {//Add redundancy heuristic if everything is already brown
     cursed = objPlayer.curseColor;
-    var colorOld = colorSpend;
-    colorSpend = objPlayer.curseColor;
-    scrComboCFunc();
-    colorSpend = colorOld;
-    scrPlaySoundExt(sndCopy1,1,1,false);
+        if cursed != color_PURE {
+        var colorOld = colorSpend;
+        colorSpend = objPlayer.curseColor;
+        scrComboCFunc();
+        colorSpend = colorOld;
+        scrPlaySoundExt(sndCopy1,1,1,false);
+    } else {
+        scrComboCFunc();
+        scrPlaySoundExt(sndCopy2,1,1,false);
+    }
     event_user(3);
     brownNearPlayer = 1;
     undoBUFFER();
-}else if objPlayer.curseMode == -1 && cursed != -1{
+}else if objPlayer.curseMode == -1 && cursed == objPlayer.curseColor {
     cursed = -1;
     scrComboCFunc();
     scrPlaySoundExt(sndCopy2,1,1,false);

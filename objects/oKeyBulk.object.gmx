@@ -159,7 +159,7 @@ if color == color_GLITCH { effectiveColor = glitchMimic; }
 
 switch type {
     case key_NORMAL:
-        addComplexKeys(effectiveColor,0,count,icount,0);
+        addComplexKeys(effectiveColor,count,icount,0);
     break;
     case key_EXACT:
         if !global.star[effectiveColor] {

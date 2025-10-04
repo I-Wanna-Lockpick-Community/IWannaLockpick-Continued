@@ -1,5 +1,6 @@
 var auraPlayNoise = 0;
-if objPlayer.curseMode == 1 && cursed == -1 && !(color == objPlayer.curseColor && colorSpend == objPlayer.curseColor){
+if objPlayer.curseMode == 1 && cursed != objPlayer.curseColor && cursed != color_PURE
+&& !(color == objPlayer.curseColor && colorSpend == objPlayer.curseColor){
     cursed = objPlayer.curseColor;
     var colorOld = color;
     var colorOld2 = colorSpend;
@@ -13,7 +14,7 @@ if objPlayer.curseMode == 1 && cursed == -1 && !(color == objPlayer.curseColor &
     event_user(3);
     brownNearPlayer = 1;
     undoBUFFER();
-}else if objPlayer.curseMode == -1 && cursed != -1{
+}else if objPlayer.curseMode == -1 && cursed == objPlayer.curseColor {
     cursed = -1;
     scrColorDoor();
     scrColorDoor2();
@@ -23,7 +24,7 @@ if objPlayer.curseMode == 1 && cursed == -1 && !(color == objPlayer.curseColor &
     undoBUFFER();
 }
 
-if cursed != -1{
+if cursed != -1 && cursed != color_PURE {
     effectiveColor = cursed;
     effectiveColorSpend = cursed;
 }else{

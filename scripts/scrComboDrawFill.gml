@@ -1,7 +1,7 @@
 //TODO: Add Stone glitch lock sprites and draw code
 //Main body fill
 var effectiveColor = colorSpend;
-if cursed != -1{
+if cursed != -1 && cursed != color_PURE {
     colorSpend = cursed;
     scrComboCFunc();
 }
@@ -139,13 +139,13 @@ if colorSpend == color_GLITCH && glitchMimic != color_GLITCH{
 }
 //SPEND FILL DRAWING ALL DONE!
 //Reset colors if cursed
-if cursed != -1{
+if cursed != -1 && cursed != color_PURE{
     colorSpend = effectiveColor;
     scrComboCFunc();
 }
 //Individual Lock Fills
 for(var i = 0; i < lockCount; i += 1){
-    if cursed == -1{
+    if cursed == -1 || cursed == color_PURE {
         if lock[i,0] == color_MASTER{//Holy crap, cropping the lock sprites came in clutch
             var tempW = sprite_get_width(lock[i,6]);
             var tempH = sprite_get_height(lock[i,6]);
