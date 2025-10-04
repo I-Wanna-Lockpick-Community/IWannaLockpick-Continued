@@ -147,7 +147,7 @@ for(var i = 0; i &lt; 16; i += 1){
     }
 }
 
-goldIndex = (goldIndex + .1) mod 4;
+goldIndex = (goldIndex + .1) mod 12;
 starAngle = (starAngle + 2.2) mod 360;
 
 if size &gt;= 1{
@@ -173,9 +173,9 @@ if size &gt;= 1{
             draw_set_alpha(1);
             draw_set_color(c_white);
             if show[i] == color_MASTER {
-                draw_sprite(sprKMaster,floor(goldIndex),x-4,drawY-4);
+                draw_sprite(sprKMaster,floor(goldIndex)%4,x-4,drawY-4);
             }else if show[i] == color_PURE {
-                draw_sprite(sprKPure,floor(goldIndex),x-4,drawY-4);
+                draw_sprite(sprKPure,floor(goldIndex)%4,x-4,drawY-4);
             }else if show[i] == color_GLITCH {
                 color = show[i];
                 scrColorKey();
@@ -186,7 +186,9 @@ if size &gt;= 1{
             }else if show[i] == color_STONE {
                 draw_sprite(sprKStone,0,x-4,drawY-4); 
             } else if show[i] == color_SILVER {
-                draw_sprite(sprKSilver,floor(goldIndex),x-4,drawY-4);
+                draw_sprite(sprKSilver,floor(goldIndex)%4,x-4,drawY-4);
+            } else if show[i] == color_DYNAMITE {
+                draw_sprite(sprKDynamite,floor(goldIndex),x-4,drawY-4);
                 // @addcolor if key image/animation
             } else {
                 color = show[i];

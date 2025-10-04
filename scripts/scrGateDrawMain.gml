@@ -2,9 +2,7 @@
 //Very similar to Combo Doors, but simplified in a lot of parts.
 
 //PRELIM
-goldIndex = (goldIndex + goldSpd) mod 4;
-dynaIndex = (dynaIndex + goldSpd) mod 12;
-
+goldIndex = (goldIndex + goldSpd) mod 12;
 //FILL
 for(var ix = 0; ix < w; ix += 1){
     for(var iy = 0; iy < h; iy += 1){

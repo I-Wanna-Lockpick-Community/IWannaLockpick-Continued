@@ -6,13 +6,13 @@ for(var i = 0; i < lockCount; i += 1){
         var tempH = sprite_get_height(lock[i,6]);
         var tempX = x+lock[i,4]-sprite_get_xoffset(lock[i,6]);
         var tempY = y+lock[i,5]-sprite_get_yoffset(lock[i,6]);
-        draw_sprite_ext(sprDGoldGrad,floor(goldIndex),tempX,tempY,tempW/64,tempH/64,0,c_white,1);
+        draw_sprite_ext(sprDGoldGrad,floor(goldIndex)%4,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
     }else if lock[i,0] == color_PURE{
         var tempW = sprite_get_width(lock[i,6]);
         var tempH = sprite_get_height(lock[i,6]);
         var tempX = x+lock[i,4]-sprite_get_xoffset(lock[i,6]);
         var tempY = y+lock[i,5]-sprite_get_yoffset(lock[i,6]);
-        draw_sprite_ext(sprDPureGrad,floor(goldIndex),tempX,tempY,tempW/64,tempH/64,0,c_white,1);
+        draw_sprite_ext(sprDPureGrad,floor(goldIndex)%4,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
     }else if lock[i,0] == color_STONE{
         var tempW = sprite_get_width(lock[i,6]);
         var tempH = sprite_get_height(lock[i,6]);
@@ -25,9 +25,10 @@ for(var i = 0; i < lockCount; i += 1){
         var tempX = x+lock[i,4]-sprite_get_xoffset(lock[i,6]);
         var tempY = y+lock[i,5]-sprite_get_yoffset(lock[i,6]);
         for(var i = 0; i < tempH/64; i++) {
-            draw_sprite_ext(sprDDynaTexture,floor(dynaIndex),tempX,tempY+i*64,tempW/64,1,0,c_white,1);
+            draw_sprite_ext(sprDDynaTexture,floor(goldIndex),tempX,tempY+i*64,tempW/64,1,0,c_white,1);
         }
-        draw_sprite_part_ext(sprDDynaTexture,floor(dynaIndex),tempX,tempY+i*64,tempW,tempH-i*64,tempX,tempY+i*64,tempW/64,1,c_white,1)
+        draw_sprite_part_ext(sprDDynaTexture,floor(goldIndex),tempX,tempY+i*64,tempW,tempH-i*64,tempX,tempY+i*64,tempW/64,1,c_white,1)
+        // @addcolor if door image/animation
     }else if lock[i,0] == color_GLITCH{
         shader_set(shdRainbowStripe2);
         draw_sprite_ext(lock[i,6],2,x+lock[i,4],y+lock[i,5],1,1,0,make_color_rgb(180,150,0),1);
@@ -44,7 +45,6 @@ for(var i = 0; i < lockCount; i += 1){
             draw_sprite_ext(lock[i,6],3,x+lock[i,4],y+lock[i,5],1,1,0,scrGetLockColor(lock[i,0]),1);
             // @addcolor if door image/animation
         }
-        // @addcolor if door image/animation
     }else{
         draw_sprite_ext(lock[i,6],2,x+lock[i,4],y+lock[i,5],1,1,0,scrGetLockColor(lock[i,0]),1);
     }

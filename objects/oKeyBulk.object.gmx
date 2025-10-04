@@ -278,12 +278,19 @@ with other {
         case key_UNSTAR: sprite_index = sprKStoneStar2; break;
         default: sprite_index = sprKStone; break;
     }
-} else if color == color_SILVER{
+} else if color == color_SILVER {
     switch type {
         case key_EXACT: sprite_index = sprKSilver; break;
         case key_STAR: sprite_index = sprKSilver; break;
         case key_UNSTAR: sprite_index = sprKSilver; break;
         default: sprite_index = sprKSilver; break;
+    }
+} else if color == color_DYNAMITE {
+    switch type {
+        case key_EXACT: sprite_index = sprKDynamiteAbs; break;
+        case key_STAR: sprite_index = sprKDynamiteStar; break;
+        case key_UNSTAR: sprite_index = sprKDynamiteStar2; break;
+        default: sprite_index = sprKDynamite; break;
     }
     // @addcolor if key image/animation
 } else {
@@ -326,7 +333,7 @@ if instance_exists(oLightsW5) || instance_exists(oLightsW4) || instance_exists(o
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if color == color_MASTER || color == color_PURE || color == color_STONE || color == color_SILVER { // @addcolor if key image/animation
+            <string>if color == color_MASTER || color == color_PURE || color == color_STONE || color == color_SILVER || color == color_DYNAMITE { // @addcolor if key image/animation
     image_speed = .1;
     draw_sprite_ext(sprite_index,floor(image_index),x,y,1,1,0,c_white,1);
 } else if color == color_GLITCH {

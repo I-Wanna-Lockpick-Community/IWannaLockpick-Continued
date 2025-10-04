@@ -17,7 +17,7 @@ NEXT UP: Auras... can be skipped actually. I wanna visually change them to have 
 ACTUAL NEXT UP: Invert FX + Copy Text oh it's done*/
 
 //PRELIM
-goldIndex = (goldIndex + goldSpd) mod 4;
+goldIndex = (goldIndex + goldSpd) mod 12;
 scrComboCFunc();//Set door colors
 
 //FILL

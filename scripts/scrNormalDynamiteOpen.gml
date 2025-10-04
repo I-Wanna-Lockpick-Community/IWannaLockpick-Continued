@@ -42,30 +42,30 @@ global.ikey[color_DYNAMITE] = 0;
 }
 
 if copies == 0 && icopies == 0 {//DESTROY OBJECT
-visible=0;solid=0;active=0;
-scrPlaySoundExt(sndDeltaruneExplosion,1,1,false);
-//scrBroadcastCopy(effectiveColorSpend,glitchMimic);
-if global.salvageActive{
-event_user(5);
-scrSaveSalvage(global.salvageID,id);
+    visible=0;solid=0;active=0;
+    scrPlaySoundExt(sndDeltaruneExplosion,1,1,false);
+    explosion = instance_create(objPlayer.x+10, objPlayer.y+10, oDynamiteExplosion)
+    explosion.sprite_index = sprExplosion;
+    if global.salvageActive{
+        event_user(5);
+        scrSaveSalvage(global.salvageID,id);
+    } else {
+    event_user(0);
+    }
 } else {
-event_user(0);
-}
-} else {
-if openedForwards {
-scrPlaySoundExt(sndDeltaruneExplosion,1,1,false);
-//scrBroadcastCopy(effectiveColorSpend,glitchMimic);
-event_user(2);
-explosion = instance_create(objPlayer.x+10, objPlayer.y+10, oDynaExplosion)
-explosion.sprite_index = sprExplo
-}
-if openedBackwards {
-scrPlaySoundExt(sndAntiExplode,1,1,false);
-if !openedForwards {
-event_user(1);
-explosion = instance_create(objPlayer.x+10, objPlayer.y+10, oDynaExplosion)
-explosion.sprite_index = sprNegativeExplo
-}
-}
+    if openedForwards {
+        scrPlaySoundExt(sndDeltaruneExplosion,1,1,false);
+        event_user(2);
+        explosion = instance_create(objPlayer.x+10, objPlayer.y+10, oDynamiteExplosion)
+        explosion.sprite_index = sprExplosion;
+        }
+        if openedBackwards {
+        scrPlaySoundExt(sndAntiExplode,1,1,false);
+        if !openedForwards {
+        event_user(1);
+        explosion = instance_create(objPlayer.x+10, objPlayer.y+10, oDynamiteExplosion);
+        explosion.sprite_index = sprNegativeExplosion;
+        }
+    }
 }
 return true;

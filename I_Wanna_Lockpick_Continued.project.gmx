@@ -315,6 +315,7 @@
       <sprite>sprites\sprDoorGlitchGold</sprite>
       <sprite>sprites\sprDoorGlitchPure</sprite>
       <sprite>sprites\sprDoorGlitchStone</sprite>
+      <sprite>sprites\sprDoorGlitchDyna</sprite>
       <sprites name="lock">
         <sprite>sprites\sprLock2</sprite>
         <sprite>sprites\sprLock2i</sprite>
@@ -371,6 +372,8 @@
         <sprite>sprites\sprDStone1x2</sprite>
         <sprite>sprites\sprDStone</sprite>
         <sprite>sprites\sprDDirt</sprite>
+        <sprite>sprites\sprDDyna</sprite>
+        <sprite>sprites\sprDDynaTexture</sprite>
       </sprites>
       <sprites name="key">
         <sprite>sprites\sprColorblindHelp</sprite>
@@ -410,7 +413,6 @@
         <sprite>sprites\sprKBlack</sprite>
         <sprite>sprites\sprKBrown</sprite>
         <sprite>sprites\sprKRainbow</sprite>
-        <sprite>sprites\sprKDynamite</sprite>
         <sprite>sprites\sprKGray</sprite>
         <sprite>sprites\sprKInf</sprite>
         <sprite>sprites\sprKSwap</sprite>
@@ -421,6 +423,11 @@
         <sprite>sprites\sprKStoneStar</sprite>
         <sprite>sprites\sprKStoneStar2</sprite>
         <sprite>sprites\sprKStoneGlitch</sprite>
+        <sprite>sprites\sprKDynamite</sprite>
+        <sprite>sprites\sprKDynamiteAbs</sprite>
+        <sprite>sprites\sprKDynamiteStar</sprite>
+        <sprite>sprites\sprKDynamiteStar2</sprite>
+        <sprite>sprites\sprKDynamiteGlitch</sprite>
         <sprite>sprites\sprKMaroon</sprite>
         <sprite>sprites\sprKForest</sprite>
         <sprite>sprites\sprKNavy</sprite>
@@ -447,6 +454,8 @@
       </sprites>
       <sprite>sprites\sprDebrisGold</sprite>
       <sprite>sprites\sprDebris</sprite>
+      <sprite>sprites\sprExplosion</sprite>
+      <sprite>sprites\sprNegativeExplosion</sprite>
       <sprite>sprites\maskDoor</sprite>
       <sprite>sprites\maskDoor1x2</sprite>
       <sprite>sprites\maskDoor2x2</sprite>
@@ -1222,6 +1231,7 @@
       <object>objects\oDebris2</object>
       <object>objects\oDebris3</object>
       <object>objects\oDebrisS</object>
+      <object>objects\oDynamiteExplosion</object>
       <object>objects\oGoal</object>
       <object>objects\oRoomTally</object>
       <object>objects\oTerminal</object>
@@ -1263,6 +1273,7 @@
       <object>objects\oDoorBlack</object>
       <object>objects\oDoorStone</object>
       <object>objects\oDoorGlitch</object>
+      <object>objects\oDoorDyna</object>
     </objects>
     <objects name="options">
       <object>objects\oOptionHandle</object>

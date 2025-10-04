@@ -623,7 +623,7 @@ if scrButtonCheck(global.specialButton){
 }
 oldMode = pdaMode;
 //Bleh
-goldIndex = (goldIndex + .1) mod 4;
+goldIndex = (goldIndex + .1) mod 12;
 }
 }
 </string>
@@ -860,9 +860,9 @@ if pdaMode == 1{
         draw_set_alpha(1);
         draw_set_color(c_white);
         if pdaID[i] == color_MASTER{
-            draw_sprite(sprKMaster,floor(goldIndex),drawX,drawY);
+            draw_sprite(sprKMaster,floor(goldIndex)%4,drawX,drawY);
         }else if pdaID[i] == color_PURE{
-            draw_sprite(sprKPure,floor(goldIndex),drawX,drawY);
+            draw_sprite(sprKPure,floor(goldIndex)%4,drawX,drawY);
         }else if pdaID[i] == color_GLITCH{
             color = pdaID[i];
             scrColorKey();
@@ -873,7 +873,9 @@ if pdaMode == 1{
         }else if pdaID[i] == color_STONE{
             draw_sprite(sprKStone,0,drawX,drawY);
         }else if pdaID[i] == color_SILVER{
-            draw_sprite(sprKSilver,floor(goldIndex),drawX,drawY);
+            draw_sprite(sprKSilver,floor(goldIndex)%4,drawX,drawY);
+        } else if pdaID[i] == color_DYNAMITE{
+            draw_sprite(sprKDynamite,floor(goldIndex),drawX,drawY);
 			// @addcolor if key image/animation
         } else {
             color = pdaID[i];

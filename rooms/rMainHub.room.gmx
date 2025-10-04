@@ -96,6 +96,8 @@ global.msg = "";</code>
     <instance objName="oDoorWhite" x="288" y="544" name="inst_7B190CB5" locked="0" code="aura[0] = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="352" y="544" name="inst_B4297068" locked="0" code="aura[2] = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="320" y="544" name="inst_FD6200F9" locked="0" code="aura[1] = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorDyna" x="640" y="288" name="inst_81567CF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorDyna" x="672" y="256" name="inst_544AFC20" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles2" x="256" y="480" w="32" h="32" xo="128" yo="0" id="10125734" name="inst_307BFDDA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

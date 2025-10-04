@@ -58,7 +58,6 @@ h = 1;
 
 //Gold animation variables
 goldIndex = 0;
-dynaIndex = 0;
 goldSpd = .1;
 
 //Aura animation variables
@@ -813,19 +812,19 @@ if salvageID != -1 &amp;&amp; active{
 if copyDraw == 1{
 
 //- - - - - COLOR FILL - - - - -//
-goldIndex = (goldIndex + goldSpd) mod 4;
-dynaIndex = (dynaIndex + goldSpd) mod 12;
+goldIndex = (goldIndex + goldSpd) mod 12;
 if effectiveColorSpend == color_MASTER{
-    draw_sprite_ext(sprDGoldGrad,floor(goldIndex),x,y,w*.5,h*.5,0,c_white,1);
+    draw_sprite_ext(sprDGoldGrad,floor(goldIndex)%4,x,y,w*.5,h*.5,0,c_white,1);
 }else if effectiveColorSpend == color_PURE{
-    draw_sprite_ext(sprDPureGrad,floor(goldIndex),x,y,w*.5,h*.5,0,c_white,1);
+    draw_sprite_ext(sprDPureGrad,floor(goldIndex)%4,x,y,w*.5,h*.5,0,c_white,1);
 }else if effectiveColorSpend == color_STONE{
     draw_sprite_ext(sprDStoneTexture,0,x,y,w*.5,h*.5,0,c_white,1);
 }else if effectiveColorSpend == color_DYNAMITE{
     for(var i = 0; i &lt; h/2; i++) {
-        draw_sprite_ext(sprDDynaTexture,floor(dynaIndex),x,y+i*64,w*.5,1,0,c_white,1);
+        draw_sprite_ext(sprDDynaTexture,floor(goldIndex),x,y+i*64,w*.5,1,0,c_white,1);
     }
-    draw_sprite_part_ext(sprDDynaTexture,floor(dynaIndex),x,y+i*64,w*32,h*32-i*64,x,y+i*64,w*.5,1,c_white,1)
+    draw_sprite_part_ext(sprDDynaTexture,floor(goldIndex),x,y+i*64,w*32,h*32-i*64,x,y+i*64,w*.5,1,c_white,1)
+    // @addcolor if door image/animation
 }else if effectiveColorSpend == color_GLITCH{
     scrColorDoorArg(color_GLITCH);
     shader_set(shdRainbowStripe2);
@@ -849,16 +848,17 @@ var tempH = 32*h - 14;
 var tempX = x+7;
 var tempY = y+7;
 if effectiveColor == color_MASTER{
-    draw_sprite_ext(sprDGoldGrad,floor(goldIndex),tempX,tempY,tempW/64,tempH/64,0,c_white,1);
+    draw_sprite_ext(sprDGoldGrad,floor(goldIndex)%4,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
 }else if effectiveColor == color_PURE{
-    draw_sprite_ext(sprDPureGrad,floor(goldIndex),tempX,tempY,tempW/64,tempH/64,0,c_white,1);
+    draw_sprite_ext(sprDPureGrad,floor(goldIndex)%4,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
 }else if effectiveColor == color_STONE{
     draw_sprite_ext(sprDStoneTexture,0,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
 }else if effectiveColorSpend == color_DYNAMITE{
     for(var i = 0; i &lt; tempH/64; i++) {
-        draw_sprite_ext(sprDDynaTexture,floor(dynaIndex),tempX,tempY+i*64,tempW/64,1,0,c_white,1);
+        draw_sprite_ext(sprDDynaTexture,floor(goldIndex),tempX,tempY+i*64,tempW/64,1,0,c_white,1);
     }
-    draw_sprite_part_ext(sprDDynaTexture,floor(dynaIndex),tempX,tempY+i*64,tempW,tempH-i*64,tempX,tempY+i*64,tempW/64,1,c_white,1)
+    draw_sprite_part_ext(sprDDynaTexture,floor(goldIndex),tempX,tempY+i*64,tempW,tempH-i*64,tempX,tempY+i*64,tempW/64,1,c_white,1)
+    // @addcolor if door image/animation
 }else if effectiveColor == color_GLITCH{
     scrColorDoorArg(color_GLITCH);
     shader_set(shdRainbowStripe2);
