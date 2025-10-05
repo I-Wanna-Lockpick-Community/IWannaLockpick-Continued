@@ -39,13 +39,12 @@ if copyState != 0{exit;}
 if !active{brownNearPlayer=0;visible=0;exit;}
 brownNearPlayer=0;
 
-var openEligible = false;//Whether or not the door is in a position to be opened
 if aura[0] == 1 || aura[1] == 1 || aura[2] == 1 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || objPlayer.aura[2] == -1{
     if distance_to_object(objPlayer) <= 23{
         removeAurasCombo();
         if aura[0] == 0 && aura[1] == 0 && aura[2] == 0{
             if objPlayer.curseMode != 0{
-                enbrownCombo();
+                tryCurseCombo();
             }
         }
     }else{
@@ -53,10 +52,9 @@ if aura[0] == 1 || aura[1] == 1 || aura[2] == 1 || objPlayer.aura[0] == -1 || ob
     }
     exit;
 }else{
-    openEligible = true;
     if objPlayer.curseMode != 0{
         if distance_to_object(objPlayer) <= 23{
-            enbrownCombo();
+            tryCurseCombo();
         }else{
             brownNearPlayer = 0;
         }
@@ -191,7 +189,7 @@ if distance_to_object(objPlayer) <= 1{
                 scrOpenCombo();
                 scrBroadcastCopy(effectiveColorSpend,glitchMimic);
             }
-        else {
+        } else {
             scrNormalMasterOpen();
         }
     }

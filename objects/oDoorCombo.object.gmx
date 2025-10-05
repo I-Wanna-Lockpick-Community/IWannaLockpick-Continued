@@ -77,7 +77,7 @@ if myLight != -1{
           <argument>
             <kind>1</kind>
             <string>///Brown particles
-if cursed{
+if cursed != -1 {
     alarm[0] = 120;
     for(var ix = 0; ix&lt;(2*w); ix+=1){
         for(var iy = 0; iy&lt;(2*h); iy+=1){
@@ -339,7 +339,7 @@ if instance_exists(oLightsW5) || instance_exists(oLightsW4) || instance_exists(o
             <kind>1</kind>
             <string>///Brown particle burst
 var _bp;
-if cursed{
+if cursed != -1 {
     alarm[0] = 120;
     for(var ix = 0; ix&lt;(2*w); ix+=1){
         for(var iy = 0; iy&lt;(2*h); iy+=1){

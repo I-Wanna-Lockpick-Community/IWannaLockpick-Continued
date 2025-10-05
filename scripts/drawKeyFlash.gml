@@ -1,8 +1,8 @@
 ///drawKeyFlash();
 //Draws the flashing key when picked up with the INF property
-if whiteFlash > 0{//White flashing key
+if whiteFlash > 0 {//White flashing key
     fog_trick(c_white,whiteFlash);
-    switch type{
+    switch type {
         case key_NORMAL:
         case key_SIGNFLIP:
         case key_POSROTOR:
@@ -19,7 +19,7 @@ if whiteFlash > 0{//White flashing key
         case key_EXACT:
             if color == color_MASTER{
                 draw_sprite_ext(sprKMasterAbs,0,x,y,1,1,0,c_white,whiteFlash);
-            else if color == color_SILVER{
+            } else if color == color_SILVER{
                 draw_sprite_ext(sprKMasterAbs,0,x,y,1,1,0,c_white,whiteFlash);
                 // @addcolor if nonstandard key shape
             }else{

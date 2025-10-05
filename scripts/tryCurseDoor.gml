@@ -1,4 +1,4 @@
-if color == color_PURE || colorSpend == color_PURE || (((color == color_GLITCH) || (colorSpend == color_GLITCH)) && glitchMimic == color_PURE) {exit;}
+if effectiveColor == color_PURE || effectiveColorSpend == color_PURE {exit;}
 var auraPlayNoise = 0;
 if objPlayer.curseMode == 1 && cursed != objPlayer.curseColor && cursed != color_PURE
 && !(color == objPlayer.curseColor && colorSpend == objPlayer.curseColor) {
@@ -6,8 +6,10 @@ if objPlayer.curseMode == 1 && cursed != objPlayer.curseColor && cursed != color
     if cursed != color_PURE {
         var colorOld = color;
         var colorOld2 = colorSpend;
-        color = objPlayer.curseColor;
-        colorSpend = objPlayer.curseColor;
+        color = cursed;
+        colorSpend = cursed;
+        effectiveColor = cursed;
+        effectiveColorSpend = cursed;
         scrColorDoor();
         scrColorDoor2();
         color = colorOld;
@@ -22,6 +24,8 @@ if objPlayer.curseMode == 1 && cursed != objPlayer.curseColor && cursed != color
     undoBUFFER();
 }else if objPlayer.curseMode == -1 && cursed == objPlayer.curseColor {
     cursed = -1;
+    effectiveColor = color;
+    effectiveColorSpend = colorSpend;
     scrColorDoor();
     scrColorDoor2();
     scrPlaySoundExt(sndCopy2,1,1,false);
@@ -29,11 +33,9 @@ if objPlayer.curseMode == 1 && cursed != objPlayer.curseColor && cursed != color
     brownNearPlayer = 1;
     undoBUFFER();
 }
-
-if cursed != -1 && cursed != color_PURE {
-    effectiveColor = cursed;
-    effectiveColorSpend = cursed;
-}else{
-    effectiveColor = color;
-    effectiveColorSpend = colorSpend;
+if effectiveColor == color_GLITCH {
+    effectiveColor = glitchMimic;
+}
+if effectiveColorSpend == color_GLITCH {
+    effectiveColorSpend = glitchMimic;
 }

@@ -270,39 +270,7 @@ distToP = distance_to_object(objPlayer);
 if copyState != 0 {exit;}
 if !active {brownNearPlayer=0;visible=0;exit;}
 brownNearPlayer=0;
-if cursed != -1 &amp;&amp; cursed != color_PURE {
-    effectiveColor = cursed;
-    effectiveColorSpend = cursed;
-}else{
-    effectiveColor = color;
-    effectiveColorSpend = colorSpend;
-}
-canChangecursed = (cursed != -1) || (color != color_PURE &amp;&amp; colorSpend != color_PURE &amp;&amp; glitchMimic != color_PURE);
-if aura[0] != 0 || aura[1] != 0 || aura[2] != 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || objPlayer.aura[2] == -1{
-    if distToP &lt;= 23{
-        removeAuras();
-        if objPlayer.curseMode != 0{
-            if canChangecursed{
-                enbrownDoor();
-            }
-        }
-    }else{
-        brownNearPlayer = 0;
-    }
-    exit;
-}
-if objPlayer.curseMode != 0{
-    if canChangecursed{
-        if distToP &lt;= 23{
-            enbrownDoor();
-        }else{
-            brownNearPlayer = 0;
-        }
-    }
-}
-if distToP &gt; 23{
-    brownNearPlayer = 0;
-}
+
 if cursed != -1 &amp;&amp; cursed != color_PURE {
     effectiveColor = cursed;
     effectiveColorSpend = cursed;
@@ -315,6 +283,32 @@ if effectiveColor == color_GLITCH {
 }
 if effectiveColorSpend == color_GLITCH {
     effectiveColorSpend = glitchMimic;
+}
+canChangecursed = (cursed != -1) || (color != color_PURE &amp;&amp; colorSpend != color_PURE &amp;&amp; glitchMimic != color_PURE);
+if aura[0] != 0 || aura[1] != 0 || aura[2] != 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || objPlayer.aura[2] == -1{
+    if distToP &lt;= 23{
+        removeAuras();
+        if objPlayer.curseMode != 0{
+            if canChangecursed{
+                tryCurseDoor();
+            }
+        }
+    }else{
+        brownNearPlayer = 0;
+    }
+    exit;
+}
+if objPlayer.curseMode != 0{
+    if canChangecursed{
+        if distToP &lt;= 23{
+            tryCurseDoor();
+        }else{
+            brownNearPlayer = 0;
+        }
+    }
+}
+if distToP &gt; 23{
+    brownNearPlayer = 0;
 }
 //iPow stuff
 if global.complexMode == 0{//Real view
