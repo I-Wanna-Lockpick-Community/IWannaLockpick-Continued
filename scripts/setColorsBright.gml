@@ -74,7 +74,7 @@ global.darkTone[color_FOREST] = make_color_rgb(10,43,20);
 global.highTone[color_NAVY] = make_color_rgb(32,50,107);
 global.mainTone[color_NAVY] = make_color_rgb(24,37,82);
 global.darkTone[color_NAVY] = make_color_rgb(16,24,51);
-// @addcolor if no animation
+// @addcolor if no animation (or if there is an animation then door debris color)
 
 //Options menu
 with oOptionHandle{

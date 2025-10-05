@@ -3,7 +3,7 @@
 There is an array of locks.
 Each lock has 6 variables: Color, Count, Type, X/Y Offset, and Sprite.
 Type overrides Count in some cases, but a distinction is still needed.
-As for the door itself, there's Color Spend, w, h, Auras 0-2, Browned, and Copies.
+As for the door itself, there's Color Spend, w, h, Auras 0-2, cursed, and Copies.
 ALSO Present is a Lock Counter, which is initially empty. This means you can open the door
 no matter what, but this shouldn't really ever be the case. Ingame it'd look like a blank.
 For Drawing, theres Gold Index/Spd, but also a 2D array of colors for each lock.
@@ -24,7 +24,7 @@ icopies = 0;
 aura[0] = 0;
 aura[1] = 0;
 aura[2] = 0;
-browned = 0;
+cursed = -1;
 brownNearPlayer = 0;
 
 w = 1;

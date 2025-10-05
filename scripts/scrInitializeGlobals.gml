@@ -31,7 +31,9 @@ for(var i = 0; i < 16; i+=1){
     global.key[i] = 0;
     global.ikey[i] = 0;//For the ordinal keys/doors mechanic
     global.star[i] = 0;//For the star mechanic
+    global.curse[i] = 0;//For the star mechanic
 }
+global.curse[color_BROWN] = 1;
 for(var i = 0; i < 250; i+=1){
     global.roomClear[i] = 0;
 }
@@ -40,7 +42,7 @@ for(var i = 0; i < 15; i+=1){
     global.areaComplete[i] = 0;
 }
 for(var i = 0; i < 3; i+=1){
-    global.object[i] = 0;
+    global.object[i] = 1;
 }
 
 global.stoneKeys = 0;//Just a tally of how many areas you cleared

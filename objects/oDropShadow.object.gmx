@@ -57,10 +57,12 @@ with objBlock{
     }
 }
 with oKeyBulk{
-    if color == color_MASTER{
-        draw_sprite_ext(sprAllKeysWhite,type+8,x+3,y+3,image_xscale,image_yscale,image_angle,c_black,0.35*image_alpha);
+    if color == color_MASTER &amp;&amp; type == key_NORMAL {
+        draw_sprite_ext(sprAllKeysWhite,8,x+3,y+3,image_xscale,image_yscale,image_angle,c_black,0.35*image_alpha);
+    } else if color == color_DYNAMITE &amp;&amp; type == key_NORMAL {
+        draw_sprite_ext(sprAllKeysWhite,16,x+3,y+3,image_xscale,image_yscale,image_angle,c_black,0.35*image_alpha);
         // @addcolor if nonstandard key shape
-    }else{
+    } else {
         draw_sprite_ext(sprAllKeysWhite,type,x+3,y+3,image_xscale,image_yscale,image_angle,c_black,0.35*image_alpha);
     }
 }

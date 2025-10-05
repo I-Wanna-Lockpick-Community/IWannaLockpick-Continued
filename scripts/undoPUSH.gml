@@ -1,12 +1,12 @@
 ///The main script for pushing a game state, "saving it" in the undo stack.
 /* Things to save:
 1. Player position
-2. Key Counts and Stars
+2. Key Counts, Stars, and Curses
 3. Object instances
     a) Keys: Collected, Glitch Color (technically they all have synchronised glitch but its easier this way)
-    b) Doors: Opened, 3 Auras, Browned, Copies, Glitch Color
+    b) Doors: Opened, 3 Auras, cursed, Copies, Glitch Color
     c) Gates: Glitch mimic (again, technically always synchronised)
-    d) Kina: Opened, Browned, Copies
+    d) Kina: Opened, cursed, Copies
     e) Salvage point: Interacted
 4. Which salvage point is interacted */
 
@@ -33,11 +33,12 @@ if instance_exists(objPlayer) {
     undoPushChange(room_width/2);
     undoPushChange(room_height/2);
 }
-// 2. Key Counts and Stars
+// 2. Key Counts, Stars, and Curses
 for (var i = 0; i < COLORS; i+=1) {
     undoPushChange(global.key[i]);
     undoPushChange(global.ikey[i]);
     undoPushChange(global.star[i]);
+    undoPushChange(global.curse[i]);
 }
 //3. Object instances
 for (var i = 0; i < instancesCount; i+= 1) {
@@ -49,12 +50,12 @@ for (var i = 0; i < instancesCount; i+= 1) {
     } else if object_get_parent(instance.object_index) == oDoorSimple
     || instance.object_index == oDoorSimple
     || instance.object_index == oDoorCombo {
-        // b) Doors: Opened, 3 Auras, Browned, Copies, Glitch Color
+        // b) Doors: Opened, 3 Auras, cursed, Copies, Glitch Color
         undoPushChange(instance.active);
         undoPushChange(instance.aura[0]);
         undoPushChange(instance.aura[1]);
         undoPushChange(instance.aura[2]);
-        undoPushChange(instance.browned);
+        undoPushChange(instance.cursed);
         undoPushChange(instance.glitchMimic);
         undoPushChange(instance.copies);
         undoPushChange(instance.icopies);
@@ -62,9 +63,9 @@ for (var i = 0; i < instancesCount; i+= 1) {
         // c) Gates: Glitch mimic
         undoPushChange(instance.glitchMimic);
     } else if instance.object_index == oKina {
-        // d) Kina: Opened, Browned, Copies
+        // d) Kina: Opened, cursed, Copies
         undoPushChange(instance.active);
-        undoPushChange(instance.browned);
+        undoPushChange(instance.cursed);
         undoPushChange(instance.copies);
         undoPushChange(instance.icopies);
     } else if instance.object_index == oSalvageIn {

@@ -105,7 +105,7 @@ if saveBuffered{
                     if dist &lt;= 1{
                         other.shouldSave = 0;
                     }
-                    if dist &lt;= 23 &amp;&amp; (brownMode != 0 || aura[0] == 1 || aura[1] == 1 || aura[2] == 1){
+                    if dist &lt;= 23 &amp;&amp; (curseMode != 0 || aura[0] == 1 || aura[1] == 1 || aura[2] == 1){
                         other.shouldSave = 0;
                     }
                 }
@@ -114,7 +114,7 @@ if saveBuffered{
                     if dist &lt;= 1{
                         other.shouldSave = 0;
                     }
-                    if dist &lt;= 23 &amp;&amp; (brownMode != 0 || aura[0] == 1 || aura[1] == 1 || aura[2] == 1){
+                    if dist &lt;= 23 &amp;&amp; (curseMode != 0 || aura[0] == 1 || aura[1] == 1 || aura[2] == 1){
                         other.shouldSave = 0;
                     }
                 }
@@ -133,7 +133,7 @@ if saveBuffered{
                     if dist &lt;= 1{
                         other.shouldSave = 0;
                     }
-                    if dist &lt;= 23 &amp;&amp; brownMode != 0{
+                    if dist &lt;= 23 &amp;&amp; curseMode != 0{
                         other.shouldSave = 0;
                     }
                 }
@@ -162,16 +162,16 @@ if instance_exists(oNewCamera){
 }
 
 if scrButtonCheckPressed(global.shootButton) &amp;&amp; global.pmState == 0 &amp;&amp; undoPos &gt; 1 {
+    // maintain consistency with current save
+    undoPUSH();
+    undoPOP();
     if saveBuffered{
-        // the upcoming save hasnt happened yet, but we want to reverse changes anyway
-        show_debug_message("doing a pushpop")
-        undoPUSH();
-        undoPOP();
-        saveBuffered = 0;
+        // the upcoming save hasnt happened yet, and its the one we mean to undo, so we can stop here
     }else{
+        // go back a save
         undoPOP();
-        saveBuffered = 0;
     }
+    saveBuffered = 0;
     scrPlaySoundExt(sndSelectBeep,.6,.6,0);
 }
 

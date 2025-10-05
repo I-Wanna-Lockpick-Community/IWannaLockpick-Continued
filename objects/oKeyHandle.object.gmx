@@ -30,8 +30,10 @@ for(var i=0;i&lt;COLORS;i+=1){
     global.key[i] = 0;
     global.ikey[i] = 0;
     global.star[i] = 0;
+    global.curse[i] = 0;
     show[i] = -1;//The list of key *types* to be shown
 }
+global.curse[color_BROWN] = 1;
 long = 0;//0 = Short box, 1 = Long box, 2 = VERY long box
 stone = 0;//The level select key display
 goldIndex = 0;//Gold/Pure image index
@@ -147,7 +149,7 @@ for(var i = 0; i &lt; 16; i += 1){
     }
 }
 
-goldIndex = (goldIndex + .1) mod 4;
+goldIndex = (goldIndex + .1) mod 12;
 starAngle = (starAngle + 2.2) mod 360;
 
 if size &gt;= 1{
@@ -167,15 +169,24 @@ if size &gt;= 1{
     for(var i = 0; i &lt; 16; i += 1){
         drawY = y + 40*i;
         if show[i] != -1{
+            if global.curse[show[i]] == 1 {
+                if show[i] == color_BROWN {
+                    draw_set_blend_mode(bm_subtract);
+                    draw_sprite_ext(sprBrownAura,0,x-4+16,drawY-4+16,.4,.4,-starAngle,c_white,0);
+                } else {
+                    draw_sprite_ext(sprWhiteAura,0,x-4+16,drawY-4+16,.5,.5,-starAngle,getCurseColor(show[i]),1);
+                }
+                draw_set_blend_mode(bm_normal);
+            }
             if global.star[show[i]] == 1 {
                 draw_sprite_ext(sprStarGlow,0,x-4+16,drawY-4+16,.4,.4,starAngle,starCol,1);
             }
             draw_set_alpha(1);
             draw_set_color(c_white);
             if show[i] == color_MASTER {
-                draw_sprite(sprKMaster,floor(goldIndex),x-4,drawY-4);
+                draw_sprite(sprKMaster,floor(goldIndex)%4,x-4,drawY-4);
             }else if show[i] == color_PURE {
-                draw_sprite(sprKPure,floor(goldIndex),x-4,drawY-4);
+                draw_sprite(sprKPure,floor(goldIndex)%4,x-4,drawY-4);
             }else if show[i] == color_GLITCH {
                 color = show[i];
                 scrColorKey();
@@ -186,7 +197,9 @@ if size &gt;= 1{
             }else if show[i] == color_STONE {
                 draw_sprite(sprKStone,0,x-4,drawY-4); 
             } else if show[i] == color_SILVER {
-                draw_sprite(sprKSilver,floor(goldIndex),x-4,drawY-4);
+                draw_sprite(sprKSilver,floor(goldIndex)%4,x-4,drawY-4);
+            } else if show[i] == color_DYNAMITE {
+                draw_sprite(sprKDynamite,floor(goldIndex),x-4,drawY-4);
                 // @addcolor if key image/animation
             } else {
                 color = show[i];

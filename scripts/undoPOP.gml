@@ -1,12 +1,12 @@
 ///The main script for popping a game state from the Undo Stack, and setting object variables based on what data it retrieves.
 /* Things to check to pop:
 1. Player position
-2. Key Counts and Stars
+2. Key Counts, Stars, and Curses
 3. Object instances
     a) Keys: Collected, Glitch Color (technically they all have synchronised glitch but its easier this way)
-    b) Doors: Opened, 3 Auras, Browned, Copies, Glitch Color
+    b) Doors: Opened, 3 Auras, cursed, Copies, Glitch Color
     c) Gates: Glitch mimic (again, technically always synchronised)
-    d) Kina: Opened, Browned, Copies
+    d) Kina: Opened, cursed, Copies
     e) Salvage point: Interacted
 4. Which salvage point is interacted */
 
@@ -33,13 +33,14 @@ while true {
     else if index == iter+1 { if instance_exists(objPlayer) { objPlayer.y = value; undoData[index] = value } continue; }
     iter += 2;
 
-    // 2. Key Counts and Stars
+    // 2. Key Counts, Stars, and Curses
     var willContinue = false; // we want to continue the outer loop, so we break out of the inner one and set this variable to true when we find something
     for (var i = 0; i < COLORS; i+=1) {
         if index == iter { global.key[i] = value; undoData[index] = value; willContinue = true; break; }
         else if index == iter+1 { global.ikey[i] = value; undoData[index] = value; willContinue = true; break; }
         else if index == iter+2 { global.star[i] = value; undoData[index] = value; willContinue = true; break; }
-        iter += 3;
+        else if index == iter+3 { global.curse[i] = value; undoData[index] = value; willContinue = true; break; }
+        iter += 4;
     }
     if willContinue { continue; }
 
@@ -55,12 +56,12 @@ while true {
         } else if object_get_parent(instance.object_index) == oDoorSimple
         || instance.object_index == oDoorSimple
         || instance.object_index == oDoorCombo {
-            // b) Doors: Opened, 3 Auras, Browned, Copies, Glitch Color
+            // b) Doors: Opened, 3 Auras, cursed, Copies, Glitch Color
             if index == iter { instance.active = value; undoData[index] = value; willContinue = true; break; }
             else if index == iter+1 { instance.aura[0] = value; undoData[index] = value; willContinue = true; break; }
             else if index == iter+2 { instance.aura[1] = value; undoData[index] = value; willContinue = true; break; }
             else if index == iter+3 { instance.aura[2] = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+4 { instance.browned = value; undoData[index] = value; willContinue = true; break; }
+            else if index == iter+4 { instance.cursed = value; undoData[index] = value; willContinue = true; break; }
             else if index == iter+5 { instance.glitchMimic = value; undoData[index] = value; willContinue = true; break; }
             else if index == iter+6 { instance.copies = value; undoData[index] = value; willContinue = true; break; }
             else if index == iter+7 { instance.icopies = value; undoData[index] = value; willContinue = true; break; }
@@ -70,9 +71,9 @@ while true {
             if index == iter { instance.glitchMimic = value; undoData[index] = value; willContinue = true; break; }
             iter += 1;
         } else if instance.object_index == oKina {
-            // d) Kina: Opened, Browned, Copies
+            // d) Kina: Opened, cursed, Copies
             if index == iter { instance.active = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+1 { instance.browned = value; undoData[index] = value; willContinue = true; break; }
+            else if index == iter+1 { instance.cursed = value; undoData[index] = value; willContinue = true; break; }
             else if index == iter+2 { instance.copies = value; undoData[index] = value; willContinue = true; break; }
             else if index == iter+3 { instance.icopies = value; undoData[index] = value; willContinue = true; break; }
             iter += 4;
@@ -125,11 +126,11 @@ for (var i = 0; i < instancesCount; i += 1) {
         with instance {
             scrColorDoor(); scrColorDoor2(); undoReposition();
             copyTimer = 0; copyState = 0; copyAlpha = 0; copyDraw = 1;
-            if browned {
+            if cursed != -1 {
                 var colorOld = color;
                 var colorOld2 = colorSpend;
-                color = color_BROWN;
-                colorSpend = color_BROWN;
+                color = cursed;
+                colorSpend = cursed;
                 scrColorDoor();
                 scrColorDoor2();
                 color = colorOld;
@@ -141,9 +142,9 @@ for (var i = 0; i < instancesCount; i += 1) {
         instance.visible = instance.active;
         with instance {
             scrComboCFunc(); undoReposition();
-            if browned {
+            if cursed != -1 {
                 var colorOld = colorSpend;
-                colorSpend = color_BROWN;
+                colorSpend = cursed;
                 scrComboCFunc();
                 colorSpend = colorOld;
                 event_user(3);
@@ -153,11 +154,11 @@ for (var i = 0; i < instancesCount; i += 1) {
         with instance {
             scrColorDoor(); scrColorDoor2();
             copyTimer = 0; copyState = 0; copyAlpha = 0; copyDraw = 1;
-            if browned {
+            if cursed != -1 {
                 var colorOld = color;
                 var colorOld2 = colorSpend;
-                color = color_BROWN;
-                colorSpend = color_BROWN;
+                color = cursed;
+                colorSpend = cursed;
                 scrColorDoor();
                 scrColorDoor2();
                 color = colorOld;

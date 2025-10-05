@@ -32,7 +32,7 @@ glitchMimic = color_GLITCH;//For glitch keys
 count = 1;
 icount = 0;
 iPow = 0;
-type = 0;//0 = Simple, 1 = Absolute, 2 = Ordinal (UNUSED), 3 = Star, 4 = Unstar, 5 = Swap
+type = key_NORMAL;//0 = Simple, 1 = Absolute, 2 = Ordinal (UNUSED), 3 = Star, 4 = Unstar, 5 = Swap
 inf = 0;//Infinite copies!
 touched = 0;//whether the thing's been touched (inf copy)
 //Scrapped 3 = Absolute+INFINITY, aka what came before the ordinal system
@@ -159,7 +159,7 @@ if color == color_GLITCH { effectiveColor = glitchMimic; }
 
 switch type {
     case key_NORMAL:
-        addComplexKeys(effectiveColor,0,count,icount,0);
+        addComplexKeys(effectiveColor,count,icount,0);
     break;
     case key_EXACT:
         if !global.star[effectiveColor] {
@@ -196,6 +196,11 @@ switch type {
             global.key[effectiveColor] = tmp2;
             global.ikey[effectiveColor] = -tmp;
         }
+    case key_CURSE:
+        global.curse[effectiveColor] = 1;
+    break;
+    case key_UNCURSE:
+        global.curse[effectiveColor] = 0;
     break;
 }
 
@@ -278,12 +283,19 @@ with other {
         case key_UNSTAR: sprite_index = sprKStoneStar2; break;
         default: sprite_index = sprKStone; break;
     }
-} else if color == color_SILVER{
+} else if color == color_SILVER {
     switch type {
         case key_EXACT: sprite_index = sprKSilver; break;
         case key_STAR: sprite_index = sprKSilver; break;
         case key_UNSTAR: sprite_index = sprKSilver; break;
         default: sprite_index = sprKSilver; break;
+    }
+} else if color == color_DYNAMITE {
+    switch type {
+        case key_EXACT: sprite_index = sprKDynamiteAbs; break;
+        case key_STAR: sprite_index = sprKDynamiteStar; break;
+        case key_UNSTAR: sprite_index = sprKDynamiteStar2; break;
+        default: sprite_index = sprKDynamite; break;
     }
     // @addcolor if key image/animation
 } else {
@@ -326,7 +338,7 @@ if instance_exists(oLightsW5) || instance_exists(oLightsW4) || instance_exists(o
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if color == color_MASTER || color == color_PURE || color == color_STONE || color == color_SILVER { // @addcolor if key image/animation
+            <string>if color == color_MASTER || color == color_PURE || color == color_STONE || color == color_SILVER || color == color_DYNAMITE { // @addcolor if key image/animation
     image_speed = .1;
     draw_sprite_ext(sprite_index,floor(image_index),x,y,1,1,0,c_white,1);
 } else if color == color_GLITCH {
@@ -362,6 +374,8 @@ switch type {
     case key_SIGNFLIP: draw_sprite(sprKSwap,0,x,y); break;
     case key_POSROTOR: draw_sprite(sprKSwap,1,x,y); break;
     case key_NEGROTOR: draw_sprite(sprKSwap,2,x,y); break;
+    case key_CURSE: draw_sprite(sprKSwap,1,x,y); break;
+    case key_UNCURSE: draw_sprite(sprKSwap,2,x,y); break;
     default:
         if !(count == 1 &amp;&amp; icount == 0) {
             if icount == 0 {//Real numbers
