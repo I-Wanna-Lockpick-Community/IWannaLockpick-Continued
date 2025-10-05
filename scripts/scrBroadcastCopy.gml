@@ -1,7 +1,12 @@
-///scrBroadcastCopy(colorSpend,glitchMimic);
-if argument0 != color_GLITCH{
-    with oKeyGlitch{
-        if color == color_GLITCH{
+///scrBroadcastCopy(color);
+with oKeyGlitch{
+    if color == color_GLITCH{
+        glitchMimic = argument0;
+    }
+}
+with oDoorSimple{
+    if !browned{
+        if color == color_GLITCH || colorSpend == color_GLITCH{
             glitchMimic = argument0;
         }
     }

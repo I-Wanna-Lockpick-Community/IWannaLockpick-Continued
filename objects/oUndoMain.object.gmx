@@ -162,16 +162,16 @@ if instance_exists(oNewCamera){
 }
 
 if scrButtonCheckPressed(global.shootButton) &amp;&amp; global.pmState == 0 &amp;&amp; undoPos &gt; 1 {
+    // maintain consistency with current save
+    undoPUSH();
+    undoPOP();
     if saveBuffered{
-        // the upcoming save hasnt happened yet, but we want to reverse changes anyway
-        show_debug_message("doing a pushpop")
-        undoPUSH();
-        undoPOP();
-        saveBuffered = 0;
+        // the upcoming save hasnt happened yet, and its the one we mean to undo, so we can stop here
     }else{
+        // go back a save
         undoPOP();
-        saveBuffered = 0;
     }
+    saveBuffered = 0;
     scrPlaySoundExt(sndSelectBeep,.6,.6,0);
 }
 
