@@ -57,7 +57,7 @@ global.darkTone[color_GLITCH] = make_color_rgb(220,110,0);
 global.highTone[color_STONE] = make_color_rgb(150,160,165);
 global.mainTone[color_STONE] = make_color_rgb(100,115,120);
 global.darkTone[color_STONE] = make_color_rgb(60,75,80);
-// addcolor
+// @addcolor
 
 //Options menu
 with oOptionHandle{
