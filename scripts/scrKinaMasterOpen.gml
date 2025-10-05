@@ -5,7 +5,7 @@ var openedForwards = false;
 var openedBackwards = false;
 
 if abs(objPlayer.masterMode) == 1 && global.key[color_MASTER] != 0{ //Real Master Spending
-    addComplexKeys(color_MASTER,-sign(objPlayer.masterMode),0);
+    addComplexKeys(color_MASTER,-sign(objPlayer.masterMode),0,0);
     copies -= sign(objPlayer.masterMode);
     if sign(copies) == -sign(objPlayer.masterMode) {
         openedBackwards = true;
@@ -15,7 +15,7 @@ if abs(objPlayer.masterMode) == 1 && global.key[color_MASTER] != 0{ //Real Maste
     objPlayer.masterMode = 0;
     objPlayer.masterCycle = 0;
 } else if abs(objPlayer.masterMode) == 2 && global.ikey[color_MASTER] != 0{ //Imaginary Master Spending
-    addComplexKeys(color_MASTER,0,-sign(objPlayer.masterMode));
+    addComplexKeys(color_MASTER,0,-sign(objPlayer.masterMode),0);
     icopies -= sign(objPlayer.masterMode);
     if sign(icopies) == -sign(objPlayer.masterMode) {
         openedBackwards = true;
