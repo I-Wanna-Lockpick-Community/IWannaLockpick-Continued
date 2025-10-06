@@ -183,11 +183,11 @@ if distance_to_object(objPlayer) <= 1{
                 objPlayer.masterMode = 0;
                 objPlayer.masterCycle = 0;
                 undoBUFFER();
-                scrBroadcastCopy(effectiveColorSpend,glitchMimic); // should it?
+                scrBroadcastCopy(effectiveColorSpend); // should it?
             } else if metRequirement {
                 addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
                 scrOpenCombo();
-                scrBroadcastCopy(effectiveColorSpend,glitchMimic);
+                scrBroadcastCopy(effectiveColorSpend);
             }
         } else {
             scrNormalMasterOpen();

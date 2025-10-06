@@ -359,11 +359,11 @@ if distToP &lt;= 1 {
             objPlayer.masterMode = 0;
             objPlayer.masterCycle = 0;
             undoBUFFER();
-            scrBroadcastCopy(effectiveColorSpend,glitchMimic); // should it?
+            scrBroadcastCopy(effectiveColorSpend); // should it?
         } else if canOpen(effectiveColor, tempIPow) {
             addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
             scrOpenOrCopy();
-            scrBroadcastCopy(effectiveColorSpend,glitchMimic);
+            scrBroadcastCopy(effectiveColorSpend);
         }
     }
 }
