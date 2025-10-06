@@ -71,6 +71,9 @@ colName[15] = "Silver";
 colName[16] = "Maroon";
 colName[17] = "Forest";
 colName[18] = "Navy";
+colName[19] = "Ice";
+colName[20] = "Mud";
+colName[21] = "Ink";
 // @addcolor
 //Define key type names
 keyName[0] = "";
@@ -136,6 +139,9 @@ pdaID[1, 1] = color_DYNAMITE;
 pdaID[1, 2] = color_MAROON;
 pdaID[1, 3] = color_FOREST;
 pdaID[1, 4] = color_NAVY;
+pdaID[1, 5] = color_ICE;
+pdaID[1, 6] = color_MUD;
+pdaID[1, 7] = color_INK;
 // @addcolor
 //Jokes
 numJokes = 15;
@@ -895,11 +901,17 @@ if pdaMode == 1{
             shader_reset();
         }else if pdaID[pdaPage, i] == color_STONE{
             draw_sprite(sprKStone,0,drawX,drawY);
+        }else if pdaID[pdaPage, i] == color_ICE{
+            draw_sprite(sprKIce,0,drawX,drawY);
+        }else if pdaID[pdaPage, i] == color_MUD{
+            draw_sprite(sprKMud,0,drawX,drawY);
+        }else if pdaID[pdaPage, i] == color_INK{
+            draw_sprite(sprKInk,0,drawX,drawY);
         }else if pdaID[pdaPage, i] == color_SILVER{
             draw_sprite(sprKSilver,floor(goldIndex)%4,drawX,drawY);
         } else if pdaID[pdaPage, i] == color_DYNAMITE{
             draw_sprite(sprKDynamite,floor(goldIndex),drawX,drawY);
-			// @addcolor if key image/animation
+// @addcolor if key image/animation
         } else {
             color = pdaID[pdaPage, i];
             scrColorKey();
