@@ -42,6 +42,39 @@ if glitchMimic == color_MASTER{
     }else{//Unstar
         draw_sprite(sprKDynamiteGlitch,3,x,y);
     }
+}else if glitchMimic == color_ICE{
+    //Change these in I Wanna Lockpick because the types are shifted
+    if type == 0 || type == 5 || type == 6 || type == 7{//Normal
+        draw_sprite(sprKIceGlitch,0,x,y);
+    }else if type == 1{//Exact
+        draw_sprite(sprKIceGlitch,1,x,y);
+    }else if type == 3{//Star
+        draw_sprite(sprKIceGlitch,2,x,y);
+    }else{//Unstar
+        draw_sprite(sprKIceGlitch,3,x,y);
+    }
+}else if glitchMimic == color_MUD{
+    //Change these in I Wanna Lockpick because the types are shifted
+    if type == 0 || type == 5 || type == 6 || type == 7{//Normal
+        draw_sprite(sprKMudGlitch,0,x,y);
+    }else if type == 1{//Exact
+        draw_sprite(sprKMudGlitch,1,x,y);
+    }else if type == 3{//Star
+        draw_sprite(sprKMudGlitch,2,x,y);
+    }else{//Unstar
+        draw_sprite(sprKMudGlitch,3,x,y);
+    }
+}else if glitchMimic == color_INK{
+    //Change these in I Wanna Lockpick because the types are shifted
+    if type == 0 || type == 5 || type == 6 || type == 7{//Normal
+        draw_sprite(sprKInkGlitch,0,x,y);
+    }else if type == 1{//Exact
+        draw_sprite(sprKInkGlitch,1,x,y);
+    }else if type == 3{//Star
+        draw_sprite(sprKInkGlitch,2,x,y);
+    }else{//Unstar
+        draw_sprite(sprKInkGlitch,3,x,y);
+    }    
     // @addcolor if key image/animation
 }else{//Normal keys
     var _cstored = color;

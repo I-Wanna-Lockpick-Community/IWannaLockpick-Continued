@@ -196,6 +196,12 @@ if size &gt;= 1{
                 shader_reset();
             }else if show[i] == color_STONE {
                 draw_sprite(sprKStone,0,x-4,drawY-4); 
+            }else if show[i] == color_ICE{
+                draw_sprite(sprKIce,0,x-4,drawY-4);
+            }else if show[i] == color_MUD{
+                draw_sprite(sprKMud,0,x-4,drawY-4);
+            }else if show[i] == color_INK{
+                draw_sprite(sprKInk,0,x-4,drawY-4);
             } else if show[i] == color_SILVER {
                 draw_sprite(sprKSilver,floor(goldIndex)%4,x-4,drawY-4);
             } else if show[i] == color_DYNAMITE {

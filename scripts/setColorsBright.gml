@@ -74,6 +74,18 @@ global.darkTone[color_FOREST] = make_color_rgb(10,43,20);
 global.highTone[color_NAVY] = make_color_rgb(32,50,107);
 global.mainTone[color_NAVY] = make_color_rgb(24,37,82);
 global.darkTone[color_NAVY] = make_color_rgb(16,24,51);
+//Ice
+global.highTone[color_ICE] = make_color_rgb(204,231,237);
+global.mainTone[color_ICE] = make_color_rgb(152,216,234);
+global.darkTone[color_ICE] = make_color_rgb(94,189,204);
+//Mud
+global.highTone[color_MUD] = make_color_rgb(148,89,80);
+global.mainTone[color_MUD] = make_color_rgb(116,65,56);
+global.darkTone[color_MUD] = make_color_rgb(86,42,37);
+//Ink
+global.highTone[color_INK] = make_color_rgb(145,163,94);
+global.mainTone[color_INK] = make_color_rgb(113,132,62);
+global.darkTone[color_INK] = make_color_rgb(78,92,39);
 // @addcolor if no animation (or if there is an animation then door debris color)
 
 //Options menu

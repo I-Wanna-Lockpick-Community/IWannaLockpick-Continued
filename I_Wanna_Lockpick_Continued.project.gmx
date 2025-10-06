@@ -415,6 +415,9 @@
         <sprite>sprites\sprKRed</sprite>
         <sprite>sprites\sprKBlack</sprite>
         <sprite>sprites\sprKBrown</sprite>
+        <sprite>sprites\sprKMaroon</sprite>
+        <sprite>sprites\sprKForest</sprite>
+        <sprite>sprites\sprKNavy</sprite>
         <sprite>sprites\sprKRainbow</sprite>
         <sprite>sprites\sprKGray</sprite>
         <sprite>sprites\sprKInf</sprite>
@@ -431,9 +434,21 @@
         <sprite>sprites\sprKDynamiteStar</sprite>
         <sprite>sprites\sprKDynamiteStar2</sprite>
         <sprite>sprites\sprKDynamiteGlitch</sprite>
-        <sprite>sprites\sprKMaroon</sprite>
-        <sprite>sprites\sprKForest</sprite>
-        <sprite>sprites\sprKNavy</sprite>
+        <sprite>sprites\sprKIce</sprite>
+        <sprite>sprites\sprKIceAbs</sprite>
+        <sprite>sprites\sprKIceStar</sprite>
+        <sprite>sprites\sprKIceStar2</sprite>
+        <sprite>sprites\sprKIceGlitch</sprite>
+        <sprite>sprites\sprKMud</sprite>
+        <sprite>sprites\sprKMudAbs</sprite>
+        <sprite>sprites\sprKMudStar</sprite>
+        <sprite>sprites\sprKMudStar2</sprite>
+        <sprite>sprites\sprKMudGlitch</sprite>
+        <sprite>sprites\sprKInk</sprite>
+        <sprite>sprites\sprKInkAbs</sprite>
+        <sprite>sprites\sprKInkStar</sprite>
+        <sprite>sprites\sprKInkStar2</sprite>
+        <sprite>sprites\sprKInkGlitch</sprite>
       </sprites>
       <sprites name="other">
         <sprite>sprites\sprDirt</sprite>
@@ -1261,6 +1276,9 @@
       <object>objects\oKeyMaroon</object>
       <object>objects\oKeyForest</object>
       <object>objects\oKeyNavy</object>
+      <object>objects\oKeyIce</object>
+      <object>objects\oKeyMud</object>
+      <object>objects\oKeyInk</object>
     </objects>
     <objects name="Door">
       <object>objects\oDoorWhite</object>
@@ -1699,7 +1717,10 @@
     <constant name="ts_LILY">2</constant>
     <constant name="ts_SIGN">1</constant>
     <constant name="ts_SYS">0</constant>
-    <constant name="COLORS">19</constant>
+    <constant name="COLORS">22</constant>
+    <constant name="color_INK">21</constant>
+    <constant name="color_MUD">20</constant>
+    <constant name="color_ICE">19</constant>
     <constant name="color_NAVY">18</constant>
     <constant name="color_FOREST">17</constant>
     <constant name="color_MAROON">16</constant>
@@ -1729,9 +1750,6 @@
     <constant name="key_EXACT">1</constant>
     <constant name="key_NORMAL">0</constant>
     <constant name="lock_ALL">3</constant>
-    <constant name="lock_BLAST">2</constant>
-    <constant name="lock_BLANK">1</constant>
-    <constant name="lock_NORMAL">0</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
