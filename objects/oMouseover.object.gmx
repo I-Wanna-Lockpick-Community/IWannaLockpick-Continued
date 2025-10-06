@@ -38,6 +38,7 @@ getSpend = 0;
 getCost = 0;
 getICost = 0;
 getType = 0;
+getIsIExact = 0;// To know if Exact Door is imaginary or not, since no way to tell off keycounts
 getGlitch = 0;
 getAura[0] = 0;//Red
 getAura[1] = 0;//Green
@@ -51,6 +52,8 @@ lockCol[0] = 0;
 lockType[0] = 0;
 lockCost[0] = 0;
 lockICost[0] = 0;
+lockDenom[0] = 0;
+lockNumer[0] = 0;
 //Define color names @addcolor
 colName[0] = "Master";
 colName[1] = "White";
@@ -88,6 +91,7 @@ doorName[0] = "";
 doorName[1] = "Blank ";
 doorName[2] = "Blast ";
 doorName[3] = "All ";
+doorName[4] = "Exact "
 </string>
           </argument>
         </arguments>
@@ -306,6 +310,7 @@ if mouse_in_window(){
             other.getICost = icount;
             other.getType = type;
             other.getGlitch = glitchMimic;
+            other.getIsIExact = exactI;
             other.getAura[0] = aura[0];
             other.getAura[1] = aura[1];
             other.getAura[2] = aura[2];
@@ -330,6 +335,8 @@ if mouse_in_window(){
                 other.lockCost[i] = lock[i,1];
                 other.lockICost[i] = lock[i,2];
                 other.lockType[i] = lock[i,3];
+                other.lockDenom[i] = lock[i,7];
+                other.lockNumer[i] = lock[i,8];
             }
         } 
     }
@@ -1100,8 +1107,14 @@ if mouseType == 0{//Keys
         }else{
             str += "[All -i]";
         }
-    }else if getType == 3{//Exact
+    }else if getType == 3{//All
         str += "[ALL]";
+    }else if getType == 4{//Exact
+        if getIsIExact == 0{
+            str += "Exactly "+string(getCost);
+        }else{
+            str += "Exactly "+string(getICost)+"i";
+        }
     }
     if getCol != getSpend{
         str += " "+colName[getCol];
@@ -1145,8 +1158,14 @@ if mouseType == 0{//Keys
                 }else{
                     str += "[All -i]";
                 }
-            }else if lockType[i] == 3{//Exact
+            }else if lockType[i] == 3{//All
                 str += "[ALL]";
+            }else if lockType[i] == 4{//Exact
+                if lockDenom[i] != 0{//Imaginary
+                    str += string("Exactly "+string(lockICost[i]))+"i";
+                }else{
+                    str += string("Exactly "+string(lockCost[i]));
+                }
             }
             str += "#";
             if lockCol[i] == color_GLITCH{
@@ -1198,8 +1217,14 @@ if mouseType == 0{//Keys
                 }else{
                     str += "[All -i]";
                 }
-            }else if lockType[i] == 3{//Exact
+            }else if lockType[i] == 3{//All
                 str += "[ALL]";
+            }else if lockType[i] == 4{//Exact
+                if lockDenom[i] != 0{//Imaginary
+                    str += string("Exactly "+string(lockICost[i]))+"i";
+                }else{
+                    str += string("Exactly "+string(lockCost[i]));
+                }
             }
             str += "#";
             if lockCol[i] == color_GLITCH{

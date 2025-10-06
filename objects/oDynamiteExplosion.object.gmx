@@ -3,7 +3,7 @@
   <spriteName>sprExplosion</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-9</depth>
+  <depth>-11</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -32,7 +32,7 @@ image_index = 0
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="8" enumb="73">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -51,6 +51,7 @@ image_index = 0
             <kind>1</kind>
             <string>image_index = floor(frame)
 frame += 0.5
+draw_self()
 if frame &gt;= 17 {
     instance_destroy() }
 </string>
