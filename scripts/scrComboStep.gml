@@ -93,7 +93,7 @@ var goldEligible = objPlayer.masterMode;//0 = Don't use gold, 1 = Use gold, -1 =
 if objPlayer.masterCycle != 1 {
     goldEligible = 0;
 }
-if !browned && goldEligible != 0 {
+if goldEligible != 0 {
     if effectiveColorSpend == color_MASTER || effectiveColorSpend == color_PURE {
         goldEligible = 0;
     }
