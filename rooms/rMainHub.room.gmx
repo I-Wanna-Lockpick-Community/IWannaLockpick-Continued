@@ -82,13 +82,13 @@ global.msg = "";</code>
     <instance objName="oKeyForest" x="352" y="256" name="inst_AFA2D861" locked="0" code="count = 5&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyNavy" x="384" y="256" name="inst_8D2945ED" locked="0" code="count = 3&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyHandle" x="912" y="16" name="inst_8C483397" locked="0" code="show[0] = color_MAROON;&#xA;show[1] = color_FOREST;&#xA;show[2] = color_NAVY;&#xA;show[3] = color_RED;&#xA;show[4] = color_GREEN;&#xA;show[5] = color_BLUE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyRed" x="576" y="160" name="inst_449F5AC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyRed" x="608" y="160" name="inst_645C28D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyGreen" x="544" y="160" name="inst_FC4A0663" locked="0" code="count = 5&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyRed" x="576" y="192" name="inst_449F5AC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyRed" x="608" y="192" name="inst_645C28D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGreen" x="544" y="192" name="inst_FC4A0663" locked="0" code="count = 5&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGreen" x="32" y="320" name="inst_98518BD8" locked="0" code="count = 5&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyNavy" x="384" y="224" name="inst_192D84C2" locked="0" code="count = 3&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyBlue" x="640" y="160" name="inst_EDFE45AC" locked="0" code="count = 3&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyBlue" x="672" y="160" name="inst_C51F120E" locked="0" code="count = 3&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyBlue" x="640" y="192" name="inst_EDFE45AC" locked="0" code="count = 3&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyBlue" x="672" y="192" name="inst_C51F120E" locked="0" code="count = 3&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyForest" x="352" y="224" name="inst_A42A6DE6" locked="0" code="count = 5&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaroon" x="320" y="224" name="inst_38553519" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="576" name="inst_84BE7D39" locked="0" code="" scaleX="30.9677410125732" scaleY="1" colour="4294967295" rotation="0"/>
@@ -109,7 +109,7 @@ global.msg = "";</code>
     <instance objName="oKeyBrown" x="32" y="416" name="inst_FF8D2D61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGreen" x="32" y="288" name="inst_5EDC1FB3" locked="0" code="type=key_SIGNFLIP&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="384" name="inst_2AD602B1" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyGreen" x="512" y="160" name="inst_90D7BF07" locked="0" code="count = 5&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGreen" x="512" y="192" name="inst_90D7BF07" locked="0" code="count = 5&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="64" y="320" name="inst_8DB41016" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="64" y="288" name="inst_F38CD5FB" locked="0" code="type=key_SIGNFLIP&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="96" y="320" name="inst_F8C996D5" locked="0" code="type=key_CURSE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -183,9 +183,16 @@ global.msg = "";</code>
     <instance objName="oKeyMaroon" x="928" y="192" name="inst_E7FE3F5D" locked="0" code="type=key_STAR" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyForest" x="960" y="192" name="inst_67513C7C" locked="0" code="type=key_STAR&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyNavy" x="992" y="192" name="inst_989F0267" locked="0" code="type=key_STAR&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyIce" x="224" y="240" name="inst_242806F7" locked="0" code="count = 99&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyMud" x="256" y="240" name="inst_01AAA779" locked="0" code="count = 99&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyInk" x="288" y="240" name="inst_586FDCC5" locked="0" code="count = 99&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyIce" x="224" y="256" name="inst_242806F7" locked="0" code="count = 99&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyMud" x="256" y="256" name="inst_01AAA779" locked="0" code="count = 99&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGraffiti" x="288" y="256" name="inst_586FDCC5" locked="0" code="count = 99&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyHandle" x="80" y="64" name="inst_569A5A51" locked="0" code="show[0] = color_ICE;&#xA;show[1] = color_MUD;&#xA;show[2] = color_GRAFFITI;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="512" y="160" name="inst_1F2C328F" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorWhite" x="576" y="128" name="inst_302E7FE3" locked="0" code="type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorPink" x="608" y="128" name="inst_165B92AB" locked="0" code="type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyIce" x="224" y="224" name="inst_BEEC606F" locked="0" code="count = -99&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyMud" x="256" y="224" name="inst_FE442C21" locked="0" code="count = -99&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyGraffiti" x="288" y="224" name="inst_0A61FF71" locked="0" code="count = -99&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles2" x="256" y="480" w="32" h="32" xo="128" yo="0" id="10125734" name="inst_307BFDDA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -287,6 +294,12 @@ global.msg = "";</code>
     <tile bgName="bAllTiles2" x="832" y="288" w="32" h="32" xo="128" yo="0" id="10125839" name="inst_138EF327" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bAllTiles2" x="800" y="288" w="32" h="32" xo="128" yo="0" id="10125840" name="inst_61E0382F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bAllTiles2" x="768" y="288" w="32" h="32" xo="128" yo="0" id="10125841" name="inst_E0E9E10A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bAllTiles2" x="512" y="160" w="32" h="32" xo="128" yo="0" id="10125843" name="inst_29DEBB2A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bAllTiles2" x="544" y="160" w="32" h="32" xo="128" yo="0" id="10125844" name="inst_8ED94C8E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bAllTiles2" x="576" y="160" w="32" h="32" xo="128" yo="0" id="10125846" name="inst_594CAB9E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bAllTiles2" x="608" y="160" w="32" h="32" xo="128" yo="0" id="10125847" name="inst_295A44C8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bAllTiles2" x="640" y="160" w="32" h="32" xo="128" yo="0" id="10125848" name="inst_D2A97D55" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bAllTiles2" x="672" y="160" w="32" h="32" xo="128" yo="0" id="10125849" name="inst_222E054B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

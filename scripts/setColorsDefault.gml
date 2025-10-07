@@ -82,9 +82,9 @@ global.highTone[color_MUD] = make_color_rgb(148,89,80);
 global.mainTone[color_MUD] = make_color_rgb(116,65,56);
 global.darkTone[color_MUD] = make_color_rgb(86,42,37);
 //Ink
-global.highTone[color_INK] = make_color_rgb(145,163,94);
-global.mainTone[color_INK] = make_color_rgb(113,132,62);
-global.darkTone[color_INK] = make_color_rgb(78,92,39);
+global.highTone[color_GRAFFITI] = make_color_rgb(145,163,94);
+global.mainTone[color_GRAFFITI] = make_color_rgb(113,132,62);
+global.darkTone[color_GRAFFITI] = make_color_rgb(78,92,39);
 // @addcolor if no animation (or if there is an animation then door debris color)
 
 //Options menu

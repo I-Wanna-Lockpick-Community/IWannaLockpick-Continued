@@ -444,11 +444,11 @@
         <sprite>sprites\sprKMudStar</sprite>
         <sprite>sprites\sprKMudStar2</sprite>
         <sprite>sprites\sprKMudGlitch</sprite>
-        <sprite>sprites\sprKInk</sprite>
-        <sprite>sprites\sprKInkAbs</sprite>
-        <sprite>sprites\sprKInkStar</sprite>
-        <sprite>sprites\sprKInkStar2</sprite>
-        <sprite>sprites\sprKInkGlitch</sprite>
+        <sprite>sprites\sprKGraffiti</sprite>
+        <sprite>sprites\sprKGraffitiAbs</sprite>
+        <sprite>sprites\sprKGraffitiStar</sprite>
+        <sprite>sprites\sprKGraffitiStar2</sprite>
+        <sprite>sprites\sprKGraffitiGlitch</sprite>
       </sprites>
       <sprites name="other">
         <sprite>sprites\sprDirt</sprite>
@@ -1278,7 +1278,7 @@
       <object>objects\oKeyNavy</object>
       <object>objects\oKeyIce</object>
       <object>objects\oKeyMud</object>
-      <object>objects\oKeyInk</object>
+      <object>objects\oKeyGraffiti</object>
     </objects>
     <objects name="Door">
       <object>objects\oDoorWhite</object>
@@ -1718,7 +1718,7 @@
     <constant name="ts_SIGN">1</constant>
     <constant name="ts_SYS">0</constant>
     <constant name="COLORS">22</constant>
-    <constant name="color_INK">21</constant>
+    <constant name="color_GRAFFITI">21</constant>
     <constant name="color_MUD">20</constant>
     <constant name="color_ICE">19</constant>
     <constant name="color_NAVY">18</constant>

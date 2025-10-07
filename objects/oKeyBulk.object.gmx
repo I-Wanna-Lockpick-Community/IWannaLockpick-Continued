@@ -311,12 +311,12 @@ with other {
         case key_UNSTAR: sprite_index = sprKMudStar2; break;
         default: sprite_index = sprKMud; break;
     }
-} else if color == color_INK {
+} else if color == color_GRAFFITI {
     switch type {
-        case key_EXACT: sprite_index = sprKInkAbs; break;
-        case key_STAR: sprite_index = sprKInkStar; break;
-        case key_UNSTAR: sprite_index = sprKInkStar2; break;
-        default: sprite_index = sprKInk; break;
+        case key_EXACT: sprite_index = sprKGraffitiAbs; break;
+        case key_STAR: sprite_index = sprKGraffitiStar; break;
+        case key_UNSTAR: sprite_index = sprKGraffitiStar2; break;
+        default: sprite_index = sprKGraffiti; break;
     }
     // @addcolor if key image/animation
 } else {
@@ -359,7 +359,7 @@ if instance_exists(oLightsW5) || instance_exists(oLightsW4) || instance_exists(o
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if color == color_MASTER || color == color_PURE || color == color_STONE || color == color_SILVER || color == color_DYNAMITE || color == color_ICE || color == color_MUD || color == color_INK { // @addcolor if key image/animation
+            <string>if color == color_MASTER || color == color_PURE || color == color_STONE || color == color_SILVER || color == color_DYNAMITE || color == color_ICE || color == color_MUD || color == color_GRAFFITI { // @addcolor if key image/animation
     image_speed = .1;
     draw_sprite_ext(sprite_index,floor(image_index),x,y,1,1,0,c_white,1);
 } else if color == color_GLITCH {

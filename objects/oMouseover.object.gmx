@@ -73,7 +73,7 @@ colName[17] = "Forest";
 colName[18] = "Navy";
 colName[19] = "Ice";
 colName[20] = "Mud";
-colName[21] = "Ink";
+colName[21] = "Graffiti";
 // @addcolor
 //Define key type names
 keyName[0] = "";
@@ -117,7 +117,7 @@ oldMode = 0;//Just for sound stuff
 //Array to organize rows/columns of keys
 pdaPage = 0; // Current page
 // Each page displays 14 keys, possibly except the last one.
-pdaPages = 2; pdaOnLastPage = 5;
+pdaPages = 2; pdaOnLastPage = 8;
 // Page 1
 pdaID[0, 0] = color_WHITE;
 pdaID[0, 1] = color_ORANGE;
@@ -141,7 +141,7 @@ pdaID[1, 3] = color_FOREST;
 pdaID[1, 4] = color_NAVY;
 pdaID[1, 5] = color_ICE;
 pdaID[1, 6] = color_MUD;
-pdaID[1, 7] = color_INK;
+pdaID[1, 7] = color_GRAFFITI;
 // @addcolor
 //Jokes
 numJokes = 15;
@@ -905,8 +905,8 @@ if pdaMode == 1{
             draw_sprite(sprKIce,0,drawX,drawY);
         }else if pdaID[pdaPage, i] == color_MUD{
             draw_sprite(sprKMud,0,drawX,drawY);
-        }else if pdaID[pdaPage, i] == color_INK{
-            draw_sprite(sprKInk,0,drawX,drawY);
+        }else if pdaID[pdaPage, i] == color_GRAFFITI{
+            draw_sprite(sprKGraffiti,0,drawX,drawY);
         }else if pdaID[pdaPage, i] == color_SILVER{
             draw_sprite(sprKSilver,floor(goldIndex)%4,drawX,drawY);
         } else if pdaID[pdaPage, i] == color_DYNAMITE{
