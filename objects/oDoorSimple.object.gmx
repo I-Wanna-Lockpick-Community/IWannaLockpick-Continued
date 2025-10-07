@@ -284,7 +284,7 @@ if aura[0] != 0 || aura[1] != 0 || aura[2] != 0 || objPlayer.aura[0] == -1 || ob
         removeAuras();
         if objPlayer.curseMode != 0{
             if canChangecursed{
-                enbrownDoor();
+                tryCurseDoor();
             }
         }
     }else{
@@ -295,7 +295,7 @@ if aura[0] != 0 || aura[1] != 0 || aura[2] != 0 || objPlayer.aura[0] == -1 || ob
 if objPlayer.curseMode != 0{
     if canChangecursed{
         if distToP &lt;= 23{
-            enbrownDoor();
+            tryCurseDoor();
         }else{
             brownNearPlayer = 0;
         }
@@ -366,11 +366,11 @@ if distToP &lt;= 1 {
             objPlayer.masterMode = 0;
             objPlayer.masterCycle = 0;
             undoBUFFER();
-            scrBroadcastCopy(effectiveColorSpend,glitchMimic); // should it?
+            scrBroadcastCopy(effectiveColorSpend); // should it?
         } else if canOpen(effectiveColor, tempIPow) {
             addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
             scrOpenOrCopy();
-            scrBroadcastCopy(effectiveColorSpend,glitchMimic);
+            scrBroadcastCopy(effectiveColorSpend);
         }
     }
 }

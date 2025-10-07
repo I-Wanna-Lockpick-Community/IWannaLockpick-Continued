@@ -761,7 +761,7 @@
     <script>scripts\canOpen.gml</script>
     <script>scripts\canOpenExt.gml</script>
     <script>scripts\removeAuras.gml</script>
-    <script>scripts\enbrownDoor.gml</script>
+    <script>scripts\tryCurseDoor.gml</script>
     <script>scripts\useMasterCheck.gml</script>
     <scripts name="combo door">
       <script>scripts\scrComboDrawMain.gml</script>
@@ -780,7 +780,7 @@
       <script>scripts\scrCanOpenFeed.gml</script>
       <script>scripts\scrAddSpendAmt.gml</script>
       <script>scripts\scrOpenCombo.gml</script>
-      <script>scripts\enbrownCombo.gml</script>
+      <script>scripts\tryCurseCombo.gml</script>
       <script>scripts\removeAurasCombo.gml</script>
     </scripts>
     <scripts name="key/lock">

@@ -93,7 +93,7 @@ var goldEligible = objPlayer.masterMode;//0 = Don't use gold, 1 = Use gold, -1 =
 if objPlayer.masterCycle != 1 {
     goldEligible = 0;
 }
-if !browned && goldEligible != 0 {
+if goldEligible != 0 {
     if effectiveColorSpend == color_MASTER || effectiveColorSpend == color_PURE {
         goldEligible = 0;
     }
@@ -144,13 +144,13 @@ if distance_to_object(objPlayer) <= 1{
             var metRequirement = true;//Whether the requirement for every lock has been met
             if cursed != -1 && cursed != color_PURE{//Brown version
                 for(var i = 0; i < lockCount; i += 1){
-                    if !scrCanOpenFeed(cursed,lock[i,1],lock[i,2],lock[i,3],iPow){
+                    if !scrCanOpenFeed(cursed,lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7]){
                         metRequirement = false;
                     }
                 }
             }else{//Normal lock spend summation
                 for(var i = 0; i < lockCount; i += 1){
-                    if !scrCanOpenFeed(lock[i,0],lock[i,1],lock[i,2],lock[i,3],iPow){
+                    if !scrCanOpenFeed(lock[i,0],lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7]){
                         metRequirement = false;
                     }
                 }
@@ -183,11 +183,11 @@ if distance_to_object(objPlayer) <= 1{
                 objPlayer.masterMode = 0;
                 objPlayer.masterCycle = 0;
                 undoBUFFER();
-                scrBroadcastCopy(effectiveColorSpend,glitchMimic); // should it?
+                scrBroadcastCopy(effectiveColorSpend); // should it?
             } else if metRequirement {
                 addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
                 scrOpenCombo();
-                scrBroadcastCopy(effectiveColorSpend,glitchMimic);
+                scrBroadcastCopy(effectiveColorSpend);
             }
         } else {
             scrNormalMasterOpen();
