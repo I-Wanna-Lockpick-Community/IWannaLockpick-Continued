@@ -82,7 +82,11 @@ for(var i = 0; i < lockCount; i += 1){
     }
     if _lockNega == 0 || lock[i,3] == 1{//Positive count or blank lock
         draw_set_color(make_color_rgb(44,32,20));
-        draw_sprite_ext(_lockSpr,0,tempX,tempY,1,1,0,c_white,1);
+        if lock[i,3] == 4 && !(_lockSpr == sprLockAny || _lockSpr == sprLockAnyM || _lockSpr == sprLockAnyL || _lockSpr == sprLockAnyXL || _lockSpr == sprLockAnyH || _lockSpr == sprLockAnyV) {
+            draw_sprite_ext(_lockSpr,8,tempX,tempY,1,1,0,c_white,1);
+        }else{
+            draw_sprite_ext(_lockSpr,0,tempX,tempY,1,1,0,c_white,1);
+        }
         switch lock[i,3]{//If the type isn't normal or blank, draw a symbol
             case 2://blast
                 if needR > 0{
@@ -102,6 +106,12 @@ for(var i = 0; i < lockCount; i += 1){
                 var tempOffsetY = sprite_get_height(_lockSpr)/2-sprite_get_yoffset(_lockSpr);
                 var tempLockString = string(abs(needR)); if needI != 0{tempLockString = string(abs(needI))+"i";}
                 draw_text(tempX+tempOffsetX,tempY+tempOffsetY,tempLockString);
+            } if lock[i,3] == 4{//Exact Lock being drawn properly
+                var tempOffsetX = sprite_get_width(_lockSpr)/2-sprite_get_xoffset(_lockSpr)+5;
+                var tempOffsetY = sprite_get_height(_lockSpr)/2-sprite_get_yoffset(_lockSpr);
+                var tempLockString = string(abs(needR)); if needI != 0{tempLockString = string(abs(needI))+"i";}
+                draw_sprite(sprSymbols,19,tempX+tempOffsetX-21-string_width(tempLockString)/2,tempY+tempOffsetY-16);
+                draw_text(tempX+tempOffsetX,tempY+tempOffsetY,tempLockString);
             }
         }else if _lockSpr == sprLockAnyV{
             var tempOffsetX = sprite_get_width(_lockSpr)/2-sprite_get_xoffset(_lockSpr);
@@ -114,10 +124,21 @@ for(var i = 0; i < lockCount; i += 1){
                 draw_text(tempX+tempOffsetX+1,tempY+tempOffsetY-8,tempLockString);
                 draw_text(tempX+tempOffsetX,tempY+tempOffsetY+8,"i");
             }
+            if lock[i,3] == 4{//Exact Lock being drawn properly
+                var tempOffsetX = sprite_get_width(_lockSpr)/2-sprite_get_xoffset(_lockSpr)+5;
+                var tempOffsetY = sprite_get_height(_lockSpr)/2-sprite_get_yoffset(_lockSpr);
+                var tempLockString = string(abs(needR)); if needI != 0{tempLockString = string(abs(needI))+"i";}
+                draw_sprite(sprSymbols,19,tempX+tempOffsetX-21-string_width(tempLockString)/2,tempY+tempOffsetY-16);
+                draw_text(tempX+tempOffsetX,tempY+tempOffsetY,tempLockString);
+            }
         }
     }else{//Negative count
         draw_set_color(make_color_rgb(235,223,211));
-        draw_sprite_ext(_lockSpr,1,tempX,tempY,1,1,0,c_white,1);
+        if lock[i,3] == 4 && !(_lockSpr == sprLockAny || _lockSpr == sprLockAnyM || _lockSpr == sprLockAnyL || _lockSpr == sprLockAnyXL || _lockSpr == sprLockAnyH || _lockSpr == sprLockAnyV) {
+            draw_sprite_ext(_lockSpr,9,tempX,tempY,1,1,0,c_white,1);
+        }else{
+            draw_sprite_ext(_lockSpr,1,tempX,tempY,1,1,0,c_white,1);
+        }
         switch lock[i,3]{
             case 2://blast
                 if needR < 0{
@@ -137,6 +158,12 @@ for(var i = 0; i < lockCount; i += 1){
                 var tempOffsetY = sprite_get_height(_lockSpr)/2-sprite_get_yoffset(_lockSpr);
                 var tempLockString = string(abs(needR)); if needI != 0{tempLockString = string(abs(needI))+"i";}
                 draw_text(tempX+tempOffsetX,tempY+tempOffsetY,tempLockString);
+            } if lock[i,3] == 4{//Exact Lock being drawn properly
+                var tempOffsetX = sprite_get_width(_lockSpr)/2-sprite_get_xoffset(_lockSpr)+5;
+                var tempOffsetY = sprite_get_height(_lockSpr)/2-sprite_get_yoffset(_lockSpr);
+                var tempLockString = string(abs(needR)); if needI != 0{tempLockString = string(abs(needI))+"i";}
+                draw_sprite(sprSymbols,21,tempX+tempOffsetX-21-string_width(tempLockString)/2,tempY+tempOffsetY-16);
+                draw_text(tempX+tempOffsetX,tempY+tempOffsetY,tempLockString);
             }
         }else if _lockSpr == sprLockAnyV{
             var tempOffsetX = sprite_get_width(_lockSpr)/2-sprite_get_xoffset(_lockSpr);
@@ -148,6 +175,12 @@ for(var i = 0; i < lockCount; i += 1){
                 var tempLockString = string(abs(needI));
                 draw_text(tempX+tempOffsetX+1,tempY+tempOffsetY-8,tempLockString);
                 draw_text(tempX+tempOffsetX,tempY+tempOffsetY+8,"i");
+            } if lock[i,3] == 4{//Exact Lock being drawn properly
+                var tempOffsetX = sprite_get_width(_lockSpr)/2-sprite_get_xoffset(_lockSpr)+5;
+                var tempOffsetY = sprite_get_height(_lockSpr)/2-sprite_get_yoffset(_lockSpr);
+                var tempLockString = string(abs(needR)); if needI != 0{tempLockString = string(abs(needI))+"i";}
+                draw_sprite(sprSymbols,21,tempX+tempOffsetX-21-string_width(tempLockString)/2,tempY+tempOffsetY-16);
+                draw_text(tempX+tempOffsetX,tempY+tempOffsetY,tempLockString);
             }
         }
     }

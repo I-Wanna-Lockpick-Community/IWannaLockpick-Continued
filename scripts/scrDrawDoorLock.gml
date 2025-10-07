@@ -109,8 +109,36 @@ switch tempPow{
         if type == 2{//Blast
             draw_sprite(sprSymbols,2,x+16*(w-1),y+16*(h-1));
         }
-        if type == 3{//Equals
+        if type == 3{//All
             draw_sprite(sprSymbols,4,x+16*(w-1),y+16*(h-1));
+        }
+        if type == 4{//Exact
+            switch fakeCount{
+                case 1:
+                    draw_sprite(sprSymbols,19,x,y);
+                break;
+                case 2:
+                    draw_sprite(sprLock2,4,x,y);
+                break;
+                case 3:
+                    draw_sprite(sprLock3,2,x,y);
+                break;
+                default:
+                    var drawLockW = 8;//Width of the lock symbol
+                    draw_set_font(fTalk);
+                    var drawLockTextW = string_width(fakeString);
+                    var drawLockStringLength = drawLockW + drawLockTextW + 4;//4 is a horizontal separation constant
+                    var drawLockLeftOffset = ceil(drawLockStringLength/2)+12;
+                    var drawDoorMid = x+16*w;
+                    var drawLockLeftX = drawDoorMid - drawLockLeftOffset;
+                    draw_sprite(sprSymbols,19,drawLockLeftX,y+16*(h-1));
+                    draw_set_color(make_color_rgb(44,32,20));
+                    draw_set_halign(fa_left);
+                    draw_set_valign(fa_center);
+                    draw_text(drawLockLeftX+24-1,y+16*h-1,fakeString);//11 is the specific adjustment constant
+                    draw_set_color(c_white);
+                break;
+            }
         }
     break;
     case 1://Positive i
@@ -140,6 +168,33 @@ switch tempPow{
         }
         if type == 3{//Equals
             draw_sprite(sprSymbols,4,x+16*(w-1),y+16*(h-1));
+        }if type == 4{//Exact
+            switch fakeCount{
+                case 1:
+                    draw_sprite(sprSymbols,20,x,y);
+                break;
+                case 2:
+                    draw_sprite(sprLock2i,4,x,y);
+                break;
+                case 3:
+                    draw_sprite(sprLock3i,2,x,y);
+                break;
+                default:
+                    var drawLockW = 8;//Width of the lock symbol
+                    draw_set_font(fTalk);
+                    var drawLockTextW = string_width(fakeString);
+                    var drawLockStringLength = drawLockW + drawLockTextW + 4;//4 is a horizontal separation constant
+                    var drawLockLeftOffset = ceil(drawLockStringLength/2)+12;
+                    var drawDoorMid = x+16*w;
+                    var drawLockLeftX = drawDoorMid - drawLockLeftOffset;
+                    draw_sprite(sprSymbols,19,drawLockLeftX,y+16*(h-1));
+                    draw_set_color(make_color_rgb(44,32,20));
+                    draw_set_halign(fa_left);
+                    draw_set_valign(fa_center);
+                    draw_text(drawLockLeftX+24-1,y+16*h-1,fakeString+"i");//11 is the specific adjustment constant
+                    draw_set_color(c_white);
+                break;
+            }
         }
     break;
     case 2://Negative
@@ -195,6 +250,34 @@ switch tempPow{
         if type == 3{//N-Equals (I mean...I guess this won't really matter)
             draw_sprite(sprSymbols,8,x+16*(w-1),y+16*(h-1));
         }
+        if type == 4{//Exact
+            switch fakeCount{
+                case 1:
+                    draw_sprite(sprSymbols,21,x,y);
+                break;
+                case 2:
+                    draw_sprite(sprLock2,5,x,y);
+                break;
+                case 3:
+                    draw_sprite(sprLock3,3,x,y);
+                break;
+                default:
+                    var drawLockW = 8;//Width of the lock symbol
+                    draw_set_font(fTalk);
+                    var drawLockTextW = string_width(fakeString);
+                    var drawLockStringLength = drawLockW + drawLockTextW + 4;//4 is a horizontal separation constant
+                    var drawLockLeftOffset = ceil(drawLockStringLength/2)+12;
+                    var drawDoorMid = x+16*w;
+                    var drawLockLeftX = drawDoorMid - drawLockLeftOffset;
+                    draw_sprite(sprSymbols,21,drawLockLeftX,y+16*(h-1));
+                    draw_set_color(make_color_rgb(235,223,211));
+                    draw_set_halign(fa_left);
+                    draw_set_valign(fa_center);
+                    draw_text(drawLockLeftX+24-1,y+16*h-1,fakeString);//11 is the specific adjustment constant
+                    draw_set_color(c_white);
+                break;
+            }
+        }
     break;
     case 3://Negative i
         if type == 0{
@@ -223,6 +306,34 @@ switch tempPow{
         }
         if type == 3{//Equals
             draw_sprite(sprSymbols,8,x+16*(w-1),y+16*(h-1));
+        }
+        if type == 4{//Exact
+            switch fakeCount{
+                case 1:
+                    draw_sprite(sprSymbols,22,x,y);
+                break;
+                case 2:
+                    draw_sprite(sprLock2i,5,x,y);
+                break;
+                case 3:
+                    draw_sprite(sprLock3i,3,x,y);
+                break;
+                default:
+                    var drawLockW = 8;//Width of the lock symbol
+                    draw_set_font(fTalk);
+                    var drawLockTextW = string_width(fakeString);
+                    var drawLockStringLength = drawLockW + drawLockTextW + 4;//4 is a horizontal separation constant
+                    var drawLockLeftOffset = ceil(drawLockStringLength/2)+12;
+                    var drawDoorMid = x+16*w;
+                    var drawLockLeftX = drawDoorMid - drawLockLeftOffset;
+                    draw_sprite(sprSymbols,21,drawLockLeftX,y+16*(h-1));
+                    draw_set_color(make_color_rgb(235,223,211));
+                    draw_set_halign(fa_left);
+                    draw_set_valign(fa_center);
+                    draw_text(drawLockLeftX+24-1,y+16*h-1,fakeString+"i");//11 is the specific adjustment constant
+                    draw_set_color(c_white);
+                break;
+            }
         }
     break;
 }

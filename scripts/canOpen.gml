@@ -55,5 +55,13 @@ switch type{
             return true;
         }
     break;
+    case 4://exact
+        if !((exactI + argument1) % 2) && (open_needR == global.key[open_check]){
+            return true;
+        }
+        if ((exactI + argument1) % 2) && (open_needI == global.ikey[open_check]){
+            return true;
+        }
+    break;
 }
 return false;

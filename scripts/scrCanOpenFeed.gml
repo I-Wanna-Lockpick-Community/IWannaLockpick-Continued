@@ -1,4 +1,4 @@
-///scrCanOpenFeed(color_color,lock_count,lock_icount,lock_type,power_of_i);
+///scrCanOpenFeed(color_color,lock_count,lock_icount,lock_type,power_of_i,exacti);
 var open_check = argument0;
 if open_check == color_GLITCH{
     open_check = glitchMimic;
@@ -55,5 +55,8 @@ switch argument3{
             return true;
         }
     break;
+    case 4://exact
+        if !((argument5 + argument4) % 2) && open_needR == global.key[open_check]{ return true; }
+        if ((argument5 + argument4) % 2) && open_needI == global.ikey[open_check]{ return true; }
 }
 return false;
