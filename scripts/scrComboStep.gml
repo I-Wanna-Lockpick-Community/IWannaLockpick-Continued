@@ -144,13 +144,13 @@ if distance_to_object(objPlayer) <= 1{
             var metRequirement = true;//Whether the requirement for every lock has been met
             if cursed != -1 && cursed != color_PURE{//Brown version
                 for(var i = 0; i < lockCount; i += 1){
-                    if !scrCanOpenFeed(cursed,lock[i,1],lock[i,2],lock[i,3],iPow){
+                    if !scrCanOpenFeed(cursed,lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7]){
                         metRequirement = false;
                     }
                 }
             }else{//Normal lock spend summation
                 for(var i = 0; i < lockCount; i += 1){
-                    if !scrCanOpenFeed(lock[i,0],lock[i,1],lock[i,2],lock[i,3],iPow){
+                    if !scrCanOpenFeed(lock[i,0],lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7]){
                         metRequirement = false;
                     }
                 }
