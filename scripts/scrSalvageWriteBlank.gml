@@ -26,6 +26,6 @@ ini_write_real(sec,"ICount",0);
 ini_write_real(sec,"Type",0);
 ini_write_real(sec,"SpriteX",0);
 ini_write_real(sec,"SpriteY",0);
-ini_write_real(sec,"SpriteInd",sprLockAny);
+ini_write_real(sec,"SpriteInd",sprLockAnyS);
 
 ini_close();

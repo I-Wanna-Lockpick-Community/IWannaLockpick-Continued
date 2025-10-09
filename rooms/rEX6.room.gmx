@@ -108,7 +108,7 @@ global.msg = "Whoa! The Master Omega Key! That's, like, one of the most powerful
     <instance objName="oKeyStone" x="464" y="112" name="inst_48AD6CF4" locked="0" code="type = 7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyStone" x="592" y="112" name="inst_B69958AD" locked="0" code="type = 7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyStone" x="720" y="112" name="inst_7A4774B1" locked="0" code="type = 7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="704" y="384" name="inst_DFD72283" locked="0" code="w=2;colorSpend=color_PURE;&#xA;scrComboAdd(color_STONE,0,1,0,0,0,sprLockAny);&#xA;scrComboAdd(color_BROWN,0,0,1,32,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="704" y="384" name="inst_DFD72283" locked="0" code="w=2;colorSpend=color_PURE;&#xA;scrComboAdd(color_STONE,0,1,0,0,0,sprLockAnyS);&#xA;scrComboAdd(color_BROWN,0,0,1,32,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bTileEX" x="480" y="384" w="32" h="32" xo="64" yo="0" id="10107458" name="inst_1AC8EB18" depth="-11" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -65,7 +65,7 @@ global.msg = "So we're back to The Great Beyond, huh? As expected, we're dealing
     <instance objName="oSalvageOut" x="432" y="480" name="inst_18BAABB5" locked="0" code="ID = 35;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="672" y="32" name="inst_424A58FC" locked="0" code="" scaleX="3" scaleY="11" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="704" y="384" name="inst_0049091A" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="672" y="384" name="inst_462EEF59" locked="0" code="h=3;colorSpend=color_CYAN;&#xA;scrComboAdd(color_WHITE,0,0,1,0,0,sprLockAny);&#xA;scrComboAdd(color_ORANGE,0,0,1,0,32,sprLockAny);&#xA;scrComboAdd(color_PURPLE,0,0,1,0,64,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="672" y="384" name="inst_462EEF59" locked="0" code="h=3;colorSpend=color_CYAN;&#xA;scrComboAdd(color_WHITE,0,0,1,0,0,sprLockAnyS);&#xA;scrComboAdd(color_ORANGE,0,0,1,0,32,sprLockAnyS);&#xA;scrComboAdd(color_PURPLE,0,0,1,0,64,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="384" y="192" name="inst_BC66C5A0" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="416" y="192" name="inst_3932D7B4" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="720" y="432" name="inst_3C3EE657" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

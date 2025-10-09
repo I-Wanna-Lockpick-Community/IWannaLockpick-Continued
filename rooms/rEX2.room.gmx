@@ -72,7 +72,7 @@ global.msg = "So, we only needed 3 Omega Keys to enter this area, right? Do you 
     <instance objName="oDoorPure" x="192" y="352" name="inst_D6407C58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="192" y="320" name="inst_5091BA1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="0" y="288" name="inst_4D575F27" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="32" y="320" name="inst_990E527C" locked="0" code="h=2;colorSpend=color_WHITE;&#xA;scrComboAdd(color_WHITE,1,0,0,0,0,sprLock1A);&#xA;scrComboAdd(color_MASTER,0,0,1,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="32" y="320" name="inst_990E527C" locked="0" code="h=2;colorSpend=color_WHITE;&#xA;scrComboAdd(color_WHITE,1,0,0,0,0,sprLock1A);&#xA;scrComboAdd(color_MASTER,0,0,1,0,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSalvageIn" x="80" y="352" name="inst_4CEA623F" locked="0" code="ID = 43;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlack" x="224" y="448" name="inst_7F04C9C1" locked="0" code="count=0;icount=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyCyan" x="192" y="448" name="inst_75F08F86" locked="0" code="count=0;icount=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

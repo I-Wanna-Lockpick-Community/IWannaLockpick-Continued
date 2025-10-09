@@ -5,7 +5,7 @@ c4 = make_color_hsv(hue,180,255);
 c5 = make_color_hsv(hue,230,200);
 c6 = make_color_hsv(hue,255,80);
 c2 = c5;
-scrDrawDoorSpend(); scrDrawDoorRequire();
+scrDrawDoorSpend(colorSpend); scrDrawDoorRequire();
 //FRAME
 //Determines image index for door frame
 var dIndex = 0;

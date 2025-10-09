@@ -62,14 +62,14 @@ global.msg = "Another pretty room! I think I might be a sucker for complementary
     <instance objName="objBlock" x="64" y="32" name="inst_30708391" locked="0" code="" scaleX="21" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="160" y="64" name="inst_C89D3ADA" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="160" y="160" name="inst_F92FF644" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="176" y="96" name="inst_7B9F1787" locked="0" code="color = color_ORANGE;&#xA;colorSpend = color_ORANGE;&#xA;count = 3;&#xA;type = 0;&#xA;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="208" y="96" name="inst_D71AC680" locked="0" code="color = color_PURPLE;&#xA;colorSpend = color_PURPLE;&#xA;count = 6;&#xA;type = 0;&#xA;&#xA;w = 2;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorOrange" x="176" y="96" name="inst_7B9F1787" locked="0" code="count = 3;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorPurple" x="208" y="96" name="inst_D71AC680" locked="0" code="count = 6;&#xA;w = 2;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="288" y="160" name="inst_1D0C709A" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="544" y="160" name="inst_8325FB42" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="576" y="64" name="inst_8DDB1ED3" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="576" y="96" name="inst_3E4784DB" locked="0" code="color = color_ORANGE;&#xA;colorSpend = color_ORANGE;&#xA;count = 3;&#xA;type = 0;&#xA;&#xA;w = 1;&#xA;h = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="608" y="96" name="inst_DA7C47EF" locked="0" code="color = color_PURPLE;&#xA;colorSpend = color_PURPLE;&#xA;count = 3;&#xA;type = 0;&#xA;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="640" y="96" name="inst_B97CEBF3" locked="0" code="color = color_CYAN;&#xA;colorSpend = color_CYAN;&#xA;count = 3;&#xA;type = 0;&#xA;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorOrange" x="576" y="96" name="inst_3E4784DB" locked="0" code="count = 3;&#xA;w = 1;&#xA;h = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorPurple" x="608" y="96" name="inst_DA7C47EF" locked="0" code="count = 3;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCyan" x="640" y="96" name="inst_B97CEBF3" locked="0" code="count = 3;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="688" y="80" name="inst_3BD61F14" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="512" y="160" name="inst_EDFDF06B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="160" y="448" name="inst_1B1C3BE1" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
@@ -82,13 +82,13 @@ global.msg = "Another pretty room! I think I might be a sucker for complementary
     <instance objName="objBlock" x="352" y="480" name="inst_ECC2AF69" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="736" y="32" name="inst_FE1F4C2B" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="480" y="256" name="inst_25200462" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="320" y="384" name="inst_4621B5B4" locked="0" code="color = color_CYAN;&#xA;colorSpend = color_CYAN;&#xA;count = 2;&#xA;type = 0;&#xA;&#xA;w = 1;&#xA;h = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="320" y="288" name="inst_2D053070" locked="0" code="color = color_ORANGE;&#xA;colorSpend = color_ORANGE;&#xA;count = 2;&#xA;type = 0;&#xA;&#xA;w = 1;&#xA;h = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="256" y="192" name="inst_4D04BA7E" locked="0" code="color = color_CYAN;&#xA;colorSpend = color_CYAN;&#xA;count = 3;&#xA;type = 0;&#xA;&#xA;w = 1;&#xA;h = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="512" y="288" name="inst_584928C6" locked="0" code="color = color_CYAN;&#xA;colorSpend = color_CYAN;&#xA;count = 2;&#xA;type = 0;&#xA;&#xA;w = 1;&#xA;h = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="544" y="384" name="inst_A009C477" locked="0" code="color = color_ORANGE;&#xA;colorSpend = color_ORANGE;&#xA;count = 3;&#xA;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="224" y="384" name="inst_C8AC6E64" locked="0" code="color = color_ORANGE;&#xA;colorSpend = color_ORANGE;&#xA;count = 2;&#xA;type = 0;&#xA;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="224" y="288" name="inst_1C67FA51" locked="0" code="color = color_PURPLE;&#xA;colorSpend = color_PURPLE;&#xA;count = 3;&#xA;type = 0;&#xA;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCyan" x="320" y="384" name="inst_4621B5B4" locked="0" code="count = 2;&#xA;w = 1;&#xA;h = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorOrange" x="320" y="288" name="inst_2D053070" locked="0" code="count = 2;&#xA;w = 1;&#xA;h = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCyan" x="256" y="192" name="inst_4D04BA7E" locked="0" code="count = 3;&#xA;w = 1;&#xA;h = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCyan" x="512" y="288" name="inst_584928C6" locked="0" code="count = 2;&#xA;w = 1;&#xA;h = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorOrange" x="544" y="384" name="inst_A009C477" locked="0" code="count = 3;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorOrange" x="224" y="384" name="inst_C8AC6E64" locked="0" code="count = 2;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorPurple" x="224" y="288" name="inst_1C67FA51" locked="0" code="count = 3;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBulk" x="272" y="304" name="inst_99994D6C" locked="0" code="color = color_ORANGE;&#xA;count = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBulk" x="176" y="208" name="inst_21EE5E3E" locked="0" code="color = color_PURPLE;&#xA;count = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBulk" x="176" y="288" name="inst_EEC81755" locked="0" code="color = color_PURPLE;&#xA;count = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

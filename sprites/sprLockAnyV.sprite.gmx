@@ -22,5 +22,10 @@
   <frames>
     <frame index="0">images\sprLockAnyV_0.png</frame>
     <frame index="1">images\sprLockAnyV_1.png</frame>
+    <frame index="2">images\sprLockAnyV_2.png</frame>
+    <frame index="3">images\sprLockAnyV_3.png</frame>
+    <frame index="4">images\sprLockAnyV_4.png</frame>
+    <frame index="5">images\sprLockAnyV_5.png</frame>
+    <frame index="6">images\sprLockAnyV_6.png</frame>
   </frames>
 </sprite>

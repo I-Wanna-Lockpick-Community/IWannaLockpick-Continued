@@ -99,7 +99,7 @@ global.msg = "Master Keys can break open Combo Doors just like any other door. H
     <instance objName="oDoorCombo" x="144" y="416" name="inst_927AAE1A" locked="0" code="w=2;h=2;colorSpend=8;&#xA;scrComboAdd(0,1,0,0,0,0,sprLock1A);&#xA;scrComboAdd(1,1,0,0,32,0,sprLock1A);&#xA;scrComboAdd(2,1,0,0,0,32,sprLock1A);&#xA;scrComboAdd(3,1,0,0,32,32,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="144" y="320" name="inst_8AC5ED7A" locked="0" code="w=2;h=2;colorSpend=9;&#xA;scrComboAdd(1,1,0,0,0,0,sprLock1A);&#xA;scrComboAdd(2,1,0,0,32,0,sprLock1A);&#xA;scrComboAdd(3,1,0,0,0,32,sprLock1A);&#xA;scrComboAdd(8,1,0,0,32,32,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="672" y="224" name="inst_7BC70305" locked="0" code="w=2;h=2;colorSpend=8;&#xA;scrComboAdd(2,-2,0,0,0,0,sprLock2V);&#xA;scrComboAdd(3,-1,0,0,32,16,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="640" y="320" name="inst_BC3F6793" locked="0" code="w=2;h=3;colorSpend=8;&#xA;scrComboAdd(8,-8,0,0,0,0,sprLock8A)&#xA;scrComboAdd(3,1,0,2,4,56,sprLockAny)&#xA;scrComboAdd(0,0,0,1,28,56,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="640" y="320" name="inst_BC3F6793" locked="0" code="w=2;h=3;colorSpend=8;&#xA;scrComboAdd(8,-8,0,0,0,0,sprLock8A)&#xA;scrComboAdd(3,1,0,2,4,56,sprLockAnyS)&#xA;scrComboAdd(0,0,0,1,28,56,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCyan" x="256" y="32" name="inst_019A13EF" locked="0" code="count=-1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="256" y="240" name="inst_122224F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="304" y="336" name="inst_29D530EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -112,7 +112,7 @@ global.msg = "Master Keys can break open Combo Doors just like any other door. H
     <instance objName="oKeyCyan" x="224" y="240" name="inst_732EA935" locked="0" code="count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyCyan" x="224" y="32" name="inst_E467EBB5" locked="0" code="type=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyCyan" x="512" y="256" name="inst_FEDFB7EF" locked="0" code="type=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="448" y="320" name="inst_14ED9CA8" locked="0" code="w=2;h=2;colorSpend=3;&#xA;scrComboAdd(0,0,0,1,0,0,sprLockAny);&#xA;scrComboAdd(1,0,0,1,0,32,sprLockAny);&#xA;scrComboAdd(2,2,0,0,32,0,sprLock2V);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="448" y="320" name="inst_14ED9CA8" locked="0" code="w=2;h=2;colorSpend=3;&#xA;scrComboAdd(0,0,0,1,0,0,sprLockAnyS);&#xA;scrComboAdd(1,0,0,1,0,32,sprLockAnyS);&#xA;scrComboAdd(2,2,0,0,32,0,sprLock2V);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="720" y="336" name="inst_4845FC7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>

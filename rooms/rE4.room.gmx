@@ -104,7 +104,7 @@ global.msg = "";
     <instance objName="objBlock" x="384" y="256" name="inst_00B02029" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oHintTotem" x="208" y="416" name="inst_3911CEA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oInteractZone" x="240" y="464" name="inst_AD72991A" locked="0" code="convoID = 110;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="640" y="96" name="inst_481EEC33" locked="0" code="w=2;colorSpend = color_PURE;&#xA;scrComboAdd(color_BLACK,0,0,1,16,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="640" y="96" name="inst_481EEC33" locked="0" code="w=2;colorSpend = color_PURE;&#xA;scrComboAdd(color_BLACK,0,0,1,16,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles2" x="32" y="256" w="32" h="32" xo="64" yo="32" id="10093243" name="inst_D7080D3A" depth="1000010" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

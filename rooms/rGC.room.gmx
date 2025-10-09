@@ -62,7 +62,7 @@ global.msg = "Perhaps you're wondering what material the Gates are made of that 
     <instance objName="objBlock" x="320" y="352" name="inst_A733154F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="96" y="320" name="inst_3C8852CE" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="320" y="384" name="inst_1CBEB0DD" locked="0" code="count = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="288" y="352" name="inst_33AE8EC9" locked="0" code="h=2;&#xA;scrComboAdd(color_WHITE,0,0,1,0,16,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="288" y="352" name="inst_33AE8EC9" locked="0" code="h=2;&#xA;scrComboAdd(color_WHITE,0,0,1,0,16,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="512" y="352" name="inst_5ACD0B55" locked="0" code="w=2;h=2;&#xA;scrComboAdd(color_WHITE,1,0,0,16,0,sprLock1A);&#xA;scrComboAdd(color_CYAN,1,0,0,16,32,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="656" y="368" name="inst_65D20C8D" locked="0" code="count = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="448" y="320" name="inst_7FFF5D32" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
@@ -94,7 +94,7 @@ global.msg = "Perhaps you're wondering what material the Gates are made of that 
     <instance objName="objBlock" x="576" y="256" name="inst_016517ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="288" y="192" name="inst_288BD5EC" locked="0" code="count = -2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="288" y="160" name="inst_95716181" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="160" y="256" name="inst_592D62B2" locked="0" code="w=2;h=2;&#xA;scrComboAdd(color_WHITE,0,0,1,16,0,sprLockAny);&#xA;scrComboAdd(color_CYAN,0,0,1,16,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="160" y="256" name="inst_592D62B2" locked="0" code="w=2;h=2;&#xA;scrComboAdd(color_WHITE,0,0,1,16,0,sprLockAnyS);&#xA;scrComboAdd(color_CYAN,0,0,1,16,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="656" y="272" name="inst_17941323" locked="0" code="count = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="576" y="384" name="inst_48C9D46C" locked="0" code="type = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="624" y="368" name="inst_ED904964" locked="0" code="count = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

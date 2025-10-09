@@ -77,7 +77,7 @@ global.msg = "When it comes to aura-based keys (Red, Green, Blue, Brown), nothin
     <instance objName="oKeyRed" x="304" y="432" name="inst_AAE74686" locked="0" code="type=6;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyRed" x="320" y="240" name="inst_8034CC09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="464" y="432" name="inst_CE1DFEBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="416" y="416" name="inst_0C876CDC" locked="0" code="h=2;colorSpend=11;&#xA;scrComboAdd(10,0,0,1,0,0,sprLockAny);&#xA;scrComboAdd(6,0,0,1,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="416" y="416" name="inst_0C876CDC" locked="0" code="h=2;colorSpend=11;&#xA;scrComboAdd(10,0,0,1,0,0,sprLockAnyS);&#xA;scrComboAdd(6,0,0,1,0,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCyan" x="352" y="416" name="inst_0B6311D8" locked="0" code="w=2;h=2;count=6;aura[0]=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCyan" x="544" y="224" name="inst_2CF1AC6F" locked="0" code="w=2;h=2;count=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBrown" x="384" y="240" name="inst_A562C751" locked="0" code="count = 30;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -30,10 +30,8 @@ if objPlayer.aura[0] == 1 && aura[0] == 1 && auraE[0] != 0{ //Red
     auraPlayNoise = 1;
     var colorOld = colorSpend;
     colorSpend = color_WHITE;
-    scrComboCFunc();
     event_user(0);
     colorSpend = colorOld;
-    scrComboCFunc();
     brownNearPlayer = 1;
     undoBUFFER();
 }
@@ -42,10 +40,8 @@ if objPlayer.aura[1] == 1 && aura[1] == 1 && auraE[1] != 0{ //Green
     auraPlayNoise = 1;
     var colorOld = colorSpend;
     colorSpend = color_BROWN;
-    scrComboCFunc();
     event_user(0);
     colorSpend = colorOld;
-    scrComboCFunc();
     brownNearPlayer = 1;
     undoBUFFER();
 }
@@ -54,10 +50,8 @@ if objPlayer.aura[2] == 1 && aura[2] == 1 && auraE[2] != 0{ //Blue
     auraPlayNoise = 1;
     var colorOld = colorSpend;
     colorSpend = color_ORANGE;
-    scrComboCFunc();
     event_user(0);
     colorSpend = colorOld;
-    scrComboCFunc();
     brownNearPlayer = 1;
     undoBUFFER();
 }

@@ -106,7 +106,7 @@ global.msg = "Hello again! Let me grace you with my expository goodness once mor
     <instance objName="oDoorPink" x="576" y="320" name="inst_4F830DD6" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="544" y="416" name="inst_82477557" locked="0" code="w=2;h=2;count=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="288" y="32" name="inst_5943C791" locked="0" code="w=2;h=2;count=8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="256" y="224" name="inst_5CCC4751" locked="0" code="h=2;colorSpend=8;&#xA;scrComboAdd(7,-1,0,2,0,0,sprLockAny);&#xA;scrComboAdd(4,1,0,2,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="256" y="224" name="inst_5CCC4751" locked="0" code="h=2;colorSpend=8;&#xA;scrComboAdd(7,-1,0,2,0,0,sprLockAnyS);&#xA;scrComboAdd(4,1,0,2,0,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="256" y="32" name="inst_FDD55130" locked="0" code="h=2;type=1;color=color_CYAN;colorSpend=color_WHITE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>

@@ -100,42 +100,42 @@ global.msg = "Well, this is fun to look at! It's rare to have a puzzle that look
     <instance objName="oGate" x="544" y="352" name="inst_9C37A678" locked="0" code="scrComboAdd(color_PURPLE,-1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="416" y="352" name="inst_9BBBAA1C" locked="0" code="scrComboAdd(color_PURPLE,-1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="480" y="352" name="inst_9C6CC3BB" locked="0" code="scrComboAdd(color_PURPLE,-1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="384" y="352" name="inst_3A32F413" locked="0" code="scrComboAdd(color_PURPLE,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="448" y="352" name="inst_40D358E8" locked="0" code="scrComboAdd(color_PURPLE,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="512" y="352" name="inst_F5AE82E5" locked="0" code="scrComboAdd(color_PURPLE,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="576" y="352" name="inst_F04598B4" locked="0" code="scrComboAdd(color_PURPLE,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="352" y="320" name="inst_40C6A57E" locked="0" code="scrComboAdd(color_PINK,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="384" y="352" name="inst_3A32F413" locked="0" code="scrComboAdd(color_PURPLE,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="448" y="352" name="inst_40D358E8" locked="0" code="scrComboAdd(color_PURPLE,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="512" y="352" name="inst_F5AE82E5" locked="0" code="scrComboAdd(color_PURPLE,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="576" y="352" name="inst_F04598B4" locked="0" code="scrComboAdd(color_PURPLE,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="352" y="320" name="inst_40C6A57E" locked="0" code="scrComboAdd(color_PINK,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="480" y="288" name="inst_49D6AD05" locked="0" code="scrComboAdd(color_PINK,1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="448" y="256" name="inst_C2B461CC" locked="0" code="scrComboAdd(color_PINK,1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="512" y="256" name="inst_DDED948F" locked="0" code="scrComboAdd(color_PINK,1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="480" y="320" name="inst_1D46E3FD" locked="0" code="scrComboAdd(color_PINK,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="480" y="320" name="inst_1D46E3FD" locked="0" code="scrComboAdd(color_PINK,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="544" y="320" name="inst_ED3EBFB0" locked="0" code="scrComboAdd(color_ORANGE,-1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="576" y="320" name="inst_0B2BCD35" locked="0" code="scrComboAdd(color_ORANGE,-1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="416" y="320" name="inst_E4564283" locked="0" code="scrComboAdd(color_ORANGE,1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="384" y="320" name="inst_6B5C62F6" locked="0" code="scrComboAdd(color_ORANGE,1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="384" y="384" name="inst_04D495DE" locked="0" code="scrComboAdd(color_ORANGE,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="352" y="448" name="inst_BC7C917E" locked="0" code="scrComboAdd(color_ORANGE,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="448" y="416" name="inst_AB11E3D0" locked="0" code="scrComboAdd(color_ORANGE,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="544" y="416" name="inst_1CD1BF0F" locked="0" code="scrComboAdd(color_ORANGE,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="448" y="320" name="inst_B0F78655" locked="0" code="scrComboAdd(color_ORANGE,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="512" y="320" name="inst_12FCC3CA" locked="0" code="scrComboAdd(color_ORANGE,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="416" y="416" name="inst_3EDC8D80" locked="0" code="scrComboAdd(color_PINK,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="384" y="384" name="inst_04D495DE" locked="0" code="scrComboAdd(color_ORANGE,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="352" y="448" name="inst_BC7C917E" locked="0" code="scrComboAdd(color_ORANGE,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="448" y="416" name="inst_AB11E3D0" locked="0" code="scrComboAdd(color_ORANGE,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="544" y="416" name="inst_1CD1BF0F" locked="0" code="scrComboAdd(color_ORANGE,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="448" y="320" name="inst_B0F78655" locked="0" code="scrComboAdd(color_ORANGE,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="512" y="320" name="inst_12FCC3CA" locked="0" code="scrComboAdd(color_ORANGE,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="416" y="416" name="inst_3EDC8D80" locked="0" code="scrComboAdd(color_PINK,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="512" y="448" name="inst_50968F7B" locked="0" code="scrComboAdd(color_RED,-1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="448" y="448" name="inst_AE57A10B" locked="0" code="scrComboAdd(color_RED,1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="480" y="416" name="inst_12AEF893" locked="0" code="scrComboAdd(color_ORANGE,1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="416" y="288" name="inst_9C547C34" locked="0" code="scrComboAdd(color_BLUE,1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="512" y="416" name="inst_D7E67088" locked="0" code="scrComboAdd(color_ORANGE,1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="576" y="416" name="inst_5042FAE2" locked="0" code="scrComboAdd(color_ORANGE,-1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="416" y="384" name="inst_9823A92F" locked="0" code="scrComboAdd(color_BLUE,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="448" y="384" name="inst_2083B3DD" locked="0" code="scrComboAdd(color_BLUE,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="416" y="384" name="inst_9823A92F" locked="0" code="scrComboAdd(color_BLUE,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="448" y="384" name="inst_2083B3DD" locked="0" code="scrComboAdd(color_BLUE,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="544" y="448" name="inst_4330574B" locked="0" code="scrComboAdd(color_RED,-1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="384" y="416" name="inst_49812AEF" locked="0" code="scrComboAdd(color_BLUE,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="416" y="448" name="inst_4C43E5AD" locked="0" code="scrComboAdd(color_BLUE,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="384" y="416" name="inst_49812AEF" locked="0" code="scrComboAdd(color_BLUE,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="416" y="448" name="inst_4C43E5AD" locked="0" code="scrComboAdd(color_BLUE,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="384" y="448" name="inst_4FAF304F" locked="0" code="scrComboAdd(color_RED,1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="576" y="448" name="inst_1C80D482" locked="0" code="scrComboAdd(color_BLUE,-1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="576" y="384" name="inst_F1565787" locked="0" code="scrComboAdd(color_BLUE,-1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="512" y="384" name="inst_A412D717" locked="0" code="scrComboAdd(color_CYAN,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="544" y="384" name="inst_C27F9CE8" locked="0" code="scrComboAdd(color_CYAN,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="512" y="384" name="inst_A412D717" locked="0" code="scrComboAdd(color_CYAN,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="544" y="384" name="inst_C27F9CE8" locked="0" code="scrComboAdd(color_CYAN,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="352" y="224" name="inst_81B62D7D" locked="0" code="scrComboAdd(color_CYAN,1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="384" y="224" name="inst_DEA7A6EA" locked="0" code="scrComboAdd(color_CYAN,1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="576" y="224" name="inst_CF94D040" locked="0" code="scrComboAdd(color_CYAN,1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -77,12 +77,12 @@ if myLight != -1{
           <argument>
             <kind>1</kind>
             <string>///Brown particles
-if cursed != -1 {
+if browned{
     alarm[0] = 120;
     for(var ix = 0; ix&lt;(2*w); ix+=1){
         for(var iy = 0; iy&lt;(2*h); iy+=1){
             with(instance_create(x+random_range(4,12)+16*ix,y+random_range(4,12)+16*iy,oBrownParticle)){
-                color = other.cursed;
+                
             }
         }
     }
@@ -271,9 +271,9 @@ with oSalvageIn{
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebrisS)){
-            c1 = other.c[0];
-            c2 = other.c[1];
-            c3 = other.c[2];
+            c1 = global.highTone[other.baseColorSpend];
+            c2 = global.mainTone[other.baseColorSpend];
+            c3 = global.darkTone[other.baseColorSpend];
             xT = other.xT;
             yT = other.yT;
         }
@@ -302,8 +302,6 @@ for(var ix = 0; ix&lt;(2*w); ix+=1){
           <argument>
             <kind>1</kind>
             <string>///Room start code
-scrComboCFunc();
-
 image_xscale = w;
 image_yscale = h;
 
@@ -339,13 +337,12 @@ if instance_exists(oLightsW5) || instance_exists(oLightsW4) || instance_exists(o
             <kind>1</kind>
             <string>///Brown particle burst
 var _bp;
-if cursed != -1 {
+if browned{
     alarm[0] = 120;
     for(var ix = 0; ix&lt;(2*w); ix+=1){
         for(var iy = 0; iy&lt;(2*h); iy+=1){
             with(instance_create(x+random_range(4,12)+16*ix,y+random_range(4,12)+16*iy,oBrownParticle)){
                 scale = random_range(.2,.5);
-                color = other.cursed;
             }
         }
     }
@@ -390,9 +387,9 @@ copyTimer = 0;
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris3)){
-            c1 = other.c[0];
-            c2 = other.c[1];
-            c3 = other.c[2];
+            c1 = global.highTone[other.baseColorSpend];
+            c2 = global.mainTone[other.baseColorSpend];
+            c3 = global.darkTone[other.baseColorSpend];
         }
     }
 }
@@ -428,9 +425,9 @@ copyTimer = 0;
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris2)){
-            c1 = other.c[0];
-            c2 = other.c[1];
-            c3 = other.c[2];
+            c1 = global.highTone[other.baseColorSpend];
+            c2 = global.mainTone[other.baseColorSpend];
+            c3 = global.darkTone[other.baseColorSpend];
         }
     }
 }
@@ -460,9 +457,9 @@ for(var ix = 0; ix&lt;(2*w); ix+=1){
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris)){
-            c1 = other.c[0];
-            c2 = other.c[1];
-            c3 = other.c[2];
+            c1 = global.highTone[other.baseColorSpend];
+            c2 = global.mainTone[other.baseColorSpend];
+            c3 = global.darkTone[other.baseColorSpend];
         }
     }
 }
@@ -488,7 +485,7 @@ for(var ix = 0; ix&lt;(2*w); ix+=1){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrComboCFunc();
+            <string>
 
 image_xscale = w;
 image_yscale = h;
@@ -577,8 +574,38 @@ if salvageID != -1 &amp;&amp; active{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Yay for nested scripts
-scrComboDrawMain();
+            <string>///main draw
+goldIndex = (goldIndex + goldSpd) mod 4;
+baseColorSpend = colorSpend;
+if browned {
+    baseColorSpend = color_BROWN;
+}
+if copyDraw == 1{
+    scrDrawDoorSpend(baseColorSpend);
+}
+
+if global.complexMode == 0 &amp;&amp; copies == 0
+|| global.complexMode == 1 &amp;&amp; icopies == 0 {
+    // draw the rainbow outline if there aren't copies in this direction
+    scrComboDrawIm();
+} else {
+    scrDrawDoorFrame(global.complexMode == 0 &amp;&amp; copies &lt; 0 || global.complexMode == 1 &amp;&amp; icopies &lt; 0);
+    for(var i = 0; i &lt; lockCount; i += 1){
+        if browned {
+            scrDrawDoorLock(color_BROWN,lock[i,1],lock[i,2],lock[i,3],lock[i,4],lock[i,5],lock[i,6]);
+        } else {
+            scrDrawDoorLock(lock[i,0],lock[i,1],lock[i,2],lock[i,3],lock[i,4],lock[i,5],lock[i,6]);
+        }
+    }
+}
+//AURAS TBD
+scrDrawDoorAura();
+
+//INVERT + COPY TEXT
+//scrComboDrawInvert();
+
+draw_set_color(c_white);
+
 </string>
           </argument>
         </arguments>

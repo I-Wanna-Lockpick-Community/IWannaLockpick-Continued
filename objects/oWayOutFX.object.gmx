@@ -202,7 +202,7 @@ with oLevel{
 with objBlock{
     if object_index == objBlock{
         draw_sprite_ext(sprBlockWhite,0,x+3,y+3,image_xscale,image_yscale,image_angle,other.shadowCol,0.35);
-    }else if (object_index == oDoorLarge || object_index == oDoorCombo || object_index == oDoorSimple || object_get_parent(object_index) == oDoorSimple){
+    }else if (object_index == oDoorCombo || object_index == oDoorSimple || object_get_parent(object_index) == oDoorSimple){
         if copyDraw{
             draw_sprite_ext(sprBlockWhite,0,x+3,y+3,w,h,image_angle,other.shadowCol,0.35);
         }

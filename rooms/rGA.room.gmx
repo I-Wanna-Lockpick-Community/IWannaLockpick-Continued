@@ -70,7 +70,7 @@ global.msg = "...Say, now that I think about it, we're at about 190 puzzles now,
     <instance objName="objBlock" x="288" y="384" name="inst_A1F9149F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="224" name="inst_78C76844" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="96" y="288" name="inst_A12633FD" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="288" y="320" name="inst_7C4E8238" locked="0" code="h=2;&#xA;scrComboAdd(color_PURE,0,0,1,0,16,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="288" y="320" name="inst_7C4E8238" locked="0" code="h=2;&#xA;scrComboAdd(color_PURE,0,0,1,0,16,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="256" y="320" name="inst_B965EA81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="256" y="352" name="inst_A8CF2D4B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorRed" x="64" y="320" name="inst_9104D3CB" locked="0" code="w=2;h=2;count=-80;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -79,7 +79,7 @@ global.msg = "...Say, now that I think about it, we're at about 190 puzzles now,
     <instance objName="objBlock" x="64" y="224" name="inst_EFE29216" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="32" name="inst_4F256EB6" locked="0" code="" scaleX="9" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="224" y="224" name="inst_0E1B4BF6" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="96" y="224" name="inst_3A88907E" locked="0" code="w=2;h=2;&#xA;scrComboAdd(color_RED,0,0,1,0,0,sprLockAny);&#xA;scrComboAdd(color_GREEN,0,0,1,32,0,sprLockAny);&#xA;scrComboAdd(color_BLUE,0,0,1,16,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="96" y="224" name="inst_3A88907E" locked="0" code="w=2;h=2;&#xA;scrComboAdd(color_RED,0,0,1,0,0,sprLockAnyS);&#xA;scrComboAdd(color_GREEN,0,0,1,32,0,sprLockAnyS);&#xA;scrComboAdd(color_BLUE,0,0,1,16,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="176" y="240" name="inst_261A0DA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="384" y="384" name="inst_10BA415E" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="736" y="32" name="inst_74994D39" locked="0" code="" scaleX="1" scaleY="14" colour="4294967295" rotation="0"/>
@@ -97,20 +97,20 @@ global.msg = "...Say, now that I think about it, we're at about 190 puzzles now,
     <instance objName="oKeyGreen" x="432" y="336" name="inst_A4068079" locked="0" code="count = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlue" x="464" y="240" name="inst_719B9CC7" locked="0" code="count = 50;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorRed" x="448" y="416" name="inst_8D4AEBEF" locked="0" code="w=2;h=2;count=-8;aura[0]=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="544" y="320" name="inst_7DE29DA4" locked="0" code="h=2;colorSpend=color_RED;&#xA;scrComboAdd(color_RED,1,0,2,0,0,sprLockAny);&#xA;scrComboAdd(color_RED,1,0,2,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="672" y="416" name="inst_D6B0922A" locked="0" code="w=2;h=2;colorSpend=color_RED;&#xA;scrComboAdd(color_RED,1,0,2,0,0,sprLockAny);&#xA;scrComboAdd(color_RED,1,0,2,32,0,sprLockAny);&#xA;scrComboAdd(color_RED,1,0,2,16,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="544" y="320" name="inst_7DE29DA4" locked="0" code="h=2;colorSpend=color_RED;&#xA;scrComboAdd(color_RED,1,0,2,0,0,sprLockAnyS);&#xA;scrComboAdd(color_RED,1,0,2,0,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="672" y="416" name="inst_D6B0922A" locked="0" code="w=2;h=2;colorSpend=color_RED;&#xA;scrComboAdd(color_RED,1,0,2,0,0,sprLockAnyS);&#xA;scrComboAdd(color_RED,1,0,2,32,0,sprLockAnyS);&#xA;scrComboAdd(color_RED,1,0,2,16,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyRed" x="688" y="336" name="inst_44B51535" locked="0" code="count = 10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyRed" x="688" y="240" name="inst_71FA85CB" locked="0" code="count = -20;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="480" y="320" name="inst_4F18DF70" locked="0" code="w=2;h=2;count=-4;aura[1] = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="512" y="224" name="inst_528ABD57" locked="0" code="w=2;h=2;color=color_BLUE;colorSpend=color_GREEN;count=-8;aura[2] = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="640" y="416" name="inst_60120BAD" locked="0" code="h=2;colorSpend=color_RED;&#xA;scrComboAdd(color_RED,-1,0,2,0,0,sprLockAny);&#xA;scrComboAdd(color_RED,-1,0,2,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="640" y="416" name="inst_60120BAD" locked="0" code="h=2;colorSpend=color_RED;&#xA;scrComboAdd(color_RED,-1,0,2,0,0,sprLockAnyS);&#xA;scrComboAdd(color_RED,-1,0,2,0,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorRed" x="608" y="160" name="inst_E1854580" locked="0" code="type = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlue" x="576" y="96" name="inst_5CBF8968" locked="0" code="type = 2; aura[0] = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlue" x="544" y="160" name="inst_1845D821" locked="0" code="type = 2; count= -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlue" x="704" y="128" name="inst_9A5DFD63" locked="0" code="type = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorRed" x="512" y="160" name="inst_1EB43A09" locked="0" code="type = 2; count = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGreen" x="576" y="160" name="inst_F1B48CAB" locked="0" code="count = -16;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="640" y="224" name="inst_8479DCAC" locked="0" code="h=2;colorSpend=color_GREEN;&#xA;scrComboAdd(color_GREEN,1,0,2,0,0,sprLockAny);&#xA;scrComboAdd(color_GREEN,1,0,2,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="640" y="224" name="inst_8479DCAC" locked="0" code="h=2;colorSpend=color_GREEN;&#xA;scrComboAdd(color_GREEN,1,0,2,0,0,sprLockAnyS);&#xA;scrComboAdd(color_GREEN,1,0,2,0,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="512" y="416" name="inst_5A3BCB2D" locked="0" code="w=2;h=2;color=color_RED;colorSpend=color_BLUE;count=-4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="576" y="320" name="inst_936E96C4" locked="0" code="w=2;h=2;color=color_RED;colorSpend=color_BLUE;count=-4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlue" x="640" y="320" name="inst_23E26F91" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

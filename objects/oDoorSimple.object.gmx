@@ -37,6 +37,8 @@ active = 1;//Whether or not it can be opened. Inactive means it goes far out of 
 color = 0;
 colorSpend = 0;//Can spend a key type other than the required one
 glitchMimic = color_GLITCH;//For glitch doors
+baseColor = 0; // for drawing
+baseColorSpend = 0; // for drawing
 effectiveColor = 0;
 effectiveColorSpend = 0;//These mostly have to do with the brown key gimmick
 count = 1;
@@ -45,13 +47,12 @@ type = 0;//0 = Normal, 1 = Blast, 2 = Swap, 3 = Zero, 4 = INFINITY
 copies = 1;//Number of copies for the negative master key system
 icopies = 0;
 iPow = 0;
-exactI = 0;//Determines if Exact Door is Imaginary or not
 aura[0] = 0;//Red aura
 aura[1] = 0;//Green aura
 aura[2] = 0;//Blue aura
-cursed = -1;//The color that the door is cursed with; -1 for none
+browned = 0;//Whether the door has the Brown Curse
 brownAngle = 0;//Effect of brown curse being applied
-brownNearPlayer = 0;//Sets to 1 when cursed/uncursed, sets to 0 when opened or player moves away
+brownNearPlayer = 0;//Sets to 1 when browned/unbrowned, sets to 0 when opened or player moves away
 //entangled = 0;//Whether or not to entangle the door with others in a group.
 //entangleGroup = 0;//If it is entangled, what group it belongs to.
 w = 1;
@@ -131,13 +132,11 @@ if myLight != -1{
           <argument>
             <kind>1</kind>
             <string>///Brown particles
-if cursed != -1{
+if browned{
     alarm[0] = 120;
     for(var ix = 0; ix&lt;(2*w); ix+=1){
         for(var iy = 0; iy&lt;(2*h); iy+=1){
-            with instance_create(x+random_range(4,12)+16*ix,y+random_range(4,12)+16*iy,oBrownParticle) {
-                color = other.cursed;
-            }
+            instance_create(x+random_range(4,12)+16*ix,y+random_range(4,12)+16*iy,oBrownParticle)
         }
     }
 }
@@ -271,9 +270,42 @@ distToP = distance_to_object(objPlayer);
 if copyState != 0 {exit;}
 if !active {brownNearPlayer=0;visible=0;exit;}
 brownNearPlayer=0;
-if cursed != -1 &amp;&amp; cursed != color_PURE {
-    effectiveColor = cursed;
-    effectiveColorSpend = cursed;
+if browned{
+    effectiveColor = color_BROWN;
+    effectiveColorSpend = color_BROWN;
+}else{
+    effectiveColor = color;
+    effectiveColorSpend = colorSpend;
+}
+canChangeBrowned = browned || (color != color_PURE &amp;&amp; colorSpend != color_PURE &amp;&amp; glitchMimic != color_PURE);
+if aura[0] == 1 || aura[1] == 1 || aura[2] == 1{
+    if distToP &lt;= 23{
+        removeAuras();
+        if objPlayer.brownMode != 0{
+            if canChangeBrowned{
+                enbrownDoor();
+            }
+        }
+    }else{
+        brownNearPlayer = 0;
+    }
+    exit;
+}
+if objPlayer.brownMode != 0{
+    if canChangeBrowned{
+        if distToP &lt;= 23{
+            enbrownDoor();
+        }else{
+            brownNearPlayer = 0;
+        }
+    }
+}
+if distToP &gt; 23{
+    brownNearPlayer = 0;
+}
+if browned{
+    effectiveColor = color_BROWN;
+    effectiveColorSpend = color_BROWN;
 }else{
     effectiveColor = color;
     effectiveColorSpend = colorSpend;
@@ -285,113 +317,28 @@ if effectiveColorSpend == color_GLITCH {
     effectiveColorSpend = glitchMimic;
 }
 //iPow stuff
-if global.complexMode == 0{//Real view
+if global.complexMode == 0 || icopies == 0 {//Real open
     if copies &gt; 0{iPow = 0;}
     if copies &lt; 0{iPow = 2;}
-    if copies == 0{
-        if icopies &gt; 0{iPow = 1;}
-        if icopies &lt; 0{iPow = 3;}
-    }
-}else{//Imaginary view
+}else{//Imaginary open
     if icopies &gt; 0{iPow = 1;}
     if icopies &lt; 0{iPow = 3;}
-    if icopies == 0{
-        if copies &gt; 0{iPow = 0;}
-        if copies &lt; 0{iPow = 2;}
-    }
 }
-
-var auraCount = 0; //Amount of auras on the door
-if aura[0] == 1{auraCount++; auraType = 0}
-if aura[1] == 1{auraCount++; auraType = 1}
-if aura[2] == 1{auraCount++; auraType = 2}
-
-canChangecursed = (cursed != -1) || (color != color_PURE &amp;&amp; colorSpend != color_PURE &amp;&amp; glitchMimic != color_PURE);
-if aura[0] != 0 || aura[1] != 0 || aura[2] != 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || objPlayer.aura[2] == -1{ //Aura infliction/removal + Ice, mud, and graffiti interactions
-    if distToP &lt;= 23{
-        removeAuras();
-        if objPlayer.curseMode != 0{
-            if canChangecursed{
-                tryCurseDoor();
-            }
-        }
-    }else{
-        brownNearPlayer = 0;
-    }
-    //Ice, mud, graffiti openings (aurabreak)
-    if distToP &lt;= 1 &amp;&amp; auraCount == 1 &amp;&amp; color != color_PURE &amp;&amp; colorSpend != color_PURE &amp;&amp; glitchMimic != color_PURE{
-        if aura[0] == 1{effectiveColor = color_ICE; effectiveColorSpend = color_ICE}
-        if aura[1] == 1{effectiveColor = color_MUD; effectiveColorSpend = color_MUD}
-        if aura[2] == 1{effectiveColor = color_GRAFFITI; effectiveColorSpend = color_GRAFFITI}
-        if global.key[effectiveColor] != 0 || global.ikey[effectiveColor] != 0{
-            var rCost = 0;
-            var iCost = 0;
-            var tempIPow = iPow;
-            spendTotal = 0;
-            spendITotal = 0;
-            scrAddSpendAmt(effectiveColor,count,icount,type,tempIPow)
-            if canOpen(effectiveColor, tempIPow){
-                addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
-                scrOpenOrCopy();                
-            }      
-        }
-    }
-    exit;
-}
-if objPlayer.curseMode != 0{
-    if canChangecursed{
-        if distToP &lt;= 23{
-            tryCurseDoor();
-        }else{
-            brownNearPlayer = 0;
-        }
-    }
-}
-if distToP &gt; 23{
-    brownNearPlayer = 0;
-}
-var canGoldOpen = !(effectiveColor == color_MASTER || effectiveColor == color_PURE || effectiveColorSpend == color_MASTER || effectiveColorSpend == color_PURE);
-var canSilverOpen = !(effectiveColor == color_SILVER || effectiveColor == color_PURE || effectiveColorSpend == color_SILVER || effectiveColorSpend == color_PURE);
-var canDynamiteOpen = !(effectiveColor == color_DYNAMITE || effectiveColor == color_PURE || effectiveColorSpend == color_DYNAMITE || effectiveColorSpend == color_PURE);
-if distToP &lt;= 1 {
-    if (canDynamiteOpen &amp;&amp; scrNormalDynamiteOpen()) {
+var goldEligible = objPlayer.masterMode != 0 &amp;&amp; !(effectiveColor == color_MASTER || effectiveColor == color_PURE || effectiveColorSpend == color_MASTER || effectiveColorSpend == color_PURE);
+if distToP &lt;= 1{
+    if goldEligible {//SPEND MASTER KEYS
+        scrNormalMasterOpen();
         undoBUFFER();
         scrPlayerDownStop();
-    } else if (canGoldOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 1) &amp;&amp; scrNormalMasterOpen() {//SPEND MASTER KEYS
-        undoBUFFER();
-        scrPlayerDownStop();
-    } else {//SPEND NORMAL KEYS
-        var rCost = 0;
-        var iCost = 0;
-        var tempIPow = iPow;
-        if (canSilverOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 2) {
-            switch objPlayer.masterMode {
-            case 1: tempIPow = 0; break;
-            case 2: tempIPow = 1; break;
-            case -1: tempIPow = 2; break;
-            case -2: tempIPow = 3; break;
-            }
-        }
+    } else if canOpen(effectiveColor,iPow) {//SPEND NORMAL KEYS
         spendTotal = 0;
         spendITotal = 0;
-        scrAddSpendAmt(effectiveColor,count,icount,type,tempIPow)
-        if (canSilverOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 2) {
-            addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
-            addComplexKeys(color_SILVER,-1,0,tempIPow);
-            scrPlaySoundExt(sndMasterUnlock,1,1,false);
-            event_user(2);
-            objPlayer.masterMode = 0;
-            objPlayer.masterCycle = 0;
-            undoBUFFER();
-            scrBroadcastCopy(effectiveColorSpend); // should it?
-        } else if canOpen(effectiveColor, tempIPow) {
-            addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
-            scrOpenOrCopy();
-            scrBroadcastCopy(effectiveColorSpend);
-        }
+        scrAddSpendAmt(effectiveColor,count,icount,type,iPow);
+        addComplexKeys(effectiveColorSpend,spendTotal,spendITotal);
+        scrOpenOrCopy();
+        scrBroadcastCopy(effectiveColorSpend);
     }
 }
-
 useMasterCheck();
 </string>
           </argument>
@@ -451,9 +398,9 @@ with oSalvageIn{
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebrisS)){
-            c1 = other.c1;
-            c2 = other.c2;
-            c3 = other.c3;
+            c1 = global.highTone[other.baseColorSpend];
+            c2 = global.mainTone[other.baseColorSpend];
+            c3 = global.darkTone[other.baseColorSpend];
             xT = other.xT;
             yT = other.yT;
         }
@@ -537,13 +484,12 @@ if instance_exists(oLightsW5) || instance_exists(oLightsW4) || instance_exists(o
             <kind>1</kind>
             <string>///Brown particle burst
 var _bp;
-if cursed != -1 {
+if browned{
     alarm[0] = 120;
     for(var ix = 0; ix&lt;(2*w); ix+=1){
         for(var iy = 0; iy&lt;(2*h); iy+=1){
             with(instance_create(x+random_range(4,12)+16*ix,y+random_range(4,12)+16*iy,oBrownParticle)){
                 scale = random_range(.2,.5);
-                color = other.cursed;
             }
         }
     }
@@ -588,9 +534,9 @@ copyTimer = 0;
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris3)){
-            c1 = other.c1;
-            c2 = other.c2;
-            c3 = other.c3;
+            c1 = global.highTone[other.baseColorSpend];
+            c2 = global.mainTone[other.baseColorSpend];
+            c3 = global.darkTone[other.baseColorSpend];
         }
     }
 }
@@ -626,9 +572,9 @@ copyTimer = 0;
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris2)){
-            c1 = other.c1;
-            c2 = other.c2;
-            c3 = other.c3;
+            c1 = global.highTone[other.baseColorSpend];
+            c2 = global.mainTone[other.baseColorSpend];
+            c3 = global.darkTone[other.baseColorSpend];
         }
     }
 }
@@ -658,9 +604,9 @@ for(var ix = 0; ix&lt;(2*w); ix+=1){
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris)){
-            c1 = other.c1;
-            c2 = other.c2;
-            c3 = other.c3;
+            c1 = global.highTone[other.baseColorSpend];
+            c2 = global.mainTone[other.baseColorSpend];
+            c3 = global.darkTone[other.baseColorSpend];
         }
     }
 }
@@ -835,147 +781,25 @@ if salvageID != -1 &amp;&amp; active{
           <argument>
             <kind>1</kind>
             <string>///Main draw
-
-if copyDraw == 1{
-
-//- - - - - COLOR FILL - - - - -//
-goldIndex = (goldIndex + goldSpd) mod 12;
-if effectiveColorSpend == color_MASTER{
-    draw_sprite_ext(sprDGoldGrad,floor(goldIndex)%4,x,y,w*.5,h*.5,0,c_white,1);
-}else if effectiveColorSpend == color_PURE{
-    draw_sprite_ext(sprDPureGrad,floor(goldIndex)%4,x,y,w*.5,h*.5,0,c_white,1);
-}else if effectiveColorSpend == color_STONE{
-    draw_sprite_ext(sprDStoneTexture,0,x,y,w*.5,h*.5,0,c_white,1);
-}else if effectiveColorSpend == color_DYNAMITE{
-    for(var i = 0; i+1 &lt; h/2; i++) {
-        draw_sprite_ext(sprDDynaTexture,floor(goldIndex),x,y+i*64,w*.5,1,0,c_white,1);
-    }
-    draw_sprite_part_ext(sprDDynaTexture,floor(goldIndex),0,0,64,h*32-i*64,x,y+i*64,w*.5,1,c_white,1);
-    // @addcolor if door image/animation
-}else if effectiveColorSpend == color_GLITCH{
-    scrColorDoorArg(color_GLITCH);
-    shader_set(shdRainbowStripe2);
-    scrDrawDoorSpend();
-    shader_reset();
-    if glitchMimic != color_GLITCH{
-        scrDrawDoorGlitch(true);
-    }
-    scrColorDoor();
-    scrColorDoor2();
-}else{
-    scrDrawDoorSpend();
+goldIndex = (goldIndex + goldSpd) mod 4;
+baseColor = color;
+baseColorSpend = colorSpend;
+if browned {
+    baseColor = color_BROWN;
+    baseColorSpend = color_BROWN;
 }
-//A bug will happen if you have a door with Master and Pure as either color...
-//But not for combo doors. I guess I know what lazy workaround I'm using!
-//12/22/2020 note: NUH UH BUSTER GUESS WHOS PICKING UP YOUR SLACK HAHA OWNED
-
-//Defining dimensions of gold/pure gradient for inner color
-var tempW = 32*w - 14;
-var tempH = 32*h - 14;
-var tempX = x+7;
-var tempY = y+7;
-if effectiveColor == color_MASTER{
-    draw_sprite_ext(sprDGoldGrad,floor(goldIndex)%4,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
-}else if effectiveColor == color_PURE{
-    draw_sprite_ext(sprDPureGrad,floor(goldIndex)%4,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
-}else if effectiveColor == color_STONE{
-    draw_sprite_ext(sprDStoneTexture,0,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
-}else if effectiveColorSpend == color_DYNAMITE{
-    for(var i = 0; i+1 &lt; tempH/64; i++) {
-        draw_sprite_ext(sprDDynaTexture,floor(goldIndex),tempX,tempY+i*64,tempW/64,1,0,c_white,1);
-    }
-    draw_sprite_part_ext(sprDDynaTexture,floor(goldIndex),0,0,64,tempH-i*64,tempX,tempY+i*64,tempW/64,1,c_white,1)
-    // @addcolor if door image/animation
-}else if effectiveColor == color_GLITCH{
-    scrColorDoorArg(color_GLITCH);
-    shader_set(shdRainbowStripe2);
-    scrDrawDoorRequire();
-    shader_reset();
-    if glitchMimic != color_GLITCH{
-        scrDrawDoorGlitch(false);
-    }
-    scrColorDoor();
-    scrColorDoor2();
-}else{
-    scrDrawDoorRequire();
+if copyDraw == 1 { // spend is not drawn while the copy animation is happening
+    scrDrawDoorSpend(baseColorSpend);
 }
-
-//- - - - - DOOR FRAME AND LOCKS - - - - -//
-if global.simpleLock{
-    scrDrawDoorLockSimple();
-}else{
-    scrDrawDoorLock();
+if global.complexMode == 0 &amp;&amp; copies == 0
+|| global.complexMode == 1 &amp;&amp; icopies == 0 {
+    // draw the rainbow outline if there aren't copies in this direction
+    scrComboDrawIm();
+} else {
+    scrDrawDoorFrame((count &lt; 0 || icount &lt; 0) != (global.complexMode == 0 &amp;&amp; copies &lt; 0 || global.complexMode == 1 &amp;&amp; icopies &lt; 0));
+    scrDrawDoorLock(baseColor,count,icount,type,0,0,scrSimpleDoorGetLockSprite());
 }
-
-//- - - - - AURAS - - - - -//
-if aura[1]{
-    if w==1 &amp;&amp; h==1{
-        draw_sprite(sprDirt,0,x,y);
-    }
-    if w==1 &amp;&amp; h==2{
-        draw_sprite(sprDirt1x2,0,x,y);
-    }
-    if w==2 &amp;&amp; h==2{
-        draw_sprite(sprDirt2x2,0,x,y);
-    }
-}
-if aura[2]{
-    draw_set_blend_mode(bm_add);
-    if w==1 &amp;&amp; h==1{
-        draw_sprite_ext(sprSol,1,x,y,1,1,0,make_color_rgb(255,255,255),1);
-    }
-    if w==1 &amp;&amp; h==2{
-        draw_sprite_ext(sprSol1x2,1,x,y,1,1,0,make_color_rgb(255,255,255),1);
-    }
-    if w==2 &amp;&amp; h==2{
-        draw_sprite_ext(sprSol2x2,1,x,y,1,1,0,make_color_rgb(255,255,255),1);
-    }
-    draw_set_blend_mode(bm_normal);
-}
-if aura[0]{
-    if w==1 &amp;&amp; h==1{
-        draw_sprite(sprIce,0,x,y);
-    }
-    if w==1 &amp;&amp; h==2{
-        draw_sprite(sprIce1x2,0,x,y);
-    }
-    if w==2 &amp;&amp; h==2{
-        draw_sprite(sprIce2x2,0,x,y);
-    }
-    if w==3 &amp;&amp; h==2{
-        draw_sprite(sprIce3x2,0,x,y);
-    }
-}
-
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Outline if destroyed a copy
-if copyDraw == 0{
-    if global.simpleLock{
-        scrDrawDoorLockSimple();
-    }else{
-        scrDrawDoorLock();
-    }
-}
+scrDrawDoorAura();
 </string>
           </argument>
         </arguments>

@@ -59,7 +59,7 @@ global.msg = "Looks like we're getting back into the thick of Glitch objects, eh
     <instance objName="oBGW12" x="192" y="480" name="inst_50C0CA7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="352" y="256" name="inst_6AA4DF99" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="352" y="384" name="inst_29FBDFD3" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="368" y="320" name="inst_832445A8" locked="0" code="w=2;h=2;&#xA;scrComboAdd(color_PURPLE,0,0,1,16,16,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="368" y="320" name="inst_832445A8" locked="0" code="w=2;h=2;&#xA;scrComboAdd(color_PURPLE,0,0,1,16,16,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="656" y="400" name="inst_2DB7265E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="64" y="448" name="inst_75356A60" locked="0" code="" scaleX="21" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="480" y="352" name="inst_E35A9547" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
@@ -78,10 +78,10 @@ global.msg = "Looks like we're getting back into the thick of Glitch objects, eh
     <instance objName="objBlock" x="704" y="256" name="inst_1B02206A" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="224" y="256" name="inst_3F0D2763" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="96" y="256" name="inst_789D53DE" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="96" y="288" name="inst_F55E2675" locked="0" code="h=2;colorSpend = color_CYAN;&#xA;scrComboAdd(color_GLITCH,1,0,3,0,0,sprLockAny);&#xA;scrComboAdd(color_GLITCH,1,0,3,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="96" y="288" name="inst_F55E2675" locked="0" code="h=2;colorSpend = color_CYAN;&#xA;scrComboAdd(color_GLITCH,1,0,3,0,0,sprLockAnyS);&#xA;scrComboAdd(color_GLITCH,1,0,3,0,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="96" y="160" name="inst_DB5C22CB" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="96" y="64" name="inst_914C5E9C" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="512" y="384" name="inst_E5CFD004" locked="0" code="w=2;h=2;&#xA;scrComboAdd(color_BROWN,0,0,1,16,16,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="512" y="384" name="inst_E5CFD004" locked="0" code="w=2;h=2;&#xA;scrComboAdd(color_BROWN,0,0,1,16,16,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="224" y="160" name="inst_BD354EB3" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="320" y="64" name="inst_D31F33C5" locked="0" code="" scaleX="2" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="256" y="192" name="inst_3F921D9C" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
@@ -96,9 +96,9 @@ global.msg = "Looks like we're getting back into the thick of Glitch objects, eh
     <instance objName="objBlock" x="384" y="192" name="inst_8B796D05" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="256" y="288" name="inst_AD936112" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="192" y="384" name="inst_52C82D61" locked="0" code="w=2;h=2;count=-40;color=color_PURPLE;colorSpend=color_GLITCH;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="96" y="192" name="inst_5DAB0585" locked="0" code="h=2;colorSpend = color_RED;&#xA;scrComboAdd(color_GLITCH,1,0,3,0,0,sprLockAny);&#xA;scrComboAdd(color_GLITCH,1,0,3,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="96" y="96" name="inst_2AA54BD9" locked="0" code="h=2;colorSpend = color_BLUE;&#xA;scrComboAdd(color_GLITCH,1,0,3,0,0,sprLockAny);&#xA;scrComboAdd(color_GLITCH,1,0,3,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="288" y="96" name="inst_67FD9D4A" locked="0" code="h=2;colorSpend = color_ORANGE;&#xA;scrComboAdd(color_GLITCH,1,0,3,0,0,sprLockAny);&#xA;scrComboAdd(color_GLITCH,1,0,3,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="96" y="192" name="inst_5DAB0585" locked="0" code="h=2;colorSpend = color_RED;&#xA;scrComboAdd(color_GLITCH,1,0,3,0,0,sprLockAnyS);&#xA;scrComboAdd(color_GLITCH,1,0,3,0,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="96" y="96" name="inst_2AA54BD9" locked="0" code="h=2;colorSpend = color_BLUE;&#xA;scrComboAdd(color_GLITCH,1,0,3,0,0,sprLockAnyS);&#xA;scrComboAdd(color_GLITCH,1,0,3,0,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="288" y="96" name="inst_67FD9D4A" locked="0" code="h=2;colorSpend = color_ORANGE;&#xA;scrComboAdd(color_GLITCH,1,0,3,0,0,sprLockAnyS);&#xA;scrComboAdd(color_GLITCH,1,0,3,0,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlue" x="352" y="224" name="inst_79AFA5BC" locked="0" code="type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="384" y="96" name="inst_CA6525EC" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="608" y="288" name="inst_C7466099" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>

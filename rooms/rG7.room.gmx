@@ -63,7 +63,7 @@ global.msg = "It hasn't come up often, but I'm sure you remember a few puzzles w
     <instance objName="objBlock" x="256" y="384" name="inst_0B54ABEC" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="64" y="288" name="inst_D041FF86" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="384" y="288" name="inst_EEEAD42E" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="288" y="416" name="inst_48525582" locked="0" code="w=2;h=2;&#xA;scrComboAdd(color_PURE,0,0,1,16,16,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="288" y="416" name="inst_48525582" locked="0" code="w=2;h=2;&#xA;scrComboAdd(color_PURE,0,0,1,16,16,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="352" y="432" name="inst_FC9F764B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="416" y="480" name="inst_E05A529F" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="480" y="384" name="inst_0A08FE53" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
@@ -73,7 +73,7 @@ global.msg = "It hasn't come up often, but I'm sure you remember a few puzzles w
     <instance objName="oKeyPurple" x="288" y="320" name="inst_F9008023" locked="0" code="count = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPurple" x="320" y="320" name="inst_31EA8138" locked="0" code="count = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPurple" x="352" y="320" name="inst_93F067A5" locked="0" code="count = 8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="544" y="416" name="inst_3AF49873" locked="0" code="w=3;h=2;&#xA;scrComboAdd(color_PURE,4,0,0,16,16,sprLock4A);&#xA;scrComboAdd(color_PURPLE,0,0,1,64,0,sprLockAny);&#xA;scrComboAdd(color_RED,0,0,1,64,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="544" y="416" name="inst_3AF49873" locked="0" code="w=3;h=2;&#xA;scrComboAdd(color_PURE,4,0,0,16,16,sprLock4A);&#xA;scrComboAdd(color_PURPLE,0,0,1,64,0,sprLockAnyS);&#xA;scrComboAdd(color_RED,0,0,1,64,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="192" y="320" name="inst_DC935F3B" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="384" y="432" name="inst_69DF7D04" locked="0" code="type = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="32" name="inst_FDC7A842" locked="0" code="" scaleX="5" scaleY="8" colour="4294967295" rotation="0"/>

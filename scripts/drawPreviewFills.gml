@@ -102,7 +102,6 @@ if colorSpend == color_GLITCH && glitchMimic != color_GLITCH{
     draw_sprite_part_ext(_gSprite,2,48,48,16,16,salDX+32*salW-16,salDY+32*salH-16,1,1,c6,1);
     //Reset colors...
     colorSpend = effectiveColor;
-    scrComboCFunc();
 }
 //SPEND FILL DRAWING ALL DONE!
 //Lock Preview

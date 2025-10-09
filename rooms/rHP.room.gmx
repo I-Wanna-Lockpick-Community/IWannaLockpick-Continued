@@ -118,8 +118,8 @@ global.msg = "";</code>
     <instance objName="oDoorGlitch" x="256" y="320" name="inst_0D55DF15" locked="0" code="count = 0; icount = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="256" y="288" name="inst_A5F862E3" locked="0" code="count = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="512" y="384" name="inst_28F15974" locked="0" code="scrComboAdd(color_BROWN,-1,0,0,0,0,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="544" y="416" name="inst_10716A05" locked="0" code="scrComboAdd(color_BROWN,0,-1,0,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="256" y="448" name="inst_0DE88FEA" locked="0" code="w=2;colorSpend=11;h=3&#xA;scrComboAdd(11,1,0,0,0,16,sprLock1A)&#xA;scrComboAdd(12,0,0,1,32,16,sprLockAny)&#xA;scrComboAdd(0,-1,0,0,0,48,sprLock1A)&#xA;scrComboAdd(0,-1,0,0,32,48,sprLock1A)&#xA;copies=11;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="544" y="416" name="inst_10716A05" locked="0" code="scrComboAdd(color_BROWN,0,-1,0,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="256" y="448" name="inst_0DE88FEA" locked="0" code="w=2;colorSpend=11;h=3&#xA;scrComboAdd(11,1,0,0,0,16,sprLock1A)&#xA;scrComboAdd(12,0,0,1,32,16,sprLockAnyS)&#xA;scrComboAdd(0,-1,0,0,0,48,sprLock1A)&#xA;scrComboAdd(0,-1,0,0,32,48,sprLock1A)&#xA;copies=11;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="96" y="480" name="inst_435A93BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>

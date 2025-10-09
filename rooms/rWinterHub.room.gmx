@@ -192,13 +192,13 @@ if global.omegaPerk[0] || global.allUnlock{
     <instance objName="objBlock" x="2080" y="672" name="inst_9AD9AFDB" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1984" y="736" name="inst_6F61A69B" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2016" y="672" name="inst_053D2DF3" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="240" y="480" name="inst_49D3925B" locked="0" code="w=2;h=4;colorSpend=color_BLACK;&#xA;scrComboAdd(color_PURE,0,0,1,16,48,sprLockAny);&#xA;scrComboAdd(color_RED,1,0,2,0,0,sprLockAny);&#xA;scrComboAdd(color_RED,-1,0,2,32,0,sprLockAny);&#xA;scrComboAdd(color_CYAN,-1,0,2,0,96,sprLockAny);&#xA;scrComboAdd(color_CYAN,1,0,2,32,96,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="240" y="480" name="inst_49D3925B" locked="0" code="w=2;h=4;colorSpend=color_BLACK;&#xA;scrComboAdd(color_PURE,0,0,1,16,48,sprLockAnyS);&#xA;scrComboAdd(color_RED,1,0,2,0,0,sprLockAnyS);&#xA;scrComboAdd(color_RED,-1,0,2,32,0,sprLockAnyS);&#xA;scrComboAdd(color_CYAN,-1,0,2,0,96,sprLockAnyS);&#xA;scrComboAdd(color_CYAN,1,0,2,32,96,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1984" y="640" name="inst_AA906D2D" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1728" y="576" name="inst_80670D68" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1760" y="608" name="inst_5C12371C" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1472" y="608" name="inst_04F34248" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1504" y="640" name="inst_99CF7058" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="2048" y="544" name="inst_94F1E338" locked="0" code="//Originally this was a duplicate of the Toybox door, but the fact it gave Master Keys&#xA;//ended up ruining the Cyan Omega Key puzzle. So, fine, I'll compromise.&#xA;w=3;h=3;colorSpend=color_BLACK;&#xA;scrComboAdd(11,0,0,1,32,32,sprLockAnyM);&#xA;scrComboAdd(2,1,0,2,32,0,sprLockAny);&#xA;scrComboAdd(4,1,0,2,0,32,sprLockAny);&#xA;scrComboAdd(5,1,0,2,64,32,sprLockAny);&#xA;scrComboAdd(6,1,0,2,32,64,sprLockAny);&#xA;copies = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="2048" y="544" name="inst_94F1E338" locked="0" code="//Originally this was a duplicate of the Toybox door, but the fact it gave Master Keys&#xA;//ended up ruining the Cyan Omega Key puzzle. So, fine, I'll compromise.&#xA;w=3;h=3;colorSpend=color_BLACK;&#xA;scrComboAdd(11,0,0,1,32,32,sprLockAnyM);&#xA;scrComboAdd(2,1,0,2,32,0,sprLockAnyS);&#xA;scrComboAdd(4,1,0,2,0,32,sprLockAnyS);&#xA;scrComboAdd(5,1,0,2,64,32,sprLockAnyS);&#xA;scrComboAdd(6,1,0,2,32,64,sprLockAnyS);&#xA;copies = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyRed" x="928" y="448" name="inst_1ECE8279" locked="0" code="count=5;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGreen" x="1056" y="448" name="inst_CA0CE53C" locked="0" code="count=5;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlue" x="1184" y="448" name="inst_36E75634" locked="0" code="count=1;icount=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -224,7 +224,7 @@ if global.omegaPerk[0] || global.allUnlock{
     <instance objName="objBlock" x="1600" y="-32" name="inst_A99C7140" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="192" y="320" name="inst_D95C3146" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="480" y="352" name="inst_ECFB6E24" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="1280" y="992" name="inst_F9CCE818" locked="0" code="h=2;colorSpend=color_PURE;&#xA;scrComboAdd(color_BLUE,0,0,1,0,0,sprLockAny);&#xA;scrComboAdd(color_PURE,0,0,1,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="1280" y="992" name="inst_F9CCE818" locked="0" code="h=2;colorSpend=color_PURE;&#xA;scrComboAdd(color_BLUE,0,0,1,0,0,sprLockAnyS);&#xA;scrComboAdd(color_PURE,0,0,1,0,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="128" y="480" name="inst_FDD0027B" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oDialogTest" x="2000" y="608" name="inst_060F3D4B" locked="0" code="convoID = 9;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="1472" y="864" name="inst_CC986C7B" locked="0" code="count=-4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -249,7 +249,7 @@ if global.omegaPerk[0] || global.allUnlock{
     <instance objName="objBlock" x="704" y="832" name="inst_2DD611A0" locked="0" code="if global.omegaPerk[0] || global.allUnlock{instance_destroy();}&#xA;" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="1824" y="256" name="inst_C34EA1E3" locked="0" code="w=4;h=4;count = -999999999;color = color_CYAN;colorSpend=color_PURE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1056" y="704" name="inst_72AD1A51" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="1184" y="704" name="inst_44BA8DA8" locked="0" code="w=2;h=3;colorSpend=color_CYAN;&#xA;scrComboAdd(color_CYAN,-8,0,0,0,0,sprLock8A);&#xA;scrComboAdd(color_PURE,0,0,1,16,64,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="1184" y="704" name="inst_44BA8DA8" locked="0" code="w=2;h=3;colorSpend=color_CYAN;&#xA;scrComboAdd(color_CYAN,-8,0,0,0,0,sprLock8A);&#xA;scrComboAdd(color_PURE,0,0,1,16,64,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles" x="384" y="672" w="32" h="32" xo="128" yo="256" id="10083109" name="inst_3698649E" depth="10000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -33,7 +33,7 @@ if ini_read_real(sec,"DoorExists",0) == 1{
             salLock[i,3] = ini_read_real(sec,"Type",0);
             salLock[i,4] = ini_read_real(sec,"SpriteX",0);
             salLock[i,5] = ini_read_real(sec,"SpriteY",0);
-            salLock[i,6] = ini_read_real(sec,"SpriteInd",sprLockAny);
+            salLock[i,6] = ini_read_real(sec,"SpriteInd",sprLockAnyS);
         }
         lock = salLock;
     }

@@ -5,7 +5,7 @@ c4 = c_gray;
 c5 = c_dkgray;
 c6 = c_black;
 c2 = c5;
-scrDrawDoorSpend(); scrDrawDoorRequire();
+scrDrawDoorSpend(colorSpend); scrDrawDoorRequire();
 //FRAME
 //Determines image index for door frame
 var dIndex = 0;

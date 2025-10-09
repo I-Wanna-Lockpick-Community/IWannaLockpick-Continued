@@ -90,7 +90,7 @@ global.msg = "Remember that item you picked up earlier? Press ["+getBindStr(glob
     <instance objName="oDoorCyan" x="448" y="64" name="inst_DA4EA7BA" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="448" y="384" name="inst_EB8262D2" locked="0" code="w=2;h=2;count=0;icount=6;color=color_CYAN;colorSpend=color_RED;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="256" y="96" name="inst_3EA56CD5" locked="0" code="type=3;color=color_RED;colorSpend=color_CYAN;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="240" y="192" name="inst_9C1D61E1" locked="0" code="w=2;colorSpend = color_CYAN;&#xA;scrComboAdd(color_CYAN,1,0,3,0,0,sprLockAny);&#xA;scrComboAdd(color_CYAN,1,0,3,32,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="240" y="192" name="inst_9C1D61E1" locked="0" code="w=2;colorSpend = color_CYAN;&#xA;scrComboAdd(color_CYAN,1,0,3,0,0,sprLockAnyS);&#xA;scrComboAdd(color_CYAN,1,0,3,32,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="208" y="304" name="inst_6959D7D7" locked="0" code="count=0;icount=-2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>

@@ -85,7 +85,7 @@ global.msg = "Uh oh! Looks like Glitch Doors are getting reintroduced to the mix
     <instance objName="oKeyPure" x="704" y="256" name="inst_6A739AA2" locked="0" code="count=-3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="96" y="256" name="inst_B81E5FA4" locked="0" code="count=-3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="544" y="-32" name="inst_2CF99AD3" locked="0" code="" scaleX="7" scaleY="5" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="608" y="416" name="inst_A48DAD2E" locked="0" code="w=2;h=2;colorSpend=color_BLACK;&#xA;scrComboAdd(color_CYAN,0,0,1,0,16,sprLockAny);&#xA;scrComboAdd(color_PURE,0,0,1,32,16,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="608" y="416" name="inst_A48DAD2E" locked="0" code="w=2;h=2;colorSpend=color_BLACK;&#xA;scrComboAdd(color_CYAN,0,0,1,0,16,sprLockAnyS);&#xA;scrComboAdd(color_PURE,0,0,1,32,16,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="736" y="416" name="inst_5F2A0DBB" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="224" y="416" name="inst_0C091CA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="416" name="inst_0856D0FF" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>

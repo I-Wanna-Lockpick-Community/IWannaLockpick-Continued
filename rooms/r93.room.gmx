@@ -104,7 +104,7 @@ global.msg = "Interestingly, if you break or add copies to a door via Master Key
     <instance objName="oDoorPink" x="640" y="224" name="inst_BE79AE15" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPink" x="672" y="256" name="inst_F668FF29" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPure" x="512" y="416" name="inst_A822CCB9" locked="0" code="h=2;count=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="544" y="416" name="inst_EB577DB0" locked="0" code="w=2;h=2;colorSpend=9;&#xA;scrComboAdd(1,0,0,1,0,0,sprLockAny);&#xA;scrComboAdd(7,0,0,1,0,32,sprLockAny);&#xA;scrComboAdd(0,0,0,1,32,32,sprLockAny);&#xA;scrComboAdd(9,0,0,1,32,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="544" y="416" name="inst_EB577DB0" locked="0" code="w=2;h=2;colorSpend=9;&#xA;scrComboAdd(1,0,0,1,0,0,sprLockAnyS);&#xA;scrComboAdd(7,0,0,1,0,32,sprLockAnyS);&#xA;scrComboAdd(0,0,0,1,32,32,sprLockAnyS);&#xA;scrComboAdd(9,0,0,1,32,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="720" y="336" name="inst_EFAE32CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="720" y="240" name="inst_AC624E87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="720" y="144" name="inst_E22F5341" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

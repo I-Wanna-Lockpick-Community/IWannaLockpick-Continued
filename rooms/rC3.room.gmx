@@ -70,7 +70,7 @@ global.msg = "Hey, remember those doors that used to be a big deal back in the d
     <instance objName="objBlock" x="32" y="224" name="inst_B48844FB" locked="0" code="" scaleX="4" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="320" name="inst_039F4858" locked="0" code="" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="416" name="inst_E80CA46F" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="336" y="64" name="inst_7022FCE3" locked="0" code="w=3;h=4;colorSpend=1;&#xA;scrComboAdd(1,24,0,0,0,0,sprLock24A);&#xA;scrComboAdd(11,0,0,1,16,96,sprLockAny);&#xA;scrComboAdd(color_STONE,0,0,1,48,96,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="336" y="64" name="inst_7022FCE3" locked="0" code="w=3;h=4;colorSpend=1;&#xA;scrComboAdd(1,24,0,0,0,0,sprLock24A);&#xA;scrComboAdd(11,0,0,1,16,96,sprLockAnyS);&#xA;scrComboAdd(color_STONE,0,0,1,48,96,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="512" y="96" name="inst_0A3E0BEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorStone" x="448" y="256" name="inst_A87A9E55" locked="0" code="type=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="288" y="320" name="inst_C9EBAB56" locked="0" code="w=2;h=2;count=5;color=color_WHITE;colorSpend=color_STONE;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -89,7 +89,7 @@ global.msg = "Hey, remember those doors that used to be a big deal back in the d
     <instance objName="objBlock" x="640" y="416" name="inst_EA62A256" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="448" y="320" name="inst_68CEA17F" locked="0" code="w=4;h=2;color=color_BROWN;colorSpend=color_PURE;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="592" y="336" name="inst_EED655B5" locked="0" code="count=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="320" y="224" name="inst_C62B545B" locked="0" code="w=2;h=2;colorSpend=color_STONE;&#xA;scrComboAdd(color_STONE,0,0,1,0,0,sprLockAny);&#xA;scrComboAdd(color_STONE,0,0,1,32,32,sprLockAny);&#xA;scrComboAdd(color_MASTER,1,0,0,32,0,sprLock1A);&#xA;scrComboAdd(color_MASTER,1,0,0,0,32,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="320" y="224" name="inst_C62B545B" locked="0" code="w=2;h=2;colorSpend=color_STONE;&#xA;scrComboAdd(color_STONE,0,0,1,0,0,sprLockAnyS);&#xA;scrComboAdd(color_STONE,0,0,1,32,32,sprLockAnyS);&#xA;scrComboAdd(color_MASTER,1,0,0,32,0,sprLock1A);&#xA;scrComboAdd(color_MASTER,1,0,0,0,32,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles" x="448" y="160" w="32" h="32" xo="160" yo="256" id="10085638" name="inst_7620D5FC" depth="10000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

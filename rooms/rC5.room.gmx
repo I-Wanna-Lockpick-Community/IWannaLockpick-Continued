@@ -83,7 +83,7 @@ global.msg = "So, are you feeling worn out yet from all the recent Salvaging? If
     <instance objName="oDoorCombo" x="448" y="288" name="inst_BAB97AD4" locked="0" code="w=3;h=4;colorSpend=0;&#xA;scrComboAdd(0,-1,0,0,32,48,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="576" y="448" name="inst_A7FB87E5" locked="0" code="w=2;count=872;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="576" y="416" name="inst_19F22774" locked="0" code="w=2;count=-383;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="576" y="384" name="inst_7EE2AB40" locked="0" code="w=2;colorSpend=9;&#xA;scrComboAdd(1,0,0,1,0,0,sprLockAny);&#xA;scrComboAdd(2,0,0,1,32,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="576" y="384" name="inst_7EE2AB40" locked="0" code="w=2;colorSpend=9;&#xA;scrComboAdd(1,0,0,1,0,0,sprLockAnyS);&#xA;scrComboAdd(2,0,0,1,32,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="704" y="384" name="inst_E68B8EEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDialogTest" x="816" y="64" name="inst_0B032A0A" locked="0" code="convoID = 7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="608" y="128" name="inst_CD36A1C5" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>

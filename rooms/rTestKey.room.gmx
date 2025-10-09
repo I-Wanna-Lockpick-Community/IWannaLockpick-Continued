@@ -61,8 +61,8 @@
     <instance objName="objBlock" x="416" y="96" name="inst_51F8E784" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="64" y="448" name="inst_937C2B97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorRed" x="512" y="64" name="inst_588CED53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="320" y="320" name="inst_2FF8F08B" locked="0" code="color = color_ORANGE;&#xA;colorSpend = color_ORANGE;&#xA;count = 3;&#xA;type = 0;&#xA;aura[0] = 1;&#xA;&#xA;w = 1;&#xA;h = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="288" y="416" name="inst_E7D2AFDA" locked="0" code="color = color_WHITE;&#xA;colorSpend = color_WHITE;&#xA;count = 0;&#xA;type = 1;&#xA;aura[1] = 1;&#xA;&#xA;w = 2;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorSimple" x="320" y="320" name="inst_2FF8F08B" locked="0" code="color = color_ORANGE;&#xA;colorSpend = color_ORANGE;&#xA;count = 3;&#xA;aura[0] = 1;&#xA;&#xA;w = 1;&#xA;h = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorSimple" x="288" y="416" name="inst_E7D2AFDA" locked="0" code="color = color_WHITE;&#xA;colorSpend = color_WHITE;&#xA;count = 0;&#xA;type = 1;&#xA;aura[1] = 1;&#xA;&#xA;w = 2;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="448" y="256" name="inst_155FDBE4" locked="0" code="color = color_GREEN;&#xA;colorSpend = color_GREEN;&#xA;count = 1;&#xA;aura[2] = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyRed" x="64" y="352" name="inst_3259F20D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGreen" x="64" y="384" name="inst_999F28F1" locked="0" code="count = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

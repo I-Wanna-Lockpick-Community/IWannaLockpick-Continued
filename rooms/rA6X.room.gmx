@@ -106,7 +106,7 @@ global.msg = "To clarify, keys with special held effects (Red, Green, Blue, Brow
     <instance objName="oGoal" x="656" y="432" name="inst_53A9E9D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="608" y="96" name="inst_420E720C" locked="0" code="h=2;count = 3;&#xA;color = color_PURE;colorSpend = color_BLACK;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="128" y="224" name="inst_AF435207" locked="0" code="w=2;h=3;colorSpend=10;&#xA;scrComboAdd(11,1,0,0,4,0,sprLock1A);&#xA;scrComboAdd(9,-1,0,0,28,0,sprLock1A);&#xA;scrComboAdd(10,10,0,0,0,32,sprLockAnyL);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="320" y="32" name="inst_67E4F4D7" locked="0" code="w=2;h=4;colorSpend=5&#xA;scrComboAdd(5,12,0,0,0,32,sprLock12A);&#xA;scrComboAdd(5,1,0,2,4,8,sprLockAny);&#xA;scrComboAdd(5,1,0,2,28,8,sprLockAny);&#xA;scrComboAdd(5,1,0,2,4,88,sprLockAny);&#xA;scrComboAdd(5,1,0,2,28,88,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="320" y="32" name="inst_67E4F4D7" locked="0" code="w=2;h=4;colorSpend=5&#xA;scrComboAdd(5,12,0,0,0,32,sprLock12A);&#xA;scrComboAdd(5,1,0,2,4,8,sprLockAnyS);&#xA;scrComboAdd(5,1,0,2,28,8,sprLockAnyS);&#xA;scrComboAdd(5,1,0,2,4,88,sprLockAnyS);&#xA;scrComboAdd(5,1,0,2,28,88,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="0" y="512" name="inst_6CB66459" locked="0" code="" scaleX="25" scaleY="3" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>

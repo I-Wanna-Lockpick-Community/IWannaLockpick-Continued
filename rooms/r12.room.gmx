@@ -63,16 +63,16 @@ global.msg = "How you use Master Keys, or whether you use them at all, is for yo
     <instance objName="objBlock" x="448" y="448" name="inst_30114EAB" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="656" y="208" name="inst_4505864E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="608" y="384" name="inst_06725DCF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="480" y="384" name="inst_BFD7D83F" locked="0" code="color = color_WHITE;&#xA;colorSpend = color_WHITE;&#xA;count = 2;&#xA;type = 0;&#xA;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="544" y="384" name="inst_8062574A" locked="0" code="color = color_ORANGE;&#xA;colorSpend = color_ORANGE;&#xA;count = 3;&#xA;type = 0;&#xA;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorWhite" x="480" y="384" name="inst_BFD7D83F" locked="0" code="count = 2;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorOrange" x="544" y="384" name="inst_8062574A" locked="0" code="count = 3;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBrown" x="608" y="416" name="inst_0B54D84E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBG01" x="288" y="256" name="inst_81AF2361" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="288" y="128" name="inst_3E56F387" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="288" y="160" name="inst_2F24770B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="288" y="192" name="inst_510E02ED" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBrown" x="352" y="160" name="inst_5F0B73DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyBulk" x="320" y="160" name="inst_C3AF7249" locked="0" code="color = color_MASTER;&#xA;count = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="160" y="224" name="inst_45DED19D" locked="0" code="color = color_ORANGE;&#xA;colorSpend = color_ORANGE;&#xA;count = 4;&#xA;type = 0;&#xA;&#xA;w = 2;&#xA;h = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyMaster" x="320" y="160" name="inst_C3AF7249" locked="0" code="count = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorOrange" x="160" y="224" name="inst_45DED19D" locked="0" code="count = 4;&#xA;w = 2;&#xA;h = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="608" y="320" name="inst_9A52F06C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="384" y="192" name="inst_79D41EBB" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="608" y="256" name="inst_92D2B393" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
@@ -80,21 +80,21 @@ global.msg = "How you use Master Keys, or whether you use them at all, is for yo
     <instance objName="objBlock" x="352" y="96" name="inst_78E0E914" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="96" y="192" name="inst_E8E9AC4D" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="96" y="288" name="inst_4212976E" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyBulk" x="400" y="144" name="inst_8D3C2D2E" locked="0" code="color = color_WHITE;&#xA;count = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="448" y="128" name="inst_27181F26" locked="0" code="color = color_WHITE;&#xA;colorSpend = color_WHITE;&#xA;count = 2;&#xA;type = 0;&#xA;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyWhite" x="400" y="144" name="inst_8D3C2D2E" locked="0" code="count = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorWhite" x="448" y="128" name="inst_27181F26" locked="0" code="count = 2;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="656" y="304" name="inst_7A150052" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="608" y="160" name="inst_4477B97A" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="608" y="64" name="inst_5F93ED9F" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="608" y="96" name="inst_1E7D92C8" locked="0" code="color = color_WHITE;&#xA;colorSpend = color_WHITE;&#xA;count = 2;&#xA;type = 0;&#xA;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorWhite" x="608" y="96" name="inst_1E7D92C8" locked="0" code="count = 2;&#xA;w = 1;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="656" y="112" name="inst_166715CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyBulk" x="112" y="336" name="inst_C1743550" locked="0" code="color = color_ORANGE;&#xA;count = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyOrange" x="112" y="336" name="inst_C1743550" locked="0" code="count = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="96" y="128" name="inst_7DEB3045" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="224" y="288" name="inst_1AB521AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="288" y="32" name="inst_CCD72743" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="352" y="32" name="inst_6CE32AEA" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="608" y="32" name="inst_E0779669" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="96" y="32" name="inst_F1C95BB1" locked="0" code="" scaleX="4" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorLarge" x="160" y="320" name="inst_F0D779ED" locked="0" code="color = color_ORANGE;&#xA;colorSpend = color_ORANGE;&#xA;count = 4;&#xA;type = 0;&#xA;&#xA;w = 2;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorOrange" x="160" y="320" name="inst_F0D779ED" locked="0" code="count = 4;&#xA;w = 2;&#xA;h = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="112" y="240" name="inst_98050796" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="96" y="384" name="inst_765EBF67" locked="0" code="" scaleX="5" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="224" y="32" name="inst_D4CA8BE6" locked="0" code="" scaleX="2" scaleY="4" colour="4294967295" rotation="0"/>

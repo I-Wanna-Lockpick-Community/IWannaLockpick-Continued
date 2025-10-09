@@ -96,7 +96,7 @@ global.msg = "So, how was your return trip to Doorhaven? I hope it was a nice bl
     <instance objName="oKeyWhite" x="560" y="336" name="inst_0C508F03" locked="0" code="count = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="512" y="320" name="inst_DF63BA5C" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="608" y="320" name="inst_5773DAFC" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="416" y="448" name="inst_14A2C0D6" locked="0" code="scrComboAdd(color_BROWN,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="416" y="448" name="inst_14A2C0D6" locked="0" code="scrComboAdd(color_BROWN,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGlitch" x="416" y="64" name="inst_F7C6BFA1" locked="0" code="count = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="448" y="64" name="inst_978A2242" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="480" y="64" name="inst_79ED0923" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -114,7 +114,7 @@ global.msg = "So, how was your return trip to Doorhaven? I hope it was a nice bl
     <instance objName="objBlock" x="64" y="0" name="inst_F39E20B6" locked="0" code="" scaleX="4" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="192" y="0" name="inst_F69C88C8" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="352" y="32" name="inst_77A9008A" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="384" y="288" name="inst_A05C9A43" locked="0" code="scrComboAdd(color_BROWN,0,0,1,0,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="384" y="288" name="inst_A05C9A43" locked="0" code="scrComboAdd(color_BROWN,0,0,1,0,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="384" y="0" name="inst_AFB5A262" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="656" y="48" name="inst_670BE011" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="192" y="352" name="inst_271604BC" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>

@@ -8,7 +8,7 @@ for(var i = 0; i < salvageLockCount; i += 1){
     if global.simpleLock{
         switch _lockSpr{
             case sprLock1A:
-                _lockSpr = sprLockAny;
+                _lockSpr = sprLockAnyS;
             break;
             case sprLock2H:
             case sprLock3H:
@@ -96,7 +96,7 @@ for(var i = 0; i < salvageLockCount; i += 1){
                 draw_sprite(sprSymbols,4,tempX,tempY);
             break;
         }
-        if _lockSpr == sprLockAny || _lockSpr == sprLockAnyM || _lockSpr == sprLockAnyL || _lockSpr == sprLockAnyXL || _lockSpr == sprLockAnyH{
+        if _lockSpr == sprLockAnyS || _lockSpr == sprLockAnyM || _lockSpr == sprLockAnyL || _lockSpr == sprLockAnyXL || _lockSpr == sprLockAnyH{
             if lock[i,3] == 0{//For the 3 blank locks, simply draw the number of keys needed
                 var tempOffsetX = sprite_get_width(_lockSpr)/2-sprite_get_xoffset(_lockSpr);
                 var tempOffsetY = sprite_get_height(_lockSpr)/2-sprite_get_yoffset(_lockSpr);
@@ -131,7 +131,7 @@ for(var i = 0; i < salvageLockCount; i += 1){
                 draw_sprite(sprSymbols,8,tempX,tempY);
             break;
         }
-        if _lockSpr == sprLockAny || _lockSpr == sprLockAnyM || _lockSpr == sprLockAnyL || _lockSpr == sprLockAnyXL || _lockSpr == sprLockAnyH{
+        if _lockSpr == sprLockAnyS || _lockSpr == sprLockAnyM || _lockSpr == sprLockAnyL || _lockSpr == sprLockAnyXL || _lockSpr == sprLockAnyH{
             if lock[i,3] == 0{//For the 3 blank locks, simply draw the number of keys needed
                 var tempOffsetX = sprite_get_width(_lockSpr)/2-sprite_get_xoffset(_lockSpr);
                 var tempOffsetY = sprite_get_height(_lockSpr)/2-sprite_get_yoffset(_lockSpr);

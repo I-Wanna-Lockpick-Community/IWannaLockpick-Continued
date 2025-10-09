@@ -317,16 +317,6 @@
       <sprite>sprites\sprDoorGlitchStone</sprite>
       <sprite>sprites\sprDoorGlitchDyna</sprite>
       <sprites name="lock">
-        <sprite>sprites\sprLock2</sprite>
-        <sprite>sprites\sprLock2i</sprite>
-        <sprite>sprites\sprLock3</sprite>
-        <sprite>sprites\sprLock3i</sprite>
-        <sprite>sprites\sprLock4</sprite>
-        <sprite>sprites\sprLock5</sprite>
-        <sprite>sprites\sprLock6</sprite>
-        <sprite>sprites\sprLock8</sprite>
-        <sprite>sprites\sprLock12</sprite>
-        <sprite>sprites\sprLock24</sprite>
         <sprite>sprites\sprSymbols</sprite>
         <sprite>sprites\sprLockInfinity</sprite>
         <sprite>sprites\sprLock1A</sprite>
@@ -335,18 +325,20 @@
         <sprite>sprites\sprLock3V</sprite>
         <sprite>sprites\sprLock3H</sprite>
         <sprite>sprites\sprLock4A</sprite>
+        <sprite>sprites\sprLock4B</sprite>
         <sprite>sprites\sprLock5A</sprite>
+        <sprite>sprites\sprLock5B</sprite>
         <sprite>sprites\sprLock6A</sprite>
         <sprite>sprites\sprLock6B</sprite>
         <sprite>sprites\sprLock8A</sprite>
         <sprite>sprites\sprLock12A</sprite>
         <sprite>sprites\sprLock24A</sprite>
-        <sprite>sprites\sprLockAny</sprite>
+        <sprite>sprites\sprLockAnyS</sprite>
+        <sprite>sprites\sprLockAnyV</sprite>
+        <sprite>sprites\sprLockAnyH</sprite>
         <sprite>sprites\sprLockAnyM</sprite>
         <sprite>sprites\sprLockAnyL</sprite>
         <sprite>sprites\sprLockAnyXL</sprite>
-        <sprite>sprites\sprLockAnyH</sprite>
-        <sprite>sprites\sprLockAnyV</sprite>
       </sprites>
       <sprites name="door">
         <sprite>sprites\sprDWhite</sprite>
@@ -377,6 +369,8 @@
         <sprite>sprites\sprDMaroon</sprite>
         <sprite>sprites\sprDForest</sprite>
         <sprite>sprites\sprDNavy</sprite>
+        <sprite>sprites\sprDoorFrame</sprite>
+        <sprite>sprites\sprDoorSpend</sprite>
       </sprites>
       <sprites name="key">
         <sprite>sprites\sprColorblindHelp</sprite>
@@ -779,18 +773,12 @@
     <script>scripts\tryCurseDoor.gml</script>
     <script>scripts\useMasterCheck.gml</script>
     <scripts name="combo door">
-      <script>scripts\scrComboDrawMain.gml</script>
-      <script>scripts\scrComboDrawFrame.gml</script>
-      <script>scripts\scrComboDrawFill.gml</script>
-      <script>scripts\scrComboDrawLocks.gml</script>
       <script>scripts\scrComboDrawInvert.gml</script>
       <script>scripts\scrComboDrawIm.gml</script>
-      <script>scripts\scrComboDrawAura.gml</script>
       <script>scripts\scrComboInit.gml</script>
       <script>scripts\scrComboAdd.gml</script>
       <script>scripts\scrComboAdvAdd.gml</script>
       <script>scripts\scrGetLockColor.gml</script>
-      <script>scripts\scrComboCFunc.gml</script>
       <script>scripts\scrComboStep.gml</script>
       <script>scripts\scrCanOpenFeed.gml</script>
       <script>scripts\scrAddSpendAmt.gml</script>
@@ -826,10 +814,7 @@
       <script>scripts\scrDoDiaEvent.gml</script>
     </scripts>
     <script>scripts\scrComplexSwitch.gml</script>
-    <script>scripts\scrDrawDoorSpend.gml</script>
     <script>scripts\scrDrawDoorRequire.gml</script>
-    <script>scripts\scrDrawDoorLock.gml</script>
-    <script>scripts\scrDrawDoorLockSimple.gml</script>
     <script>scripts\scrNormalMasterOpen.gml</script>
     <script>scripts\scrDrawKeyGlitch.gml</script>
     <script>scripts\scrDrawDoorGlitch.gml</script>
@@ -929,6 +914,14 @@
     </scripts>
     <script>scripts\scrSpeedUpAnims.gml</script>
     <script>scripts\scrNormalDynamiteOpen.gml</script>
+    <scripts name="doorDraw">
+      <script>scripts\scrDrawDoorFrame.gml</script>
+      <script>scripts\scrDrawDoorSpend.gml</script>
+      <script>scripts\scrDrawDoorLock.gml</script>
+      <script>scripts\scrDrawDoorLockSimple.gml</script>
+      <script>scripts\scrSimpleDoorGetLockSprite.gml</script>
+      <script>scripts\scrDrawDoorAura.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shdRainbowStripe.shader</shader>
@@ -1242,7 +1235,6 @@
       <object>objects\oKeyHandle</object>
       <object>objects\oDoorSimple</object>
       <object>objects\oDoorCombo</object>
-      <object>objects\oDoorLarge</object>
       <object>objects\oKeyBulk</object>
       <object>objects\oGate</object>
       <object>objects\oSalvageIn</object>

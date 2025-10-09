@@ -66,7 +66,7 @@ global.msg = "Whoa. For starters, it looks like Gates and Infinite Keys are back
     <instance objName="objBlock" x="32" y="160" name="inst_35DF1BD4" locked="0" code="" scaleX="6" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="128" y="96" name="inst_DEE9A334" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyStone" x="96" y="96" name="inst_02B71242" locked="0" code="type=1;count=-8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="160" y="64" name="inst_90B09CBE" locked="0" code="h=3;&#xA;scrComboAdd(color_BLACK,0,0,1,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="160" y="64" name="inst_90B09CBE" locked="0" code="h=3;&#xA;scrComboAdd(color_BLACK,0,0,1,0,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oOmegaKey" x="704" y="48" name="inst_1D6ED019" locked="0" code="color = color_STONE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="192" y="32" name="inst_203D042C" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="oKeyStone" x="528" y="240" name="inst_AD81E134" locked="0" code="type=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -86,7 +86,7 @@ global.msg = "Whoa. For starters, it looks like Gates and Infinite Keys are back
     <instance objName="objBlock" x="352" y="32" name="inst_08723C59" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="oSalvageIn" x="288" y="96" name="inst_0BEEBB0D" locked="0" code="ID = 52;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSalvageOut" x="544" y="480" name="inst_2823A7B9" locked="0" code="ID = 53;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="672" y="416" name="inst_0FDB328E" locked="0" code="h=2;&#xA;scrComboAdd(color_STONE,0,0,1,0,0,sprLockAny);&#xA;scrComboAdd(color_PURE,0,0,1,0,32,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="672" y="416" name="inst_0FDB328E" locked="0" code="h=2;&#xA;scrComboAdd(color_STONE,0,0,1,0,0,sprLockAnyS);&#xA;scrComboAdd(color_PURE,0,0,1,0,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="576" y="416" name="inst_34A5AD81" locked="0" code="h=2;&#xA;scrComboAdd(color_STONE,1,0,0,0,16,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="448" y="416" name="inst_D04CA480" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyStone" x="448" y="448" name="inst_1F0A7B16" locked="0" code="inf = 1; type = 1; count = 12;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

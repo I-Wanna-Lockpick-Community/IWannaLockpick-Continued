@@ -68,7 +68,7 @@ global.msg = "So you've heard of Keys and Doors, right? Pretty fundamental stuff
     <instance objName="oGate" x="288" y="384" name="inst_006F6E1C" locked="0" code="w=2;h=2;&#xA;scrComboAdd(color_CYAN,1,0,0,16,16,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="112" y="304" name="inst_2CD91892" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="560" y="208" name="inst_F8AF41D0" locked="0" code="count = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGate" x="512" y="192" name="inst_6F4CE98F" locked="0" code="h=2;&#xA;scrComboAdd(color_MASTER,0,0,1,0,16,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGate" x="512" y="192" name="inst_6F4CE98F" locked="0" code="h=2;&#xA;scrComboAdd(color_MASTER,0,0,1,0,16,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="384" y="288" name="inst_DB8CF694" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="512" y="288" name="inst_762AD915" locked="0" code="h=2;&#xA;scrComboAdd(color_MASTER,1,0,0,0,16,sprLock1A);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="416" y="448" name="inst_9954C25F" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
