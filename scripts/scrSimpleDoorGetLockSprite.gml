@@ -4,6 +4,7 @@
 // predefined sprites
 switch type {
     case lock_NORMAL:
+    case lock_EXACT:
         if count != 0 && icount == 0 {
             switch abs(count) {
                 case 1: return sprLock1A;
@@ -17,7 +18,7 @@ switch type {
                 case 24: return sprLock24A;
             }
         } else if icount != 0 {
-            switch abs(count) {
+            switch abs(icount) {
                 case 1: return sprLock1A;
                 case 2: return sprLock2V;
                 case 3: return sprLock3V;

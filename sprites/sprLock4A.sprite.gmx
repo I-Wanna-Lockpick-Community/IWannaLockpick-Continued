@@ -22,5 +22,7 @@
   <frames>
     <frame index="0">images\sprLock4A_0.png</frame>
     <frame index="1">images\sprLock4A_1.png</frame>
+    <frame index="2">images\sprLock4A_2.png</frame>
+    <frame index="3">images\sprLock4A_3.png</frame>
   </frames>
 </sprite>

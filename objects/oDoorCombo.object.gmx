@@ -77,12 +77,12 @@ if myLight != -1{
           <argument>
             <kind>1</kind>
             <string>///Brown particles
-if browned{
+if cursed != -1 {
     alarm[0] = 120;
     for(var ix = 0; ix&lt;(2*w); ix+=1){
         for(var iy = 0; iy&lt;(2*h); iy+=1){
             with(instance_create(x+random_range(4,12)+16*ix,y+random_range(4,12)+16*iy,oBrownParticle)){
-                
+                color = other.cursed;
             }
         }
     }
@@ -337,12 +337,13 @@ if instance_exists(oLightsW5) || instance_exists(oLightsW4) || instance_exists(o
             <kind>1</kind>
             <string>///Brown particle burst
 var _bp;
-if browned{
+if cursed != -1 {
     alarm[0] = 120;
     for(var ix = 0; ix&lt;(2*w); ix+=1){
         for(var iy = 0; iy&lt;(2*h); iy+=1){
             with(instance_create(x+random_range(4,12)+16*ix,y+random_range(4,12)+16*iy,oBrownParticle)){
                 scale = random_range(.2,.5);
+                color = other.cursed;
             }
         }
     }
@@ -575,10 +576,10 @@ if salvageID != -1 &amp;&amp; active{
           <argument>
             <kind>1</kind>
             <string>///main draw
-goldIndex = (goldIndex + goldSpd) mod 4;
+goldIndex = (goldIndex + goldSpd) mod 12;
 baseColorSpend = colorSpend;
-if browned {
-    baseColorSpend = color_BROWN;
+if cursed != -1 &amp;&amp; cursed != color_PURE {
+    baseColorSpend = cursed;
 }
 if copyDraw == 1{
     scrDrawDoorSpend(baseColorSpend);
@@ -591,8 +592,8 @@ if global.complexMode == 0 &amp;&amp; copies == 0
 } else {
     scrDrawDoorFrame(global.complexMode == 0 &amp;&amp; copies &lt; 0 || global.complexMode == 1 &amp;&amp; icopies &lt; 0);
     for(var i = 0; i &lt; lockCount; i += 1){
-        if browned {
-            scrDrawDoorLock(color_BROWN,lock[i,1],lock[i,2],lock[i,3],lock[i,4],lock[i,5],lock[i,6]);
+        if cursed != -1 &amp;&amp; cursed != color_PURE {
+            scrDrawDoorLock(cursed,lock[i,1],lock[i,2],lock[i,3],lock[i,4],lock[i,5],lock[i,6]);
         } else {
             scrDrawDoorLock(lock[i,0],lock[i,1],lock[i,2],lock[i,3],lock[i,4],lock[i,5],lock[i,6]);
         }

@@ -4,22 +4,22 @@ var lX = argument1;
 var lY = argument2;
 var lC = argument3;
 if oCol[i] == color_MASTER{
-    var tempW = sprite_get_width(sprLockAny);
-    var tempH = sprite_get_height(sprLockAny);
-    var tempX = lX-sprite_get_xoffset(sprLockAny);
-    var tempY = lY-sprite_get_yoffset(sprLockAny);
+    var tempW = sprite_get_width(sprLockAnyS);
+    var tempH = sprite_get_height(sprLockAnyS);
+    var tempX = lX-sprite_get_xoffset(sprLockAnyS);
+    var tempY = lY-sprite_get_yoffset(sprLockAnyS);
     draw_sprite_ext(sprDGoldGrad,floor(goldIndex)%4,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
 }else if oCol[i] == color_PURE{
-    var tempW = sprite_get_width(sprLockAny);
-    var tempH = sprite_get_height(sprLockAny);
-    var tempX = lX-sprite_get_xoffset(sprLockAny);
-    var tempY = lY-sprite_get_yoffset(sprLockAny);
+    var tempW = sprite_get_width(sprLockAnyS);
+    var tempH = sprite_get_height(sprLockAnyS);
+    var tempX = lX-sprite_get_xoffset(sprLockAnyS);
+    var tempY = lY-sprite_get_yoffset(sprLockAnyS);
     draw_sprite_ext(sprDPureGrad,floor(goldIndex)%4,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
 }else if oCol[i] == color_DYNAMITE{
-    var tempW = sprite_get_width(sprLockAny);
-    var tempH = sprite_get_height(sprLockAny);
-    var tempX = lX-sprite_get_xoffset(sprLockAny);
-    var tempY = lY-sprite_get_yoffset(sprLockAny);
+    var tempW = sprite_get_width(sprLockAnyS);
+    var tempH = sprite_get_height(sprLockAnyS);
+    var tempX = lX-sprite_get_xoffset(sprLockAnyS);
+    var tempY = lY-sprite_get_yoffset(sprLockAnyS);
     draw_sprite_ext(sprDDynaTexture,floor(goldIndex),tempX,tempY,tempW/64,tempH/64,0,c_white,1);
     // TODO::tile this instead of stretching
     // @addcolor if door image/animation

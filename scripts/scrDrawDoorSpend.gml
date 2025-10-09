@@ -9,11 +9,13 @@ var mainTone = c_white;
 var darkTone = c_white;
 
 if baseColorSpend == color_MASTER{
-    draw_sprite_ext(sprDGoldGrad,floor(goldIndex),x,y,w/2,h/2,0,c_white,1);
+    draw_sprite_ext(sprDGoldGrad,floor(goldIndex)%4,x,y,w/2,h/2,0,c_white,1);
 }else if baseColorSpend == color_PURE{
-    draw_sprite_ext(sprDPureGrad,floor(goldIndex),x,y,w/2,h/2,0,c_white,1);
+    draw_sprite_ext(sprDPureGrad,floor(goldIndex)%4,x,y,w/2,h/2,0,c_white,1);
 }else if baseColorSpend == color_STONE{
     draw_sprite_ext(sprDStoneTexture,0,x,y,w*.5,h*.5,0,c_white,1);
+}else if baseColorSpend == color_DYNAMITE{
+    draw_sprite_ext(sprDDynaTexture,floor(goldIndex),x,y,w*.5,h*.5,0,c_white,1);
 }else{
     highTone = global.highTone[baseColorSpend];
     mainTone = global.mainTone[baseColorSpend];
@@ -65,6 +67,9 @@ if baseColorSpend == color_GLITCH && glitchMimic != color_GLITCH {
         _gSprite = sprDoorGlitchPure;
     }else if glitchMimic == color_STONE{
         _gSprite = sprDoorGlitchStone;
+    }else if glitchMimic == color_DYNAMITE{
+        _gSprite = sprDoorGlitchDyna;
+        // @addcolor if door image/animation
     } else {//Flat color door
         _gSprite = sprDoorGlitch;
         highTone = global.highTone[glitchMimic];

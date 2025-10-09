@@ -71,7 +71,7 @@ global.msg = "";</code>
     <instance objName="oKeyDynamite" x="320" y="384" name="inst_5CCB1B2B" locked="0" code="count=0;icount=10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyDynamite" x="352" y="384" name="inst_3BFAFB80" locked="0" code="count=0;icount=-10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyDynamite" x="384" y="384" name="inst_E94197A4" locked="0" code="count=0;icount=-10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="512" y="288" name="inst_F6E626E9" locked="0" code="w=2;colorSpend = color_ORANGE;&#xA;scrComboAdd(color_ORANGE,0,1,0,0,0,sprLockAny);&#xA;scrComboAdd(color_ORANGE,0,-1,0,32,0,sprLockAny);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="512" y="288" name="inst_F6E626E9" locked="0" code="w=2;colorSpend = color_ORANGE;&#xA;scrComboAdd(color_ORANGE,0,1,0,0,0,sprLockAnyS);&#xA;scrComboAdd(color_ORANGE,0,-1,0,32,0,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="192" y="416" name="inst_9C862D93" locked="0" code="count = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="keySilver" x="224" y="384" name="inst_2B1150F9" locked="0" code="count=-5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="keySilver" x="224" y="416" name="inst_84B42524" locked="0" code="count=5;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -200,7 +200,9 @@ global.msg = "";</code>
     <instance objName="oKeyBlue" x="1152" y="320" name="inst_EDD2C886" locked="0" code="inf = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlue" x="1152" y="288" name="inst_D13A36F4" locked="0" code="inf = 1;&#xA;count = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlue" x="1184" y="320" name="inst_7A266ABF" locked="0" code="inf = 1;&#xA;type = key_POSROTOR;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="1088" y="448" name="inst_42585B93" locked="0" code="w = 2;&#xA;colorSpend = color_BLUE;&#xA;scrComboAdvAdd(color_BLUE,3,0,4,0,0,sprLockAny,0,0);&#xA;scrComboAdvAdd(color_BLUE,0,5,4,32,0,sprLockAny,1,0);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="1088" y="448" name="inst_42585B93" locked="0" code="w = 2;&#xA;colorSpend = color_BLUE;&#xA;scrComboAdvAdd(color_BLUE,3,0,4,0,0,sprLockAnyS,0,0);&#xA;scrComboAdvAdd(color_BLUE,0,5,4,32,0,sprLockAnyS,1,0);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorBlue" x="1152" y="416" name="inst_CB421B08" locked="0" code="h = 2;&#xA;count = -3;&#xA;type = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorBlue" x="1184" y="416" name="inst_94E16179" locked="0" code="h = 2;&#xA;icount = -3;&#xA;count = 0;&#xA;type = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles2" x="256" y="480" w="32" h="32" xo="128" yo="0" id="10125734" name="inst_307BFDDA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

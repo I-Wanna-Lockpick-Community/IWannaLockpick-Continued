@@ -22,7 +22,7 @@ switch argument4{
     break;
 }
 switch argument3{
-    case 0://normal (can accept complex numbers)
+    case lock_NORMAL://normal (can accept complex numbers)
         if open_needR != 0{
             if sign(global.key[open_check]) == sign(open_needR) && abs(global.key[open_check]) >= abs(open_needR){
                 return true;
@@ -34,12 +34,12 @@ switch argument3{
             }
         }
     break;
-    case 1://blank
+    case lock_BLANK://blank
         if global.key[open_check] == 0 && global.ikey[open_check] == 0{
             return true;
         }
     break;
-    case 2://blast (can accept real or imaginary, but not both)
+    case lock_BLAST://blast (can accept real or imaginary, but not both)
         if sign(open_needR) == sign(global.key[open_check]) && open_needR != 0{
             return true;
         }
@@ -47,7 +47,7 @@ switch argument3{
             return true;
         }
     break;
-    case 3://equals
+    case lock_ALL://equals
         if global.key[open_check] != 0{
             return true;
         }
@@ -55,7 +55,7 @@ switch argument3{
             return true;
         }
     break;
-    case 4://exact
+    case lock_EXACT://exact
         if !((argument5 + argument4) % 2) && open_needR == global.key[open_check]{ return true; }
         if ((argument5 + argument4) % 2) && open_needI == global.ikey[open_check]{ return true; }
 }

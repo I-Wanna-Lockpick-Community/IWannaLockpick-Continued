@@ -19,14 +19,9 @@ if colorSpend == objPlayer.curseColor{
 var auraPlayNoise = 0;
 if objPlayer.curseMode == 1 && cursed != objPlayer.curseColor && !curseRedundant && cursed != color_PURE {//Add redundancy heuristic if everything is already brown
     cursed = objPlayer.curseColor;
-        if cursed != color_PURE {
-        var colorOld = colorSpend;
-        colorSpend = objPlayer.curseColor;
-        scrComboCFunc();
-        colorSpend = colorOld;
+    if cursed != color_PURE {
         scrPlaySoundExt(sndCopy1,1,1,false);
     } else {
-        scrComboCFunc();
         scrPlaySoundExt(sndCopy2,1,1,false);
     }
     event_user(3);
@@ -34,7 +29,6 @@ if objPlayer.curseMode == 1 && cursed != objPlayer.curseColor && !curseRedundant
     undoBUFFER();
 }else if objPlayer.curseMode == -1 && cursed == objPlayer.curseColor {
     cursed = -1;
-    scrComboCFunc();
     scrPlaySoundExt(sndCopy2,1,1,false);
     event_user(3);
     brownNearPlayer = 1;

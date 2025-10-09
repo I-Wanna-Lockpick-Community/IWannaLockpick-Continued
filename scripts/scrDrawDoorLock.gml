@@ -65,13 +65,17 @@ switch sprite {
 
 switch color {
     case color_MASTER:
-        draw_sprite_ext(sprDGoldGrad,floor(goldIndex),xRel-offsetX,yRel-offsetY,width/64,height/64,0,c_white,1);
+        draw_sprite_ext(sprDGoldGrad,floor(goldIndex)%4,xRel-offsetX,yRel-offsetY,width/64,height/64,0,c_white,1);
     break;
     case color_PURE:
-        draw_sprite_ext(sprDPureGrad,floor(goldIndex),xRel-offsetX,yRel-offsetY,width/64,height/64,0,c_white,1);
+        draw_sprite_ext(sprDPureGrad,floor(goldIndex)%4,xRel-offsetX,yRel-offsetY,width/64,height/64,0,c_white,1);
     break;
     case color_STONE:
         draw_sprite_ext(sprDStoneTexture,0,xRel-offsetX,yRel-offsetY,width/64,height/64,0,c_white,1);
+    break;
+    case color_DYNAMITE:
+        draw_sprite_ext(sprDDynaTexture,floor(goldIndex),xRel-offsetX,yRel-offsetY,width/64,height/64,0,c_white,1);
+        // @addcolor if door image/animation
     break;
     case color_GLITCH:
         shader_set(shdRainbowStripe2);
@@ -84,6 +88,7 @@ switch color {
                 case color_MASTER: index = 4; break;
                 case color_PURE: index = 5; break;
                 case color_STONE: index = 6; break;
+                case color_DYNAMITE: index = 7; break;
                 default:
                     mainTone = global.mainTone[glitchMimic];
                 break;
@@ -102,17 +107,21 @@ if isPredefinedSprite {
     // the imaginary sprites; only matters for sprites for predefined lock amounts
     if icount > 0 {index = 2}
     else if icount < 0 {index = 3}
+    if type == lock_EXACT {index += 4} // ehehe i love how i can do this
 }
 draw_sprite(sprite,index,xRel,yRel);
 
 switch type {
     case lock_NORMAL:
+    case lock_EXACT:
         if !isPredefinedSprite { // draw numbers
             index = 0;
+            if type == lock_EXACT {index = 19;}
             draw_set_color(make_color_rgb(44,32,20));
             if count < 0 || icount < 0 {
                 index = 5;
-                draw_set_color(make_color_rgb(235,223,211));    
+                if type == lock_EXACT {index = 21;}
+                draw_set_color(make_color_rgb(235,223,211));
             }
 
             draw_set_font(fTalk);
@@ -121,14 +130,23 @@ switch type {
             var lockOffsetX = 0;
             var lockOffsetY = 0;
             var lockSymbol = false;
-            if count != 0 {
-                if abs(count) == 1 || sprite != sprLockAnyS {
-                    lockSymbol = true;
-                    if verticalText { lockOffsetY = -16; } // offset text start for lock symbol
-                    else { lockOffsetX = 12; }
+            if type == lock_NORMAL {
+                if count != 0 {
+                    if abs(count) == 1 || sprite != sprLockAnyS {
+                        lockSymbol = true;
+                        if verticalText { lockOffsetY = -16; } // offset text start for lock symbol
+                        else { lockOffsetX = 12; }
+                    }
+                } else if icount != 0 {
+                    numbers += "i";
                 }
-            } else if icount != 0 {
-                numbers += "i";
+            } else {
+                lockSymbol = true;
+                if verticalText { lockOffsetY = -16; } // offset text start for lock symbol
+                else { lockOffsetX = 12; }
+                if icount != 0 { // exact lock imaginary symbol
+                    index += 1;
+                }
             }
 
             var startX = floor((width - string_width(numbers) - lockOffsetX)/2) + xRel - offsetX; // i have no idea why this 4 is needed
@@ -136,7 +154,7 @@ switch type {
             // number
             draw_set_halign(fa_left);
             draw_set_valign(fa_center);
-            if icount != 0 { // offset the number to the right one more pixel if it isnt imaginary, because of inaccurate text widths or something
+            if icount == 0 || type == lock_EXACT { // offset the number to the right one more pixel if it isnt imaginary, because of inaccurate text widths or something
                 draw_text(startX+lockOffsetX+1,startY+lockOffsetY-1,numbers);
             } else {
                 draw_text(startX+lockOffsetX,startY+lockOffsetY-1,numbers);
