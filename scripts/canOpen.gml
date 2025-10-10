@@ -3,25 +3,25 @@ var open_check = argument0;
 if open_check == color_GLITCH{
     open_check = glitchMimic;
 }
-switch argument2{
+switch argument4{
     case 0://i^0 = Multiply by 1
-        var open_needR = argument_1;
-        var open_needI = argument_2;
+        var open_needR = argument1;
+        var open_needI = argument2;
     break;
     case 1://i^1 = Multiply by i
-        var open_needR = -argument_2;
-        var open_needI = argument_1;
+        var open_needR = -argument2;
+        var open_needI = argument1;
     break;
     case 2://i^2 = Multiply by -1
-        var open_needR = -argument_1;
-        var open_needI = -argument_2;
+        var open_needR = -argument1;
+        var open_needI = -argument2;
     break;
     case 3://i^3 = Multiply by -i
-        var open_needR = argument_2;
-        var open_needI = -argument_1;
+        var open_needR = argument2;
+        var open_needI = -argument1;
     break;
 }
-switch argument1{
+switch argument3{
     case lock_NORMAL:
         if sign(global.key[open_check]) == sign(open_needR) && abs(global.key[open_check]) >= abs(open_needR) && sign(global.ikey[open_check]) == sign(open_needI) && abs(global.ikey[open_check]) >= abs(open_needI){
             return true;
