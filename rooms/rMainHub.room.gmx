@@ -203,6 +203,7 @@ global.msg = "";</code>
     <instance objName="oDoorCombo" x="1088" y="448" name="inst_42585B93" locked="0" code="w = 2;&#xA;colorSpend = color_BLUE;&#xA;scrComboAdvAdd(color_BLUE,3,0,4,0,0,sprLockAnyS,0,0);&#xA;scrComboAdvAdd(color_BLUE,0,5,4,32,0,sprLockAnyS,1,0);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlue" x="1152" y="416" name="inst_CB421B08" locked="0" code="h = 2;&#xA;count = -3;&#xA;type = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlue" x="1184" y="416" name="inst_94E16179" locked="0" code="h = 2;&#xA;icount = -3;&#xA;count = 0;&#xA;type = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorWhite" x="1248" y="320" name="inst_34BCFCD5" locked="0" code="w=2;&#xA;h=3;&#xA;type=lock_BLAST;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles2" x="256" y="480" w="32" h="32" xo="128" yo="0" id="10125734" name="inst_307BFDDA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

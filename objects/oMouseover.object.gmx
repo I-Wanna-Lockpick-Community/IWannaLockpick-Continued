@@ -38,7 +38,7 @@ getSpend = 0;
 getCost = 0;
 getICost = 0;
 getType = 0;
-getIsIExact = 0;// To know if Exact Door is imaginary or not, since no way to tell off keycounts
+getIsIExact = 0;// To know if Exact Lock is imaginary or not, since 0i is a possibility
 getGlitch = 0;
 getAura[0] = 0;//Red
 getAura[1] = 0;//Green
@@ -1140,10 +1140,10 @@ if mouseType == 0{//Keys
     }else if getType == lock_ALL{
         str += "[ALL]";
     }else if getType == lock_EXACT{
-        if getIsIExact == 0{
-            str += "Exactly "+string(getCost);
-        }else{
+        if getIsIExact != 0 || getICost != 0 {
             str += "Exactly "+string(getICost)+"i";
+        }else{
+            str += "Exactly "+string(getCost);
         }
     }
     if getCol != getSpend{
@@ -1191,8 +1191,8 @@ if mouseType == 0{//Keys
             }else if lockType[i] == lock_ALL{
                 str += "[ALL]";
             }else if lockType[i] == lock_EXACT{
-                if lockDenom[i] != 0{//Imaginary
-                    str += string("Exactly "+string(lockICost[i]))+"i";
+                if lockDenom[i] != 0 || lockICost[i] != 0 {
+                    str += string("Exactly "+string(lockICost[i])) + "i";
                 }else{
                     str += string("Exactly "+string(lockCost[i]));
                 }
