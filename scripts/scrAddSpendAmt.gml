@@ -38,7 +38,7 @@ switch argument3 {
             spendITotal += global.ikey[open_check];
         }
     break;
-    case lock_ALL:
+    case lock_ALL://equals
         spendTotal += global.key[open_check];
         spendITotal += global.ikey[open_check];
     break;
