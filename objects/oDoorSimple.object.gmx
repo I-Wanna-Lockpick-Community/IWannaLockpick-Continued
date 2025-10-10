@@ -302,57 +302,34 @@ if global.complexMode == 0{//Real view
 }
 
 var auraCount = 0; //Amount of auras on the door
-if aura[0] == 1{auraCount++; auraType = 0}
-if aura[1] == 1{auraCount++; auraType = 1}
-if aura[2] == 1{auraCount++; auraType = 2}
+if aura[0] == 1{auraCount++; auraType = color_ICE}
+if aura[1] == 1{auraCount++; auraType = color_MUD}
+if aura[2] == 1{auraCount++; auraType = color_GRAFFITI}
 
-canChangecursed = (cursed != -1) || (color != color_PURE &amp;&amp; colorSpend != color_PURE &amp;&amp; glitchMimic != color_PURE);
-if aura[0] != 0 || aura[1] != 0 || aura[2] != 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || objPlayer.aura[2] == -1{ //Aura infliction/removal + Ice, mud, and graffiti interactions
+if auraCount &gt; 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || objPlayer.aura[2] == -1{ //Aura infliction/removal + Ice, mud, and graffiti interactions
     if distToP &lt;= 23{
         removeAuras();
-        if objPlayer.curseMode != 0{
-            if canChangecursed{
-                tryCurseDoor();
-            }
-        }
-    }else{
-        brownNearPlayer = 0;
     }
     //Ice, mud, graffiti openings (aurabreak)
-    if distToP &lt;= 1 &amp;&amp; auraCount == 1 &amp;&amp; color != color_PURE &amp;&amp; colorSpend != color_PURE &amp;&amp; glitchMimic != color_PURE{
-        if aura[0] == 1{effectiveColor = color_ICE; effectiveColorSpend = color_ICE}
-        if aura[1] == 1{effectiveColor = color_MUD; effectiveColorSpend = color_MUD}
-        if aura[2] == 1{effectiveColor = color_GRAFFITI; effectiveColorSpend = color_GRAFFITI}
-        if global.key[effectiveColor] != 0 || global.ikey[effectiveColor] != 0{
-            var rCost = 0;
-            var iCost = 0;
-            var tempIPow = iPow;
-            spendTotal = 0;
-            spendITotal = 0;
-            scrAddSpendAmt(effectiveColor,count,icount,type,tempIPow)
-            if canOpen(effectiveColor, tempIPow){
-                addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
-                scrOpenOrCopy();                
-            }      
-        }
-    }
-    exit;
-}
-if objPlayer.curseMode != 0{
-    if canChangecursed{
-        if distToP &lt;= 23{
-            tryCurseDoor();
-        }else{
-            brownNearPlayer = 0;
-        }
+    if auraCount == 1 &amp;&amp; (global.key[auraType] != 0 || global.ikey[auraType] != 0) {
+        effectiveColor = auraType;
+        effectiveColorSpend = auraType;
     }
 }
-if distToP &gt; 23{
+if objPlayer.curseMode != 0 &amp;&amp; distToP &lt;= 23{
+    tryCurseDoor();
+} else {
     brownNearPlayer = 0;
 }
+if auraCount &gt; 1 {exit;}
 var canGoldOpen = !(effectiveColor == color_MASTER || effectiveColor == color_PURE || effectiveColorSpend == color_MASTER || effectiveColorSpend == color_PURE);
 var canSilverOpen = !(effectiveColor == color_SILVER || effectiveColor == color_PURE || effectiveColorSpend == color_SILVER || effectiveColorSpend == color_PURE);
 var canDynamiteOpen = !(effectiveColor == color_DYNAMITE || effectiveColor == color_PURE || effectiveColorSpend == color_DYNAMITE || effectiveColorSpend == color_PURE);
+if auraCount &gt; 0 {
+    canGoldOpen = false;
+    canSilverOpen = false;
+    canDynamiteOpen = false;
+}
 if distToP &lt;= 1 {
     if (canDynamiteOpen &amp;&amp; scrNormalDynamiteOpen()) {
         undoBUFFER();

@@ -39,28 +39,6 @@ if copyState != 0{exit;}
 if !active{brownNearPlayer=0;visible=0;exit;}
 brownNearPlayer=0;
 
-if aura[0] == 1 || aura[1] == 1 || aura[2] == 1 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || objPlayer.aura[2] == -1{
-    if distance_to_object(objPlayer) <= 23{
-        removeAurasCombo();
-        if aura[0] == 0 && aura[1] == 0 && aura[2] == 0{
-            if objPlayer.curseMode != 0{
-                tryCurseCombo();
-            }
-        }
-    }else{
-        brownNearPlayer = 0;
-    }
-    exit;
-}else{
-    if objPlayer.curseMode != 0{
-        if distance_to_object(objPlayer) <= 23{
-            tryCurseCombo();
-        }else{
-            brownNearPlayer = 0;
-        }
-    }
-}
-
 var effectiveColorSpend;
 if cursed != -1 && cursed != color_PURE {
     effectiveColorSpend = cursed;
@@ -88,13 +66,33 @@ if global.complexMode == 0{//Real view
     }
 }
 
+var auraCount = 0; //Amount of auras on the door
+if aura[0] == 1{auraCount++; auraType = color_ICE}
+if aura[1] == 1{auraCount++; auraType = color_MUD}
+if aura[2] == 1{auraCount++; auraType = color_GRAFFITI}
+
+if auraCount > 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || objPlayer.aura[2] == -1{
+    if distance_to_object(objPlayer) <= 23{
+        removeAurasCombo();
+    }
+    //Ice, mud, graffiti openings (aurabreak)
+    if auraCount == 1 && (global.key[auraType] != 0 || global.ikey[auraType] != 0) {
+        effectiveColorSpend = auraType;
+    }
+}
+if objPlayer.curseMode != 0 && distance_to_object(objPlayer) <= 23{
+    tryCurseCombo();
+} else {
+    brownNearPlayer = 0;
+}
+if auraCount > 1 {exit;}
 //Now, the first big calculation is the Gold Eligibility.
 var goldEligible = objPlayer.masterMode;//0 = Don't use gold, 1 = Use gold, -1 = Use negative gold, 2 = Use imaginary gold, -2 = Use negative imaginary gold
 if objPlayer.masterCycle != 1 {
     goldEligible = 0;
 }
 if goldEligible != 0 {
-    if effectiveColorSpend == color_MASTER || effectiveColorSpend == color_PURE {
+    if effectiveColorSpend == color_MASTER || effectiveColorSpend == color_PURE || auraCount > 0 {
         goldEligible = 0;
     }
     for(var i = 0; i < lockCount; i += 1){
@@ -108,7 +106,7 @@ if global.key[color_DYNAMITE] != 0 || global.ikey[color_DYNAMITE] != 0 {
     dynamiteEligible = true;
 }
 if (cursed == -1 || cursed == color_PURE) && dynamiteEligible {
-    if effectiveColorSpend == color_DYNAMITE || effectiveColorSpend == color_PURE {
+    if effectiveColorSpend == color_DYNAMITE || effectiveColorSpend == color_PURE || auraCount > 0 {
         dynamiteEligible = false;
     }
     for(var i = 0; i < lockCount; i += 1){
@@ -122,7 +120,7 @@ if objPlayer.masterCycle == 2 && objPlayer.masterMode != 0 {
     silverEligible = true;
 }
 if (cursed == -1 || cursed == color_PURE) && silverEligible {
-    if effectiveColorSpend == color_SILVER || effectiveColorSpend == color_PURE {
+    if effectiveColorSpend == color_SILVER || effectiveColorSpend == color_PURE || auraCount > 0 {
         silverEligible = false;
     }
     for(var i = 0; i < lockCount; i += 1){
@@ -131,7 +129,6 @@ if (cursed == -1 || cursed == color_PURE) && silverEligible {
         }
     }
 }
-
 
 //Now, check nearness to player, and house all the main code in different cases depending on gold eligibility.
 if distance_to_object(objPlayer) <= 1{

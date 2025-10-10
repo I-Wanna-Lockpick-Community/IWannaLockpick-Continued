@@ -154,14 +154,14 @@ pdaID[0, 11] = color_GREEN;
 pdaID[0, 12] = color_BLUE;
 pdaID[0, 13] = color_GLITCH;
 // Page 2
-pdaID[1, 0] = color_SILVER;
-pdaID[1, 1] = color_DYNAMITE;
-pdaID[1, 2] = color_MAROON;
-pdaID[1, 3] = color_FOREST;
-pdaID[1, 4] = color_NAVY;
-pdaID[1, 5] = color_ICE;
-pdaID[1, 6] = color_MUD;
-pdaID[1, 7] = color_GRAFFITI;
+pdaID[1, 0] = color_MAROON;
+pdaID[1, 1] = color_FOREST;
+pdaID[1, 2] = color_NAVY;
+pdaID[1, 3] = color_ICE;
+pdaID[1, 4] = color_MUD;
+pdaID[1, 5] = color_GRAFFITI;
+pdaID[1, 6] = color_SILVER;
+pdaID[1, 7] = color_DYNAMITE;
 // @addcolor
 //Jokes
 numJokes = 15;

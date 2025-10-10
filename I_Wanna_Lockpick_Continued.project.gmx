@@ -791,8 +791,6 @@
       <script>scripts\addComplexKeys.gml</script>
       <script>scripts\isStar.gml</script>
       <script>scripts\scrBroadcastCopy.gml</script>
-      <script>scripts\getCountGlitch.gml</script>
-      <script>scripts\getICountGlitch.gml</script>
     </scripts>
     <scripts name="undo">
       <script>scripts\undoPUSH.gml</script>
