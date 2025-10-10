@@ -768,7 +768,6 @@
     </scripts>
     <script>scripts\scrOpenOrCopy.gml</script>
     <script>scripts\canOpen.gml</script>
-    <script>scripts\canOpenExt.gml</script>
     <script>scripts\removeAuras.gml</script>
     <script>scripts\tryCurseDoor.gml</script>
     <script>scripts\useMasterCheck.gml</script>
@@ -780,7 +779,6 @@
       <script>scripts\scrComboAdvAdd.gml</script>
       <script>scripts\scrGetLockColor.gml</script>
       <script>scripts\scrComboStep.gml</script>
-      <script>scripts\scrCanOpenFeed.gml</script>
       <script>scripts\scrAddSpendAmt.gml</script>
       <script>scripts\scrOpenCombo.gml</script>
       <script>scripts\tryCurseCombo.gml</script>

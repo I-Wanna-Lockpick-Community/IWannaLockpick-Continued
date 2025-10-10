@@ -1,42 +1,46 @@
 ///scrAddSpendAmt(color,count,icount,type,power_of_i);
-
-var rCost = 0;
-var iCost = 0;
-var effectiveColor = argument0;
-if effectiveColor == color_GLITCH {
-    effectiveColor = glitchMimic;
+var open_check = argument0;
+if open_check == color_GLITCH{
+    open_check = glitchMimic;
 }
-var iPow = argument4;
-var count = argument1;
-var icount = argument2;
+switch argument4{
+    case 0://i^0 = Multiply by 1
+        var open_needR = argument1;
+        var open_needI = argument2;
+    break;
+    case 1://i^1 = Multiply by i
+        var open_needR = -argument2;
+        var open_needI = argument1;
+    break;
+    case 2://i^2 = Multiply by -1
+        var open_needR = -argument1;
+        var open_needI = -argument2;
+    break;
+    case 3://i^3 = Multiply by -i
+        var open_needR = argument2;
+        var open_needI = -argument1;
+    break;
+}
 switch argument3 {
     case lock_NORMAL:
     case lock_EXACT:
-        rCost = rotateR(count, icount, iPow);
-        iCost = rotateI(count, icount, iPow);
+        spendTotal += open_needR;
+        spendITotal += open_needI;
     break;
-    // Blank is always 0
-    case lock_BLAST:
-        if iPow == 0 || iPow == 2 {
-            if sign(global.key[effectiveColor]) == sign(count) {
-                rCost = global.key[effectiveColor]*abs(sign(count));
-            }
-            if sign(global.ikey[effectiveColor]) == sign(icount) {
-                iCost = global.ikey[effectiveColor]*abs(sign(icount));
-            }
-        } else {
-            if sign(global.key[effectiveColor]) == sign(icount) {
-                rCost = global.key[effectiveColor]*abs(sign(icount));
-            }
-            if sign(global.ikey[effectiveColor]) == sign(count) {
-                iCost = global.ikey[effectiveColor]*abs(sign(count));
-            }
+    case lock_BLANK:
+        //Nothing really
+    break;
+    case lock_BLAST://blast (can accept real or imaginary, but not both)
+        if open_needR != 0 {
+            spendTotal += global.key[open_check];
+        }
+        if open_needI != 0 {
+            spendITotal += global.ikey[open_check];
         }
     break;
-    case lock_ALL:
-        rCost = global.key[effectiveColor];
-        iCost = global.ikey[effectiveColor];
+    case lock_ALL://equals
+        spendTotal += global.key[open_check];
+        spendITotal += global.ikey[open_check];
     break;
 }
-spendTotal += rCost;
-spendITotal += iCost;
+return false;

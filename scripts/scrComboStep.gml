@@ -133,21 +133,31 @@ if (cursed == -1 || cursed == color_PURE) && silverEligible {
 //Now, check nearness to player, and house all the main code in different cases depending on gold eligibility.
 if distance_to_object(objPlayer) <= 1{
     if dynamiteEligible && scrNormalDynamiteOpen() {
-    // i hope this works
-    undoBUFFER();
+        // i hope this works
+        undoBUFFER();
     } else {
         if goldEligible == 0 {
             //MAIN CODE
             var metRequirement = true;//Whether the requirement for every lock has been met
-            if cursed != -1 && cursed != color_PURE{//Brown version
+            if auraCount == 1 {
+                if (global.key[auraType] != 0 || global.ikey[auraType] != 0) {
+                    for(var i = 0; i < lockCount; i += 1){
+                        if !canOpen(auraType,lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7]){
+                            metRequirement = false;
+                        }
+                    }
+                } else {
+                    metRequirement = false;
+                }
+            } else if cursed != -1 && cursed != color_PURE{//Brown version
                 for(var i = 0; i < lockCount; i += 1){
-                    if !scrCanOpenFeed(cursed,lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7]){
+                    if !canOpen(cursed,lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7]){
                         metRequirement = false;
                     }
                 }
-            }else{//Normal lock spend summation
+            } else {//Normal lock spend summation
                 for(var i = 0; i < lockCount; i += 1){
-                    if !scrCanOpenFeed(lock[i,0],lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7]){
+                    if !canOpen(lock[i,0],lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7]){
                         metRequirement = false;
                     }
                 }
