@@ -16,30 +16,30 @@ if colorSpend == color_MASTER{
         shader_set(shdRainbowStripe2);
     }
     //Corner Fills
-    draw_sprite_part_ext(sprDoorBig,4,0,0,16,16,salDX,salDY,1,1,c5,1);
-    draw_sprite_part_ext(sprDoorBig,4,48,0,16,16,salDX+32*salW-16,salDY,1,1,c5,1);
-    draw_sprite_part_ext(sprDoorBig,4,0,48,16,16,salDX,salDY+32*salH-16,1,1,c5,1);
-    draw_sprite_part_ext(sprDoorBig,4,48,48,16,16,salDX+32*salW-16,salDY+32*salH-16,1,1,c5,1);
+    draw_sprite_part_ext(sprDoorSpend,3,0,0,16,16,salDX,salDY,1,1,c5,1);
+    draw_sprite_part_ext(sprDoorSpend,3,48,0,16,16,salDX+32*salW-16,salDY,1,1,c5,1);
+    draw_sprite_part_ext(sprDoorSpend,3,0,48,16,16,salDX,salDY+32*salH-16,1,1,c5,1);
+    draw_sprite_part_ext(sprDoorSpend,3,48,48,16,16,salDX+32*salW-16,salDY+32*salH-16,1,1,c5,1);
     //Fill
-    draw_sprite_part_ext(sprDoorBig,4,16,16,16,16,salDX+8,salDY+8,salW*2-1,salH*2-1,c5,1);
+    draw_sprite_part_ext(sprDoorSpend,3,16,16,16,16,salDX+8,salDY+8,salW*2-1,salH*2-1,c5,1);
     //Edge Fills
     if salW>1{
-        draw_sprite_part_ext(sprDoorBig,1,16,0,16,16,salDX+16,salDY,(salW-1)*2,1,c4,1);
-        draw_sprite_part_ext(sprDoorBig,3,16,48,16,16,salDX+16,salDY+32*salH-16,(salW-1)*2,1,c6,1);
+        draw_sprite_part_ext(sprDoorSpend,0,16,0,16,16,salDX+16,salDY,(salW-1)*2,1,c4,1);
+        draw_sprite_part_ext(sprDoorSpend,2,16,48,16,16,salDX+16,salDY+32*salH-16,(salW-1)*2,1,c6,1);
     }
     if salH>1{
-        draw_sprite_part_ext(sprDoorBig,2,0,16,16,16,salDX,salDY+16,1,(salH-1)*2,c5,1);
-        draw_sprite_part_ext(sprDoorBig,2,48,16,16,16,salDX+32*salW-16,salDY+16,1,(salH-1)*2,c5,1);
+        draw_sprite_part_ext(sprDoorSpend,1,0,16,16,16,salDX,salDY+16,1,(salH-1)*2,c5,1);
+        draw_sprite_part_ext(sprDoorSpend,1,48,16,16,16,salDX+32*salW-16,salDY+16,1,(salH-1)*2,c5,1);
     }
     //Corner Fills
-    draw_sprite_part_ext(sprDoorBig,1,0,0,16,16,salDX,salDY,1,1,c4,1);
-    draw_sprite_part_ext(sprDoorBig,1,48,0,16,16,salDX+32*salW-16,salDY,1,1,c4,1);
-    draw_sprite_part_ext(sprDoorBig,2,0,0,16,16,salDX,salDY,1,1,c5,1);
-    draw_sprite_part_ext(sprDoorBig,2,48,0,16,16,salDX+32*salW-16,salDY,1,1,c5,1);
-    draw_sprite_part_ext(sprDoorBig,2,0,48,16,16,salDX,salDY+32*salH-16,1,1,c5,1);
-    draw_sprite_part_ext(sprDoorBig,2,48,48,16,16,salDX+32*salW-16,salDY+32*salH-16,1,1,c5,1);
-    draw_sprite_part_ext(sprDoorBig,3,0,48,16,16,salDX,salDY+32*salH-16,1,1,c6,1);
-    draw_sprite_part_ext(sprDoorBig,3,48,48,16,16,salDX+32*salW-16,salDY+32*salH-16,1,1,c6,1);
+    draw_sprite_part_ext(sprDoorSpend,0,0,0,16,16,salDX,salDY,1,1,c4,1);
+    draw_sprite_part_ext(sprDoorSpend,0,48,0,16,16,salDX+32*salW-16,salDY,1,1,c4,1);
+    draw_sprite_part_ext(sprDoorSpend,1,0,0,16,16,salDX,salDY,1,1,c5,1);
+    draw_sprite_part_ext(sprDoorSpend,1,48,0,16,16,salDX+32*salW-16,salDY,1,1,c5,1);
+    draw_sprite_part_ext(sprDoorSpend,1,0,48,16,16,salDX,salDY+32*salH-16,1,1,c5,1);
+    draw_sprite_part_ext(sprDoorSpend,1,48,48,16,16,salDX+32*salW-16,salDY+32*salH-16,1,1,c5,1);
+    draw_sprite_part_ext(sprDoorSpend,2,0,48,16,16,salDX,salDY+32*salH-16,1,1,c6,1);
+    draw_sprite_part_ext(sprDoorSpend,2,48,48,16,16,salDX+32*salW-16,salDY+32*salH-16,1,1,c6,1);
     if colorSpend == color_GLITCH{
         shader_reset();
     }

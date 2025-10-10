@@ -69,32 +69,48 @@ colName[10] = "Brown";
 colName[11] = "Pure";
 colName[12] = "Glitch";
 colName[13] = "Stone";
-colName[14] = "Dynamite";
-colName[15] = "Silver";
-colName[16] = "Maroon";
-colName[17] = "Forest";
-colName[18] = "Navy";
-colName[19] = "Ice";
-colName[20] = "Mud";
-colName[21] = "Graffiti";
+
+//Define color names
+colName[color_MASTER] = "Master";
+colName[color_WHITE] = "White";
+colName[color_ORANGE] = "Orange";
+colName[color_PURPLE] = "Purple";
+colName[color_RED] = "Red";
+colName[color_GREEN] = "Green";
+colName[color_BLUE] = "Blue";
+colName[color_PINK] = "Pink";
+colName[color_CYAN] = "Cyan";
+colName[color_BLACK] = "Black";
+colName[color_BROWN] = "Brown";
+colName[color_PURE] = "Pure";
+colName[color_GLITCH] = "Glitch";
+colName[color_STONE] = "Stone";
+colName[color_DYNAMITE] = "Dynamite";
+colName[color_SILVER] = "Silver";
+colName[color_MAROON] = "Maroon";
+colName[color_FOREST] = "Forest";
+colName[color_NAVY] = "Navy";
+colName[color_ICE] = "Ice";
+colName[color_MUD] = "Mud";
+colName[color_GRAFFITI] = "Graffiti";
 // @addcolor
 //Define key type names
-keyName[0] = "";
-keyName[1] = "Exact ";
+keyName[key_NORMAL] = "";
+keyName[key_EXACT] = "Exact ";
 keyName[2] = "Ordinal ";
-keyName[3] = "Star ";
-keyName[4] = "Unstar ";
-keyName[5] = "Signflip ";
-keyName[6] = "Rotor (i) ";
-keyName[7] = "Rotor (-i) ";
-keyName[8] = "Curse ";
-keyName[9] = "Uncurse ";
+keyName[key_STAR] = "Star ";
+keyName[key_UNSTAR] = "Unstar ";
+keyName[key_SIGNFLIP] = "Signflip ";
+keyName[key_POSROTOR] = "Rotor (i) ";
+keyName[key_NEGROTOR] = "Rotor (-i) ";
+keyName[key_CURSE] = "Curse ";
+keyName[key_UNCURSE] = "Uncurse ";
 //Define door type names
-doorName[0] = "";
-doorName[1] = "Blank ";
-doorName[2] = "Blast ";
-doorName[3] = "All ";
-doorName[4] = "Exact ";
+doorName[lock_NORMAL] = "";
+doorName[lock_BLANK] = "Blank ";
+doorName[lock_BLAST] = "Blast ";
+doorName[lock_ALL] = "All ";
+doorName[lock_EXACT] = "Exact ";
 </string>
           </argument>
         </arguments>
@@ -1103,7 +1119,7 @@ if mouseType == 0{//Keys
     }
 }else if mouseType == 1{//Simple doors
     str = doorName[getType]+colName[getSpend]+" Door#Cost: ";
-    if getType == lock_NORMAL{//Normal
+    if getType == lock_NORMAL{
         if getICost != 0{//Imaginary
             str += string(getICost)+"i";
         }else{
@@ -1213,15 +1229,15 @@ if mouseType == 0{//Keys
         str = "Gate#";
         for(i=0;i&lt;lockCount;i+=1){
             str += "Lock: "+doorName[lockType[i]]+colName[lockCol[i]]+", Cost: ";
-            if lockType[i] == 0{//Normal
+            if lockType[i] == lock_NORMAL{
                 if lockICost[i] != 0{//Imaginary
                     str += string(lockICost[i])+"i";
                 }else{
                     str += string(lockCost[i]);
                 }
-            }else if lockType[i] == 1{//Blank
+            }else if lockType[i] == lock_BLANK{
                 str += "None";
-            }else if lockType[i] == 2{//Blast
+            }else if lockType[i] == lock_BLAST{
                 if lockCost[i] == 1{
                     str += "[All +]";
                 }else if lockCost[i] == -1{
@@ -1231,7 +1247,7 @@ if mouseType == 0{//Keys
                 }else{
                     str += "[All -i]";
                 }
-            }else if lockType[i] == 3{//Exact
+            }else if lockType[i] == lock_EXACT{
                 str += "[ALL]";
             }
             str += "#";

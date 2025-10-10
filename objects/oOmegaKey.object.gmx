@@ -228,7 +228,7 @@ draw_set_blend_mode(bm_normal);
 switch color{
     case color_MASTER:
     case color_PURE:
-    case color_STONE:
+    case color_STONE: // @addcolor if omega key image/animation
         draw_sprite_ext(sprite_index,0,x,y+3*waveS+upAmt,drawScale*scale,scale,0,c_white,image_alpha);
     break;
     case color_GLITCH:

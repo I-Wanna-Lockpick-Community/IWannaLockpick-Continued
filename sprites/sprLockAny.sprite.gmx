@@ -7,10 +7,10 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>0</bbox_left>
-  <bbox_right>63</bbox_right>
-  <bbox_top>0</bbox_top>
-  <bbox_bottom>63</bbox_bottom>
+  <bbox_left>7</bbox_left>
+  <bbox_right>56</bbox_right>
+  <bbox_top>7</bbox_top>
+  <bbox_bottom>56</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -20,11 +20,8 @@
   <width>64</width>
   <height>64</height>
   <frames>
-    <frame index="0">images\sprDoorBigWhite_0.png</frame>
-    <frame index="1">images\sprDoorBigWhite_1.png</frame>
-    <frame index="2">images\sprDoorBigWhite_2.png</frame>
-    <frame index="3">images\sprDoorBigWhite_3.png</frame>
-    <frame index="4">images\sprDoorBigWhite_4.png</frame>
-    <frame index="5">images\sprDoorBigWhite_5.png</frame>
+    <frame index="0">images\sprLockAny_0.png</frame>
+    <frame index="1">images\sprLockAny_1.png</frame>
+    <frame index="2">images\sprLockAny_2.png</frame>
   </frames>
 </sprite>

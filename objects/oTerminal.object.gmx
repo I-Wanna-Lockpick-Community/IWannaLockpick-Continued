@@ -73,6 +73,7 @@ oCol[10] = color_PURPLE;
 oCol[11] = color_PINK;
 oCol[12] = color_CYAN;
 oCol[13] = color_BLACK;
+// @addcolor if omega key
 
 //Salvage color selector colors (6x3 cropped selection)
 sCol[0] = color_WHITE;
@@ -89,6 +90,7 @@ sCol[10] = color_GLITCH;
 sCol[11] = color_STONE;
 sCol[12] = color_MASTER;
 sCol[13] = color_PURE;
+// @addcolor if omega key
 
 cName[0] = "Master";
 cName[1] = "White";
@@ -707,7 +709,7 @@ switch state{
                     }else if tempCol == color_DYNAMITE{
                         draw_sprite_ext(sprDDynaTexture,goldIndex,tempX,tempY,.25,.25,0,c_white,1);
                         // is it weird that it stretches here?
-                        // @addcolor if door image/animation
+                        // @addcolor if omega key
                     }else if tempCol == color_GLITCH{
                         shader_set(shdRainbowStripe2);
                         draw_sprite_ext(sprTerminalColor,1,tempX,tempY,1,1,0,tempDrawCol,1);
