@@ -139,13 +139,23 @@ if distance_to_object(objPlayer) <= 1{
         if goldEligible == 0 {
             //MAIN CODE
             var metRequirement = true;//Whether the requirement for every lock has been met
-            if cursed != -1 && cursed != color_PURE{//Brown version
+            if auraCount == 1 {
+                if (global.key[auraType] != 0 || global.ikey[auraType] != 0) {
+                    for(var i = 0; i < lockCount; i += 1){
+                        if !canOpen(auraType,lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7]){
+                            metRequirement = false;
+                        }
+                    }
+                } else {
+                    metRequirement = false;
+                }
+            } else if cursed != -1 && cursed != color_PURE{//Brown version
                 for(var i = 0; i < lockCount; i += 1){
                     if !canOpen(cursed,lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7]){
                         metRequirement = false;
                     }
                 }
-            }else{//Normal lock spend summation
+            } else {//Normal lock spend summation
                 for(var i = 0; i < lockCount; i += 1){
                     if !canOpen(lock[i,0],lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7]){
                         metRequirement = false;
