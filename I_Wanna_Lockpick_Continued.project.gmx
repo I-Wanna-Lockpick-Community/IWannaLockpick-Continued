@@ -371,6 +371,7 @@
         <sprite>sprites\sprDNavy</sprite>
         <sprite>sprites\sprDoorFrame</sprite>
         <sprite>sprites\sprDoorSpend</sprite>
+        <sprite>sprites\sprDSilverTexture</sprite>
       </sprites>
       <sprites name="key">
         <sprite>sprites\sprColorblindHelp</sprite>
