@@ -1,4 +1,4 @@
-///canOpen(color,lock_count,lock_icount,lock_type,power_of_i);
+///canOpen(color,lock_count,lock_icount,lock_type,power_of_i,exactI);
 var open_check = argument0;
 if open_check == color_GLITCH{
     open_check = glitchMimic;
@@ -51,10 +51,10 @@ switch argument3{
         }
     break;
     case 4://exact
-        if !((exactI + argument1) % 2) && (open_needR == global.key[open_check]){
+        if !((argument5 + argument1) % 2) && (open_needR == global.key[open_check]){
             return true;
         }
-        if ((exactI + argument1) % 2) && (open_needI == global.ikey[open_check]){
+        if ((argument5 + argument1) % 2) && (open_needI == global.ikey[open_check]){
             return true;
         }
     break;

@@ -361,7 +361,7 @@ if distToP &lt;= 1 {
             objPlayer.masterCycle = 0;
             undoBUFFER();
             scrBroadcastCopy(effectiveColorSpend); // should it?
-        } else if canOpen(effectiveColor,count,icount,type,tempIPow) {
+        } else if canOpen(effectiveColor,count,icount,type,tempIPow,exactI) {
             addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
             scrOpenOrCopy();
             scrBroadcastCopy(effectiveColorSpend);
