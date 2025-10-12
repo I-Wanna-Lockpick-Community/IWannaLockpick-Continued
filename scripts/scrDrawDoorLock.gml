@@ -1,15 +1,17 @@
-///scrDrawDoorLock(color,count,icount,type,xRel,yRel,sprite); 
+///scrDrawDoorLock(color,count,icount,type,xRel,yRel,sprite,denom,idenom); 
 // rewritten to work with both simple doors and combo doors
 // we use the sprLockAnys for borders (for nonpredefined) and for fills
 
 var color = argument0;
 var mainTone = global.mainTone[color];
 var count;
-var icount
+var icount;
 var type = argument3;
 var xRel = argument4 + x;
 var yRel = argument5 + y;
 var sprite = argument6;
+var denom = argument7;
+var idenom = argument8;
 
 if object_index == oGate {
     count = argument1;
@@ -95,10 +97,12 @@ switch color {
     break;
     case color_STONE:
         draw_sprite_ext(sprDStoneTexture,0,xRel-offsetX,yRel-offsetY,width/64,height/64,0,c_white,1);
-        // @addcolor if door image/animation
     break;
     case color_DYNAMITE:
-        draw_sprite_ext(sprDDynaTexture,floor(goldIndex),xRel-offsetX,yRel-offsetY,width/64,height/64,0,c_white,1);
+        for(var i = 0; i+1 < height/64; i++) {
+            draw_sprite_ext(sprDDynaTexture,floor(goldIndex),xRel-offsetX,yRel-offsetY+i*64,width/64,1,0,c_white,1);
+        }
+        draw_sprite_part_ext(sprDDynaTexture,floor(goldIndex),0,0,64,height-i*64,xRel-offsetX,yRel-offsetY+i*64,width/64,1,c_white,1)
         // @addcolor if door image/animation
     break;
     case color_GLITCH:
@@ -228,6 +232,39 @@ switch type {
         draw_sprite(sprSymbols,index,xRel+width/2-9,yRel+height/2-9);
     break;
     case lock_ALL:
+    default:
         draw_sprite(sprSymbols,4,xRel+width/2-9,yRel+height/2-9);
+    break;
+    case 5://partial blast
+    case 6://partial all
+        index = 2;
+        draw_set_font(fTalk);
+        color = make_colour_rgb(44,32,20);
+        xRel -= offsetX
+        yRel -= offsetY
+        if type == 5 {
+            if denom < 0 {index = 6; color = make_colour_rgb(235,223,211)}
+            else if idenom > 0 {index = 3}
+            else if idenom < 0 {index = 7; color = make_colour_rgb(235,223,211)}
+            if denom != 0 && idenom != 0 {index = 2; color = make_colour_rgb(44,32,20)}
+        } else { index = 4; }
+        var str = "";
+        if count == 1 && icount == 0 {str = "";}
+        else if icount == 0 {str = string(count);}
+        else if count == 0 {str = string(icount)+"i";}
+        else if icount > 0 {str = string(count)+"+"+string(icount)+"i";}
+        else {str = string(count)+string(icount)+"i";}
+        var strwidth = string_width(str)
+        if strwidth > 0 {strwidth += 4;}
+        draw_set_colour(color)
+        draw_text(xRel+width/2-2-strwidth/2,yRel+height-16-10,str)
+        draw_sprite(sprSymbols,index,xRel+width/2-16+strwidth/2,yRel+height/2-8-16);
+        if idenom == 0 {str = string(denom);}
+        else if denom == 0 {str = string(idenom)+"i";}
+        else if idenom > 0 {str = string(denom)+"+"+string(idenom)+"i";}
+        else {str = string(denom)+string(idenom)+"i";}
+        draw_text(xRel+width/2-string_width(str)/2,yRel+height-8,str)
+        draw_rectangle(xRel+(width-max(strwidth,string_width(str))-8)/2,yRel+height/2-1,xRel+(width+max(strwidth,string_width(str))+8)/2,yRel+height/2,false)
+    break;
 }
 draw_set_color(c_white);

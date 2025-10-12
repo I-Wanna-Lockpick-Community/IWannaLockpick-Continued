@@ -39,6 +39,8 @@ getCost = 0;
 getICost = 0;
 getType = 0;
 getIsIExact = 0;// To know if Exact Lock is imaginary or not, since 0i is a possibility
+getDenom = 0;// Denominator
+getIDenom = 0;
 getGlitch = 0;
 getAura[0] = 0;//Red
 getAura[1] = 0;//Green
@@ -53,7 +55,7 @@ lockType[0] = 0;
 lockCost[0] = 0;
 lockICost[0] = 0;
 lockDenom[0] = 0;
-lockNumer[0] = 0;
+lockIDenom[0] = 0;
 //Define color names @addcolor
 colName[0] = "Master";
 colName[1] = "White";
@@ -111,6 +113,8 @@ doorName[lock_BLANK] = "Blank ";
 doorName[lock_BLAST] = "Blast ";
 doorName[lock_ALL] = "All ";
 doorName[lock_EXACT] = "Exact ";
+doorName[5] = "Partial Blast ";
+doorName[6] = "Partial All ";
 </string>
           </argument>
         </arguments>
@@ -333,6 +337,8 @@ if mouse_in_window(){
             other.getType = type;
             other.getGlitch = glitchMimic;
             other.getIsIExact = exactI;
+            other.getDenom = denom;
+            other.getIDenom = idenom;
             other.getAura[0] = aura[0];
             other.getAura[1] = aura[1];
             other.getAura[2] = aura[2];
@@ -358,7 +364,7 @@ if mouse_in_window(){
                 other.lockICost[i] = lock[i,2];
                 other.lockType[i] = lock[i,3];
                 other.lockDenom[i] = lock[i,7];
-                other.lockNumer[i] = lock[i,8];
+                other.lockIDenom[i] = lock[i,8];
             }
         } 
     }
@@ -1140,10 +1146,36 @@ if mouseType == 0{//Keys
     }else if getType == lock_ALL{
         str += "[ALL]";
     }else if getType == lock_EXACT{
-        if getIsIExact != 0 || getICost != 0 {
+        if getIsIExact {
             str += "Exactly "+string(getICost)+"i";
         }else{
             str += "Exactly "+string(getCost);
+        }
+    }else if getType == 5 || getType == 6 {
+        if getType == 5 {
+            str += "[All + "
+        }else {
+            str += "[ALL! "
+        }
+        if getCost != 1 || getICost != 0 {
+            if getICost == 0 {
+                str += "*" + string(getCost)
+            }else if getCost == 1 {
+                str += "*" + string(getICost) + "i"
+            }else if getICost &gt; 0 {
+                str += "*" + string(getCost) + "+" + string(getICost) + "i"
+            }else {
+                str += "*" + string(getCost) + string(getICost) + "i"
+            }
+        }
+        if getIDenom == 0 {
+            str += "/" + string(getDenom) + "]"
+        }else if getDenom == 0 {
+            str += "/" + string(getIDenom) + "i]"
+        }else if getIDenom &gt; 0 {
+            str += "/" + string(getDenom) + "+" + string(getIDenom) + "i]"
+        }else {
+            str += "/" + string(getDenom) + string(getIDenom) + "i]"
         }
     }
     if getCol != getSpend{
@@ -1195,6 +1227,32 @@ if mouseType == 0{//Keys
                     str += string("Exactly "+string(lockICost[i])) + "i";
                 }else{
                     str += string("Exactly "+string(lockCost[i]));
+                }
+            }else if lockType[i] == 5 or lockType[i] == 6{
+                if lockType[i] == 5 {
+                    str += "[All + "
+                }else {
+                    str += "[ALL! "
+                }
+                if lockCost[i] != 1 || lockICost[i] != 0 {
+                    if lockICost[i] == 0 {
+                        str += "*" + string(lockCost[i])
+                    }else if lockCost[i] == 1 {
+                        str += "*" + string(lockICost[i]) + "i"
+                    }else if lockICost[i] &gt; 0 {
+                        str += "*" + string(lockCost[i]) + "+" + string(lockICost[i]) + "i"
+                    }else {
+                        str += "*" + string(lockCost[i]) + string(lockICost[i]) + "i"
+                    }
+                }
+                if lockIDenom[i] == 0 {
+                    str += "/" + string(lockDenom[i]) + "]"
+                }else if lockDenom[i] == 0 {
+                    str += "/" + string(lockIDenom[i]) + "i]"
+                }else if lockIDenom[i] &gt; 0 {
+                    str += "/" + string(lockDenom[i]) + "+" + string(lockIDenom[i]) + "i]"
+                }else {
+                    str += "/" + string(lockDenom[i]) + string(lockIDenom[i]) + "i]"
                 }
             }
             str += "#";

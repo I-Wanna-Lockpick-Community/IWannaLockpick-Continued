@@ -1,4 +1,4 @@
-///canOpen(color,lock_count,lock_icount,lock_type,power_of_i,exactI);
+///canOpen(color,lock_count,lock_icount,lock_type,power_of_i,exactI,lock_denom,lock_idenom);
 var open_check = argument0;
 if open_check == color_GLITCH{
     open_check = glitchMimic;
@@ -23,8 +23,10 @@ switch argument4{
 }
 switch argument3{
     case lock_NORMAL:
-        if sign(global.key[open_check]) == sign(open_needR) && abs(global.key[open_check]) >= abs(open_needR) && sign(global.ikey[open_check]) == sign(open_needI) && abs(global.ikey[open_check]) >= abs(open_needI){
-            return true;
+        if sign(global.key[open_check]) == sign(open_needR) && abs(global.key[open_check]) >= abs(open_needR) || open_needR == 0 {
+            if sign(global.ikey[open_check]) == sign(open_needI) && abs(global.ikey[open_check]) >= abs(open_needI) || open_needI == 0 {
+                return true;
+            }
         }
     break;
     case lock_BLANK:
@@ -50,12 +52,30 @@ switch argument3{
             return true;
         }
     break;
-    case 4://exact
-        if !((argument5 + argument1) % 2) && (open_needR == global.key[open_check]){
+    case lock_EXACT:
+        if !((argument5 + argument4) % 2) && (open_needR == global.key[open_check]){
             return true;
         }
-        if ((argument5 + argument1) % 2) && (open_needI == global.ikey[open_check]){
+        if ((argument5 + argument4) % 2) && (open_needI == global.ikey[open_check]){
             return true;
+        }
+    break;
+    case 5://partial blast
+        if (argument6==0)||((global.key[open_check] / argument6) % 1 == 0 && (global.key[open_check] / argument6) > 0) {
+            if (argument7==0)||((global.ikey[open_check] / argument7) % 1 == 0 && (global.ikey[open_check] / argument7) > 0) {
+                if ((argument6==0)||(argument7==0))||((global.key[open_check] / argument6)==(global.ikey[open_check] / argument7)) {
+                    return true;
+                }
+            }
+        }
+    break;
+    case 6://partial all
+        var mult = (global.key[open_check]*argument6+global.ikey[open_check]*argument7)/(argument6*argument6+argument7*argument7);
+        var imult = (global.ikey[open_check]*argument6-global.key[open_check]*argument7)/(argument6*argument6+argument7*argument7);
+        if mult != 0 || imult != 0 {
+            if mult % 1 == 0 && imult % 1 == 0 {
+                return true;
+            }
         }
     break;
 }

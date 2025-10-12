@@ -41,11 +41,13 @@ effectiveColor = 0;
 effectiveColorSpend = 0;//These mostly have to do with the brown key gimmick
 count = 1;
 icount = 0;
-type = 0;//0 = Normal, 1 = Blast, 2 = Swap, 3 = Zero, 4 = INFINITY
+type = 0;//0 = Normal, 1 = Blank, 2 = Blank, 3 = All, 4 = Exact, 5 = Partial Blast, 6 = Partial All
 copies = 1;//Number of copies for the negative master key system
 icopies = 0;
 iPow = 0;
 exactI = 0;//Determines if Exact Door is Imaginary or not
+denom = 1;//Real part of partial blast denominator
+idenom = 0;//Imaginary part of partial blast denominator
 aura[0] = 0;//Red aura
 aura[1] = 0;//Green aura
 aura[2] = 0;//Blue aura
@@ -351,7 +353,7 @@ if distToP &lt;= 1 {
         }
         spendTotal = 0;
         spendITotal = 0;
-        scrAddSpendAmt(effectiveColor,count,icount,type,tempIPow)
+        scrAddSpendAmt(effectiveColor,count,icount,type,tempIPow,denom,idenom)
         if (canSilverOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 2) {
             addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
             addComplexKeys(color_SILVER,-1,0,tempIPow);
@@ -361,7 +363,7 @@ if distToP &lt;= 1 {
             objPlayer.masterCycle = 0;
             undoBUFFER();
             scrBroadcastCopy(effectiveColorSpend); // should it?
-        } else if canOpen(effectiveColor,count,icount,type,tempIPow,exactI) {
+        } else if canOpen(effectiveColor,count,icount,type,tempIPow,exactI,denom,idenom) {
             addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
             scrOpenOrCopy();
             scrBroadcastCopy(effectiveColorSpend);
@@ -828,7 +830,7 @@ if global.complexMode == 0 &amp;&amp; copies == 0
     scrComboDrawIm();
 } else {
     scrDrawDoorFrame((count &lt; 0 || icount &lt; 0) != (global.complexMode == 0 &amp;&amp; copies &lt; 0 || global.complexMode == 1 &amp;&amp; icopies &lt; 0));
-    scrDrawDoorLock(baseColor,count,icount,type,0,0,scrSimpleDoorGetLockSprite());
+    scrDrawDoorLock(baseColor,count,icount,type,0,0,scrSimpleDoorGetLockSprite(),denom,idenom);
 }
 scrDrawDoorAura();
 </string>

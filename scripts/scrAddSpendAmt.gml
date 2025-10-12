@@ -1,4 +1,4 @@
-///scrAddSpendAmt(color,count,icount,type,power_of_i);
+///scrAddSpendAmt(color,count,icount,type,power_of_i,denom,idenom);
 var open_check = argument0;
 if open_check == color_GLITCH{
     open_check = glitchMimic;
@@ -41,6 +41,24 @@ switch argument3 {
     case lock_ALL://equals
         spendTotal += global.key[open_check];
         spendITotal += global.ikey[open_check];
+    break;
+    case 5://partial blast
+        var mult = 0
+        var imult = 0
+        if argument5!=0 {
+            mult = global.key[open_check] / argument5;
+        }
+        if argument6!=0 {
+            imult = global.ikey[open_check] / argument6;
+        }
+        spendTotal += open_needR * mult - open_needI * imult;
+        spendITotal += open_needR * imult - open_needI * mult;
+    break;
+    case 6://partial all
+        var mult = (global.key[open_check]*argument5+global.ikey[open_check]*argument6)/(argument5*argument5+argument6*argument6);
+        var imult = (global.ikey[open_check]*argument5-global.key[open_check]*argument6)/(argument5*argument5+argument6*argument6);
+        spendTotal += open_needR * mult - open_needI * imult;
+        spendITotal += open_needR * imult - open_needI * mult;
     break;
 }
 return false;
