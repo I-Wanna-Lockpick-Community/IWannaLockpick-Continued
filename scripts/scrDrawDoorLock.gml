@@ -137,7 +137,13 @@ switch color {
 
 // draw lock frame
 var index = 0;
-if count < 0 || icount < 0 {index = 1}
+if type == lock_BLAST && (denom != 0 || idenom != 0) {
+    if (count == 0 && denom == 0 && idenom < 0) ||
+        (icount == 0 && idenom == 0 && denom < 0) {
+            index = 1;
+        }
+} else if count < 0 || icount < 0 {index = 1}
+
 if isPredefinedSprite {
     // the imaginary sprites; only matters for sprites for predefined lock amounts
     if icount > 0 {index = 2}
@@ -225,46 +231,69 @@ switch type {
         }
     break;
     case lock_BLAST:
-        index = 2;
-        if count < 0 {index = 6}
-        else if icount > 0 {index = 3}
-        else if icount < 0 {index = 7}
-        draw_sprite(sprSymbols,index,xRel+width/2-9,yRel+height/2-9);
-    break;
+        if denom == 0 && idenom == 0 {
+            index = 2;
+            if count < 0 {index = 6}
+            else if icount > 0 {index = 3}
+            else if icount < 0 {index = 7}
+            draw_sprite(sprSymbols,index,xRel+width/2-9,yRel+height/2-9);
+            break;
+        } else {
+            if icount == 0 && idenom == 0 && denom < 0 { index = 6 } // negative real
+            else if count == 0 && denom == 0 {
+                if idenom > 0 { index = 3 }  // positive imaginary
+                else { index = 7 } // negative imaginary
+            } else { index = 2 } // anything complex or positive
+        }
     case lock_ALL:
-    default:
-        draw_sprite(sprSymbols,4,xRel+width/2-9,yRel+height/2-9);
-    break;
-    case 5://partial blast
-    case 6://partial all
-        index = 2;
+        if denom == 0 && idenom == 0 {
+            draw_sprite(sprSymbols,4,xRel+width/2-9,yRel+height/2-9);
+            break;
+        }
+        // partial blast/all draw code
+        if type == lock_ALL { index = 4; }
         draw_set_font(fTalk);
-        color = make_colour_rgb(44,32,20);
-        xRel -= offsetX
-        yRel -= offsetY
-        if type == 5 {
-            if denom < 0 {index = 6; color = make_colour_rgb(235,223,211)}
-            else if idenom > 0 {index = 3}
-            else if idenom < 0 {index = 7; color = make_colour_rgb(235,223,211)}
-            if denom != 0 && idenom != 0 {index = 2; color = make_colour_rgb(44,32,20)}
-        } else { index = 4; }
-        var str = "";
-        if count == 1 && icount == 0 {str = "";}
-        else if icount == 0 {str = string(count);}
-        else if count == 0 {str = string(icount)+"i";}
-        else if icount > 0 {str = string(count)+"+"+string(icount)+"i";}
-        else {str = string(count)+string(icount)+"i";}
-        var strwidth = string_width(str)
+        xRel -= offsetX;
+        yRel -= offsetY;
+        var numbersCount = "";
+        var numbersDenom = "";
+        draw_set_colour(make_colour_rgb(44,32,20));
+        // display count and denom divided by the ipow
+        if index == 6 { // negative
+            count = -count; denom = -denom;
+            icount = 0; idenom = 0;
+            draw_set_colour(make_colour_rgb(235,223,211))
+        } else if index == 3 { // imaginary
+            count = icount; denom = idenom;
+            icount = 0; idenom = 0;
+        } else if index == 7 { // negative imaginary
+            count = -icount; denom = -idenom;
+            icount = 0; idenom = 0;
+            draw_set_colour(make_colour_rgb(235,223,211))
+        }
+
+        if icount == 0 { numbersCount = string(count); }
+        else {
+            if count == 0 { numbersCount = string(icount)+"i"; }
+            else if icount > 0 { numbersCount = string(count)+"+"+string(icount)+"i"; }
+            else { numbersCount = string(count)+string(icount)+"i"; }
+        }
+        if numbersCount == "1" { numbersCount = ""; }
+        if idenom == 0 { numbersDenom = string(denom); }
+        else {
+            if denom == 0 { numbersDenom = string(idenom)+"i"; }
+            else if idenom > 0 { numbersDenom = string(denom)+"+"+string(idenom)+"i"; }
+            else { numbersDenom = string(denom)+string(idenom)+"i"; }
+        }
+
+        var strwidth = string_width(numbersCount)
         if strwidth > 0 {strwidth += 4;}
-        draw_set_colour(color)
-        draw_text(xRel+width/2-2-strwidth/2,yRel+height-16-10,str)
+
+        draw_text(xRel+width/2-2-strwidth/2,yRel+height-16-10,numbersCount)
         draw_sprite(sprSymbols,index,xRel+width/2-16+strwidth/2,yRel+height/2-8-16);
-        if idenom == 0 {str = string(denom);}
-        else if denom == 0 {str = string(idenom)+"i";}
-        else if idenom > 0 {str = string(denom)+"+"+string(idenom)+"i";}
-        else {str = string(denom)+string(idenom)+"i";}
-        draw_text(xRel+width/2-string_width(str)/2,yRel+height-8,str)
-        draw_rectangle(xRel+(width-max(strwidth,string_width(str))-8)/2,yRel+height/2-1,xRel+(width+max(strwidth,string_width(str))+8)/2,yRel+height/2,false)
+
+        draw_text(xRel+width/2-string_width(numbersDenom)/2,yRel+height-8,numbersDenom)
+        draw_rectangle(xRel+(width-max(strwidth,string_width(numbersDenom))-8)/2,yRel+height/2-1,xRel+(width+max(strwidth,string_width(numbersDenom))+8)/2,yRel+height/2,false)
     break;
 }
 draw_set_color(c_white);

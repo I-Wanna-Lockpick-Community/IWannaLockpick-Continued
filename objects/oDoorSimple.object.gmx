@@ -41,12 +41,12 @@ effectiveColor = 0;
 effectiveColorSpend = 0;//These mostly have to do with the brown key gimmick
 count = 1;
 icount = 0;
-type = 0;//0 = Normal, 1 = Blank, 2 = Blank, 3 = All, 4 = Exact, 5 = Partial Blast, 6 = Partial All
+type = 0;//0 = Normal, 1 = Blank, 2 = Blank, 3 = All, 4 = Exact
 copies = 1;//Number of copies for the negative master key system
 icopies = 0;
 iPow = 0;
 exactI = 0;//Determines if Exact Door is Imaginary or not
-denom = 1;//Real part of partial blast denominator
+denom = 0;//Real part of partial blast denominator
 idenom = 0;//Imaginary part of partial blast denominator
 aura[0] = 0;//Red aura
 aura[1] = 0;//Green aura
@@ -829,7 +829,15 @@ if global.complexMode == 0 &amp;&amp; copies == 0
     // draw the rainbow outline if there aren't copies in this direction
     scrComboDrawIm();
 } else {
-    scrDrawDoorFrame((count &lt; 0 || icount &lt; 0) != (global.complexMode == 0 &amp;&amp; copies &lt; 0 || global.complexMode == 1 &amp;&amp; icopies &lt; 0));
+    var isNegative = false
+    if type == lock_BLAST &amp;&amp; (denom != 0 || idenom != 0) {
+        if (count == 0 &amp;&amp; denom == 0 &amp;&amp; idenom &lt; 0) ||
+            (icount == 0 &amp;&amp; idenom == 0 &amp;&amp; denom &lt; 0) {
+                isNegative = true;
+            }
+    } else if count &lt; 0 || icount &lt; 0 {isNegative = true}
+
+    scrDrawDoorFrame(isNegative != (global.complexMode == 0 &amp;&amp; copies &lt; 0 || global.complexMode == 1 &amp;&amp; icopies &lt; 0));
     scrDrawDoorLock(baseColor,count,icount,type,0,0,scrSimpleDoorGetLockSprite(),denom,idenom);
 }
 scrDrawDoorAura();

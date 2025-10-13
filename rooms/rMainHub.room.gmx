@@ -96,7 +96,7 @@ global.msg = "";</code>
     <instance objName="oDoorWhite" x="288" y="512" name="inst_7B190CB5" locked="0" code="aura[0] = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="352" y="512" name="inst_B4297068" locked="0" code="aura[2] = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="320" y="512" name="inst_FD6200F9" locked="0" code="aura[1] = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorDyna" x="640" y="288" name="inst_81567CF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorDyna" x="640" y="288" name="inst_81567CF0" locked="0" code="type=lock_ALL;color=color_BLUE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorDyna" x="672" y="256" name="inst_544AFC20" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGreen" x="64" y="480" name="inst_2F278FA4" locked="0" code="type=key_STAR&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGreen" x="96" y="480" name="inst_8E33B099" locked="0" code="type=key_CURSE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -193,7 +193,7 @@ global.msg = "";</code>
     <instance objName="oKeyIce" x="224" y="224" name="inst_BEEC606F" locked="0" code="count = -99&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMud" x="256" y="224" name="inst_FE442C21" locked="0" code="count = -99&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGraffiti" x="288" y="224" name="inst_0A61FF71" locked="0" code="count = -99&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorCombo" x="544" y="0" name="inst_BBCAB2EC" locked="0" code="h= 3;&#xA;w=8;&#xA;colorSpend=color_DYNAMITE;&#xA;scrComboAdd(color_DYNAMITE,4,0,0,13,13,sprLock4A);&#xA;scrComboAdvAdd(color_DYNAMITE,2,-3,5,77,21,sprLockAnyV,0,-5);&#xA;// @addcolor? i guess? this is to test drawing new colors on combo doors&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="544" y="0" name="inst_BBCAB2EC" locked="0" code="h= 3;&#xA;w=8;&#xA;colorSpend=color_DYNAMITE;&#xA;scrComboAdd(color_DYNAMITE,4,0,0,13,13,sprLock4A);&#xA;scrComboAdvAdd(color_DYNAMITE,2,-3,lock_BLAST,77,21,sprLockAnyV,0,-5);&#xA;// @addcolor? i guess? this is to test drawing new colors on combo doors&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlue" x="1056" y="352" name="inst_A4C66F70" locked="0" code="type = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="800" y="160" name="inst_59471841" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlue" x="1088" y="320" name="inst_257FC3C7" locked="0" code="h = 2;&#xA;count = 3;&#xA;type = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -207,8 +207,10 @@ global.msg = "";</code>
     <instance objName="oKeyIce" x="896" y="112" name="inst_3E133A2D" locked="0" code="type=key_CURSE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMud" x="960" y="112" name="inst_D3215A73" locked="0" code="type=key_CURSE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGraffiti" x="928" y="112" name="inst_B23C52ED" locked="0" code="type=key_CURSE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorBlue" x="1344" y="544" name="inst_482AAEE9" locked="0" code="w = 2;&#xA;type = 5;&#xA;denom = 2;&#xA;copies = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorBlue" x="1184" y="544" name="inst_C1C24AF9" locked="0" code="w = 2;&#xA;type = 6;&#xA;count = 3;&#xA;idenom = 2;&#xA;denom = 0;&#xA;copies = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorBlue" x="1344" y="544" name="inst_482AAEE9" locked="0" code="w = 2;&#xA;type = lock_BLAST;&#xA;denom = 2;&#xA;copies = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorBlue" x="1216" y="512" name="inst_7B053553" locked="0" code="w = 2;&#xA;type = lock_BLAST;&#xA;count = 0;&#xA;icount = -2;&#xA;idenom = -2;&#xA;copies = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorBlue" x="1152" y="512" name="inst_F05FDE54" locked="0" code="w = 2;&#xA;type = lock_BLAST;&#xA;count = 1;&#xA;icount = 2;&#xA;idenom = 2;&#xA;copies = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWorld" x="1088" y="544" name="inst_4F396B1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles2" x="256" y="480" w="32" h="32" xo="128" yo="0" id="10125734" name="inst_307BFDDA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
