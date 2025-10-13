@@ -39,6 +39,8 @@ getCost = 0;
 getICost = 0;
 getType = 0;
 getIsIExact = 0;// To know if Exact Lock is imaginary or not, since 0i is a possibility
+getDenom = 0;// Denominator
+getIDenom = 0;
 getGlitch = 0;
 getAura[0] = 0;//Red
 getAura[1] = 0;//Green
@@ -53,7 +55,7 @@ lockType[0] = 0;
 lockCost[0] = 0;
 lockICost[0] = 0;
 lockDenom[0] = 0;
-lockNumer[0] = 0;
+lockIDenom[0] = 0;
 //Define color names @addcolor
 colName[0] = "Master";
 colName[1] = "White";
@@ -333,6 +335,8 @@ if mouse_in_window(){
             other.getType = type;
             other.getGlitch = glitchMimic;
             other.getIsIExact = exactI;
+            other.getDenom = denom;
+            other.getIDenom = idenom;
             other.getAura[0] = aura[0];
             other.getAura[1] = aura[1];
             other.getAura[2] = aura[2];
@@ -358,7 +362,7 @@ if mouse_in_window(){
                 other.lockICost[i] = lock[i,2];
                 other.lockType[i] = lock[i,3];
                 other.lockDenom[i] = lock[i,7];
-                other.lockNumer[i] = lock[i,8];
+                other.lockIDenom[i] = lock[i,8];
             }
         } 
     }
@@ -1128,19 +1132,42 @@ if mouseType == 0{//Keys
     }else if getType == lock_BLANK{
         str += "None";
     }else if getType == lock_BLAST{
-        if getCost == 1{
-            str += "[All +]";
-        }else if getCost == -1{
-            str += "[All -]";
-        }else if getICost == 1{
-            str += "[All +i]";
-        }else{
-            str += "[All -i]";
+        if getDenom == 0 &amp;&amp; getIDenom == 0 {
+            if getCost == 1{
+                str += "[All +]";
+            }else if getCost == -1{
+                str += "[All -]";
+            }else if getICost == 1{
+                str += "[All +i]";
+            }else{
+                str += "[All -i]";
+            }
+        } else {
+            // partial blast
+            var numerString = "";
+            if getICost == 0 { numerString = string(getCost); }
+            else {
+                if getCost == 0 { numerString = string(getICost)+"i"; }
+                else if getICost &gt; 0 { numerString = "("+string(getCost)+"+"+string(getICost)+"i)"; }
+                else { numerString = "("+string(getCost)+string(getICost)+"i)"; }
+            }
+            if numerString == "1" { numerString = ""; }
+            var denomString = "";
+            if getIDenom == 0 { denomString = "+" + string(getDenom); }
+            else {
+                if getDenom == 0 {
+                    if getIDenom &lt; 0 { denomString = string(getIDenom)+"i"; }
+                    else { denomString = "+" + string(getIDenom)+"i"; }
+                }
+                else if getIDenom &gt; 0 { denomString = "("+string(getDenom)+"+"+string(getIDenom)+"i)"; }
+                else { denomString = "("+string(getDenom)+string(getIDenom)+"i)"; }
+            }
+            str += "[" + numerString + "All / " + denomString + "]";
         }
     }else if getType == lock_ALL{
         str += "[ALL]";
     }else if getType == lock_EXACT{
-        if getIsIExact != 0 || getICost != 0 {
+        if getIsIExact {
             str += "Exactly "+string(getICost)+"i";
         }else{
             str += "Exactly "+string(getCost);
@@ -1179,14 +1206,37 @@ if mouseType == 0{//Keys
             }else if lockType[i] == lock_BLANK{
                 str += "None";
             }else if lockType[i] == lock_BLAST{
-                if lockCost[i] == 1{
-                    str += "[All +]";
-                }else if lockCost[i] == -1{
-                    str += "[All -]";
-                }else if lockICost[i] == 1{
-                    str += "[All +i]";
-                }else{
-                    str += "[All -i]";
+                if lockDenom[i] == 0 &amp;&amp; lockIDenom[i] == 0 {
+                    if lockCost[i] == 1{
+                        str += "[All +]";
+                    }else if lockCost[i] == -1{
+                        str += "[All -]";
+                    }else if lockICost[i] == 1{
+                        str += "[All +i]";
+                    }else{
+                        str += "[All -i]";
+                    }
+                } else {
+                    // partial blast
+                    var numerString = "";
+                    if lockICost[i] == 0 { numerString = string(lockCost[i]); }
+                    else {
+                        if lockCost[i] == 0 { numerString = string(lockICost[i])+"i"; }
+                        else if lockICost[i] &gt; 0 { numerString = "("+string(lockCost[i])+"+"+string(lockICost[i])+"i)"; }
+                        else { numerString = "("+string(lockCost[i])+string(lockICost[i])+"i)"; }
+                    }
+                    if numerString == "1" { numerString = ""; }
+                    var denomString = "";
+                    if lockIDenom[i] == 0 { denomString = "+" + string(lockDenom[i]); }
+                    else {
+                        if lockDenom[i] == 0 {
+                            if lockIDenom[i] &lt; 0 { denomString = string(lockIDenom[i])+"i"; }
+                            else { denomString = "+" + string(lockIDenom[i])+"i"; }
+                        }
+                        else if lockIDenom[i] &gt; 0 { denomString = "("+string(lockDenom[i])+"+"+string(lockIDenom[i])+"i)"; }
+                        else { denomString = "("+string(lockDenom[i])+string(lockIDenom[i])+"i)"; }
+                    }
+                    str += "[" + numerString + "All / " + denomString + "]";
                 }
             }else if lockType[i] == lock_ALL{
                 str += "[ALL]";

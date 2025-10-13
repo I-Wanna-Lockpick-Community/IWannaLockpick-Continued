@@ -15,7 +15,10 @@ if baseColorSpend == color_MASTER{
 }else if baseColorSpend == color_STONE{
     draw_sprite_ext(sprDStoneTexture,0,x,y,w*.5,h*.5,0,c_white,1);
 }else if baseColorSpend == color_DYNAMITE{
-    draw_sprite_ext(sprDDynaTexture,floor(goldIndex),x,y,w*.5,h*.5,0,c_white,1);
+    for(var i = 0; i+1 < h/2; i++) {
+        draw_sprite_ext(sprDDynaTexture,floor(goldIndex),x,y,w*.5,1,0,c_white,1);
+    }
+    draw_sprite_part_ext(sprDDynaTexture,floor(goldIndex),0,0,64,h*32-i*64,x,y+i*64,w/2,1,c_white,1)
 }else{
     highTone = global.highTone[baseColorSpend];
     mainTone = global.mainTone[baseColorSpend];
