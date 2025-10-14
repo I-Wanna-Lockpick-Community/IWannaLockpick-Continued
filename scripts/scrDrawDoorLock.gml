@@ -34,6 +34,8 @@ var verticalText = false;
 var offsetX = sprite_get_xoffset(sprite);
 var offsetY = sprite_get_yoffset(sprite);
 
+var hasILockTexture = false; // indicates that the given sprite has predefined i lock textures so that exact knows how much to offset by 
+
 if sprite == sprLockAny {
     width = w*32-14;
     height = h*32-14;
@@ -50,6 +52,7 @@ switch sprite {
         if global.simpleLock { sprite = sprLockAnyS; }
         else { isPredefinedSprite = true; }
         backSprite = sprLockAnyS;
+        hasILockTexture = true;
     break;
     case sprLock2V:
     case sprLock3V:
@@ -57,12 +60,14 @@ switch sprite {
         else { isPredefinedSprite = true; }
         backSprite = sprLockAnyV;
         verticalText = true;
+        hasILockTexture = true;
     break;
     case sprLock2H:
     case sprLock3H:
         if global.simpleLock { sprite = sprLockAnyH; }
         else { isPredefinedSprite = true; }
         backSprite = sprLockAnyH;
+        hasILockTexture = true;
     break;
     case sprLock4A:
     case sprLock5A:
@@ -137,7 +142,12 @@ switch color {
 
 // draw lock frame
 var index = 0;
-if count < 0 || icount < 0 {index = 1}
+if type == lock_BLAST && (denom != 0 || idenom != 0) {
+    if (count == 0 && denom == 0 && idenom < 0) ||
+        (icount == 0 && idenom == 0 && denom < 0) {
+            index = 1;
+        }
+} else if count < 0 || icount < 0 {index = 1}
 
 if backSprite == sprLockAny { // arbitrary size lock
     // corners
@@ -164,6 +174,10 @@ if isPredefinedSprite {
     if count < 0 {index = 1}
     if icount > 0 {index = 2}
     else if icount < 0 {index = 3}
+    if type == lock_EXACT {
+        if hasILockTexture {index += 2}
+        else {index += 4}
+    }
     draw_sprite(sprite,index,xRel,yRel);
 }
 
