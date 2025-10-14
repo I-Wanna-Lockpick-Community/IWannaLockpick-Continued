@@ -21,5 +21,6 @@
   <height>38</height>
   <frames>
     <frame index="0">images\sprLock4A_0.png</frame>
+    <frame index="1">images\sprLock4A_1.png</frame>
   </frames>
 </sprite>
