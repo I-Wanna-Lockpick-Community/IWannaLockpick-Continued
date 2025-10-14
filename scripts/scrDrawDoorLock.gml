@@ -27,7 +27,7 @@ if object_index == oGate {
 var width = sprite_get_width(sprite);
 var height = sprite_get_height(sprite);
 
-var fillSprite = sprite;
+var backSprite = sprite;
 var isPredefinedSprite = false;
 var verticalText = false;
 
@@ -49,27 +49,27 @@ switch sprite {
     case sprLock1A:
         if global.simpleLock { sprite = sprLockAnyS; }
         else { isPredefinedSprite = true; }
-        fillSprite = sprLockAnyS;
+        backSprite = sprLockAnyS;
     break;
     case sprLock2V:
     case sprLock3V:
         if global.simpleLock { sprite = sprLockAnyV; }
         else { isPredefinedSprite = true; }
-        fillSprite = sprLockAnyV;
+        backSprite = sprLockAnyV;
         verticalText = true;
     break;
     case sprLock2H:
     case sprLock3H:
         if global.simpleLock { sprite = sprLockAnyH; }
         else { isPredefinedSprite = true; }
-        fillSprite = sprLockAnyH;
+        backSprite = sprLockAnyH;
     break;
     case sprLock4A:
     case sprLock5A:
     case sprLock6A:
         if global.simpleLock { sprite = sprLockAnyM; }
         else { isPredefinedSprite = true; }
-        fillSprite = sprLockAnyM;
+        backSprite = sprLockAnyM;
     break;
     case sprLock4B:
     case sprLock5B:
@@ -78,12 +78,12 @@ switch sprite {
     case sprLock12A:
         if global.simpleLock { sprite = sprLockAnyL; }
         else { isPredefinedSprite = true; }
-        fillSprite = sprLockAnyL;
+        backSprite = sprLockAnyL;
     break;
     case sprLock24A:
         if global.simpleLock { sprite = sprLockAnyXL; }
         else { isPredefinedSprite = true; }
-        fillSprite = sprLockAnyXL;
+        backSprite = sprLockAnyXL;
     break;
 }
 
@@ -107,7 +107,7 @@ switch color {
     break;
     case color_GLITCH:
         shader_set(shdRainbowStripe2);
-        draw_sprite_ext(fillSprite,2,xRel,yRel,1,1,0,mainTone,1);
+        draw_sprite_ext(backSprite,2,xRel,yRel,1,1,0,mainTone,1);
         shader_reset();
         if glitchMimic != color_GLITCH {
             var index = 3;
@@ -122,50 +122,48 @@ switch color {
                     mainTone = global.mainTone[glitchMimic];
                 break;
             }
-            draw_sprite_ext(fillSprite,index,xRel,yRel,1,1,0,mainTone,1);
+            draw_sprite_ext(backSprite,index,xRel,yRel,1,1,0,mainTone,1);
         }
     break;
     default:
         if sprite == sprLockAny {
             // arbitrary size lock fill
-            draw_sprite_ext(fillSprite,2,xRel-offsetX+1,yRel-offsetY+1,(width-2)/64,(height-2)/64,0,mainTone,1);
+            draw_sprite_ext(backSprite,2,xRel-offsetX+1,yRel-offsetY+1,(width-2)/64,(height-2)/64,0,mainTone,1);
         } else {
-            draw_sprite_ext(fillSprite,2,xRel,yRel,1,1,0,mainTone,1);
+            draw_sprite_ext(backSprite,2,xRel,yRel,1,1,0,mainTone,1);
         }
     break;
 }
 
 // draw lock frame
 var index = 0;
-if type == lock_BLAST && (denom != 0 || idenom != 0) {
-    if (count == 0 && denom == 0 && idenom < 0) ||
-        (icount == 0 && idenom == 0 && denom < 0) {
-            index = 1;
-        }
-} else if count < 0 || icount < 0 {index = 1}
+if count < 0 || icount < 0 {index = 1}
 
-if isPredefinedSprite {
-    // the imaginary sprites; only matters for sprites for predefined lock amounts
-    if icount > 0 {index = 2}
-    else if icount < 0 {index = 3}
-    if type == lock_EXACT {index += 4} // ehehe i love how i can do this
-}
-if sprite == sprLockAny { // arbitrary size lock
+if backSprite == sprLockAny { // arbitrary size lock
     // corners
-    draw_sprite_part(sprite,index,0,0,16,16,xRel,yRel);
-    draw_sprite_part(sprite,index,48,0,16,16,xRel+width-2,yRel);
-    draw_sprite_part(sprite,index,0,48,16,16,xRel,yRel+height-2);
-    draw_sprite_part(sprite,index,48,48,16,16,xRel+width-2,yRel+height-2);
+    draw_sprite_part(backSprite,index,0,0,16,16,xRel,yRel);
+    draw_sprite_part(backSprite,index,48,0,16,16,xRel+width-2,yRel);
+    draw_sprite_part(backSprite,index,0,48,16,16,xRel,yRel+height-2);
+    draw_sprite_part(backSprite,index,48,48,16,16,xRel+width-2,yRel+height-2);
     // edges
     if w > 1 {
-        draw_sprite_part_ext(sprite,index,16,0,32,16,xRel+16,yRel,(width-18)/32,1,c_white,1);
-        draw_sprite_part_ext(sprite,index,16,48,32,16,xRel+16,yRel+height-2,(width-18)/32,1,c_white,1);
+        draw_sprite_part_ext(backSprite,index,16,0,32,16,xRel+16,yRel,(width-18)/32,1,c_white,1);
+        draw_sprite_part_ext(backSprite,index,16,48,32,16,xRel+16,yRel+height-2,(width-18)/32,1,c_white,1);
     }
     if h > 1 {
-        draw_sprite_part_ext(sprite,index,0,16,16,32,xRel,yRel+16,1,(height-18)/32,c_white,1);
-        draw_sprite_part_ext(sprite,index,48,16,16,32,xRel+width-2,yRel+16,1,(height-18)/32,c_white,1);
+        draw_sprite_part_ext(backSprite,index,0,16,16,32,xRel,yRel+16,1,(height-18)/32,c_white,1);
+        draw_sprite_part_ext(backSprite,index,48,16,16,32,xRel+width-2,yRel+16,1,(height-18)/32,c_white,1);
     }
 } else {
+    draw_sprite(backSprite,index,xRel,yRel);
+}
+
+// draw predefined lock sprite
+if isPredefinedSprite {
+    index = 0;
+    if count < 0 {index = 1}
+    if icount > 0 {index = 2}
+    else if icount < 0 {index = 3}
     draw_sprite(sprite,index,xRel,yRel);
 }
 
