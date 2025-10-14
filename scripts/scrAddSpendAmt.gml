@@ -41,12 +41,8 @@ switch argument3 {
     case lock_BLAST://blast (can accept real or imaginary, but not both)
         if denom != 0 || idenom != 0 {
             var rquotient = scrComplexDivide(global.key[open_check],global.ikey[open_check],denom,idenom);
-            if rquotient*open_needR % 1 == 0 && rquotient*open_needI % 1 == 0 {
-                spendTotal += rquotient*open_needR;
-                spendITotal += rquotient*open_needI;
-            } else {
-                // decimals dont exist yet; 0 cost if its decimal
-            }
+            spendTotal += roundNormal(rquotient*open_needR);
+            spendITotal += roundNormal(rquotient*open_needI);
         } else {
             if open_needR != 0 {
                 spendTotal += global.key[open_check];
@@ -60,12 +56,8 @@ switch argument3 {
         if denom != 0 || idenom != 0 {
             var rquotient = scrComplexDivide(global.key[open_check],global.ikey[open_check],denom,idenom);
             var iquotient = scrComplexDivideI(global.key[open_check],global.ikey[open_check],denom,idenom);
-            if (rquotient*open_needR-iquotient*open_needI) % 1 == 0 && (iquotient*open_needR+rquotient*open_needI) % 1 == 0 {
-                spendTotal += rquotient*open_needR-iquotient*open_needI;
-                spendITotal += iquotient*open_needR+rquotient*open_needI;
-            } else {
-                // decimals dont exist yet; 0 cost if its decimal
-            }
+            spendTotal += roundNormal(rquotient*open_needR-iquotient*open_needI);
+            spendITotal += roundNormal(iquotient*open_needR+rquotient*open_needI);
         } else {
             spendTotal += global.key[open_check];
             spendITotal += global.ikey[open_check];

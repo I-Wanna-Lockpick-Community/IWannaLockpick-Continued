@@ -336,7 +336,8 @@ if distToP &lt;= 1 {
     if (canDynamiteOpen &amp;&amp; scrNormalDynamiteOpen()) {
         undoBUFFER();
         scrPlayerDownStop();
-    } else if (canGoldOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 1) &amp;&amp; scrNormalMasterOpen() {//SPEND MASTER KEYS
+    } else if (canGoldOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 1) {//SPEND MASTER KEYS
+        scrNormalMasterOpen()
         undoBUFFER();
         scrPlayerDownStop();
     } else {//SPEND NORMAL KEYS
