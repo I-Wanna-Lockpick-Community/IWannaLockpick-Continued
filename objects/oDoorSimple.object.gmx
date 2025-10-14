@@ -48,6 +48,7 @@ iPow = 0;
 exactI = 0;//Determines if Exact Door is Imaginary or not
 denom = 0;//Real part of partial blast denominator
 idenom = 0;//Imaginary part of partial blast denominator
+negated = 0;// negated lock
 aura[0] = 0;//Red aura
 aura[1] = 0;//Green aura
 aura[2] = 0;//Blue aura
@@ -313,7 +314,8 @@ if auraCount &gt; 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || obj
         removeAuras();
     }
     //Ice, mud, graffiti openings (aurabreak)
-    if auraCount == 1 &amp;&amp; (global.key[auraType] != 0 || global.ikey[auraType] != 0) {
+    if auraCount == 1 {
+        if  (global.key[auraType] == 0 &amp;&amp; global.ikey[auraType] == 0) { exit; }
         effectiveColor = auraType;
         effectiveColorSpend = auraType;
     }
@@ -354,7 +356,7 @@ if distToP &lt;= 1 {
         }
         spendTotal = 0;
         spendITotal = 0;
-        scrAddSpendAmt(effectiveColor,count,icount,type,tempIPow,denom,idenom)
+        scrAddSpendAmt(effectiveColor,count,icount,type,tempIPow,denom,idenom,negated)
         if (canSilverOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 2) {
             addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
             addComplexKeys(color_SILVER,-1,0,tempIPow);
@@ -364,7 +366,7 @@ if distToP &lt;= 1 {
             objPlayer.masterCycle = 0;
             undoBUFFER();
             scrBroadcastCopy(effectiveColorSpend); // should it?
-        } else if canOpen(effectiveColor,count,icount,type,tempIPow,exactI,denom,idenom) {
+        } else if canOpen(effectiveColor,count,icount,type,tempIPow,exactI,denom,idenom,negated) {
             addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
             scrOpenOrCopy();
             scrBroadcastCopy(effectiveColorSpend);
@@ -839,7 +841,7 @@ if global.complexMode == 0 &amp;&amp; copies == 0
     } else if count &lt; 0 || icount &lt; 0 {isNegative = true}
 
     scrDrawDoorFrame(isNegative != (global.complexMode == 0 &amp;&amp; copies &lt; 0 || global.complexMode == 1 &amp;&amp; icopies &lt; 0));
-    scrDrawDoorLock(baseColor,count,icount,type,0,0,scrSimpleDoorGetLockSprite(),denom,idenom);
+    scrDrawDoorLock(baseColor,count,icount,type,0,0,scrSimpleDoorGetLockSprite(),denom,idenom,negated);
 }
 scrDrawDoorAura();
 </string>

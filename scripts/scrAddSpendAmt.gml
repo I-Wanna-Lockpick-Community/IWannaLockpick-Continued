@@ -1,4 +1,4 @@
-///scrAddSpendAmt(color,open_needR,open_needI,type,power_of_i,denom,idenom);
+///scrAddSpendAmt(color,open_needR,open_needI,type,power_of_i,denom,idenom,negated);
 var open_check = argument0;
 if open_check == color_GLITCH{
     open_check = glitchMimic;
@@ -29,11 +29,14 @@ switch argument4{
         var idenom = -argument5;
     break;
 }
+var rcost = 0;
+var icost = 0;
+var negated = argument7;
 switch argument3 {
     case lock_NORMAL:
     case lock_EXACT:
-        spendTotal += open_needR;
-        spendITotal += open_needI;
+        rcost = open_needR;
+        icost = open_needI;
     break;
     case lock_BLANK:
         //Nothing really
@@ -41,14 +44,14 @@ switch argument3 {
     case lock_BLAST://blast (can accept real or imaginary, but not both)
         if denom != 0 || idenom != 0 {
             var rquotient = scrComplexDivide(global.key[open_check],global.ikey[open_check],denom,idenom);
-            spendTotal += roundNormal(rquotient*open_needR);
-            spendITotal += roundNormal(rquotient*open_needI);
+            rcost = roundNormal(rquotient*open_needR);
+            icost = roundNormal(rquotient*open_needI);
         } else {
             if open_needR != 0 {
-                spendTotal += global.key[open_check];
+                rcost = global.key[open_check];
             }
             if open_needI != 0 {
-                spendITotal += global.ikey[open_check];
+                icost = global.ikey[open_check];
             }
         }
     break;
@@ -56,12 +59,20 @@ switch argument3 {
         if denom != 0 || idenom != 0 {
             var rquotient = scrComplexDivide(global.key[open_check],global.ikey[open_check],denom,idenom);
             var iquotient = scrComplexDivideI(global.key[open_check],global.ikey[open_check],denom,idenom);
-            spendTotal += roundNormal(rquotient*open_needR-iquotient*open_needI);
-            spendITotal += roundNormal(iquotient*open_needR+rquotient*open_needI);
+            rcost = roundNormal(rquotient*open_needR-iquotient*open_needI);
+            icost = roundNormal(iquotient*open_needR+rquotient*open_needI);
         } else {
-            spendTotal += global.key[open_check];
-            spendITotal += global.ikey[open_check];
+            rcost = global.key[open_check];
+            icost = global.ikey[open_check];
         }
     break;
 }
+if negated {
+    spendTotal -= rcost;
+    spendITotal -= icost;
+} else {
+    spendTotal += rcost;
+    spendITotal += icost;
+}
+
 return false;

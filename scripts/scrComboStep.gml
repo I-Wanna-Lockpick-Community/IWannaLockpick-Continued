@@ -142,7 +142,7 @@ if distance_to_object(objPlayer) <= 1{
             if auraCount == 1 {
                 if (global.key[auraType] != 0 || global.ikey[auraType] != 0) {
                     for(var i = 0; i < lockCount; i += 1){
-                        if !canOpen(auraType,lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7],lock[i,7],lock[i,8]){
+                        if !canOpen(auraType,lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7],lock[i,7],lock[i,8],lock[i,9]){
                             metRequirement = false;
                         }
                     }
@@ -151,13 +151,13 @@ if distance_to_object(objPlayer) <= 1{
                 }
             } else if cursed != -1 && cursed != color_PURE{//Brown version
                 for(var i = 0; i < lockCount; i += 1){
-                    if !canOpen(cursed,lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7],lock[i,7],lock[i,8]){
+                    if !canOpen(cursed,lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7],lock[i,7],lock[i,8],lock[i,9]){
                         metRequirement = false;
                     }
                 }
             } else {//Normal lock spend summation
                 for(var i = 0; i < lockCount; i += 1){
-                    if !canOpen(lock[i,0],lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7],lock[i,7],lock[i,8]){
+                    if !canOpen(lock[i,0],lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7],lock[i,7],lock[i,8],lock[i,9]){
                         metRequirement = false;
                     }
                 }
@@ -175,11 +175,11 @@ if distance_to_object(objPlayer) <= 1{
             }
             if cursed != -1 && cursed != color_PURE{//Door is brown, different spend amount can result from Blast Locks
                 for(var i = 0; i < lockCount; i += 1){
-                    scrAddSpendAmt(cursed,lock[i,1],lock[i,2],lock[i,3],tempIPow,lock[i,7],lock[i,8]);
+                    scrAddSpendAmt(cursed,lock[i,1],lock[i,2],lock[i,3],tempIPow,lock[i,7],lock[i,8],lock[i,9]);
                 }
             }else{//Normal lock spend summation
                 for(var i = 0; i < lockCount; i += 1){
-                    scrAddSpendAmt(lock[i,0],lock[i,1],lock[i,2],lock[i,3],tempIPow,lock[i,7],lock[i,8]);
+                    scrAddSpendAmt(lock[i,0],lock[i,1],lock[i,2],lock[i,3],tempIPow,lock[i,7],lock[i,8],lock[i,9]);
                 }
             }
             if (silverEligible) {

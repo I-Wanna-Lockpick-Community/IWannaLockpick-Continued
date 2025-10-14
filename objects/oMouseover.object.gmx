@@ -41,6 +41,7 @@ getType = 0;
 getIsIExact = 0;// To know if Exact Lock is imaginary or not, since 0i is a possibility
 getDenom = 0;// Denominator
 getIDenom = 0;
+getNegated = 0;
 getGlitch = 0;
 getAura[0] = 0;//Red
 getAura[1] = 0;//Green
@@ -337,6 +338,7 @@ if mouse_in_window(){
             other.getIsIExact = exactI;
             other.getDenom = denom;
             other.getIDenom = idenom;
+            other.getNegated = negated;
             other.getAura[0] = aura[0];
             other.getAura[1] = aura[1];
             other.getAura[2] = aura[2];
@@ -363,6 +365,7 @@ if mouse_in_window(){
                 other.lockType[i] = lock[i,3];
                 other.lockDenom[i] = lock[i,7];
                 other.lockIDenom[i] = lock[i,8];
+                other.lockNegated[i] = lock[i,9];
             }
         } 
     }
@@ -404,7 +407,8 @@ if mouse_in_window(){
                 other.lockICost[i] = lock[i,2];
                 other.lockType[i] = lock[i,3];
                 other.lockDenom[i] = lock[i,7];
-                other.lockNumer[i] = lock[i,8];
+                other.lockIDenom[i] = lock[i,8];
+                other.lockNegated[i] = lock[i,9];
             }
         } 
     }
@@ -1123,6 +1127,7 @@ if mouseType == 0{//Keys
     }
 }else if mouseType == 1{//Simple doors
     str = doorName[getType]+colName[getSpend]+" Door#Cost: ";
+    if getNegated {str += "Not "}
     if getType == lock_NORMAL{
         if getICost != 0{//Imaginary
             str += string(getICost)+"i";
@@ -1197,6 +1202,7 @@ if mouseType == 0{//Keys
         str = "Combo "+colName[getSpend]+" Door#";
         for(i=0;i&lt;lockCount;i+=1){
             str += "Lock: "+doorName[lockType[i]]+colName[lockCol[i]]+", Cost: ";
+            if lockNegated[i] {str += "Not "}
             if lockType[i] == lock_NORMAL{
                 if lockICost[i] != 0{//Imaginary
                     str += string(lockICost[i])+"i";
@@ -1279,6 +1285,7 @@ if mouseType == 0{//Keys
         str = "Gate#";
         for(i=0;i&lt;lockCount;i+=1){
             str += "Lock: "+doorName[lockType[i]]+colName[lockCol[i]]+", Cost: ";
+            if lockNegated[i] {str += "Not "}
             if lockType[i] == lock_NORMAL{
                 if lockICost[i] != 0{//Imaginary
                     str += string(lockICost[i])+"i";
@@ -1288,14 +1295,37 @@ if mouseType == 0{//Keys
             }else if lockType[i] == lock_BLANK{
                 str += "None";
             }else if lockType[i] == lock_BLAST{
-                if lockCost[i] == 1{
-                    str += "[All +]";
-                }else if lockCost[i] == -1{
-                    str += "[All -]";
-                }else if lockICost[i] == 1{
-                    str += "[All +i]";
-                }else{
-                    str += "[All -i]";
+                if lockDenom[i] == 0 &amp;&amp; lockIDenom[i] == 0 {
+                    if lockCost[i] == 1{
+                        str += "[All +]";
+                    }else if lockCost[i] == -1{
+                        str += "[All -]";
+                    }else if lockICost[i] == 1{
+                        str += "[All +i]";
+                    }else{
+                        str += "[All -i]";
+                    }
+                } else {
+                    // partial blast
+                    var numerString = "";
+                    if lockICost[i] == 0 { numerString = string(lockCost[i]); }
+                    else {
+                        if lockCost[i] == 0 { numerString = string(lockICost[i])+"i"; }
+                        else if lockICost[i] &gt; 0 { numerString = "("+string(lockCost[i])+"+"+string(lockICost[i])+"i)"; }
+                        else { numerString = "("+string(lockCost[i])+string(lockICost[i])+"i)"; }
+                    }
+                    if numerString == "1" { numerString = ""; }
+                    var denomString = "";
+                    if lockIDenom[i] == 0 { denomString = "+" + string(lockDenom[i]); }
+                    else {
+                        if lockDenom[i] == 0 {
+                            if lockIDenom[i] &lt; 0 { denomString = string(lockIDenom[i])+"i"; }
+                            else { denomString = "+" + string(lockIDenom[i])+"i"; }
+                        }
+                        else if lockIDenom[i] &gt; 0 { denomString = "("+string(lockDenom[i])+"+"+string(lockIDenom[i])+"i)"; }
+                        else { denomString = "("+string(lockDenom[i])+string(lockIDenom[i])+"i)"; }
+                    }
+                    str += "[" + numerString + "All / " + denomString + "]";
                 }
             }else if lockType[i] == lock_EXACT{
                 str += "[ALL]";

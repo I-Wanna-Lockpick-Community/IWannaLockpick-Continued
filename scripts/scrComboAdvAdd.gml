@@ -9,4 +9,5 @@ lock[tempID,5] = argument5;
 lock[tempID,6] = argument6;
 lock[tempID,7] = argument7;
 lock[tempID,8] = argument8;
+lock[tempID,9] = argument9;
 lockCount += 1;
