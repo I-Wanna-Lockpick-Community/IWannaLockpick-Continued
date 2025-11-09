@@ -1327,7 +1327,7 @@ if mouseType == 0{//Keys
                     }
                     str += "[" + numerString + "All / " + denomString + "]";
                 }
-            }else if lockType[i] == lock_EXACT{
+            }else if lockType[i] == lock_ALL{
                 str += "[ALL]";
             }
             str += "#";

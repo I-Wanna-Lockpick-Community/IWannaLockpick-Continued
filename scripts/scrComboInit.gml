@@ -16,7 +16,7 @@ lock[0,0] = 0;//Left = index, right = attribute
 
 invertBorder = 0;
 colorSpend = 0;
-glitchMimic = 12;//For glitch doors
+glitchMimic = color_GLITCH;//For copy doors
 iPow = 0;
 
 copies = 1;

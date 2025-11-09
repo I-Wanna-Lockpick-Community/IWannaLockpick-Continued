@@ -37,8 +37,8 @@ active = 1;//Whether or not it can be opened. Inactive means it goes far out of 
 color = 0;
 colorSpend = 0;//Can spend a key type other than the required one
 glitchMimic = color_GLITCH;//For glitch doors
-effectiveColor = 0;
-effectiveColorSpend = 0;//These mostly have to do with the brown key gimmick
+baseColor = 0; // for drawing
+baseColorSpend = 0; // for drawing
 count = 1;
 icount = 0;
 type = 0;//0 = Normal, 1 = Blank, 2 = Blank, 3 = All, 4 = Exact
@@ -75,11 +75,6 @@ copyAlpha = 0;
 copySound = 0;
 copyTimer = 0;
 copyDraw = 1;
-
-//Three blends for the top, middle, and bottom.
-c1 = c_white;
-c2 = c_white;
-c3 = c_white;
 
 image_speed = 0;
 myLight = -1;//Uninitialized light source object
@@ -464,11 +459,6 @@ for(var ix = 0; ix&lt;(2*w); ix+=1){
           <argument>
             <kind>1</kind>
             <string>///Room start code
-effectiveColor = color;
-effectiveColorSpend = colorSpend;
-
-scrColorDoor();
-scrColorDoor2();
 
 image_xscale = w;
 image_yscale = h;
@@ -493,7 +483,7 @@ if instance_exists(oLightsW5) || instance_exists(oLightsW4) || instance_exists(o
     myLight.parent = id;
     myLight.image_xscale = .2 * max(w,h);
     myLight.image_yscale = myLight.image_xscale;
-    myLight.image_blend = c1;
+    myLight.image_blend = global.highTone[color];
 }
 </string>
           </argument>
@@ -668,38 +658,8 @@ for(var ix = 0; ix&lt;(2*w); ix+=1){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>effectiveColor = color;
-effectiveColorSpend = colorSpend;
-
-scrColorDoor();
-scrColorDoor2();
-
-image_xscale = w;
-image_yscale = h;
-
-if (w==1&amp;&amp;h==2){
-    image_xscale = 1;
-    image_yscale = 1;
-    mask_index = maskDoor1x2;
-}
-if (w==2&amp;&amp;h==2){
-    image_xscale = 1;
-    image_yscale = 1;
-    mask_index = maskDoor2x2;
-}
-if (w&gt;=4 || h&gt;=4){
-    mask_index = sprBlockMask;
-}
-
-myLight = -1;
-if instance_exists(oLightsW5) || instance_exists(oLightsW4) || instance_exists(oLightsW6) || instance_exists(oBGW7) || instance_exists(oLightsW9) || instance_exists(oBGW12){
-    myLight = instance_create(x+16*w,y+16*h,oLight);
-    myLight.parent = id;
-    myLight.image_xscale = .2 * max(w,h);
-    myLight.image_yscale = myLight.image_xscale;
-    myLight.image_blend = c1;
-}
-
+            <string>
+event_user(4);
 if salvageID != -1{depth -= 1;}
 </string>
           </argument>
