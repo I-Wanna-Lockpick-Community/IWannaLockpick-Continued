@@ -39,16 +39,6 @@ if copyState != 0{exit;}
 if !active{brownNearPlayer=0;visible=0;exit;}
 brownNearPlayer=0;
 
-var effectiveColorSpend;
-if cursed != -1 && cursed != color_PURE {
-    effectiveColorSpend = cursed;
-} else {
-    effectiveColorSpend = colorSpend;
-}
-if effectiveColorSpend == color_GLITCH {
-    effectiveColorSpend = glitchMimic;
-}
-
 //iPow stuff
 if global.complexMode == 0{//Real view
     if copies > 0{iPow = 0;}
@@ -67,6 +57,7 @@ if global.complexMode == 0{//Real view
 }
 
 var auraCount = 0; //Amount of auras on the door
+var auraType;
 if aura[0] == 1{auraCount++; auraType = color_ICE}
 if aura[1] == 1{auraCount++; auraType = color_MUD}
 if aura[2] == 1{auraCount++; auraType = color_GRAFFITI}
@@ -75,97 +66,43 @@ if auraCount > 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || objPla
     if distance_to_object(objPlayer) <= 23{
         removeAurasCombo();
     }
-    //Ice, mud, graffiti openings (aurabreak)
-    if auraCount == 1 && (global.key[auraType] != 0 || global.ikey[auraType] != 0) {
-        effectiveColorSpend = auraType;
-    }
+    if (global.key[auraType] == 0 && global.ikey[auraType] == 0) { exit; }
+    if auraCount > 1 {exit;}
 }
 if objPlayer.curseMode != 0 && distance_to_object(objPlayer) <= 23{
     tryCurseCombo();
 } else {
     brownNearPlayer = 0;
 }
-if auraCount > 1 {exit;}
 //Now, the first big calculation is the Gold Eligibility.
-var goldEligible = objPlayer.masterMode;//0 = Don't use gold, 1 = Use gold, -1 = Use negative gold, 2 = Use imaginary gold, -2 = Use negative imaginary gold
-if objPlayer.masterCycle != 1 {
-    goldEligible = 0;
+var canGoldOpen = (objPlayer.masterMode != 0) && (objPlayer.masterCycle == 1) && !(hasColor(color_PURE) || hasColor(color_MASTER));
+var canSilverOpen = (objPlayer.masterMode != 0) && (objPlayer.masterCycle == 2) && !(hasColor(color_PURE) || hasColor(color_SILVER));
+var canDynamiteOpen = (global.key[color_DYNAMITE] != 0 || global.ikey[color_DYNAMITE] != 0) && !(hasColor(color_PURE) || hasColor(color_DYNAMITE));
+if auraCount > 0 {
+    canGoldOpen = false;
+    canSilverOpen = false;
+    canDynamiteOpen = false;
 }
-if goldEligible != 0 {
-    if effectiveColorSpend == color_MASTER || effectiveColorSpend == color_PURE || auraCount > 0 {
-        goldEligible = 0;
-    }
-    for(var i = 0; i < lockCount; i += 1){
-        if lock[i,0] == color_MASTER || lock[i,0] == color_PURE {
-            goldEligible = 0;
-        }
-    }
-}
-var dynamiteEligible = false;
-if global.key[color_DYNAMITE] != 0 || global.ikey[color_DYNAMITE] != 0 {
-    dynamiteEligible = true;
-}
-if (cursed == -1 || cursed == color_PURE) && dynamiteEligible {
-    if effectiveColorSpend == color_DYNAMITE || effectiveColorSpend == color_PURE || auraCount > 0 {
-        dynamiteEligible = false;
-    }
-    for(var i = 0; i < lockCount; i += 1){
-        if lock[i,0] == color_DYNAMITE || lock[i,0] == color_PURE {
-            dynamiteEligible = false;
-        }
-    }
-}
-var silverEligible = false;
-if objPlayer.masterCycle == 2 && objPlayer.masterMode != 0 {
-    silverEligible = true;
-}
-if (cursed == -1 || cursed == color_PURE) && silverEligible {
-    if effectiveColorSpend == color_SILVER || effectiveColorSpend == color_PURE || auraCount > 0 {
-        silverEligible = false;
-    }
-    for(var i = 0; i < lockCount; i += 1){
-        if lock[i,0] == color_SILVER || lock[i,0] == color_PURE {
-            silverEligible = false;
-        }
-    }
-}
-
 //Now, check nearness to player, and house all the main code in different cases depending on gold eligibility.
 if distance_to_object(objPlayer) <= 1{
-    if dynamiteEligible && scrNormalDynamiteOpen() {
-        // i hope this works
+    if canDynamiteOpen {
+        scrNormalDynamiteOpen()
         undoBUFFER();
     } else {
-        if goldEligible == 0 {
+        if canGoldOpen {
+            scrNormalMasterOpen();
+        } else {
             //MAIN CODE
             var metRequirement = true;//Whether the requirement for every lock has been met
-            if auraCount == 1 {
-                if (global.key[auraType] != 0 || global.ikey[auraType] != 0) {
-                    for(var i = 0; i < lockCount; i += 1){
-                        if !canOpen(auraType,lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7],lock[i,7],lock[i,8],lock[i,9]){
-                            metRequirement = false;
-                        }
-                    }
-                } else {
+            for(var i = 0; i < lockCount; i += 1){
+                if !canOpen(scrLockEffectiveColor(i,true),lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7],lock[i,7],lock[i,8],lock[i,9]){
                     metRequirement = false;
-                }
-            } else if cursed != -1 && cursed != color_PURE{//Brown version
-                for(var i = 0; i < lockCount; i += 1){
-                    if !canOpen(cursed,lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7],lock[i,7],lock[i,8],lock[i,9]){
-                        metRequirement = false;
-                    }
-                }
-            } else {//Normal lock spend summation
-                for(var i = 0; i < lockCount; i += 1){
-                    if !canOpen(lock[i,0],lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7],lock[i,7],lock[i,8],lock[i,9]){
-                        metRequirement = false;
-                    }
                 }
             }
             spendTotal = 0;//Integer part of cost
             spendITotal = 0;
             var tempIPow = iPow;
-            if (silverEligible) {
+            if (canSilverOpen) {
                 switch objPlayer.masterMode {
                     case 1: tempIPow = 0; break;
                     case 2: tempIPow = 1; break;
@@ -173,33 +110,24 @@ if distance_to_object(objPlayer) <= 1{
                     case -2: tempIPow = 3; break;
                 }
             }
-            if cursed != -1 && cursed != color_PURE{//Door is brown, different spend amount can result from Blast Locks
-                for(var i = 0; i < lockCount; i += 1){
-                    scrAddSpendAmt(cursed,lock[i,1],lock[i,2],lock[i,3],tempIPow,lock[i,7],lock[i,8],lock[i,9]);
-                }
-            }else{//Normal lock spend summation
-                for(var i = 0; i < lockCount; i += 1){
-                    scrAddSpendAmt(lock[i,0],lock[i,1],lock[i,2],lock[i,3],tempIPow,lock[i,7],lock[i,8],lock[i,9]);
-                }
+            for(var i = 0; i < lockCount; i += 1){
+                scrAddSpendAmt(scrLockEffectiveColor(i,true),lock[i,1],lock[i,2],lock[i,3],tempIPow,lock[i,7],lock[i,8],lock[i,9]);
             }
-            if (silverEligible) {
-                addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
+            if (canSilverOpen) {
+                addComplexKeys(get,-spendTotal,-spendITotal,0);
                 addComplexKeys(color_SILVER,-1,0,tempIPow);
                 scrPlaySoundExt(sndMasterUnlock,1,1,false);
                 event_user(2);
                 objPlayer.masterMode = 0;
                 objPlayer.masterCycle = 0;
                 undoBUFFER();
-                scrBroadcastCopy(effectiveColorSpend); // should it?
+                scrBroadcastCopy(scrEffectiveColor(colorSpend,true));
             } else if metRequirement {
-                addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
+                addComplexKeys(scrEffectiveColor(colorSpend,true),-spendTotal,-spendITotal,0);
                 scrOpenCombo();
-                scrBroadcastCopy(effectiveColorSpend);
+                scrBroadcastCopy(scrEffectiveColor(colorSpend,true));
             }
-        } else {
-            scrNormalMasterOpen();
         }
     }
 }
-
 useMasterCheck();

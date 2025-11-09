@@ -35,10 +35,8 @@ if objPlayer.aura[0] == -1 && aura[0] != 1 && (color != color_RED && colorSpend 
     auraPlayNoise = 1;
     var colorOld = color;
     color = color_WHITE;
-    scrColorDoor();
     event_user(0);
     color = colorOld;
-    scrColorDoor();
     brownNearPlayer = 1;
     undoBUFFER();
 }
@@ -47,10 +45,8 @@ if objPlayer.aura[1] == -1 && aura[1] != 1 && (color != color_GREEN && colorSpen
     auraPlayNoise = 1;
     var colorOld = color;
     color = color_BROWN;
-    scrColorDoor();
     event_user(0);
     color = colorOld;
-    scrColorDoor();
     brownNearPlayer = 1;
     undoBUFFER();
 }
@@ -59,10 +55,8 @@ if objPlayer.aura[2] == -1 && aura[2] != 1 && (color != color_BLUE && colorSpend
     auraPlayNoise = 1;
     var colorOld = color;
     color = color_ORANGE;
-    scrColorDoor();
     event_user(0);
     color = colorOld;
-    scrColorDoor();
     brownNearPlayer = 1;
     undoBUFFER();
 }

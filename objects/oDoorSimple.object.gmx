@@ -269,19 +269,6 @@ distToP = distance_to_object(objPlayer);
 if copyState != 0 {exit;}
 if !active {brownNearPlayer=0;visible=0;exit;}
 brownNearPlayer=0;
-if cursed != -1 &amp;&amp; cursed != color_PURE {
-    effectiveColor = cursed;
-    effectiveColorSpend = cursed;
-}else{
-    effectiveColor = color;
-    effectiveColorSpend = colorSpend;
-}
-if effectiveColor == color_GLITCH {
-    effectiveColor = glitchMimic;
-}
-if effectiveColorSpend == color_GLITCH {
-    effectiveColorSpend = glitchMimic;
-}
 //iPow stuff
 if global.complexMode == 0{//Real view
     if copies &gt; 0{iPow = 0;}
@@ -310,9 +297,7 @@ if auraCount &gt; 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || obj
     }
     //Ice, mud, graffiti openings (aurabreak)
     if auraCount == 1 {
-        if  (global.key[auraType] == 0 &amp;&amp; global.ikey[auraType] == 0) { exit; }
-        effectiveColor = auraType;
-        effectiveColorSpend = auraType;
+        if (global.key[auraType] == 0 &amp;&amp; global.ikey[auraType] == 0) { exit; }
     }
 }
 if objPlayer.curseMode != 0 &amp;&amp; distToP &lt;= 23{
@@ -321,19 +306,20 @@ if objPlayer.curseMode != 0 &amp;&amp; distToP &lt;= 23{
     brownNearPlayer = 0;
 }
 if auraCount &gt; 1 {exit;}
-var canGoldOpen = !(effectiveColor == color_MASTER || effectiveColor == color_PURE || effectiveColorSpend == color_MASTER || effectiveColorSpend == color_PURE);
-var canSilverOpen = !(effectiveColor == color_SILVER || effectiveColor == color_PURE || effectiveColorSpend == color_SILVER || effectiveColorSpend == color_PURE);
-var canDynamiteOpen = !(effectiveColor == color_DYNAMITE || effectiveColor == color_PURE || effectiveColorSpend == color_DYNAMITE || effectiveColorSpend == color_PURE);
+var canGoldOpen = (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 1) &amp;&amp; !(hasColor(color_PURE) || hasColor(color_MASTER));
+var canSilverOpen = (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 2) &amp;&amp; !(hasColor(color_PURE) || hasColor(color_SILVER));
+var canDynamiteOpen = (global.key[color_DYNAMITE] != 0 || global.ikey[color_DYNAMITE] != 0) &amp;&amp; !(hasColor(color_PURE) || hasColor(color_DYNAMITE));
 if auraCount &gt; 0 {
     canGoldOpen = false;
     canSilverOpen = false;
     canDynamiteOpen = false;
 }
 if distToP &lt;= 1 {
-    if (canDynamiteOpen &amp;&amp; scrNormalDynamiteOpen()) {
+    if canDynamiteOpen {
+        scrNormalDynamiteOpen();
         undoBUFFER();
         scrPlayerDownStop();
-    } else if (canGoldOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 1) {//SPEND MASTER KEYS
+    } else if canGoldOpen {//SPEND MASTER KEYS
         scrNormalMasterOpen()
         undoBUFFER();
         scrPlayerDownStop();
@@ -341,7 +327,7 @@ if distToP &lt;= 1 {
         var rCost = 0;
         var iCost = 0;
         var tempIPow = iPow;
-        if (canSilverOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 2) {
+        if canSilverOpen {
             switch objPlayer.masterMode {
             case 1: tempIPow = 0; break;
             case 2: tempIPow = 1; break;
@@ -351,20 +337,20 @@ if distToP &lt;= 1 {
         }
         spendTotal = 0;
         spendITotal = 0;
-        scrAddSpendAmt(effectiveColor,count,icount,type,tempIPow,denom,idenom,negated)
-        if (canSilverOpen) &amp;&amp; (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 2) {
-            addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
+        scrAddSpendAmt(scrEffectiveColor(color,true),count,icount,type,tempIPow,denom,idenom,negated)
+        if canSilverOpen {
+            addComplexKeys(scrEffectiveColor(colorSpend,true),-spendTotal,-spendITotal,0);
             addComplexKeys(color_SILVER,-1,0,tempIPow);
             scrPlaySoundExt(sndMasterUnlock,1,1,false);
             event_user(2);
             objPlayer.masterMode = 0;
             objPlayer.masterCycle = 0;
             undoBUFFER();
-            scrBroadcastCopy(effectiveColorSpend); // should it?
-        } else if canOpen(effectiveColor,count,icount,type,tempIPow,exactI,denom,idenom,negated) {
-            addComplexKeys(effectiveColorSpend,-spendTotal,-spendITotal,0);
+            scrBroadcastCopy(scrEffectiveColor(colorSpend,true)); // should it?
+        } else if canOpen(scrEffectiveColor(color,true),count,icount,type,tempIPow,exactI,denom,idenom,negated) {
+            addComplexKeys(scrEffectiveColor(colorSpend,true),-spendTotal,-spendITotal,0);
             scrOpenOrCopy();
-            scrBroadcastCopy(effectiveColorSpend);
+            scrBroadcastCopy(scrEffectiveColor(colorSpend,true));
         }
     }
 }
@@ -428,9 +414,9 @@ with oSalvageIn{
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebrisS)){
-            c1 = other.c1;
-            c2 = other.c2;
-            c3 = other.c3;
+            c1 = global.highTone[other.baseColor];
+            c2 = global.mainTone[other.baseColor];
+            c3 = global.darkTone[other.baseColor];
             xT = other.xT;
             yT = other.yT;
         }
@@ -560,9 +546,9 @@ copyTimer = 0;
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris3)){
-            c1 = other.c1;
-            c2 = other.c2;
-            c3 = other.c3;
+            c1 = global.highTone[other.baseColor];
+            c2 = global.mainTone[other.baseColor];
+            c3 = global.darkTone[other.baseColor];
         }
     }
 }
@@ -598,9 +584,9 @@ copyTimer = 0;
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris2)){
-            c1 = other.c1;
-            c2 = other.c2;
-            c3 = other.c3;
+            c1 = global.highTone[other.baseColor];
+            c2 = global.mainTone[other.baseColor];
+            c3 = global.darkTone[other.baseColor];
         }
     }
 }
@@ -630,9 +616,9 @@ for(var ix = 0; ix&lt;(2*w); ix+=1){
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris)){
-            c1 = other.c1;
-            c2 = other.c2;
-            c3 = other.c3;
+            c1 = global.highTone[other.baseColor];
+            c2 = global.mainTone[other.baseColor];
+            c3 = global.darkTone[other.baseColor];
         }
     }
 }

@@ -4,9 +4,6 @@
 var openedForwards = false;
 var openedBackwards = false;
 
-if global.key[color_DYNAMITE] == 0 && global.ikey[color_DYNAMITE] == 0 {
-    return false;
-}
 if (sign(global.key[color_DYNAMITE]) == sign(copies) || copies == 0) && abs(global.key[color_DYNAMITE]) >= abs(copies)
 && (sign(global.ikey[color_DYNAMITE]) == sign(icopies) || icopies == 0) && abs(global.ikey[color_DYNAMITE]) >= abs(icopies) {
     // if the door can open, open it
@@ -68,4 +65,3 @@ if copies == 0 && icopies == 0 {//DESTROY OBJECT
         }
     }
 }
-return true;
