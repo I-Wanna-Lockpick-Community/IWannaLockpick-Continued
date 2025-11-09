@@ -1,5 +1,4 @@
 if effectiveColor == color_PURE || effectiveColorSpend == color_PURE {exit;}
-var auraPlayNoise = 0;
 if objPlayer.curseMode == 1 && cursed != objPlayer.curseColor && cursed != color_PURE
 && !(color == objPlayer.curseColor && colorSpend == objPlayer.curseColor) {
     cursed = objPlayer.curseColor;

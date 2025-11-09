@@ -5,40 +5,40 @@ var openedForwards = false;
 var openedBackwards = false;
 
 if global.key[color_DYNAMITE] == 0 && global.ikey[color_DYNAMITE] == 0 {
-return false;
+    return false;
 }
 if (sign(global.key[color_DYNAMITE]) == sign(copies) || copies == 0) && abs(global.key[color_DYNAMITE]) >= abs(copies)
 && (sign(global.ikey[color_DYNAMITE]) == sign(icopies) || icopies == 0) && abs(global.ikey[color_DYNAMITE]) >= abs(icopies) {
-// if the door can open, open it
-var openCount = sign(global.key[color_DYNAMITE]) * min(abs(copies), abs(global.key[color_DYNAMITE]));
-copies -= openCount;
-if (!global.star[color_DYNAMITE]) { addComplexKeys(color_DYNAMITE,-openCount,0,0); }
-var iopenCount = sign(global.ikey[color_DYNAMITE]) * min(abs(icopies), abs(global.ikey[color_DYNAMITE]));
-icopies -= iopenCount;
-if (!global.star[color_DYNAMITE]) { addComplexKeys(color_DYNAMITE,0,-iopenCount,0); }
-openedForwards = true;
+    // if the door can open, open it
+    var openCount = sign(global.key[color_DYNAMITE]) * min(abs(copies), abs(global.key[color_DYNAMITE]));
+    copies -= openCount;
+    if (!global.star[color_DYNAMITE]) { addComplexKeys(color_DYNAMITE,-openCount,0,0); }
+    var iopenCount = sign(global.ikey[color_DYNAMITE]) * min(abs(icopies), abs(global.ikey[color_DYNAMITE]));
+    icopies -= iopenCount;
+    if (!global.star[color_DYNAMITE]) { addComplexKeys(color_DYNAMITE,0,-iopenCount,0); }
+    openedForwards = true;
 } else {
-// otherwise, spend all keys
-if sign(global.key[color_DYNAMITE]) == sign(copies) && copies != 0 {
-openedForwards = true;
-if abs(global.key[color_DYNAMITE]) > abs(copies) {
-openedBackwards = true;
-}
-} else {
-openedBackwards = true;
-}
-if sign(global.ikey[color_DYNAMITE]) == sign(icopies) && icopies != 0 {
-openedForwards = true;
-if abs(global.ikey[color_DYNAMITE]) > abs(icopies) {
-openedBackwards = true;
-}
-} else {
-openedBackwards = true;
-}
-copies -= global.key[color_DYNAMITE];
-if (!global.star[color_DYNAMITE]) { global.key[color_DYNAMITE] = 0; }
-icopies -= global.ikey[color_DYNAMITE];
-if (!global.star[color_DYNAMITE]) { global.ikey[color_DYNAMITE] = 0; }
+    // otherwise, spend all keys
+    if sign(global.key[color_DYNAMITE]) == sign(copies) && copies != 0 {
+        openedForwards = true;
+        if abs(global.key[color_DYNAMITE]) > abs(copies) {
+            openedBackwards = true;
+        }
+    } else {
+        openedBackwards = true;
+    }
+    if sign(global.ikey[color_DYNAMITE]) == sign(icopies) && icopies != 0 {
+        openedForwards = true;
+        if abs(global.ikey[color_DYNAMITE]) > abs(icopies) {
+            openedBackwards = true;
+        }
+    } else {
+        openedBackwards = true;
+    }
+    copies -= global.key[color_DYNAMITE];
+    if (!global.star[color_DYNAMITE]) { global.key[color_DYNAMITE] = 0; }
+    icopies -= global.ikey[color_DYNAMITE];
+    if (!global.star[color_DYNAMITE]) { global.ikey[color_DYNAMITE] = 0; }
 }
 
 if copies == 0 && icopies == 0 {//DESTROY OBJECT
@@ -58,13 +58,13 @@ if copies == 0 && icopies == 0 {//DESTROY OBJECT
         event_user(2);
         explosion = instance_create(x+w*16, y+h*16, oDynamiteExplosion)
         explosion.sprite_index = sprExplosion;
-        }
-        if openedBackwards {
+    }
+    if openedBackwards {
         scrPlaySoundExt(sndAntiExplode,1,1,false);
         if !openedForwards {
-        event_user(1);
-        explosion = instance_create(x+w*16, y+h*16, oDynamiteExplosion);
-        explosion.sprite_index = sprNegativeExplosion;
+            event_user(1);
+            explosion = instance_create(x+w*16, y+h*16, oDynamiteExplosion);
+            explosion.sprite_index = sprNegativeExplosion;
         }
     }
 }
