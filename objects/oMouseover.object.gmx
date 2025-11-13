@@ -1110,7 +1110,7 @@ if pdaMode != 1 &amp;&amp; mouseID != -1 &amp;&amp; instance_exists(objPlayer) &
 //Build string
 if mouseType == 0{//Keys
     str = keyName[getType]+colName[getCol]+" Key#";
-    if getType == 0 || getType == 1{
+    if getType == key_NORMAL || getType == key_EXACT{
         str += "Amount: ";
         if getCost == 0 &amp;&amp; getICost != 0{//Imaginary
             str += string(getICost)+"i";

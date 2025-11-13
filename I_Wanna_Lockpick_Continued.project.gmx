@@ -444,6 +444,8 @@
         <sprite>sprites\sprKMaroon</sprite>
         <sprite>sprites\sprKForest</sprite>
         <sprite>sprites\sprKNavy</sprite>
+        <sprite>sprites\sprKDynamiteCurse</sprite>
+        <sprite>sprites\sprKDynamiteUncurse</sprite>
       </sprites>
       <sprites name="other">
         <sprite>sprites\sprDirt</sprite>
