@@ -58,11 +58,14 @@ keyName[key_UNSTAR] = "Unstar ";
 keyName[key_SIGNFLIP] = "Signflip ";
 keyName[key_POSROTOR] = "Rotor (i) ";
 keyName[key_NEGROTOR] = "Rotor (-i) ";
+keyName[key_NEGROTOR] = "Curse ";
+keyName[key_NEGROTOR] = "Uncurse ";
 //Define door type names
 lockName[lock_NORMAL] = "";
 lockName[lock_BLANK] = "Blank ";
 lockName[lock_BLAST] = "Blast ";
 lockName[lock_ALL] = "All ";
+lockName[lock_EXACT] = "Exact ";
 </string>
           </argument>
         </arguments>
@@ -89,7 +92,7 @@ oldMode = 0;//Just for sound stuff
 //Array to organize rows/columns of keys
 pdaPage = 0; // Current page
 // Each page displays 14 keys, possibly except the last one.
-pdaPages = 1; pdaOnLastPage = 14;
+pdaPages = 2; pdaOnLastPage = 8;
 // Page 1
 pdaID[0, 0] = color_WHITE;
 pdaID[0, 1] = color_ORANGE;
@@ -1007,12 +1010,13 @@ switch mouseType {
     break;
     case oDoorSimple:
         str += lockName[moused.type] + colName[moused.colorSpend] + " Door";
+        if moused.armament { str += " (Armament)"; }
         str += "#Cost: " + strLockCost(moused.type, moused.count, moused.icount);
         if moused.color != moused.colorSpend { str += " " + colName[moused.color]; }
         if moused.color == color_GLITCH || moused.colorSpend == color_GLITCH {
             str += "#Mimic: " + colName[moused.glitchMimic];
         }
-        str += strEffects(moused.browned, moused.aura[0], moused.aura[1], moused.aura[2]);
+        str += strEffects(moused.cursed, moused.aura[0], moused.aura[1], moused.aura[2], moused.curseGlitchMimic);
         if moused.salvageID != -1{ str += "##SID: " + string(moused.salvageID); }
     break;
     case oDoorCombo:
@@ -1031,10 +1035,17 @@ switch mouseType {
         for (i=0;i&lt;moused.lockCount;i+=1) {
             str += "#Lock: " + lockName[moused.lock[i,3]] + colName[moused.lock[i,0]] + ", Cost: " + strLockCost(moused.lock[i,3],moused.lock[i,1],moused.lock[i,2]);
             if moused.lock[i,0] == color_GLITCH { hasGlitch = true; }
+            if moused.lock[i,10] {
+                str += "(Armament";
+                if moused.lock[i,0] == color_GLITCH &amp;&amp; moused.lock[i,11] != moused.glitchMimic {
+                    str += ", Mimic: " + colName[moused.lock[i,11]];
+                }
+                str += ")";
+            }
         }
         if hasGlitch { str += "#Mimic: " + colName[moused.glitchMimic]; }
         if mouseType == oDoorCombo {
-            str += strEffects(moused.browned, moused.aura[0], moused.aura[1], moused.aura[2]);
+            str += strEffects(moused.cursed, moused.aura[0], moused.aura[1], moused.aura[2], moused.curseGlitchMimic);
             if moused.salvageID != -1{ str += "##SID: " + string(moused.salvageID); }
         }
     break;
@@ -1047,7 +1058,7 @@ switch mouseType {
     break;
     case oKina:
         str += "Kina, God of Keys and Doors#Lock: Master, Cost: ∞";
-        if moused.browned { str += "#- Effects -#Cursed!"; }
+        if moused.cursed { str += "#- Effects -#Cursed!"; }
     break;
 }
 //Draw set

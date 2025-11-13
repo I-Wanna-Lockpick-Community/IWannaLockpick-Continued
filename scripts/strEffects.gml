@@ -1,6 +1,11 @@
-//strEffects(browned,frozen,crumbled,painted);
+//strEffects(cursed,frozen,crumbled,painted,curseGlitchMimic);
 var str = ""
-if argument0 { str += "#Cursed!"; }
+if argument0 != -1 {
+    str += "#Cursed";
+    if argument0 != color_BROWN { str += colName[argument0]; }
+    if argument0 == color_GLITCH { str += " (Mimic: " + colName[argument4] + ")"; }
+    str += "!";
+}
 if argument1 { str += "#Frozen! (1xRed)"; }
 if argument2 { str += "#Eroded! (5xGreen)"; }
 if argument3 { str += "#Painted! (3xBlue)"; }
