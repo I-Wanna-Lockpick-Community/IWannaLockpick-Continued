@@ -926,6 +926,11 @@
       <script>scripts\scrLockEffectiveColor.gml</script>
       <script>scripts\hasColor.gml</script>
     </scripts>
+    <script>scripts\strComplex.gml</script>
+    <scripts name="mouseover">
+      <script>scripts\strLockCost.gml</script>
+      <script>scripts\strEffects.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shdRainbowStripe.shader</shader>

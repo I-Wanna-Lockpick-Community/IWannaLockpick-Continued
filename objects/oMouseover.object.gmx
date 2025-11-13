@@ -31,48 +31,8 @@ if instance_number(oMouseover) &gt;= 2{
     exit;
 }
 //Init main variables
-mouseID = -1;
-mouseType = 0;//0 = Key, 1 = Simple Door, 2 = Combo Door
-getCol = 0;
-getSpend = 0;
-getCost = 0;
-getICost = 0;
-getType = 0;
-getIsIExact = 0;// To know if Exact Lock is imaginary or not, since 0i is a possibility
-getDenom = 0;// Denominator
-getIDenom = 0;
-getNegated = 0;
-getGlitch = 0;
-getAura[0] = 0;//Red
-getAura[1] = 0;//Green
-getAura[2] = 0;//Blue
-getAura[3] = 0;//cursed
-getSal = -1;//Salvage ID
-getStuck = 0;//If a salvage point is stuck, say so
-//Initialize lock arrays
-lockCount = 0;//How many lines of locks to draw
-lockCol[0] = 0;
-lockType[0] = 0;
-lockCost[0] = 0;
-lockICost[0] = 0;
-lockDenom[0] = 0;
-lockIDenom[0] = 0;
-//Define color names @addcolor
-colName[0] = "Master";
-colName[1] = "White";
-colName[2] = "Orange";
-colName[3] = "Purple";
-colName[4] = "Red";
-colName[5] = "Green";
-colName[6] = "Blue";
-colName[7] = "Pink";
-colName[8] = "Cyan";
-colName[9] = "Black";
-colName[10] = "Brown";
-colName[11] = "Pure";
-colName[12] = "Glitch";
-colName[13] = "Stone";
-
+moused = -1;
+mouseType = -1;
 //Define color names
 colName[color_MASTER] = "Master";
 colName[color_WHITE] = "White";
@@ -88,14 +48,6 @@ colName[color_BROWN] = "Brown";
 colName[color_PURE] = "Pure";
 colName[color_GLITCH] = "Glitch";
 colName[color_STONE] = "Stone";
-colName[color_DYNAMITE] = "Dynamite";
-colName[color_SILVER] = "Silver";
-colName[color_MAROON] = "Maroon";
-colName[color_FOREST] = "Forest";
-colName[color_NAVY] = "Navy";
-colName[color_ICE] = "Ice";
-colName[color_MUD] = "Mud";
-colName[color_GRAFFITI] = "Graffiti";
 // @addcolor
 //Define key type names
 keyName[key_NORMAL] = "";
@@ -106,14 +58,11 @@ keyName[key_UNSTAR] = "Unstar ";
 keyName[key_SIGNFLIP] = "Signflip ";
 keyName[key_POSROTOR] = "Rotor (i) ";
 keyName[key_NEGROTOR] = "Rotor (-i) ";
-keyName[key_CURSE] = "Curse ";
-keyName[key_UNCURSE] = "Uncurse ";
 //Define door type names
-doorName[lock_NORMAL] = "";
-doorName[lock_BLANK] = "Blank ";
-doorName[lock_BLAST] = "Blast ";
-doorName[lock_ALL] = "All ";
-doorName[lock_EXACT] = "Exact ";
+lockName[lock_NORMAL] = "";
+lockName[lock_BLANK] = "Blank ";
+lockName[lock_BLAST] = "Blast ";
+lockName[lock_ALL] = "All ";
 </string>
           </argument>
         </arguments>
@@ -140,7 +89,7 @@ oldMode = 0;//Just for sound stuff
 //Array to organize rows/columns of keys
 pdaPage = 0; // Current page
 // Each page displays 14 keys, possibly except the last one.
-pdaPages = 2; pdaOnLastPage = 8;
+pdaPages = 1; pdaOnLastPage = 14;
 // Page 1
 pdaID[0, 0] = color_WHITE;
 pdaID[0, 1] = color_ORANGE;
@@ -241,7 +190,7 @@ warpVarReset();
 focusTimer = 0;//For clicking back on the window
 mouseState = 0;//0 = Hover, 1 = Held
 oldMX = mouse_x;
-oldMY = mouse_y;
+oldMY = mouse_y; 
 //For locking the box in place when editing marks
 markX = 0;
 markY = 0;
@@ -323,106 +272,53 @@ for(var i = 0; i &lt; 18; i += 1){
           <argument>
             <kind>1</kind>
             <string>///Get moused object
+other.moused = -1;
+other.mouseType = -1;
 if mouse_in_window(){
-    mouseID = -1;
     with oDoorSimple{
         if mouse_x &gt;= x &amp;&amp; mouse_x &lt;= (x+32*w-1) &amp;&amp; mouse_y &gt;= y &amp;&amp; mouse_y &lt;= (y+32*h-1){
-            other.mouseID = id;
-            other.mouseType = 1;
-            other.getCol = color;
-            other.getSpend = colorSpend;
-            other.getCost = count;
-            other.getICost = icount;
-            other.getType = type;
-            other.getGlitch = glitchMimic;
-            other.getIsIExact = exactI;
-            other.getDenom = denom;
-            other.getIDenom = idenom;
-            other.getNegated = negated;
-            other.getAura[0] = aura[0];
-            other.getAura[1] = aura[1];
-            other.getAura[2] = aura[2];
-            other.getAura[3] = cursed;
-            other.getSal = salvageID;
+            other.moused = self;
+            other.mouseType = oDoorSimple;
         } 
     }
     with oDoorCombo{
         if mouse_x &gt;= x &amp;&amp; mouse_x &lt;= (x+32*w-1) &amp;&amp; mouse_y &gt;= y &amp;&amp; mouse_y &lt;= (y+32*h-1){
-            other.mouseID = id;
-            other.mouseType = 2;
-            other.getSpend = colorSpend;
-            other.lockCount = lockCount;
-            other.getGlitch = glitchMimic;
-            other.getAura[0] = aura[0];
-            other.getAura[1] = aura[1];
-            other.getAura[2] = aura[2];
-            other.getAura[3] = cursed;
-            other.getSal = salvageID;
-            for(i=0;i&lt;lockCount;i+=1){
-                other.lockCol[i] = lock[i,0];
-                other.lockCost[i] = lock[i,1];
-                other.lockICost[i] = lock[i,2];
-                other.lockType[i] = lock[i,3];
-                other.lockDenom[i] = lock[i,7];
-                other.lockIDenom[i] = lock[i,8];
-                other.lockNegated[i] = lock[i,9];
-            }
+            other.moused = self;
+            other.mouseType = oDoorCombo;
         } 
     }
     with oKeyBulk{
         if mouse_x &gt;= x &amp;&amp; mouse_x &lt;= (x+32*image_xscale-1) &amp;&amp; mouse_y &gt;= y &amp;&amp; mouse_y &lt;= (y+32*image_yscale-1){
-            other.mouseID = id;
-            other.mouseType = 0;
-            other.getCol = color;
-            other.getCost = count;
-            other.getICost = icount;
-            other.getType = type;
-            other.getGlitch = glitchMimic;
+            other.moused = self;
+            other.mouseType = oKeyBulk;
         } 
     }
     with oSalvageIn{
         if mouse_x &gt;= (x-16) &amp;&amp; mouse_x &lt;= (x+16) &amp;&amp; mouse_y &gt;= (y-32) &amp;&amp; mouse_y &lt;= y{
-            other.mouseID = id;
-            other.mouseType = 3;
-            other.getSal = ID;
+            other.moused = self;
+            other.mouseType = oSalvageIn;
         } 
     }
     with oSalvageOut{
         if mouse_x &gt;= (x-16) &amp;&amp; mouse_x &lt;= (x+16) &amp;&amp; mouse_y &gt;= (y-32) &amp;&amp; mouse_y &lt;= y{
-            other.mouseID = id;
-            other.mouseType = 4;
-            other.getSal = ID;
-            other.getStuck = noRoom;
+            other.moused = self;
+            other.mouseType = oSalvageOut;
         } 
     }
     with oGate{
         if mouse_x &gt;= x &amp;&amp; mouse_x &lt;= (x+32*w-1) &amp;&amp; mouse_y &gt;= y &amp;&amp; mouse_y &lt;= (y+32*h-1){
-            other.mouseID = id;
-            other.mouseType = 5;
-            other.lockCount = lockCount;
-            other.getGlitch = glitchMimic;
-            for(i=0;i&lt;lockCount;i+=1){
-                other.lockCol[i] = lock[i,0];
-                other.lockCost[i] = lock[i,1];
-                other.lockICost[i] = lock[i,2];
-                other.lockType[i] = lock[i,3];
-                other.lockDenom[i] = lock[i,7];
-                other.lockIDenom[i] = lock[i,8];
-                other.lockNegated[i] = lock[i,9];
-            }
+            other.moused = self;
+            other.mouseType = oGate;
         } 
     }
     with oKina{
         if active{
             if point_distance(x,y,mouse_x,mouse_y) &lt; 16{
-                other.mouseID = id;
-                other.mouseType = 6;
-                other.getAura[3] = cursed;
+                other.moused = self;
+                other.mouseType = oKina;
             }
         }
     }
-}else{
-    mouseID = -1;
 }
 </string>
           </argument>
@@ -645,41 +541,41 @@ pmGuiY = clamp(pmGuiY,0,max(608-pmGuiH,0));
             <kind>1</kind>
             <string>///PDA stuff
 if !warpMode &amp;&amp; global.pmState == 0{
-    if global.inCutscene{
-        if pdaMode == 1{
-            pdaMode = 0;
-            scrPlaySoundExt(sndDrop,.7,1,0);
-        }
-        exit;
-    }
-    if !instance_exists(objPlayer){
-        if pdaMode == 1{
-            pdaMode = 0;
-            scrPlaySoundExt(sndDrop,.7,1,0);
-        }
-        exit;
-    }
-    if global.object[1] || global.allUnlock{
-        if pdaMode == 1 &amp;&amp; scrButtonCheckReleased(global.specialButton){//Play sound effect
-            scrPlaySoundExt(sndDrop,.7,1,0);
-        }
+if global.inCutscene{
+    if pdaMode == 1{
         pdaMode = 0;
-        if scrButtonCheck(global.specialButton){
-            if !global.inCutscene &amp;&amp; !instance_exists(oLevelWin) &amp;&amp; !instance_exists(oLevelWinOmega) &amp;&amp; !instance_exists(oLevelWinInvalid) &amp;&amp; !instance_exists(oLevelWinS) &amp;&amp; !instance_exists(oLevelTransition) &amp;&amp; !instance_exists(oWorldTransition){
-                pdaMode = 1;
-                if oldMode == 0{//Play sound effect
-                    scrPlaySoundExt(sndDrop,.7,1.5,0);
-                }
-                if pdaPages &gt; 1 &amp;&amp; scrButtonCheckPressed(global.masButton){
-                    scrPlaySoundExt(sndDrop,.7,1.5,0);
-                    pdaPage = (pdaPage + 1) % pdaPages
-                }
-            }
-        }
-        oldMode = pdaMode;
-        //Bleh
-        goldIndex = (goldIndex + .1) mod 12;
+        scrPlaySoundExt(sndDrop,.7,1,0);
     }
+    exit;
+}
+if !instance_exists(objPlayer){
+    if pdaMode == 1{
+        pdaMode = 0;
+        scrPlaySoundExt(sndDrop,.7,1,0);
+    }
+    exit;
+}
+if global.object[1] || global.allUnlock{
+if pdaMode == 1 &amp;&amp; scrButtonCheckReleased(global.specialButton){//Play sound effect
+    scrPlaySoundExt(sndDrop,.7,1,0);
+}
+pdaMode = 0;
+if scrButtonCheck(global.specialButton){
+    if !global.inCutscene &amp;&amp; !instance_exists(oLevelWin) &amp;&amp; !instance_exists(oLevelWinOmega) &amp;&amp; !instance_exists(oLevelWinInvalid) &amp;&amp; !instance_exists(oLevelWinS) &amp;&amp; !instance_exists(oLevelTransition) &amp;&amp; !instance_exists(oWorldTransition){
+        pdaMode = 1;
+        if oldMode == 0{//Play sound effect
+            scrPlaySoundExt(sndDrop,.7,1.5,0);
+        }
+        if pdaPages &gt; 1 &amp;&amp; scrButtonCheckPressed(global.masButton){
+            scrPlaySoundExt(sndDrop,.7,1.5,0);
+            pdaPage = (pdaPage + 1) % pdaPages
+        }
+    }
+}
+oldMode = pdaMode;
+//Bleh
+goldIndex = (goldIndex + .1) mod 4;
+}
 }
 </string>
           </argument>
@@ -922,9 +818,9 @@ if pdaMode == 1{
         draw_set_alpha(1);
         draw_set_color(c_white);
         if pdaID[pdaPage, i] == color_MASTER{
-            draw_sprite(sprKMaster,floor(goldIndex)%4,drawX,drawY);
+            draw_sprite(sprKMaster,floor(goldIndex),drawX,drawY);
         }else if pdaID[pdaPage, i] == color_PURE{
-            draw_sprite(sprKPure,floor(goldIndex)%4,drawX,drawY);
+            draw_sprite(sprKPure,floor(goldIndex),drawX,drawY);
         }else if pdaID[pdaPage, i] == color_GLITCH{
             color = pdaID[pdaPage, i];
             scrColorKey();
@@ -934,16 +830,6 @@ if pdaMode == 1{
             shader_reset();
         }else if pdaID[pdaPage, i] == color_STONE{
             draw_sprite(sprKStone,0,drawX,drawY);
-        }else if pdaID[pdaPage, i] == color_ICE{
-            draw_sprite(sprKIce,0,drawX,drawY);
-        }else if pdaID[pdaPage, i] == color_MUD{
-            draw_sprite(sprKMud,0,drawX,drawY);
-        }else if pdaID[pdaPage, i] == color_GRAFFITI{
-            draw_sprite(sprKGraffiti,0,drawX,drawY);
-        }else if pdaID[pdaPage, i] == color_SILVER{
-            draw_sprite(sprKSilver,floor(goldIndex)%4,drawX,drawY);
-        } else if pdaID[pdaPage, i] == color_DYNAMITE{
-            draw_sprite(sprKDynamite,floor(goldIndex),drawX,drawY);
             // @addcolor if key image/animation
         } else {
             color = pdaID[pdaPage, i];
@@ -1106,245 +992,63 @@ if !global.inCutscene &amp;&amp; instance_exists(objPlayer) &amp;&amp; warpMode{
           <argument>
             <kind>1</kind>
             <string>///Mouseover stuff
-if pdaMode != 1 &amp;&amp; mouseID != -1 &amp;&amp; instance_exists(objPlayer) &amp;&amp; global.pmState == 0{
+if pdaMode != 1 &amp;&amp; moused != -1 &amp;&amp; instance_exists(objPlayer) &amp;&amp; global.pmState == 0{
 //Build string
-if mouseType == 0{//Keys
-    str = keyName[getType]+colName[getCol]+" Key#";
-    if getType == key_NORMAL || getType == key_EXACT{
-        str += "Amount: ";
-        if getCost == 0 &amp;&amp; getICost != 0{//Imaginary
-            str += string(getICost)+"i";
-        }else if getICost == 0{//Real
-            str += string(getCost);
-        }else if getICost &gt;= 1{//Complex Positive
-            str += string(getCost)+"+"+string(getICost)+"i";
-        }else{//Complex Negative
-            str += string(getCost)+string(getICost)+"i";
+str = ""
+switch mouseType {
+    case oKeyBulk:
+        str += keyName[moused.type] + colName[moused.color] + " Key";
+        if moused.type == key_NORMAL || moused.type == key_EXACT {
+            str += "#Amount: " + strComplex(moused.count, moused.icount);
         }
-    }
-    if getCol == color_GLITCH{
-        str += "#Mimic: "+colName[getGlitch];
-    }
-}else if mouseType == 1{//Simple doors
-    str = doorName[getType]+colName[getSpend]+" Door#Cost: ";
-    if getNegated {str += "Not "}
-    if getType == lock_NORMAL{
-        if getICost != 0{//Imaginary
-            str += string(getICost)+"i";
-        }else{
-            str += string(getCost);
+        if moused.color == color_GLITCH {
+            str += "#Mimic: " + colName[moused.glitchMimic];
         }
-    }else if getType == lock_BLANK{
-        str += "None";
-    }else if getType == lock_BLAST{
-        if getDenom == 0 &amp;&amp; getIDenom == 0 {
-            if getCost == 1{
-                str += "[All +]";
-            }else if getCost == -1{
-                str += "[All -]";
-            }else if getICost == 1{
-                str += "[All +i]";
-            }else{
-                str += "[All -i]";
-            }
-        } else {
-            // partial blast
-            var numerString = "";
-            if getICost == 0 { numerString = string(getCost); }
-            else {
-                if getCost == 0 { numerString = string(getICost)+"i"; }
-                else if getICost &gt; 0 { numerString = "("+string(getCost)+"+"+string(getICost)+"i)"; }
-                else { numerString = "("+string(getCost)+string(getICost)+"i)"; }
-            }
-            if numerString == "1" { numerString = ""; }
-            var denomString = "";
-            if getIDenom == 0 { denomString = "+" + string(getDenom); }
-            else {
-                if getDenom == 0 {
-                    if getIDenom &lt; 0 { denomString = string(getIDenom)+"i"; }
-                    else { denomString = "+" + string(getIDenom)+"i"; }
-                }
-                else if getIDenom &gt; 0 { denomString = "("+string(getDenom)+"+"+string(getIDenom)+"i)"; }
-                else { denomString = "("+string(getDenom)+string(getIDenom)+"i)"; }
-            }
-            str += "[" + numerString + "All / " + denomString + "]";
+    break;
+    case oDoorSimple:
+        str += lockName[moused.type] + colName[moused.colorSpend] + " Door";
+        str += "#Cost: " + strLockCost(moused.type, moused.count, moused.icount);
+        if moused.color != moused.colorSpend { str += " " + colName[moused.color]; }
+        if moused.color == color_GLITCH || moused.colorSpend == color_GLITCH {
+            str += "#Mimic: " + colName[moused.glitchMimic];
         }
-    }else if getType == lock_ALL{
-        str += "[ALL]";
-    }else if getType == lock_EXACT{
-        if getIsIExact {
-            str += "Exactly "+string(getICost)+"i";
-        }else{
-            str += "Exactly "+string(getCost);
+        str += strEffects(moused.browned, moused.aura[0], moused.aura[1], moused.aura[2]);
+        if moused.salvageID != -1{ str += "##SID: " + string(moused.salvageID); }
+    break;
+    case oDoorCombo:
+    case oGate:
+        var hasGlitch = false;
+        if mouseType == oDoorCombo {
+            str += colName[moused.colorSpend]
+            if moused.lockCount == 0 { str += " Lockless Door"; }
+            else { str += " Combo Door"; }
+            if moused.colorSpend == color_GLITCH { hasGlitch = true; }
         }
-    }
-    if getCol != getSpend{
-        str += " "+colName[getCol];
-    }
-    if getCol == color_GLITCH || getSpend == color_GLITCH{
-        str += "#Mimic: "+colName[getGlitch];
-    }
-    if getAura[0] || getAura[1] || getAura[2] || getAura[3]{
-        str += "#- Effects -";
-        if getAura[3] != -1 {str += "#Cursed " + colName[getAura[3]] + "!"};
-        if getAura[0]{str += "#Frozen! (1xRed)"};
-        if getAura[1]{str += "#Eroded! (5xGreen)"};
-        if getAura[2]{str += "#Painted! (3xBlue)"};
-    }
-    if getSal != -1{
-        str += "##SID: "+string(getSal);
-    }
-}else if mouseType == 2{//Combo doors
-    var isCopy = (getSpend == color_GLITCH);
-    if lockCount == 0{
-        str = "Lockless "+colName[getSpend]+" Door#";
-    }else{
-        str = "Combo "+colName[getSpend]+" Door#";
-        for(i=0;i&lt;lockCount;i+=1){
-            str += "Lock: "+doorName[lockType[i]]+colName[lockCol[i]]+", Cost: ";
-            if lockNegated[i] {str += "Not "}
-            if lockType[i] == lock_NORMAL{
-                if lockICost[i] != 0{//Imaginary
-                    str += string(lockICost[i])+"i";
-                }else{
-                    str += string(lockCost[i]);
-                }
-            }else if lockType[i] == lock_BLANK{
-                str += "None";
-            }else if lockType[i] == lock_BLAST{
-                if lockDenom[i] == 0 &amp;&amp; lockIDenom[i] == 0 {
-                    if lockCost[i] == 1{
-                        str += "[All +]";
-                    }else if lockCost[i] == -1{
-                        str += "[All -]";
-                    }else if lockICost[i] == 1{
-                        str += "[All +i]";
-                    }else{
-                        str += "[All -i]";
-                    }
-                } else {
-                    // partial blast
-                    var numerString = "";
-                    if lockICost[i] == 0 { numerString = string(lockCost[i]); }
-                    else {
-                        if lockCost[i] == 0 { numerString = string(lockICost[i])+"i"; }
-                        else if lockICost[i] &gt; 0 { numerString = "("+string(lockCost[i])+"+"+string(lockICost[i])+"i)"; }
-                        else { numerString = "("+string(lockCost[i])+string(lockICost[i])+"i)"; }
-                    }
-                    if numerString == "1" { numerString = ""; }
-                    var denomString = "";
-                    if lockIDenom[i] == 0 { denomString = "+" + string(lockDenom[i]); }
-                    else {
-                        if lockDenom[i] == 0 {
-                            if lockIDenom[i] &lt; 0 { denomString = string(lockIDenom[i])+"i"; }
-                            else { denomString = "+" + string(lockIDenom[i])+"i"; }
-                        }
-                        else if lockIDenom[i] &gt; 0 { denomString = "("+string(lockDenom[i])+"+"+string(lockIDenom[i])+"i)"; }
-                        else { denomString = "("+string(lockDenom[i])+string(lockIDenom[i])+"i)"; }
-                    }
-                    str += "[" + numerString + "All / " + denomString + "]";
-                }
-            }else if lockType[i] == lock_ALL{
-                str += "[ALL]";
-            }else if lockType[i] == lock_EXACT{
-                if lockDenom[i] != 0 || lockICost[i] != 0 {
-                    str += string("Exactly "+string(lockICost[i])) + "i";
-                }else{
-                    str += string("Exactly "+string(lockCost[i]));
-                }
-            }
-            str += "#";
-            if lockCol[i] == color_GLITCH{
-                isCopy = 1;
-            }
+        else {
+            if moused.lockCount == 0 { str += "Empty "}
+            str += "Gate";
         }
-    }
-    if isCopy{
-        str += "Mimic: "+colName[getGlitch];
-    }
-    if getAura[0] || getAura[1] || getAura[2] || getAura[3]{
-        str += "#- Effects -";
-        if getAura[3]{str += "#Cursed!"};
-        if getAura[0]{str += "#Frozen! (1xRed)"};
-        if getAura[1]{str += "#Eroded! (5xGreen)"};
-        if getAura[2]{str += "#Painted! (3xBlue)"};
-    }
-    if getSal != -1{
-        str += "##SID: "+string(getSal);
-    }
-}else if mouseType == 3{//Input Point
-    str = "Input Point##SID: "+string(getSal);
-}else if mouseType == 4{//Output Point
-    str = "Output Point##SID: "+string(getSal);
-    if getStuck{str = "Output Point##SID: "+string(getSal)+"#!!! Not Enough Space !!!";}
-}else if mouseType == 5{//Gates
-    isCopy = 0;
-    if lockCount == 0{
-        str = "Empty Gate";
-    }else{
-        str = "Gate#";
-        for(i=0;i&lt;lockCount;i+=1){
-            str += "Lock: "+doorName[lockType[i]]+colName[lockCol[i]]+", Cost: ";
-            if lockNegated[i] {str += "Not "}
-            if lockType[i] == lock_NORMAL{
-                if lockICost[i] != 0{//Imaginary
-                    str += string(lockICost[i])+"i";
-                }else{
-                    str += string(lockCost[i]);
-                }
-            }else if lockType[i] == lock_BLANK{
-                str += "None";
-            }else if lockType[i] == lock_BLAST{
-                if lockDenom[i] == 0 &amp;&amp; lockIDenom[i] == 0 {
-                    if lockCost[i] == 1{
-                        str += "[All +]";
-                    }else if lockCost[i] == -1{
-                        str += "[All -]";
-                    }else if lockICost[i] == 1{
-                        str += "[All +i]";
-                    }else{
-                        str += "[All -i]";
-                    }
-                } else {
-                    // partial blast
-                    var numerString = "";
-                    if lockICost[i] == 0 { numerString = string(lockCost[i]); }
-                    else {
-                        if lockCost[i] == 0 { numerString = string(lockICost[i])+"i"; }
-                        else if lockICost[i] &gt; 0 { numerString = "("+string(lockCost[i])+"+"+string(lockICost[i])+"i)"; }
-                        else { numerString = "("+string(lockCost[i])+string(lockICost[i])+"i)"; }
-                    }
-                    if numerString == "1" { numerString = ""; }
-                    var denomString = "";
-                    if lockIDenom[i] == 0 { denomString = "+" + string(lockDenom[i]); }
-                    else {
-                        if lockDenom[i] == 0 {
-                            if lockIDenom[i] &lt; 0 { denomString = string(lockIDenom[i])+"i"; }
-                            else { denomString = "+" + string(lockIDenom[i])+"i"; }
-                        }
-                        else if lockIDenom[i] &gt; 0 { denomString = "("+string(lockDenom[i])+"+"+string(lockIDenom[i])+"i)"; }
-                        else { denomString = "("+string(lockDenom[i])+string(lockIDenom[i])+"i)"; }
-                    }
-                    str += "[" + numerString + "All / " + denomString + "]";
-                }
-            }else if lockType[i] == lock_ALL{
-                str += "[ALL]";
-            }
-            str += "#";
-            if lockCol[i] == color_GLITCH{
-                isCopy = 1;
-            }
+        for (i=0;i&lt;moused.lockCount;i+=1) {
+            str += "#Lock: " + lockName[moused.lock[i,3]] + colName[moused.lock[i,0]] + ", Cost: " + strLockCost(moused.lock[i,3],moused.lock[i,1],moused.lock[i,2]);
+            if moused.lock[i,0] == color_GLITCH { hasGlitch = true; }
         }
-    }
-    if isCopy{
-        str += "Mimic: "+colName[getGlitch];
-    }
-}else if mouseType == 6{//Kina
-    str = "Kina, God of Keys and Doors#";
-    str += "Lock: Master, Cost: ∞";
-    if getAura[3]{
-        str += "#- Effects -#Cursed!";
-    }
+        if hasGlitch { str += "#Mimic: " + colName[moused.glitchMimic]; }
+        if mouseType == oDoorCombo {
+            str += strEffects(moused.browned, moused.aura[0], moused.aura[1], moused.aura[2]);
+            if moused.salvageID != -1{ str += "##SID: " + string(moused.salvageID); }
+        }
+    break;
+    case oSalvageIn:
+        str += "Input Point##SID: "+string(moused.ID);
+    break;
+    case oSalvageOut:
+        str += "Output Point##SID: "+string(moused.ID);
+        if moused.noRoom { str += "#!!! Not Enough Space !!!"; }
+    break;
+    case oKina:
+        str += "Kina, God of Keys and Doors#Lock: Master, Cost: ∞";
+        if moused.browned { str += "#- Effects -#Cursed!"; }
+    break;
 }
 //Draw set
 draw_set_font(fMouseover);
