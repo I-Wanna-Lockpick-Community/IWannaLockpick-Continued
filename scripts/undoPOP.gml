@@ -117,7 +117,7 @@ for (var i = 0; i < instancesCount; i += 1) {
     if object_get_parent(instance.object_index) == oKeyBulk {
         instance.visible = instance.active;
         with instance {
-            scrColorKey(); undoReposition();
+            undoReposition();
             copyTimer = 0; copyState = 0; copyAlpha = 0; copyDraw = 1;
         }
     } else if object_get_parent(instance.object_index) == oDoorSimple

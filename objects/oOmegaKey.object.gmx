@@ -168,7 +168,6 @@ drawScale = sin(degtorad(imgA));
           <argument>
             <kind>1</kind>
             <string>///Set color (doubles as ID) and check if obtained
-scrColorKey();
 if color == color_MASTER{
     sprite_index = sprKMasterOrd;
     image_speed = .1;
@@ -234,12 +233,12 @@ switch color{
     case color_GLITCH:
         draw_sprite_ext(sprite_index,0,x,y+3*waveS+upAmt,drawScale*scale,scale,0,c_white,image_alpha);
         shader_set(shdRainbowStripe2);
-        draw_sprite_ext(sprite_index,1,x,y+3*waveS+upAmt,drawScale*scale,scale,0,blend,image_alpha);
+        draw_sprite_ext(sprite_index,1,x,y+3*waveS+upAmt,drawScale*scale,scale,0,global.mainTone[color],image_alpha);
         shader_reset();
     break;
     default:
         draw_sprite_ext(sprite_index,0,x,y+3*waveS+upAmt,drawScale*scale,scale,0,c_white,image_alpha);
-        draw_sprite_ext(sprite_index,1,x,y+3*waveS+upAmt,drawScale*scale,scale,0,blend,image_alpha);
+        draw_sprite_ext(sprite_index,1,x,y+3*waveS+upAmt,drawScale*scale,scale,0,global.mainTone[color],image_alpha);
     break;
 }
 </string>

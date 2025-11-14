@@ -585,7 +585,7 @@ if scrButtonCheck(global.specialButton){
 }
 oldMode = pdaMode;
 //Bleh
-goldIndex = (goldIndex + .1) mod 4;
+goldIndex = (goldIndex + .1) mod 12;
 }
 }
 </string>
@@ -829,24 +829,31 @@ if pdaMode == 1{
         draw_set_alpha(1);
         draw_set_color(c_white);
         if pdaID[pdaPage, i] == color_MASTER{
-            draw_sprite(sprKMaster,floor(goldIndex),drawX,drawY);
+            draw_sprite(sprKMaster,floor(goldIndex%4),drawX,drawY);
         }else if pdaID[pdaPage, i] == color_PURE{
-            draw_sprite(sprKPure,floor(goldIndex),drawX,drawY);
+            draw_sprite(sprKPure,floor(goldIndex%4),drawX,drawY);
         }else if pdaID[pdaPage, i] == color_GLITCH{
-            color = pdaID[pdaPage, i];
-            scrColorKey();
             shader_set(shdRainbowStripe2);
             draw_sprite(sprKey,3,drawX,drawY);
-            draw_sprite_ext(sprKey,1,drawX,drawY,1,1,0,blend,1);
+            draw_sprite_ext(sprKey,1,drawX,drawY,1,1,0,global.mainTone[pdaID[pdaPage, i]],1);
             shader_reset();
         }else if pdaID[pdaPage, i] == color_STONE{
             draw_sprite(sprKStone,0,drawX,drawY);
+        }else if pdaID[pdaPage, i] == color_DYNAMITE{
+            draw_sprite(sprKDynamite,floor(goldIndex),drawX,drawY);
+        }else if pdaID[pdaPage, i] == color_SILVER{
+            draw_sprite(sprKSilver,floor(goldIndex%4),drawX,drawY);
+        }else if pdaID[pdaPage, i] == color_ICE{
+            draw_sprite(sprKIce,0,drawX,drawY);
+        }else if pdaID[pdaPage, i] == color_MUD{
+            draw_sprite(sprKMud,0,drawX,drawY);
+        }else if pdaID[pdaPage, i] == color_GRAFFITI{
+            draw_sprite(sprKGraffiti,0,drawX,drawY);
             // @addcolor if key image/animation
         } else {
             color = pdaID[pdaPage, i];
-            scrColorKey();
             draw_sprite(sprKey,0,drawX,drawY);
-            draw_sprite_ext(sprKey,1,drawX,drawY,1,1,0,blend,1);
+            draw_sprite_ext(sprKey,1,drawX,drawY,1,1,0,global.mainTone[pdaID[pdaPage, i]],1);
         }
         //Star
         if global.star[pdaID[pdaPage, i]] == 1{

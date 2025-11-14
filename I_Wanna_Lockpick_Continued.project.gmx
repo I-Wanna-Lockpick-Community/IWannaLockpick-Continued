@@ -502,7 +502,6 @@
         <sprite>sprites\sprWhiteAura</sprite>
         <sprite>sprites\sprBlackArrows</sprite>
       </sprites>
-      <sprite>sprites\sprDebrisGold</sprite>
       <sprite>sprites\sprDebris</sprite>
       <sprite>sprites\sprExplosion</sprite>
       <sprite>sprites\sprNegativeExplosion</sprite>
