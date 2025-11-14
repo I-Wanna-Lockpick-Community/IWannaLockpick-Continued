@@ -37,6 +37,7 @@ active = 1;//Whether or not it can be opened. Inactive means it goes far out of 
 color = 0;
 colorSpend = 0;//Can spend a key type other than the required one
 glitchMimic = color_GLITCH;//For glitch doors
+lockGlitchMimic = color_GLITCH;
 curseGlitchMimic = color_GLITCH;
 baseColor = 0; // for drawing
 baseColorSpend = 0; // for drawing
@@ -340,20 +341,20 @@ if distToP &lt;= 1 {
         }
         spendTotal = 0;
         spendITotal = 0;
-        scrAddSpendAmt(scrEffectiveColor(color,true),count,icount,type,tempIPow,exactI||isPartial,denom,idenom,negated)
+        scrAddSpendAmt(scrEffectiveColor(color,true,true),count,icount,type,tempIPow,exactI||isPartial,denom,idenom,negated)
         if canSilverOpen {
-            addComplexKeys(scrEffectiveColor(colorSpend,true),-spendTotal,-spendITotal,0);
+            addComplexKeys(scrEffectiveColor(colorSpend,true,false),-spendTotal,-spendITotal,0);
             addComplexKeys(color_SILVER,-1,0,tempIPow);
             scrPlaySoundExt(sndMasterUnlock,1,1,false);
             event_user(2);
             objPlayer.masterMode = 0;
             objPlayer.masterCycle = 0;
             undoBUFFER();
-            scrBroadcastCopy(scrEffectiveColor(colorSpend,true)); // should it?
-        } else if canOpen(scrEffectiveColor(color,true),count,icount,type,tempIPow,exactI||isPartial,denom,idenom,negated) {
-            addComplexKeys(scrEffectiveColor(colorSpend,true),-spendTotal,-spendITotal,0);
+            scrBroadcastCopy(scrEffectiveColor(colorSpend,true,false)); // should it?
+        } else if canOpen(scrEffectiveColor(color,true,true),count,icount,type,tempIPow,exactI||isPartial,denom,idenom,negated) {
+            addComplexKeys(scrEffectiveColor(colorSpend,true,false),-spendTotal,-spendITotal,0);
             scrOpenOrCopy();
-            scrBroadcastCopy(scrEffectiveColor(colorSpend,true));
+            scrBroadcastCopy(scrEffectiveColor(colorSpend,true,false));
         }
     }
 }

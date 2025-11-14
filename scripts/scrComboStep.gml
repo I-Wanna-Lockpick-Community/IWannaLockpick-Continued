@@ -121,11 +121,11 @@ if distance_to_object(objPlayer) <= 1{
                 objPlayer.masterMode = 0;
                 objPlayer.masterCycle = 0;
                 undoBUFFER();
-                scrBroadcastCopy(scrEffectiveColor(colorSpend,true));
+                scrBroadcastCopy(scrEffectiveColor(colorSpend,true,false));
             } else if metRequirement {
-                addComplexKeys(scrEffectiveColor(colorSpend,true),-spendTotal,-spendITotal,0);
+                addComplexKeys(scrEffectiveColor(colorSpend,true,false),-spendTotal,-spendITotal,0);
                 scrOpenCombo();
-                scrBroadcastCopy(scrEffectiveColor(colorSpend,true));
+                scrBroadcastCopy(scrEffectiveColor(colorSpend,true,false));
             }
         }
     }

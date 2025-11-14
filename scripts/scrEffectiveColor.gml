@@ -1,8 +1,13 @@
-//scrEffectiveColor(color,considerAurabreakers);
+//scrEffectiveColor(color,considerAurabreakers,isLock);
 // returns the effective color; used for calculations
 var color = argument0;
-if cursed != -1 && cursed != color_PURE { color = cursed; }
-if color == color_GLITCH { color = glitchMimic; }
+if cursed != -1 && cursed != color_PURE && !(argument2 && armament) {
+    color = cursed;
+    if color == color_GLITCH { color = curseGlitchMimic; }
+} else if color == color_GLITCH {
+    if argument2 { color = lockGlitchMimic; }
+    else { color = glitchMimic; }
+}
 if argument1 && !hasColor(color_PURE) {
     var auraType;
     var auraCount = 0; //Amount of auras on the door

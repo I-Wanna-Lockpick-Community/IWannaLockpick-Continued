@@ -173,16 +173,24 @@ if backSprite == sprLockAny { // arbitrary size lock frame
     draw_sprite_part(backSprite,index,0,48,16,16,xRel,yRel+height-2);
     draw_sprite_part(backSprite,index,48,48,16,16,xRel+width-2,yRel+height-2);
     // edges
-    if w > 1 {
+    if width > 18 {
         draw_sprite_part_ext(backSprite,index,16,0,32,16,xRel+16,yRel,(width-18)/32,1,c_white,1);
         draw_sprite_part_ext(backSprite,index,16,48,32,16,xRel+16,yRel+height-2,(width-18)/32,1,c_white,1);
     }
-    if h > 1 {
+    if height > 18 {
         draw_sprite_part_ext(backSprite,index,0,16,16,32,xRel,yRel+16,1,(height-18)/32,c_white,1);
         draw_sprite_part_ext(backSprite,index,48,16,16,32,xRel+width-2,yRel+16,1,(height-18)/32,c_white,1);
     }
 } else {
     draw_sprite(backSprite,index,xRel,yRel);
+}
+
+// draw armament
+if argument11 {
+    draw_sprite_part(sprArmament,floor(goldIndex)%4,0,0,9,9,xRel-offsetX,yRel-offsetY)
+    draw_sprite_part(sprArmament,floor(goldIndex)%4,9,0,9,9,xRel-offsetX+width-9,yRel-offsetY)
+    draw_sprite_part(sprArmament,floor(goldIndex)%4,0,9,9,9,xRel-offsetX,yRel-offsetY+height-9)
+    draw_sprite_part(sprArmament,floor(goldIndex)%4,9,9,9,9,xRel-offsetX+width-9,yRel-offsetY+height-9)
 }
 
 // draw predefined lock sprite
@@ -240,7 +248,7 @@ switch type {
                 }
             }
 
-            var startX = floor((width - string_width(numbers) - lockOffsetX)/2) + xRel - offsetX; // i have no idea why this 4 is needed
+            var startX = floor((width - string_width(numbers) - lockOffsetX)/2) + xRel - offsetX;
             var startY = floor((height - lockOffsetY)/2) + yRel - offsetY;
             // number
             draw_set_halign(fa_left);

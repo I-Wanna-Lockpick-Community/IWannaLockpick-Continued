@@ -329,6 +329,7 @@
         <sprite>sprites\sprLockAnyL</sprite>
         <sprite>sprites\sprLockAnyXL</sprite>
         <sprite>sprites\sprLockAny</sprite>
+        <sprite>sprites\sprArmament</sprite>
       </sprites>
       <sprites name="door">
         <sprites name="editorPreview">
@@ -786,6 +787,7 @@
       <script>scripts\rotateR.gml</script>
       <script>scripts\rotateI.gml</script>
       <script>scripts\scrInvertColor.gml</script>
+      <script>scripts\scrTruncate.gml</script>
     </scripts>
     <scripts name="color assignment">
       <script>scripts\scrColorKey.gml</script>
@@ -957,7 +959,6 @@
     </scripts>
     <script>scripts\scrComplexDivide.gml</script>
     <script>scripts\scrComplexDivideI.gml</script>
-    <script>scripts\roundNormal.gml</script>
     <scripts name="getColor">
       <script>scripts\scrEffectiveColor.gml</script>
       <script>scripts\scrLockEffectiveColor.gml</script>

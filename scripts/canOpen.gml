@@ -1,80 +1,59 @@
 ///canOpen(color,count,icount,type,ipow,exactI/isPartial,denom,idenom,negated);
-var open_check = argument0;
-if open_check == color_GLITCH{
-    open_check = glitchMimic;
-}
-switch argument4{
-    case 0://i^0 = Multiply by 1
-        var open_needR = argument1;
-        var open_needI = argument2;
-        var denom = argument6;
-        var idenom = argument7;
-    break;
-    case 1://i^1 = Multiply by i
-        var open_needR = -argument2;
-        var open_needI = argument1;
-        var denom = -argument6;
-        var idenom = argument7;
-    break;
-    case 2://i^2 = Multiply by -1
-        var open_needR = -argument1;
-        var open_needI = -argument2;
-        var denom = -argument6;
-        var idenom = -argument7;
-    break;
-    case 3://i^3 = Multiply by -i
-        var open_needR = argument2;
-        var open_needI = -argument1;
-        var denom = argument7;
-        var idenom = -argument6;
-    break;
-}
-var negated = argument8;
+var key = global.key[argument0];
+var ikey = global.ikey[argument0];
+var count = rotateR(argument1,argument2,argument4);
+var icount = rotateI(argument1,argument2,argument4);
+var denom = rotateR(argument6,argument7,argument4);
+var idenom = rotateI(argument6,argument7,argument4);
+var exactI = argument3 == lock_EXACT && argument5;
+var isPartial = argument3 != lock_EXACT && argument5;
+var can = true;
 switch argument3{
     case lock_NORMAL:
-        if sign(global.key[open_check]) == sign(open_needR) && abs(global.key[open_check]) >= abs(open_needR) || open_needR == 0 {
-            if sign(global.ikey[open_check]) == sign(open_needI) && abs(global.ikey[open_check]) >= abs(open_needI) || open_needI == 0 {
-                return !negated;
+        can = false;
+        if sign(key) == sign(count) && abs(key) >= abs(count) || count == 0 {
+            if sign(ikey) == sign(icount) && abs(ikey) >= abs(icount) || icount == 0 {
+                can = true;
             }
         }
     break;
     case lock_BLANK:
-        if global.key[open_check] == 0 && global.ikey[open_check] == 0{
-            return !negated;
-        }
+        can = key == 0 && ikey == 0;
     break;
     case lock_BLAST:
-        if denom != 0 || idenom != 0 {
-            var rquotient = scrComplexDivide(global.key[open_check],global.ikey[open_check],denom,idenom);
-            return rquotient > 0 && rquotient % 1 == 0;
+        if !isPartial && denom == 0 && idenom == 0 {
+            denom = count;
+            idenom = icount;
         }
-        if open_needR != 0 && sign(open_needR) == sign(global.key[open_check]){
-            return !negated;
-        }
-        if open_needI != 0 && sign(open_needI) == sign(global.ikey[open_check]){
-            return !negated;
+        if denom == 0 && idenom == 0 { can = false; }
+        else if denom != 0 && key*denom <= 0 { can = false; }
+        else if idenom != 0 && ikey*idenom <= 0 { can = false; }
+        else if isPartial {
+            if denom != 0 && key % denom != 0 { can = false; }
+            if idenom != 0 && ikey % idenom != 0 { can = false; }
         }
     break;
     case lock_ALL:
-        if global.key[open_check] == 0 && global.ikey[open_check] == 0 {
-            return negated;
+        if !isPartial && denom == 0 && idenom == 0 {
+            denom = count;
+            idenom = icount;
         }
-        if denom != 0 || idenom != 0 {
+        if denom == 0 && idenom == 0 { can = false; }
+        else if key == 0 && ikey == 0 { can = false; }
+        else if isPartial {
             var rquotient = scrComplexDivide(global.key[open_check],global.ikey[open_check],denom,idenom);
             var iquotient = scrComplexDivideI(global.key[open_check],global.ikey[open_check],denom,idenom);
-            if (rquotient % 1 != 0 || iquotient % 1 != 0) {
-                return negated
-            }
+            if (rquotient % 1 != 0 || iquotient % 1 != 0) { can = false; }
         }
-        return !negated;
     break;
     case lock_EXACT:
-        if !((argument5 + argument4) % 2) && (open_needR == global.key[open_check]){
-            return !negated;
-        }
-        if ((argument5 + argument4) % 2) && (open_needI == global.ikey[open_check]){
-            return !negated;
+        if count == 0 && icount == 0 {
+            if exactI { can = ikey == 0; }
+            else { can = key == 0; }
+        } else {
+            if count != 0 && count != key { can = false; }
+            else if icount != 0 && icount != ikey { can = false; }
         }
     break;
 }
-return negated;
+return can != argument8;
