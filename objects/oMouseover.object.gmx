@@ -1032,7 +1032,13 @@ switch mouseType {
     break;
     case oDoorSimple:
         str += lockName[moused.type] + colName[moused.colorSpend] + " Door";
-        if moused.armament { str += " (Armament)"; }
+        if moused.armament {
+            str += " (Armament";
+            if (moused.color == color_GLITCH || moused.colorSpend == color_GLITCH) &amp;&amp; moused.glitchMimic != moused.lockGlitchMimic {
+                str += ", Mimic: " + colName[moused.lockGlitchMimic];
+            }
+            str += ")";
+        }
         str += "#Cost: " + strLockCost(moused.type, moused.count, moused.icount, moused.exactI||moused.isPartial, moused.denom, moused.idenom, moused.negated);
         if moused.color != moused.colorSpend { str += " " + colName[moused.color]; }
         if moused.color == color_GLITCH || moused.colorSpend == color_GLITCH {
