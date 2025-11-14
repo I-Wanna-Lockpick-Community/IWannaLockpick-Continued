@@ -13,7 +13,7 @@ salvageID = -1;//For mouseover purposes
 active = 1;//Whether or not it can be opened. Inactive means it goes far out of bounds.
 lockCount = 0;
 lock[0,0] = 0;//Left = index, right = attribute
-// attributes: color,count,icount,type,xRel,yRel,sprite,exacti/isPartial,denom,idenom,armament,(glitchMimic),(curseGlitchMimic)
+// attributes: color,count,icount,type,xRel,yRel,sprite,exacti/isPartial,denom,idenom,negated,armament,(glitchMimic),(curseGlitchMimic)
 
 invertBorder = 0;
 colorSpend = 0;

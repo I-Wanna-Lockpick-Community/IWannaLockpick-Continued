@@ -4,7 +4,7 @@
 if !instance_exists(objPlayer){exit;}
 var metRequirement = 1;//Whether the requirement for every lock has been met
 for(var i = 0; i < lockCount; i += 1){
-    if !canOpen(scrLockEffectiveColor(i,false),lock[i,1],lock[i,2],lock[i,3],0,lock[i,7],lock[i,7],lock[i,8],lock[i,9]){
+    if !canOpen(scrLockEffectiveColor(i,false),lock[i,1],lock[i,2],lock[i,3],0,lock[i,7],lock[i,8],lock[i,9],lock[i,10]){
         metRequirement = 0;
     }
 }

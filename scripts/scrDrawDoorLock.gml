@@ -1,4 +1,4 @@
-///scrDrawDoorLock(color,count,icount,type,xRel,yRel,sprite,denom,idenom,negated); 
+///scrDrawDoorLock(color,count,icount,type,xRel,yRel,sprite,exactI/isPartial,denom,idenom,negated,armament); 
 // rewritten to work with both simple doors and combo doors
 // we use the sprLockAnys for borders (for nonpredefined) and for fills
 
@@ -10,9 +10,12 @@ var type = argument3;
 var xRel = argument4 + x;
 var yRel = argument5 + y;
 var sprite = argument6;
-var denom = argument7;
-var idenom = argument8;
-var negated = argument9;
+var exactI = type == lock_EXACT && argument7;
+var isPartial = type != lock_EXACT && argument7;
+var denom = argument8;
+var idenom = argument9;
+var negated = argument10;
+var armament = argument11;
 
 if object_index == oGate {
     count = argument1;

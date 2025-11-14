@@ -28,7 +28,7 @@ draw_sprite_ext(sprGateOutline,3,x,y-16,w*2,1,0,outCol,1);
 
 //LOCKS
 for(var i = 0; i < lockCount; i += 1) {
-    scrDrawDoorLock(lock[i,0],lock[i,1],lock[i,2],lock[i,3],lock[i,4],lock[i,5],lock[i,6],lock[i,7],lock[i,8],lock[i,9]);
+    scrDrawDoorLock(lock[i,0],lock[i,1],lock[i,2],lock[i,3],lock[i,4],lock[i,5],lock[i,6],lock[i,7],lock[i,8],lock[i,9],lock[i,10],lock[i,11]);
 }
 
 draw_set_color(c_white);

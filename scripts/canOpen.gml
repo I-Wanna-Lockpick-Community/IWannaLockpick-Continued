@@ -1,4 +1,4 @@
-///canOpen(color,lock_count,lock_icount,lock_type,power_of_i,exactI,lock_denom,lock_idenom,negated);
+///canOpen(color,count,icount,type,ipow,exactI/isPartial,denom,idenom,negated);
 var open_check = argument0;
 if open_check == color_GLITCH{
     open_check = glitchMimic;

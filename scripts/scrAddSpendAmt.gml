@@ -1,4 +1,4 @@
-///scrAddSpendAmt(color,open_needR,open_needI,type,power_of_i,denom,idenom,negated);
+///scrAddSpendAmt(color,count,icount,type,ipow,exactI/isPartial,denom,idenom,negated);
 var open_check = argument0;
 if open_check == color_GLITCH{
     open_check = glitchMimic;
@@ -7,31 +7,33 @@ switch argument4{
     case 0://i^0 = Multiply by 1
         var open_needR = argument1;
         var open_needI = argument2;
-        var denom = argument5;
-        var idenom = argument6;
+        var denom = argument6;
+        var idenom = argument7;
     break;
     case 1://i^1 = Multiply by i
         var open_needR = -argument2;
         var open_needI = argument1;
-        var denom = -argument5;
+        var denom = -argument7;
         var idenom = argument6;
     break;
     case 2://i^2 = Multiply by -1
         var open_needR = -argument1;
         var open_needI = -argument2;
-        var denom = -argument5;
-        var idenom = -argument6;
+        var denom = -argument6;
+        var idenom = -argument7;
     break;
     case 3://i^3 = Multiply by -i
         var open_needR = argument2;
         var open_needI = -argument1;
-        var denom = argument6;
-        var idenom = -argument5;
+        var denom = argument7;
+        var idenom = -argument6;
     break;
 }
 var rcost = 0;
 var icost = 0;
-var negated = argument7;
+var exactI = argument3 == lock_EXACT && argument5;
+var isPartial = argument3 != lock_EXACT && argument5;
+var negated = argument8;
 switch argument3 {
     case lock_NORMAL:
     case lock_EXACT:

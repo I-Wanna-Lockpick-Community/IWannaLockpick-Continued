@@ -95,7 +95,7 @@ if distance_to_object(objPlayer) <= 1{
             //MAIN CODE
             var metRequirement = true;//Whether the requirement for every lock has been met
             for(var i = 0; i < lockCount; i += 1){
-                if !canOpen(scrLockEffectiveColor(i,true),lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7],lock[i,7],lock[i,8],lock[i,9]){
+                if !canOpen(scrLockEffectiveColor(i,true),lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7],lock[i,8],lock[i,9],lock[i,10]){
                     metRequirement = false;
                 }
             }
@@ -111,7 +111,7 @@ if distance_to_object(objPlayer) <= 1{
                 }
             }
             for(var i = 0; i < lockCount; i += 1){
-                scrAddSpendAmt(scrLockEffectiveColor(i,true),lock[i,1],lock[i,2],lock[i,3],tempIPow,lock[i,7],lock[i,8],lock[i,9]);
+                scrAddSpendAmt(scrLockEffectiveColor(i,true),lock[i,1],lock[i,2],lock[i,3],tempIPow,lock[i,7],lock[i,8],lock[i,9],lock[i,10]);
             }
             if (canSilverOpen) {
                 addComplexKeys(get,-spendTotal,-spendITotal,0);

@@ -48,6 +48,14 @@ colName[color_BROWN] = "Brown";
 colName[color_PURE] = "Pure";
 colName[color_GLITCH] = "Glitch";
 colName[color_STONE] = "Stone";
+colName[color_DYNAMITE] = "Dynamite";
+colName[color_SILVER] = "Silver";
+colName[color_MAROON] = "Maroon";
+colName[color_FOREST] = "Forest";
+colName[color_NAVY] = "Navy";
+colName[color_ICE] = "Ice";
+colName[color_MUD] = "Mud";
+colName[color_GRAFFITI] = "Graffiti";
 // @addcolor
 //Define key type names
 keyName[key_NORMAL] = "";
@@ -58,8 +66,8 @@ keyName[key_UNSTAR] = "Unstar ";
 keyName[key_SIGNFLIP] = "Signflip ";
 keyName[key_POSROTOR] = "Rotor (i) ";
 keyName[key_NEGROTOR] = "Rotor (-i) ";
-keyName[key_NEGROTOR] = "Curse ";
-keyName[key_NEGROTOR] = "Uncurse ";
+keyName[key_CURSE] = "Curse ";
+keyName[key_UNCURSE] = "Uncurse ";
 //Define door type names
 lockName[lock_NORMAL] = "";
 lockName[lock_BLANK] = "Blank ";
@@ -1011,7 +1019,7 @@ switch mouseType {
     case oDoorSimple:
         str += lockName[moused.type] + colName[moused.colorSpend] + " Door";
         if moused.armament { str += " (Armament)"; }
-        str += "#Cost: " + strLockCost(moused.type, moused.count, moused.icount);
+        str += "#Cost: " + strLockCost(moused.type, moused.count, moused.icount, moused.exactI||moused.isPartial, moused.denom, moused.idenom);
         if moused.color != moused.colorSpend { str += " " + colName[moused.color]; }
         if moused.color == color_GLITCH || moused.colorSpend == color_GLITCH {
             str += "#Mimic: " + colName[moused.glitchMimic];
@@ -1033,7 +1041,7 @@ switch mouseType {
             str += "Gate";
         }
         for (i=0;i&lt;moused.lockCount;i+=1) {
-            str += "#Lock: " + lockName[moused.lock[i,3]] + colName[moused.lock[i,0]] + ", Cost: " + strLockCost(moused.lock[i,3],moused.lock[i,1],moused.lock[i,2]);
+            str += "#Lock: " + lockName[moused.lock[i,3]] + colName[moused.lock[i,0]] + ", Cost: " + strLockCost(moused.lock[i,3],moused.lock[i,1],moused.lock[i,2],moused.lock[i,7],moused.lock[i,8],moused.lock[i,9]);
             if moused.lock[i,0] == color_GLITCH { hasGlitch = true; }
             if moused.lock[i,10] {
                 str += "(Armament";

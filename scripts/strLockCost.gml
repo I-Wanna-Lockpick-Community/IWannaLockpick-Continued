@@ -23,7 +23,8 @@ switch argument0 {
             numerI = rotateI(argument1,argument2,ipow);
         }
         if numerR != 1 || numerI != 0 { str += strComplex(numerR, numerI); }
-        str += argument0 == lock_BLAST ? "All" : "ALL";
+        if argument0 == lock_BLAST { str += "All"; }
+        else { str += "ALL"; }
         if argument0 == lock_BLAST && !complexDenom {
             if argument4 >= 0 || argument5 > 0 {str += "+";}
             else {str += "-";}

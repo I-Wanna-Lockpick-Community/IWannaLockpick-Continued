@@ -37,6 +37,7 @@ active = 1;//Whether or not it can be opened. Inactive means it goes far out of 
 color = 0;
 colorSpend = 0;//Can spend a key type other than the required one
 glitchMimic = color_GLITCH;//For glitch doors
+curseGlitchMimic = color_GLITCH;
 baseColor = 0; // for drawing
 baseColorSpend = 0; // for drawing
 count = 1;
@@ -339,7 +340,7 @@ if distToP &lt;= 1 {
         }
         spendTotal = 0;
         spendITotal = 0;
-        scrAddSpendAmt(scrEffectiveColor(color,true),count,icount,type,tempIPow,denom,idenom,negated)
+        scrAddSpendAmt(scrEffectiveColor(color,true),count,icount,type,tempIPow,exactI||isPartial,denom,idenom,negated)
         if canSilverOpen {
             addComplexKeys(scrEffectiveColor(colorSpend,true),-spendTotal,-spendITotal,0);
             addComplexKeys(color_SILVER,-1,0,tempIPow);
@@ -349,7 +350,7 @@ if distToP &lt;= 1 {
             objPlayer.masterCycle = 0;
             undoBUFFER();
             scrBroadcastCopy(scrEffectiveColor(colorSpend,true)); // should it?
-        } else if canOpen(scrEffectiveColor(color,true),count,icount,type,tempIPow,exactI,denom,idenom,negated) {
+        } else if canOpen(scrEffectiveColor(color,true),count,icount,type,tempIPow,exactI||isPartial,denom,idenom,negated) {
             addComplexKeys(scrEffectiveColor(colorSpend,true),-spendTotal,-spendITotal,0);
             scrOpenOrCopy();
             scrBroadcastCopy(scrEffectiveColor(colorSpend,true));
@@ -801,7 +802,7 @@ if global.complexMode == 0 &amp;&amp; copies == 0
     } else if count &lt; 0 || icount &lt; 0 {isNegative = true}
 
     scrDrawDoorFrame(isNegative != (global.complexMode == 0 &amp;&amp; copies &lt; 0 || global.complexMode == 1 &amp;&amp; icopies &lt; 0));
-    scrDrawDoorLock(baseColor,count,icount,type,0,0,scrSimpleDoorGetLockSprite(),denom,idenom,negated);
+    scrDrawDoorLock(baseColor,count,icount,type,0,0,scrSimpleDoorGetLockSprite(),exactI||isPartial,denom,idenom,negated,armament);
 }
 scrDrawDoorAura();
 </string>

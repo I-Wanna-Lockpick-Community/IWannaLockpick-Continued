@@ -1,4 +1,4 @@
-///scrComboAdvAdd(color,count,icount,type,xRel,yRel,sprite,exacti/isPartial,denom,idenom,armament)
+///scrComboAdvAdd(color,count,icount,type,xRel,yRel,sprite,exacti/isPartial,denom,idenom,negated,armament)
 var tempID = lockCount;
 lock[tempID,0] = argument0;
 lock[tempID,1] = argument1;
@@ -11,5 +11,6 @@ lock[tempID,7] = argument7;
 lock[tempID,8] = argument8;
 lock[tempID,9] = argument9;
 lock[tempID,10] = argument10;
-lock[tempID,11] = color_GLITCH; // glitch mimic
+lock[tempID,11] = argument11;
+lock[tempID,12] = color_GLITCH; // glitch mimic
 lockCount += 1;

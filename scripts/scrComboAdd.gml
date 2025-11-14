@@ -12,4 +12,5 @@ lock[tempID,8] = 0;
 lock[tempID,9] = 0;
 lock[tempID,10] = 0;
 lock[tempID,11] = 0;
+lock[tempID,12] = 0;
 lockCount += 1;
