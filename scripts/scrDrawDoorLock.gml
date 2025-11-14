@@ -159,7 +159,7 @@ switch color {
         } else {
             draw_sprite_ext(backSprite,4,xRel,yRel,1,1,0,mainTone,1);
         }
-        scrDrawDoorAura(baseColorSpend == color_ICE, baseColorSpend == color_MUD, baseColorSpend == color_GRAFFITI,xRel-offsetX,yRel-offsetY,width,height);
+        scrDrawDoorAura(color == color_ICE, color == color_MUD, color == color_GRAFFITI,xRel-offsetX,yRel-offsetY,width,height);
     break;
 }
 
