@@ -72,7 +72,7 @@ if auraCount > 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || objPla
     if distance_to_object(objPlayer) <= 23{
         removeAurasCombo();
     }
-    if (global.key[auraType] == 0 && global.ikey[auraType] == 0) { exit; }
+    if (auraCount > 0 && global.key[auraType] == 0 && global.ikey[auraType] == 0) { exit; }
     if auraCount > 1 {exit;}
 }
 //Now, the first big calculation is the Gold Eligibility.

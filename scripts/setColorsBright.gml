@@ -64,9 +64,9 @@ global.highTone[color_DYNAMITE] = make_color_rgb(209,136,102);
 global.mainTone[color_DYNAMITE] = make_color_rgb(211,71,40);
 global.darkTone[color_DYNAMITE] = make_color_rgb(122,49,23);
 // Quicksilver
-global.highTone[color_QUICKSILVER] = make_color_rgb(255,255,255);
-global.mainTone[color_QUICKSILVER] = make_color_rgb(184,184,184);
-global.darkTone[color_QUICKSILVER] = make_color_rgb(129,129,129);
+global.highTone[color_SILVER] = make_color_rgb(255,255,255);
+global.mainTone[color_SILVER] = make_color_rgb(184,184,184);
+global.darkTone[color_SILVER] = make_color_rgb(129,129,129);
 // Maroon
 global.highTone[color_MAROON] = make_color_rgb(109,64,64);
 global.mainTone[color_MAROON] = make_color_rgb(88,50,50);
