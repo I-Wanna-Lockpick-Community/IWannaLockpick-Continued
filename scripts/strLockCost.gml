@@ -27,8 +27,8 @@ switch argument0 {
         if argument0 == lock_BLAST { str += "All"; }
         else { str += "ALL"; }
         if argument0 == lock_BLAST && divideThrough {
-            if argument4 >= 0 || argument5 > 0 {str += "+";}
-            else {str += "-";}
+            if argument4 >= 0 || argument5 > 0 {str += " +";}
+            else {str += " -";}
             if argument5 != 0 {str += "i";}
         }
         if argument3 {

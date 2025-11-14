@@ -207,9 +207,9 @@ global.msg = "";</code>
     <instance objName="oKeyIce" x="896" y="112" name="inst_3E133A2D" locked="0" code="type=key_CURSE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMud" x="960" y="112" name="inst_D3215A73" locked="0" code="type=key_CURSE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGraffiti" x="928" y="112" name="inst_B23C52ED" locked="0" code="type=key_CURSE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorBlue" x="1344" y="544" name="inst_482AAEE9" locked="0" code="w = 2;&#xA;type = lock_BLAST;&#xA;denom = 2;&#xA;copies = 5;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorBlue" x="1216" y="512" name="inst_7B053553" locked="0" code="w = 2;&#xA;type = lock_BLAST;&#xA;count = 0;&#xA;icount = -2;&#xA;idenom = -2;&#xA;copies = 5;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorBlue" x="1152" y="512" name="inst_F05FDE54" locked="0" code="w = 2;&#xA;type = lock_BLAST;&#xA;count = 1;&#xA;icount = 2;&#xA;idenom = 2;&#xA;copies = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorBlue" x="1344" y="544" name="inst_482AAEE9" locked="0" code="w = 2;&#xA;type = lock_BLAST;&#xA;denom = 2;&#xA;isPartial = true;&#xA;copies = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorBlue" x="1216" y="512" name="inst_7B053553" locked="0" code="w = 2;&#xA;type = lock_BLAST;&#xA;count = 0;&#xA;icount = -2;&#xA;idenom = -2;&#xA;isPartial = true;&#xA;copies = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorBlue" x="1152" y="512" name="inst_F05FDE54" locked="0" code="w = 2;&#xA;type = lock_BLAST;&#xA;count = 1;&#xA;icount = 2;&#xA;idenom = 2;&#xA;isPartial = true;&#xA;copies = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWorld" x="1088" y="544" name="inst_4F396B1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="224" name="inst_27204D3F" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLevel" x="96" y="192" name="inst_F16B6DC5" locked="0" code="isWorld = 1;&#xA;ID = 0;&#xA;rm = rMainHubX;&#xA;label = &quot;&quot;;&#xA;name = &quot;Main Hub&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
