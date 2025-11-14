@@ -841,6 +841,7 @@ if pdaMode == 1{
             draw_sprite(sprKPure,floor(goldIndex%4),drawX,drawY);
         }else if pdaID[pdaPage, i] == color_GLITCH{
             shader_set(shdRainbowStripe2);
+            shader_set_uniform_i(global.shaderMode,0);
             draw_sprite(sprKey,3,drawX,drawY);
             draw_sprite_ext(sprKey,1,drawX,drawY,1,1,0,global.mainTone[pdaID[pdaPage, i]],1);
             shader_reset();

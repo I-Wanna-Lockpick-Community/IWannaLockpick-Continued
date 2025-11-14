@@ -710,6 +710,7 @@ switch state{
                         // @addcolor if omega key
                     }else if tempCol == color_GLITCH{
                         shader_set(shdRainbowStripe2);
+                        shader_set_uniform_i(global.shaderMode,0);
                         draw_sprite_ext(sprTerminalColor,1,tempX,tempY,1,1,0,tempDrawCol,1);
                         shader_reset();
                     }else{
@@ -841,6 +842,7 @@ draw_sprite_ext(sprDPureGrad,floor(goldIndex)%4,x,y,w*.5,h*.5,0,c_white,1);
 
 scrColorDoorArg(color_GLITCH);
 shader_set(shdRainbowStripe2);
+shader_set_uniform_i(global.shaderMode,0);
 scrDrawDoorRequire();
 shader_reset();
 c2 = make_color_rgb(180,150,0);

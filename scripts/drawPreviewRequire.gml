@@ -15,6 +15,7 @@ if color == color_MASTER{
 }else if color == color_GLITCH{
     scrColorDoorArg(color_GLITCH);
     shader_set(shdRainbowStripe2);
+    shader_set_uniform_i(global.shaderMode,0);
     draw_sprite_part_ext(sprDoorSpend,3,16,16,16,16,salDX+8,salDY+8,salW*2-1,salH*2-1,c2,1);
     shader_reset();
     scrColorDoor();

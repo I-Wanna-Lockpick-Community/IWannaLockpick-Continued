@@ -12,6 +12,7 @@ if colorSpend == color_MASTER{
 }else if colorSpend == color_GLITCH{
     scrColorDoorArg(color_GLITCH);
     shader_set(shdRainbowStripe2);
+    shader_set_uniform_i(global.shaderMode,0);
     
     //Edges
     if salW>1{

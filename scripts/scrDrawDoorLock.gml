@@ -128,6 +128,7 @@ switch color {
     break;
     case color_GLITCH:
         shader_set(shdRainbowStripe2);
+        shader_set_uniform_i(global.shaderMode,0);
         draw_sprite_ext(backSprite,2,xRel,yRel,1,1,0,mainTone,1);
         shader_reset();
         if glitchMimic != color_GLITCH {

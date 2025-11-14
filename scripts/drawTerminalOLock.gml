@@ -31,6 +31,7 @@ if oCol[i] == color_MASTER{
     draw_sprite_ext(sprDStoneTexture,0,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
 }else if oCol[i] == color_GLITCH{
     shader_set(shdRainbowStripe2);
+    shader_set_uniform_i(global.shaderMode,0);
     draw_sprite_ext(sprLockAnyS,2,lX,lY,1,1,0,make_color_rgb(180,150,0),1);
     shader_reset();
 }else{//Normal key color
