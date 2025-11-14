@@ -374,78 +374,113 @@
         <sprite>sprites\sprDSilverTexture</sprite>
       </sprites>
       <sprites name="key">
-        <sprite>sprites\sprColorblindHelp</sprite>
         <sprite>sprites\sprAllKeysWhite</sprite>
-        <sprite>sprites\sprKey</sprite>
-        <sprite>sprites\sprKeyAbs</sprite>
-        <sprite>sprites\sprKeyOrd</sprite>
-        <sprite>sprites\sprKeyStar</sprite>
-        <sprite>sprites\sprKeyStar2</sprite>
-        <sprite>sprites\sprKMaster</sprite>
-        <sprite>sprites\sprKSilver</sprite>
-        <sprite>sprites\sprKMasterAbs</sprite>
-        <sprite>sprites\sprKMasterOrd</sprite>
-        <sprite>sprites\sprKMasterStar</sprite>
-        <sprite>sprites\sprKMasterStar2</sprite>
-        <sprite>sprites\sprKMasterGlitch</sprite>
-        <sprite>sprites\sprKPure</sprite>
-        <sprite>sprites\sprKPureOld</sprite>
-        <sprite>sprites\sprKPureAbs</sprite>
-        <sprite>sprites\sprKPureAbsOld</sprite>
-        <sprite>sprites\sprKPureOrd</sprite>
-        <sprite>sprites\sprKPureOrdOld</sprite>
-        <sprite>sprites\sprKPureStar</sprite>
-        <sprite>sprites\sprKPureStar2</sprite>
-        <sprite>sprites\sprKPureGlitch</sprite>
-        <sprite>sprites\sprKMasterAnti</sprite>
-        <sprite>sprites\sprKSilverAnti</sprite>
-        <sprite>sprites\sprW2Mural</sprite>
-        <sprite>sprites\sprKWhite</sprite>
-        <sprite>sprites\sprKOrange</sprite>
-        <sprite>sprites\sprKPurple</sprite>
-        <sprite>sprites\sprKPink</sprite>
-        <sprite>sprites\sprKCyan</sprite>
-        <sprite>sprites\sprKGreen</sprite>
-        <sprite>sprites\sprKBlue</sprite>
-        <sprite>sprites\sprKRed</sprite>
-        <sprite>sprites\sprKBlack</sprite>
-        <sprite>sprites\sprKBrown</sprite>
-        <sprite>sprites\sprKRainbow</sprite>
-        <sprite>sprites\sprKGray</sprite>
-        <sprite>sprites\sprKInf</sprite>
+        <sprite>sprites\sprColorblindHelp</sprite>
         <sprite>sprites\sprKSwap</sprite>
+        <sprite>sprites\sprKInf</sprite>
         <sprite>sprites\sprCountInf</sprite>
-        <sprite>sprites\sprKStone</sprite>
-        <sprite>sprites\sprKStoneAbs</sprite>
-        <sprite>sprites\sprKStoneOrd</sprite>
-        <sprite>sprites\sprKStoneStar</sprite>
-        <sprite>sprites\sprKStoneStar2</sprite>
-        <sprite>sprites\sprKStoneGlitch</sprite>
-        <sprite>sprites\sprKDynamite</sprite>
-        <sprite>sprites\sprKDynamiteAbs</sprite>
-        <sprite>sprites\sprKDynamiteStar</sprite>
-        <sprite>sprites\sprKDynamiteStar2</sprite>
-        <sprite>sprites\sprKDynamiteGlitch</sprite>
-        <sprite>sprites\sprKIce</sprite>
-        <sprite>sprites\sprKIceAbs</sprite>
-        <sprite>sprites\sprKIceStar</sprite>
-        <sprite>sprites\sprKIceStar2</sprite>
-        <sprite>sprites\sprKIceGlitch</sprite>
-        <sprite>sprites\sprKMud</sprite>
-        <sprite>sprites\sprKMudAbs</sprite>
-        <sprite>sprites\sprKMudStar</sprite>
-        <sprite>sprites\sprKMudStar2</sprite>
-        <sprite>sprites\sprKMudGlitch</sprite>
-        <sprite>sprites\sprKGraffiti</sprite>
-        <sprite>sprites\sprKGraffitiAbs</sprite>
-        <sprite>sprites\sprKGraffitiStar</sprite>
-        <sprite>sprites\sprKGraffitiStar2</sprite>
-        <sprite>sprites\sprKGraffitiGlitch</sprite>
-        <sprite>sprites\sprKMaroon</sprite>
-        <sprite>sprites\sprKForest</sprite>
-        <sprite>sprites\sprKNavy</sprite>
-        <sprite>sprites\sprKDynamiteCurse</sprite>
-        <sprite>sprites\sprKDynamiteUncurse</sprite>
+        <sprites name="editorPreview">
+          <sprite>sprites\sprKWhite</sprite>
+          <sprite>sprites\sprKOrange</sprite>
+          <sprite>sprites\sprKPurple</sprite>
+          <sprite>sprites\sprKPink</sprite>
+          <sprite>sprites\sprKCyan</sprite>
+          <sprite>sprites\sprKRed</sprite>
+          <sprite>sprites\sprKGreen</sprite>
+          <sprite>sprites\sprKBlue</sprite>
+          <sprite>sprites\sprKBlack</sprite>
+          <sprite>sprites\sprKBrown</sprite>
+          <sprite>sprites\sprKRainbow</sprite>
+          <sprite>sprites\sprKMaroon</sprite>
+          <sprite>sprites\sprKForest</sprite>
+          <sprite>sprites\sprKNavy</sprite>
+        </sprites>
+        <sprites name="normal">
+          <sprite>sprites\sprKey</sprite>
+          <sprite>sprites\sprKeyAbs</sprite>
+          <sprite>sprites\sprKeyOrd</sprite>
+          <sprite>sprites\sprKeyStar</sprite>
+          <sprite>sprites\sprKeyStar2</sprite>
+          <sprite>sprites\sprKeyCurse</sprite>
+          <sprite>sprites\sprKeyUncurse</sprite>
+        </sprites>
+        <sprites name="master">
+          <sprite>sprites\sprKMaster</sprite>
+          <sprite>sprites\sprKMasterAbs</sprite>
+          <sprite>sprites\sprKMasterOrd</sprite>
+          <sprite>sprites\sprKMasterStar</sprite>
+          <sprite>sprites\sprKMasterStar2</sprite>
+          <sprite>sprites\sprKMasterCurse</sprite>
+          <sprite>sprites\sprKMasterUncurse</sprite>
+          <sprite>sprites\sprKMasterGlitch</sprite>
+          <sprite>sprites\sprKMasterAnti</sprite>
+        </sprites>
+        <sprites name="pure">
+          <sprite>sprites\sprKPure</sprite>
+          <sprite>sprites\sprKPureAbs</sprite>
+          <sprite>sprites\sprKPureOrd</sprite>
+          <sprite>sprites\sprKPureStar</sprite>
+          <sprite>sprites\sprKPureStar2</sprite>
+          <sprite>sprites\sprKPureCurse</sprite>
+          <sprite>sprites\sprKPureUncurse</sprite>
+          <sprite>sprites\sprKPureGlitch</sprite>
+        </sprites>
+        <sprites name="stone">
+          <sprite>sprites\sprKStone</sprite>
+          <sprite>sprites\sprKStoneAbs</sprite>
+          <sprite>sprites\sprKStoneOrd</sprite>
+          <sprite>sprites\sprKStoneStar</sprite>
+          <sprite>sprites\sprKStoneStar2</sprite>
+          <sprite>sprites\sprKStoneCurse</sprite>
+          <sprite>sprites\sprKStoneUncurse</sprite>
+          <sprite>sprites\sprKStoneGlitch</sprite>
+        </sprites>
+        <sprites name="silver">
+          <sprite>sprites\sprKSilver</sprite>
+          <sprite>sprites\sprKSilverAbs</sprite>
+          <sprite>sprites\sprKSilverStar</sprite>
+          <sprite>sprites\sprKSilverStar2</sprite>
+          <sprite>sprites\sprKSilverCurse</sprite>
+          <sprite>sprites\sprKSilverUncurse</sprite>
+          <sprite>sprites\sprKSilverGlitch</sprite>
+          <sprite>sprites\sprKSilverAnti</sprite>
+        </sprites>
+        <sprites name="dynamite">
+          <sprite>sprites\sprKDynamite</sprite>
+          <sprite>sprites\sprKDynamiteAbs</sprite>
+          <sprite>sprites\sprKDynamiteStar</sprite>
+          <sprite>sprites\sprKDynamiteStar2</sprite>
+          <sprite>sprites\sprKDynamiteCurse</sprite>
+          <sprite>sprites\sprKDynamiteUncurse</sprite>
+          <sprite>sprites\sprKDynamiteGlitch</sprite>
+        </sprites>
+        <sprites name="ice">
+          <sprite>sprites\sprKIce</sprite>
+          <sprite>sprites\sprKIceAbs</sprite>
+          <sprite>sprites\sprKIceStar</sprite>
+          <sprite>sprites\sprKIceStar2</sprite>
+          <sprite>sprites\sprKIceCurse</sprite>
+          <sprite>sprites\sprKIceUncurse</sprite>
+          <sprite>sprites\sprKIceGlitch</sprite>
+        </sprites>
+        <sprites name="mud">
+          <sprite>sprites\sprKMud</sprite>
+          <sprite>sprites\sprKMudAbs</sprite>
+          <sprite>sprites\sprKMudStar</sprite>
+          <sprite>sprites\sprKMudStar2</sprite>
+          <sprite>sprites\sprKMudCurse</sprite>
+          <sprite>sprites\sprKMudUncurse</sprite>
+          <sprite>sprites\sprKMudGlitch</sprite>
+        </sprites>
+        <sprites name="graffiti">
+          <sprite>sprites\sprKGraffiti</sprite>
+          <sprite>sprites\sprKGraffitiAbs</sprite>
+          <sprite>sprites\sprKGraffitiStar</sprite>
+          <sprite>sprites\sprKGraffitiStar2</sprite>
+          <sprite>sprites\sprKGraffitiCurse</sprite>
+          <sprite>sprites\sprKGraffitiUncurse</sprite>
+          <sprite>sprites\sprKGraffitiGlitch</sprite>
+        </sprites>
       </sprites>
       <sprites name="other">
         <sprite>sprites\sprDirt</sprite>
@@ -789,8 +824,8 @@
     <scripts name="key/lock">
       <script>scripts\addOrdinalKeys.gml</script>
       <script>scripts\addComplexKeys.gml</script>
-      <script>scripts\isStar.gml</script>
       <script>scripts\scrBroadcastCopy.gml</script>
+      <script>scripts\keyWhiteGetIndex.gml</script>
     </scripts>
     <scripts name="undo">
       <script>scripts\undoPUSH.gml</script>

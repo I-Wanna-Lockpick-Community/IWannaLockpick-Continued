@@ -221,11 +221,7 @@ with objBlock{
     }
 }
 with oKeyBulk{
-    if color == color_MASTER{
-        draw_sprite_ext(sprAllKeysWhite,type+8,x+3,y+3,1,1,0,other.shadowCol,.35);
-    }else{
-        draw_sprite_ext(sprAllKeysWhite,type,x+3,y+3,1,1,0,other.shadowCol,.35);
-    }
+    draw_sprite_ext(sprAllKeysWhite,keyWhiteGetIndex(color,type),x+3,y+3,1,1,0,other.shadowCol,.35);
 }
 with objPlayer{
     draw_sprite_ext(sprite_index,floor(image_index),x+3,y+3,image_xscale*xScale,image_yscale,image_angle,c_black,0.35*image_alpha);
