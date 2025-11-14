@@ -26,7 +26,7 @@ if baseColorSpend == color_MASTER{
 
     if baseColorSpend == color_GLITCH{
         shader_set(shdRainbowStripe2);
-        shader_set_uniform_i(global.shaderMode,0);
+        shader_set_uniform_f(global.shaderMode,color_GLITCH);
     }
     //Corner Fills
     draw_sprite_part_ext(sprDoorSpend,3,0,0,16,16,x,y,1,1,mainTone,1);

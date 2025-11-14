@@ -22,7 +22,7 @@ varying vec2 fCoord;
 uniform float time;
 uniform vec2 offsetPos;
 uniform vec2 size;
-uniform int shaderMode;
+uniform float shaderMode;
 const vec4 COLOR_FILL = vec4(1, 1, 1, 0.7058824);
 const vec4 COLOR_BACK = vec4(0.8554, 0.91, 0.91, 0.39215687);
 
@@ -39,17 +39,23 @@ vec3 hsv(float H, float S, float V){
     return gray + (col-gray) * S;
 }
 
+bool stripe(float start, float width, vec2 positer) {
+    float thispos = positer.x + positer.y;
+    float end = start+width;
+    return max(size.x,size.y) > end && thispos > start && thispos < end;
+}
+
 void main()
 {
-    if (shaderMode == 0) {
+    if (shaderMode == 12.0) {
         // glitch
         vec4 oldCol = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
         float colHue = rand(vec2(fCoord.x+time,fCoord.y));
         float satRand = rand(vec2(fCoord.x,fCoord.y+time));
         gl_FragColor = vec4(hsv(240.*colHue,oldCol.r*satRand,oldCol.g),oldCol.a);
-    } else if (shaderMode == 1) {
+    } else if (shaderMode == 19.0) {
         // ice
-        vec2 position = floor(pos-offsetPos);
+        vec2 position = floor(fCoord-offsetPos);
         vec2 unposition = size - position - vec2(1,1);
         vec2 minposition = vec2(min(position.x,unposition.x),min(position.y,unposition.y));
 

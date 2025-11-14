@@ -38,8 +38,7 @@ if argument0{
         draw_sprite(sprIce3x2,0,xPos,yPos);
     } else {
         shader_set(shdRainbowStripe2);
-        shader_set_uniform_i(global.shaderMode,0);
-        shader_set_uniform_i(global.shaderMode,1);
+        shader_set_uniform_f(global.shaderMode,color_ICE);
         shader_set_uniform_f(global.frozenUniPos,xPos,yPos);
         shader_set_uniform_f(global.frozenUniSize,width,height);
         draw_rectangle(xPos,yPos,xPos+width-1,yPos+height-1,false);        

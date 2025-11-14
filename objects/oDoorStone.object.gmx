@@ -25,14 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>color = color_STONE;
+            <string>event_inherited();
+color = color_STONE;
 colorSpend = color_STONE;
-event_inherited();
 
-//type = 5;
-c1 = make_color_rgb(237,234,231);
-c2 = make_color_rgb(214,207,201);
-c3 = make_color_rgb(187,174,164);
 </string>
           </argument>
         </arguments>

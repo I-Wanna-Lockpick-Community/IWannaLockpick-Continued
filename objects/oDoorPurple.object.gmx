@@ -25,9 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>color = color_PURPLE;
+            <string>event_inherited();
+color = color_PURPLE;
 colorSpend = color_PURPLE;
-event_inherited();
 </string>
           </argument>
         </arguments>

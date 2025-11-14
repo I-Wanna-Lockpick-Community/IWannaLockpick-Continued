@@ -189,7 +189,7 @@ if size &gt;= 1{
                 draw_sprite(sprKPure,floor(goldIndex)%4,x-4,drawY-4);
             }else if show[i] == color_GLITCH {
                 shader_set(shdRainbowStripe2);
-                shader_set_uniform_i(global.shaderMode,0);
+                shader_set_uniform_f(global.shaderMode,color_GLITCH);
                 draw_sprite(sprKey,3,x-4,drawY-4);
                 draw_sprite_ext(sprKey,1,x-4,drawY-4,1,1,0,global.mainTone[show[i]],1);
                 shader_reset();

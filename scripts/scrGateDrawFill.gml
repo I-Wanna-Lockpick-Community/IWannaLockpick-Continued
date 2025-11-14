@@ -31,7 +31,7 @@ for(var i = 0; i < lockCount; i += 1){
         // @addcolor if door image/animation
     }else if lock[i,0] == color_GLITCH{
         shader_set(shdRainbowStripe2);
-        shader_set_uniform_i(global.shaderMode,0);
+        shader_set_uniform_f(global.shaderMode,color_GLITCH);
         draw_sprite_ext(lock[i,6],2,x+lock[i,4],y+lock[i,5],1,1,0,make_color_rgb(180,150,0),1);
         shader_reset();
         if glitchMimic == color_MASTER{

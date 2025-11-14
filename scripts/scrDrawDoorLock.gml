@@ -128,8 +128,13 @@ switch color {
     break;
     case color_GLITCH:
         shader_set(shdRainbowStripe2);
-        shader_set_uniform_i(global.shaderMode,0);
-        draw_sprite_ext(backSprite,2,xRel,yRel,1,1,0,mainTone,1);
+        shader_set_uniform_f(global.shaderMode,color_GLITCH);
+        if sprite == sprLockAny {
+            // arbitrary size lock fill
+            draw_sprite_ext(backSprite,4,xRel-offsetX+1,yRel-offsetY+1,(width-2)/64,(height-2)/64,0,mainTone,1);
+        } else {
+            draw_sprite_ext(backSprite,4,xRel,yRel,1,1,0,mainTone,1);
+        }
         shader_reset();
         if glitchMimic != color_GLITCH {
             var index = 3;

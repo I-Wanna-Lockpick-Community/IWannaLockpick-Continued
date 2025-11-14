@@ -979,7 +979,6 @@
     <shader type="GLSLES">shaders\shdColorblind.shader</shader>
     <shader type="GLSLES">shaders\shdColorblind2.shader</shader>
     <shader type="GLSLES">shaders\shdColorblind3.shader</shader>
-    <shader type="GLSLES">shaders\shdFrozen.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fDefault30</font>
