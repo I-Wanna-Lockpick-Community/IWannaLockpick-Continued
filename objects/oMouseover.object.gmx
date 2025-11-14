@@ -1043,7 +1043,7 @@ switch mouseType {
         for (i=0;i&lt;moused.lockCount;i+=1) {
             str += "#Lock: " + lockName[moused.lock[i,3]] + colName[moused.lock[i,0]] + ", Cost: " + strLockCost(moused.lock[i,3],moused.lock[i,1],moused.lock[i,2],moused.lock[i,7],moused.lock[i,8],moused.lock[i,9],moused.lock[i,10]);
             if moused.lock[i,0] == color_GLITCH { hasGlitch = true; }
-            if moused.lock[i,10] {
+            if moused.lock[i,11] {
                 str += " (Armament";
                 if moused.lock[i,0] == color_GLITCH &amp;&amp; moused.lock[i,11] != moused.glitchMimic {
                     str += ", Mimic: " + colName[moused.lock[i,11]];
