@@ -54,6 +54,8 @@ if baseColorSpend == color_MASTER{
     draw_sprite_part_ext(sprDoorSpend,2,48,48,16,16,x+32*w-16,y+32*h-16,1,1,darkTone,1);
     if baseColorSpend == color_GLITCH{
         shader_reset();
+    } else {
+        scrDrawDoorAura(baseColorSpend == color_ICE, baseColorSpend == color_MUD, baseColorSpend == color_GRAFFITI);
     }
 }
 //For Glitch Doors, draw an extra part

@@ -305,16 +305,6 @@
       <sprite>sprites\sprRodItem</sprite>
     </sprites>
     <sprites name="KeyPick">
-      <sprite>sprites\sprDoor</sprite>
-      <sprite>sprites\sprDoorEditor</sprite>
-      <sprite>sprites\sprDoorCombo</sprite>
-      <sprite>sprites\sprDoorBig</sprite>
-      <sprite>sprites\sprDoorBigInner</sprite>
-      <sprite>sprites\sprDoorGlitch</sprite>
-      <sprite>sprites\sprDoorGlitchGold</sprite>
-      <sprite>sprites\sprDoorGlitchPure</sprite>
-      <sprite>sprites\sprDoorGlitchStone</sprite>
-      <sprite>sprites\sprDoorGlitchDyna</sprite>
       <sprites name="lock">
         <sprite>sprites\sprSymbols</sprite>
         <sprite>sprites\sprLockInfinity</sprite>
@@ -341,37 +331,50 @@
         <sprite>sprites\sprLockAny</sprite>
       </sprites>
       <sprites name="door">
-        <sprite>sprites\sprDWhite</sprite>
-        <sprite>sprites\sprDOrange</sprite>
-        <sprite>sprites\sprDPurple</sprite>
-        <sprite>sprites\sprDPink</sprite>
-        <sprite>sprites\sprDCyan</sprite>
-        <sprite>sprites\sprDGreen</sprite>
-        <sprite>sprites\sprDBlue</sprite>
-        <sprite>sprites\sprDRed</sprite>
-        <sprite>sprites\sprDBrown</sprite>
-        <sprite>sprites\sprDBlack</sprite>
-        <sprite>sprites\sprDGold0</sprite>
-        <sprite>sprites\sprDGold</sprite>
-        <sprite>sprites\sprDPure</sprite>
-        <sprite>sprites\sprDGoldGrad</sprite>
-        <sprite>sprites\sprDPureGradOld3</sprite>
-        <sprite>sprites\sprDPureGrad</sprite>
-        <sprite>sprites\sprDPureGradOld</sprite>
-        <sprite>sprites\sprDStoneTexture</sprite>
-        <sprite>sprites\sprDRainbow</sprite>
-        <sprite>sprites\sprDStone2x2</sprite>
-        <sprite>sprites\sprDStone1x2</sprite>
-        <sprite>sprites\sprDStone</sprite>
-        <sprite>sprites\sprDDirt</sprite>
-        <sprite>sprites\sprDDyna</sprite>
-        <sprite>sprites\sprDDynaTexture</sprite>
-        <sprite>sprites\sprDMaroon</sprite>
-        <sprite>sprites\sprDForest</sprite>
-        <sprite>sprites\sprDNavy</sprite>
+        <sprites name="editorPreview">
+          <sprite>sprites\sprDoorEditor</sprite>
+          <sprite>sprites\sprDoorCombo</sprite>
+          <sprite>sprites\sprDGold</sprite>
+          <sprite>sprites\sprDWhite</sprite>
+          <sprite>sprites\sprDPurple</sprite>
+          <sprite>sprites\sprDOrange</sprite>
+          <sprite>sprites\sprDPink</sprite>
+          <sprite>sprites\sprDCyan</sprite>
+          <sprite>sprites\sprDRed</sprite>
+          <sprite>sprites\sprDGreen</sprite>
+          <sprite>sprites\sprDBlue</sprite>
+          <sprite>sprites\sprDBrown</sprite>
+          <sprite>sprites\sprDBlack</sprite>
+          <sprite>sprites\sprDPure</sprite>
+          <sprite>sprites\sprDRainbow</sprite>
+          <sprite>sprites\sprDStone</sprite>
+          <sprite>sprites\sprDDyna</sprite>
+          <sprite>sprites\sprDSilver</sprite>
+          <sprite>sprites\sprDMaroon</sprite>
+          <sprite>sprites\sprDForest</sprite>
+          <sprite>sprites\sprDNavy</sprite>
+          <sprite>sprites\sprDIce</sprite>
+          <sprite>sprites\sprDMud</sprite>
+          <sprite>sprites\sprDGraffiti</sprite>
+        </sprites>
+        <sprites name="textures">
+          <sprite>sprites\sprDGoldGrad</sprite>
+          <sprite>sprites\sprDPureGrad</sprite>
+          <sprite>sprites\sprDDynaTexture</sprite>
+          <sprite>sprites\sprDSilverTexture</sprite>
+          <sprite>sprites\sprDStoneTexture</sprite>
+        </sprites>
+        <sprite>sprites\sprDoor</sprite>
+        <sprite>sprites\sprDoorBig</sprite>
+        <sprite>sprites\sprDoorBigInner</sprite>
+        <sprite>sprites\sprDoorGlitch</sprite>
+        <sprite>sprites\sprDoorGlitchGold</sprite>
+        <sprite>sprites\sprDoorGlitchPure</sprite>
+        <sprite>sprites\sprDoorGlitchStone</sprite>
+        <sprite>sprites\sprDoorGlitchDyna</sprite>
+        <sprite>sprites\sprDoorGlitchSilver</sprite>
         <sprite>sprites\sprDoorFrame</sprite>
         <sprite>sprites\sprDoorSpend</sprite>
-        <sprite>sprites\sprDSilverTexture</sprite>
       </sprites>
       <sprites name="key">
         <sprite>sprites\sprAllKeysWhite</sprite>
@@ -1332,9 +1335,13 @@
       <object>objects\oDoorStone</object>
       <object>objects\oDoorGlitch</object>
       <object>objects\oDoorDyna</object>
+      <object>objects\oDoorSilver</object>
       <object>objects\oDoorMaroon</object>
       <object>objects\oDoorForest</object>
       <object>objects\oDoorNavy</object>
+      <object>objects\oDoorIce</object>
+      <object>objects\oDoorMud</object>
+      <object>objects\oDoorGraffiti</object>
     </objects>
     <objects name="options">
       <object>objects\oOptionHandle</object>

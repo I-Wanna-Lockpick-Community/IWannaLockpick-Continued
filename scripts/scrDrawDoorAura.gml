@@ -1,6 +1,6 @@
-///scrDrawDoorAura();
+///scrDrawDoorAura(frozen,crumbled,painted);
 
-if aura[1]{
+if argument1{
     if w==1 && h==1{
         draw_sprite(sprDirt,0,x,y);
     }
@@ -11,7 +11,7 @@ if aura[1]{
         draw_sprite(sprDirt2x2,0,x,y);
     }
 }
-if aura[2]{
+if argument2{
     draw_set_blend_mode(bm_add);
     if w==1 && h==1{
         draw_sprite_ext(sprSol,1,x,y,1,1,0,make_color_rgb(255,255,255),1);
@@ -24,7 +24,7 @@ if aura[2]{
     }
     draw_set_blend_mode(bm_normal);
 }
-if aura[0]{
+if argument0{
     if w==1 && h==1{
         draw_sprite(sprIce,0,x,y);
     }

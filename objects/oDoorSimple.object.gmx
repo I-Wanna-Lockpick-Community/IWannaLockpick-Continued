@@ -804,7 +804,7 @@ if global.complexMode == 0 &amp;&amp; copies == 0
     scrDrawDoorFrame(isNegative != (global.complexMode == 0 &amp;&amp; copies &lt; 0 || global.complexMode == 1 &amp;&amp; icopies &lt; 0));
     scrDrawDoorLock(baseColor,count,icount,type,0,0,scrSimpleDoorGetLockSprite(),exactI||isPartial,denom,idenom,negated,armament);
 }
-scrDrawDoorAura();
+scrDrawDoorAura(aura[0],aura[1],aura[2]);
 </string>
           </argument>
         </arguments>

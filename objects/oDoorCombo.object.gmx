@@ -600,7 +600,7 @@ if global.complexMode == 0 &amp;&amp; copies == 0
     }
 }
 //AURAS TBD
-scrDrawDoorAura();
+scrDrawDoorAura(aura[0],aura[1],aura[2]);
 
 //INVERT + COPY TEXT
 //scrComboDrawInvert();
