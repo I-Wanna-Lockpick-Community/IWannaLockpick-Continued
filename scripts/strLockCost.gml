@@ -1,16 +1,17 @@
-//strLockCost(type,count,icount,exacti/isPartial,denom,idenom);
+//strLockCost(type,count,icount,exacti/isPartial,denom,idenom,negated);
 // returns the "cost" of the lock, as a string, for mouseover
 var str = "";
+if argument6 { str += "Not "; }
 switch argument0 {
     case lock_NORMAL:
-        str = strComplex(argument1,argument2);
-        if str == "0" { str = "None"; }
+        if argument1 == 0 && argument2 == 0 { str += "None"; }
+        else { str += strComplex(argument1,argument2); }
     break;
-    case lock_BLANK: str = "None"; break;
+    case lock_BLANK: str += "None"; break;
     case lock_BLAST:
     case lock_ALL:
         var complexDenom = argument4 && argument5;
-        str = "[";
+        str += "[";
         var numerR = argument1;
         var numerI = argument2;
         var ipow = 0;

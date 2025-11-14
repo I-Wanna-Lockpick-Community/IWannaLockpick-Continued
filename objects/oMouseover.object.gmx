@@ -1019,7 +1019,7 @@ switch mouseType {
     case oDoorSimple:
         str += lockName[moused.type] + colName[moused.colorSpend] + " Door";
         if moused.armament { str += " (Armament)"; }
-        str += "#Cost: " + strLockCost(moused.type, moused.count, moused.icount, moused.exactI||moused.isPartial, moused.denom, moused.idenom);
+        str += "#Cost: " + strLockCost(moused.type, moused.count, moused.icount, moused.exactI||moused.isPartial, moused.denom, moused.idenom, moused.negated);
         if moused.color != moused.colorSpend { str += " " + colName[moused.color]; }
         if moused.color == color_GLITCH || moused.colorSpend == color_GLITCH {
             str += "#Mimic: " + colName[moused.glitchMimic];
@@ -1041,10 +1041,10 @@ switch mouseType {
             str += "Gate";
         }
         for (i=0;i&lt;moused.lockCount;i+=1) {
-            str += "#Lock: " + lockName[moused.lock[i,3]] + colName[moused.lock[i,0]] + ", Cost: " + strLockCost(moused.lock[i,3],moused.lock[i,1],moused.lock[i,2],moused.lock[i,7],moused.lock[i,8],moused.lock[i,9]);
+            str += "#Lock: " + lockName[moused.lock[i,3]] + colName[moused.lock[i,0]] + ", Cost: " + strLockCost(moused.lock[i,3],moused.lock[i,1],moused.lock[i,2],moused.lock[i,7],moused.lock[i,8],moused.lock[i,9],moused.lock[i,10]);
             if moused.lock[i,0] == color_GLITCH { hasGlitch = true; }
             if moused.lock[i,10] {
-                str += "(Armament";
+                str += " (Armament";
                 if moused.lock[i,0] == color_GLITCH &amp;&amp; moused.lock[i,11] != moused.glitchMimic {
                     str += ", Mimic: " + colName[moused.lock[i,11]];
                 }
