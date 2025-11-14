@@ -96,7 +96,7 @@ global.msg = "";</code>
     <instance objName="oDoorWhite" x="256" y="512" name="inst_7B190CB5" locked="0" code="aura[0] = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="320" y="512" name="inst_B4297068" locked="0" code="aura[2] = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="288" y="512" name="inst_FD6200F9" locked="0" code="aura[1] = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorDyna" x="640" y="288" name="inst_81567CF0" locked="0" code="type=lock_ALL;color=color_BLUE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorDyna" x="640" y="288" name="inst_81567CF0" locked="0" code="type=lock_ALL;color=color_ICE;colorSpend=color_GLITCH;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorDyna" x="672" y="256" name="inst_544AFC20" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGreen" x="64" y="480" name="inst_2F278FA4" locked="0" code="type=key_STAR&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGreen" x="96" y="480" name="inst_8E33B099" locked="0" code="type=key_CURSE&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -189,7 +189,7 @@ global.msg = "";</code>
     <instance objName="oKeyHandle" x="80" y="64" name="inst_569A5A51" locked="0" code="show[0] = color_ICE;&#xA;show[1] = color_MUD;&#xA;show[2] = color_GRAFFITI;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="512" y="160" name="inst_1F2C328F" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="576" y="128" name="inst_302E7FE3" locked="0" code="type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorPink" x="608" y="128" name="inst_165B92AB" locked="0" code="type = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorPink" x="608" y="128" name="inst_165B92AB" locked="0" code="type = 2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyIce" x="224" y="224" name="inst_BEEC606F" locked="0" code="count = -99&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMud" x="256" y="224" name="inst_FE442C21" locked="0" code="count = -99&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGraffiti" x="288" y="224" name="inst_0A61FF71" locked="0" code="count = -99&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -218,6 +218,8 @@ global.msg = "";</code>
     <instance objName="oDoorBlue" x="416" y="512" name="inst_7AB71CC4" locked="0" code="negated=1;&#xA;count=0;&#xA;icount=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGlitch" x="1408" y="480" name="inst_7AA55276" locked="0" code="w=7;&#xA;h=3;&#xA;type=lock_BLANK;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPurple" x="32" y="544" name="inst_FD56DA0E" locked="0" code="armament = true;&#xA;w = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWorld" x="288" y="64" name="inst_F5442371" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorIce" x="224" y="96" name="inst_2C6B11FA" locked="0" code="w=2;&#xA;h=2;&#xA;color=color_GLITCH;&#xA;colorSpend=color_BLUE;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles2" x="256" y="480" w="32" h="32" xo="128" yo="0" id="10125734" name="inst_307BFDDA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

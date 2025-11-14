@@ -5,13 +5,13 @@ attribute vec2 in_TextureCoord;              // (u,v)
 
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
-varying float fCoord;
+varying vec2 pos;
 
 void main()
 {
     vec4 object_space_pos = vec4( in_Position.x, in_Position.y, in_Position.z, 1.0);
     gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * object_space_pos;
-    fCoord = in_Position.x;
+    pos = in_Position;
     
     v_vColour = in_Colour;
     v_vTexcoord = in_TextureCoord;
@@ -19,7 +19,7 @@ void main()
 
 //######################_==_YOYO_SHADER_MARKER_==_######################@~varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
-varying float fCoord;
+varying vec2 pos;
 
 
 vec3 hsv(float H, float S, float V){
@@ -34,5 +34,5 @@ vec3 hsv(float H, float S, float V){
 void main()
 {
     vec4 oldCol = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
-    gl_FragColor = vec4(hsv(mod(fCoord*0.3,240.),.6,1.),oldCol.a);
+    gl_FragColor = vec4(hsv(mod(pos.x*0.3,240.),.6,1.),oldCol.a);
 }

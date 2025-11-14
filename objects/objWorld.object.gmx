@@ -52,6 +52,8 @@ if (instance_number(object_index) &gt; 1)
             <string>///shaders
 global.glitchUniAmt = 0;
 global.glitchUniTime = shader_get_uniform(shdRainbowStripe2,"time");
+global.frozenUniPos = shader_get_uniform(shdFrozen,"offsetPos");
+global.frozenUniSize = shader_get_uniform(shdFrozen,"size");
 global.doorHue = 0;
 global.doorCol1 = make_color_hsv(global.doorHue,125,255);
 global.doorCol2 = make_color_hsv(global.doorHue,180,230);
