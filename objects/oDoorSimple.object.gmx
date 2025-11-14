@@ -290,6 +290,12 @@ if global.complexMode == 0{//Real view
     }
 }
 
+if objPlayer.curseMode != 0 &amp;&amp; distToP &lt;= 23{
+    tryCurseDoor();
+} else {
+    brownNearPlayer = 0;
+}
+
 var auraCount = 0; //Amount of auras on the door
 if aura[0] == 1{auraCount++; auraType = color_ICE}
 if aura[1] == 1{auraCount++; auraType = color_MUD}
@@ -303,11 +309,6 @@ if auraCount &gt; 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || obj
     if auraCount == 1 {
         if (global.key[auraType] == 0 &amp;&amp; global.ikey[auraType] == 0) { exit; }
     }
-}
-if objPlayer.curseMode != 0 &amp;&amp; distToP &lt;= 23{
-    tryCurseDoor();
-} else {
-    brownNearPlayer = 0;
 }
 if auraCount &gt; 1 {exit;}
 var canGoldOpen = (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 1) &amp;&amp; !(hasColor(color_PURE) || hasColor(color_MASTER));
@@ -783,7 +784,7 @@ goldIndex = (goldIndex + goldSpd) mod 12;
 baseColor = color;
 baseColorSpend = colorSpend;
 if cursed != -1 &amp;&amp; cursed != color_PURE {
-    baseColor = cursed;
+    if !armament { baseColor = cursed; }
     baseColorSpend = cursed;
 }
 if copyDraw == 1 { // spend is not drawn while the copy animation is happening

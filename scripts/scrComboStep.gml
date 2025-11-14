@@ -56,6 +56,12 @@ if global.complexMode == 0{//Real view
     }
 }
 
+if objPlayer.curseMode != 0 && distance_to_object(objPlayer) <= 23{
+    tryCurseCombo();
+} else {
+    brownNearPlayer = 0;
+}
+
 var auraCount = 0; //Amount of auras on the door
 var auraType;
 if aura[0] == 1{auraCount++; auraType = color_ICE}
@@ -68,11 +74,6 @@ if auraCount > 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || objPla
     }
     if (global.key[auraType] == 0 && global.ikey[auraType] == 0) { exit; }
     if auraCount > 1 {exit;}
-}
-if objPlayer.curseMode != 0 && distance_to_object(objPlayer) <= 23{
-    tryCurseCombo();
-} else {
-    brownNearPlayer = 0;
 }
 //Now, the first big calculation is the Gold Eligibility.
 var canGoldOpen = (objPlayer.masterMode != 0) && (objPlayer.masterCycle == 1) && !(hasColor(color_PURE) || hasColor(color_MASTER));

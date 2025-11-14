@@ -1,7 +1,9 @@
 if type == 0 || type == 1 || type == 3 || type == 4 || type == 5{
     if color == color_MASTER && colorSpend == color_MASTER && type != 5 && (cursed == -1 || cursed == color_PURE || cursed == color_MASTER){
         scrPlaySoundExt(sndMasterUnlock,1,1,false);
-    }else{
+    }else if aura[0] || aura[1] || aura[2] {
+        scrPlaySoundExt(sndCrumble,1,1,false);
+    } else {
         scrPlaySoundExt(sndOpen,1,1,false);
     }
 }
