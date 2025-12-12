@@ -53,8 +53,10 @@ if (instance_number(object_index) &gt; 1)
 global.glitchUniAmt = 0;
 global.shaderMode = shader_get_uniform(shdRainbowStripe2,"shaderMode");
 global.glitchUniTime = shader_get_uniform(shdRainbowStripe2,"time");
-global.frozenUniPos = shader_get_uniform(shdRainbowStripe2,"offsetPos");
-global.frozenUniSize = shader_get_uniform(shdRainbowStripe2,"size");
+global.shaderUniPos = shader_get_uniform(shdRainbowStripe2,"offsetPos");
+global.shaderUniSize = shader_get_uniform(shdRainbowStripe2,"size");
+global.shaderUniUVPos = shader_get_uniform(shdRainbowStripe2,"UVPos");
+global.shaderUniUVEnd = shader_get_uniform(shdRainbowStripe2,"UVEnd");
 global.doorHue = 0;
 global.doorCol1 = make_color_hsv(global.doorHue,125,255);
 global.doorCol2 = make_color_hsv(global.doorHue,180,230);

@@ -218,10 +218,10 @@ global.msg = "";</code>
     <instance objName="oDoorBlue" x="416" y="512" name="inst_7AB71CC4" locked="0" code="negated=1;&#xA;count=0;&#xA;icount=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGlitch" x="1408" y="480" name="inst_7AA55276" locked="0" code="w=7;&#xA;h=3;&#xA;type=lock_BLANK;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPurple" x="32" y="544" name="inst_FD56DA0E" locked="0" code="armament = true;&#xA;w = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorIce" x="224" y="32" name="inst_2C6B11FA" locked="0" code="w=2;&#xA;h=3;&#xA;colorSpend=color_GLITCH;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorIce" x="288" y="32" name="inst_E31C4A71" locked="0" code="w=2;h=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorIce" x="224" y="128" name="inst_ACE4CB3B" locked="0" code="w=2;h=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorIce" x="288" y="128" name="inst_D6538C7A" locked="0" code="w=2;h=3;color=color_GLITCH;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMud" x="224" y="32" name="inst_1AA53837" locked="0" code="w=2;&#xA;h=3;&#xA;colorSpend=color_GLITCH;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMud" x="288" y="128" name="inst_F93965BA" locked="0" code="w=2;h=3;color=color_GLITCH;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorGraffiti" x="224" y="128" name="inst_CC881E65" locked="0" code="w=2;h=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorIce" x="288" y="32" name="inst_364767A9" locked="0" code="w=2;h=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles2" x="256" y="480" w="32" h="32" xo="128" yo="0" id="10125734" name="inst_307BFDDA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
