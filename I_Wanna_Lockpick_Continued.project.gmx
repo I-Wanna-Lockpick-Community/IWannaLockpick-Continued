@@ -1298,7 +1298,7 @@
     </objects>
     <objects name="Key">
       <object>objects\oKeyMaster</object>
-      <object>objects\keySilver</object>
+      <object>objects\oKeySilver</object>
       <object>objects\oKeyWhite</object>
       <object>objects\oKeyDynamite</object>
       <object>objects\oKeyOrange</object>
@@ -1738,6 +1738,7 @@
       <room>rooms\rBackHubOld</room>
       <room>rooms\rMainHubX</room>
     </rooms>
+    <room>rooms\km</room>
   </rooms>
   <constants number="58">
     <constant name="vp_NONE">11</constant>
