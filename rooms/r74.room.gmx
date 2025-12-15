@@ -91,10 +91,10 @@ global.msg = "Whoa! Long door! I hope that rickety bridge can support your weigh
     <instance objName="oDoorSimple" x="512" y="416" name="inst_4B243898" locked="0" code="w=2;h=2;count=-8;&#xA;color = color_PURPLE; colorSpend = color_MASTER;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="480" y="224" name="inst_77BA4FA4" locked="0" code="h=2;count=-2;&#xA;color = color_PURPLE; colorSpend = color_MASTER;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="608" y="224" name="inst_7D00FEF0" locked="0" code="h=2;count=2;&#xA;color = color_WHITE; colorSpend = color_MASTER;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="672" y="320" name="inst_EAA1E28D" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="544" y="320" name="inst_06494791" locked="0" code="w=2;h=2;count=8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="640" y="224" name="inst_15777909" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="576" y="416" name="inst_9A07C6B0" locked="0" code="h=2;count=-2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="672" y="320" name="inst_EAA1E28D" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="544" y="320" name="inst_06494791" locked="0" code="w=2;h=2;count=8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="640" y="224" name="inst_15777909" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="576" y="416" name="inst_9A07C6B0" locked="0" code="h=2;count=-2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="128" y="96" name="inst_3A9CA1A2" locked="0" code="w=11;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="512" y="224" name="inst_3B4FF052" locked="0" code="w=2;h=2;count=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="448" y="320" name="inst_00787A3B" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

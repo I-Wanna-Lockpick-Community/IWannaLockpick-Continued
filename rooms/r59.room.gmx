@@ -83,7 +83,7 @@ global.msg = "Surprise! It's a new key type! This one I like to call the Signfli
     <instance objName="oDoorRed" x="224" y="288" name="inst_7A7DA042" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorRed" x="288" y="256" name="inst_2E4E12DC" locked="0" code="w=2;h=2;count=-4;&#xA;aura[0] = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorRed" x="544" y="160" name="inst_18449866" locked="0" code="w=2;h=2;count=-4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="608" y="384" name="inst_7E1F8774" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="608" y="384" name="inst_7E1F8774" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="400" y="400" name="inst_81E2431D" locked="0" code="count=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyRed" x="224" y="400" name="inst_F5245993" locked="0" code="count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyRed" x="272" y="400" name="inst_494C1A8A" locked="0" code="type=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

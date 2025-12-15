@@ -117,7 +117,7 @@ global.msg = "What an odd mix of colors on display here. The longer I look, the 
     <instance objName="oDoorBlue" x="384" y="160" name="inst_DCBB45E4" locked="0" code="type=2;count=-1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlue" x="544" y="32" name="inst_C7347CA7" locked="0" code="h=2;count=2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlue" x="448" y="224" name="inst_D15B4865" locked="0" code="w=2;h=2;count=-4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="416" y="224" name="inst_9FFFA63C" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="416" y="224" name="inst_9FFFA63C" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="640" y="224" name="inst_8D854837" locked="0" code="w=2;h=2;count=-4;&#xA;aura[2] = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="416" y="32" name="inst_670488E3" locked="0" code="w=2;h=2;count=4;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="512" y="160" name="inst_DAB566C7" locked="0" code="count = -1;&#xA;color = color_ORANGE; colorSpend = color_CYAN;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -102,8 +102,8 @@ global.msg = "Let's put your understanding of signflipping to the test! There's 
     <instance objName="oDoorPink" x="704" y="320" name="inst_8EFB4006" locked="0" code="w=2;h=2;count=-9;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPink" x="608" y="224" name="inst_717740F3" locked="0" code="w=2;h=2;count=17;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPink" x="608" y="32" name="inst_2C459610" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="512" y="224" name="inst_5FCD1C0D" locked="0" code="w=2;h=2;count=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="608" y="320" name="inst_A92DCA41" locked="0" code="w=2;h=2;count=-4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="512" y="224" name="inst_5FCD1C0D" locked="0" code="w=2;h=2;count=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="608" y="320" name="inst_A92DCA41" locked="0" code="w=2;h=2;count=-4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBrown" x="512" y="128" name="inst_8A7004C6" locked="0" code="w=2;h=2;count=-8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlue" x="240" y="240" name="inst_6275D83C" locked="0" code="count=-2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlue" x="720" y="432" name="inst_D3F91F8C" locked="0" code="count=-1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

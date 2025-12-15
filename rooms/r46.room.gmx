@@ -92,7 +92,7 @@ global.msg = "Here's a new shiny key called the Pure Key. The key itself doesn't
     <instance objName="oDoorPink" x="224" y="96" name="inst_00D49E50" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPurple" x="192" y="256" name="inst_1C18FC97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBrown" x="256" y="256" name="inst_F274905D" locked="0" code="type = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="544" y="320" name="inst_F0F74E10" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="544" y="320" name="inst_F0F74E10" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="624" y="336" name="inst_87409096" locked="0" code="count = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="688" y="144" name="inst_9908E38C" locked="0" code="count = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="496" y="336" name="inst_9599F101" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

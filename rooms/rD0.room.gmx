@@ -83,7 +83,7 @@ global.msg = "As expected, another Salvage puzz-- That Input Point has a negativ
     <instance objName="oDoorCombo" x="560" y="288" name="inst_DFCF594B" locked="0" code="w=2;h=3;colorSpend = color_CYAN;&#xA;scrComboAdd(color_CYAN,-10,0,0,16,16,sprLockAnyM);&#xA;scrComboAdd(color_CYAN,1,0,3,16,64,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyCyan" x="224" y="32" name="inst_0CD160ED" locked="0" code="type = 1; count = -10; icount = 10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="96" y="192" name="inst_0B00FFDD" locked="0" code="count = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="144" y="224" name="inst_713DC472" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="144" y="224" name="inst_713DC472" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="192" name="inst_B144400F" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="128" y="160" name="inst_342DAD9D" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="256" y="160" name="inst_1F857B4F" locked="0" code="" scaleX="2" scaleY="5" colour="4294967295" rotation="0"/>

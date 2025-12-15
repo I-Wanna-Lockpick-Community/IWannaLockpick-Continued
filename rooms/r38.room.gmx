@@ -57,7 +57,7 @@ global.msg = "You know what I realized I haven't seen many of? Left-facing puzzl
     <instance objName="oKeyHandle" x="664" y="24" name="inst_BC6B6836" locked="0" code="show[0] = color_MASTER;&#xA;show[1] = color_PINK;&#xA;show[2] = color_PURPLE;&#xA;show[3] = color_CYAN;&#xA;show[4] = color_RED;&#xA;show[5] = color_GREEN;&#xA;show[6] = color_BLUE;&#xA;long = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBG03" x="448" y="416" name="inst_980612E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLightsW4" x="48" y="160" name="inst_DCCCD7D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="416" y="416" name="inst_06167FE5" locked="0" code="h = 2;&#xA;type = 1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="416" y="416" name="inst_06167FE5" locked="0" code="h = 2;&#xA;type = 1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCyan" x="320" y="416" name="inst_EB2EED47" locked="0" code="h = 2;&#xA;type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPurple" x="352" y="416" name="inst_6983F2B9" locked="0" code="h = 2;&#xA;type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="64" y="480" name="inst_142D06EE" locked="0" code="" scaleX="21" scaleY="1" colour="4294967295" rotation="0"/>

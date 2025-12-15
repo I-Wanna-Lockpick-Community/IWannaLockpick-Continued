@@ -111,7 +111,7 @@ global.msg = "";</code>
     <instance objName="oKeyBrown" x="416" y="256" name="inst_2B395A9C" locked="0" code="type = 7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBrown" x="528" y="496" name="inst_F0BB31F4" locked="0" code="count = -1; type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBrown" x="192" y="320" name="inst_D343E881" locked="0" code="type = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="176" y="480" name="inst_02E2C4C2" locked="0" code="h=2;count=-3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="176" y="480" name="inst_02E2C4C2" locked="0" code="h=2;count=-3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="48" y="384" name="inst_A1342BD0" locked="0" code="type = 2; color = color_PURE; colorSpend = color_GLITCH; copies = 200;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="320" y="320" name="inst_9B69895E" locked="0" code="count=-1;oclor=color_MASTER;colorSpend=color_PURE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGlitch" x="128" y="320" name="inst_965E166C" locked="0" code="type = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

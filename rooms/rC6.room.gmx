@@ -94,7 +94,7 @@ global.msg = "Y'know, there sure have been a lot of strange side paths guarding 
     <instance objName="objBlock" x="480" y="32" name="inst_4DF2B37E" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBrown" x="448" y="352" name="inst_43D58C61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="560" y="432" name="inst_6AB62515" locked="0" code="count=64;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="480" y="416" name="inst_29EE9C4F" locked="0" code="w=2;h=2;count=63;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="480" y="416" name="inst_29EE9C4F" locked="0" code="w=2;h=2;count=63;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="192" y="256" name="inst_C0C0331B" locked="0" code="count=-25;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="192" y="160" name="inst_0BF0875B" locked="0" code="count=-42;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="192" y="64" name="inst_1542D9EC" locked="0" code="count=-63;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -130,7 +130,7 @@ global.msg = "Oh! What an adorable little mosaic! What do you see? I see a road 
     <instance objName="oDoorGreen" x="448" y="224" name="inst_C28FD168" locked="0" code="type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBrown" x="544" y="64" name="inst_0B0FF15D" locked="0" code="type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBrown" x="224" y="64" name="inst_BBFBADD2" locked="0" code="type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="352" y="128" name="inst_21B24F83" locked="0" code="type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="352" y="128" name="inst_21B24F83" locked="0" code="type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="480" y="192" name="inst_1BDA4161" locked="0" code="type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="512" y="288" name="inst_6C17993D" locked="0" code="type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="512" y="192" name="inst_565F11B3" locked="0" code="type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

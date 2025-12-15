@@ -105,7 +105,7 @@ global.msg = "Mmhm. Many doors, many different door effects, and many different 
     <instance objName="oKeyMaster" x="640" y="160" name="inst_4E07946E" locked="0" code="count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="640" y="64" name="inst_FF72833C" locked="0" code="count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlue" x="320" y="416" name="inst_0C95BDF2" locked="0" code="w=2;h=2;&#xA;count=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="256" y="416" name="inst_5B1A387D" locked="0" code="w=2;h=2;&#xA;count=8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="256" y="416" name="inst_5B1A387D" locked="0" code="w=2;h=2;&#xA;count=8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="64" y="384" name="inst_92A4A65A" locked="0" code="type=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="416" y="320" name="inst_DD530208" locked="0" code="h=2;&#xA;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="416" y="224" name="inst_4A7AF627" locked="0" code="h=2;&#xA;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

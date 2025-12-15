@@ -68,7 +68,7 @@ global.msg = "Oh no! It's another corridor room, and you've got a hard-to-open G
     <instance objName="objBlock" x="128" y="128" name="inst_A666CC4D" locked="0" code="" scaleX="17" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="224" y="32" name="inst_8D0EDE7C" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="256" y="32" name="inst_E8DFB6A8" locked="0" code="" scaleX="14" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="608" y="352" name="inst_AD72D463" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="608" y="352" name="inst_AD72D463" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBrown" x="256" y="64" name="inst_B28E345D" locked="0" code="h=2;count=-2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBrown" x="544" y="64" name="inst_7690CBA0" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPurple" x="160" y="352" name="inst_A91970EE" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

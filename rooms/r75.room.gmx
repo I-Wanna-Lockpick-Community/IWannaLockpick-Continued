@@ -75,10 +75,10 @@ global.msg = "Have you ever heard of civilizations who carved their homes out of
     <instance objName="oDoorBlue" x="320" y="256" name="inst_420B52D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlue" x="320" y="160" name="inst_3BAD0093" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlue" x="320" y="64" name="inst_96B10AEE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="352" y="448" name="inst_4E48A30F" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="352" y="352" name="inst_C4DF7330" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="352" y="160" name="inst_89ACC38F" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="352" y="64" name="inst_F62D34BB" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="352" y="448" name="inst_4E48A30F" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="352" y="352" name="inst_C4DF7330" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="352" y="160" name="inst_89ACC38F" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="352" y="64" name="inst_F62D34BB" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="320" y="224" name="inst_B7CF9244" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="320" y="128" name="inst_FE192833" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="320" y="32" name="inst_56C84D5B" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
@@ -119,7 +119,7 @@ global.msg = "Have you ever heard of civilizations who carved their homes out of
     <instance objName="oKeyPure" x="576" y="352" name="inst_49FE34CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="576" y="160" name="inst_DCAB2547" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="576" y="64" name="inst_8597C74C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="416" y="256" name="inst_BB38BC47" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="416" y="256" name="inst_BB38BC47" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles2" x="192" y="96" w="32" h="32" xo="0" yo="64" id="10050434" name="inst_BFB54D66" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

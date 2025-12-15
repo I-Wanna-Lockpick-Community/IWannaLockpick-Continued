@@ -91,7 +91,7 @@ global.msg = "Let's end the numbered puzzles on a simple note. I'm sure you're a
     <instance objName="oKeyMaster" x="544" y="144" name="inst_FAA67057" locked="0" code="count=0;icount=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="416" y="144" name="inst_D9A59BF9" locked="0" code="count=-1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPurple" x="160" y="224" name="inst_05465391" locked="0" code="w=2;h=2;count=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="160" y="320" name="inst_E0FF7CBE" locked="0" code="w=2;h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="160" y="320" name="inst_E0FF7CBE" locked="0" code="w=2;h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="352" y="320" name="inst_B793CAA8" locked="0" code="w=2;h=2;type=1;&#xA;color = color_PURPLE; colorSpend = color_PURE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="480" y="320" name="inst_5CD30B11" locked="0" code="w=2;h=2;type=1;&#xA;color = color_PURPLE; colorSpend = color_PURE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="608" y="320" name="inst_D913063D" locked="0" code="w=2;h=2;type=1;&#xA;color = color_PURPLE; colorSpend = color_PURE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

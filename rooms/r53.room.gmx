@@ -77,7 +77,7 @@ global.msg = "Admittedly, being hit with this one as the third puzzle would anno
     <instance objName="objBlock" x="512" y="64" name="inst_5C26B2E4" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="704" y="96" name="inst_C6A37D83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="144" y="400" name="inst_665BDEF6" locked="0" code="count = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="256" y="384" name="inst_1DAFED2F" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="256" y="384" name="inst_1DAFED2F" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPurple" x="224" y="192" name="inst_176EEA80" locked="0" code="h=2;count=-2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPurple" x="288" y="192" name="inst_C34B96F4" locked="0" code="w=2;h=2;count=-4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPurple" x="352" y="192" name="inst_34012AFE" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

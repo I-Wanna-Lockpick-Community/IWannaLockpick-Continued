@@ -94,7 +94,7 @@ global.msg = "Hey, look! Someone went and hole-punched a few of the Star Keys, m
     <instance objName="objBlock" x="448" y="128" name="inst_3F1CF6CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="608" y="160" name="inst_485E44EA" locked="0" code="count=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="512" y="256" name="inst_55CD58C0" locked="0" code="count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="320" y="416" name="inst_1D30E5C3" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="320" y="416" name="inst_1D30E5C3" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyCyan" x="48" y="432" name="inst_94A6E3DA" locked="0" code="type = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyCyan" x="80" y="432" name="inst_9248B9E0" locked="0" code="type = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyCyan" x="176" y="432" name="inst_3D57E36E" locked="0" code="count = 7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

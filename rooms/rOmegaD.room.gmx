@@ -254,7 +254,7 @@ global.msg = "";</code>
     <instance objName="oKeyPurple" x="1552" y="832" name="inst_6113A516" locked="0" code="type = 1; count = 8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBrown" x="1520" y="944" name="inst_4E369FCE" locked="0" code="type = 1; count = 0; inf = 1;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyCyan" x="1376" y="768" name="inst_79791F67" locked="0" code="type = 6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="1344" y="768" name="inst_ED4415D3" locked="0" code="count = 0; icount = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="1344" y="768" name="inst_ED4415D3" locked="0" code="count = 0; icount = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyRed" x="880" y="496" name="inst_51C9B879" locked="0" code="type = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyRed" x="720" y="1008" name="inst_46139A9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyGlitch" x="544" y="960" name="inst_7595D894" locked="0" code="type = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

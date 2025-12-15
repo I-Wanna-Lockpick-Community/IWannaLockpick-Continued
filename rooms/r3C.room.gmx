@@ -72,9 +72,9 @@ global.msg = "Here's an easier version of Aura Puzzle! This time, you don't have
     <instance objName="objBlock" x="480" y="192" name="inst_420870F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="512" y="96" name="inst_8030CA60" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="672" y="96" name="inst_4F3202C2" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="416" y="384" name="inst_16D78433" locked="0" code="h=2; type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="448" y="384" name="inst_4FE54A36" locked="0" code="h=2; type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="128" y="288" name="inst_9CE9AAC1" locked="0" code="w=2; h=2; count = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="416" y="384" name="inst_16D78433" locked="0" code="h=2; type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="448" y="384" name="inst_4FE54A36" locked="0" code="h=2; type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="128" y="288" name="inst_9CE9AAC1" locked="0" code="w=2; h=2; count = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPink" x="480" y="384" name="inst_1D80E767" locked="0" code="h=2; type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPink" x="512" y="384" name="inst_02A3E82E" locked="0" code="h=2; type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPink" x="384" y="192" name="inst_6A3850B3" locked="0" code="w=2; h=2; count=12;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

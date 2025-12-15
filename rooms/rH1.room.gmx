@@ -61,9 +61,9 @@ global.msg = "";</code>
     <instance objName="oKeyMaster" x="320" y="384" name="inst_BEDE3EB9" locked="0" code="type=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="0" y="480" name="inst_4B965C79" locked="0" code="" scaleX="25" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="320" y="416" name="inst_2FBFAE71" locked="0" code="count=1;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="416" y="448" name="inst_B68D9047" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="544" y="448" name="inst_08DDE8E8" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="672" y="448" name="inst_FAF957FF" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="416" y="448" name="inst_B68D9047" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="544" y="448" name="inst_08DDE8E8" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="672" y="448" name="inst_FAF957FF" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="448" y="448" name="inst_480BCE7F" locked="0" code="count=1;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="576" y="448" name="inst_F6B52D82" locked="0" code="count=1;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="352" y="384" name="inst_B5B205E6" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>

@@ -66,9 +66,9 @@ global.msg = "Here's something that would come intuitively to you, for a change 
     <instance objName="objBlock" x="288" y="256" name="inst_5B012C0A" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="256" y="352" name="inst_17B936B5" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="512" y="192" name="inst_801C03AE" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="352" y="192" name="inst_78F02204" locked="0" code="w=2; h=2; count = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="416" y="192" name="inst_45FAD4E3" locked="0" code="h=2; type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="144" y="384" name="inst_B2A29A5F" locked="0" code="h=2; count = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="352" y="192" name="inst_78F02204" locked="0" code="w=2; h=2; count = 5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="416" y="192" name="inst_45FAD4E3" locked="0" code="h=2; type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="144" y="384" name="inst_B2A29A5F" locked="0" code="h=2; count = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="320" y="288" name="inst_0E7FEE0C" locked="0" code="h=2; count = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="352" y="288" name="inst_E888CE99" locked="0" code="h=2; count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="320" y="384" name="inst_AF3796EA" locked="0" code="w=2; h=2; type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -83,7 +83,7 @@ global.msg = "Here's something that would come intuitively to you, for a change 
     <instance objName="objBlock" x="640" y="288" name="inst_A191627E" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="608" y="352" name="inst_262783CF" locked="0" code="" scaleX="6" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="544" y="384" name="inst_3058C3F8" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="544" y="288" name="inst_2154B1B5" locked="0" code="h=2; count = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="544" y="288" name="inst_2154B1B5" locked="0" code="h=2; count = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyCyan" x="400" y="304" name="inst_1B8396BD" locked="0" code="count = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyCyan" x="400" y="400" name="inst_58ECC9FF" locked="0" code="count = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="192" y="-32" name="inst_3BB7A105" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

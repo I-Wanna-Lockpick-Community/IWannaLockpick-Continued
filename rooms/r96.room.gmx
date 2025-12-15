@@ -82,7 +82,7 @@ global.msg = "Are your hacking skills up to par? Great! This Combo Door looks ve
     <instance objName="oDoorPink" x="512" y="384" name="inst_5A362ED1" locked="0" code="h=3;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="224" y="288" name="inst_B0F980F1" locked="0" code="w=2;h=2;count=6;&#xA;color = color_WHITE; colorSpend = color_BROWN;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="224" y="192" name="inst_358E51D4" locked="0" code="w=2;h=2;count=6;&#xA;color = color_WHITE; colorSpend = color_MASTER;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="640" y="288" name="inst_4F3CCD5A" locked="0" code="w=2;h=2;count=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="640" y="288" name="inst_4F3CCD5A" locked="0" code="w=2;h=2;count=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPink" x="560" y="432" name="inst_8B599B99" locked="0" code="count=51;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBrown" x="240" y="112" name="inst_1111F70F" locked="0" code="type=1;count=0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="272" y="112" name="inst_B693613F" locked="0" code="count=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

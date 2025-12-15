@@ -82,7 +82,7 @@ global.msg = "It seems we're learning something new about Salvages! A Salvaged d
     <instance objName="objBlock" x="704" y="96" name="inst_56CF0C61" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="448" y="96" name="inst_68CDB476" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="480" y="96" name="inst_CFAC7220" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="448" y="256" name="inst_FFD46B5C" locked="0" code="h=3;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="448" y="256" name="inst_FFD46B5C" locked="0" code="h=3;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlack" x="224" y="256" name="inst_26E834A3" locked="0" code="w=3;type=1;&#xA;" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="320" y="448" name="inst_09992027" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="192" y="96" name="inst_1BD46B12" locked="0" code="" scaleX="7" scaleY="2" colour="4294967295" rotation="0"/>

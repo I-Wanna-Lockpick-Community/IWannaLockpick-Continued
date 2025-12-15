@@ -100,7 +100,7 @@ global.msg = "Hello again! Let me grace you with my expository goodness once mor
     <instance objName="oDoorRed" x="608" y="256" name="inst_740253E2" locked="0" code="type=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="640" y="256" name="inst_7F0C6835" locked="0" code="type=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPink" x="672" y="256" name="inst_F9BBF8CF" locked="0" code="type=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="192" y="32" name="inst_2F3BC18A" locked="0" code="w=2;h=2;type=1;aura[0]=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="192" y="32" name="inst_2F3BC18A" locked="0" code="w=2;h=2;type=1;aura[0]=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSalvageIn" x="736" y="288" name="inst_1AF12EF1" locked="0" code="ID=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPink" x="448" y="128" name="inst_DE3D37BD" locked="0" code="h=2;count=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPink" x="576" y="320" name="inst_4F830DD6" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

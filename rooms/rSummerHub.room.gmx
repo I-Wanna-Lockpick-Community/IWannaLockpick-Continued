@@ -137,7 +137,7 @@ if global.omegaPerk[0] || global.allUnlock{
     <instance objName="oSalvageOut" x="672" y="1152" name="inst_E0EE7863" locked="0" code="ID = 21;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oLevel" x="624" y="928" name="inst_294F9534" locked="0" code="isWorld = 1;&#xA;ID = 22;&#xA;rm = rSpringHub;&#xA;label = &quot;Final Chapter&quot;;&#xA;name = &quot;The Dream Labyrinth&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="672" y="1216" name="inst_2505BB45" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="544" y="1600" name="inst_579223E6" locked="0" code="w=2;h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="544" y="1600" name="inst_579223E6" locked="0" code="w=2;h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSalvageIn" x="528" y="1664" name="inst_36AFCAE3" locked="0" code="ID = 30;&#xA;isHubRoom = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="0" y="1248" name="inst_754DE688" locked="0" code="" scaleX="1" scaleY="18" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="1792" name="inst_5B4A874E" locked="0" code="" scaleX="24" scaleY="1" colour="4294967295" rotation="0"/>

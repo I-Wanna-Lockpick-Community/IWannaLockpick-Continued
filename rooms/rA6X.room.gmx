@@ -97,10 +97,10 @@ global.msg = "To clarify, keys with special held effects (Red, Green, Blue, Brow
     <instance objName="oKeyPure" x="608" y="224" name="inst_BC68A988" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="640" y="32" name="inst_0990E568" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlack" x="544" y="288" name="inst_AD64BCF3" locked="0" code="count=-1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="160" y="384" name="inst_D9AF40C6" locked="0" code="h=2;count=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="416" y="384" name="inst_B3D74E86" locked="0" code="h=2;count=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="640" y="64" name="inst_206315BE" locked="0" code="h=2;count=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="576" y="288" name="inst_D882FAE2" locked="0" code="count=-1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="160" y="384" name="inst_D9AF40C6" locked="0" code="h=2;count=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="416" y="384" name="inst_B3D74E86" locked="0" code="h=2;count=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="640" y="64" name="inst_206315BE" locked="0" code="h=2;count=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="576" y="288" name="inst_D882FAE2" locked="0" code="count=-1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlack" x="608" y="256" name="inst_0894FEDD" locked="0" code="count=-1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPure" x="576" y="416" name="inst_88C129E4" locked="0" code="w=2;h=2;count=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="656" y="432" name="inst_53A9E9D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

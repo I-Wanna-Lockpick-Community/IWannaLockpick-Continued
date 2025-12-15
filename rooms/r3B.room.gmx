@@ -75,9 +75,9 @@ global.msg = "Paint colors and light colors are quite different! Red, green, and
     <instance objName="objBlock" x="320" y="256" name="inst_2F7D4489" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="416" y="192" name="inst_6693E4DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="640" y="384" name="inst_5822BFDD" locked="0" code="w = 2; h = 2; type = 1;&#xA;aura[0] = 1; aura[1] = 1; aura[2] = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="480" y="384" name="inst_15313F61" locked="0" code="h=2; type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="640" y="288" name="inst_0624125F" locked="0" code="w = 2; h = 2; count = 4; aura[2] = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="384" y="96" name="inst_0CF24EC9" locked="0" code="h=2; type = 1;&#xA;aura[0] = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="480" y="384" name="inst_15313F61" locked="0" code="h=2; type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="640" y="288" name="inst_0624125F" locked="0" code="w = 2; h = 2; count = 4; aura[2] = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="384" y="96" name="inst_0CF24EC9" locked="0" code="h=2; type = 1;&#xA;aura[0] = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorRed" x="128" y="224" name="inst_F147DDC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorRed" x="384" y="288" name="inst_604A9B77" locked="0" code="w=2; h=2; count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorRed" x="192" y="96" name="inst_4387717B" locked="0" code="h=2; type = 1;&#xA;aura[2] = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

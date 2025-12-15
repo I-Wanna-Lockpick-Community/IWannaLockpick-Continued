@@ -121,8 +121,8 @@ global.msg = "Whoaaaaa, okay. Someone sure cluttered this place up. Everything's
     <instance objName="oDoorGreen" x="224" y="32" name="inst_4E73528D" locked="0" code="w=2;h=2;count=4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="672" y="32" name="inst_758BD603" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="448" y="32" name="inst_8B761E75" locked="0" code="h=2;count=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="416" y="352" name="inst_CDE70009" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="416" y="32" name="inst_1D663D39" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="416" y="352" name="inst_CDE70009" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="416" y="32" name="inst_1D663D39" locked="0" code="h=2;count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorRed" x="224" y="256" name="inst_0094BC50" locked="0" code="type=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="288" y="288" name="inst_1442B060" locked="0" code="count=5;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="384" y="320" name="inst_B62E1B3E" locked="0" code="count=9;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

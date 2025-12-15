@@ -119,12 +119,12 @@ global.msg = "As it turns out, the pass-through property of Infinite Keys makes 
     <instance objName="objBlock" x="672" y="288" name="inst_BF668C53" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="480" y="192" name="inst_16DFC4D9" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="480" y="288" name="inst_D2372EC3" locked="0" code="count = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="512" y="288" name="inst_FDA08A57" locked="0" code="type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="512" y="288" name="inst_FDA08A57" locked="0" code="type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorGreen" x="640" y="224" name="inst_7504B3BD" locked="0" code="type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPure" x="416" y="96" name="inst_4DCFA552" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCyan" x="256" y="288" name="inst_1DAD5EF4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyCyan" x="544" y="288" name="inst_9BB3C2E3" locked="0" code="count = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="224" y="160" name="inst_1CB7DA73" locked="0" code="count = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="224" y="160" name="inst_1CB7DA73" locked="0" code="count = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="256" y="160" name="inst_A18734D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="448" y="96" name="inst_B8144F03" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="512" y="96" name="inst_7259B4DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

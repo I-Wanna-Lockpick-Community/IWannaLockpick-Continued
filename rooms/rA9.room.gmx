@@ -102,7 +102,7 @@ global.msg = "We're getting pretty close to the end, aren't we? You've kept up w
     <instance objName="oDoorWhite" x="608" y="32" name="inst_535AB14C" locked="0" code="w=2;h=2;count=15;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="672" y="32" name="inst_5D3F370D" locked="0" code="w=2;h=2;count=0;icount=7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorWhite" x="256" y="288" name="inst_1FCF20E4" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="256" y="416" name="inst_E5AA9BD3" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="256" y="416" name="inst_E5AA9BD3" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlack" x="384" y="416" name="inst_6FBD292D" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="608" y="352" name="inst_C2E1F363" locked="0" code="type=2;color=color_WHITE;colorSpend=color_BLACK;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="640" y="256" name="inst_522D5F92" locked="0" code="type=2;count=0;icount=1;color=color_WHITE;colorSpend=color_BLACK;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

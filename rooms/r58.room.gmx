@@ -106,7 +106,7 @@ global.msg = "Hey, look! A Negative Blast Door! They do the same thing as a norm
     <instance objName="oDoorCyan" x="288" y="320" name="inst_F671F257" locked="0" code="h=2;count=3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCyan" x="576" y="160" name="inst_1666F320" locked="0" code="count=-1;type=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBrown" x="656" y="320" name="inst_C7CC2288" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="576" y="320" name="inst_C474FCF9" locked="0" code="h=2;count=-3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="576" y="320" name="inst_C474FCF9" locked="0" code="h=2;count=-3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlue" x="336" y="336" name="inst_BE1708C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlue" x="520" y="144" name="inst_323A470F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlue" x="408" y="48" name="inst_AADE2FA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

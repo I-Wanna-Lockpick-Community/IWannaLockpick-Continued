@@ -75,7 +75,7 @@ global.msg = "From what I hear about designing with Infinite Keys, they can cert
     <instance objName="oDoorSimple" x="512" y="416" name="inst_67CEDFD8" locked="0" code="type = 1; color = color_RED; colorSpend = color_PURE; aura[0] = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="480" y="416" name="inst_65E6150C" locked="0" code="type = 1; color = color_RED; colorSpend = color_PURE; aura[0] = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="448" y="416" name="inst_5D8E2CB0" locked="0" code="type = 1; color = color_RED; colorSpend = color_PURE; aura[0] = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="256" y="352" name="inst_8369B7AE" locked="0" code="w=3;h=3;count=24;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="256" y="352" name="inst_8369B7AE" locked="0" code="w=3;h=3;count=24;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="416" y="448" name="inst_7E906E71" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="64" y="448" name="inst_0ABA0675" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="448" y="352" name="inst_622EECBF" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>

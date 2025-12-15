@@ -115,7 +115,7 @@ global.msg = "Input Points can be quite pesky in the wrong circumstances. There'
     <instance objName="oSalvageIn" x="592" y="384" name="inst_21E87F83" locked="0" code="ID = 7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSalvageIn" x="432" y="224" name="inst_F17B51BD" locked="0" code="ID = 8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="48" y="272" name="inst_B7459139" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="512" y="256" name="inst_C9C16175" locked="0" code="count=-1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="512" y="256" name="inst_C9C16175" locked="0" code="count=-1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles" x="192" y="256" w="32" h="32" xo="160" yo="256" id="10086002" name="inst_A6BE71F1" depth="10000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

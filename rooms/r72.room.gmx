@@ -83,7 +83,7 @@ global.msg = "These doors have some odd numbers on them, in more ways than one. 
     <instance objName="oDoorOrange" x="384" y="384" name="inst_F918BF93" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="320" y="384" name="inst_9E32FB3C" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="256" y="384" name="inst_D063C496" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="192" y="384" name="inst_7AA57238" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="192" y="384" name="inst_7AA57238" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="576" y="288" name="inst_8024474B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="160" y="384" name="inst_2DB04EF6" locked="0" code="count=-13;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyOrange" x="224" y="384" name="inst_44CC5925" locked="0" code="count=52;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

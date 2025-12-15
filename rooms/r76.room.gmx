@@ -96,7 +96,7 @@ global.msg = "When the star hits your eye like a big pizza pie, that's adoore...
     <instance objName="oDoorCyan" x="512" y="224" name="inst_61A1BFF0" locked="0" code="w=2;h=2;count=-25;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCyan" x="448" y="256" name="inst_BB8D44CF" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCyan" x="672" y="352" name="inst_EACAB834" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="512" y="352" name="inst_D3CF5BD5" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="512" y="352" name="inst_D3CF5BD5" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="608" y="256" name="inst_63443441" locked="0" code="type=2;&#xA;color = color_PURPLE; colorSpend = color_CYAN;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="672" y="256" name="inst_1F31F4B9" locked="0" code="type=2;&#xA;color = color_PINK; colorSpend = color_CYAN;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="448" y="352" name="inst_C3884C8A" locked="0" code="type=2;&#xA;color = color_PURPLE; colorSpend = color_CYAN;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

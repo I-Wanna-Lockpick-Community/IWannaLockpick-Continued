@@ -116,7 +116,7 @@ global.msg = "It's the return of double doors which are rather taxing on your Ma
     <instance objName="oDoorCyan" x="192" y="416" name="inst_90CA2FE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="288" y="416" name="inst_990EEB1B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorOrange" x="320" y="416" name="inst_C7F3C558" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="480" y="416" name="inst_759F96A9" locked="0" code="type=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="480" y="416" name="inst_759F96A9" locked="0" code="type=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="512" y="416" name="inst_FB7EB1EB" locked="0" code="count=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="368" y="400" name="inst_21F163E1" locked="0" code="count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="480" y="352" name="inst_E0F210CC" locked="0" code="count=2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -63,7 +63,7 @@ global.msg = "Looks like i-Master Keys are back! You know the drill: press ["+ge
     <instance objName="objBlock" x="32" y="256" name="inst_B0AB5FBC" locked="0" code="" scaleX="7" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="352" name="inst_73540566" locked="0" code="" scaleX="7" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="80" y="304" name="inst_FBA66848" locked="0" code="count = 0; icount = -5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="192" y="288" name="inst_D10F0AF9" locked="0" code="w=2;h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="192" y="288" name="inst_D10F0AF9" locked="0" code="w=2;h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorCombo" x="672" y="384" name="inst_0D4551D8" locked="0" code="w=2;h=2;colorSpend=color_CYAN;&#xA;scrComboAdd(color_WHITE,1,0,0,0,0,sprLock1A);&#xA;scrComboAdd(color_RED,1,0,0,32,0,sprLock1A);&#xA;scrComboAdd(color_GREEN,1,0,0,0,32,sprLock1A);&#xA;scrComboAdd(color_BLUE,1,0,0,32,32,sprLock1A);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="720" y="304" name="inst_3B3DCC8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBlack" x="592" y="304" name="inst_EDAE7201" locked="0" code="count = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

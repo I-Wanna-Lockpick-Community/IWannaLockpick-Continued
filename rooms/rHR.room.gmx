@@ -73,7 +73,7 @@ global.msg = "";
     <instance objName="objBlock" x="192" y="224" name="inst_5AA5FB92" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGoal" x="176" y="368" name="inst_C146C1EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPure" x="64" y="352" name="inst_59324F97" locked="0" code="w=2;h=2;count=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="128" y="352" name="inst_1CD84770" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="128" y="352" name="inst_1CD84770" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyWhite" x="128" y="464" name="inst_723FF5B1" locked="0" code="count=21;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyOrange" x="160" y="464" name="inst_C33E300D" locked="0" code="count=21;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPurple" x="192" y="464" name="inst_6F0EC77A" locked="0" code="count=21;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

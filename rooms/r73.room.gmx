@@ -84,9 +84,9 @@ global.msg = "In case you missed it, Bicolored Doors with a Pure part to them ar
     <instance objName="oKeyBrown" x="208" y="336" name="inst_8845428C" locked="0" code="count = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBrown" x="528" y="336" name="inst_B7406FA6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyBrown" x="672" y="256" name="inst_98AD3FD9" locked="0" code="type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="448" y="320" name="inst_A31AB936" locked="0" code="w=2;h=2;count=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="480" y="224" name="inst_E9DE51A3" locked="0" code="w=2;h=2;count=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="512" y="128" name="inst_664561CC" locked="0" code="w=2;h=2;count=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="448" y="320" name="inst_A31AB936" locked="0" code="w=2;h=2;count=6;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="480" y="224" name="inst_E9DE51A3" locked="0" code="w=2;h=2;count=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="512" y="128" name="inst_664561CC" locked="0" code="w=2;h=2;count=5;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="416" y="416" name="inst_A8786464" locked="0" code="h=2;type=1;&#xA;color = color_MASTER; colorSpend = color_PURE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="448" y="416" name="inst_F46D8690" locked="0" code="h=2;type=1;&#xA;color = color_BROWN; colorSpend = color_PURE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorSimple" x="480" y="416" name="inst_AC932428" locked="0" code="h=2;type=1;&#xA;color = color_MASTER; colorSpend = color_PURE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

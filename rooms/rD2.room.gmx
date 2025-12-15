@@ -72,7 +72,7 @@ global.msg = "Even if you mess up and pick the wrong door for a Salvage, you can
     <instance objName="objBlock" x="32" y="256" name="inst_9ECB646F" locked="0" code="" scaleX="7" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="32" y="32" name="inst_C93CFD77" locked="0" code="" scaleX="7" scaleY="7" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPink" x="256" y="288" name="inst_6B3FD463" locked="0" code="count=0;icount=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="208" y="416" name="inst_4A7EBA88" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="208" y="416" name="inst_4A7EBA88" locked="0" code="h=2;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorPink" x="320" y="128" name="inst_C74CE800" locked="0" code="h=4;type=1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyPink" x="352" y="160" name="inst_C08DA0CF" locked="0" code="count = 0; icount = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="256" y="32" name="inst_BE529843" locked="0" code="" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>

@@ -102,8 +102,8 @@ global.msg = "Another Bridge, this late into the game?! Well, I'm sure at this p
     <instance objName="oKeyMaster" x="192" y="128" name="inst_804BAF53" locked="0" code="inf = 1; type = 1; count = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="448" y="336" name="inst_33F4A689" locked="0" code="count = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyMaster" x="352" y="432" name="inst_B2B96C2F" locked="0" code="count = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="576" y="320" name="inst_FD92B4C4" locked="0" code="h=2;type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorGold" x="416" y="416" name="inst_691787CE" locked="0" code="h=2;type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="576" y="320" name="inst_FD92B4C4" locked="0" code="h=2;type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorMaster" x="416" y="416" name="inst_691787CE" locked="0" code="h=2;type = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="640" y="320" name="inst_D2004D2F" locked="0" code="h=2;&#xA;scrComboAdd(color_WHITE,0,0,1,0,0,sprLockAnyS);&#xA;scrComboAdd(color_BLACK,0,0,1,0,32,sprLockAnyS);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGate" x="640" y="416" name="inst_8F8B1710" locked="0" code="h=2;&#xA;scrComboAdd(color_WHITE,0,0,1,0,0,sprLockAnyS);&#xA;scrComboAdd(color_BLACK,0,0,1,0,32,sprLockAnyS);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDoorBlack" x="384" y="416" name="inst_2AC456F0" locked="0" code="h=2;count=-2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
