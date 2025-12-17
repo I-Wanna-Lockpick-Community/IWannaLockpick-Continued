@@ -217,6 +217,8 @@ if isPredefinedSprite {
     draw_sprite_ext(sprite,index,xRel+negatedOffsetX,yRel+negatedOffsetY,1,1,rotation,lockColor,1);
 }
 
+draw_set_halign(fa_left);
+
 switch type {
     case lock_NORMAL:
     case lock_EXACT:
@@ -258,7 +260,6 @@ switch type {
             var startX = floor((width - string_width(numbers) - lockOffsetX)/2) + xRel - offsetX;
             var startY = floor((height - lockOffsetY)/2) + yRel - offsetY;
             // number
-            draw_set_halign(fa_left);
             draw_set_valign(fa_center);
             if icount == 0 || type == lock_EXACT { // offset the number to the right one more pixel if it isnt imaginary, because of inaccurate text widths or something
                 draw_text(startX+lockOffsetX+1,startY+lockOffsetY-1,numbers);
@@ -336,13 +337,17 @@ switch type {
         }
 
         var strwidth = string_width(numbersCount)
-        if strwidth > 0 {strwidth += 4;}
+        if strwidth > 0 {strwidth += 2;}
 
-        draw_text(xRel+width/2-2-strwidth/2,yRel+height-16-10,numbersCount)
-        if negated { draw_sprite_ext(sprSymbols,index,xRel+width/2+16+strwidth/2,yRel+height/2-8+16,1,1,180,c_white,1); }
-        else { draw_sprite(sprSymbols,index,xRel+width/2-16+strwidth/2,yRel+height/2-8-16); }
-        draw_text(xRel+width/2-string_width(numbersDenom)/2,yRel+height-8,numbersDenom)
-        draw_rectangle(xRel+(width-max(strwidth,string_width(numbersDenom))-8)/2,yRel+height/2-1,xRel+(width+max(strwidth,string_width(numbersDenom))+8)/2,yRel+height/2,false)
+        draw_set_valign(fa_bottom);
+
+        draw_text(xRel+width/2-3-ceil(strwidth/2),yRel+height-16-10,numbersCount)
+        if negated { draw_sprite_ext(sprSymbols,index,xRel+width/2+16+floor(strwidth/2),yRel+height/2-8+16,1,1,180,c_white,1); }
+        else { draw_sprite(sprSymbols,index,xRel+width/2-16+floor(strwidth/2),yRel+height/2-8-16); }
+        draw_text(xRel+width/2-floor(string_width(numbersDenom)/2),yRel+height-8,numbersDenom)
+
+        var linewidth = max(string_width(numbersCount)+9, string_width(numbersDenom))
+        draw_rectangle(xRel+floor((width-linewidth)/2),yRel+height/2-1,xRel+floor((width+linewidth)/2),yRel+height/2,false)
     break;
 }
 draw_set_color(c_white);
