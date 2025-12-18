@@ -4,7 +4,7 @@
 2. Key Counts, Stars, and Curses
 3. Object instances
     a) Keys: Collected, Glitch Color (technically they all have synchronised glitch but its easier this way)
-    b) Doors: Opened, 3 Auras, cursed, Copies, Glitch Color
+    b) Doors: Opened, 3 Auras, cursed, Glitch Colors, Copies 
     c) Gates: Glitch mimic (again, technically always synchronised)
     d) Kina: Opened, cursed, Copies
     e) Salvage point: Interacted
@@ -63,9 +63,11 @@ while true {
             else if index == iter+3 { instance.aura[2] = value; undoData[index] = value; willContinue = true; break; }
             else if index == iter+4 { instance.cursed = value; undoData[index] = value; willContinue = true; break; }
             else if index == iter+5 { instance.glitchMimic = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+6 { instance.copies = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+7 { instance.icopies = value; undoData[index] = value; willContinue = true; break; }
-            iter += 8;
+            else if index == iter+6 { instance.curseGlitchMimic = value; undoData[index] = value; willContinue = true; break; }
+            else if index == iter+7 { instance.armamentGlitchMimic = value; undoData[index] = value; willContinue = true; break; }
+            else if index == iter+8 { instance.copies = value; undoData[index] = value; willContinue = true; break; }
+            else if index == iter+9 { instance.icopies = value; undoData[index] = value; willContinue = true; break; }
+            iter += 10;
         } else if instance.object_index == oGate {
             // c) Gates: Glitch mimic
             if index == iter { instance.glitchMimic = value; undoData[index] = value; willContinue = true; break; }

@@ -101,6 +101,8 @@
       <sound>sound\sndSignflip</sound>
       <sound>sound\sndStar</sound>
       <sound>sound\sndUnstar</sound>
+      <sound>sound\sndRemoteSuccess</sound>
+      <sound>sound\sndRemoteFail</sound>
     </sounds>
     <sounds name="Baba">
       <sound>sound\sndLevel</sound>
@@ -824,7 +826,6 @@
       <script>scripts\scrComboStep.gml</script>
       <script>scripts\scrAddSpendAmt.gml</script>
       <script>scripts\scrOpenCombo.gml</script>
-      <script>scripts\tryCurseCombo.gml</script>
       <script>scripts\removeAurasCombo.gml</script>
     </scripts>
     <scripts name="key/lock">
@@ -965,6 +966,7 @@
       <script>scripts\scrEffectiveColor.gml</script>
       <script>scripts\scrLockEffectiveColor.gml</script>
       <script>scripts\hasColor.gml</script>
+      <script>scripts\isAllColor.gml</script>
     </scripts>
     <script>scripts\strComplex.gml</script>
     <scripts name="mouseover">

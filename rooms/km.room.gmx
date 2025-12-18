@@ -51,7 +51,6 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="objWorld" x="32" y="32" name="inst_676DBD1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oKeyHandle" x="256" y="96" name="inst_E22D6591" locked="0" code="show[0] = color_WHITE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="128" y="192" name="inst_5274A1F4" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="128" y="224" name="inst_BDB8D847" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>

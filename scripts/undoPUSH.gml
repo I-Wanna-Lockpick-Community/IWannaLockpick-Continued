@@ -6,7 +6,7 @@
     a) Keys: Collected, Glitch Color (technically they all have synchronised glitch but its easier this way)
     b) Doors: Opened, 3 Auras, cursed, Copies, Glitch Color
     c) Gates: Glitch mimic (again, technically always synchronised)
-    d) Kina: Opened, cursed, Copies
+    d) Kina: Opened, cursed, Glitch Colors, Copies
     e) Salvage point: Interacted
 4. Which salvage point is interacted */
 
@@ -50,7 +50,7 @@ for (var i = 0; i < instancesCount; i+= 1) {
     } else if object_get_parent(instance.object_index) == oDoorSimple
     || instance.object_index == oDoorSimple
     || instance.object_index == oDoorCombo {
-        // b) Doors: Opened, 3 Auras, cursed, Copies, Glitch Color
+        // b) Doors: Opened, 3 Auras, cursed, Glitch Colors, Copies 
         undoPushChange(instance.active);
         undoPushChange(instance.aura[0]);
         undoPushChange(instance.aura[1]);

@@ -5,7 +5,7 @@ if cursed != -1 && cursed != color_PURE && !(argument2 && armament) {
     color = cursed;
     if color == color_GLITCH { color = curseGlitchMimic; }
 } else if color == color_GLITCH {
-    if argument2 { color = lockGlitchMimic; }
+    if argument2 && object_index != oRemoteLock { color = lockGlitchMimic; }
     else { color = glitchMimic; }
 }
 if argument1 && !hasColor(color_PURE) {

@@ -57,7 +57,7 @@ if global.complexMode == 0{//Real view
 }
 
 if objPlayer.curseMode != 0 && distance_to_object(objPlayer) <= 23{
-    tryCurseCombo();
+    tryCurseDoor();
 } else {
     brownNearPlayer = 0;
 }

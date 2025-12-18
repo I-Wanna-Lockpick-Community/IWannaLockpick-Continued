@@ -123,6 +123,11 @@ if saveBuffered{
                         other.shouldSave = 0;
                     }
                 }
+                if instance_exists(oRemoteLock){
+                    if place_meeting(x,y,oRemoteLock){
+                        other.shouldSave = 0;
+                    }
+                }
                 if instance_exists(oGate){
                     if place_meeting(x,y,oGate){
                         other.shouldSave = 0;
@@ -144,6 +149,7 @@ if saveBuffered{
         }
         with oDoorSimple{solid = 1;if brownNearPlayer{other.shouldSave = 0;}}
         with oDoorCombo{solid = 1;if brownNearPlayer{other.shouldSave = 0;}}
+        with oRemoteLock{if brownNearPlayer{other.shouldSave = 0;}}
     }
     if shouldSave {
         //SAVE A GAME STATE TO THE UNDO STACK

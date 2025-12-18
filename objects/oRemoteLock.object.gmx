@@ -46,6 +46,13 @@ cursed = -1;
 w = 18;
 h = 18;
 active = 1;
+brownNearPlayer = 0;
+
+satisfied = 0;
+rcost = 0;
+icost = 0;
+animColor = 0;
+animAlpha = 0;
 </string>
           </argument>
         </arguments>
@@ -71,6 +78,91 @@ active = 1;
             <string>if !instance_exists(objPlayer) || !active {exit;}
 distToP = distance_to_object(objPlayer);
 
+if objPlayer.curseMode != 0 &amp;&amp; distToP &lt;= 23{
+    tryCurseDoor();
+} else {
+    brownNearPlayer = 0;
+}
+
+var auraCount = 0; //Amount of auras on the door
+if aura[0] == 1{auraCount++; auraType = color_ICE}
+if aura[1] == 1{auraCount++; auraType = color_MUD}
+if aura[2] == 1{auraCount++; auraType = color_GRAFFITI}
+
+if auraCount &gt; 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || objPlayer.aura[2] == -1{ //Aura infliction/removal + Ice, mud, and graffiti interactions
+    if distToP &lt;= 23{
+        removeAuras();
+    }
+    //Ice, mud, graffiti openings (aurabreak)
+    if auraCount == 1 {
+        if (global.key[auraType] == 0 &amp;&amp; global.ikey[auraType] == 0) { exit; }
+    }
+}
+if auraCount &gt; 1 {exit;}
+
+if distToP &lt;= 1 {
+    var satisfiedBefore = satisfied;
+    var rcostBefore = rcost;
+    var icostBefore = icost;
+    satisfied = canOpen(scrEffectiveColor(color,true,true),count,icount,type,0,exactI||isPartial,denom,idenom,negated);
+    spendTotal = 0;
+    spendITotal = 0;
+    scrAddSpendAmt(scrEffectiveColor(color,true,true),count,icount,type,0,exactI||isPartial,denom,idenom,negated);
+    rcost = spendTotal;
+    icost = spendITotal;
+    if satisfied != satisfiedBefore || rcost != rcostBefore || icost != icostBefore {
+        if satisfied {scrPlaySoundExt(sndRemoteSuccess,1,1,false); animColor = make_color_rgb(0,255,102);}
+        else {scrPlaySoundExt(sndRemoteFail,1,1,false); animColor = make_color_rgb(255,0,102);}
+        animAlpha = 1;
+        undoBUFFER();
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="13">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Brown particle burst
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Make debris
 </string>
           </argument>
         </arguments>
