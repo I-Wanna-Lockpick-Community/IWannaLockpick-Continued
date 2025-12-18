@@ -13,12 +13,13 @@ salvageID = -1;//For mouseover purposes
 active = 1;//Whether or not it can be opened. Inactive means it goes far out of bounds.
 lockCount = 0;
 lock[0,0] = 0;//Left = index, right = attribute
-// attributes: color,count,icount,type,xRel,yRel,sprite,exacti/isPartial,denom,idenom,negated,armament,(glitchMimic)
+// attributes: color,count,icount,type,xRel,yRel,sprite,exacti/isPartial,denom,idenom,negated,armament
 
 invertBorder = 0;
 colorSpend = 0;
 glitchMimic = color_GLITCH;//For copy doors
 curseGlitchMimic = color_GLITCH;
+armamentGlitchMimic = color_GLITCH;
 iPow = 0;
 
 copies = 1;
@@ -32,8 +33,6 @@ brownNearPlayer = 0;
 w = 1;
 h = 1;
 
-goldIndex = 0;
-goldSpd = .1;
 brownAngle = 0;
 
 copyState = 0;

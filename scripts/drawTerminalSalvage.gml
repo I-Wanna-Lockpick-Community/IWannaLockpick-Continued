@@ -3,7 +3,6 @@
 
 //PRELIM
 //Set colorSpend from salvaged data
-//goldIndex = (goldIndex + goldSpd) mod 12;
 salDX = 400 - salW*16;
 salDY = 304 - salH*32;
 

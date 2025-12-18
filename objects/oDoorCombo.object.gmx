@@ -576,7 +576,6 @@ if salvageID != -1 &amp;&amp; active{
           <argument>
             <kind>1</kind>
             <string>///main draw
-goldIndex = (goldIndex + goldSpd) mod 12;
 baseColorSpend = colorSpend;
 if cursed != -1 &amp;&amp; cursed != color_PURE {
     baseColorSpend = cursed;

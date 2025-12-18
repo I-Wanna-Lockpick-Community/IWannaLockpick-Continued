@@ -1033,11 +1033,15 @@ if aura[2] == -1{
     draw_sprite_ext(sprAura,2,x,y,1,1,0,c_gray,0.5);
 }
 
+var shineColor;
+if (masterMode &gt;= 1) != (masterCycle == 1) { shineColor = make_color_rgb(50,50,180); }
+else { shineColor = make_color_rgb(180,180,50); }
+
 if masterMode &gt;= 1{
     draw_set_blend_mode(bm_add);
     masterDrawAngle = (masterDrawAngle + 4) mod 360;
     masterDrawScale = 0.8 + 0.2 * sin(degtorad(masterDrawAngle));
-    draw_sprite_ext(sprPlayerShine,0,x,y,masterDrawScale,masterDrawScale,0,make_color_rgb(180,180,50),1);
+    draw_sprite_ext(sprPlayerShine,0,x,y,masterDrawScale,masterDrawScale,0,shineColor,1);
     draw_set_blend_mode(bm_normal);
     if masterCycle == 1 {
         draw_sprite_ext(sprKMaster,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);
@@ -1049,7 +1053,7 @@ if masterMode &lt;= -1{
     draw_set_blend_mode(bm_add);
     masterDrawAngle = (masterDrawAngle + 4) mod 360;
     masterDrawScale = 0.8 + 0.2 * sin(degtorad(masterDrawAngle));
-    draw_sprite_ext(sprPlayerShine,0,x,y,masterDrawScale,masterDrawScale,0,make_color_rgb(50,50,180),1);
+    draw_sprite_ext(sprPlayerShine,0,x,y,masterDrawScale,masterDrawScale,0,shineColor,1);
     draw_set_blend_mode(bm_normal);
     if masterCycle == 1 {
         draw_sprite_ext(sprKMasterAnti,0,x-16,y-16,1,1,0,c_white,masterDrawScale*.6);

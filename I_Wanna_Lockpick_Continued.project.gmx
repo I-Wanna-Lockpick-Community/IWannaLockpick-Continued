@@ -518,6 +518,7 @@
       <sprite>sprites\sprSalvagePoint</sprite>
       <sprite>sprites\sprGateCheckers</sprite>
       <sprite>sprites\sprGateOutline</sprite>
+      <sprite>sprites\sprRemoteLock</sprite>
     </sprites>
     <sprites name="part3">
       <sprite>sprites\sprWelcomeLetters</sprite>
@@ -695,6 +696,7 @@
     </backgrounds>
     <background>background\bFinalTree</background>
     <background>background\bKinaHint</background>
+    <background>background\background90</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pthKH0</path>
@@ -1295,6 +1297,7 @@
       <object>objects\oRoomTally</object>
       <object>objects\oTerminal</object>
       <object>objects\oKina</object>
+      <object>objects\oRemoteLock</object>
     </objects>
     <objects name="Key">
       <object>objects\oKeyMaster</object>

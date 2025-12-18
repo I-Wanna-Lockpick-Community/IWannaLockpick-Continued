@@ -2,13 +2,13 @@
 //Main body fill
 var effectiveColor = colorSpend;
 if colorSpend == color_MASTER{
-    draw_sprite_ext(sprDGoldGrad,floor(goldIndex)%4,salDX,salDY,salW/2,salH/2,0,c_white,1);
+    draw_sprite_ext(sprDGoldGrad,floor(global.goldIndex)%4,salDX,salDY,salW/2,salH/2,0,c_white,1);
 }else if colorSpend == color_PURE{
-    draw_sprite_ext(sprDPureGrad,floor(goldIndex)%4,salDX,salDY,salW/2,salH/2,0,c_white,1);
+    draw_sprite_ext(sprDPureGrad,floor(global.goldIndex)%4,salDX,salDY,salW/2,salH/2,0,c_white,1);
 }else if colorSpend == color_STONE{
     draw_sprite_ext(sprDStoneTexture,0,salDX,salDY,salW*.5,salH*.5,0,c_white,1);
 } else if colorSpend == color_DYNAMITE{
-    draw_sprite_ext(sprDDynaTexture,floor(goldIndex),salDX,salDY,salW*.5,salH*.5,0,c_white,1);
+    draw_sprite_ext(sprDDynaTexture,floor(global.goldIndex),salDX,salDY,salW*.5,salH*.5,0,c_white,1);
     // TODO::tile this instead of stretch
     // @addcolor if door image/animation
 }else{
@@ -116,13 +116,13 @@ for(var i = 0; i < salvageLockCount; i += 1){
         var tempH = sprite_get_height(lock[i,6]);
         var tempX = salDX+lock[i,4]-sprite_get_xoffset(lock[i,6]);
         var tempY = salDY+lock[i,5]-sprite_get_yoffset(lock[i,6]);
-        draw_sprite_ext(sprDGoldGrad,floor(goldIndex)%4,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
+        draw_sprite_ext(sprDGoldGrad,floor(global.goldIndex)%4,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
     }else if lock[i,0] == color_PURE{
         var tempW = sprite_get_width(lock[i,6]);
         var tempH = sprite_get_height(lock[i,6]);
         var tempX = salDX+lock[i,4]-sprite_get_xoffset(lock[i,6]);
         var tempY = salDY+lock[i,5]-sprite_get_yoffset(lock[i,6]);
-        draw_sprite_ext(sprDPureGrad,floor(goldIndex)%4,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
+        draw_sprite_ext(sprDPureGrad,floor(global.goldIndex)%4,tempX,tempY,tempW/64,tempH/64,0,c_white,1);
     }else if lock[i,0] == color_STONE{
         var tempW = sprite_get_width(lock[i,6]);
         var tempH = sprite_get_height(lock[i,6]);
@@ -134,7 +134,7 @@ for(var i = 0; i < salvageLockCount; i += 1){
         var tempH = sprite_get_height(lock[i,6]);
         var tempX = salDX+lock[i,4]-sprite_get_xoffset(lock[i,6]);
         var tempY = salDY+lock[i,5]-sprite_get_yoffset(lock[i,6]);
-        draw_sprite_ext(sprDDynaTexture,floor(goldIndex),tempX,tempY,tempW/64,tempH/64,0,c_white,1);
+        draw_sprite_ext(sprDDynaTexture,floor(global.goldIndex),tempX,tempY,tempW/64,tempH/64,0,c_white,1);
         // TODO::tile this instead of stretch
         // @addcolor if door image/animation
     }else if lock[i,0] == color_GLITCH{

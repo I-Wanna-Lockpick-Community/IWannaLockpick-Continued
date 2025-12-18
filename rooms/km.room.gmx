@@ -55,16 +55,16 @@
     <instance objName="oKeyHandle" x="256" y="96" name="inst_E22D6591" locked="0" code="show[0] = color_WHITE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="128" y="192" name="inst_5274A1F4" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="128" y="224" name="inst_BDB8D847" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="128" y="320" name="inst_870663FC" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="128" y="320" name="inst_870663FC" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="448" y="224" name="inst_551990DA" locked="0" code="" scaleX="1" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerStart" x="192" y="288" name="inst_E3E9E9EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGoal" x="416" y="256" name="inst_F57C9365" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorWhite" x="256" y="224" name="inst_8924E1C9" locked="0" code="isPartial = 1;&#xA;count = 3;&#xA;denom = 2;&#xA;h = 2;&#xA;w = 2;&#xA;type = lock_BLAST;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyWhite" x="160" y="224" name="inst_8EB18531" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyWhite" x="192" y="224" name="inst_D57D69D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oKeyWhite" x="224" y="224" name="inst_2442D92A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorWhite" x="352" y="224" name="inst_A20A9C9A" locked="0" code="isPartial = 1;&#xA;count = 3;&#xA;denom = 2;&#xA;h = 2;&#xA;w = 2;&#xA;type = lock_BLAST;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oDoorWhite" x="320" y="224" name="inst_93857469" locked="0" code="isPartial = 1;&#xA;denom = 2;&#xA;h = 2;&#xA;type = lock_BLAST;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oGoal" x="384" y="256" name="inst_F57C9365" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oKeyWhite" x="192" y="256" name="inst_D57D69D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorCombo" x="288" y="288" name="inst_A3E7BF53" locked="0" code="colorSpend = color_WHITE;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDoorWhite" x="160" y="224" name="inst_F882952A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRemoteLock" x="288" y="224" name="inst_1C5DBAC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="256" y="256" name="inst_DBA39879" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="320" y="224" name="inst_3718D4BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles2" x="128" y="256" w="32" h="32" xo="96" yo="0" id="20000028" name="inst_9D748D35" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -95,6 +95,10 @@
     <tile bgName="bAllTiles2" x="448" y="320" w="32" h="32" xo="96" yo="0" id="20000054" name="inst_646BE825" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bAllTiles2" x="448" y="192" w="32" h="32" xo="96" yo="0" id="20000055" name="inst_29D26EC6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bAllTiles2" x="416" y="192" w="32" h="32" xo="96" yo="0" id="20000056" name="inst_486EAC81" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bAllTiles2" x="256" y="256" w="32" h="32" xo="96" yo="0" id="20000057" name="inst_575A0665" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bAllTiles2" x="288" y="256" w="32" h="32" xo="96" yo="0" id="20000058" name="inst_A712EC77" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bAllTiles2" x="320" y="256" w="32" h="32" xo="96" yo="0" id="20000059" name="inst_D320BAA8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bAllTiles2" x="320" y="224" w="32" h="32" xo="96" yo="0" id="20000060" name="inst_B0610E78" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

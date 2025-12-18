@@ -17,7 +17,7 @@ var idenom = argument9;
 var negated = argument10;
 var armament = argument11;
 
-if object_index == oGate {
+if object_index == oGate || object_index == oRemoteLock {
     count = argument1;
     icount = argument2;
 } else if global.complexMode == 0 {
@@ -110,10 +110,10 @@ switch sprite {
 // draw lock fill
 switch color {
     case color_MASTER:
-        draw_sprite_ext(sprDGoldGrad,floor(goldIndex)%4,xRel-offsetX+negatedOffsetX,yRel-offsetY+negatedOffsetY,width/64,height/64,rotation,c_white,1);
+        draw_sprite_ext(sprDGoldGrad,floor(global.goldIndex)%4,xRel-offsetX+negatedOffsetX,yRel-offsetY+negatedOffsetY,width/64,height/64,rotation,c_white,1);
     break;
     case color_PURE:
-        draw_sprite_ext(sprDPureGrad,floor(goldIndex)%4,xRel-offsetX+negatedOffsetX,yRel-offsetY+negatedOffsetY,width/64,height/64,rotation,c_white,1);
+        draw_sprite_ext(sprDPureGrad,floor(global.goldIndex)%4,xRel-offsetX+negatedOffsetX,yRel-offsetY+negatedOffsetY,width/64,height/64,rotation,c_white,1);
     break;
     case color_STONE:
         draw_sprite_ext(sprDStoneTexture,0,xRel-offsetX,yRel-offsetY,width/64,height/64,0,c_white,1); // noone will notice if its not rotated
@@ -121,9 +121,9 @@ switch color {
     case color_DYNAMITE:
         // hmm cant really rotate this; shouldnt matter too much though
         for(var i = 0; i+1 < height/64; i++) {
-            draw_sprite_ext(sprDDynaTexture,floor(goldIndex),xRel-offsetX,yRel-offsetY+i*64,width/64,1,0,c_white,1);
+            draw_sprite_ext(sprDDynaTexture,floor(global.goldIndex),xRel-offsetX,yRel-offsetY+i*64,width/64,1,0,c_white,1);
         }
-        draw_sprite_part_ext(sprDDynaTexture,floor(goldIndex),0,0,64,height-i*64,xRel-offsetX,yRel-offsetY+i*64,width/64,1,c_white,1)
+        draw_sprite_part_ext(sprDDynaTexture,floor(global.goldIndex),0,0,64,height-i*64,xRel-offsetX,yRel-offsetY+i*64,width/64,1,c_white,1)
         // @addcolor if door image/animation
     break;
     case color_GLITCH:
@@ -194,10 +194,10 @@ if backSprite == sprLockAny { // arbitrary size lock frame
 
 // draw armament
 if argument11 {
-    draw_sprite_part(sprArmament,floor(goldIndex)%4,0,0,9,9,xRel-offsetX,yRel-offsetY)
-    draw_sprite_part(sprArmament,floor(goldIndex)%4,9,0,9,9,xRel-offsetX+width-9,yRel-offsetY)
-    draw_sprite_part(sprArmament,floor(goldIndex)%4,0,9,9,9,xRel-offsetX,yRel-offsetY+height-9)
-    draw_sprite_part(sprArmament,floor(goldIndex)%4,9,9,9,9,xRel-offsetX+width-9,yRel-offsetY+height-9)
+    draw_sprite_part(sprArmament,floor(global.goldIndex)%4,0,0,9,9,xRel-offsetX,yRel-offsetY)
+    draw_sprite_part(sprArmament,floor(global.goldIndex)%4,9,0,9,9,xRel-offsetX+width-9,yRel-offsetY)
+    draw_sprite_part(sprArmament,floor(global.goldIndex)%4,0,9,9,9,xRel-offsetX,yRel-offsetY+height-9)
+    draw_sprite_part(sprArmament,floor(global.goldIndex)%4,9,9,9,9,xRel-offsetX+width-9,yRel-offsetY+height-9)
 }
 
 // draw predefined lock sprite

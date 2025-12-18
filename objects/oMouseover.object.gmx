@@ -150,8 +150,6 @@ joke[11] = "If you wait long enough at Mooncloud Lake, the time of day will chan
 joke[12] = "Because of their special time properties, you can't bring any keys or doors outside this place. You'll have to settle for a replica, if you can even find one.";
 joke[13] = "The reason Combo Doors make the sound of a camera shutter is because they want to remember the occasion. Who wouldn't?";
 joke[14] = "In the grand scheme of things, carrying around 50,000 keys is a rather trivial task. It's only five digits you have to worry about!";
-//Bleh
-goldIndex = 0;
 </string>
           </argument>
         </arguments>
@@ -590,8 +588,6 @@ if scrButtonCheck(global.specialButton){
     }
 }
 oldMode = pdaMode;
-//Bleh
-goldIndex = (goldIndex + .1) mod 12;
 }
 }
 </string>
@@ -836,9 +832,9 @@ if pdaMode == 1{
         draw_set_alpha(1);
         draw_set_color(c_white);
         if pdaID[pdaPage, i] == color_MASTER{
-            draw_sprite(sprKMaster,floor(goldIndex%4),drawX,drawY);
+            draw_sprite(sprKMaster,floor(global.goldIndex%4),drawX,drawY);
         }else if pdaID[pdaPage, i] == color_PURE{
-            draw_sprite(sprKPure,floor(goldIndex%4),drawX,drawY);
+            draw_sprite(sprKPure,floor(global.goldIndex%4),drawX,drawY);
         }else if pdaID[pdaPage, i] == color_GLITCH{
             shader_set(shdRainbowStripe2);
             shader_set_uniform_f(global.shaderMode,color_GLITCH);
@@ -848,9 +844,9 @@ if pdaMode == 1{
         }else if pdaID[pdaPage, i] == color_STONE{
             draw_sprite(sprKStone,0,drawX,drawY);
         }else if pdaID[pdaPage, i] == color_DYNAMITE{
-            draw_sprite(sprKDynamite,floor(goldIndex),drawX,drawY);
+            draw_sprite(sprKDynamite,floor(global.goldIndex),drawX,drawY);
         }else if pdaID[pdaPage, i] == color_SILVER{
-            draw_sprite(sprKSilver,floor(goldIndex%4),drawX,drawY);
+            draw_sprite(sprKSilver,floor(global.goldIndex%4),drawX,drawY);
         }else if pdaID[pdaPage, i] == color_ICE{
             draw_sprite(sprKIce,0,drawX,drawY);
         }else if pdaID[pdaPage, i] == color_MUD{

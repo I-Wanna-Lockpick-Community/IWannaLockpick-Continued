@@ -39,6 +39,7 @@ colorSpend = 0;//Can spend a key type other than the required one
 glitchMimic = color_GLITCH;//For glitch doors
 lockGlitchMimic = color_GLITCH;
 curseGlitchMimic = color_GLITCH;
+armamentGlitchMimic = color_GLITCH;
 baseColor = 0; // for drawing
 baseColorSpend = 0; // for drawing
 count = 1;
@@ -63,10 +64,6 @@ brownNearPlayer = 0;//Sets to 1 when cursed/uncursed, sets to 0 when opened or p
 //entangleGroup = 0;//If it is entangled, what group it belongs to.
 w = 1;
 h = 1;
-
-//Gold animation variables
-goldIndex = 0;
-goldSpd = .1;
 
 //Aura animation variables
 aaState = 0;
@@ -780,7 +777,6 @@ if salvageID != -1 &amp;&amp; active{
           <argument>
             <kind>1</kind>
             <string>///Main draw
-goldIndex = (goldIndex + goldSpd) mod 12;
 baseColor = color;
 baseColorSpend = colorSpend;
 if cursed != -1 &amp;&amp; cursed != color_PURE {

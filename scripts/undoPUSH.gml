@@ -57,6 +57,8 @@ for (var i = 0; i < instancesCount; i+= 1) {
         undoPushChange(instance.aura[2]);
         undoPushChange(instance.cursed);
         undoPushChange(instance.glitchMimic);
+        undoPushChange(instance.curseGlitchMimic);
+        undoPushChange(instance.armamentGlitchMimic);
         undoPushChange(instance.copies);
         undoPushChange(instance.icopies);
     } else if instance.object_index == oGate {
