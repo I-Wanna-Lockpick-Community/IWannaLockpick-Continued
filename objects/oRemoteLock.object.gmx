@@ -186,7 +186,7 @@ if distToP &lt;= 1 {
           <argument>
             <kind>1</kind>
             <string>if !active {exit;}
-scrDrawDoorLock(color,count,icount,type,0,0,sprite,exactI||isPartial,denom,idenom,negated,armament);
+scrDrawDoorLock(color,count,icount,type,0,0,sprite,exactI||isPartial,denom,idenom,negated,armament,0,false);
 scrDrawDoorAura(aura[0],aura[1],aura[2],x,y,w,h);
 </string>
           </argument>
