@@ -954,13 +954,6 @@
     </scripts>
     <script>scripts\scrSpeedUpAnims.gml</script>
     <script>scripts\scrNormalDynamiteOpen.gml</script>
-    <scripts name="doorDraw">
-      <script>scripts\scrDrawDoorFrame.gml</script>
-      <script>scripts\scrDrawDoorSpend.gml</script>
-      <script>scripts\scrDrawDoorLock.gml</script>
-      <script>scripts\scrSimpleDoorGetLockSprite.gml</script>
-      <script>scripts\scrDrawDoorAura.gml</script>
-    </scripts>
     <script>scripts\scrComplexDivide.gml</script>
     <script>scripts\scrComplexDivideI.gml</script>
     <scripts name="getColor">
@@ -973,6 +966,16 @@
     <scripts name="mouseover">
       <script>scripts\strLockCost.gml</script>
       <script>scripts\strEffects.gml</script>
+    </scripts>
+    <scripts name="draw">
+      <scripts name="door">
+        <script>scripts\scrDrawDoorFrame.gml</script>
+        <script>scripts\scrDrawDoorSpend.gml</script>
+        <script>scripts\scrDrawDoorLock.gml</script>
+        <script>scripts\scrSimpleDoorGetLockSprite.gml</script>
+        <script>scripts\scrDrawDoorAura.gml</script>
+      </scripts>
+      <script>scripts\scrDrawNinePatchStretch.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">

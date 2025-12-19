@@ -167,16 +167,7 @@ if type == lock_BLAST && (denom != 0 || idenom != 0) {
 } else if count < 0 || icount < 0 {index = 1}
 if negated {index += 2}
 
-// corners
-draw_sprite_part(sprLockFrame,index,0,0,2,2,xRel-offsetX,yRel-offsetY);
-draw_sprite_part(sprLockFrame,index,62,0,2,2,xRel+width-2-offsetX,yRel-offsetY);
-draw_sprite_part(sprLockFrame,index,0,62,2,2,xRel-offsetX,yRel+height-2-offsetY);
-draw_sprite_part(sprLockFrame,index,62,62,2,2,xRel+width-2-offsetX,yRel+height-2-offsetY);
-// edges
-draw_sprite_part_ext(sprLockFrame,index,2,0,60,2,xRel+2-offsetX,yRel-offsetY,(width-4)/60,1,c_white,1);
-draw_sprite_part_ext(sprLockFrame,index,2,62,60,2,xRel+2-offsetX,yRel+height-2-offsetY,(width-4)/60,1,c_white,1);
-draw_sprite_part_ext(sprLockFrame,index,0,2,2,60,xRel-offsetX,yRel+2-offsetY,1,(height-4)/60,c_white,1);
-draw_sprite_part_ext(sprLockFrame,index,62,2,2,60,xRel+width-2-offsetX,yRel+2-offsetY,1,(height-4)/60,c_white,1);
+scrDrawNinePatchStretch(sprLockFrame,index,xRel-offsetX,yRel-offsetY,width,height,9,9,false,c_white,1);
 
 // draw predefined lock sprite
 if isPredefinedSprite {
