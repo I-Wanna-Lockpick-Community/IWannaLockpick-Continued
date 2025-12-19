@@ -11,7 +11,7 @@ if argument1{
     } else if width == 64 && height == 64{
         draw_sprite(sprDirt2x2,0,xPos,yPos);
     } else {
-        shader_set(shdRainbowStripe2);
+        shader_set(shdEffects);
         shader_set_uniform_f(global.shaderMode,color_MUD);
         shader_set_uniform_f(global.shaderUniPos,xPos,yPos);
         shader_set_uniform_f(global.shaderUniSize,width,height);
@@ -28,7 +28,7 @@ if argument2{
     } else if width == 64 && height == 64{
         draw_sprite_ext(sprSol2x2,1,xPos,yPos,1,1,0,make_color_rgb(255,255,255),1);
     } else {
-        shader_set(shdRainbowStripe2);
+        shader_set(shdEffects);
         shader_set_uniform_f(global.shaderMode,color_GRAFFITI);
         shader_set_uniform_f(global.shaderUniPos,xPos,yPos);
         shader_set_uniform_f(global.shaderUniSize,width,height);
@@ -50,7 +50,7 @@ if argument0{
     } else if width == 96 && height == 64{
         draw_sprite(sprIce3x2,0,xPos,yPos);
     } else {
-        shader_set(shdRainbowStripe2);
+        shader_set(shdEffects);
         shader_set_uniform_f(global.shaderMode,color_ICE);
         shader_set_uniform_f(global.shaderUniPos,xPos,yPos);
         shader_set_uniform_f(global.shaderUniSize,width,height);

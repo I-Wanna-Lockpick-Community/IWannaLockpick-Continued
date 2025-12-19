@@ -1,32 +1,21 @@
-///scrDrawDoorLock(color,count,icount,type,xRel,yRel,sprite,exactI/isPartial,denom,idenom,negated,armament); 
+///scrDrawDoorLock(color,count,icount,type,xRel,yRel,sprite,exactI/isPartial,denom,idenom,negated,armament,ipow,onlyFill); 
 // rewritten to work with both simple doors and combo doors
 // we use the sprLockAnys for borders (for nonpredefined) and for fills
 
 var color = argument0;
 var mainTone = global.mainTone[color];
-var count;
-var icount;
+var count = rotateR(argument1,argument2,argument12);
+var icount = rotateI(argument1,argument2,argument12);
 var type = argument3;
 var xRel = argument4 + x;
 var yRel = argument5 + y;
 var sprite = argument6;
 var exactI = type == lock_EXACT && argument7;
 var isPartial = type != lock_EXACT && argument7;
-var denom = argument8;
-var idenom = argument9;
+var denom = rotateR(argument8,argument9,argument12);
+var idenom = rotateI(argument8,argument9,argument12);;
 var negated = argument10;
 var armament = argument11;
-
-if object_index == oGate || object_index == oRemoteLock {
-    count = argument1;
-    icount = argument2;
-} else if global.complexMode == 0 {
-    if copies > 0 {count = argument1; icount = argument2;}
-    else {count = -argument1; icount = -argument2;}
-} else {
-    if icopies > 0 {count = -argument2; icount = argument1;}
-    else {count = argument2; icount = -argument1;}
-}
 
 var width = sprite_get_width(sprite);
 var height = sprite_get_height(sprite);
@@ -112,6 +101,10 @@ switch sprite {
     break;
 }
 
+if argument12 != 0 && object_index == oDoorCombo {
+    sprite = backSprite;
+}
+
 // draw lock fill
 switch color {
     case color_MASTER:
@@ -132,19 +125,19 @@ switch color {
         // @addcolor if door image/animation
     break;
     case color_GLITCH:
-        shader_set(shdRainbowStripe2);
+        shader_set(shdEffects);
         shader_set_uniform_f(global.shaderMode,color_GLITCH);
-        draw_rectangle_colour(xRel-offsetX+1,yRel-offsetY+1,xRel-offsetX+width-1,yRel-offsetY+height-1,mainTone,mainTone,mainTone,mainTone,false);
+        draw_rectangle_colour(xRel-offsetX+2,yRel-offsetY+2,xRel-offsetX+width-4,yRel-offsetY+height-4,mainTone,mainTone,mainTone,mainTone,false);
         shader_reset();
         if glitchMimic != color_GLITCH {
-            var index = 4;
+            var index = 0;
             mainTone = c_white;
             switch glitchMimic {
-                case color_MASTER: index = 5; break;
-                case color_PURE: index = 6; break;
-                case color_STONE: index = 7; break;
-                case color_DYNAMITE: index = 8; break;
-                case color_SILVER: index = 9; break;
+                case color_MASTER: index = 1; break;
+                case color_PURE: index = 2; break;
+                case color_STONE: index = 3; break;
+                case color_DYNAMITE: index = 4; break;
+                case color_SILVER: index = 5; break;
                 // @addcolor if door image/animation
                 default:
                     mainTone = global.mainTone[glitchMimic];
@@ -157,10 +150,12 @@ switch color {
         draw_sprite_ext(sprDSilverTexture,floor(global.goldIndex)%4,xRel-offsetX+negatedOffsetX,yRel-offsetY+negatedOffsetY,width/64,height/64,rotation,c_white,1);
     break;
     default:
-        draw_rectangle_colour(xRel-offsetX+1,yRel-offsetY+1,xRel-offsetX+width-1,yRel-offsetY+height-1,mainTone,mainTone,mainTone,mainTone,false);
+        draw_rectangle_colour(xRel-offsetX+2,yRel-offsetY+2,xRel-offsetX+width-4,yRel-offsetY+height-4,mainTone,mainTone,mainTone,mainTone,false);
         scrDrawDoorAura(color == color_ICE, color == color_MUD, color == color_GRAFFITI,xRel-offsetX,yRel-offsetY,width,height);
     break;
 }
+
+if argument13 {return 0;}
 
 // draw lock frame
 var index = 0;
@@ -172,28 +167,16 @@ if type == lock_BLAST && (denom != 0 || idenom != 0) {
 } else if count < 0 || icount < 0 {index = 1}
 if negated {index += 2}
 
-if backSprite == sprLockAny { // arbitrary size lock frame
-    // corners
-    draw_sprite_part(backSprite,index,0,0,2,2,xRel-offsetX,yRel-offsetY);
-    draw_sprite_part(backSprite,index,80,0,2,2,xRel+width-2-offsetX,yRel-offsetY);
-    draw_sprite_part(backSprite,index,0,80,2,2,xRel-offsetX,yRel+height-2-offsetY);
-    draw_sprite_part(backSprite,index,80,80,2,2,xRel+width-2-offsetX,yRel+height-2-offsetY);
-    // edges
-    draw_sprite_part_ext(backSprite,index,2,0,78,2,xRel+2-offsetX,yRel-offsetY,(width-4)/78,1,c_white,1);
-    draw_sprite_part_ext(backSprite,index,2,80,78,2,xRel+2-offsetX,yRel+height-2-offsetY,(width-4)/78,1,c_white,1);
-    draw_sprite_part_ext(backSprite,index,0,2,2,78,xRel-offsetX,yRel+2-offsetY,1,(height-4)/78,c_white,1);
-    draw_sprite_part_ext(backSprite,index,80,2,2,78,xRel+width-2-offsetX,yRel+2-offsetY,1,(height-4)/78,c_white,1);
-} else {
-    draw_sprite(backSprite,index,xRel,yRel);
-}
-
-// draw armament
-if argument11 {
-    draw_sprite_part(sprArmament,floor(global.goldIndex)%4,0,0,9,9,xRel-offsetX,yRel-offsetY)
-    draw_sprite_part(sprArmament,floor(global.goldIndex)%4,9,0,9,9,xRel-offsetX+width-9,yRel-offsetY)
-    draw_sprite_part(sprArmament,floor(global.goldIndex)%4,0,9,9,9,xRel-offsetX,yRel-offsetY+height-9)
-    draw_sprite_part(sprArmament,floor(global.goldIndex)%4,9,9,9,9,xRel-offsetX+width-9,yRel-offsetY+height-9)
-}
+// corners
+draw_sprite_part(sprLockFrame,index,0,0,2,2,xRel-offsetX,yRel-offsetY);
+draw_sprite_part(sprLockFrame,index,62,0,2,2,xRel+width-2-offsetX,yRel-offsetY);
+draw_sprite_part(sprLockFrame,index,0,62,2,2,xRel-offsetX,yRel+height-2-offsetY);
+draw_sprite_part(sprLockFrame,index,62,62,2,2,xRel+width-2-offsetX,yRel+height-2-offsetY);
+// edges
+draw_sprite_part_ext(sprLockFrame,index,2,0,60,2,xRel+2-offsetX,yRel-offsetY,(width-4)/60,1,c_white,1);
+draw_sprite_part_ext(sprLockFrame,index,2,62,60,2,xRel+2-offsetX,yRel+height-2-offsetY,(width-4)/60,1,c_white,1);
+draw_sprite_part_ext(sprLockFrame,index,0,2,2,60,xRel-offsetX,yRel+2-offsetY,1,(height-4)/60,c_white,1);
+draw_sprite_part_ext(sprLockFrame,index,62,2,2,60,xRel+width-2-offsetX,yRel+2-offsetY,1,(height-4)/60,c_white,1);
 
 // draw predefined lock sprite
 if isPredefinedSprite {

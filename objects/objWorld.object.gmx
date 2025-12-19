@@ -51,12 +51,12 @@ if (instance_number(object_index) &gt; 1)
             <kind>1</kind>
             <string>///shaders
 global.glitchUniAmt = 0;
-global.shaderMode = shader_get_uniform(shdRainbowStripe2,"shaderMode");
-global.glitchUniTime = shader_get_uniform(shdRainbowStripe2,"time");
-global.shaderUniPos = shader_get_uniform(shdRainbowStripe2,"offsetPos");
-global.shaderUniSize = shader_get_uniform(shdRainbowStripe2,"size");
-global.shaderUniUVPos = shader_get_uniform(shdRainbowStripe2,"UVPos");
-global.shaderUniUVEnd = shader_get_uniform(shdRainbowStripe2,"UVEnd");
+global.shaderMode = shader_get_uniform(shdEffects,"shaderMode");
+global.glitchUniTime = shader_get_uniform(shdEffects,"time");
+global.shaderUniPos = shader_get_uniform(shdEffects,"offsetPos");
+global.shaderUniSize = shader_get_uniform(shdEffects,"size");
+global.shaderUniUVPos = shader_get_uniform(shdEffects,"UVPos");
+global.shaderUniUVEnd = shader_get_uniform(shdEffects,"UVEnd");
 global.doorHue = 0;
 global.doorCol1 = make_color_hsv(global.doorHue,125,255);
 global.doorCol2 = make_color_hsv(global.doorHue,180,230);
@@ -551,7 +551,7 @@ if global.muteMusic{
             <kind>1</kind>
             <string>///global draw vars
 global.glitchUniAmt = (global.glitchUniAmt + 1/2500) mod 72;
-shader_set(shdRainbowStripe2);
+shader_set(shdEffects);
 shader_set_uniform_f(global.glitchUniTime,global.glitchUniAmt);
 shader_reset();
 global.doorHue = (global.doorHue + .75) mod 255;

@@ -1,6 +1,5 @@
 ///scrDrawDoorSpend(colorSpend);
 //Draws the spend fill of the door, and nothing else.
-//TODO: Add Stone glitch lock sprites and draw code
 //Main body fill
 var baseColorSpend = argument0;
 
@@ -25,7 +24,7 @@ if baseColorSpend == color_MASTER{
     darkTone = global.darkTone[baseColorSpend];
 
     if baseColorSpend == color_GLITCH{
-        shader_set(shdRainbowStripe2);
+        shader_set(shdEffects);
         shader_set_uniform_f(global.shaderMode,color_GLITCH);
     }
     //Corner Fills

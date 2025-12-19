@@ -786,8 +786,9 @@ if cursed != -1 &amp;&amp; cursed != color_PURE {
 if copyDraw == 1 { // spend is not drawn while the copy animation is happening
     scrDrawDoorSpend(baseColorSpend);
 }
-if global.complexMode == 0 &amp;&amp; copies == 0
-|| global.complexMode == 1 &amp;&amp; icopies == 0 {
+
+var noCopies = (global.complexMode == 0 &amp;&amp; copies == 0) || (global.complexMode == 1 &amp;&amp; icopies == 0);
+if noCopies {
     // draw the rainbow outline if there aren't copies in this direction
     scrComboDrawIm();
 } else {
@@ -800,8 +801,8 @@ if global.complexMode == 0 &amp;&amp; copies == 0
     } else if count &lt; 0 || icount &lt; 0 {isNegative = true}
 
     scrDrawDoorFrame(isNegative != (global.complexMode == 0 &amp;&amp; copies &lt; 0 || global.complexMode == 1 &amp;&amp; icopies &lt; 0));
-    scrDrawDoorLock(baseColor,count,icount,type,0,0,scrSimpleDoorGetLockSprite(),exactI||isPartial,denom,idenom,negated,armament);
 }
+scrDrawDoorLock(baseColor,count,icount,type,0,0,scrSimpleDoorGetLockSprite(),exactI||isPartial,denom,idenom,negated,armament,iPow,noCopies);
 scrDrawDoorAura(aura[0],aura[1],aura[2],x,y,w*32,h*32);
 </string>
           </argument>

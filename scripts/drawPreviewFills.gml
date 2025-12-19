@@ -13,7 +13,7 @@ if colorSpend == color_MASTER{
     // @addcolor if door image/animation
 }else{
     if colorSpend == color_GLITCH{
-        shader_set(shdRainbowStripe2);
+        shader_set(shdEffects);
         shader_set_uniform_f(global.shaderMode,color_GLITCH);
     }
     //Corner Fills
@@ -138,7 +138,7 @@ for(var i = 0; i < salvageLockCount; i += 1){
         // TODO::tile this instead of stretch
         // @addcolor if door image/animation
     }else if lock[i,0] == color_GLITCH{
-        shader_set(shdRainbowStripe2);
+        shader_set(shdEffects);
         shader_set_uniform_f(global.shaderMode,color_GLITCH);
         draw_sprite_ext(lock[i,6],2,salDX+lock[i,4],salDY+lock[i,5],1,1,0,make_color_rgb(180,150,0),1);
         shader_reset();

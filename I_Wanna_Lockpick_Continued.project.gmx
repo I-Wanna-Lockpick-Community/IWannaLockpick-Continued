@@ -332,6 +332,7 @@
         <sprite>sprites\sprLockAnyXL</sprite>
         <sprite>sprites\sprLockAny</sprite>
         <sprite>sprites\sprArmament</sprite>
+        <sprite>sprites\sprLockFrame</sprite>
       </sprites>
       <sprites name="door">
         <sprites name="editorPreview">
@@ -978,7 +979,7 @@
     <shader type="GLSLES">shaders\shdRainbowStripe.shader</shader>
     <shader type="GLSLES">shaders\shdSingleColor.shader</shader>
     <shader type="GLSLES">shaders\shdVertexColor.shader</shader>
-    <shader type="GLSLES">shaders\shdRainbowStripe2.shader</shader>
+    <shader type="GLSLES">shaders\shdEffects.shader</shader>
     <shader type="GLSLES">shaders\shdRainbowHor.shader</shader>
     <shader type="GLSLES">shaders\shdColorblind.shader</shader>
     <shader type="GLSLES">shaders\shdColorblind2.shader</shader>
