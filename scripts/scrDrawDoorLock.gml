@@ -41,8 +41,13 @@ var offsetY = sprite_get_yoffset(sprite);
 var hasILockTexture = false; // indicates that the given sprite has predefined i lock textures so that exact knows how much to offset by 
 
 if sprite == sprLockAny {
-    width = w*32-14;
-    height = h*32-14;
+    if object_index == oRemoteLock {
+        width = w;
+        height = h;
+    } else {
+        width = w*32-14;
+        height = h*32-14;
+    }
     if w == 1 {
         verticalText = true;
     }
@@ -129,36 +134,30 @@ switch color {
     case color_GLITCH:
         shader_set(shdRainbowStripe2);
         shader_set_uniform_f(global.shaderMode,color_GLITCH);
-        if sprite == sprLockAny {
-            // arbitrary size lock fill
-            draw_sprite_ext(backSprite,4,xRel-offsetX+1,yRel-offsetY+1,(width-2)/64,(height-2)/64,0,mainTone,1);
-        } else {
-            draw_sprite_ext(backSprite,4,xRel,yRel,1,1,0,mainTone,1);
-        }
+        draw_rectangle_colour(xRel-offsetX+1,yRel-offsetY+1,xRel-offsetX+width-1,yRel-offsetY+height-1,mainTone,mainTone,mainTone,mainTone,false);
         shader_reset();
         if glitchMimic != color_GLITCH {
-            var index = 3;
+            var index = 4;
             mainTone = c_white;
             switch glitchMimic {
-                case color_MASTER: index = 6; break;
-                case color_PURE: index = 7; break;
-                case color_STONE: index = 8; break;
-                case color_DYNAMITE: index = 9; break;
+                case color_MASTER: index = 5; break;
+                case color_PURE: index = 6; break;
+                case color_STONE: index = 7; break;
+                case color_DYNAMITE: index = 8; break;
+                case color_SILVER: index = 9; break;
                 // @addcolor if door image/animation
                 default:
                     mainTone = global.mainTone[glitchMimic];
                 break;
             }
-            draw_sprite_ext(backSprite,index,xRel+negatedOffsetX,yRel+negatedOffsetY,1,1,rotation,mainTone,1);
+            draw_sprite_ext(backSprite,index,xRel+negatedOffsetX,yRel+negatedOffsetY,1,1,0,mainTone,1);
         }
     break;
+    case color_SILVER:
+        draw_sprite_ext(sprDSilverTexture,floor(global.goldIndex)%4,xRel-offsetX+negatedOffsetX,yRel-offsetY+negatedOffsetY,width/64,height/64,rotation,c_white,1);
+    break;
     default:
-        if sprite == sprLockAny {
-            // arbitrary size lock fill
-            draw_sprite_ext(backSprite,4,xRel-offsetX+1,yRel-offsetY+1,(width-2)/64,(height-2)/64,0,mainTone,1);
-        } else {
-            draw_sprite_ext(backSprite,4,xRel,yRel,1,1,0,mainTone,1);
-        }
+        draw_rectangle_colour(xRel-offsetX+1,yRel-offsetY+1,xRel-offsetX+width-1,yRel-offsetY+height-1,mainTone,mainTone,mainTone,mainTone,false);
         scrDrawDoorAura(color == color_ICE, color == color_MUD, color == color_GRAFFITI,xRel-offsetX,yRel-offsetY,width,height);
     break;
 }
@@ -175,19 +174,15 @@ if negated {index += 2}
 
 if backSprite == sprLockAny { // arbitrary size lock frame
     // corners
-    draw_sprite_part(backSprite,index,0,0,16,16,xRel,yRel);
-    draw_sprite_part(backSprite,index,48,0,16,16,xRel+width-2,yRel);
-    draw_sprite_part(backSprite,index,0,48,16,16,xRel,yRel+height-2);
-    draw_sprite_part(backSprite,index,48,48,16,16,xRel+width-2,yRel+height-2);
+    draw_sprite_part(backSprite,index,0,0,2,2,xRel-offsetX,yRel-offsetY);
+    draw_sprite_part(backSprite,index,80,0,2,2,xRel+width-2-offsetX,yRel-offsetY);
+    draw_sprite_part(backSprite,index,0,80,2,2,xRel-offsetX,yRel+height-2-offsetY);
+    draw_sprite_part(backSprite,index,80,80,2,2,xRel+width-2-offsetX,yRel+height-2-offsetY);
     // edges
-    if width > 18 {
-        draw_sprite_part_ext(backSprite,index,16,0,32,16,xRel+16,yRel,(width-18)/32,1,c_white,1);
-        draw_sprite_part_ext(backSprite,index,16,48,32,16,xRel+16,yRel+height-2,(width-18)/32,1,c_white,1);
-    }
-    if height > 18 {
-        draw_sprite_part_ext(backSprite,index,0,16,16,32,xRel,yRel+16,1,(height-18)/32,c_white,1);
-        draw_sprite_part_ext(backSprite,index,48,16,16,32,xRel+width-2,yRel+16,1,(height-18)/32,c_white,1);
-    }
+    draw_sprite_part_ext(backSprite,index,2,0,78,2,xRel+2-offsetX,yRel-offsetY,(width-4)/78,1,c_white,1);
+    draw_sprite_part_ext(backSprite,index,2,80,78,2,xRel+2-offsetX,yRel+height-2-offsetY,(width-4)/78,1,c_white,1);
+    draw_sprite_part_ext(backSprite,index,0,2,2,78,xRel-offsetX,yRel+2-offsetY,1,(height-4)/78,c_white,1);
+    draw_sprite_part_ext(backSprite,index,80,2,2,78,xRel+width-2-offsetX,yRel+2-offsetY,1,(height-4)/78,c_white,1);
 } else {
     draw_sprite(backSprite,index,xRel,yRel);
 }

@@ -271,9 +271,9 @@ with oSalvageIn{
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebrisS)){
-            c1 = global.highTone[other.baseColor];
-            c2 = global.mainTone[other.baseColor];
-            c3 = global.darkTone[other.baseColor];
+            c1 = global.highTone[other.baseColorSpend];
+            c2 = global.mainTone[other.baseColorSpend];
+            c3 = global.darkTone[other.baseColorSpend];
             xT = other.xT;
             yT = other.yT;
         }
@@ -388,9 +388,9 @@ copyTimer = 0;
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris3)){
-            c1 = global.highTone[other.baseColor];
-            c2 = global.mainTone[other.baseColor];
-            c3 = global.darkTone[other.baseColor];
+            c1 = global.highTone[other.baseColorSpend];
+            c2 = global.mainTone[other.baseColorSpend];
+            c3 = global.darkTone[other.baseColorSpend];
         }
     }
 }
@@ -426,9 +426,9 @@ copyTimer = 0;
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris2)){
-            c1 = global.highTone[other.baseColor];
-            c2 = global.mainTone[other.baseColor];
-            c3 = global.darkTone[other.baseColor];
+            c1 = global.highTone[other.baseColorSpend];
+            c2 = global.mainTone[other.baseColorSpend];
+            c3 = global.darkTone[other.baseColorSpend];
         }
     }
 }
@@ -458,9 +458,9 @@ for(var ix = 0; ix&lt;(2*w); ix+=1){
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris)){
-            c1 = global.highTone[other.baseColor];
-            c2 = global.mainTone[other.baseColor];
-            c3 = global.darkTone[other.baseColor];
+            c1 = global.highTone[other.baseColorSpend];
+            c2 = global.mainTone[other.baseColorSpend];
+            c3 = global.darkTone[other.baseColorSpend];
         }
     }
 }

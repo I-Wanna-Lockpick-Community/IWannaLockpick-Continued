@@ -45,5 +45,4 @@ copyDraw = 1;
 image_speed = 0;
 myLight = -1;
 
-baseColor = 0; // for drawing
 baseColorSpend = 0; // for drawing
