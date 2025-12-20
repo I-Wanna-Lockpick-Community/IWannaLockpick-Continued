@@ -142,7 +142,11 @@ switch color {
                     mainTone = global.mainTone[glitchMimic];
                 break;
             }
-            draw_sprite_ext(backSprite,index,xRel+negatedOffsetX,yRel+negatedOffsetY,1,1,0,mainTone,1);
+            if backSprite == sprLockAny {
+                scrDrawNinePatch(backSprite,index,xRel-offsetX+negatedOffsetX,yRel-offsetY+negatedOffsetY,width,height,9,9,true,mainTone,1,true,0);
+            } else {
+                draw_sprite_ext(backSprite,index,xRel+negatedOffsetX,yRel+negatedOffsetY,1,1,0,mainTone,1);
+            }
         }
     break;
     case color_SILVER:
@@ -166,7 +170,7 @@ if type == lock_BLAST && (denom != 0 || idenom != 0) {
 } else if count < 0 || icount < 0 {index = 1}
 if negated {index += 2}
 
-scrDrawNinePatchStretch(sprLockFrame,index,xRel-offsetX,yRel-offsetY,width,height,9,9,false,c_white,1);
+scrDrawNinePatch(sprLockFrame,index,xRel-offsetX,yRel-offsetY,width,height,9,9,false,c_white,1,false);
 
 // draw predefined lock sprite
 if isPredefinedSprite {

@@ -975,9 +975,9 @@
         <script>scripts\scrSimpleDoorGetLockSprite.gml</script>
         <script>scripts\scrDrawDoorAura.gml</script>
       </scripts>
-      <script>scripts\scrDrawNinePatchStretch.gml</script>
-      <script>scripts\scrDrawNinePatchTile.gml</script>
+      <script>scripts\scrDrawNinePatch.gml</script>
       <script>scripts\setShdEffects.gml</script>
+      <script>scripts\setShdTile.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">

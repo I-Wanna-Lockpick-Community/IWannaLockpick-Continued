@@ -72,7 +72,7 @@ void main() {
     vec2 minposition = vec2(min(position.x,unposition.x),min(position.y,unposition.y));
     if (tile > 0.0) {
         vec2 t = fract(position/spriteSize);
-        gl_FragColor = texture2D(gm_BaseTexture, UVPos*(vec2(1.0,1.0)-t) + UVEnd*t);
+        gl_FragColor = texture2D(gm_BaseTexture, UVPos*(vec2(1.0,1.0)-t) + UVEnd*t) * v_vColour;
     }
     if (shaderMode == 4.0) {
         // red (frozen)
