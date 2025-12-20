@@ -34,6 +34,7 @@ if argument2{
         var uvInfo = sprite_get_uvs(sprSolRepeat, 0);
         shader_set_uniform_f(global.shaderUniUVPos,uvInfo[0],uvInfo[1]);
         shader_set_uniform_f(global.shaderUniUVEnd,uvInfo[2],uvInfo[3]);
+        shader_set_uniform_f(global.shaderUniSpriteSize,128,128);
         draw_sprite_ext(sprSolRepeat,0,xPos,yPos,width/128,height/128,0,c_white,1);  
     }
     draw_set_blend_mode(bm_normal);

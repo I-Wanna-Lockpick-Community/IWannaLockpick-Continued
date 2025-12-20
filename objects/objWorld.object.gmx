@@ -55,6 +55,7 @@ global.shaderMode = shader_get_uniform(shdEffects,"shaderMode");
 global.glitchUniTime = shader_get_uniform(shdEffects,"time");
 global.shaderUniPos = shader_get_uniform(shdEffects,"offsetPos");
 global.shaderUniSize = shader_get_uniform(shdEffects,"size");
+global.shaderUniSpriteSize = shader_get_uniform(shdEffects,"spriteSize");
 global.shaderUniUVPos = shader_get_uniform(shdEffects,"UVPos");
 global.shaderUniUVEnd = shader_get_uniform(shdEffects,"UVEnd");
 global.shaderUniTile = shader_get_uniform(shdEffects,"tile");

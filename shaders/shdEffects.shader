@@ -23,6 +23,7 @@ uniform float shaderMode;
 uniform float time;
 uniform vec2 offsetPos;
 uniform vec2 size;
+uniform vec2 spriteSize;
 uniform vec2 UVPos;
 uniform vec2 UVEnd;
 uniform float tile; // but actually a bool
@@ -70,8 +71,8 @@ void main() {
     vec2 unposition = size - position - vec2(1,1);
     vec2 minposition = vec2(min(position.x,unposition.x),min(position.y,unposition.y));
     if (tile > 0.0) {
-        vec2 t = fract(position/(UVEnd-UVPos));
-        gl_FragColor = texture2D(gm_BaseTexture, UVPos*t + UVEnd*(vec2(1.0,1.0)-t));
+        vec2 t = fract(position/spriteSize);
+        gl_FragColor = texture2D(gm_BaseTexture, UVPos*(vec2(1.0,1.0)-t) + UVEnd*t);
     }
     if (shaderMode == 4.0) {
         // red (frozen)
