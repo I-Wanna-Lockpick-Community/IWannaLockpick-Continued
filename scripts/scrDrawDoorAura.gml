@@ -11,8 +11,7 @@ if argument1{
     } else if width == 64 && height == 64{
         draw_sprite(sprDirt2x2,0,xPos,yPos);
     } else {
-        shader_set(shdEffects);
-        shader_set_uniform_f(global.shaderMode,color_MUD);
+        setShdEffects(color_GREEN);
         shader_set_uniform_f(global.shaderUniPos,xPos,yPos);
         shader_set_uniform_f(global.shaderUniSize,width,height);
         draw_rectangle(xPos,yPos,xPos+width-1,yPos+height-1,false);        
@@ -28,10 +27,10 @@ if argument2{
     } else if width == 64 && height == 64{
         draw_sprite_ext(sprSol2x2,1,xPos,yPos,1,1,0,make_color_rgb(255,255,255),1);
     } else {
-        shader_set(shdEffects);
-        shader_set_uniform_f(global.shaderMode,color_GRAFFITI);
+        setShdEffects(color_BLUE);
         shader_set_uniform_f(global.shaderUniPos,xPos,yPos);
         shader_set_uniform_f(global.shaderUniSize,width,height);
+        shader_set_uniform_f(global.shaderUniTile,1);
         var uvInfo = sprite_get_uvs(sprSolRepeat, 0);
         shader_set_uniform_f(global.shaderUniUVPos,uvInfo[0],uvInfo[1]);
         shader_set_uniform_f(global.shaderUniUVEnd,uvInfo[2],uvInfo[3]);
@@ -50,8 +49,7 @@ if argument0{
     } else if width == 96 && height == 64{
         draw_sprite(sprIce3x2,0,xPos,yPos);
     } else {
-        shader_set(shdEffects);
-        shader_set_uniform_f(global.shaderMode,color_ICE);
+        setShdEffects(color_GREEN);
         shader_set_uniform_f(global.shaderUniPos,xPos,yPos);
         shader_set_uniform_f(global.shaderUniSize,width,height);
         draw_rectangle(xPos,yPos,xPos+width-1,yPos+height-1,false);        

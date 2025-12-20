@@ -24,8 +24,7 @@ if baseColorSpend == color_MASTER{
     darkTone = global.darkTone[baseColorSpend];
 
     if baseColorSpend == color_GLITCH{
-        shader_set(shdEffects);
-        shader_set_uniform_f(global.shaderMode,color_GLITCH);
+        setShdEffects(color_GLITCH);
     }
     //Corner Fills
     draw_sprite_part_ext(sprDoorSpend,3,0,0,16,16,x,y,1,1,mainTone,1);

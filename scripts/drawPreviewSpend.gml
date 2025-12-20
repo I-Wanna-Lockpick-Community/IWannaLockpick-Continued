@@ -11,8 +11,7 @@ if colorSpend == color_MASTER{
     // @addcolor if door image/animation
 }else if colorSpend == color_GLITCH{
     scrColorDoorArg(color_GLITCH);
-    shader_set(shdEffects);
-    shader_set_uniform_f(global.shaderMode,color_GLITCH);
+    setShdEffects(color_GLITCH);
     
     //Edges
     if salW>1{

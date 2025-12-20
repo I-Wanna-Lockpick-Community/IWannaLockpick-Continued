@@ -232,8 +232,7 @@ switch color{
     break;
     case color_GLITCH:
         draw_sprite_ext(sprite_index,0,x,y+3*waveS+upAmt,drawScale*scale,scale,0,c_white,image_alpha);
-        shader_set(shdEffects);
-        shader_set_uniform_f(global.shaderMode,color_GLITCH);
+        setShdEffects(color_GLITCH);
         draw_sprite_ext(sprite_index,1,x,y+3*waveS+upAmt,drawScale*scale,scale,0,global.mainTone[color],image_alpha);
         shader_reset();
     break;

@@ -976,6 +976,8 @@
         <script>scripts\scrDrawDoorAura.gml</script>
       </scripts>
       <script>scripts\scrDrawNinePatchStretch.gml</script>
+      <script>scripts\scrDrawNinePatchTile.gml</script>
+      <script>scripts\setShdEffects.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">

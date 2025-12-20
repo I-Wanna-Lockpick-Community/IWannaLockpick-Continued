@@ -57,6 +57,7 @@ global.shaderUniPos = shader_get_uniform(shdEffects,"offsetPos");
 global.shaderUniSize = shader_get_uniform(shdEffects,"size");
 global.shaderUniUVPos = shader_get_uniform(shdEffects,"UVPos");
 global.shaderUniUVEnd = shader_get_uniform(shdEffects,"UVEnd");
+global.shaderUniTile = shader_get_uniform(shdEffects,"tile");
 global.doorHue = 0;
 global.doorCol1 = make_color_hsv(global.doorHue,125,255);
 global.doorCol2 = make_color_hsv(global.doorHue,180,230);
@@ -551,7 +552,7 @@ if global.muteMusic{
             <kind>1</kind>
             <string>///global draw vars
 global.glitchUniAmt = (global.glitchUniAmt + 1/2500) mod 72;
-shader_set(shdEffects);
+setShdEffects(0);
 shader_set_uniform_f(global.glitchUniTime,global.glitchUniAmt);
 shader_reset();
 global.doorHue = (global.doorHue + .75) mod 255;

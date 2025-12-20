@@ -25,6 +25,7 @@ uniform vec2 offsetPos;
 uniform vec2 size;
 uniform vec2 UVPos;
 uniform vec2 UVEnd;
+uniform float tile; // but actually a bool
 const vec4 ICE_COLOR_FILL = vec4(1, 1, 1, 0.7058824);
 const vec4 ICE_COLOR_BACK = vec4(0.8554, 0.91, 0.91, 0.39215687);
 const vec4 MUD_COLOR_FILL = vec4(0.2823529412, 0.0509803922, 0.0509803922, 0.7058823529);
@@ -68,14 +69,12 @@ void main() {
     vec2 position = floor(fCoord-offsetPos);
     vec2 unposition = size - position - vec2(1,1);
     vec2 minposition = vec2(min(position.x,unposition.x),min(position.y,unposition.y));
-    if (shaderMode == 12.0) {
-        // glitch
-        vec4 oldCol = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
-        float colHue = rand(vec2(fCoord.x+time,fCoord.y));
-        float satRand = rand(vec2(fCoord.x,fCoord.y+time));
-        gl_FragColor = vec4(hsv(240.*colHue,oldCol.r*satRand,oldCol.g),oldCol.a);
-    } else if (shaderMode == 19.0) {
-        // ice (frozen)
+    if (tile > 0.0) {
+        vec2 t = fract(position/(UVEnd-UVPos));
+        gl_FragColor = texture2D(gm_BaseTexture, UVPos*t + UVEnd*(vec2(1.0,1.0)-t));
+    }
+    if (shaderMode == 4.0) {
+        // red (frozen)
         if ((minposition.x < 0.5 || minposition.y < 0.5) // border
             || (minposition.x+minposition.y < 4.5) // corners
             || ((minposition.x < 1.5 || minposition.y < 1.5) && minposition.x < 4.5 && minposition.y < 4.5) // corners
@@ -88,8 +87,8 @@ void main() {
         } else {
             gl_FragColor = ICE_COLOR_BACK;
         }
-    } else if (shaderMode == 20.0) {
-        // mud (crumbled)
+    } else if (shaderMode == 5.0) {
+        // green (crumbled)
 		if ((minposition.x < 0.5 || minposition.y < 0.5) // border
 			|| (minposition.x + 2.0*minposition.y < 6.5) // corners
 			|| mudStripe(4.5,11.0,position,minposition)
@@ -100,10 +99,14 @@ void main() {
         } else {
             gl_FragColor = MUD_COLOR_BACK;
         }
-    } else if (shaderMode == 21.0) {
-        // graffiti (painted)
-        gl_FragColor = lerpColor(GRAFFITI_COLOR_TOP, GRAFFITI_COLOR_BOTTOM, position.y/size.y);
-        vec2 t = fract(position/vec2(128.0,128.0));
-        gl_FragColor.a = texture2D(gm_BaseTexture, UVPos*t + UVEnd*(vec2(1.0,1.0)-t)).a;
+    } else if (shaderMode == 6.0) {
+        // blue (painted)
+        gl_FragColor.rgb = lerpColor(GRAFFITI_COLOR_TOP, GRAFFITI_COLOR_BOTTOM, position.y/size.y).rgb;
+    } else if (shaderMode == 12.0) {
+        // glitch
+        vec4 oldCol = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
+        float colHue = rand(vec2(fCoord.x+time,fCoord.y));
+        float satRand = rand(vec2(fCoord.x,fCoord.y+time));
+        gl_FragColor = vec4(hsv(240.*colHue,oldCol.r*satRand,oldCol.g),oldCol.a);
     }
 }

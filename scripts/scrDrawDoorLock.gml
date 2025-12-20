@@ -125,9 +125,8 @@ switch color {
         // @addcolor if door image/animation
     break;
     case color_GLITCH:
-        shader_set(shdEffects);
-        shader_set_uniform_f(global.shaderMode,color_GLITCH);
-        draw_rectangle_colour(xRel-offsetX+2,yRel-offsetY+2,xRel-offsetX+width-4,yRel-offsetY+height-4,mainTone,mainTone,mainTone,mainTone,false);
+        setShdEffects(color_GLITCH);
+        draw_rectangle_colour(xRel-offsetX+2,yRel-offsetY+2,xRel-offsetX+width-3,yRel-offsetY+height-3,mainTone,mainTone,mainTone,mainTone,false);
         shader_reset();
         if glitchMimic != color_GLITCH {
             var index = 0;
@@ -150,7 +149,7 @@ switch color {
         draw_sprite_ext(sprDSilverTexture,floor(global.goldIndex)%4,xRel-offsetX+negatedOffsetX,yRel-offsetY+negatedOffsetY,width/64,height/64,rotation,c_white,1);
     break;
     default:
-        draw_rectangle_colour(xRel-offsetX+2,yRel-offsetY+2,xRel-offsetX+width-4,yRel-offsetY+height-4,mainTone,mainTone,mainTone,mainTone,false);
+        draw_rectangle_colour(xRel-offsetX+2,yRel-offsetY+2,xRel-offsetX+width-3,yRel-offsetY+height-3,mainTone,mainTone,mainTone,mainTone,false);
         scrDrawDoorAura(color == color_ICE, color == color_MUD, color == color_GRAFFITI,xRel-offsetX,yRel-offsetY,width,height);
     break;
 }
