@@ -49,7 +49,7 @@ if argument0{
     } else if width == 96 && height == 64{
         draw_sprite(sprIce3x2,0,xPos,yPos);
     } else {
-        setShdEffects(color_GREEN);
+        setShdEffects(color_RED);
         shader_set_uniform_f(global.shaderUniPos,xPos,yPos);
         shader_set_uniform_f(global.shaderUniSize,width,height);
         draw_rectangle(xPos,yPos,xPos+width-1,yPos+height-1,false);        
