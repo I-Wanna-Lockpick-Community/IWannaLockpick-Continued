@@ -1,17 +1,20 @@
-if type == 0 || type == 1 || type == 3 || type == 4 || type == 5{
-    if color == color_MASTER && colorSpend == color_MASTER && type != 5 && (cursed == -1 || cursed == color_PURE || cursed == color_MASTER){
-        scrPlaySoundExt(sndMasterUnlock,1,1,false);
-    }else if aura[0] || aura[1] || aura[2] {
-        scrPlaySoundExt(sndCrumble,1,1,false);
-    } else {
-        scrPlaySoundExt(sndOpen,1,1,false);
-    }
-}
-if type == 2{
+//scrOpenOrCopy();
+if aura[0] || aura[1] || aura[2] {
+    scrPlaySoundExt(sndCrumble,1,1,false);
+} else if object_index == oDoorCombo {
+    scrPlaySoundExt(sndComboOpen,1,1,false);
+} else if type == lock_BLAST {
     scrPlaySoundExt(sndBlast,1,1,false);
+} else if cursed == color_MASTER || (color == color_MASTER && colorSpend == color_MASTER && (cursed == -1 || cursed == color_PURE)){
+    scrPlaySoundExt(sndMasterUnlock,1,1,false);
+} else {
+    scrPlaySoundExt(sndOpen,1,1,false);
 }
-//Slowstopping
-scrPlayerDownStop();
+
+if object_index != oDoorCombo {
+    //Slowstopping
+    scrPlayerDownStop();
+}
 if iPow == 0{//Real +
     if copies > 0{copies -= 1;}
 }else if iPow == 1{//Im +
@@ -23,6 +26,9 @@ if iPow == 0{//Real +
 }
 if copies == 0 && icopies == 0{//DESTROY
     solid = 0; visible = 0; active = 0;
+    for(var i = 0; i < remoteLocks; i += 1) {
+        with remoteLock[i] { event_user(1); }
+    }
     if global.salvageActive{
         event_user(5);
         scrSaveSalvage(global.salvageID,id);

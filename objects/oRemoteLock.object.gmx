@@ -53,6 +53,11 @@ rcost = 0;
 icost = 0;
 animColor = 0;
 animAlpha = 0;
+
+baseColor = 0;
+
+doors = 0; // might be gates!
+door[0] = 0; // id of the doors
 </string>
           </argument>
         </arguments>
@@ -145,6 +150,33 @@ if distToP &lt;= 1 {
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Check activity
+active = false;
+for (var i = 0; i &lt; doors; i += 1) {
+    if door[i].object_index == oGate || door[i].active {active = true;}
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="10">
       <action>
         <libid>1</libid>
@@ -186,8 +218,16 @@ if distToP &lt;= 1 {
           <argument>
             <kind>1</kind>
             <string>if !active {exit;}
-scrDrawDoorLock(color,count,icount,type,0,0,sprite,exactI||isPartial,denom,idenom,negated,armament,0,false);
+baseColor = color;
+if cursed != -1 &amp;&amp; cursed != color_PURE {
+    baseColor = cursed;
+}
+scrDrawDoorLock(baseColor,count,icount,type,0,0,sprite,exactI||isPartial,denom,idenom,negated,armament,0,false);
 scrDrawDoorAura(aura[0],aura[1],aura[2],x,y,w,h);
+if animAlpha &gt; 0 {
+    scrDrawNinePatch(sprLockFrame,4,x-sprite_get_xoffset(sprite),y-sprite_get_yoffset(sprite),w,h,9,9,false,animColor,animAlpha,false);
+    animAlpha -= 0.05;
+}
 </string>
           </argument>
         </arguments>

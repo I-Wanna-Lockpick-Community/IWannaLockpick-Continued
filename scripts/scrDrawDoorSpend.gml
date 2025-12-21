@@ -57,27 +57,25 @@ if baseColorSpend == color_MASTER{
     }
 }
 //For Glitch Doors, draw an extra part
-if baseColorSpend == color_GLITCH && glitchMimic != color_GLITCH {
-    var _gSprite;
+var effectiveGlitchMimic = scrEffectiveColor(color_GLITCH,false,false);
+if baseColorSpend == color_GLITCH && effectiveGlitchMimic != color_GLITCH {
+    var _gSprite = sprDoorGlitch;
 
     highTone = c_white;
     mainTone = c_white;
     darkTone = c_white;
 
-    if glitchMimic == color_MASTER{
-        _gSprite = sprDoorGlitchGold;
-    }else if glitchMimic == color_PURE{
-        _gSprite = sprDoorGlitchPure;
-    }else if glitchMimic == color_STONE{
-        _gSprite = sprDoorGlitchStone;
-    }else if glitchMimic == color_DYNAMITE{
-        _gSprite = sprDoorGlitchDyna;
+    switch effectiveGlitchMimic {
+        case color_MASTER: _gSprite = sprDoorGlitchGold; break;
+        case color_PURE: _gSprite = sprDoorGlitchPure; break;
+        case color_STONE: _gSprite = sprDoorGlitchStone; break;
+        case color_DYNAMITE: _gSprite = sprDoorGlitchDyna; break;
         // @addcolor if door image/animation
-    } else {//Flat color door
-        _gSprite = sprDoorGlitch;
-        highTone = global.highTone[glitchMimic];
-        mainTone = global.mainTone[glitchMimic];
-        darkTone = global.darkTone[glitchMimic];
+        default:
+        //Flat color door
+            highTone = global.highTone[effectiveGlitchMimic];
+            mainTone = global.mainTone[effectiveGlitchMimic];
+            darkTone = global.darkTone[effectiveGlitchMimic];
     }
     //Now the fun stuff.
     //Corner Inner

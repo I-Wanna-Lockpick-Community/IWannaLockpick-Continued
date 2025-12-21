@@ -40,8 +40,6 @@ if sprite == sprLockAny {
     if w == 1 {
         verticalText = true;
     }
-    offsetX = -7;
-    offsetY = -7;
 }
 
 var negatedOffsetX = 0; // rotation pivot point is the origin, so we need to add sprite width and height to it
@@ -128,10 +126,11 @@ switch color {
         setShdEffects(color_GLITCH);
         draw_rectangle_colour(xRel-offsetX+2,yRel-offsetY+2,xRel-offsetX+width-3,yRel-offsetY+height-3,mainTone,mainTone,mainTone,mainTone,false);
         shader_reset();
-        if glitchMimic != color_GLITCH {
+        var effectiveGlitchMimic = scrEffectiveColor(color_GLITCH,false,true);
+        if effectiveGlitchMimic != color_GLITCH {
             var index = 0;
             mainTone = c_white;
-            switch glitchMimic {
+            switch effectiveGlitchMimic {
                 case color_MASTER: index = 1; break;
                 case color_PURE: index = 2; break;
                 case color_STONE: index = 3; break;
@@ -139,7 +138,7 @@ switch color {
                 case color_SILVER: index = 5; break;
                 // @addcolor if door image/animation
                 default:
-                    mainTone = global.mainTone[glitchMimic];
+                    mainTone = global.mainTone[effectiveGlitchMimic];
                 break;
             }
             if backSprite == sprLockAny {

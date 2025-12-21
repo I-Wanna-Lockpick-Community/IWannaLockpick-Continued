@@ -79,6 +79,9 @@ copyDraw = 1;
 
 image_speed = 0;
 myLight = -1;//Uninitialized light source object
+
+remoteLock[0] = 0;
+remoteLocks = 0;
 </string>
           </argument>
         </arguments>
@@ -339,7 +342,11 @@ if distToP &lt;= 1 {
         }
         spendTotal = 0;
         spendITotal = 0;
-        scrAddSpendAmt(scrEffectiveColor(color,true,true),count,icount,type,tempIPow,exactI||isPartial,denom,idenom,negated)
+        scrAddSpendAmt(scrEffectiveColor(color,true,true),count,icount,type,tempIPow,exactI||isPartial,denom,idenom,negated);
+        for(var i = 0; i &lt; remoteLocks; i += 1) {
+            spendTotal += remoteLock[i].rcost;
+            spendITotal += remoteLock[i].icost;
+        }
         if canSilverOpen {
             addComplexKeys(scrEffectiveColor(colorSpend,true,false),-spendTotal,-spendITotal,0);
             addComplexKeys(color_SILVER,-1,0,tempIPow);
@@ -349,10 +356,18 @@ if distToP &lt;= 1 {
             objPlayer.masterCycle = 0;
             undoBUFFER();
             scrBroadcastCopy(scrEffectiveColor(colorSpend,true,false)); // should it?
-        } else if canOpen(scrEffectiveColor(color,true,true),count,icount,type,tempIPow,exactI||isPartial,denom,idenom,negated) {
-            addComplexKeys(scrEffectiveColor(colorSpend,true,false),-spendTotal,-spendITotal,0);
-            scrOpenOrCopy();
-            scrBroadcastCopy(scrEffectiveColor(colorSpend,true,false));
+        } else {
+            var metRequirement = canOpen(scrEffectiveColor(color,true,true),count,icount,type,tempIPow,exactI||isPartial,denom,idenom,negated);
+            for(var i = 0; i &lt; remoteLocks; i += 1) {
+                if !remoteLock[i].satisfied {
+                    metRequirement = false;
+                }
+            }
+            if metRequirement {
+                addComplexKeys(scrEffectiveColor(colorSpend,true,false),-spendTotal,-spendITotal,0);
+                scrOpenOrCopy();
+                scrBroadcastCopy(scrEffectiveColor(colorSpend,true,false));
+            }
         }
     }
 }

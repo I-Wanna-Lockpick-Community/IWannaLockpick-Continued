@@ -272,6 +272,11 @@ if validRoom{
         index += 1;
         other.instancesCount += 1;
     }
+    with oRemoteLock{
+        other.instances[index] = id;
+        index += 1;
+        other.instancesCount += 1;
+    }
     //Save the initial room state
     undoPUSH();
 }

@@ -3,44 +3,44 @@
 1. Player position
 2. Key Counts, Stars, and Curses
 3. Object instances
-    a) Keys: Collected, Glitch Color (technically they all have synchronised glitch but its easier this way)
-    b) Doors: Opened, 3 Auras, cursed, Glitch Colors, Copies 
-    c) Gates: Glitch mimic (again, technically always synchronised)
-    d) Kina: Opened, cursed, Copies
+    a) Keys: Active, Glitch Mimic (technically they all have synchronised glitch but its easier this way)
+    b) Doors: Active, 3 Auras, Cursed, Glitch Mimic, Copies
+    c) Gates: Glitch Mimic (again, technically always synchronised)
+    d) Kina: Active, Cursed, Copies
     e) Salvage point: Interacted
+    f) Remote Locks: Active, Satisfied, Cost, Auras, Cursed, Glitch Mimic
 4. Which salvage point is interacted */
 
 // For each change in the stack, find the value to change by going through values in the same order as undoPUSH, and change it.
 // We also have to make sure to update the value for it in the array, so that it gets checked correctly for future pushes.
-// Slow? Maybe. There's not much to do about it though. Gamemaker can't pass around references to variables :/
+// Slow? Maybe. There's not much to do about it though. As far as I know, Gamemaker can't pass around references to variables :/
 
 undoPos -= 1;
 
 show_debug_message("undo popped");
 
 while true {
-    var index = ds_stack_pop(undoStack);
+    index = ds_stack_pop(undoStack);
     if index == -1 {
         break;
     }
-    var value = ds_stack_pop(undoStack);
-    var iter = 0;
+    value = ds_stack_pop(undoStack);
+    iter = 0;
 
     show_debug_message("index " + string(index) + " value " + string(value));
 
+    willContinue = false; // we want to continue the outer loop, so we break out of the inner one and set this variable to true when we find something
+
     // 1. Player position
-    if index == iter { if instance_exists(objPlayer) { objPlayer.x = value; undoData[index] = value } continue; }
-    else if index == iter+1 { if instance_exists(objPlayer) { objPlayer.y = value; undoData[index] = value } continue; }
-    iter += 2;
+    if undoPopCheck() {if instance_exists(objPlayer) {objPlayer.x = value;} continue;}
+    if undoPopCheck() {if instance_exists(objPlayer) {objPlayer.y = value;} continue;}
 
     // 2. Key Counts, Stars, and Curses
-    var willContinue = false; // we want to continue the outer loop, so we break out of the inner one and set this variable to true when we find something
     for (var i = 0; i < COLORS; i+=1) {
-        if index == iter { global.key[i] = value; undoData[index] = value; willContinue = true; break; }
-        else if index == iter+1 { global.ikey[i] = value; undoData[index] = value; willContinue = true; break; }
-        else if index == iter+2 { global.star[i] = value; undoData[index] = value; willContinue = true; break; }
-        else if index == iter+3 { global.curse[i] = value; undoData[index] = value; willContinue = true; break; }
-        iter += 4;
+        if undoPopCheck() {global.key[i] = value; break;}
+        if undoPopCheck() {global.ikey[i] = value; break;}
+        if undoPopCheck() {global.star[i] = value; break;}
+        if undoPopCheck() {global.curse[i] = value; break;}
     }
     if willContinue { continue; }
 
@@ -49,40 +49,47 @@ while true {
     for (var i = 0; i < instancesCount; i += 1) {
         var instance = instances[i];
         if object_get_parent(instance.object_index) == oKeyBulk {
-            // a) Keys: Collected, Glitch Color
-            if index == iter { instance.active = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+1 { instance.glitchMimic = value; undoData[index] = value; willContinue = true; break; }
-            iter += 2;
+            // a) Keys: Active, Glitch Mimic
+            if undoPopCheck() {instance.active = value; break;}
+            if undoPopCheck() {instance.glitchMimic = value; break;}
         } else if object_get_parent(instance.object_index) == oDoorSimple
         || instance.object_index == oDoorSimple
         || instance.object_index == oDoorCombo {
-            // b) Doors: Opened, 3 Auras, cursed, Copies, Glitch Color
-            if index == iter { instance.active = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+1 { instance.aura[0] = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+2 { instance.aura[1] = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+3 { instance.aura[2] = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+4 { instance.cursed = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+5 { instance.glitchMimic = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+6 { instance.curseGlitchMimic = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+7 { instance.armamentGlitchMimic = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+8 { instance.copies = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+9 { instance.icopies = value; undoData[index] = value; willContinue = true; break; }
-            iter += 10;
+            // b) Doors: Active, 3 Auras, Cursed, Glitch Mimic, Copies
+            if undoPopCheck() {instance.active = value; break;}
+            if undoPopCheck() {instance.aura[0] = value; break;}
+            if undoPopCheck() {instance.aura[1] = value; break;}
+            if undoPopCheck() {instance.aura[2] = value; break;}
+            if undoPopCheck() {instance.cursed = value; break;}
+            if undoPopCheck() {instance.glitchMimic = value; break;}
+            if undoPopCheck() {instance.curseGlitchMimic = value; break;}
+            if undoPopCheck() {instance.armamentGlitchMimic = value; break;}
+            if undoPopCheck() {instance.copies = value; break;}
+            if undoPopCheck() {instance.icopies = value; break;}
         } else if instance.object_index == oGate {
-            // c) Gates: Glitch mimic
-            if index == iter { instance.glitchMimic = value; undoData[index] = value; willContinue = true; break; }
-            iter += 1;
+            // c) Gates: Glitch Mimic
+            if undoPopCheck() {instance.glitchMimic = value; break;}
         } else if instance.object_index == oKina {
-            // d) Kina: Opened, cursed, Copies
-            if index == iter { instance.active = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+1 { instance.cursed = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+2 { instance.copies = value; undoData[index] = value; willContinue = true; break; }
-            else if index == iter+3 { instance.icopies = value; undoData[index] = value; willContinue = true; break; }
-            iter += 4;
+            // d) Kina: Active, Cursed, Copies
+            if undoPopCheck() {instance.active = value; break;}
+            if undoPopCheck() {instance.cursed = value; break;}
+            if undoPopCheck() {instance.copies = value; break;}
+            if undoPopCheck() {instance.icopies = value; break;}
         } else if instance.object_index == oSalvageIn {
             // e) Salvage point: Interacted
-            if index == iter { instance.active = value; undoData[index] = value; willContinue = true; break; }
-            iter += 1;
+            if undoPopCheck() {instance.active = value; break;}
+        } else if instance.object_index == oRemoteLock {
+            // f) Remote Locks: Active, Satisfied, Cost, Auras, Cursed, Glitch Mimic
+            if undoPopCheck() {instance.active = value; break;}
+            if undoPopCheck() {instance.satisfied = value; break;}
+            if undoPopCheck() {instance.rcost = value; break;}
+            if undoPopCheck() {instance.icost = value; break;}
+            if undoPopCheck() {instance.aura[0] = value; break;}
+            if undoPopCheck() {instance.aura[1] = value; break;}
+            if undoPopCheck() {instance.aura[2] = value; break;}
+            if undoPopCheck() {instance.cursed = value; break;}
+            if undoPopCheck() {instance.glitchMimic = value; break;}
+            if undoPopCheck() {instance.curseGlitchMimic = value; break;}
         }
     }
     if willContinue { continue; }

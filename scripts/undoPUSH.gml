@@ -3,11 +3,12 @@
 1. Player position
 2. Key Counts, Stars, and Curses
 3. Object instances
-    a) Keys: Collected, Glitch Color (technically they all have synchronised glitch but its easier this way)
-    b) Doors: Opened, 3 Auras, cursed, Copies, Glitch Color
-    c) Gates: Glitch mimic (again, technically always synchronised)
-    d) Kina: Opened, cursed, Glitch Colors, Copies
+    a) Keys: Active, Glitch Mimic (technically they all have synchronised glitch but its easier this way)
+    b) Doors: Active, 3 Auras, Cursed, Glitch Mimic, Copies
+    c) Gates: Glitch Mimic (again, technically always synchronised)
+    d) Kina: Active, Cursed, Copies
     e) Salvage point: Interacted
+    f) Remote Locks: Active, Satisfied, Cost, Auras, Cursed, Glitch Mimic
 4. Which salvage point is interacted */
 
 // Find all the changes since the last save, then note them on the stack
@@ -44,13 +45,13 @@ for (var i = 0; i < COLORS; i+=1) {
 for (var i = 0; i < instancesCount; i+= 1) {
     var instance = instances[i];
     if object_get_parent(instance.object_index) == oKeyBulk {
-        // a) Keys: Collected, Glitch Color
+        // a) Keys: Active, Glitch Mimic
         undoPushChange(instance.active);
         undoPushChange(instance.glitchMimic);
     } else if object_get_parent(instance.object_index) == oDoorSimple
     || instance.object_index == oDoorSimple
     || instance.object_index == oDoorCombo {
-        // b) Doors: Opened, 3 Auras, cursed, Glitch Colors, Copies 
+        // b) Doors: Active, 3 Auras, Cursed, Glitch Mimic, Copies
         undoPushChange(instance.active);
         undoPushChange(instance.aura[0]);
         undoPushChange(instance.aura[1]);
@@ -65,13 +66,25 @@ for (var i = 0; i < instancesCount; i+= 1) {
         // c) Gates: Glitch mimic
         undoPushChange(instance.glitchMimic);
     } else if instance.object_index == oKina {
-        // d) Kina: Opened, cursed, Copies
+        // d) Kina: Active, Cursed, Copies
         undoPushChange(instance.active);
         undoPushChange(instance.cursed);
         undoPushChange(instance.copies);
         undoPushChange(instance.icopies);
     } else if instance.object_index == oSalvageIn {
         undoPushChange(instance.active);
+    } else if instance.object_index == oRemoteLock {
+        // f) Remote Locks: Satisfied, Cost, Auras, Cursed, Glitch Mimic
+        undoPushChange(instance.active);
+        undoPushChange(instance.satisfied);
+        undoPushChange(instance.rcost);
+        undoPushChange(instance.icost);
+        undoPushChange(instance.aura[0]);
+        undoPushChange(instance.aura[1]);
+        undoPushChange(instance.aura[2]);
+        undoPushChange(instance.cursed);
+        undoPushChange(instance.glitchMimic);
+        undoPushChange(instance.curseGlitchMimic);
     }
 }
 // 4. Which salvage point is interacted

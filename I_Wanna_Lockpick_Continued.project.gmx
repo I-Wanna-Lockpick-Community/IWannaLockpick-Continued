@@ -826,7 +826,6 @@
       <script>scripts\scrGetLockColor.gml</script>
       <script>scripts\scrComboStep.gml</script>
       <script>scripts\scrAddSpendAmt.gml</script>
-      <script>scripts\scrOpenCombo.gml</script>
       <script>scripts\removeAurasCombo.gml</script>
     </scripts>
     <scripts name="key/lock">
@@ -841,7 +840,7 @@
       <script>scripts\undoBUFFER.gml</script>
       <script>scripts\undoReposition.gml</script>
       <script>scripts\undoPushChange.gml</script>
-      <script>scripts\undoPopChange.gml</script>
+      <script>scripts\undoPopCheck.gml</script>
     </scripts>
     <scripts name="dialog">
       <script>scripts\diaStart.gml</script>
@@ -1045,6 +1044,7 @@
       <object>objects\oDropShadow</object>
       <object>objects\oPlayerWarpFade</object>
       <object>objects\oPlayerWarpFadeError</object>
+      <object>objects\oRemoteLockConnections</object>
     </objects>
     <objects name="blocks">
       <object>objects\objBlock</object>

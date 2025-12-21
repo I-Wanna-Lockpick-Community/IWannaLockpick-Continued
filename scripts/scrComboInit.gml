@@ -46,3 +46,6 @@ image_speed = 0;
 myLight = -1;
 
 baseColorSpend = 0; // for drawing
+
+remoteLock[0] = 0;
+remoteLocks = 0;

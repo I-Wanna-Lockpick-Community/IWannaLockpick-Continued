@@ -96,7 +96,12 @@ if distance_to_object(objPlayer) <= 1{
             //MAIN CODE
             var metRequirement = true;//Whether the requirement for every lock has been met
             for(var i = 0; i < lockCount; i += 1){
-                if !canOpen(scrLockEffectiveColor(i,true),lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7],lock[i,8],lock[i,9],lock[i,10]){
+                if !canOpen(scrLockEffectiveColor(i,true),lock[i,1],lock[i,2],lock[i,3],iPow,lock[i,7],lock[i,8],lock[i,9],lock[i,10]) {
+                    metRequirement = false;
+                }
+            }
+            for(var i = 0; i < remoteLocks; i += 1) {
+                if !remoteLock[i].satisfied {
                     metRequirement = false;
                 }
             }
@@ -114,6 +119,10 @@ if distance_to_object(objPlayer) <= 1{
             for(var i = 0; i < lockCount; i += 1){
                 scrAddSpendAmt(scrLockEffectiveColor(i,true),lock[i,1],lock[i,2],lock[i,3],tempIPow,lock[i,7],lock[i,8],lock[i,9],lock[i,10]);
             }
+            for(var i = 0; i < remoteLocks; i += 1) {
+                spendTotal += remoteLock[i].rcost;
+                spendITotal += remoteLock[i].icost;
+            }
             if (canSilverOpen) {
                 addComplexKeys(scrEffectiveColor(colorSpend,true,false),-spendTotal,-spendITotal,0);
                 addComplexKeys(color_SILVER,-1,0,tempIPow);
@@ -125,7 +134,7 @@ if distance_to_object(objPlayer) <= 1{
                 scrBroadcastCopy(scrEffectiveColor(colorSpend,true,false));
             } else if metRequirement {
                 addComplexKeys(scrEffectiveColor(colorSpend,true,false),-spendTotal,-spendITotal,0);
-                scrOpenCombo();
+                scrOpenOrCopy();
                 scrBroadcastCopy(scrEffectiveColor(colorSpend,true,false));
             }
         }
