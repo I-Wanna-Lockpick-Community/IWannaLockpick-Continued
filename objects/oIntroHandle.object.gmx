@@ -125,7 +125,7 @@ skipAlpha = .5 - 0.5*cos(degtorad(skipA));
             <kind>1</kind>
             <string>///dialog just advanced
 switch oDialogHandle.diaPos{
-    case 1://Introduce Lily
+    //case 1://Introduce Lily
     case 4://Letter
     case 6://Byebye
         diaFrame += 1;

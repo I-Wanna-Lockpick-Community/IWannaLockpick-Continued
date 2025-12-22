@@ -505,6 +505,7 @@
         <sprite>sprites\sprBub1x2</sprite>
         <sprite>sprites\sprBub2x2</sprite>
         <sprite>sprites\sprAura</sprite>
+        <sprite>sprites\sprDarkAura</sprite>
         <sprite>sprites\sprBrownAura</sprite>
         <sprite>sprites\sprWhiteAura</sprite>
         <sprite>sprites\sprBlackArrows</sprite>
@@ -1749,7 +1750,7 @@
       <room>rooms\rBackHubOld</room>
       <room>rooms\rMainHubX</room>
     </rooms>
-    <room>rooms\km</room>
+    <room>rooms\rc01</room>
   </rooms>
   <constants number="58">
     <constant name="vp_NONE">11</constant>

@@ -10,8 +10,9 @@
   <persistent>0</persistent>
   <colour>4210688</colour>
   <showcolour>0</showcolour>
-  <code>global.roomID = 0;
-global.msg = "";</code>
+  <code>global.roomID = 1;
+global.msg = "This is a Remote Lock. It only updates its check when you touch it.";
+global.rm = "CX-1A";</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

@@ -1515,8 +1515,10 @@ switch diaID{
         diaLine(12,ts_SYS,vp_SYS,0,"Now, it's time to set your options. I advise you look through all of them carefully, and remember that you will be able to change them ingame at any time within the pause menu.");
     break;
     case 91://Intro 1
-        numLines = 1; endAction = 9; // usually end action 5
-        diaLine(0,ts_NARRA,vp_NARRA,3,"Placeholder introduction");
+        numLines = 3; endAction = 9; // usually end action 5
+        diaLine(0,ts_NARRA,vp_NARRA,3,"Hello! You are playing the C1-C5 mechanics demo for IWL:Continued.");
+        diaLine(1,ts_NARRA,vp_NARRA,3,"If anything breaks, or if you have any questions, ask in our discord server.");
+        diaLine(2,ts_NARRA,vp_NARRA,3,"https://discord.gg/ATC6zc5695");
 		/*diaLine(0,ts_NARRA,vp_NARRA,3,"Hello! Today I'd like to tell you a story about someone's journey to someplace special.");
         diaLine(1,ts_NARRA,vp_NARRA,3,"That someone is this pleasant girl named Lily, who is currently waving at you. Say hi!");
         diaLine(2,ts_NARRA,vp_NARRA,3,"Recently, she's been wanting to get out of the house for a bit and do something fun.");

@@ -1014,23 +1014,23 @@ if (global.debugShowHitbox){
     draw_sprite_ext(mask_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha*0.8);
 }
 
-if aura[0]{
+if aura[0] == 1{
     draw_sprite_ext(sprAura,0,x,y,1,1,0,c_white,0.5);
 }
-if aura[1]{
+if aura[1] == 1{
     draw_sprite_ext(sprAura,1,x,y,1,1,0,c_white,0.5);
 }
-if aura[2]{
+if aura[2] == 1{
     draw_sprite_ext(sprAura,2,x,y,1,1,0,c_white,0.5);
 }
 if aura[0] == -1{
-    draw_sprite_ext(sprAura,0,x,y,1,1,0,c_gray,0.5);
+    draw_sprite_ext(sprDarkAura,0,x,y,1,1,0,c_white,0.5);
 }
 if aura[1] == -1{
-    draw_sprite_ext(sprAura,1,x,y,1,1,0,c_gray,0.5);
+    draw_sprite_ext(sprDarkAura,1,x,y,1,1,0,c_white,0.5);
 }
 if aura[2] == -1{
-    draw_sprite_ext(sprAura,2,x,y,1,1,0,c_gray,0.5);
+    draw_sprite_ext(sprDarkAura,2,x,y,1,1,0,c_white,0.5);
 }
 
 var shineColor;
