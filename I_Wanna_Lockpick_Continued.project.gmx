@@ -1750,7 +1750,9 @@
       <room>rooms\rBackHubOld</room>
       <room>rooms\rMainHubX</room>
     </rooms>
-    <room>rooms\rc01</room>
+    <room>rooms\rcx1a</room>
+    <room>rooms\rcx1b</room>
+    <room>rooms\rcx1c</room>
   </rooms>
   <constants number="58">
     <constant name="vp_NONE">11</constant>

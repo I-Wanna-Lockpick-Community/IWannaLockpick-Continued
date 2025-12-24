@@ -252,6 +252,50 @@ switch type {
         }
     break;
     case lock_BLAST:
+    case lock_ALL:
+        draw_set_font(fTalk);
+        draw_set_valign(fa_bottom);
+        var nipow = 0;
+        if ((denom != 0) != (idenom != 0)) && (count == 0 || icount == 0) {
+            if idenom > 0 {nipow = 3;}
+            else if denom < 0 {nipow = 2;}
+            else if idenom < 0 {nipow = 1;}
+        }
+        var numerator = strComplex(rotateR(count,icount,nipow),rotateI(count,icount,nipow));
+        if numerator == "1" {numerator = "";}
+
+        var symbolOffsetX = 10;
+        var strWidth = string_width(numerator) + symbolOffsetX;
+        var startX = xRel + round((width - strWidth)/2) - offsetX;
+        var startY = yRel + round((height + 14)/2) - offsetY;
+
+        if isPartial {
+            var denominator = strComplex(rotateR(denom,idenom,nipow),rotateI(denom,idenom,nipow));
+            var denomWidth = string_width(denominator);
+            var denomStartX = xRel + round((width - denomWidth)/2) - offsetX;
+            var denomStartY = startY + 10;
+            startY -= 10;
+            draw_text(denomStartX,denomStartY,denominator);
+
+            var lineWidth = max(strWidth,denomWidth);
+            var lineStartX = xRel + round((width-lineWidth)/2) - offsetX;
+            var lineStartY = yRel + startY+2 - offsetY;
+            draw_rectangle(lineStartX,lineStartY,lineStartX+lineWidth,lineStartY+2,false);
+        }
+
+        draw_text(startX,startY,numerator);
+
+        var index = 4;
+        if type == lock_BLAST {
+            switch nipow {
+                case 0: index = 2; break;
+                case 3: index = 3; break;
+                case 2: index = 6; break;
+                case 1: index = 7; break;
+            }
+        }
+        draw_sprite(sprSymbols,index,startX+strWidth-symbolOffsetX/2-16,startY-7-16);
+    /*
         if denom == 0 && idenom == 0 {
             index = 2;
             if count < 0 {index = 6}
@@ -319,6 +363,7 @@ switch type {
 
         var linewidth = max(string_width(numbersCount)+9, string_width(numbersDenom))
         draw_rectangle(xRel+floor((width-linewidth)/2),yRel+height/2-1,xRel+floor((width+linewidth)/2),yRel+height/2,false)
+        */
     break;
 }
 draw_set_color(c_white);

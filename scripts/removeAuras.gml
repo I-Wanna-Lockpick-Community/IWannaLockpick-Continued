@@ -1,5 +1,6 @@
 var auraPlayNoise = 0;
-if objPlayer.aura[0] == 1 && aura[0] == 1 && (color != color_MAROON && colorSpend != color_MAROON && glitchMimic != color_MAROON){ //Red key
+var noColorSpend = object_index == oRemoteLock;
+if objPlayer.aura[0] == 1 && aura[0] == 1 && (color != color_MAROON && (noColorSpend || colorSpend != color_MAROON) && glitchMimic != color_MAROON){ //Red key
     aura[0] = 0;
     auraPlayNoise = 1;
     var colorOld = color;
@@ -9,7 +10,7 @@ if objPlayer.aura[0] == 1 && aura[0] == 1 && (color != color_MAROON && colorSpen
     brownNearPlayer = 1;
     undoBUFFER();
 }
-if objPlayer.aura[1] == 1 && aura[1] == 1 && (color != color_FOREST && colorSpend != color_FOREST && glitchMimic != color_FOREST){ //Green key
+if objPlayer.aura[1] == 1 && aura[1] == 1 && (color != color_FOREST && (noColorSpend || colorSpend != color_FOREST) && glitchMimic != color_FOREST){ //Green key
     aura[1] = 0;
     auraPlayNoise = 1;
     var colorOld = color;
@@ -19,7 +20,7 @@ if objPlayer.aura[1] == 1 && aura[1] == 1 && (color != color_FOREST && colorSpen
     brownNearPlayer = 1;
     undoBUFFER();
 }
-if objPlayer.aura[2] == 1 && aura[2] == 1 && (color != color_NAVY && colorSpend != color_NAVY && glitchMimic != color_NAVY){ //Blue key
+if objPlayer.aura[2] == 1 && aura[2] == 1 && (color != color_NAVY && (noColorSpend || colorSpend != color_NAVY) && glitchMimic != color_NAVY){ //Blue key
     aura[2] = 0;
     auraPlayNoise = 1;
     var colorOld = color;
@@ -30,7 +31,7 @@ if objPlayer.aura[2] == 1 && aura[2] == 1 && (color != color_NAVY && colorSpend 
     undoBUFFER();
 }
 //Dark auras
-if objPlayer.aura[0] == -1 && aura[0] != 1 && (color != color_RED && colorSpend != color_RED && glitchMimic != color_RED){ //Maroon key
+if objPlayer.aura[0] == -1 && aura[0] != 1 && (color != color_RED && (noColorSpend || colorSpend != color_RED) && glitchMimic != color_RED){ //Maroon key
     aura[0] = 1;
     auraPlayNoise = 1;
     var colorOld = color;
@@ -40,7 +41,7 @@ if objPlayer.aura[0] == -1 && aura[0] != 1 && (color != color_RED && colorSpend 
     brownNearPlayer = 1;
     undoBUFFER();
 }
-if objPlayer.aura[1] == -1 && aura[1] != 1 && (color != color_GREEN && colorSpend != color_GREEN && glitchMimic != color_GREEN){ //Forest key
+if objPlayer.aura[1] == -1 && aura[1] != 1 && (color != color_GREEN && (noColorSpend || colorSpend != color_GREEN) && glitchMimic != color_GREEN){ //Forest key
     aura[1] = 1;
     auraPlayNoise = 1;
     var colorOld = color;
@@ -50,7 +51,7 @@ if objPlayer.aura[1] == -1 && aura[1] != 1 && (color != color_GREEN && colorSpen
     brownNearPlayer = 1;
     undoBUFFER();
 }
-if objPlayer.aura[2] == -1 && aura[2] != 1 && (color != color_BLUE && colorSpend != color_BLUE && glitchMimic != color_BLUE){ //Navy key
+if objPlayer.aura[2] == -1 && aura[2] != 1 && (color != color_BLUE && (noColorSpend || colorSpend != color_BLUE) && glitchMimic != color_BLUE){ //Navy key
     aura[2] = 1;
     auraPlayNoise = 1;
     var colorOld = color;

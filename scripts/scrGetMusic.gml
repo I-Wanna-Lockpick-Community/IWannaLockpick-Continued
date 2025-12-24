@@ -17,10 +17,10 @@ switch (room)                       //determines which song to play
     //case rStage02:                //this room has a play music object in it so it doesnt need to be included in this script
         roomSong = -1;
         break;                      //make sure to always put a break after setting the song
-    case rMainHub:
-        roomSong = musLeaves;
-        global.musicTitle = "LCDDem - Leaves";
-        break;
+    //case rMainHub:
+    //    roomSong = musLeaves;
+    //    global.musicTitle = "LCDDem - Leaves";
+    //    break;
     case rBackHub:
         roomSong = musBackside;
         global.musicTitle = "ZWEI 2 - Floating Island 'Ilvard'";
