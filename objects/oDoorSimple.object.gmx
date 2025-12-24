@@ -42,6 +42,7 @@ curseGlitchMimic = color_GLITCH;
 armamentGlitchMimic = color_GLITCH;
 baseColor = 0; // for drawing
 baseColorSpend = 0; // for drawing
+debrisColor = 0;
 count = 1;
 icount = 0;
 type = 0;//0 = Normal, 1 = Blank, 2 = Blank, 3 = All, 4 = Exact
@@ -431,12 +432,12 @@ with oSalvageIn{
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebrisS)){
-            c1 = global.highTone[other.baseColor];
-            c2 = global.mainTone[other.baseColor];
-            c3 = global.darkTone[other.baseColor];
-            c1 = global.highTone[other.baseColor];
-            c2 = global.mainTone[other.baseColor];
-            c3 = global.darkTone[other.baseColor];
+            c1 = global.highTone[other.debrisColor];
+            c2 = global.mainTone[other.debrisColor];
+            c3 = global.darkTone[other.debrisColor];
+            c1 = global.highTone[other.debrisColor];
+            c2 = global.mainTone[other.debrisColor];
+            c3 = global.darkTone[other.debrisColor];
             xT = other.xT;
             yT = other.yT;
         }
@@ -514,7 +515,6 @@ if instance_exists(oLightsW5) || instance_exists(oLightsW4) || instance_exists(o
           <argument>
             <kind>1</kind>
             <string>///Brown particle burst
-var _bp;
 if cursed != -1 {
     alarm[0] = 120;
     for(var ix = 0; ix&lt;(2*w); ix+=1){
@@ -566,12 +566,12 @@ copyTimer = 0;
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris3)){
-            c1 = global.highTone[other.baseColor];
-            c2 = global.mainTone[other.baseColor];
-            c3 = global.darkTone[other.baseColor];
-            c1 = global.highTone[other.baseColor];
-            c2 = global.mainTone[other.baseColor];
-            c3 = global.darkTone[other.baseColor];
+            c1 = global.highTone[other.debrisColor];
+            c2 = global.mainTone[other.debrisColor];
+            c3 = global.darkTone[other.debrisColor];
+            c1 = global.highTone[other.debrisColor];
+            c2 = global.mainTone[other.debrisColor];
+            c3 = global.darkTone[other.debrisColor];
         }
     }
 }
@@ -607,12 +607,12 @@ copyTimer = 0;
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris2)){
-            c1 = global.highTone[other.baseColor];
-            c2 = global.mainTone[other.baseColor];
-            c3 = global.darkTone[other.baseColor];
-            c1 = global.highTone[other.baseColor];
-            c2 = global.mainTone[other.baseColor];
-            c3 = global.darkTone[other.baseColor];
+            c1 = global.highTone[other.debrisColor];
+            c2 = global.mainTone[other.debrisColor];
+            c3 = global.darkTone[other.debrisColor];
+            c1 = global.highTone[other.debrisColor];
+            c2 = global.mainTone[other.debrisColor];
+            c3 = global.darkTone[other.debrisColor];
         }
     }
 }
@@ -642,12 +642,12 @@ for(var ix = 0; ix&lt;(2*w); ix+=1){
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris)){
-            c1 = global.highTone[other.baseColor];
-            c2 = global.mainTone[other.baseColor];
-            c3 = global.darkTone[other.baseColor];
-            c1 = global.highTone[other.baseColor];
-            c2 = global.mainTone[other.baseColor];
-            c3 = global.darkTone[other.baseColor];
+            c1 = global.highTone[other.debrisColor];
+            c2 = global.mainTone[other.debrisColor];
+            c3 = global.darkTone[other.debrisColor];
+            c1 = global.highTone[other.debrisColor];
+            c2 = global.mainTone[other.debrisColor];
+            c3 = global.darkTone[other.debrisColor];
         }
     }
 }
@@ -801,6 +801,7 @@ if cursed != -1 &amp;&amp; cursed != color_PURE {
 if copyDraw == 1 { // spend is not drawn while the copy animation is happening
     scrDrawDoorSpend(baseColorSpend);
 }
+debrisColor = baseColor;
 
 var noCopies = (global.complexMode == 0 &amp;&amp; copies == 0) || (global.complexMode == 1 &amp;&amp; icopies == 0);
 if noCopies {

@@ -8,6 +8,9 @@ for(var i = 0; i < lockCount; i += 1){
         metRequirement = 0;
     }
 }
+for (var i = 0; i < remoteLocks; i += 1) {
+    if !remoteLock[i].satisfied {metRequirement = 0;}
+}
 if metRequirement{//Just turns solid or not
     solid = 0;
 }else{

@@ -17,6 +17,9 @@ if baseColorSpend == color_MASTER{
     setShdTile(sprDDynaTexture,floor(global.goldIndex),0,x,y,w*32,h*32);
     draw_sprite_ext(sprDDynaTexture,floor(global.goldIndex),x,y,w*0.5,h*0.5,0,c_white,1);
     shader_reset();
+}else if baseColorSpend == color_SILVER{
+    draw_sprite_ext(sprDSilverTexture,floor(global.goldIndex)%4,x,y,w/2,h/2,0,c_white,1);
+    // @addcolor if door image/animation
 }else{
     highTone = global.highTone[baseColorSpend];
     mainTone = global.mainTone[baseColorSpend];

@@ -55,9 +55,43 @@ animColor = 0;
 animAlpha = 0;
 
 baseColor = 0;
+debrisColor = 0;
 
 doors = 0; // might be gates!
 door[0] = 0; // id of the doors
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if cursed != -1{
+    alarm[0] = 120;
+    if !active {exit;}
+    for(var ix = 0; ix&lt;(w-15); ix+=16){
+        for(var iy = 0; iy&lt;(h-15); iy+=16){
+            with(instance_create(x+random_range(4,12)+ix-xOffset,y+random_range(4,12)+iy-yOffset,oBrownParticle)){
+                color = other.cursed;
+            }
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -145,6 +179,26 @@ if distToP &lt;= 1 {
           <argument>
             <kind>1</kind>
             <string>///Brown particle burst
+if cursed != -1 {
+    alarm[0] = 120;
+    for(var ix = 0; ix&lt;(w-15); ix+=16){
+        for(var iy = 0; iy&lt;(h-15); iy+=16){
+            with(instance_create(x+random_range(4,12)+ix-xOffset,y+random_range(4,12)+iy-yOffset,oBrownParticle)){
+                scale = random_range(.2,.5);
+                color = other.cursed;
+            }
+        }
+    }
+}else{
+    for(var ix = 0; ix&lt;(w-15); ix+=16){
+        for(var iy = 0; iy&lt;(h-15); iy+=16){
+            with(instance_create(x+random_range(4,12)+ix-xOffset,y+random_range(4,12)+iy-yOffset,oBrownParticle)){
+                scale = random_range(.2,.5);
+                mode = 1;
+            }
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -195,6 +249,18 @@ for (var i = 0; i &lt; doors; i += 1) {
           <argument>
             <kind>1</kind>
             <string>///Make debris
+for(var ix = 0; ix&lt;(w-15); ix+=16){
+    for(var iy = 0; iy&lt;(h-15); iy+=16){
+        with(instance_create(x+ix,y+iy,oDebris)){
+            c1 = global.highTone[other.debrisColor];
+            c2 = global.mainTone[other.debrisColor];
+            c3 = global.darkTone[other.debrisColor];
+            c1 = global.highTone[other.debrisColor];
+            c2 = global.mainTone[other.debrisColor];
+            c3 = global.darkTone[other.debrisColor];
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -220,6 +286,11 @@ for (var i = 0; i &lt; doors; i += 1) {
             <string>///setup
 xOffset = sprite_get_xoffset(sprite);
 yOffset = sprite_get_yoffset(sprite);
+spendTotal = 0;
+spendITotal = 0;
+scrAddSpendAmt(scrEffectiveColor(color,true,true),count,icount,type,0,exactI||isPartial,denom,idenom,negated);
+rcost = spendTotal;
+icost = spendITotal;
 </string>
           </argument>
         </arguments>
@@ -247,6 +318,8 @@ baseColor = color;
 if cursed != -1 &amp;&amp; cursed != color_PURE {
     baseColor = cursed;
 }
+debrisColor = baseColor;
+
 scrDrawDoorLock(baseColor,count,icount,type,0,0,sprite,exactI||isPartial,denom,idenom,negated,armament,0,false);
 scrDrawDoorAura(aura[0],aura[1],aura[2],x-xOffset,y-yOffset,w,h);
 if animAlpha &gt; 0 {

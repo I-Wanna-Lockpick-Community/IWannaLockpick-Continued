@@ -271,9 +271,9 @@ with oSalvageIn{
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebrisS)){
-            c1 = global.highTone[other.baseColorSpend];
-            c2 = global.mainTone[other.baseColorSpend];
-            c3 = global.darkTone[other.baseColorSpend];
+            c1 = global.highTone[other.debrisColor];
+            c2 = global.mainTone[other.debrisColor];
+            c3 = global.darkTone[other.debrisColor];
             xT = other.xT;
             yT = other.yT;
         }
@@ -388,9 +388,9 @@ copyTimer = 0;
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris3)){
-            c1 = global.highTone[other.baseColorSpend];
-            c2 = global.mainTone[other.baseColorSpend];
-            c3 = global.darkTone[other.baseColorSpend];
+            c1 = global.highTone[other.debrisColor];
+            c2 = global.mainTone[other.debrisColor];
+            c3 = global.darkTone[other.debrisColor];
         }
     }
 }
@@ -426,9 +426,9 @@ copyTimer = 0;
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris2)){
-            c1 = global.highTone[other.baseColorSpend];
-            c2 = global.mainTone[other.baseColorSpend];
-            c3 = global.darkTone[other.baseColorSpend];
+            c1 = global.highTone[other.debrisColor];
+            c2 = global.mainTone[other.debrisColor];
+            c3 = global.darkTone[other.debrisColor];
         }
     }
 }
@@ -458,9 +458,9 @@ for(var ix = 0; ix&lt;(2*w); ix+=1){
 for(var ix = 0; ix&lt;(2*w); ix+=1){
     for(var iy = 0; iy&lt;(2*h); iy+=1){
         with(instance_create(x+16*ix,y+16*iy,oDebris)){
-            c1 = global.highTone[other.baseColorSpend];
-            c2 = global.mainTone[other.baseColorSpend];
-            c3 = global.darkTone[other.baseColorSpend];
+            c1 = global.highTone[other.debrisColor];
+            c2 = global.mainTone[other.debrisColor];
+            c3 = global.darkTone[other.debrisColor];
         }
     }
 }
@@ -583,6 +583,7 @@ if cursed != -1 &amp;&amp; cursed != color_PURE {
 if copyDraw == 1{
     scrDrawDoorSpend(baseColorSpend);
 }
+debrisColor = baseColorSpend;
 
 var noCopies = (global.complexMode == 0 &amp;&amp; copies == 0) || (global.complexMode == 1 &amp;&amp; icopies == 0);
 if noCopies {

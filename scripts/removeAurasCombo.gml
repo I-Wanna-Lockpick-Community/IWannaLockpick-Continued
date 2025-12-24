@@ -28,30 +28,24 @@ var auraPlayNoise = 0;
 if objPlayer.aura[0] == 1 && aura[0] == 1 && auraE[0] != 0{ //Red
     aura[0] = 0;
     auraPlayNoise = 1;
-    var colorOld = baseColorSpend;
-    baseColorSpend = color_WHITE;
+    debrisColor = color_WHITE;
     event_user(0);
-    baseColorSpend = colorOld;
     brownNearPlayer = 1;
     undoBUFFER();
 }
 if objPlayer.aura[1] == 1 && aura[1] == 1 && auraE[1] != 0{ //Green
     aura[1] = 0;
     auraPlayNoise = 1;
-    var colorOld = baseColorSpend;
-    baseColorSpend = color_BROWN;
+    debrisColor = color_BROWN;
     event_user(0);
-    baseColorSpend = colorOld;
     brownNearPlayer = 1;
     undoBUFFER();
 }
 if objPlayer.aura[2] == 1 && aura[2] == 1 && auraE[2] != 0{ //Blue
     aura[2] = 0;
     auraPlayNoise = 1;
-    var colorOld = baseColorSpend;
-    baseColorSpend = color_ORANGE;
+    debrisColor = color_ORANGE;
     event_user(0);
-    baseColorSpend = colorOld;
     brownNearPlayer = 1;
     undoBUFFER();
 }
@@ -59,33 +53,28 @@ if objPlayer.aura[2] == 1 && aura[2] == 1 && auraE[2] != 0{ //Blue
 if objPlayer.aura[0] == -1 && aura[0] != 1 && auraE[3] != 0{ //Maroon
     aura[0] = 1;
     auraPlayNoise = 1;
-    var colorOld = baseColorSpend;
-    baseColorSpend = color_WHITE;
+    debrisColor = color_WHITE;
     event_user(0);
-    baseColorSpend = colorOld;
     brownNearPlayer = 1;
     undoBUFFER();
 }
 if objPlayer.aura[1] == -1 && aura[1] != 1 && auraE[4] != 0{ //Forest
     aura[1] = 1;
     auraPlayNoise = 1;
-    var colorOld = baseColorSpend;
-    baseColorSpend = color_BROWN;
+    debrisColor = color_BROWN;
     event_user(0);
-    baseColorSpend = colorOld;
     brownNearPlayer = 1;
     undoBUFFER();
 }
 if objPlayer.aura[2] == -1 && aura[2] != 1 && auraE[5] != 0{ //Navy
     aura[2] = 1;
     auraPlayNoise = 1;
-    var colorOld = baseColorSpend;
-    baseColorSpend = color_ORANGE;
+    debrisColor = color_ORANGE;
     event_user(0);
-    baseColorSpend = colorOld;
     brownNearPlayer = 1;
     undoBUFFER();
 }
 if auraPlayNoise{
     scrPlaySoundExt(sndCrumble,1,1,false);
 }
+debrisColor = baseColorSpend;

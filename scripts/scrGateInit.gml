@@ -10,3 +10,6 @@ h = 1;
 
 image_speed = 0;
 myLight = -1;
+
+remoteLocks = 0;
+remoteLock[0] = 0;

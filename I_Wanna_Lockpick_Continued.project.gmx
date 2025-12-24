@@ -1347,7 +1347,7 @@
       <object>objects\oDoorBlack</object>
       <object>objects\oDoorStone</object>
       <object>objects\oDoorGlitch</object>
-      <object>objects\oDoorDyna</object>
+      <object>objects\oDoorDynamite</object>
       <object>objects\oDoorSilver</object>
       <object>objects\oDoorMaroon</object>
       <object>objects\oDoorForest</object>
@@ -1753,6 +1753,12 @@
     <room>rooms\rcx1a</room>
     <room>rooms\rcx1b</room>
     <room>rooms\rcx1c</room>
+    <room>rooms\rcx1d</room>
+    <room>rooms\rcx2a</room>
+    <room>rooms\rcx2b</room>
+    <room>rooms\rcx2c</room>
+    <room>rooms\rcx2d</room>
+    <room>rooms\rcx2e</room>
   </rooms>
   <constants number="58">
     <constant name="vp_NONE">11</constant>
