@@ -881,7 +881,6 @@
     <scripts name="gate">
       <script>scripts\scrGateInit.gml</script>
       <script>scripts\scrGateDrawMain.gml</script>
-      <script>scripts\scrGateDrawFill.gml</script>
       <script>scripts\scrGateStep.gml</script>
     </scripts>
     <scripts name="pauseoption">
@@ -1759,6 +1758,18 @@
     <room>rooms\rcx2c</room>
     <room>rooms\rcx2d</room>
     <room>rooms\rcx2e</room>
+    <room>rooms\rcx3a</room>
+    <room>rooms\rcx3b</room>
+    <room>rooms\rcx3c</room>
+    <room>rooms\rcx3d</room>
+    <room>rooms\rcx4a</room>
+    <room>rooms\rcx4b</room>
+    <room>rooms\rcx5a</room>
+    <room>rooms\rcx5b</room>
+    <room>rooms\rcx5c</room>
+    <room>rooms\rcx5d</room>
+    <room>rooms\rcx5e</room>
+    <room>rooms\rcx5f</room>
   </rooms>
   <constants number="58">
     <constant name="vp_NONE">11</constant>

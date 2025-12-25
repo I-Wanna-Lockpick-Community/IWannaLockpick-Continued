@@ -24,27 +24,46 @@ switch argument3 {
     break;
     case lock_BLAST://blast (can accept real or imaginary, but not both)
         if isPartial {
+            var interRCost = 0;
+            var interICost = 0;
+            if denom != 0 {interRCost = key*count; interICost = key*icount}
+            if idenom != 0 {interRCost -= ikey*icount; interICost += ikey*count}
             if denom != 0 || idenom != 0 {
-                var rquotient = scrComplexDivide(global.key[open_check],global.ikey[open_check],denom,idenom);
-                rcost = scrTruncate(rquotient*count);
-                icost = scrTruncate(rquotient*icount);
+                rcost = scrTruncate(scrComplexDivide(interRCost,interICost,denom,idenom));
+                icost = scrTruncate(scrComplexDivideI(interRCost,interICost,denom,idenom));
             }
         } else {
-            if count != 0 { rcost = global.key[open_check]; }
-            if icount != 0 { icost = global.ikey[open_check]; }
+            var interRCost = count * key - icount * ikey;
+            var interICost = icount * key + count * ikey;
+            var denomNIPow = 0;
+            if (denom != 0) != (idenom != 0) {
+                if idenom > 0 {denomNIPow = 3;}
+                else if denom < 0 {denomNIPow = 2;}
+                else if idenom < 0 {denomNIPow = 1;}
+            }
+            rcost = rotateR(interRCost,interICost,denomNIPow);
+            icost = rotateI(interRCost,interICost,denomNIPow);
         }
     break;
     case lock_ALL://equals
         if isPartial {
             if denom != 0 || idenom != 0 {
-                var rquotient = scrComplexDivide(global.key[open_check],global.ikey[open_check],denom,idenom);
-                var iquotient = scrComplexDivideI(global.key[open_check],global.ikey[open_check],denom,idenom);
+                var rquotient = scrComplexDivide(key,ikey,denom,idenom);
+                var iquotient = scrComplexDivideI(key,ikey,denom,idenom);
                 rcost = scrTruncate(rquotient*count-iquotient*icount);
                 icost = scrTruncate(iquotient*count+rquotient*icount);
             }
         } else {
-            rcost = global.key[open_check];
-            icost = global.ikey[open_check];
+            var interRCost = count * key - icount * ikey;
+            var interICost = icount * key + count * ikey;
+            var denomNIPow = 0;
+            if (denom != 0) != (idenom != 0) {
+                if idenom > 0 {denomNIPow = 3;}
+                else if denom < 0 {denomNIPow = 2;}
+                else if idenom < 0 {denomNIPow = 1;}
+            }
+            rcost = scrTruncate(rotateR(interRCost,interICost,denomNIPow));
+            icost = scrTruncate(rotateI(interRCost,interICost,denomNIPow));
         }
     break;
 }

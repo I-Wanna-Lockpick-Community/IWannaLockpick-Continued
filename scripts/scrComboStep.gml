@@ -135,7 +135,7 @@ if distance_to_object(objPlayer) <= 1{
             } else if metRequirement {
                 addComplexKeys(scrEffectiveColor(colorSpend,true,false),-spendTotal,-spendITotal,0);
                 scrOpenOrCopy();
-                scrBroadcastCopy(scrEffectiveColor(colorSpend,true,false));
+                if auraCount == 0 {scrBroadcastCopy(scrEffectiveColor(colorSpend,true,false));}
             }
         }
     }

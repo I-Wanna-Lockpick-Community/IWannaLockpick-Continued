@@ -343,7 +343,7 @@ if distToP &lt;= 1 {
         }
         spendTotal = 0;
         spendITotal = 0;
-        scrAddSpendAmt(scrEffectiveColor(color,true,true),count,icount,type,tempIPow,exactI||isPartial,denom,idenom,negated);
+        scrAddSpendAmt(scrEffectiveColor(color,true,true,armament),count,icount,type,tempIPow,exactI||isPartial,denom,idenom,negated);
         for(var i = 0; i &lt; remoteLocks; i += 1) {
             spendTotal += remoteLock[i].rcost;
             spendITotal += remoteLock[i].icost;
@@ -358,7 +358,7 @@ if distToP &lt;= 1 {
             undoBUFFER();
             scrBroadcastCopy(scrEffectiveColor(colorSpend,true,false)); // should it?
         } else {
-            var metRequirement = canOpen(scrEffectiveColor(color,true,true),count,icount,type,tempIPow,exactI||isPartial,denom,idenom,negated);
+            var metRequirement = canOpen(scrEffectiveColor(color,true,true,armament),count,icount,type,tempIPow,exactI||isPartial,denom,idenom,negated);
             for(var i = 0; i &lt; remoteLocks; i += 1) {
                 if !remoteLock[i].satisfied {
                     metRequirement = false;
@@ -367,7 +367,7 @@ if distToP &lt;= 1 {
             if metRequirement {
                 addComplexKeys(scrEffectiveColor(colorSpend,true,false),-spendTotal,-spendITotal,0);
                 scrOpenOrCopy();
-                scrBroadcastCopy(scrEffectiveColor(colorSpend,true,false));
+                if auraCount == 0 {scrBroadcastCopy(scrEffectiveColor(colorSpend,true,false));}
             }
         }
     }
@@ -818,8 +818,9 @@ if noCopies {
 
     scrDrawDoorFrame(isNegative != (global.complexMode == 0 &amp;&amp; copies &lt; 0 || global.complexMode == 1 &amp;&amp; icopies &lt; 0));
 }
+if armament { scrDrawDoorAura(aura[0],aura[1],aura[2],x,y,w*32,h*32); }
 scrDrawDoorLock(baseColor,count,icount,type,0,0,scrSimpleDoorGetLockSprite(),exactI||isPartial,denom,idenom,negated,armament,iPow,noCopies);
-scrDrawDoorAura(aura[0],aura[1],aura[2],x,y,w*32,h*32);
+if !armament { scrDrawDoorAura(aura[0],aura[1],aura[2],x,y,w*32,h*32); }
 </string>
           </argument>
         </arguments>

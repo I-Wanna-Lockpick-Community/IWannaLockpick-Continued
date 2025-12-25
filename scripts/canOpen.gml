@@ -21,29 +21,24 @@ switch argument3{
         can = key == 0 && ikey == 0;
     break;
     case lock_BLAST:
-        if !isPartial && denom == 0 && idenom == 0 {
-            denom = count;
-            idenom = icount;
-        }
-        if denom == 0 && idenom == 0 { can = false; }
-        else if denom != 0 && key*denom <= 0 { can = false; }
-        else if idenom != 0 && ikey*idenom <= 0 { can = false; }
+        if (denom == 0) && (idenom == 0) {can = false;}
+        else if ((denom != 0) && sign(denom) != sign(key)) || ((idenom != 0) && sign(idenom) != sign(ikey)) {can = false;}
         else if isPartial {
-            if denom != 0 && key % denom != 0 { can = false; }
-            if idenom != 0 && ikey % idenom != 0 { can = false; }
+            var keyAlong = 0;
+            var keyIAlong = 0;
+            if denom != 0 {keyAlong = key;}
+            if idenom != 0 {keyIAlong = ikey;}
+            var rquotient = scrComplexDivide(keyAlong,keyIAlong,denom,idenom);
+            var iquotient = scrComplexDivideI(keyAlong,keyIAlong,denom,idenom);
+            if (rquotient % 1 != 0) || (rquotient <= 0) || (iquotient) {can = false;}
         }
     break;
     case lock_ALL:
-        if !isPartial && denom == 0 && idenom == 0 {
-            denom = count;
-            idenom = icount;
-        }
-        if denom == 0 && idenom == 0 { can = false; }
-        else if key == 0 && ikey == 0 { can = false; }
+        if (key == 0 && ikey == 0) || (denom == 0 && idenom == 0) {can = false;}
         else if isPartial {
-            var rquotient = scrComplexDivide(global.key[open_check],global.ikey[open_check],denom,idenom);
-            var iquotient = scrComplexDivideI(global.key[open_check],global.ikey[open_check],denom,idenom);
-            if (rquotient % 1 != 0 || iquotient % 1 != 0) { can = false; }
+            var rquotient = scrComplexDivide(key,ikey,denom,idenom);
+            var iquotient = scrComplexDivideI(key,ikey,denom,idenom);
+            if (rquotient % 1 != 0) || (iquotient % 1 != 0) {can = false;}
         }
     break;
     case lock_EXACT:

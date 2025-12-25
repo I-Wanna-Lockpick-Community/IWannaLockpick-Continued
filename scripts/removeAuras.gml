@@ -24,6 +24,7 @@ if objPlayer.aura[2] == 1 && aura[2] == 1 && (color != color_NAVY && (noColorSpe
     brownNearPlayer = 1;
     undoBUFFER();
 }
+if object_index == oRemoteLock && armament {return 0;}
 //Dark auras
 if objPlayer.aura[0] == -1 && aura[0] != 1 && (color != color_RED && (noColorSpend || colorSpend != color_RED) && glitchMimic != color_RED){ //Maroon key
     aura[0] = 1;

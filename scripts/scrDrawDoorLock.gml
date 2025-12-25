@@ -10,7 +10,7 @@ var type = argument3;
 var xRel = argument4 + x;
 var yRel = argument5 + y;
 var sprite = argument6;
-var exactI = type == lock_EXACT && argument7;
+var exactI = type == lock_EXACT && (argument7 != (argument12 % 2 == 1));
 var isPartial = type != lock_EXACT && argument7;
 var denom = rotateR(argument8,argument9,argument12);
 var idenom = rotateI(argument8,argument9,argument12);;
@@ -33,12 +33,11 @@ if sprite == sprLockAny {
     if object_index == oRemoteLock {
         width = w;
         height = h;
+        if w == 18 { verticalText = true; }
     } else {
         width = w*32-14;
         height = h*32-14;
-    }
-    if w == 1 {
-        verticalText = true;
+        if w == 1 { verticalText = true; }
     }
 }
 
@@ -66,7 +65,6 @@ switch sprite {
         if global.simpleLock { sprite = sprLockAnyV; }
         else { isPredefinedSprite = true; }
         backSprite = sprLockAnyV;
-        verticalText = true;
         hasILockTexture = true;
     break;
     case sprLock2H:
@@ -99,6 +97,8 @@ switch sprite {
     break;
 }
 
+if backSprite == sprLockAnyV {verticalText = true;}
+
 if argument12 != 0 && object_index == oDoorCombo {
     sprite = backSprite;
 }
@@ -115,18 +115,16 @@ switch color {
         draw_sprite_ext(sprDStoneTexture,0,xRel-offsetX,yRel-offsetY,width/64,height/64,0,c_white,1); // noone will notice if its not rotated
     break;
     case color_DYNAMITE:
-        // hmm cant really rotate this; shouldnt matter too much though
-        for(var i = 0; i+1 < height/64; i++) {
-            draw_sprite_ext(sprDDynaTexture,floor(global.goldIndex),xRel-offsetX,yRel-offsetY+i*64,width/64,1,0,c_white,1);
-        }
-        draw_sprite_part_ext(sprDDynaTexture,floor(global.goldIndex),0,0,64,height-i*64,xRel-offsetX,yRel-offsetY+i*64,width/64,1,c_white,1)
+        setShdTile(sprDDynaTexture,floor(global.goldIndex),0,xRel-offsetX,yRel-offsetY,width,height);
+        draw_sprite_ext(sprDDynaTexture,floor(global.goldIndex),xRel-offsetX,yRel-offsetY,width/64,height/64,0,c_white,1);
+        shader_reset();
         // @addcolor if door image/animation
     break;
     case color_GLITCH:
         setShdEffects(color_GLITCH);
         draw_rectangle_colour(xRel-offsetX+2,yRel-offsetY+2,xRel-offsetX+width-3,yRel-offsetY+height-3,mainTone,mainTone,mainTone,mainTone,false);
         shader_reset();
-        var effectiveGlitchMimic = scrEffectiveColor(color_GLITCH,false,true);
+        var effectiveGlitchMimic = scrEffectiveColor(color_GLITCH,false,true,armament);
         if effectiveGlitchMimic != color_GLITCH {
             var index = 0;
             mainTone = c_white;
@@ -160,13 +158,21 @@ switch color {
 if argument13 {return 0;}
 
 // draw lock frame
+var negative = false;
 var index = 0;
+var lockColor = make_color_rgb(44,32,20);
 if type == lock_BLAST && (denom != 0 || idenom != 0) {
     if (count == 0 && denom == 0 && idenom < 0) ||
         (icount == 0 && idenom == 0 && denom < 0) {
-            index = 1;
+            negative = true;
         }
-} else if count < 0 || icount < 0 {index = 1}
+} else if type != lock_ALL && (count < 0 || icount < 0) {negative = true}
+
+if negative {
+    lockColor = make_color_rgb(235,223,211);
+    index = 1;
+}
+draw_set_color(lockColor);
 if negated {index += 2}
 
 scrDrawNinePatch(sprLockFrame,index,xRel-offsetX,yRel-offsetY,width,height,9,9,false,c_white,1,false);
@@ -174,8 +180,6 @@ scrDrawNinePatch(sprLockFrame,index,xRel-offsetX,yRel-offsetY,width,height,9,9,f
 // draw predefined lock sprite
 if isPredefinedSprite {
     index = 0;
-    var lockColor = make_color_rgb(44,32,20);
-    if count < 0 || icount < 0 { lockColor = make_color_rgb(235,223,211); }
     if icount != 0 { index = 1; }
     if type == lock_EXACT {
         if hasILockTexture {index += 2}
@@ -188,6 +192,14 @@ if isPredefinedSprite {
     draw_sprite_ext(sprite,index,xRel+negatedOffsetX,yRel+negatedOffsetY,1,1,rotation,lockColor,1);
 }
 
+// draw armament
+if armament {
+    draw_sprite_part(sprArmament,floor(global.goldIndex)%4,0,0,9,9,xRel-offsetX,yRel-offsetY)
+    draw_sprite_part(sprArmament,floor(global.goldIndex)%4,9,0,9,9,xRel-offsetX+width-9,yRel-offsetY)
+    draw_sprite_part(sprArmament,floor(global.goldIndex)%4,0,9,9,9,xRel-offsetX,yRel-offsetY+height-9)
+    draw_sprite_part(sprArmament,floor(global.goldIndex)%4,9,9,9,9,xRel-offsetX+width-9,yRel-offsetY+height-9)
+}
+
 draw_set_halign(fa_left);
 
 switch type {
@@ -196,11 +208,9 @@ switch type {
         if !isPredefinedSprite { // draw numbers
             index = 0;
             if type == lock_EXACT {index = 19;}
-            draw_set_color(make_color_rgb(44,32,20));
-            if count < 0 || icount < 0 {
+            if negative {
                 index = 5;
                 if type == lock_EXACT {index = 21;}
-                draw_set_color(make_color_rgb(235,223,211));
             }
 
             draw_set_font(fTalk);
@@ -223,7 +233,7 @@ switch type {
                 lockSymbol = true;
                 if verticalText { lockOffsetY = -16; } // offset text start for lock symbol
                 else { lockOffsetX = 12; }
-                if icount != 0 { // exact lock imaginary symbol
+                if exactI { // exact lock imaginary symbol
                     index += 1;
                 }
             }
@@ -275,12 +285,12 @@ switch type {
             var denomStartX = xRel + round((width - denomWidth)/2) - offsetX;
             var denomStartY = startY + 10;
             startY -= 10;
-            draw_text(denomStartX,denomStartY,denominator);
+            draw_text(denomStartX+1,denomStartY,denominator);
 
             var lineWidth = max(strWidth,denomWidth);
             var lineStartX = xRel + round((width-lineWidth)/2) - offsetX;
-            var lineStartY = yRel + startY+2 - offsetY;
-            draw_rectangle(lineStartX,lineStartY,lineStartX+lineWidth,lineStartY+2,false);
+            var lineStartY = startY+2;
+            draw_rectangle(lineStartX,lineStartY,lineStartX+lineWidth-1,lineStartY+1,false);
         }
 
         draw_text(startX,startY,numerator);
@@ -295,75 +305,6 @@ switch type {
             }
         }
         draw_sprite(sprSymbols,index,startX+strWidth-symbolOffsetX/2-16,startY-7-16);
-    /*
-        if denom == 0 && idenom == 0 {
-            index = 2;
-            if count < 0 {index = 6}
-            else if icount > 0 {index = 3}
-            else if icount < 0 {index = 7}
-            draw_sprite(sprSymbols,index,xRel+width/2-9,yRel+height/2-9); // 180deg symmetrical; no rotation needed
-            break;
-        } else {
-            if icount == 0 && idenom == 0 && denom < 0 { index = 6 } // negative real
-            else if count == 0 && denom == 0 {
-                if idenom > 0 { index = 3 }  // positive imaginary
-                else { index = 7 } // negative imaginary
-            } else { index = 2 } // anything complex or positive
-        }
-    case lock_ALL:
-        if denom == 0 && idenom == 0 {
-            draw_sprite(sprSymbols,4,xRel+width/2-9,yRel+height/2-9); // 180deg symmetrical; no rotation needed
-            break;
-        }
-        // partial blast/all draw code
-        if type == lock_ALL { index = 4; }
-        draw_set_font(fTalk);
-        xRel -= offsetX;
-        yRel -= offsetY;
-        var numbersCount = "";
-        var numbersDenom = "";
-        draw_set_colour(make_colour_rgb(44,32,20));
-        // display count and denom divided by the ipow
-        if index == 6 { // negative
-            count = -count; denom = -denom;
-            icount = 0; idenom = 0;
-            draw_set_colour(make_colour_rgb(235,223,211))
-        } else if index == 3 { // imaginary
-            count = icount; denom = idenom;
-            icount = 0; idenom = 0;
-        } else if index == 7 { // negative imaginary
-            count = -icount; denom = -idenom;
-            icount = 0; idenom = 0;
-            draw_set_colour(make_colour_rgb(235,223,211))
-        }
-
-        if icount == 0 { numbersCount = string(count); }
-        else {
-            if count == 0 { numbersCount = string(icount)+iChar; }
-            else if icount > 0 { numbersCount = string(count)+"+"+string(icount)+iChar; }
-            else { numbersCount = string(count)+string(icount)+iChar; }
-        }
-        if numbersCount == "1" { numbersCount = ""; }
-        if idenom == 0 { numbersDenom = string(denom); }
-        else {
-            if denom == 0 { numbersDenom = string(idenom)+iChar; }
-            else if idenom > 0 { numbersDenom = string(denom)+"+"+string(idenom)+iChar; }
-            else { numbersDenom = string(denom)+string(idenom)+iChar; }
-        }
-
-        var strwidth = string_width(numbersCount)
-        if strwidth > 0 {strwidth += 2;}
-
-        draw_set_valign(fa_bottom);
-
-        draw_text(xRel+width/2-3-ceil(strwidth/2),yRel+height-16-10,numbersCount)
-        if negated { draw_sprite_ext(sprSymbols,index,xRel+width/2+16+floor(strwidth/2),yRel+height/2-8+16,1,1,180,c_white,1); }
-        else { draw_sprite(sprSymbols,index,xRel+width/2-16+floor(strwidth/2),yRel+height/2-8-16); }
-        draw_text(xRel+width/2-floor(string_width(numbersDenom)/2),yRel+height-8,numbersDenom)
-
-        var linewidth = max(string_width(numbersCount)+9, string_width(numbersDenom))
-        draw_rectangle(xRel+floor((width-linewidth)/2),yRel+height/2-1,xRel+floor((width+linewidth)/2),yRel+height/2,false)
-        */
     break;
 }
 draw_set_color(c_white);

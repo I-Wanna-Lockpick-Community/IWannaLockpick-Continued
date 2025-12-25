@@ -1061,8 +1061,11 @@ switch mouseType {
             if moused.lock[i,0] == color_GLITCH { hasGlitch = true; }
             if moused.lock[i,11] {
                 str += " (Armament";
-                if moused.lock[i,0] == color_GLITCH &amp;&amp; moused.lock[i,11] != moused.glitchMimic {
-                    str += ", Mimic: " + colName[moused.lock[i,11]];
+                if moused.lock[i,0] == color_GLITCH {
+                    with moused {
+                        var lockMimic = scrEffectiveColor(lock[i,0],false,true,lock[i,11]);
+                    }
+                    if lockMimic != moused.glitchMimic { str += ", Mimic: " + colName[lockMimic]; }
                 }
                 str += ")";
             }

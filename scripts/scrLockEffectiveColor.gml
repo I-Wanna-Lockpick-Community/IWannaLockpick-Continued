@@ -5,8 +5,11 @@ var color = lock[argument0,0];
 if object_index != oGate && cursed != -1 && cursed != color_PURE && !lock[argument0,11] {
     color = cursed;
     if color == color_GLITCH { color = curseGlitchMimic; }
-} else if color == color_GLITCH { color = lock[argument0,12]; }
-if argument1 && !hasColor(color_PURE) {
+} else if color == color_GLITCH {
+    if lock[argument0,11] {color = armamentGlitchMimic;}
+    else {color = glitchMimic;}
+}
+if argument1 && !hasColor(color_PURE) && !lock[argument0,11] {
     var auraType;
     var auraCount = 0; //Amount of auras on the door
     if aura[0] {auraCount++; auraType = color_ICE}

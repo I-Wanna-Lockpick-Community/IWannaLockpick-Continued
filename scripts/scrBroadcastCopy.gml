@@ -15,17 +15,14 @@ with oDoorSimple{
     }
 }
 with oDoorCombo{
+    armamentGlitchMimic = argument0;
     if cursed == -1 || cursed == color_PURE {
         glitchMimic = argument0;
     } else if cursed == color_GLITCH {
         curseGlitchMimic = argument0;
     }
-    for(var i = 0; i < lockCount; i += 1) {
-        if cursed == -1 || cursed == color_PURE || lock[i,11] {
-            lock[i,12] = argument0;
-        }
-    }
 }
 with oGate{
     glitchMimic = argument0;
+    armamentGlitchMimic = argument0;
 }

@@ -11,6 +11,6 @@ if undoPos == 1 {
     ds_stack_push(undoStack, undoPushIndex);
     // keep track of the change
     undoData[undoPushIndex] = value;
-    show_debug_message("index " + string(undoPushIndex) + " value " + string(undoData[undoPushIndex]));
+    //show_debug_message("index " + string(undoPushIndex) + " value " + string(undoData[undoPushIndex]));
 }
 undoPushIndex += 1;

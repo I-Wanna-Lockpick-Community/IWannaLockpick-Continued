@@ -4,6 +4,7 @@ lockCount = 0;
 lock[0,0] = 0;//Left = index, right = attribute
 
 glitchMimic = color_GLITCH;//For glitch doors
+armamentGlitchMimic = color_GLITCH; // whatever man its just easier this way
 
 w = 1;
 h = 1;

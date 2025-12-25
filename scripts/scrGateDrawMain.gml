@@ -15,8 +15,6 @@ for(var ix = 0; ix < w; ix += 1){
         }
     }
 }
-scrGateDrawFill();
-
 //FRAME (Left Right Up Down)
 draw_sprite_ext(sprGateOutline,0,x+32*w,y,1,h*2,0,outCol,1);
 draw_sprite_ext(sprGateOutline,1,x-16,y,1,h*2,0,outCol,1);

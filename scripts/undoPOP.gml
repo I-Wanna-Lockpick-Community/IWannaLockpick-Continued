@@ -27,7 +27,7 @@ while true {
     value = ds_stack_pop(undoStack);
     iter = 0;
 
-    show_debug_message("index " + string(index) + " value " + string(value));
+    //show_debug_message("index " + string(index) + " value " + string(value));
 
     willContinue = false; // we want to continue the outer loop, so we break out of the inner one and set this variable to true when we find something
 

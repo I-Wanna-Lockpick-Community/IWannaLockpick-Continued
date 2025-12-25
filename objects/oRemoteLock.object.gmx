@@ -117,7 +117,7 @@ door[0] = 0; // id of the doors
             <string>if !instance_exists(objPlayer) || !active {exit;}
 distToP = distance_to_object(objPlayer);
 
-if objPlayer.curseMode != 0 &amp;&amp; distToP &lt;= 23{
+if objPlayer.curseMode != 0 &amp;&amp; !armament &amp;&amp; distToP &lt;= 23{
     tryCurseDoor();
 } else {
     brownNearPlayer = 0;
@@ -143,10 +143,10 @@ if distToP &lt;= 1 {
     var satisfiedBefore = satisfied;
     var rcostBefore = rcost;
     var icostBefore = icost;
-    satisfied = canOpen(scrEffectiveColor(color,true,true),count,icount,type,0,exactI||isPartial,denom,idenom,negated);
+    satisfied = canOpen(scrEffectiveColor(color,true,true,armament),count,icount,type,0,exactI||isPartial,denom,idenom,negated);
     spendTotal = 0;
     spendITotal = 0;
-    scrAddSpendAmt(scrEffectiveColor(color,true,true),count,icount,type,0,exactI||isPartial,denom,idenom,negated);
+    scrAddSpendAmt(scrEffectiveColor(color,true,true,armament),count,icount,type,0,exactI||isPartial,denom,idenom,negated);
     rcost = spendTotal;
     icost = spendITotal;
     if satisfied != satisfiedBefore || rcost != rcostBefore || icost != icostBefore {
@@ -288,7 +288,7 @@ xOffset = sprite_get_xoffset(sprite);
 yOffset = sprite_get_yoffset(sprite);
 spendTotal = 0;
 spendITotal = 0;
-scrAddSpendAmt(scrEffectiveColor(color,true,true),count,icount,type,0,exactI||isPartial,denom,idenom,negated);
+scrAddSpendAmt(scrEffectiveColor(color,true,true,armament),count,icount,type,0,exactI||isPartial,denom,idenom,negated);
 rcost = spendTotal;
 icost = spendITotal;
 </string>
