@@ -326,6 +326,12 @@ if mouse_in_window(){
             other.mouseType = oGate;
         } 
     }
+    with oRemoteLock{
+        if mouse_x &gt;= (x-xOffset) &amp;&amp; mouse_x &lt;= (x-xOffset+w-1) &amp;&amp; mouse_y &gt;= (y-yOffset) &amp;&amp; mouse_y &lt;= (y-yOffset+h-1){
+            other.moused = self;
+            other.mouseType = oRemoteLock;
+        } 
+    }
     with oKina{
         if active{
             if point_distance(x,y,mouse_x,mouse_y) &lt; 16{
@@ -1075,6 +1081,16 @@ switch mouseType {
             str += strEffects(moused.cursed, moused.aura[0], moused.aura[1], moused.aura[2], moused.curseGlitchMimic);
             if moused.salvageID != -1{ str += "##SID: " + string(moused.salvageID); }
         }
+    break;
+    case oRemoteLock:
+        str += lockName[moused.type] + colName[moused.color] + " Remote Lock#";
+        if moused.satisfied {str += "S"}
+        else {str += "Uns"}
+        str += "atsfied, Cost: " + strComplex(moused.rcost, moused.icost);
+        if moused.type == lock_BLAST || moused.type == lock_ALL {str += " (" + strLockCost(moused.type,moused.count,moused.icount,moused.exactI||moused.isPartial,moused.denom,moused.idenom,moused.negated) + ")"}
+        if moused.armament {str += " (Armament)";}
+        if moused.color == color_GLITCH { str += "#Mimic: " + colName[moused.glitchMimic]; }
+        str += strEffects(moused.cursed, moused.aura[0], moused.aura[1], moused.aura[2], moused.curseGlitchMimic);
     break;
     case oSalvageIn:
         str += "Input Point##SID: "+string(moused.ID);

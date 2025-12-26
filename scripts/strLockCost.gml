@@ -1,4 +1,4 @@
-//strLockCost(type,count,icount,exacti/isPartial,denom,idenom,negated);
+//strLockCost(type,count,icount,exactI/isPartial,denom,idenom,negated);
 // returns the "cost" of the lock, as a string, for mouseover
 var str = "";
 if argument6 { str += "Not "; }

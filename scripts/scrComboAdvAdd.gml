@@ -1,4 +1,4 @@
-///scrComboAdvAdd(color,count,icount,type,xRel,yRel,sprite,exacti/isPartial,denom,idenom,negated,armament)
+///scrComboAdvAdd(color,count,icount,type,xRel,yRel,sprite,exactI/isPartial,denom,idenom,negated,armament)
 var tempID = lockCount;
 lock[tempID,0] = argument0;
 lock[tempID,1] = argument1;
