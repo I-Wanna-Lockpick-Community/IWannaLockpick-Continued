@@ -119,6 +119,7 @@ if instance_exists(objPlayer) {
     objPlayer.masterCycle = 0;
     objPlayer.downDir = 0;
     objPlayer.downTime = 0;
+    objPlayer.bufferKeyCheck = true;
 }
 
 for (var i = 0; i < instancesCount; i += 1) {

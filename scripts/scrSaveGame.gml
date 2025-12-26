@@ -2,6 +2,8 @@
 ///saves the game
 ///argument0 - sets whether the game should save the player's current location or just save the deaths/time
 
+return 0;
+
 if global.file2Detected{
     //global.newSavefile = 1;
 }else{

@@ -26,3 +26,4 @@ with oGate{
     glitchMimic = argument0;
     armamentGlitchMimic = argument0;
 }
+with objPlayer { bufferKeyCheck = true; }

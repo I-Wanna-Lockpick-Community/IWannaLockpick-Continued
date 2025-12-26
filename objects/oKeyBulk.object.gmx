@@ -232,7 +232,7 @@ if sign(count) + sign(icount) &gt;= 0 {
         scrPlaySoundExt(sndNegative,1,1,false);
     }
 }
-useMasterCheck();
+with objPlayer { bufferKeyCheck = true; }
 with other {
     event_user(0);
 }

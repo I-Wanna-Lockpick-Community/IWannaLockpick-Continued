@@ -308,13 +308,13 @@ if auraCount &gt; 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || obj
     }
     //Ice, mud, graffiti openings (aurabreak)
     if auraCount == 1 {
-        if (global.key[auraType] == 0 &amp;&amp; global.ikey[auraType] == 0) { exit; }
+        if global.gateArmament[auraType] || (global.key[auraType] == 0 &amp;&amp; global.ikey[auraType] == 0) { exit; }
     }
 }
 if auraCount &gt; 1 {exit;}
 var canGoldOpen = (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 1) &amp;&amp; !(hasColor(color_PURE) || hasColor(color_MASTER));
 var canSilverOpen = (objPlayer.masterMode != 0) &amp;&amp; (objPlayer.masterCycle == 2) &amp;&amp; !(hasColor(color_PURE) || hasColor(color_SILVER));
-var canDynamiteOpen = (global.key[color_DYNAMITE] != 0 || global.ikey[color_DYNAMITE] != 0) &amp;&amp; !(hasColor(color_PURE) || hasColor(color_DYNAMITE));
+var canDynamiteOpen = !global.gateArmament[color_DYNAMITE] &amp;&amp; (global.key[color_DYNAMITE] != 0 || global.ikey[color_DYNAMITE] != 0) &amp;&amp; !(hasColor(color_PURE) || hasColor(color_DYNAMITE));
 if auraCount &gt; 0 {
     canGoldOpen = false;
     canSilverOpen = false;
@@ -373,7 +373,7 @@ if distToP &lt;= 1 {
     }
 }
 
-useMasterCheck();
+with objPlayer { bufferKeyCheck = true; }
 </string>
           </argument>
         </arguments>

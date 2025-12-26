@@ -535,7 +535,7 @@ if instance_exists(objPlayer) &amp;&amp; active &amp;&amp; copyState == 0{
         }//No elseif; The normal lock is functionally unopenable
     }
     
-    useMasterCheck();
+    with objPlayer { bufferKeyCheck = true; }
 }
 </string>
           </argument>

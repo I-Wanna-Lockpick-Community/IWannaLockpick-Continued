@@ -92,6 +92,9 @@ downTime = 0;//Counts down to 0
 aura[0] = 0;//Red aura
 aura[1] = 0;//Green aura
 aura[2] = 0;//Blue aura
+
+bufferKeyCheck = false;
+touchingGate = false;
 </string>
           </argument>
         </arguments>
@@ -235,45 +238,16 @@ if (global.playerAnimationFix)
           <argument>
             <kind>1</kind>
             <string>///Key-related variables
-//RGB auras
-if global.key[color_RED] - global.key[color_MAROON] &gt;= 1 &amp;&amp; global.key[color_RED] &gt; 0{
-    aura[0] = 1;
-}else if global.key[color_RED] - global.key[color_MAROON] &lt;= -1 &amp;&amp; global.key[color_MAROON] &gt; 0{
-    aura[0] = -1; 
-}else{
-    aura[0] = 0;
-}
-if global.key[color_GREEN] - global.key[color_FOREST] &gt;= 5 &amp;&amp; global.key[color_GREEN] &gt; 0{
-    aura[1] = 1;
-}else if global.key[color_GREEN] - global.key[color_FOREST] &lt;= -5 &amp;&amp; global.key[color_FOREST] &gt; 0{
-    aura[1] = -1; 
-}else{
-    aura[1] = 0;
-}
-if global.key[color_BLUE] - global.key[color_NAVY] &gt;= 3 &amp;&amp; global.key[color_BLUE] &gt; 0{
-    aura[2] = 1;
-}else if global.key[color_BLUE] - global.key[color_NAVY] &lt;= -3 &amp;&amp; global.key[color_NAVY] &gt; 0{
-    aura[2] = -1;
-}else{
-    aura[2] = 0;
+if place_meeting(x,y,oGate) {
+    if !touchingGate {bufferKeyCheck = true;}
+    touchingGate = true;
+} else if touchingGate {
+    bufferKeyCheck = true;
 }
 
-var highestSeen = 0;
-curseMode = 0;
-curseColor = -1;
-for (var color=0;color&lt;COLORS;color+=1) {
-    if !global.curse[color] || global.key[color] == 0 {
-        continue;
-    }
-    if abs(global.key[color]) == highestSeen {
-        // tie
-        curseMode = 0;
-        curseColor = -1;
-    } else if abs(global.key[color]) &gt; highestSeen {
-        highestSeen = abs(global.key[color]);
-        curseMode = sign(global.key[color]);
-        curseColor = color;
-    }
+if bufferKeyCheck {
+    bufferKeyCheck = false;
+    scrCheckKeys();
 }
 </string>
           </argument>

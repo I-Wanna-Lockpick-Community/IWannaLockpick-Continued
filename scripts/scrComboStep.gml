@@ -70,15 +70,15 @@ if aura[2] == 1{auraCount++; auraType = color_GRAFFITI}
 
 if auraCount > 0 || objPlayer.aura[0] == -1 || objPlayer.aura[1] == -1 || objPlayer.aura[2] == -1{
     if distance_to_object(objPlayer) <= 23{
-        removeAurasCombo();
+        removeAuras();
     }
-    if (auraCount > 0 && global.key[auraType] == 0 && global.ikey[auraType] == 0) { exit; }
+    if auraCount > 0 && ((global.key[auraType] == 0 && global.ikey[auraType] == 0) || global.gateArmament[auraType]) { exit; }
     if auraCount > 1 {exit;}
 }
 //Now, the first big calculation is the Gold Eligibility.
 var canGoldOpen = (objPlayer.masterMode != 0) && (objPlayer.masterCycle == 1) && !(hasColor(color_PURE) || hasColor(color_MASTER));
 var canSilverOpen = (objPlayer.masterMode != 0) && (objPlayer.masterCycle == 2) && !(hasColor(color_PURE) || hasColor(color_SILVER));
-var canDynamiteOpen = (global.key[color_DYNAMITE] != 0 || global.ikey[color_DYNAMITE] != 0) && !(hasColor(color_PURE) || hasColor(color_DYNAMITE));
+var canDynamiteOpen = !global.gateArmament[color_DYNAMITE] && (global.key[color_DYNAMITE] != 0 || global.ikey[color_DYNAMITE] != 0) && !(hasColor(color_PURE) || hasColor(color_DYNAMITE));
 if auraCount > 0 {
     canGoldOpen = false;
     canSilverOpen = false;
@@ -140,4 +140,4 @@ if distance_to_object(objPlayer) <= 1{
         }
     }
 }
-useMasterCheck();
+with objPlayer { bufferKeyCheck = true; }

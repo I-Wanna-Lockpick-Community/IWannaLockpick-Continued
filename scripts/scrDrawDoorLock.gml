@@ -215,7 +215,7 @@ switch type {
 
             draw_set_font(fTalk);
             var numbers = string(abs(count) + abs(icount));
-            if numbers == "1" { numbers = ""; }
+            if numbers == "1" { numbers = ""; verticalText = false; }
             var lockOffsetX = 0;
             var lockOffsetY = 0;
             var lockSymbol = false;

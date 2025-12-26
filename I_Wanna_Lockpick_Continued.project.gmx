@@ -715,6 +715,7 @@
       <script>scripts\scrFlipGrav.gml</script>
       <script>scripts\scrPlayerDownStop.gml</script>
       <script>scripts\scrPlayerCycleMaster.gml</script>
+      <script>scripts\scrCheckKeys.gml</script>
     </scripts>
     <scripts name="world">
       <script>scripts\scrInitializeGlobals.gml</script>
@@ -827,7 +828,6 @@
       <script>scripts\scrGetLockColor.gml</script>
       <script>scripts\scrComboStep.gml</script>
       <script>scripts\scrAddSpendAmt.gml</script>
-      <script>scripts\removeAurasCombo.gml</script>
     </scripts>
     <scripts name="key/lock">
       <script>scripts\addOrdinalKeys.gml</script>
@@ -1770,6 +1770,8 @@
     <room>rooms\rcx5d</room>
     <room>rooms\rcx5e</room>
     <room>rooms\rcx5f</room>
+    <room>rooms\rcx4c</room>
+    <room>rooms\rcxxx</room>
   </rooms>
   <constants number="58">
     <constant name="vp_NONE">11</constant>

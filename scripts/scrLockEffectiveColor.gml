@@ -1,4 +1,4 @@
-//scrLockEffectiveColor(index);
+//scrLockEffectiveColor(index,considerAuraBreakers);
 // returns the effective color of a lock; used for calculations
 // distinct from the door since you might want locks to behave differently (eg. armaments)
 var color = lock[argument0,0];
