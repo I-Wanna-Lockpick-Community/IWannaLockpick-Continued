@@ -5,14 +5,14 @@ if open_check == color_GLITCH{
 }
 var key = global.key[argument0];
 var ikey = global.ikey[argument0];
-var count = rotateR(argument1,argument2,argument4);
-var icount = rotateI(argument1,argument2,argument4);
-var denom = rotateR(argument6,argument7,argument4);
-var idenom = rotateI(argument6,argument7,argument4);
+var count = scrToFraction(rotateR(argument1,argument2,argument4));
+var icount = scrToFraction(rotateI(argument1,argument2,argument4));
+var denom = scrToFraction(rotateR(argument6,argument7,argument4));
+var idenom = scrToFraction(rotateI(argument6,argument7,argument4));
 var exactI = argument3 == lock_EXACT && argument5;
 var isPartial = argument3 != lock_EXACT && argument5;
-var rcost = 0;
-var icost = 0;
+var rcost = scrToFraction(0);
+var icost = scrToFraction(0);
 switch argument3 {
     case lock_NORMAL:
     case lock_EXACT:
@@ -33,8 +33,8 @@ switch argument3 {
                 icost = scrTruncate(scrComplexDivideI(interRCost,interICost,denom,idenom));
             }
         } else {
-            var interRCost = count * key - icount * ikey;
-            var interICost = icount * key + count * ikey;
+            var interRCost = count[0] * key[0] - icount[0] * ikey[0]; // just changed this so it doesnt error
+            var interICost = icount[0] * key[0] + count[0] * ikey[0]; // this too
             var denomNIPow = 0;
             if (denom != 0) != (idenom != 0) {
                 if idenom > 0 {denomNIPow = 3;}
@@ -68,9 +68,8 @@ switch argument3 {
     break;
 }
 if argument8 {
-    spendTotal -= rcost;
-    spendITotal -= icost;
-} else {
-    spendTotal += rcost;
-    spendITotal += icost;
+    rcost[2] *= -1
+    icost[2] *= -1
 }
+scrAddFractions(spendTotal, rcost);
+scrAddFractions(spendITotal, icost);

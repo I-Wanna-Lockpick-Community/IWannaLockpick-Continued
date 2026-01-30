@@ -29,5 +29,5 @@ switch argument3 {
     break;
 }
 
-global.key[color] += count;
-global.ikey[color] += icount;
+global.key[color] = scrAddFractions(global.key[color],count);
+global.ikey[color] = scrAddFractions(global.ikey[color],icount);
