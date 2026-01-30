@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>global.complexMode = 0;
 for(var i=0;i&lt;COLORS;i+=1){
-    global.key[i] = 0;
-    global.ikey[i] = 0;
+    global.key[i] = scrToFraction(0);
+    global.ikey[i] = scrToFraction(0);
     global.star[i] = 0;
     global.curse[i] = 0;
     show[i] = -1;//The list of key *types* to be shown

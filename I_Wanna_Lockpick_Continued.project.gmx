@@ -68,6 +68,7 @@
       <sound>sound\musWinter</sound>
       <sound>sound\musSummer</sound>
       <sound>sound\musSpring</sound>
+      <sound>sound\musArcade</sound>
       <sound>sound\musMystery</sound>
       <sound>sound\musLab</sound>
       <sound>sound\musLab2</sound>
@@ -701,6 +702,7 @@
     <background>background\bFinalTree</background>
     <background>background\bKinaHint</background>
     <background>background\background90</background>
+    <background>background\bArcadeTile</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pthKH0</path>
@@ -978,6 +980,14 @@
       <script>scripts\setShdEffects.gml</script>
       <script>scripts\setShdTile.gml</script>
     </scripts>
+    <scripts name="fractions">
+      <script>scripts\scrMakeFraction.gml</script>
+      <script>scripts\scrAddFractions.gml</script>
+      <script>scripts\scrToFraction.gml</script>
+      <script>scripts\scrMultiplyFraction.gml</script>
+      <script>scripts\scrModFraction.gml</script>
+      <script>scripts\scrSubFraction.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shdRainbowStripe.shader</shader>
@@ -1164,6 +1174,7 @@
           <object>objects\oBGGuestRoom</object>
           <object>objects\oBGKina</object>
           <object>objects\oBGConnection</object>
+          <object>objects\oBGC1</object>
         </objects>
         <objects name="lights">
           <object>objects\oLight</object>
@@ -1207,6 +1218,8 @@
         <object>objects\oNullSymbol</object>
         <object>objects\oStarTwinkle</object>
         <object>objects\oBackRect</object>
+        <object>objects\oRainbowDot</object>
+        <object>objects\oBGWire</object>
       </objects>
       <objects name="title">
         <object>objects\oTitleMain</object>

@@ -19,10 +19,6 @@ switch (room)                       //determines which song to play
         break;                      //make sure to always put a break after setting the song
     case rMainHub:
     case rGuestRoom:
-    case rcx1a:
-    case rcx1b:
-    case rcx1c:
-    case rcx1d:
     case rcx2a:
     case rcx2b:
     case rcx2c:
@@ -44,6 +40,13 @@ switch (room)                       //determines which song to play
     case rcxxx:
         roomSong = musGuestRoom;
         global.musicTitle = "Hazelstorm - Guest Room";
+        break;
+    case rcx1a:
+    case rcx1b:
+    case rcx1c:
+    case rcx1d:
+        roomSong = musArcade;
+        global.musicTitle = "Thegur90 - New Jank City";
         break;
     case rTitleNew:
         roomSong = -1;              //play nothing

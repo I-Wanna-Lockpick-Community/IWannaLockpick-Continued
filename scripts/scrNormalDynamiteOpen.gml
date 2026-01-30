@@ -4,14 +4,19 @@
 var openedForwards = false;
 var openedBackwards = false;
 
-if (sign(global.key[color_DYNAMITE]) == sign(copies) || copies == 0) && abs(global.key[color_DYNAMITE]) >= abs(copies)
-&& (sign(global.ikey[color_DYNAMITE]) == sign(icopies) || icopies == 0) && abs(global.ikey[color_DYNAMITE]) >= abs(icopies) {
+if (sign(global.key[color_DYNAMITE,2]) == sign(copies[2]) || (copies[0] == 0 && copies[1] == 0)) && ((global.key[color_DYNAMITE,0] > copies[0]) || (global.key[color_DYNAMITE,0] == copies[0] && global.key[color_DYNAMITE,1] > copies[1]))
+&& (sign(global.ikey[color_DYNAMITE,2]) == sign(icopies[2]) || (icopies[0] == 0 && icopies[1] == 0)) && ((global.ikey[color_DYNAMITE,0] > icopies[0]) || (global.ikey[color_DYNAMITE,0] == icopies[0] && global.ikey[color_DYNAMITE,1] > icopies[1])) {
     // if the door can open, open it
-    var openCount = sign(global.key[color_DYNAMITE]) * min(abs(copies), abs(global.key[color_DYNAMITE]));
-    copies -= openCount;
+    // tomorrow me, finish this and fix the rest of the scripts. also add fraction support to copies - Something
+    var abskey = global.key[color_DYNAMITE];
+    abskey[2] = abs(abskey[2]);
+    var openCount = sign(global.key[color_DYNAMITE,2]) * min(scrMakeFraction(copies[0],copies[1],abs(copies[2])), abskey);
+    scrSubFraction(copies, openCount);
     if (!global.star[color_DYNAMITE]) { addComplexKeys(color_DYNAMITE,-openCount,0,0); }
-    var iopenCount = sign(global.ikey[color_DYNAMITE]) * min(abs(icopies), abs(global.ikey[color_DYNAMITE]));
-    icopies -= iopenCount;
+    var absikey = global.ikey[color_DYNAMITE];
+    absikey[2] = abs(absikey[2]);
+    var iopenCount = sign(global.ikey[color_DYNAMITE,2]) * min(scrMakeFraction(icopies[0],icopies[1],abs(icopies[2])), absikey);
+    scrSubFraction(icopies, iopenCount);
     if (!global.star[color_DYNAMITE]) { addComplexKeys(color_DYNAMITE,0,-iopenCount,0); }
     openedForwards = true;
 } else {
